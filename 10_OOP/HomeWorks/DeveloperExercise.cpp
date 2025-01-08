@@ -169,6 +169,14 @@ public:
         _MainProgLang=MainProgramingLanguage;
     }
 
+    void SetMainProgrmmingLanguage(string MainProgramingLanguage)
+    {
+        _MainProgLang=MainProgramingLanguage;
+    }
+    string MainProgrammingLanguage()
+    {
+        return _MainProgLang;
+    }
     void print()
     {
         cout <<"\nInf:" <<endl;
@@ -186,6 +194,7 @@ public:
         cout<<"=============================\n\n";
     }
 };
+
 int main()
 {
     clsDeveloper Deevloper1(8888,"Chouaib", "Hadadi","Chouaib@gmail.com","0976543902","TechLead","SoftEng",99998376,"C++");
