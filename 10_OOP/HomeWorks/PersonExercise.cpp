@@ -71,6 +71,7 @@ public:
     {
         cout <<"\nPerson Inf" <<endl;
         cout<<"=============================\n";
+        cout<<"ID        : "    <<_ID <<endl;
         cout<<"First Name: "    <<_FirstName <<endl;
         cout<<"Last Name : "    <<_LastName  <<endl;
         cout<<"Full Name : "    <<FullName() <<endl;
