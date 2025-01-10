@@ -15,7 +15,7 @@ string ReadTxt(string MSG)
     return Txt;
 }
 
-string Upper_LowerString(string &Txt)
+string LowerFirstLetterOfWord(string &Txt)
 {
     bool IsFirstLitter= true;
     for(int i=0;i<Txt.length(); i++)
@@ -34,7 +34,7 @@ int main()
 {
     string Txt=ReadTxt("Enter a Txt");
     cout<<"\nBefor: " <<Txt <<endl;
-    Txt=Upper_LowerString(Txt);
+    Txt=LowerFirstLetterOfWord(Txt);
     cout<<"After: " <<Txt <<endl;
 
 

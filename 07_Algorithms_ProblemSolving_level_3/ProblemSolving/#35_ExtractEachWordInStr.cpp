@@ -30,7 +30,7 @@ void PrintWordsOfStr(string str)
         cout<< Word <<endl;
 }
 //-->Prof Method
-void CountEachWordOfStr(string str)
+void ExtractEachWordOfStr(string str)
 {
    string Delimiter=" ";
    short pos=0;
@@ -52,6 +52,6 @@ int main()
     string str=ReadTxt("Please enter a string");
 
     // PrintWordsOfStr(str);
-    CountEachWordOfStr(str);
+    ExtractEachWordOfStr(str);
     return 0;
 }
