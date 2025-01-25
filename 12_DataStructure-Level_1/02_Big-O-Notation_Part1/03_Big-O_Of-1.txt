@@ -1,0 +1,29 @@
+                                        [Big-O of 1]
+ 
+                                        << O(1) >> 
+        O(1)
+(Faster)|------------------------------------------------------------->(Slower)
+
+==> the O(1) -->(Algorithm Is Fast) and it Independent with the Input Size.
+    Time Complexity always constant. <constant Time Function>
+
+                                    ?? How To Calculate it ??
+
+- count number Of Steps during execution . (All Steps with the same time).
+- And.
+    big O= <Steps Number> * O(1) = O(1) . (Remove the Facot-<Steps> because it's Negligable).
+
+    |==> So Big O = O(1); {When The Algorithm Is Input-Size [INDEPENDENT ]} 
+
+    exemple:
+
+    string str="...";
+    -> get the last letter on that string?
+
+    char LastChar(string Str)
+    {
+        return  Str[Str.length() - 1 ];
+    }
+
+    Big  O= 4 * O(1);
+          = O(1);

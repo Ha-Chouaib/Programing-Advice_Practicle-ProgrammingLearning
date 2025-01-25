@@ -1,0 +1,12 @@
+We Practiced Before Many Data Structure Type.
+
+#1--> Array  Data Structure.
+#2--> Matrix Dada Structure.
+#3--> Vector Data Structure.
+#4--> Binary Data Structure < example:  Permissions in Bank System Project >
+
+## And Also All Primitive Data Structure.
+#-->Integer
+#-->Float
+#-->pointer
+#-->Char

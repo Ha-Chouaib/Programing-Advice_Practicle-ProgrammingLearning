@@ -1,0 +1,28 @@
+                                !! Big Not Responsible For ? !!
+# A Big O is ot going to give you the exact answer on how long a piece of code will take to run.
+# Does not consider the performence of the Hadrdware.
+
+                -   -   -   -   -   -   -   -   -   -   -   -   -   -   -
+
+    @ Time Complexity:
+--> is Specifies how long it will take to execute an algorithm as a function Of its input.
+    @ Space Complexity:
+--> IS Specifies the total amount of space or memory required to execute an algorithm as afunction of the size of input.
+
+                        --------------------------------------
+
+
+                            ---------[Big O Notaion]--------
+
+* The Big-O is originally stands for (Oreder Of) Tow O's== Big O.
+* Efficiancy of algorithm.
+* Time Facotr of algorithm.
+* Space Complexity of algorithm.
+* -> Represented by O(n) When n is the number of Inputs.
+* Big-O Known Also by "Big O Notaion" ,Represents an Algorithm's WORST-Case Complexity.
+* It Uses Algibraic Terms To Describe the complexity of algorithm.
+* Big-O Defines the runtime required to exact an algorithm , identifying how the performence of your 
+    Algorithm will change as the input size graws.
+* Indicate The Relationship between the input Size and Algorithm performence.
+...
+

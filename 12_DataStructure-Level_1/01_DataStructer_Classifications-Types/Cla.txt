@@ -1,0 +1,25 @@
+                                            [ Data Structure ]
+          ( Basic )                                ||                              ( Advance )
+             ||                                                                         ||
+        (Primitive)                                                  ------------(Non-Primitive)-------------
+    #-->.<< Integer >>                                              ||                                      ||             
+    #-->.<< Float   >>                                         << Linear >>                          << Non-Linear >>
+    #-->.<< char    >>                       ============================================               #--> Tree
+    #-->.<< Pointer >>                       ||                                         ||              #-->Graph
+                                         [ Static ]                                 [ Dynamic ]
+                                 << Has a Fix Size In Memory  >>          << The Size Is Not Fixed >>
+                                            #-->Array                             #-->Queue
+                                                                                  #-->Stack
+                                                                                  #-->Linked List
+                                    ------------------------------------------------------------------------------------------
+                                                                                ||
+                                    ------------------------------------------------------------------------------------------
+                                               ||                                                                ||
+                                        [ Homogeneous ]                                                  [ Heterogeneous ]
+                                    (Group Same Data Type )                                         (Group Different Data Type)
+
+  
+                                                  
+                                                  
+
+                                                  

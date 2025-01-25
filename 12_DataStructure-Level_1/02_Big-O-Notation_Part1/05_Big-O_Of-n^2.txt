@@ -1,0 +1,20 @@
+                                            [Big-O Of n^2]
+                                              < O(n^2) >
+
+
+        O(1)            O(n)                           O(n^2)
+(Faster)|------------------------------------------------------------->(Slower)
+
+                            -> O(n^2) <=> ( Quadratic Time Function ).
+
+=> It's Slower 2 Time Than O(n)  nut Multiple But Power Of.
+
+=>It is Depends On The Input Size Twise.
+
+--> Example Of  Nested Loop Always Have O(n^2) .
+
+    (Time/Space Coplexity) graw n Value -- Input Value Graws n power of 2.
+
+
+
+

@@ -1,0 +1,7 @@
+
+                #Things Affect Program Speed#
+        ||                                          ||
+   < Algorithm > (/)                           < Hadrdware > ( X )
+    [Complexity]                               [Performance]
+    |-->(Time)                                  -->(CPU)/(RAM)/(OS)
+    |-->(Space)

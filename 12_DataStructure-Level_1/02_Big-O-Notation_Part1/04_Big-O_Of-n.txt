@@ -1,0 +1,37 @@
+                                    [Big-O Of n]
+                                     << O(n) >>
+
+        O(1)            O(n)
+(Faster)|------------------------------------------------------------->(Slower)
+
+# Linear Time Fuction <=> O(n).
+=>When The Algorithm is Input-size [DEPENDENT] But:
+    -> In Linear Way .
+    -> Of (Time/Space) And Input Size graw with the same Value. << Linear >>
+
+                            ?? O(n) Calculation ??
+
+-> Count Algorithm Steps.
+-> Multiplay Steps With  < n > . (n-> Input Size)
+
+    example: Get the last Letter Of string?
+
+    string S="...";
+
+    char LastLetter(stirng S)
+    {
+        int n=S.length()-1;
+        for(int i=0; i<= n; i++)
+        {
+            if(i == n)
+            {
+                return S[n];
+            }
+        }
+    }
+    //4 Steps Outside For loop.
+    //6 Steps Inside it.
+
+    => Big O= 6* n + 4;
+       -Remove Factors.
+       Big O= O(n);

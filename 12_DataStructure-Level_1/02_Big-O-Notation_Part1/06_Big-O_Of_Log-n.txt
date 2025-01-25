@@ -1,0 +1,23 @@
+                                            [Big-O Of Log n]
+                                             < O( log n ) > 
+                                    
+                                    =>Algoritmic Time Function <=> O(log n)
+
+
+        O(1)         O(log n)         O(n)        O(n^2) ...
+(Faster)|------------------------------------------------------------->(Slower)
+
+# This Type of Big O Is : When You Modify The Input Size Decreasing It.
+
+-->Example:
+
+ void Func(short n)
+ {
+    short x=n;
+    while(x > 0)
+    {
+        x = x /2;
+        cout<< x <<endl;
+    }
+ }
+

@@ -1,0 +1,23 @@
+
+
+
+
+        O(1)    O(log n)     O(n)      O(n log n)     O(n^2)    O(n^3)    O(2^n)    O(n!)
+(Faster)|------------------------------------------------------------------------------->(Slower)
+        C       A           L           L             Q         C         E         E
+        o       l           i           o             u         u         x         x
+        n       g           n           g             a         b         p         h
+        s       o           e           L             d         i         o         a
+        t       r           a           i             r         c         n         u
+        a       i           r           n             a                   t         s
+        n       t                       e             t                   i         t
+        t       h                       a             i                   a         i
+                m                       r             c                   l         v
+                i                                                                   S
+                c                                                                   e
+                                                                                    a
+                                                                                    r
+                                                                                    c
+                                                                                    h
+
+
