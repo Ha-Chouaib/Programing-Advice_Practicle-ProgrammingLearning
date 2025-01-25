@@ -1,0 +1,10 @@
+                                    [ Circular Linked List ]
+              ================================== ===============================
+              ||                                                               ||
+(Singly Circular Linked List)                                   (Doubly Circular Linked List)
+
+
+
+==> Simply The Concept Of Circular Linked List Is To Link The First Node With The Last One.
+    ->It will Cause an Infinit Loop.
+    ->We Can Use It Like in Buffer Implementation...

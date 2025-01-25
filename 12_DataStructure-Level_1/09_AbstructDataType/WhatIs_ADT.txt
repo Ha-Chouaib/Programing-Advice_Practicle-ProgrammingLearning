@@ -1,0 +1,5 @@
+
+
+[ Abstruct Data Type ] <=> ( ADT )
+=> Like: Vector, Stack, Queue, Any Class With The Concept of abstruction ...
+There Is A Hidden Methods And Members Within Abstruct Data Type. 
