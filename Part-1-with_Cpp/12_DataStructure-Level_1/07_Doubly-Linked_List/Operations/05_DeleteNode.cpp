@@ -82,7 +82,7 @@ void InsertAtEnd(Node* Head, short Value)
     
 }
 
-void DeleteNode(Node *Head, Node* &NodeToDelete)
+void DeleteNode(Node *&Head, Node* &NodeToDelete)
 {
     if(NodeToDelete == NULL || Head ==NULL)return ;
     
@@ -95,11 +95,12 @@ void DeleteNode(Node *Head, Node* &NodeToDelete)
     {
         NodeToDelete->Prev->Next=NULL;
     }
-    if(NodeToDelete->Prev ==NULL)
+    else if(NodeToDelete->Prev ==NULL)
     {
        NodeToDelete->Next->Prev=NULL;
+       Head =NodeToDelete->Next;
     }  
-    if(NodeToDelete->Prev !=NULL && NodeToDelete->Next != NULL) 
+    else 
     {
         NodeToDelete->Next->Prev = NodeToDelete->Prev;
         NodeToDelete->Prev->Next=NodeToDelete->Next;
