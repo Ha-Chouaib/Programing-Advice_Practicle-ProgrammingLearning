@@ -1,0 +1,42 @@
+
+programming laguages:       [C#]---------------------------------------[VB.NET]---------------------------------------[F#]
+                             |                                            |                                             |
+                     < C# Compiler >                              < VB Compiler >                             < F# Compiler >
+                    ============================================================================================================
+                                                                          ||
+                                 << Common Intermediate Language (CIL)== (IL) == (MSIL= Microsofte Intermediate Language) >>
+                                                                          ||
+                                                         << Common Language Runtime (CLR) >>
+                                                                          ||
+                                                                 << Machine Code >> 
+
+
+# The applications are written in the programming laguages suported by .NET platform.
+## Then it's be COmpiled with its Owne specific Compliler to a Common Intermediate Language (CIL).
+### The Compiled code Stored in assemblies-files with a ".dll" or ".exe" file extention.
+#### When the app runs the (CLR)=(Common Language Runtime) takes the assembly and Use Just-In-Time << JIT >>
+        Compliler to run it into machine code that can execute one the specific architecture of the computer
+        it is running on.
+--> In .NET Compilation process accurs in tow stages:
+    @ Just-In-Time (JIT) Compilation <equivalent to Interpreter>: 
+        During executing of a .NET app the CLR performs JIT compilation of the app's
+        Intermediate Language IL Code into the machine code.
+        The (JIT) Compiler of the code translates the IL code into native machine code for the target platform on
+        on which the app is running.
+        This Allows the application to take advantage of the full performence of the target platform's hardware.
+        The JIT compiler only Compiles the methods that are actually executed, so apps Start up quickly 
+            <But AOT Faster Than JIT On The Start up> and unused code is never compiled.
+
+    @ Ahead-Of-Time (AOT) Compilation: 
+        +AOT Stands for Ahead-Of-Time which is a method of compiling .NET Code into Machine-readable code that can be executed 
+        directly by the computer's processor, without requering an Interpreter or JIT compilation.
+        this approach can lead to Faster Times And Better performance compared to JIT-compiled code. 
+
+        +AOT is often used in scenarios where performence and start-up time is Critical, such as in Moblie or Embedded devices
+        or in cloud envirnment where instance are frequently restarted. the AOT-Compiled codei is optimized for the specific architecture
+        and can take advantage of hardware features such as instruction set extenctions and hardware acceleration.
+        
+        + In .Net AOT-compilation is usually performed using The Native Image Generatore (Ngen.exe) tool, which creats a native
+        image from an executing .NET Assembly. the native image can then be eployed and executed on the target machine,
+        without requiring the .NET runtime to be installed.
+

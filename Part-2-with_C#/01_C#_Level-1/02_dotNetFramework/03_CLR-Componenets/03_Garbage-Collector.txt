@@ -1,0 +1,7 @@
+                                                        [ Garbage Collector (GC) ]
+
+# [GC]--> It works as an automatic Memory Managment.
+## It Helps manage memory by automatically allocating memory according to the requirment.
+### It Allocate Heap Memoryto Oblect.
+#### When object are not in use, it reclaims the memory allocated to them for future use.
+##### It Also Esure the safety of objects by not allowing them to use the content of each other. 

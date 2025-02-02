@@ -1,0 +1,14 @@
+                                                            [ Common Language Runtime (CLR) ]
+
+# It's the key of .NET platform and is responsible for executing .NET apps.
+
+# is RunTime encironment in which .NET apps are executed .
+
+# provides a numberof services to .NET Apps Like:
+    .Memory Managment, Type-safety, security and exception handling.
+
+# Also Manages the execution of .NET Code , handling tasks such as (JIT) Just-In-Time Compilation
+    Thread Managment, and Garbage collection.
+
+#In essence, the CLR acts as a bridge between the .NET Code and the underlying operating system, 
+    Allowing .NET Code to run on any suported platform.

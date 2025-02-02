@@ -1,0 +1,13 @@
+
+[Common Language Run-time Functions] :
+
+--> Manager For All .NET Suppoted Languages.
+--> converts the program to Native Code.
+--> Handles exeptions.
+--> Provides Type Safty.
+--> Improved Performence.
+--> Language Independent.
+--> Platform Indepandent.
+--> Garbage Collection.
+--> Provides Language Features such as Inheritance, interface and OverLoading for oop.
+

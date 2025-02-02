@@ -1,0 +1,9 @@
+                                                [ Just In Time (JIT) Compilation ]
+        =================================================================================================================
+        ||                                                       ||                                                     ||
+     [Pre-JIT]                                              [Econo-JIT]                                   (Default)<-->[Normale-JIT]
+(Ahead-Of-Time <AOT>)Compilation.               * Compiles Just the Part Of code we need            *Compiles the Used Code only
+* Use (Ngen.exe) in Compilation.                     But without Caching it in memory.              *Cache the Compiled code in memory
+* Compiles everythings before                   * Each Time will compile the part of code again.    *The Compiled Part will Not recompiled again.
+    start execution.
+*No Compilation at Run-Time.

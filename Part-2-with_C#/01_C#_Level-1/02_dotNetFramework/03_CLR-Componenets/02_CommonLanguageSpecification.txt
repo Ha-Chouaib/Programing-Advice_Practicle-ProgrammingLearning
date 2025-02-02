@@ -1,0 +1,6 @@
+                                                        [ Common Language Specification (CLS) ]
+
+# [CLS]--> Contains a set of rules to be followed by all .NET-Suported Languages.
+## The Common Rules make it easy to mplement Language Integration and Help In Cross-Language Inheritance and debugging.
+### Each Language Suported by .NET Framework Has its Owne synthax rules.
+#### But CLS ensures interoperablity among applications developed using .NET Languages.

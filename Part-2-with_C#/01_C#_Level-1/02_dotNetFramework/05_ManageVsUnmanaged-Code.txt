@@ -1,0 +1,23 @@
+                        [ Managed Code ]
+• The code that runs with CLR is called managed code, whereas the
+code outside the CLR is called unmanaged code.
+• The CLR also provides an Interoperability layer, which allows both
+the managed and unmanaged codes to interoperate.
+• Any language that is written in the .NET framework is managed code.
+Managed code use CLR, which looks after your applications by
+managing memory, handling security, allowing cross-language
+debugging, etc
+
+                        [ Unmanaged Code ]
+• The code developed outside the .NET framework is known as unmanaged
+code.
+• Applications that do not run under the control of the CLR are said
+to be unmanaged. Certain languages such as C++ can be used to write
+such applications, such as low-level access functions of the
+operating system.
+• Background compatibility with VB, ASP, and COM are examples of
+unmanaged code. This code is executed with the help of wrapper
+classes.
+COM: Component Object Model: It’s a client server communication using
+method in the server without the need to compile them into your
+application. (old technology 1993 by Microsoft).

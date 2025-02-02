@@ -1,0 +1,25 @@
+                                                              [.Net]
+        "Is a platform that Let You to run the applications coded  by the .net suported programming laguages"
+               <platform> could be hardware or software | platform= programming laguages + Libraries.
+        #It's acomprehensive develepment platform that provide tools and technologies for building all Type of applications:
+            [web]/ [Desktop]/ [mobile]/ [gaming]/ [IoT]/ [AI]/ [Cloud].
+
+    ===========================================================================================================
+    ||                                                          ||                                             ||
+[.Net Core]                                             [.Net Framework]                                 [Xamarin/Mono]
++Run any where<cross platform>:                         +Run Only on windows                             + a .Net for mobile applications
+ .windows                                                                                                +cross platform runs on:
+ .linux                                                                                                     .Android
+ .macOS                                                                                                     .ios
+
+==>All Of these platforms use a standard set of Libraries.
+->The .NET platform includes multiple components such as :
+    @ .NET runtime
+    @ Based Class Library (BCL)
+    @ .NET standard Library
+
+                                                        < .NET standard Library >
+                    --> is a formal spesification of the APTs that are common across .NET implementations.
+                             This Allows the same code and Libraries to run at diffenrent mplemetations.
+             
+              

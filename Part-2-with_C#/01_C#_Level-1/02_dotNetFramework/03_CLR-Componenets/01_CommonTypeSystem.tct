@@ -1,0 +1,8 @@
+                                                    [ Common Type System (CTS) ]
+
+# [CTS]--> Provides guidlines for Decalring, Using, and Managing DATA TYPES at runtime.
+## It offers Cross-Language communication.
+### example: VB.NET Has an Integer data type, an C# allso has its owne integer Data Type for managing integers.
+    After Copilation Int32 Is Used by both Data Types.
+#### So. << CTS >> Provides the data types using managed code.
+     And It Helps in writing Language-Independent Code.

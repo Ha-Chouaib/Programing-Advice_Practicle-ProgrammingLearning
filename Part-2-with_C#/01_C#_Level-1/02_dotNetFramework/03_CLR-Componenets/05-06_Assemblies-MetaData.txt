@@ -1,0 +1,38 @@
+                                                         [ CIL ==>Assemblies ]
+
+# Is a group of code and Libraries and also another Assembly files all of those components Compiled to be an Assembly file.
+
+                                 [Code]-------------------------[Config]---------------------------[Assembly]
+                                   |                               |                                   |
+                                   .....................................................................
+                                                             [Compilation]
+                                                             =============
+                                                                   |
+                                                              ( Assembly )
+
+## An Assembly is a fundamental unit of physical code grouping.
+### It is basically a compiled code that can run or executed by an CLR.
+#### And It's a single Unit Of < Deployment > = < What we Install in Client Hardware Instead of Source Code >
+
+                                                        ( Assembly Types )
+                            -----------------------------------------------------------------------------
+                            ||                                                                          ||
+                   < Process Assembly >                                                        < Library Assembly >
+                        << exe >>                                                                    << DLL >>
+                    (executable file)                                                         ( Dynamic Link Library )
+                # You can Run directlly                                                 #Needs to be referenced by exe file to run it
+
+
+
+                                                            [ Metadata = Manifest ]
+=> Metadata is Data that provides informations about another Data.
+--> Metadata is Group of informations about the Assembly file.
+# Contains:
+    .The Assembly's name.
+    .Version number.
+    .Digital signature that Unuquely identifies an assembly's Creator (Author).
+    .All Files which Build up the assembly.
+    .Information regarding all of the referenced assemblies.
+    .Information about all exported classes, methods, properties, ... .
+
+

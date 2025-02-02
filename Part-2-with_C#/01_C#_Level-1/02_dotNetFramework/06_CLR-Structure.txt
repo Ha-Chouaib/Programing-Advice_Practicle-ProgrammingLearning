@@ -1,0 +1,23 @@
+                                                    [ CLR Stucture ]
+                        ========================================================================
+                                           [  Based Class Library Support ]
+                    --> It is a class library that supports classes for the .NET application.
+
+            [Thraed Suport  ].................................................................[COM Marshaler    ]
+--> It manages the parallel execution of the multi-threaded application.| --> It provides communication between the COM objects and the application.
+
+            [Type Checker   ].................................................................[Exeption Manager ]
+--> It checks the types used in the application and verifies            | --> It handles the exception at runtime to avoid application failure.
+        that they match the standards provided by the CLR.
+
+            [Security Engine].................................................................[Debug Engine     ]
+--> It enforces security restrictions.                                  | --> It allows you to debug different kinds of applications.
+
+       Assemply File <-[IL Compiler    ].........[Code Manager].........[Garbage Collector]->It releases the unused memory and allocates it to a new application.
+                                        -->It manages code at execution runtime.<--
+
+                                           [          Class Loader        ]
+                                    --> It is used to load all classes at run time.
+                        =========================================================================
+
+

@@ -1,0 +1,15 @@
+                                                    [.Net Framework Architecture ]
+                                            
+# The Majore components of .Net Framework are:
+-->(CLR)Common Language Runtime:
+    . Is the execution egine het handles running applications .
+    . It provides services like thread managment, garbage collection, Type-safety, exception handling...
+-->The Class Library:
+    .provides a set of APIs and types for common functionality.
+    .It provides types for string, date, numbers,...
+    .The class Library includes APIs for reading and writing files, connecting to database, drawing ...
+--> Languages:
+    .C#
+    .F#
+    .VB
+    ...
