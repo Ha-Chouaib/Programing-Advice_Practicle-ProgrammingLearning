@@ -1,2 +1,20 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System;
+
+namespace Main
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Bismi ALLAH");
+            Console.WriteLine("Welcom To .NET World");
+            Console.WriteLine("With C# Language");
+            Console.WriteLine("Easy Logic 1+1= "+(1+1));
+
+            Console.Write("Expline");
+            Console.Write("Write");
+            Console.Write("Methode");
+
+        }
+    }
+}
