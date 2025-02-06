@@ -6,6 +6,13 @@ namespace Main
     {
         static void Main(string[] args)
         {
+            
+            
+            //Nullable Data Type it allows you to set null to any other data type by: ( Nullable <Data Type> ...=null; )
+            Nullable <int> t=null;
+            Console.WriteLine("int with Nallable Data Type t= {0}",t);
+            
+            
             /*
                                                             [ Numbers Data Type ]
                     ||                                                                                              ||
