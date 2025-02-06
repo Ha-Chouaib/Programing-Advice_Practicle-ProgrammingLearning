@@ -18,6 +18,8 @@ namespace Main
             Console.WriteLine(DT4);
 
             //............Get Current Date............
+            Console.WriteLine("\n\n");
+            
             DateTime dtn=new DateTime();
             dtn=DateTime.Now;
             Console.WriteLine("The Current Date: {0}",dtn);
@@ -35,11 +37,27 @@ namespace Main
                 * 1 second= 10,000,000 ticks.
 
             */
+            Console.WriteLine("\n\n");
 
             Console.WriteLine("Current Ticks: {0}",DateTime.Now.Ticks);
             Console.WriteLine("Min Value of Ticks: {0}",DateTime.MinValue.Ticks);
             Console.WriteLine("Max Value of Ticks: {0}",DateTime.MaxValue.Ticks);
 
+
+            //.................Date Time Static field............................
+            Console.WriteLine("\n\n");
+            DateTime CurrentDateTime= DateTime.Now;
+            DateTime TodaysDate= DateTime.Today;
+            DateTime CurrentDateTimeUTC= DateTime.UtcNow;
+            DateTime MaxDateTimeValue=DateTime.MaxValue;
+            DateTime MinDateTimeValue=DateTime.MinValue;
+
+            Console.WriteLine("Current Date and Time: "     + CurrentDateTime);
+            Console.WriteLine("Todays Date: "               + TodaysDate);
+            Console.WriteLine("Current Date and Time UTC: " + CurrentDateTimeUTC);
+            Console.WriteLine("Max Date Time Value: "       + MaxDateTimeValue);
+            Console.WriteLine("Min Date Time Value: "       + MinDateTimeValue);
+            
             
 
         }
