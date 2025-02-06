@@ -58,7 +58,27 @@ namespace Main
             Console.WriteLine("Max Date Time Value: "       + MaxDateTimeValue);
             Console.WriteLine("Min Date Time Value: "       + MinDateTimeValue);
             
-            
+
+            //...............................Time Span...........................
+            //it Used To represent Time in: Hour, Minutes, Seconds and Milliseconds
+            Console.WriteLine("\n\n");
+
+            DateTime _DT=new DateTime(2025,1,10);
+            Console.WriteLine("Date" + _DT);
+
+            //set Hours, Min, Sec in TimeSpan
+
+            TimeSpan TS= new TimeSpan(56,60,24);
+            Console.WriteLine("Time Span: " + TS);
+            Console.WriteLine("Time Span Days: " + TS.Days);
+            Console.WriteLine("Time Span Hours: " + TS.Hours);
+            Console.WriteLine("Time Span Minutes: " + TS.Minutes);
+            Console.WriteLine("Time Span Seconds: " + TS.Seconds);
+
+            //Add TimeSpan To Date.
+            DateTime Newdate= _DT.Add(TS);
+            Console.WriteLine("New Date " + Newdate);
+
 
         }
     }
