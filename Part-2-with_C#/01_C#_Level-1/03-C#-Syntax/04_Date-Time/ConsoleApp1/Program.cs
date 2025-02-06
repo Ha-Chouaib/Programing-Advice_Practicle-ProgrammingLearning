@@ -88,7 +88,22 @@ namespace Main
             Console.WriteLine("Date 1" + _DT1);
             Console.WriteLine("Date 2" + _DT2);
             Console.WriteLine("Date2 - Date1 = " + SUbResult);
-             
+            
+
+            //......................Operators......................................
+            Console.WriteLine("\n\n");
+
+            DateTime D1=new DateTime(2001,12,31);
+            DateTime D2=new DateTime(2004,12,5,5,10,23);
+            TimeSpan T=new TimeSpan(20,33,43);
+            Console.WriteLine("Date 1: " + D1);
+            Console.WriteLine("Date 2: " + D2);
+            Console.WriteLine(D2 + T);//12/6/2004 1:44:06 AM
+            Console.WriteLine(D2 > D1);//True
+            Console.WriteLine(D2 < D1);//False
+            Console.WriteLine(D2 == D1);//False
+            Console.WriteLine(D2 >= D1);//True
+            Console.WriteLine(D2 <= D1);//False
 
         }
     }
