@@ -22,6 +22,25 @@ namespace Main
             dtn=DateTime.Now;
             Console.WriteLine("The Current Date: {0}",dtn);
 
+            //..................Ticks.................
+            /*
+                
+                # The DateTime Stucture in .net uses ticks to repesent time internally.
+                # the Number of Ticks represent the elapsed time Since << Jan 1,0001(Midnight),UTC >>
+                # A Tick is : the smallest Unit of time in .net used internally by "DateTime" and "DateSpan".
+                    its Like a super tiny fraction of second.
+
+                * 1Tick= 100 nanoseconds=0.0001 millisecond =0.0000001 second.
+                * 1 Millisecond= 10,000 ticks.
+                * 1 second= 10,000,000 ticks.
+
+            */
+
+            Console.WriteLine("Current Ticks: {0}",DateTime.Now.Ticks);
+            Console.WriteLine("Min Value of Ticks: {0}",DateTime.MinValue.Ticks);
+            Console.WriteLine("Max Value of Ticks: {0}",DateTime.MaxValue.Ticks);
+
+            
 
         }
     }
