@@ -8,9 +8,50 @@ namespace Main
         {
             
             
+             //you dont specify any type here , automatically will be specified
+            var student = new { Id = 20, FirstName = "Chouaib", LastName = "Hadadi" };
+
+            Console.WriteLine("\nExample1:\n");
+            Console.WriteLine(student.Id); //output: 20
+            Console.WriteLine(student.FirstName); //output: Chouaib
+            Console.WriteLine(student.LastName); //output: Hadadi
+           
+            //You can print like this:
+            Console.WriteLine(student);
+
+           
+            //anonymous types are read-only
+            //you cannot change the values of properties as they are read-only.
+
+           // student.Id = 2;//Error: cannot chage value
+           // student.FirstName = "Ali";//Error: cannot chage value
+
+
+           //An anonymous type's property can include another anonymous type.
+           var student2 = new
+            {
+                Id = 20,
+                FirstName = "Chouaib",
+                LastName = "Hadadi",
+                Address = new { Id = 1, City = "Ca", Country = "Mo" }
+            };
+            
+            Console.WriteLine("\nExample2:\n");
+            Console.WriteLine(student2.Id);
+            Console.WriteLine(student2.FirstName);
+            Console.WriteLine(student2.LastName);
+
+            Console.WriteLine(student2.Address.Id);
+            Console.WriteLine(student2.Address.City);
+            Console.WriteLine(student2.Address.Country);
+            Console.WriteLine(student2.Address);
+
+            
+            
+            
             //Nullable Data Type it allows you to set null to any other data type by: ( Nullable <Data Type> ...=null; )
             Nullable <int> t=null;
-            Console.WriteLine("int with Nallable Data Type t= {0}",t);
+            Console.WriteLine("int with Nallable Data Type t=null {0}",t);
             
             
             /*
