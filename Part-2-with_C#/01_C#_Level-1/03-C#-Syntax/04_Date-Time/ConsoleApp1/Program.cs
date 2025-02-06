@@ -79,6 +79,16 @@ namespace Main
             DateTime Newdate= _DT.Add(TS);
             Console.WriteLine("New Date " + Newdate);
 
+            //........................Substruction of Tow dates.....................
+            Console.WriteLine("\n\n");
+            DateTime _DT1=new DateTime(2003,6,20);
+            DateTime _DT2=new DateTime(2025,2,6);
+            TimeSpan SUbResult= _DT2.Subtract(_DT1);
+
+            Console.WriteLine("Date 1" + _DT1);
+            Console.WriteLine("Date 2" + _DT2);
+            Console.WriteLine("Date2 - Date1 = " + SUbResult);
+             
 
         }
     }
