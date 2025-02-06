@@ -4,11 +4,51 @@ namespace Main
 {
     internal class Program
     {
+        struct stStudent
+        {
+            public string FirstName;
+            public string LastName;
+        }
         static void Main(string[] args)
         {
+            //.......................................Struct Data Type..................................
+            /*
+            # struct can be used to hold small data values that do not require inheritance,
+                 e.g. coordinate points, key-value pairs, and complex data structure.
+            # A struct object can be created with or without the new operator, same as primitive type variables.
+            # If you declare a variable of struct type without using new keyword, it does not call any constructor,
+                so all the members remain unassigned. Therefore, you must assign values to each member before accessing them,
+                otherwise, it will give a compile-time error.
+            # using new does not mean it's allocated in heap.
+            # structure is allocated in stack as long as it's not part of class.
+            */
             
+            //A struct object can be created with or without the new operator,
+            //same as primitive type variables.
+
+            stStudent Student ;
+            stStudent Student2 = new stStudent();
+
+
+            Student.FirstName = "Chouaib";
+            Student.LastName = "Hadadi";
+
+   
+            Console.WriteLine(Student.FirstName);   
+            Console.WriteLine(Student.LastName);
+
             
-             //you dont specify any type here , automatically will be specified
+            Student2.FirstName = "Ali";
+            Student2.LastName = "Ahmed";
+
+
+            Console.WriteLine(Student2.FirstName);
+            Console.WriteLine(Student2.LastName);
+ 
+            
+            //.......................Anonymous Data Type.........................
+
+            //you dont specify any type here , automatically will be specified
             var student = new { Id = 20, FirstName = "Chouaib", LastName = "Hadadi" };
 
             Console.WriteLine("\nExample1:\n");
