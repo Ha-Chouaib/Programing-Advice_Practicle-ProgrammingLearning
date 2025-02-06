@@ -11,6 +11,28 @@ namespace Main
         }
         static void Main(string[] args)
         {
+            
+            
+            
+            //......................................Dynamic Types......................................
+            
+            // A dynamic type escapes type checking at compile-time; instead, it resolves type at run time.
+
+            dynamic MyDynamicVar = 100;
+            Console.WriteLine("Value: {0}, Type: {1}", MyDynamicVar, MyDynamicVar.GetType());
+
+            MyDynamicVar = "Hello World!!";
+            Console.WriteLine("Value: {0}, Type: {1}", MyDynamicVar, MyDynamicVar.GetType());
+
+            MyDynamicVar = true;
+            Console.WriteLine("Value: {0}, Type: {1}", MyDynamicVar, MyDynamicVar.GetType());
+
+            MyDynamicVar = DateTime.Now;
+            Console.WriteLine("Value: {0}, Type: {1}", MyDynamicVar, MyDynamicVar.GetType());
+            
+            
+            
+            
             //.......................................Struct Data Type..................................
             /*
             # struct can be used to hold small data values that do not require inheritance,
