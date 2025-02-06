@@ -127,18 +127,18 @@ namespace Main
             
             */
             // Byte......unsigned.............
-            byte a=12;
+            //Syntax ex:  byte a=12;
             
             Console.WriteLine("Byte:");
             Console.WriteLine("Max= ({0})// Min= ({1}):", Byte.MaxValue, Byte.MinValue);
             //SByte......signed...............
-            sbyte b= -128;
-            sbyte bb=127;
+            //Syntax ex:  sbyte b= -128;
+            //Syntax ex:  sbyte bb=127;
             Console.WriteLine("SByte:");
             Console.WriteLine("Max= ({0})// Min= ({1}):", SByte.MaxValue, SByte.MinValue);
 
             // Short......signed..............
-            short sh=982;
+            //Syntax ex:  short sh=982;
 
             Console.WriteLine("Short:");
             Console.WriteLine("Max= ({0})// Min= ({1}):", Int16.MaxValue, Int16.MinValue);
@@ -149,39 +149,39 @@ namespace Main
             Console.WriteLine("Max= ({0})// Min= ({1}):", UInt16.MaxValue, UInt16.MinValue);
 
             //int.........signed..............
-            int i=-1;
-            int ii=1;
+            //Syntax ex:  int i=-1;
+            //Syntax ex:  int ii=1;
             Console.WriteLine("Int:");
             Console.WriteLine("Max= ({0})// Min= ({1}):", Int32.MaxValue,Int32.MinValue);
 
             //uint........unsigned............
-            uint ui=2;
+            //Syntax ex:  uint ui=2;
             Console.WriteLine("UInt:");
             Console.WriteLine("Max= ({0})// Min= ({1}):", UInt32.MaxValue, UInt32.MinValue);
 
             //long........signed..............
-            long l=3456788;
-            long ll=-5678765;
+            //Syntax ex:  long l=3456788;
+            //Syntax ex:  long ll=-5678765;
             Console.WriteLine("Long:");
             Console.WriteLine("Max= ({0})// Min= ({1}):", Int64.MaxValue, Int64.MinValue);
 
             //Ulong......unsigned.............
-            ulong unl=98765432ul;
+            //Syntax ex:  ulong unl=98765432ul;
             Console.WriteLine("uLong:");
             Console.WriteLine("Max= ({0})// Min= ({1}):", UInt64.MaxValue, UInt64.MinValue);
 
             //float.....UnSigned................
-            float f=233.3f;
+            //Syntax ex:  float f=233.3f;
             Console.WriteLine("Float:");
             Console.WriteLine("Max= ({0})// Min= ({1}):", float.MaxValue, float.MinValue);
            
             //double....UnSigned................
-            double d=2307973.3d;
+            //Syntax ex:  double d=2307973.3d;
             Console.WriteLine("double:");
             Console.WriteLine("Max= ({0})// Min= ({1}):", double.MaxValue, double.MinValue);
 
             //Decimal...UnSigned................
-            decimal dc=987654657890897.867m;
+            //Syntax ex:  decimal dc=987654657890897.867m;
             Console.WriteLine("Dicimal:");
             Console.WriteLine("Max= ({0})// Min= ({1}):", decimal.MaxValue, decimal.MinValue);
 
