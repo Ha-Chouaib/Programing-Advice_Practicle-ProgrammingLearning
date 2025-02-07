@@ -1,0 +1,11 @@
+ # if Statement.
+ # Switch
+ # Foor loop
+ # Ternary (? : ) Operator
+ # while loop
+ # do while
+ # Break;
+ # Continue;
+
+
+ ==============================| All The same As C++ Ones |=============================
