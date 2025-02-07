@@ -47,6 +47,16 @@ namespace Main
                 [/]-------------(Division Operator)
                 [%]-------------(Modulo Operator)
             */
+
+            /*
+                ====================================Relational Operators=========================
+                [==]-----(Equal To)
+                [>]------(Greater Than)
+                [<]------(Less Than)
+                [>=]-----(Greater Than Or Equal To)
+                [<=]-----(Less Than Or Equal To)
+                [!=]-----(Not Equal)
+            */
         }
     }
 }
