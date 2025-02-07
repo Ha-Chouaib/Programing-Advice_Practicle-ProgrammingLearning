@@ -10,7 +10,7 @@ namespace Main
             //ReadLine() Method Allways Reads String Values Equivalent to getline() in C++
 
             Console.WriteLine("Please Enter Full Name?");
-            string FullName = Console.ReadLine();
+            string? FullName = Console.ReadLine();
             Console.WriteLine($"\nFullName: {FullName}");
             // To Read The other Data Type Values You Should Convert The Str VAlue To The Target Data Type
 
