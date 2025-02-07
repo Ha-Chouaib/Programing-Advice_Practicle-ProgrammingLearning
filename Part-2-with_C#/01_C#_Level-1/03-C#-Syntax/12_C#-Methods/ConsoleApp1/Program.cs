@@ -10,7 +10,7 @@ namespace Main
         {
             Console.WriteLine("Chouaib Hadadi");
         }
-        static void PrintMyInfo(string Name,byte Age)
+        static void PrintMyInfo(string Name="Chouaib",byte Age=22)
         {
             Console.WriteLine("Name= {0} , Age= {1}",Name,Age);
         }
