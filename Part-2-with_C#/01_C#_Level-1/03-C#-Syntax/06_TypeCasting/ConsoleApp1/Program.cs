@@ -3,6 +3,10 @@ namespace Main
 {
     internal class Program
     {
+        enum enWeekDays
+        {
+            Mon,Tus,Wed,Thu,Fri,Sat,sun
+        }
         static void Main(string[] args)
         {
             /*
@@ -42,6 +46,16 @@ namespace Main
             Console.WriteLine(Convert.ToDouble(intx));
             Console.WriteLine(Convert.ToInt32(doublex) );
 
+            //-----------------------Casting Enums---------------------------
+            Console.WriteLine("\n\n");
+
+            Console.WriteLine(enWeekDays.Fri);//Fri
+            int FriNum= (int) enWeekDays.Fri;
+            Console.WriteLine(FriNum);//4
+
+            var Day= (enWeekDays) 0;//Mon
+            Console.WriteLine(Day);
+            
 
         }
     }
