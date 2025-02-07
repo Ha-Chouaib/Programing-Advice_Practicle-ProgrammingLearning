@@ -12,23 +12,23 @@ namespace Main
                 [*=]-------------(Multiplication Assignemet)
                 [/=]-------------(Division Assignemet)
                 [%=]-------------(Modulo Assignemet)
-                [&=]-------------(Bitwize AND Assignemet)
-                [|=]-------------(Bitwize OR Assignemet)
+                [&=]-------------(Bitwise AND Assignemet)
+                [|=]-------------(Bitwise OR Assignemet)
 
-                [^=]-------------(Bitwize XOR Assignemet) 
+                [^=]-------------(Bitwise XOR Assignemet) 
                     int a= 5; // 5 in Binary is 0101
                     a ^= 3; // 3 in Binary is 0011
                     //XOR Operation: 0101 ^ 0011 = 0110 (6 in decimal)
                     Console.WriteLine(a) // Output-> 6 
                         .......................
 
-                [<<=]-------------(Left Sheft Assignemet)
+                [<<=]-------------(Left Shift Assignemet)
                     int a= 5; // in Binary 5= 0000 0101
                     a <<= 2; // Sheft Left By Tow Bites: 0001 0100 (20 in decimal)
                     Console.WriteLine(a) // Output-> 20 
                         .......................
 
-                [>>=]-------------(rigth Sheft Assignemet)
+                [>>=]-------------(rigth Shift Assignemet)
                     int a= 20; // in Binary 20= 0001 0100
                     a <<= 2; // Sheft rigth By Tow Bites: 0000 0101 (5 in decimal)
                     Console.WriteLine(a) // Output-> 5 
@@ -77,6 +77,17 @@ namespace Main
                 Variable=Condition ? Exp1 : Exp2 ;
                 if True: the result of Expretion1 Assigned to The Varieble
                 if False: result of Expretion2 Assigned to the Variable
+            */
+
+            /*
+                ===================================Bitwise and Bit Shift Operator===============
+                [&]--->(Bitwise AND)
+                [|]--->(Bitwise OR)
+                [^]--->(Bitwise XOR= Exclusive OR)
+                [<<]--->(Bitwise Left Shift)
+                [>>]--->(Bitwise Rigth Shift)
+                [~]--->(Bitwise complement)
+
             */
         }
     }
