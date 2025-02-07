@@ -10,6 +10,11 @@ namespace Main
         {
             Console.WriteLine("Chouaib Hadadi");
         }
+        static string GetMyName()
+        {
+            return "Karim-Hilmi";
+
+        }
         static void PrintMyInfo(string Name="Chouaib",byte Age=22)
         {
             Console.WriteLine("Name= {0} , Age= {1}",Name,Age);
@@ -18,7 +23,7 @@ namespace Main
             {
 
             PrintMyName();
-            PrintMyInfo("Karim-Hilmi",45);
+            PrintMyInfo(GetMyName(),45);
 
             }
         }
