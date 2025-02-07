@@ -14,7 +14,7 @@ namespace Main
                 [%=]-------------(Modulo Assignemet)
                 [&=]-------------(Bitwize AND Assignemet)
                 [|=]-------------(Bitwize OR Assignemet)
-                
+
                 [^=]-------------(Bitwize XOR Assignemet) 
                     int a= 5; // 5 in Binary is 0101
                     a ^= 3; // 3 in Binary is 0011
@@ -38,6 +38,14 @@ namespace Main
                     Func<int, int> square = x=> x*x;
                     Console.WriteLine(Square(4)) //Output--> 16
                 
+            */
+            /*
+                ======================================Arithmetic Operators======================
+                [+]-------------(Addition Operator)
+                [-]-------------(SubStraction Operator)
+                [*]-------------(Multiplication Operator)
+                [/]-------------(Division Operator)
+                [%]-------------(Modulo Operator)
             */
         }
     }
