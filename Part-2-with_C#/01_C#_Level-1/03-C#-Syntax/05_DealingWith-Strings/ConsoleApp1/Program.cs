@@ -30,6 +30,15 @@ namespace Main
             Console.WriteLine(S3.TrimStart());//Hadadi.....
             Console.WriteLine(S3.TrimEnd());//.....Hadadi
 
+            //...........................string Interpolation........................
+            string FisrtName="Chouaib";
+            string LastName="Hadadi";
+            string ID="909";
+            //string Interpolation: it's a mix of static strings and string variables,
+            // and We Use it to Concatetating Strings By "$" and "{}" Instead of "+"
+            
+            string FullName=$"Mr.{FisrtName} {LastName},ID: {ID}";
+            Console.WriteLine(FullName);
         }
     }
 }
