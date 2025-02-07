@@ -71,6 +71,13 @@ namespace Main
                 [--]-->(Decrement)
 
             */
+            /*
+                ===================================Ternary Operator=============================
+                [? :]
+                Variable=Condition ? Exp1 : Exp2 ;
+                if True: the result of Expretion1 Assigned to The Varieble
+                if False: result of Expretion2 Assigned to the Variable
+            */
         }
     }
 }
