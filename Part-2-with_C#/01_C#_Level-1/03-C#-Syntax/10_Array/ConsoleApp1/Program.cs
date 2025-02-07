@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 namespace Main
 {
     internal class Program
@@ -45,7 +46,15 @@ namespace Main
                 Console.WriteLine(a);
             }
 
-            
+            //===============Handling Arrays With System.Linq library================
+            //Here You Should Include the < System.Linq > above.
+
+            //get The Min and Max Values within an Array also Cont Sum Avg ...
+            Console.WriteLine($"Max Value: {arr.Max()}");
+            Console.WriteLine($"Min Value: {arr.Min()}");
+            Console.WriteLine($"Arr Size: {arr.Count()}");
+            Console.WriteLine($"Arr Sum: {arr.Sum()}");
+            Console.WriteLine($"Arr Average: {arr.Average()}");
 
         }
     }
