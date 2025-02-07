@@ -12,7 +12,13 @@ namespace Main
             Console.WriteLine("Please Enter Full Name?");
             string FullName = Console.ReadLine();
             Console.WriteLine($"\nFullName: {FullName}");
-            
+            // To Read The other Data Type Values You Should Convert The Str VAlue To The Target Data Type
+
+            Console.WriteLine("Please Enter your Age?");
+            int Age=Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"Age: {Age}");
+
+
         }
     }
 }
