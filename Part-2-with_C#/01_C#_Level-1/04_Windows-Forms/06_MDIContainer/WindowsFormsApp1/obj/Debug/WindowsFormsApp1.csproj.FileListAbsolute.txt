@@ -1,0 +1,10 @@
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\06_MDIContainer\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\06_MDIContainer\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\06_MDIContainer\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\06_MDIContainer\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\06_MDIContainer\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MDIParent.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\06_MDIContainer\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\06_MDIContainer\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\06_MDIContainer\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\06_MDIContainer\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\06_MDIContainer\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb

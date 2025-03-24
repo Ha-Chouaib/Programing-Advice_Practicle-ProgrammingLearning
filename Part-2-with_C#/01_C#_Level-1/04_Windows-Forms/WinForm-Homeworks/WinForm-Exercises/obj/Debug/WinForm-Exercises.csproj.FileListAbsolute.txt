@@ -1,0 +1,17 @@
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\WinForm-Homeworks\WinForm-Exercises\bin\Debug\WinForm-Exercises.exe.config
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\WinForm-Homeworks\WinForm-Exercises\bin\Debug\WinForm-Exercises.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\WinForm-Homeworks\WinForm-Exercises\bin\Debug\WinForm-Exercises.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\WinForm-Homeworks\WinForm-Exercises\obj\Debug\WinForm-Exercises.csproj.AssemblyReference.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\WinForm-Homeworks\WinForm-Exercises\obj\Debug\WinForm_Exercises.MainForm.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\WinForm-Homeworks\WinForm-Exercises\obj\Debug\WinForm_Exercises.frmTaskManager.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\WinForm-Homeworks\WinForm-Exercises\obj\Debug\WinForm_Exercises.frmCustomControl.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\WinForm-Homeworks\WinForm-Exercises\obj\Debug\WinForm_Exercises.frmDateTimePicker.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\WinForm-Homeworks\WinForm-Exercises\obj\Debug\WinForm_Exercises.frmDynamicManipulation.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\WinForm-Homeworks\WinForm-Exercises\obj\Debug\WinForm_Exercises.Properties.Resources.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\WinForm-Homeworks\WinForm-Exercises\obj\Debug\WinForm-Exercises.csproj.GenerateResource.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\WinForm-Homeworks\WinForm-Exercises\obj\Debug\WinForm-Exercises.csproj.CoreCompileInputs.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\WinForm-Homeworks\WinForm-Exercises\obj\Debug\WinForm-Exercises.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\WinForm-Homeworks\WinForm-Exercises\obj\Debug\WinForm-Exercises.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\WinForm-Homeworks\WinForm-Exercises\bin\Debug\MyCustomControls.dll
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\WinForm-Homeworks\WinForm-Exercises\bin\Debug\MyCustomControls.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\WinForm-Homeworks\WinForm-Exercises\obj\Debug\WinForm-.EF365C58.Up2Date

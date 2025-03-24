@@ -1,0 +1,69 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\01_C#_Level-1\\DataBase-Conectivity\\DataTable\\DataTable\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{57C84D6E-1346-485C-897B-FB8B7057EBDE}|..\\DataSet\\DataSet.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\01_c#_level-1\\database-conectivity\\datatable\\dataset\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D93EE3AC-5798-4FA7-8E7C-7741C1EEC7AC}|..\\Data-View__DataAdapter\\Data-View__DataAdapter.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\01_c#_level-1\\database-conectivity\\datatable\\data-view__dataadapter\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5ACA5198-9780-4200-860B-E183B0C76381}|DataTable.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\01_c#_level-1\\database-conectivity\\datatable\\datatable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5ACA5198-9780-4200-860B-E183B0C76381}|DataTable.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\01_C#_Level-1\\DataBase-Conectivity\\DataTable\\DataSet\\Program.cs",
+              "RelativeDocumentMoniker": "..\\DataSet\\Program.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\01_C#_Level-1\\DataBase-Conectivity\\DataTable\\DataSet\\Program.cs",
+              "RelativeToolTip": "..\\DataSet\\Program.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowDUAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T19:57:57.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\01_C#_Level-1\\DataBase-Conectivity\\DataTable\\Data-View__DataAdapter\\Program.cs",
+              "RelativeDocumentMoniker": "..\\Data-View__DataAdapter\\Program.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\01_C#_Level-1\\DataBase-Conectivity\\DataTable\\Data-View__DataAdapter\\Program.cs",
+              "RelativeToolTip": "..\\Data-View__DataAdapter\\Program.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T17:25:54.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\01_C#_Level-1\\DataBase-Conectivity\\DataTable\\DataTable\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\01_C#_Level-1\\DataBase-Conectivity\\DataTable\\DataTable\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAmwIoAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T15:22:48.887Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

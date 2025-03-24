@@ -1,0 +1,10 @@
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\02_PizzaOrder\PizzaOrderProject\bin\Debug\PizzaOrderProject.exe.config
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\02_PizzaOrder\PizzaOrderProject\bin\Debug\PizzaOrderProject.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\02_PizzaOrder\PizzaOrderProject\bin\Debug\PizzaOrderProject.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\02_PizzaOrder\PizzaOrderProject\obj\Debug\PizzaOrderProject.csproj.AssemblyReference.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\02_PizzaOrder\PizzaOrderProject\obj\Debug\PizzaOrderProject.PiizzaMainForm.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\02_PizzaOrder\PizzaOrderProject\obj\Debug\PizzaOrderProject.Properties.Resources.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\02_PizzaOrder\PizzaOrderProject\obj\Debug\PizzaOrderProject.csproj.GenerateResource.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\02_PizzaOrder\PizzaOrderProject\obj\Debug\PizzaOrderProject.csproj.CoreCompileInputs.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\02_PizzaOrder\PizzaOrderProject\obj\Debug\PizzaOrderProject.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\02_PizzaOrder\PizzaOrderProject\obj\Debug\PizzaOrderProject.pdb
