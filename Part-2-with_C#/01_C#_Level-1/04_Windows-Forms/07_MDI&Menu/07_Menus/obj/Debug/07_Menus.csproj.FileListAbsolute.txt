@@ -1,0 +1,11 @@
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\07_MDI&Menu\07_Menus\bin\Debug\07_Menus.exe.config
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\07_MDI&Menu\07_Menus\bin\Debug\07_Menus.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\07_MDI&Menu\07_Menus\bin\Debug\07_Menus.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\07_MDI&Menu\07_Menus\obj\Debug\07_Menus.csproj.AssemblyReference.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\07_MDI&Menu\07_Menus\obj\Debug\_07_Menus.MDIForm.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\07_MDI&Menu\07_Menus\obj\Debug\_07_Menus.frmContexMenu.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\07_MDI&Menu\07_Menus\obj\Debug\_07_Menus.Properties.Resources.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\07_MDI&Menu\07_Menus\obj\Debug\07_Menus.csproj.GenerateResource.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\07_MDI&Menu\07_Menus\obj\Debug\07_Menus.csproj.CoreCompileInputs.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\07_MDI&Menu\07_Menus\obj\Debug\07_Menus.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\07_MDI&Menu\07_Menus\obj\Debug\07_Menus.pdb

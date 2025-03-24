@@ -1,0 +1,7 @@
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\DataBase-Conectivity\Insert-Add_Data\bin\Debug\Insert-Add_Data.exe.config
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\DataBase-Conectivity\Insert-Add_Data\bin\Debug\Insert-Add_Data.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\DataBase-Conectivity\Insert-Add_Data\bin\Debug\Insert-Add_Data.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\DataBase-Conectivity\Insert-Add_Data\obj\Debug\Insert-Add_Data.csproj.AssemblyReference.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\DataBase-Conectivity\Insert-Add_Data\obj\Debug\Insert-Add_Data.csproj.CoreCompileInputs.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\DataBase-Conectivity\Insert-Add_Data\obj\Debug\Insert-Add_Data.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\DataBase-Conectivity\Insert-Add_Data\obj\Debug\Insert-Add_Data.pdb

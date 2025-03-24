@@ -1,0 +1,69 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\01_C#_Level-1\\04_Windows-Forms\\06_MDIContainer\\WindowsFormsApp1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AC527CA6-EE1D-46EA-8F0D-A3CFD81E8348}|WindowsFormsApp1.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\01_c#_level-1\\04_windows-forms\\06_mdicontainer\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AC527CA6-EE1D-46EA-8F0D-A3CFD81E8348}|WindowsFormsApp1.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC527CA6-EE1D-46EA-8F0D-A3CFD81E8348}|WindowsFormsApp1.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\01_c#_level-1\\04_windows-forms\\06_mdicontainer\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC527CA6-EE1D-46EA-8F0D-A3CFD81E8348}|WindowsFormsApp1.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC527CA6-EE1D-46EA-8F0D-A3CFD81E8348}|WindowsFormsApp1.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\01_c#_level-1\\04_windows-forms\\06_mdicontainer\\windowsformsapp1\\mdichild.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AC527CA6-EE1D-46EA-8F0D-A3CFD81E8348}|WindowsFormsApp1.csproj|solutionrelative:mdichild.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\01_C#_Level-1\\04_Windows-Forms\\06_MDIContainer\\WindowsFormsApp1\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\01_C#_Level-1\\04_Windows-Forms\\06_MDIContainer\\WindowsFormsApp1\\Form1.cs*",
+              "RelativeToolTip": "Form1.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAASwBYAAACPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T16:28:55.101Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MDIChild.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\01_C#_Level-1\\04_Windows-Forms\\06_MDIContainer\\WindowsFormsApp1\\MDIChild.cs",
+              "RelativeDocumentMoniker": "MDIChild.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\01_C#_Level-1\\04_Windows-Forms\\06_MDIContainer\\WindowsFormsApp1\\MDIChild.cs [Design]",
+              "RelativeToolTip": "MDIChild.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T16:28:44.58Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\01_C#_Level-1\\04_Windows-Forms\\06_MDIContainer\\WindowsFormsApp1\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\01_C#_Level-1\\04_Windows-Forms\\06_MDIContainer\\WindowsFormsApp1\\Form1.cs [Design]*",
+              "RelativeToolTip": "Form1.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T16:22:08Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

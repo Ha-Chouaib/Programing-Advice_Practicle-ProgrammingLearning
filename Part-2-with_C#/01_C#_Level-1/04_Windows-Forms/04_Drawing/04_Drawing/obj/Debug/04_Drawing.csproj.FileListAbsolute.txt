@@ -1,0 +1,10 @@
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\04_Drawing\04_Drawing\bin\Debug\04_Drawing.exe.config
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\04_Drawing\04_Drawing\bin\Debug\04_Drawing.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\04_Drawing\04_Drawing\bin\Debug\04_Drawing.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\04_Drawing\04_Drawing\obj\Debug\04_Drawing.csproj.AssemblyReference.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\04_Drawing\04_Drawing\obj\Debug\_04_Drawing.Form1.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\04_Drawing\04_Drawing\obj\Debug\_04_Drawing.Properties.Resources.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\04_Drawing\04_Drawing\obj\Debug\04_Drawing.csproj.GenerateResource.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\04_Drawing\04_Drawing\obj\Debug\04_Drawing.csproj.CoreCompileInputs.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\04_Drawing\04_Drawing\obj\Debug\04_Drawing.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\04_Drawing\04_Drawing\obj\Debug\04_Drawing.pdb
