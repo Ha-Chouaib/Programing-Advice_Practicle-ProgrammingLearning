@@ -1,0 +1,107 @@
+
+
+--=============================== Exists =========================
+--Its a Properity we Often Use it with where statments and  it returns True  Or False Based On the Query reuslt if ther is at least a record within the result
+	-- return ture No record Available rreturn false.
+
+Select * From Customers T1 -- T1 : is Just An Aliase or nike Name for Customers
+where
+exists
+	(
+		Select * from Orders
+		where CustomerID = T1.CustomerID And Amount < 600
+	);
+
+--This Method Bellow Is Faster Than Above one  Because Existe Anyways Will return ethire false or true if there is only one record so there is no need to return the whole
+	-- record one is enough.
+Select * From Customers T1 -- T1 : is Just An Aliase or nike Name for Customers
+where
+exists
+	(
+		Select top 1 * from Orders
+		where CustomerID = T1.CustomerID And Amount < 600
+	);
+
+
+-- this one also is more optimized than the Query Above
+-- Because there is no need to return any field so Instead Create Any Variable
+Select * From Customers T1 -- T1 : is Just An Aliase or nike Name for Customers
+where
+exists
+	(
+		Select top 1 R='Y' from Orders
+		where CustomerID = T1.CustomerID And Amount < 600
+	);
+
+-- The Main Gaol Of Exists is to return 1 if A Row is returned From the Query insid Or False if there is no result . Doesn't muter How many Row 
+
+
+--================================== Union =========================
+
+-- Union Combine Between result set of Tables Or Views In on Table On Condition the Tables Or Views Must Have The Same Columns
+--  Also Union Returns Just Distinct Result. no Deplicated ones. but we Can Use < Union All > To Allow Deplicated ones.
+
+use HR_Database;
+
+select * From ActiveEmployees
+Union
+Select * From ResignedEmployees;
+
+Select * From Departments
+Union -- Distinct results.
+Select * from Departments;
+
+Select * From Departments
+Union All --Allow deplication
+Select * from Departments;
+
+--============================ Case ========================
+ Select ID, FirstName, LastName, GendorTitle =
+	case
+		When Gendor='M' Then 'Male'
+		When Gendor='F' Then 'Female'
+		Else 'Unknown'
+	End
+from Employees;
+-- Same As Swicth Case
+
+--You can Set More than One Case In one Select Statment
+ Select ID, FirstName, LastName, GendorTitle =
+	case
+		When Gendor='M' Then 'Male'
+		When Gendor='F' Then 'Female'
+		Else 'Unknown'
+	End,
+Status =
+	Case
+		when ExitDate is null then 'Active'
+		when ExitDate is Null then 'Resigned'
+	End
+		
+from Employees;
+--============================ Case ========================
+ Select ID, FirstName, LastName, GendorTitle =
+	case
+		When Gendor='M' Then 'Male'
+		When Gendor='F' Then 'Female'
+		Else 'Unknown'
+	End
+from Employees;
+
+ Select ID, FirstName, LastName, GendorTitle =
+	case
+		When Gendor='M' Then MonthlySalary * 1.15
+		When Gendor='F' Then MonthlySalary * 1.1
+	End
+from Employees;
+
+
+
+
+
+
+
+
+
+
+

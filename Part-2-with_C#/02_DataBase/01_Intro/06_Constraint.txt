@@ -1,0 +1,28 @@
+[ Constraints ]--> In Context of database are rules and conditions that are applied to the data toensure its integrity and consistency.
+		=>Constraints can be a[[lieed to individual colums or to entier tables, and they are used to enforce various rulesnand restrictions on the data.
+==> By Using Constraints, You can Help Ensure that your data is:
+	-Accurate
+	-Consistent
+	-Easy to Manage
+
+				---------------------------<<Constraintes Common Types >>------------------------------
+
+[1]-<< Primary Key >>-> This Constraint Ensures that column or set of Columns Uniquely identifies each row in a table. and this Helps to Avoid Duplicated Rows.
+
+[2]-<< Foreing Key >>-> This Constraint Establishes a relationship between two tables based on a key field.  This Constraint Esures that the data in One Table Much
+		   the Other One In Different Related table  << Gives Referencial Integrity >>.
+
+[3]-<< Unique Constraint >>-> This One Ensures That The data in a column or a set of columns is unique across all rows in the table. and this Constraint Helps to enforce
+		            data integrity and prevent duplicate values from being inserted into the table.
+
+					/!\ |--> Primary Key VS Uniqe Constraint <--| /!\
+Primary Key: is a Unique Constraint But Not Allowing To Set Null Value While Unique Constraint Accept NULL Value.
+
+[4]-<< NOT Null Constraint >>-> This Constraint Ensures that a column or set of Columns Cannot Contain Null Values. This Constraint Helps To Ensure That The Data
+			 is Complete And Accurate, and it can help prevent errors in queries and calculations.
+
+[5]-<< Check Constraint >>-> Ensures that the data in acolumn or a set of Columns meets a specified Condition. this Constraint Helps to Enforce data integrity 
+			and prevent  invalid data from being inserted to the table.
+[6]-<< Default >>-> Sets a default value for a column if no Value is specified.
+
+[7]-<< Cearte Index >>-> Used To Create and retrieve Data from the database very quickly.	

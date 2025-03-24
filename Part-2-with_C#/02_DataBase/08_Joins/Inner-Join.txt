@@ -1,0 +1,24 @@
+SELECT       Employees.FirstName,Employees.ID As EmpID,Employees.LastName, Departments.ID As DepartID
+FROM            Employees INNER JOIN Departments ON Employees.DepartmentID = Departments.ID;
+
+
+
+
+
+
+SELECT       Employees.ID As EmpID, Employees.FirstName, Employees.LastName, Departments.ID As DepartID, Departments.Name As DeptName, Countries.Name As CountryName
+FROM            Employees INNER JOIN Departments
+				ON Employees.DepartmentID = Departments.ID
+				Join Countries On Employees.CountryID = Countries.ID
+				where Employees.MonthlySalary > 900;
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+
+
+select * from Employees;
+
+Select ID,Name
+INto OldPerson
+from Employees;
+
+
+exec sp_rename 'OldPerson','Persons';
+
+select * from Persons;
+
+ALter TABLE Persons
+ADD Age TINYINT ;
+
+Update  Persons
+Set Age=19
+where ID=2 or ID =4;
+
+SELECT *
+INTO OldPersons
+From Persons
+where 1=2;
+
+select * from OldPersons;
+
+--//////////--- Copy a Table To Another Existed One---///////////--
+insert into OldPersons
+Select * from Persons
+where Age is not null ;

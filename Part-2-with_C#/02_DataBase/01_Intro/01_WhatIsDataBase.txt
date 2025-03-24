@@ -1,0 +1,13 @@
+[ DataBase ]
+
+=> is an orgnized collection of data so that it can be easily accessed.
+	To Manage these  databases, Database Managment Systems (DBMS) are  Used.
+
+<< DBMS >> Separated to tow Common Types.
+-->Non-Relational (DBMS):  File System, XML...etc.
+-->Relational (RDBMS):enhanced Version of DBMS but with relatins, ex: SQLServer, Oracle,MySQL ..etc.
+
+------------------[RDBMS]-------------------------
+=> And these Data Stored in an orgnized fashion in tables=(Entity Set) containing:
+# Rows = Entity = Record.
+# Columns =Field =Attribute.
