@@ -1,0 +1,14 @@
+[ Primary Key ] => is a column or a set of colummns  in a relational database that "Uniquely Identifies each row or record " in the table.
+		=>It's a Unique Identifier for each record or entity and serves as reference point for other tables that have relationship with it.
+
+--> Each table in relational database must have a primary key, and it should be Not NULL Value that is unique and stable over time.
+--> It's Better to allways Use Number As a Primary Key To Have Faster searching in DataBase Instead Of Using Strings.
+--> Primary Key Should Not Be Changed.
+ 
+[ Foreing Key ] => is a column or a set Of columns in a table that refers to the primary key of another table.
+
+		=> It establishes a relationship between tow tables, allowing data to be shared and linked between them.
+		
+		=> Ensures that< Referential Integrity > is Maintained by ensuring that any value in the Foreing key column must exist in
+ 			the primary key Column of the related Table. 
+		

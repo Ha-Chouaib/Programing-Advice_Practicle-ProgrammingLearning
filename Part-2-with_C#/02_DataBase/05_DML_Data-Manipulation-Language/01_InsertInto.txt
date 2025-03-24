@@ -1,0 +1,32 @@
+use DB1;
+
+-- Show Table Data
+ select * from Employees;
+
+--Insert one record at a time:
+Insert Into Employees
+Values
+(1,'Chouaib Hadadi','04372281',9000);
+
+--Insert Multiple records at a time.
+Insert Into Employees
+Values
+(2,'Emp1','9695384',456),
+(3,'Emp3','9695300',123),
+(4,'Emp4','1938332',543),
+(5,'Emp5','4566642',642);
+
+
+-- Insert Only Selected fields:
+
+Insert Into Employees (ID, Name)
+Values
+(6,'Emp6');
+
+--Insert one record at a time with null:
+Insert Into Employees
+Values
+(7,'Emp7',null,null);
+
+--select * from Employees;
+--delete from Employees; 

@@ -1,0 +1,33 @@
+[ Data Integrity ] => Refers to the accuracy, consistency, and reliability of dadt over its entier life cycle, from creation to deletion.
+		      In other other words, it refers to the assurance that data is complete, accurate, and trustworthly.
+
+==> there are several factors that can impact data integrity , including:
+	# Human error.
+	#Hardware/Software failure.
+	#Security breaches.
+	#and Data Transfer errors.
+
+==> To maintain data integirty, it is important to establish appropriate policies and procedures, and to implement appropriate technologies, such as:
+	..Encryption.
+	..Backups.
+	..and Access controls.
+
+-----------------------------------< Data Integrity Types >------------------------------------
+
+[1]->( Entity Integrity ): This Ensures that each row or record in a table is unique and can be uniquely identified. this is typically achived by Primary Keys.
+
+[2]->( Referential Integrity ): This ensures that relationships between tables are maintained and that there are no otphaned records. This is Typically achived
+		 through the use of Foreing Keys. 
+
+[3]->( Domain Integrity ): This ensures that data is within acceptable ranges or values. 
+			ex: a date field should only contain valid dates, and a numiric field should only contain valis numbers.
+
+[4]->( Business Integrity ): This ensures that data meets business rules and requirments. ex:
+			- A bank might have rule around min and max account balances.
+			- A Hospital Might have rules around patient Data Confidentiality.
+\++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+- Maintaining data integrity is Critical for Orgnizations that rely on accure and trustworthy data to makedecisions.
+	without data integrity, orgnizations risk making decisions based on incomplete inaccurate, or unreliable data, which can lead to poor outcomes,
+	finacial losses, and damage to reputation.
+-To maintain Data Integrity we use Constraints.

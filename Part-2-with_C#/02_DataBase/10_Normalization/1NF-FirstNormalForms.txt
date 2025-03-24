@@ -1,0 +1,7 @@
+[First Normal Form ] Rules:
+
+<<1>>->( A Primary Key: A Unique Identifier for each record in the table)
+<<2>>->( Atomic Values: Each Column should Contain Only a single Value, and each value should be Indivisible)
+	*Note: Atomicity states that a sindle cell cannot hold multiple values. It must hold only one valued attribute.
+	* The First normal form disallows the multi-Valued attribute, composite attribute and thier combination.
+<<3>>->( No  Repeating groups: each column should have a distinct name, and there should be no repeating groups of columns..

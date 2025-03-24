@@ -1,0 +1,22 @@
+
+Create Table Customers
+(	id int identity(1,1) not null,
+	F_Name nvarchar(20) not null,
+	L_Name nvarchar(20) not null,
+	age int,
+	country nvarchar(29),
+	PRIMARY KEY (id)
+);
+
+
+Create Table Orders
+(	OrderID int identity(1,1) not null,
+	Item nvarchar(50) not null,
+	Amount  smallmoney,
+	CustomerID int, --References Customers(id) You Can Set The Foreing Key Like This Way,
+	PRIMARY KEY(OrderID)
+);
+
+-- You Can Also Add it LIke This.
+Alter Table Orders
+ADD FOREIGN KEY (CustomerID) REFERENCES Customers(id);
