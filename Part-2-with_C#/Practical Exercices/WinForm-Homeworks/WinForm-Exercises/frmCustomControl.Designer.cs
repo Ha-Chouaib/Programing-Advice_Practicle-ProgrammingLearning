@@ -32,12 +32,13 @@
             this.btnValidate = new System.Windows.Forms.Button();
             this.myHoverButton2 = new MyCustomControls.MyHoverButton();
             this.clsSmartLabel1 = new MyCustomControls.clsSmartLabel();
+            this.clsDateTimeLable1 = new MyCustomControls.clsDateTimeLable();
             this.SuspendLayout();
             // 
             // btnResete
             // 
             this.btnResete.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResete.Location = new System.Drawing.Point(112, 399);
+            this.btnResete.Location = new System.Drawing.Point(127, 132);
             this.btnResete.Name = "btnResete";
             this.btnResete.Size = new System.Drawing.Size(219, 34);
             this.btnResete.TabIndex = 1;
@@ -48,7 +49,7 @@
             // btnValidate
             // 
             this.btnValidate.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnValidate.Location = new System.Drawing.Point(858, 399);
+            this.btnValidate.Location = new System.Drawing.Point(870, 132);
             this.btnValidate.Name = "btnValidate";
             this.btnValidate.Size = new System.Drawing.Size(300, 34);
             this.btnValidate.TabIndex = 2;
@@ -59,7 +60,7 @@
             // myHoverButton2
             // 
             this.myHoverButton2.Font = new System.Drawing.Font("Comic Sans MS", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myHoverButton2.Location = new System.Drawing.Point(429, 477);
+            this.myHoverButton2.Location = new System.Drawing.Point(422, 477);
             this.myHoverButton2.Name = "myHoverButton2";
             this.myHoverButton2.Size = new System.Drawing.Size(345, 62);
             this.myHoverButton2.TabIndex = 3;
@@ -71,18 +72,31 @@
             // 
             this.clsSmartLabel1.AutoSize = true;
             this.clsSmartLabel1.Font = new System.Drawing.Font("Segoe Print", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clsSmartLabel1.Location = new System.Drawing.Point(449, 55);
+            this.clsSmartLabel1.Location = new System.Drawing.Point(457, 55);
             this.clsSmartLabel1.MinimumSize = new System.Drawing.Size(50, 30);
             this.clsSmartLabel1.Name = "clsSmartLabel1";
             this.clsSmartLabel1.Size = new System.Drawing.Size(275, 43);
             this.clsSmartLabel1.TabIndex = 0;
             this.clsSmartLabel1.Text = "First Custom Control";
             // 
+            // clsDateTimeLable1
+            // 
+            this.clsDateTimeLable1.AutoSize = true;
+            this.clsDateTimeLable1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.clsDateTimeLable1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clsDateTimeLable1.Location = new System.Drawing.Point(544, 224);
+            this.clsDateTimeLable1.Name = "clsDateTimeLable1";
+            this.clsDateTimeLable1.SelectedDate = new System.DateTime(((long)(0)));
+            this.clsDateTimeLable1.Size = new System.Drawing.Size(145, 23);
+            this.clsDateTimeLable1.TabIndex = 4;
+            this.clsDateTimeLable1.Text = "clsDateTimeLable1";
+            // 
             // frmCustomControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1194, 579);
+            this.Controls.Add(this.clsDateTimeLable1);
             this.Controls.Add(this.myHoverButton2);
             this.Controls.Add(this.btnValidate);
             this.Controls.Add(this.btnResete);
@@ -102,5 +116,6 @@
         private System.Windows.Forms.Button btnValidate;
         private MyCustomControls.MyHoverButton myHoverButton1;
         private MyCustomControls.MyHoverButton myHoverButton2;
+        private MyCustomControls.clsDateTimeLable clsDateTimeLable1;
     }
 }
