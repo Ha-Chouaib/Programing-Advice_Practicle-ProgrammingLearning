@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsDateTimeLable.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="clsSmartLabel.cs">
       <SubType>Component</SubType>
     </Compile>
