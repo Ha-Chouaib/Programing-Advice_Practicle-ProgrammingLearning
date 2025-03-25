@@ -3,18 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{72F07398-A90C-4D0F-83B7-A8E8B1A0E4E8}|WinForm-Exercises.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\practical exercices\\winform-homeworks\\winform-exercises\\frmcustomcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{72F07398-A90C-4D0F-83B7-A8E8B1A0E4E8}|WinForm-Exercises.csproj|solutionrelative:frmcustomcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{72F07398-A90C-4D0F-83B7-A8E8B1A0E4E8}|WinForm-Exercises.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\practical exercices\\winform-homeworks\\winform-exercises\\frmgenericfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{72F07398-A90C-4D0F-83B7-A8E8B1A0E4E8}|WinForm-Exercises.csproj|solutionrelative:frmgenericfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{92E1B94C-AE80-4B12-A3B2-AD3E14A002F2}|..\\MyCustomControls\\MyCustomControls.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\practical exercices\\winform-homeworks\\mycustomcontrols\\clsdatetimelable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{72F07398-A90C-4D0F-83B7-A8E8B1A0E4E8}|WinForm-Exercises.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\frmgenericfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72F07398-A90C-4D0F-83B7-A8E8B1A0E4E8}|WinForm-Exercises.csproj|solutionrelative:frmgenericfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{92E1B94C-AE80-4B12-A3B2-AD3E14A002F2}|..\\MyCustomControls\\MyCustomControls.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\practical exercices\\winform-homeworks\\mycustomcontrols\\hoverbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72F07398-A90C-4D0F-83B7-A8E8B1A0E4E8}|WinForm-Exercises.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\practical exercices\\winform-homeworks\\winform-exercises\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{72F07398-A90C-4D0F-83B7-A8E8B1A0E4E8}|WinForm-Exercises.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{72F07398-A90C-4D0F-83B7-A8E8B1A0E4E8}|WinForm-Exercises.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72F07398-A90C-4D0F-83B7-A8E8B1A0E4E8}|WinForm-Exercises.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72F07398-A90C-4D0F-83B7-A8E8B1A0E4E8}|WinForm-Exercises.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -24,57 +26,55 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmCustomControl.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\frmCustomControl.cs",
-              "RelativeDocumentMoniker": "frmCustomControl.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\frmCustomControl.cs [Design]*",
-              "RelativeToolTip": "frmCustomControl.cs [Design]*",
+              "DocumentIndex": 1,
+              "Title": "frmGenericFunctions.cs",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\frmGenericFunctions.cs",
+              "RelativeDocumentMoniker": "frmGenericFunctions.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\frmGenericFunctions.cs",
+              "RelativeToolTip": "frmGenericFunctions.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAvwCQAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T20:20:51.636Z",
+              "WhenOpened": "2025-03-26T00:31:05.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmGenericFunctions.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\frmGenericFunctions.cs",
+              "RelativeDocumentMoniker": "frmGenericFunctions.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\frmGenericFunctions.cs [Design]",
+              "RelativeToolTip": "frmGenericFunctions.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T00:14:21.794Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HoverButton.cs",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\MyCustomControls\\HoverButton.cs",
-              "RelativeDocumentMoniker": "..\\MyCustomControls\\HoverButton.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\MyCustomControls\\HoverButton.cs",
-              "RelativeToolTip": "..\\MyCustomControls\\HoverButton.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T20:20:16.625Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "clsDateTimeLable.cs",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\MyCustomControls\\clsDateTimeLable.cs",
-              "RelativeDocumentMoniker": "..\\MyCustomControls\\clsDateTimeLable.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\MyCustomControls\\clsDateTimeLable.cs",
-              "RelativeToolTip": "..\\MyCustomControls\\clsDateTimeLable.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAmwD8AAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T20:19:59.189Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAlwC4AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T00:10:43.351Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\Form1.cs [Design]",
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T20:19:42.824Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-03-25T20:19:42.824Z"
             }
           ]
         }
