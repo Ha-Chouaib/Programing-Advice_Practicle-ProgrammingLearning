@@ -5,3 +5,15 @@ C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part
 C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\ContactsProject\ContactsConsoleApp\obj\Debug\ContactsConsoleApp.csproj.CoreCompileInputs.cache
 C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\ContactsProject\ContactsConsoleApp\obj\Debug\ContactsConsoleApp.exe
 C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\ContactsProject\ContactsConsoleApp\obj\Debug\ContactsConsoleApp.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\04_ContactsProject\ContactsConsoleApp\bin\Debug\ContactsConsoleApp.exe.config
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\04_ContactsProject\ContactsConsoleApp\bin\Debug\ContactsConsoleApp.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\04_ContactsProject\ContactsConsoleApp\bin\Debug\ContactsConsoleApp.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\04_ContactsProject\ContactsConsoleApp\bin\Debug\ContactsBusinessLayer.dll
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\04_ContactsProject\ContactsConsoleApp\bin\Debug\ContactsDataAccessLayer.dll
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\04_ContactsProject\ContactsConsoleApp\bin\Debug\ContactsBusinessLayer.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\04_ContactsProject\ContactsConsoleApp\bin\Debug\ContactsDataAccessLayer.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\04_ContactsProject\ContactsConsoleApp\obj\Debug\ContactsConsoleApp.csproj.AssemblyReference.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\04_ContactsProject\ContactsConsoleApp\obj\Debug\ContactsConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\04_ContactsProject\ContactsConsoleApp\obj\Debug\Contacts.CA2490EC.Up2Date
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\04_ContactsProject\ContactsConsoleApp\obj\Debug\ContactsConsoleApp.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\04_ContactsProject\ContactsConsoleApp\obj\Debug\ContactsConsoleApp.pdb
