@@ -1,0 +1,9 @@
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\04_ContactsProject\ContactsBusinessLayer\bin\Debug\ContactsBusinessLayer.dll
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\04_ContactsProject\ContactsBusinessLayer\bin\Debug\ContactsBusinessLayer.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\04_ContactsProject\ContactsBusinessLayer\bin\Debug\ContactsDataAccessLayer.dll
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\04_ContactsProject\ContactsBusinessLayer\bin\Debug\ContactsDataAccessLayer.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\04_ContactsProject\ContactsBusinessLayer\obj\Debug\ContactsBusinessLayer.csproj.AssemblyReference.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\04_ContactsProject\ContactsBusinessLayer\obj\Debug\ContactsBusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\04_ContactsProject\ContactsBusinessLayer\obj\Debug\Contacts.DFB66D76.Up2Date
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\04_ContactsProject\ContactsBusinessLayer\obj\Debug\ContactsBusinessLayer.dll
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\04_ContactsProject\ContactsBusinessLayer\obj\Debug\ContactsBusinessLayer.pdb
