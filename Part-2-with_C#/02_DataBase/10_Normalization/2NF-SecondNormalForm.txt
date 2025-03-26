@@ -1,0 +1,8 @@
+[2nd Normal Form]
+
+=> is a further level of database normalization that buildss on the first normal form ruls.
+--> It requires that each non-Key column in a table be functionally dependent in the entire primary key, not just a part  of it.
+
+--> To Satisfy the requirments of 2NF:
+[1]-> A Table must first be a 1NF, and Then Have:
+[2]-> No Partial Dependencies: Each non-key Column in the Table must be Fully Dependent on the entire primary key.

@@ -1,0 +1,6 @@
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\05_OOP\04_ClassLibrary_Project\FirstClassLib\bin\Debug\FirstClassLib.dll
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\05_OOP\04_ClassLibrary_Project\FirstClassLib\bin\Debug\FirstClassLib.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\05_OOP\04_ClassLibrary_Project\FirstClassLib\obj\Debug\FirstClassLib.csproj.AssemblyReference.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\05_OOP\04_ClassLibrary_Project\FirstClassLib\obj\Debug\FirstClassLib.csproj.CoreCompileInputs.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\05_OOP\04_ClassLibrary_Project\FirstClassLib\obj\Debug\FirstClassLib.dll
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\05_OOP\04_ClassLibrary_Project\FirstClassLib\obj\Debug\FirstClassLib.pdb

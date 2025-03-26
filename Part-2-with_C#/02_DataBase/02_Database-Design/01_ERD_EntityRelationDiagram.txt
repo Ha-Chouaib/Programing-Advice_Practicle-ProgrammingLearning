@@ -1,0 +1,9 @@
+[ER]->(Entity relationship) Model: Represent the structure of the databse with the help of Diagram.
+
+# ER Modelling is a systematic process to design a database as it would require you to analyze all data requirments before implementing your database.
+
+#[ERD]->(Entity Relationship Diagram): Helps to conceptualized the database and let you know which field need to embedded for a particular entity.
+           ->Also Gives better understanding of the information to be stored in a database.
+           ->It reduces complexity and allow database designers to build database quickly.
+           ->It Helps to describe elements using Entity-Relationship Models.
+           ->It Allows Users to Get Preview of the logical structure of the database. 

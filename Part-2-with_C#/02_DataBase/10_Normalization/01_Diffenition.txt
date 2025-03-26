@@ -1,0 +1,6 @@
+[Noramlizition]-> i the procee of orgnizing data in a database to reduce redundancy and improve data consistency.
+
+	--> in Other words, it is the process of breaking down a larger database into smaller, more manageable piece, while ensuring that the data
+		 is logiicaly orgnized and free from redundancy information.
+	-->is AChieved By Applying a set of rules, called Normal forms to the databaase tables the higher the normal form, the more strictly the rules are applied
+		and more the database is normalized.

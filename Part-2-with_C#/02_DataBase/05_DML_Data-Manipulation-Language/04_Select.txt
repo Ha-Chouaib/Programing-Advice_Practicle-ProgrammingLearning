@@ -1,0 +1,21 @@
+use DB1;
+
+select * from Employees;
+
+SELECT *
+INTO EmpCopy1
+From Employees;
+
+Select * from EmpCopy1;
+
+SELECT ID, Name
+INTO EmpCopy2
+From Employees;
+
+select * from EmpCopy2;
+
+--Trick  ===> To Creat An Empty Copy , Table with Columns Only, without Rows=Entitys=Records.
+select *
+into EmpCopy3
+from Employees
+Where 5=6;

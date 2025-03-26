@@ -1,0 +1,21 @@
+
+
+---- === Full Backup === ----
+
+--BACKUP DATABASE DB1
+--TO DISK = 'c:\DB1.bak';
+-----------------------------
+
+---- === Differential Backup === ----
+--> Backup just the Last Changes to the Current DB == Update BackUp.
+--==> We should add at the end << with differential >>
+
+----BACKUP DATABASE DB1
+----TO DISK = 'Set the path'
+----with differential;
+-------------------------------------
+
+--## Restore Database ##--
+--RESTORE DATABASE DB1
+--FROM DISK='c:\DB1.bak';
+--------------------------

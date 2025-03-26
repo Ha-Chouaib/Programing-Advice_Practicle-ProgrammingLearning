@@ -1,0 +1,14 @@
+[ Redundancy ]  => Refers to the presence of duplicated data within database. 
+		=> It can Occur in different ways, such as:
+			.Sorting The Same Info Muliple Times.
+			.Sorting info that Can be Drived From Other Data in the DataBase.
+		
+		=>  while Redundancy can be Useful, it can also cause problems:
+			->Problems: .More Wasted Space.
+				    .Data InConsistancy.
+				    .Data Integrity Problems:
+					..Data Corruption.
+					..Missing/Incomplete Data.
+				    .Hard To Maintain.
+
+--> To Avoid Redundancy in Database < Normalization > techniques can be used to orgnize the data in a way that minimizes duplication of data. 

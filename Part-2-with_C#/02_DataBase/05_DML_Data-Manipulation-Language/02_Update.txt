@@ -1,0 +1,17 @@
+use DB1;
+
+select * from Employees;
+
+-- Where Statment is Required.
+
+Update Employees
+Set Name= 'Ali'
+Where ID=2;
+
+Update Employees
+Set Phone= '0642669110'
+Where ID=1;
+
+Update Employees
+Set Salary *=1.1
+Where Salary <=500;

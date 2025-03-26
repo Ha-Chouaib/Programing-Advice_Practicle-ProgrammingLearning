@@ -1,0 +1,19 @@
+
+Create Table Departement
+(	ID int identity(1,1) not null, -- indenty (Increment= Steps, Seed = the satrt) ==> Auto Increment
+	Name nvarchar(20) not null,
+	PRIMARY Key(ID)
+);
+
+
+select * from Departement;
+
+insert into Departement
+Values
+('Architect');
+
+print @@identity  --get the Last Id On The Table.
+
+delete from Departement; -- Clear Table  Entitys one by one BUT Do Not Restart The Increment from Zero it start generate the keys from its stoped. For Sure you Can Add Conditions
+
+truncate table Departement; --while Trancate statment Remove the Whole Entiys At Once and Also  rteurn The Increament to the initial value. But You Could not Set Conditions.

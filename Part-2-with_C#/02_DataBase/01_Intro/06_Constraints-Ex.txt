@@ -1,0 +1,62 @@
+--==================================Default Constraint || Check Constraint || Unique Constraint ||Indexes ==================
+Create Database DB2;
+
+Create Table Persons
+(	ID int Not Null,
+	FisrtName nvarchar(25),
+	LastName nvarchar(25),
+	Age tinyint Constraint Ck_Age Check (Age >=18) , ----To validate date Before Saving it into DataBase.
+	city nvarchar(20)
+);
+
+Create Table People
+(	ID int Not Null,
+	FisrtName nvarchar(25),
+	LastName nvarchar(25),
+	Age tinyint ,
+	city nvarchar(20)
+	Constraint Chk_People Check(Age >= 18 and City='Morocco')
+);
+
+Create Table _People
+(	ID int Unique, --The Column is Not Allow Duplicated Values Using Unique and Allow Null Just Once. you Could Also Add Not Null If you Want.
+	FisrtName nvarchar(25),
+	LastName nvarchar(25),
+	Age tinyint ,
+	city nvarchar(20)
+	Constraint Unq_Pep Unique(Age, City) -- Set Unique to Multiple Fields.
+);
+
+
+Alter Table Persons
+ADD  Constraint df_City default 'Lmonch';
+
+Alter Table Persons
+Drop Constraint df_City;
+
+Create Table Ordres
+(
+	ID int Not Null,
+	OrderNumber int Not null,
+	DateOrder Date Constraint df_date default GetDate()
+	 --Constraint < Dafault Name > Optional, Is about to set A name to the defaul Expretion you add and it's recommanded if you need to remove letter using this name.
+);
+
+--======================= indexes ===============================
+--Its Goal Is To Ordre Data Based On the Primary Key By Default.
+-- Index, by default The System Generate  [ Clustered ]-> The Fastest One < Because It's Created On the physical Table And Ordre Records At Run Time >>
+--     and Asign it to The Primary Key
+-- We Can Do As Much As we Want Of Indexes But It's Better to Use it just with Necessary Columns.
+-- When we Create Our Custem index the sys Gnerate An Other Table Ordred Based On The Column(s) You Set on The Index.
+
+--Index is Fast in Retrieving Data But Slower on The Insert and Update data
+
+Create Index idx_LastName
+On Persons (LastName);
+
+Drop Index Persons.idx_LastName;
+
+Create Index idx_pName
+On Persons (FisrtName, LastName);
+
+Drop Index idx_pName;

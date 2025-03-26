@@ -1,0 +1,7 @@
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\DataBase-Conectivity\DataTable\Data-View__DataAdapter\bin\Debug\Data-View__DataAdapter.exe.config
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\DataBase-Conectivity\DataTable\Data-View__DataAdapter\bin\Debug\Data-View__DataAdapter.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\DataBase-Conectivity\DataTable\Data-View__DataAdapter\bin\Debug\Data-View__DataAdapter.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\DataBase-Conectivity\DataTable\Data-View__DataAdapter\obj\Debug\DataView__DataAdapter.csproj.AssemblyReference.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\DataBase-Conectivity\DataTable\Data-View__DataAdapter\obj\Debug\DataView__DataAdapter.csproj.CoreCompileInputs.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\DataBase-Conectivity\DataTable\Data-View__DataAdapter\obj\Debug\Data-View__DataAdapter.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\DataBase-Conectivity\DataTable\Data-View__DataAdapter\obj\Debug\Data-View__DataAdapter.pdb

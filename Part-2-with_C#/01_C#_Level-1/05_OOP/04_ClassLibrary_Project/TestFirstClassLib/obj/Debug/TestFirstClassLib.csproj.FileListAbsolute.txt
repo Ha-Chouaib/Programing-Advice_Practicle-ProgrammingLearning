@@ -1,0 +1,10 @@
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\05_OOP\04_ClassLibrary_Project\TestFirstClassLib\bin\Debug\TestFirstClassLib.exe.config
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\05_OOP\04_ClassLibrary_Project\TestFirstClassLib\bin\Debug\TestFirstClassLib.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\05_OOP\04_ClassLibrary_Project\TestFirstClassLib\bin\Debug\TestFirstClassLib.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\05_OOP\04_ClassLibrary_Project\TestFirstClassLib\bin\Debug\FirstClassLib.dll
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\05_OOP\04_ClassLibrary_Project\TestFirstClassLib\bin\Debug\FirstClassLib.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\05_OOP\04_ClassLibrary_Project\TestFirstClassLib\obj\Debug\TestFirstClassLib.csproj.AssemblyReference.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\05_OOP\04_ClassLibrary_Project\TestFirstClassLib\obj\Debug\TestFirstClassLib.csproj.CoreCompileInputs.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\05_OOP\04_ClassLibrary_Project\TestFirstClassLib\obj\Debug\TestFirs.0DA99D99.Up2Date
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\05_OOP\04_ClassLibrary_Project\TestFirstClassLib\obj\Debug\TestFirstClassLib.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\05_OOP\04_ClassLibrary_Project\TestFirstClassLib\obj\Debug\TestFirstClassLib.pdb
