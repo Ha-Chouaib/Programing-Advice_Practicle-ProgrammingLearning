@@ -1,0 +1,7 @@
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\05_OOP\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\05_OOP\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\05_OOP\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\05_OOP\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.AssemblyReference.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\05_OOP\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\05_OOP\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\05_OOP\ConsoleApp1\obj\Debug\ConsoleApp1.pdb

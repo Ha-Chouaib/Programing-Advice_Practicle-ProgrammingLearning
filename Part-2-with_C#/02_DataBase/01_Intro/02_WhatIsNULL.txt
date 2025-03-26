@@ -1,0 +1,9 @@
+<< NULL >> is a special Marker used to indicate that a Data value does not exist in the DB. It represents a "Missing Or UnKnown" Value in a table column.
+
+# When Filed or Column in a table has a NULL Value , it Means That The field has no value at all .
+	And it's Different  from Having an Empty or Zero Value.
+	Null Is Not the same as Blank Space or Zero . It is a Distinct Value in DB.
+
+# NULL Can Be Used In Several Ways Such as indicating missing data, representing optional fields, or as placeholder for Values that are not Yet Known.
+
+--> It's Important to use Null Value Carefully because it can effect the results of queries and calculations in unexpected ways.

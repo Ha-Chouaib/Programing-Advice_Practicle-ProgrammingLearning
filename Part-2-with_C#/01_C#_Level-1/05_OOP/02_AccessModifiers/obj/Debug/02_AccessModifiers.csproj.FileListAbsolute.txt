@@ -1,0 +1,2 @@
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\05_OOP\02_AccessModifiers\obj\Debug\02_AccessModifiers.csproj.AssemblyReference.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\05_OOP\02_AccessModifiers\obj\Debug\02_AccessModifiers.csproj.CoreCompileInputs.cache

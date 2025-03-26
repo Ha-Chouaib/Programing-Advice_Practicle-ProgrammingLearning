@@ -1,0 +1,12 @@
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\WinForm-Homeworks\MyCustomControls\bin\Debug\MyCustomControls.dll
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\WinForm-Homeworks\MyCustomControls\bin\Debug\MyCustomControls.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\WinForm-Homeworks\MyCustomControls\obj\Debug\MyCustomControls.csproj.AssemblyReference.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\WinForm-Homeworks\MyCustomControls\obj\Debug\MyCustomControls.csproj.CoreCompileInputs.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\WinForm-Homeworks\MyCustomControls\obj\Debug\MyCustomControls.dll
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\01_C#_Level-1\04_Windows-Forms\WinForm-Homeworks\MyCustomControls\obj\Debug\MyCustomControls.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\WinForm-Homeworks\MyCustomControls\bin\Debug\MyCustomControls.dll
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\WinForm-Homeworks\MyCustomControls\bin\Debug\MyCustomControls.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\WinForm-Homeworks\MyCustomControls\obj\Debug\MyCustomControls.csproj.AssemblyReference.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\WinForm-Homeworks\MyCustomControls\obj\Debug\MyCustomControls.csproj.CoreCompileInputs.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\WinForm-Homeworks\MyCustomControls\obj\Debug\MyCustomControls.dll
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\WinForm-Homeworks\MyCustomControls\obj\Debug\MyCustomControls.pdb

@@ -1,0 +1,2 @@
+[3rd Normal Form]=> is a Higher level of database narmalization that builds on the rules of First Normal Form an 2NF . It Requires that each non-key column
+		in a tabale must be dependent only on the primary key, and not on other non-key columns.

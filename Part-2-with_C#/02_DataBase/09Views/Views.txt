@@ -1,0 +1,20 @@
+
+--============================= Views =========================
+
+	-- The View Method It Doesn't Actualy Store the Data On New Table But It Store The Query Responsable for show the result and execyte it when Called
+
+create view ActiveEmployees as   
+Select * from Employees where ExitDate is Null;
+
+select * from ActiveEmployees where Gendor ='F';
+
+create View ResignedEmployees as
+Select * from Employees where ExitDate is Not Null;
+
+ select * from ResignedEmployees;
+
+
+ Create View EmpShortInf as
+ Select ID, FirstName , LastName, Gendor from Employees
+
+  select * from EmpShortInf;

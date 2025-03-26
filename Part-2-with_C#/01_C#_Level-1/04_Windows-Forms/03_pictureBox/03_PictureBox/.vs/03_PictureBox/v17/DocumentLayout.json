@@ -1,0 +1,86 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\01_C#_Level-1\\04_Windows-Forms\\03_pictureBox\\03_PictureBox\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B2D281FE-D724-453A-AFCD-0DAA43A47AE4}|03_PictureBox.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\01_c#_level-1\\04_windows-forms\\03_picturebox\\03_picturebox\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2D281FE-D724-453A-AFCD-0DAA43A47AE4}|03_PictureBox.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2D281FE-D724-453A-AFCD-0DAA43A47AE4}|03_PictureBox.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\01_C#_Level-1\\04_Windows-Forms\\03_pictureBox\\03_PictureBox\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B2D281FE-D724-453A-AFCD-0DAA43A47AE4}|03_PictureBox.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2D281FE-D724-453A-AFCD-0DAA43A47AE4}|03_PictureBox.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\01_c#_level-1\\04_windows-forms\\03_picturebox\\03_picturebox\\frmcombo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2D281FE-D724-453A-AFCD-0DAA43A47AE4}|03_PictureBox.csproj|solutionrelative:frmcombo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2D281FE-D724-453A-AFCD-0DAA43A47AE4}|03_PictureBox.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\01_c#_level-1\\04_windows-forms\\03_picturebox\\03_picturebox\\frmcombo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B2D281FE-D724-453A-AFCD-0DAA43A47AE4}|03_PictureBox.csproj|solutionrelative:frmcombo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmCombo.cs",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\01_C#_Level-1\\04_Windows-Forms\\03_pictureBox\\03_PictureBox\\frmCombo.cs",
+              "RelativeDocumentMoniker": "frmCombo.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\01_C#_Level-1\\04_Windows-Forms\\03_pictureBox\\03_PictureBox\\frmCombo.cs",
+              "RelativeToolTip": "frmCombo.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAjwCIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-15T23:34:07.484Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmCombo.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\01_C#_Level-1\\04_Windows-Forms\\03_pictureBox\\03_PictureBox\\frmCombo.cs",
+              "RelativeDocumentMoniker": "frmCombo.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\01_C#_Level-1\\04_Windows-Forms\\03_pictureBox\\03_PictureBox\\frmCombo.cs [Design]",
+              "RelativeToolTip": "frmCombo.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-15T23:26:24.03Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\01_C#_Level-1\\04_Windows-Forms\\03_pictureBox\\03_PictureBox\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\01_C#_Level-1\\04_Windows-Forms\\03_pictureBox\\03_PictureBox\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAADgvz8AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T22:54:45.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\01_C#_Level-1\\04_Windows-Forms\\03_pictureBox\\03_PictureBox\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\01_C#_Level-1\\04_Windows-Forms\\03_pictureBox\\03_PictureBox\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T21:47:07.164Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
