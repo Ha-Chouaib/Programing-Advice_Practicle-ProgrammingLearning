@@ -40,5 +40,11 @@ namespace WinForm_Exercises
             Form frmCustomCtrl = new frmCustomControl();
             frmCustomCtrl.Show();
         }
+
+        private void btnGenericCode_Click(object sender, EventArgs e)
+        {
+            Form frmGenerric = new frmGenericFunctions();
+            frmGenerric.Show();
+        }
     }
 }
