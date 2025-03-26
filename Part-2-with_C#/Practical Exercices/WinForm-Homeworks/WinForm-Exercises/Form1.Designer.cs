@@ -32,6 +32,7 @@
             this.btnDateTimePicker = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.btnGenericCode = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn01CheckedListBox
@@ -78,11 +79,23 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // btnGenericCode
+            // 
+            this.btnGenericCode.Font = new System.Drawing.Font("Gabriola", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenericCode.Location = new System.Drawing.Point(1071, 30);
+            this.btnGenericCode.Name = "btnGenericCode";
+            this.btnGenericCode.Size = new System.Drawing.Size(167, 49);
+            this.btnGenericCode.TabIndex = 4;
+            this.btnGenericCode.Text = "Generic Code";
+            this.btnGenericCode.UseVisualStyleBackColor = true;
+            this.btnGenericCode.Click += new System.EventHandler(this.btnGenericCode_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1287, 621);
+            this.Controls.Add(this.btnGenericCode);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnDateTimePicker);
@@ -99,6 +112,7 @@
         private System.Windows.Forms.Button btnDateTimePicker;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnGenericCode;
     }
 }
 

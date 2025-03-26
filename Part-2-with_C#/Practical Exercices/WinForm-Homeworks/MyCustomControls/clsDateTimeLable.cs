@@ -23,6 +23,7 @@ namespace MyCustomControls
             this.Text = "Click To Select a Date";
             this.AutoSize = true;
             this.BorderStyle = BorderStyle.FixedSingle;
+            this.Cursor = Cursors.Hand;
 
             this.Click += ClsDateTimeLable_Click;
         }
