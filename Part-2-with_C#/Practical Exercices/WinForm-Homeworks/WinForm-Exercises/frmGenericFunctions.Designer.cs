@@ -153,7 +153,7 @@
             // btnApplyUniformStyle
             // 
             this.btnApplyUniformStyle.Font = new System.Drawing.Font("Trebuchet MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnApplyUniformStyle.Location = new System.Drawing.Point(542, 243);
+            this.btnApplyUniformStyle.Location = new System.Drawing.Point(528, 243);
             this.btnApplyUniformStyle.Name = "btnApplyUniformStyle";
             this.btnApplyUniformStyle.Size = new System.Drawing.Size(188, 47);
             this.btnApplyUniformStyle.TabIndex = 10;
