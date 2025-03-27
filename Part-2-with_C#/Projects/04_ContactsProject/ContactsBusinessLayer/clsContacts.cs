@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -104,6 +105,18 @@ namespace ContactsBusinessLayer
 
         }
 
-       
+        public static bool ISExist(int ID)
+        {
+            return clsCotactsDataAccess.IsExist(ID);
+        }
+        
+        public static bool DeleteContact(int ID)
+        {
+            return clsCotactsDataAccess.DeleteContact(ID);
+        }
+        public static DataTable GetAllContacts()
+        {
+            return clsCotactsDataAccess.GetAllContacts();
+        }
     }
 }

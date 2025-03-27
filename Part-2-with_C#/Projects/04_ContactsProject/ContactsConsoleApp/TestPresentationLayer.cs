@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,7 @@ namespace ContactsConsoleApp
             public string ImagePath{get; set;}
         }
 
-         public static  void testFindContact(int ID)
+        public static  void testFindContact(int ID)
         {
 
             clsContacts contact = clsContacts.Find(ID);
@@ -97,6 +98,49 @@ namespace ContactsConsoleApp
                 Console.WriteLine("Contact not Found");
             }
         }
+        
+        public static void testIsContactExists(int ID)
+        {
+            if(clsContacts.ISExist(ID))
+            {
+                Console.WriteLine("Yes The Contact is Exists");
+            }else
+            {
+                Console.WriteLine("No The Contact Doesn't Exists");
+
+            }
+        }
+        
+        public static void testDeleteContact(int ID)
+        {
+            if(clsContacts.ISExist(ID))
+            {
+                if(clsContacts.DeleteContact(ID))
+                {
+                    Console.WriteLine("The Contact Deleted Successfuly");
+
+                }else
+                {
+                    Console.WriteLine("The Deletion Faild !");
+
+                }
+            }
+            else
+            {
+                Console.WriteLine($"No Contact Exists with ID: {ID} !!");
+            }
+        }
+
+        public static void ListAllContacts()
+        {
+            DataTable DT = clsContacts.GetAllContacts();
+            foreach(DataRow row in DT.Rows )
+            {
+                Console.WriteLine($"ID: {row["ContactID"]} //FirstName: {row["FirstName"]} //LastName: {row["LastName"]} //Email: {row["Email"]}" +
+                                    $" //Phone: {row["Phone"]} //Address { row["Address"]} //DateOfBirth: {row["DateOfBirth"]} //CountryID: " +
+                                    $"{ row["CountryID"]} //ImagePath: {row["ImagePath"]}");
+            }
+        }
         static void Main()
         {
             //testFindContact(1);
@@ -113,7 +157,10 @@ namespace ContactsConsoleApp
 
             //testAddNewContact(contInf);
 
-            testUpdateContact(12, contInf);
+            //testUpdateContact(12, contInf);
+            //testIsContactExists(2);
+            //testDeleteContact(12);
+            ListAllContacts();
         }
     }
 }
