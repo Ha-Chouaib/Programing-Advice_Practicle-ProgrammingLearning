@@ -163,5 +163,89 @@ namespace ContactsDataAccessLayer
 
         }
 
+        public static bool IsExist(int ID)
+        {
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString);
+            string Query = @"SELECT Found=1 FROM Contacts WHERE ContactID=@ContactID";
+
+            bool IsFound = false;
+
+            SqlCommand command = new SqlCommand(Query, connection);
+            command.Parameters.AddWithValue("@ContactID", ID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                    IsFound = true;
+
+
+            }catch(Exception ex)
+            {
+
+            }
+            finally 
+            {
+                connection.Close();
+            }
+            return IsFound;
+        }
+
+        public static bool DeleteContact(int ID)
+        {
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString);
+            string Query = @"Delete Contacts WHERE ContactID=@ContactID";
+
+            int rowsAffected = 0;
+            SqlCommand command = new SqlCommand(Query, connection);
+
+            command.Parameters.AddWithValue("@ContactID", ID);
+            try
+            {
+                connection.Open();
+                rowsAffected = command.ExecuteNonQuery();
+
+            }catch(Exception ex)
+            {
+
+            }finally
+            {
+                connection.Close();
+            }
+
+            return (rowsAffected > 0);
+        }
+    
+    
+        public static DataTable GetAllContacts()
+        {
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString);
+            string Query = @"SELECT * From Contacts";
+
+            DataTable DT = new DataTable();
+
+            SqlCommand command = new SqlCommand(Query, connection);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if(reader.Read())
+                {
+                    DT.Load(reader);
+                }
+
+            }catch(Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return DT;
+        }
+        
     }
 }
