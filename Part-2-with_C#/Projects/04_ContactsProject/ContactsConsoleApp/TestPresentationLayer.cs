@@ -141,6 +141,144 @@ namespace ContactsConsoleApp
                                     $"{ row["CountryID"]} //ImagePath: {row["ImagePath"]}");
             }
         }
+
+
+        //------------------------------- Test Countries Methods --------------------
+
+        public static void testFindCountryByID(int ID)
+        {
+
+            clsCountries Country = clsCountries.Find(ID);
+
+            if (Country != null)
+            {
+
+                Console.WriteLine($"Country Name      |-->{Country.CountryName}");
+                Console.WriteLine($"Code       |-->{Country.Code}");
+                Console.WriteLine($"Phone Code       |-->{Country.PhoneCode}");
+
+            }
+            else
+            {
+                Console.WriteLine("Country Not Fount");
+            }
+
+
+        }
+        public static void testFindCountryByName(string CountryName)
+        {
+
+            clsCountries Country = clsCountries.Find(CountryName);
+
+            if (Country != null)
+            {
+
+                Console.WriteLine($"Country Name      |-->{Country.CountryID}");
+                Console.WriteLine($"Code       |-->{Country.Code}");
+                Console.WriteLine($"Phone Code       |-->{Country.PhoneCode}");
+
+            }
+            else
+            {
+                Console.WriteLine("Country Not Fount");
+            }
+
+
+        }
+
+        public static void testAddNewCountry()
+        {
+            clsCountries Country = new clsCountries();
+
+            Country.CountryName = "Morocco";
+            Country.Code = "999";
+            Country.PhoneCode = "+212";
+
+            if (Country.Save())
+            {
+                Console.WriteLine("Cuontry Added Successfylly");
+            }
+            else
+            {
+                Console.WriteLine("Error: Cannot Add The Country ");
+
+            }
+        }
+
+        public static void testUpdateCountry(int ID)
+        {
+            clsCountries Country = clsCountries.Find(ID);
+            if (Country != null)
+            {
+                Country.CountryName = "Elmonch";
+                Country.Code = "0000";
+                Country.PhoneCode = "+111";
+
+                if (Country.Save())
+                {
+                    Console.WriteLine("Country Updated Successfuly");
+
+                }
+                else
+                {
+                    Console.WriteLine("Update Operation Fiald");
+
+                }
+            }
+            else
+            {
+                Console.WriteLine("Country not Found");
+            }
+        }
+
+        public static void testIsCountryExists(int ID)
+        {
+            if (clsCountries.ISExist(ID))
+            {
+                Console.WriteLine("Yes The Country is Exists");
+            }
+            else
+            {
+                Console.WriteLine("No The Country Doesn't Exists");
+
+            }
+        }
+
+        public static void testDeleteCountry(int ID)
+        {
+            if (clsCountries.ISExist(ID))
+            {
+                if (clsCountries.DeleteCountry(ID))
+                {
+                    Console.WriteLine("The Country Deleted Successfuly");
+
+                }
+                else
+                {
+                    Console.WriteLine("The Country Faild !");
+
+                }
+            }
+            else
+            {
+                Console.WriteLine($"No Country Exists with ID: {ID} !!");
+            }
+        }
+
+        public static void ListAllCountries()
+        {
+            DataTable DT = clsCountries.GetAllCountries();
+            foreach (DataRow row in DT.Rows)
+            {
+                Console.WriteLine($"CountryID: {row["CountryID"]} //Country Name: {row["CountryName"]}" +
+                                        $" //Code: {row["Code"]} //PhoneCode: {row["PhoneCode"]}");
+                                
+            }
+        }
+
+
+
+
         static void Main()
         {
             //testFindContact(1);
@@ -160,7 +298,18 @@ namespace ContactsConsoleApp
             //testUpdateContact(12, contInf);
             //testIsContactExists(2);
             //testDeleteContact(12);
-            ListAllContacts();
+            //ListAllContacts();
+
+            //=================== Country Test ==================
+            
+            testFindCountryByID(3);
+            testAddNewCountry();
+            testFindCountryByName("Morocco");
+            testUpdateCountry(5);
+            testIsCountryExists(13);
+            testDeleteCountry(13);
+
+
         }
     }
 }
