@@ -46,5 +46,11 @@ namespace WinForm_Exercises
             Form frmGenerric = new frmGenericFunctions();
             frmGenerric.Show();
         }
+
+        private void btnLINQ_Click(object sender, EventArgs e)
+        {
+            Form frmLINQ = new frmLINQ();
+            frmLINQ.Show();
+        }
     }
 }

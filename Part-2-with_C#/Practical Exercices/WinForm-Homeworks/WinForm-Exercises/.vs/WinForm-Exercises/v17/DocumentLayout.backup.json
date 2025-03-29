@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{72F07398-A90C-4D0F-83B7-A8E8B1A0E4E8}|WinForm-Exercises.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\frmgenericfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{72F07398-A90C-4D0F-83B7-A8E8B1A0E4E8}|WinForm-Exercises.csproj|solutionrelative:frmgenericfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{72F07398-A90C-4D0F-83B7-A8E8B1A0E4E8}|WinForm-Exercises.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\practical exercices\\winform-homeworks\\winform-exercises\\frmlinq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72F07398-A90C-4D0F-83B7-A8E8B1A0E4E8}|WinForm-Exercises.csproj|solutionrelative:frmlinq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{72F07398-A90C-4D0F-83B7-A8E8B1A0E4E8}|WinForm-Exercises.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\practical exercices\\winform-homeworks\\winform-exercises\\frmgenericfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72F07398-A90C-4D0F-83B7-A8E8B1A0E4E8}|WinForm-Exercises.csproj|solutionrelative:frmgenericfunctions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72F07398-A90C-4D0F-83B7-A8E8B1A0E4E8}|WinForm-Exercises.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{72F07398-A90C-4D0F-83B7-A8E8B1A0E4E8}|WinForm-Exercises.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{72F07398-A90C-4D0F-83B7-A8E8B1A0E4E8}|WinForm-Exercises.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\practical exercices\\winform-homeworks\\winform-exercises\\frmlinq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{72F07398-A90C-4D0F-83B7-A8E8B1A0E4E8}|WinForm-Exercises.csproj|solutionrelative:frmlinq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{72F07398-A90C-4D0F-83B7-A8E8B1A0E4E8}|WinForm-Exercises.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{72F07398-A90C-4D0F-83B7-A8E8B1A0E4E8}|WinForm-Exercises.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72F07398-A90C-4D0F-83B7-A8E8B1A0E4E8}|WinForm-Exercises.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{72F07398-A90C-4D0F-83B7-A8E8B1A0E4E8}|WinForm-Exercises.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,49 +26,49 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmGenericFunctions.cs",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\frmGenericFunctions.cs",
-              "RelativeDocumentMoniker": "frmGenericFunctions.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\frmGenericFunctions.cs",
-              "RelativeToolTip": "frmGenericFunctions.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAvwCQAAAAaAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "frmLINQ.cs",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\frmLINQ.cs",
+              "RelativeDocumentMoniker": "frmLINQ.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\frmLINQ.cs*",
+              "RelativeToolTip": "frmLINQ.cs*",
+              "ViewState": "AgIAADgAAAAAAAAAAAAlwFAAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T00:31:05.548Z",
+              "WhenOpened": "2025-03-28T23:03:57.533Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmGenericFunctions.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\frmGenericFunctions.cs",
-              "RelativeDocumentMoniker": "frmGenericFunctions.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\frmGenericFunctions.cs [Design]",
-              "RelativeToolTip": "frmGenericFunctions.cs [Design]",
+              "DocumentIndex": 1,
+              "Title": "frmLINQ.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\frmLINQ.cs",
+              "RelativeDocumentMoniker": "frmLINQ.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\frmLINQ.cs [Design]*",
+              "RelativeToolTip": "frmLINQ.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T00:14:21.794Z",
+              "WhenOpened": "2025-03-28T22:57:21.394Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAlwC4AAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAtwDQAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-26T00:10:43.351Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\WinForm-Homeworks\\WinForm-Exercises\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",

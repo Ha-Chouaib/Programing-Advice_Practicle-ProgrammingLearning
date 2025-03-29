@@ -33,6 +33,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnGenericCode = new System.Windows.Forms.Button();
+            this.btnLINQ = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn01CheckedListBox
@@ -90,11 +91,23 @@
             this.btnGenericCode.UseVisualStyleBackColor = true;
             this.btnGenericCode.Click += new System.EventHandler(this.btnGenericCode_Click);
             // 
+            // btnLINQ
+            // 
+            this.btnLINQ.Font = new System.Drawing.Font("Gabriola", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLINQ.Location = new System.Drawing.Point(38, 115);
+            this.btnLINQ.Name = "btnLINQ";
+            this.btnLINQ.Size = new System.Drawing.Size(93, 49);
+            this.btnLINQ.TabIndex = 5;
+            this.btnLINQ.Text = "LINQ";
+            this.btnLINQ.UseVisualStyleBackColor = true;
+            this.btnLINQ.Click += new System.EventHandler(this.btnLINQ_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1287, 621);
+            this.Controls.Add(this.btnLINQ);
             this.Controls.Add(this.btnGenericCode);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -113,6 +126,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnGenericCode;
+        private System.Windows.Forms.Button btnLINQ;
     }
 }
 
