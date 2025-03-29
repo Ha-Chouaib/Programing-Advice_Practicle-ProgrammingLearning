@@ -33,3 +33,4 @@ C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part
 C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\WinForm-Homeworks\WinForm-Exercises\obj\Debug\WinForm-Exercises.exe
 C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\WinForm-Homeworks\WinForm-Exercises\obj\Debug\WinForm-Exercises.pdb
 C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\WinForm-Homeworks\WinForm-Exercises\obj\Debug\WinForm_Exercises.frmGenericFunctions.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\WinForm-Homeworks\WinForm-Exercises\obj\Debug\WinForm_Exercises.frmLINQ.resources
