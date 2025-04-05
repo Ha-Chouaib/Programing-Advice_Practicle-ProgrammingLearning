@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Text;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,23 +31,6 @@ namespace ContactsManagmentSystem
         enum enActions { eShowDetails=1,eAddNew=2,eUpdate=3}
         enActions Action= enActions.eAddNew;
 
-        enum enSearchMode { LastName,FirstName}
-        enSearchMode SearchMode;
-        private void SearchByFirstName()
-        {
-            SearchMode = enSearchMode.FirstName;
-            btnSearchBy1rsName.Enabled = false;
-            btnSearchByLastName.Enabled = true;
-           
-        }
-        private void SearchByLastName()
-        {
-            SearchMode = enSearchMode.LastName;
-            btnSearchBy1rsName.Enabled = true;
-            btnSearchByLastName.Enabled = false;
-
-        }
-
         private void _ResetDisplayInfoFields()
         {
             txtFirstName.Text = string.Empty;
@@ -60,14 +44,23 @@ namespace ContactsManagmentSystem
           
 
         }
+        
+        ErrorProvider errProv = new ErrorProvider();
         private void _SetTextBoxRequired(TextBox txtB)
         {
-            ErrorProvider errProv = new ErrorProvider();
-
             if (txtB.Text == string.Empty)
                 errProv.SetError(txtB, "The Field Is required");
             else
                 errProv.SetError(txtB, "");
+
+        }
+        private void _RemoveErrorProvFromContactFields()
+        {
+            errProv.SetError(txtFirstName, "");
+            errProv.SetError(txtLastName, "");
+            errProv.SetError(txtEmail, "");
+            errProv.SetError(txtPhone, "");
+            errProv.SetError(txtAddress, "");
         }
         private bool _RequiredContactFields()
         {
@@ -85,7 +78,7 @@ namespace ContactsManagmentSystem
             {
                 cmbCountries.Items.Add(row["CountryName"]);
             }
-            cmbCountries.SelectedIndex = 0;
+            cmbCountries.SelectedIndex = 1;
 
         }
         private void _DisplayContactInfo(int ContactID)
@@ -139,7 +132,6 @@ namespace ContactsManagmentSystem
         {   
             if (_RequiredContactFields() && MessageBox.Show("The Contact Will Be Updated Once You Click OK","Confirmation",MessageBoxButtons.OKCancel,MessageBoxIcon.Question)== DialogResult.OK)
             {
-               
                 int ID = (int)btnPerformActions.Tag;
                 clsContacts contact = clsContacts.Find(ID);
                 if (contact != null)
@@ -208,11 +200,12 @@ namespace ContactsManagmentSystem
                 }else
                 {
                     MessageBox.Show("The Contact Connot Be Added Correctly");
-
+                    
                 }
             }
             else
             {
+
                 MessageBox.Show("The Operation Ignored Successfully");
             }
 
@@ -220,7 +213,6 @@ namespace ContactsManagmentSystem
         }
         private void _PerformActions()
         {
-            
             switch(Action)
             {
                 case enActions.eShowDetails:
@@ -243,6 +235,7 @@ namespace ContactsManagmentSystem
         
         private void _ShowDetails_Click(object sender, EventArgs e)
         {
+            _RemoveErrorProvFromContactFields();
             if(sender is Button btn)
             {
                 int ID = (int)btn.Tag;
@@ -287,6 +280,7 @@ namespace ContactsManagmentSystem
         }
         private void _Update_Click(object sender, EventArgs e)
         {
+            _RemoveErrorProvFromContactFields();
             Button btn = (Button)sender;
             int ID = (int)btn.Tag;
             _LoadContactToUpdate(ID);
@@ -382,14 +376,25 @@ namespace ContactsManagmentSystem
 
                 CardLayout.RowStyles.Add(new RowStyle(SizeType.Percent,100));
 
-                PictureBox ProfilePic = new PictureBox
+                string ImagePath = "";
+                if (row["ImagePath"]== DBNull.Value )
                 {
-                    BackColor = Color.Black,
-                    Width = 50,
-                    Height = 50,
-                    SizeMode = PictureBoxSizeMode.Zoom,
+                    ImagePath = @"C:\ProfileImg.jpg";
+                        
+                }else
+                {
+                    ImagePath = (string)row["ImagePath"];
+                }
+                    PictureBox ProfilePic = new PictureBox
+                    {
+                        BackColor = Color.Black,
+                        Width = 50,
+                        Height = 50,
+                        SizeMode = PictureBoxSizeMode.Zoom,
 
-                };
+                        Image = Image.FromFile(ImagePath)
+
+                    };
 
                 Label lblName = new Label 
                 {
@@ -481,19 +486,11 @@ namespace ContactsManagmentSystem
             _ListAllContacts();
         }
        
-        private void btnSearchByCountryName_Click(object sender, EventArgs e)
-        {
-            SearchByFirstName();
-        }
-        private void btnSearchByLastName_Click(object sender, EventArgs e)
-        {
-            SearchByLastName();
-        }
-       
-
         private void btnRestAll_Click(object sender, EventArgs e)
         {
             _ResetDisplayInfoFields();
+            _RemoveErrorProvFromContactFields();
+            
         }
 
         private void btnBackToAddNewMode_Click(object sender, EventArgs e)
@@ -502,30 +499,23 @@ namespace ContactsManagmentSystem
             btnPerformActions.Text = "Add New Contact";
             DisableEnableShowInfoFields();
             _ResetDisplayInfoFields();
+            
         }
 
         private void btnSearch_Click_1(object sender, EventArgs e)
         {
 
-            DataTable ListContactsBy = new DataTable();
-            string srhBy = txtSearch.Text;
-            if (srhBy != string.Empty)
+            DataTable ListFiltredContacts = new DataTable();
+            string srh = txtSearch.Text;
+            if (srh != string.Empty)
             {
-                switch (SearchMode)
-                {
-                    case enSearchMode.FirstName:
-                        ListContactsBy = clsContacts.ListContactsByFirstLast_Name(true,srhBy);
 
-                        break;
+                ListFiltredContacts = clsContacts.ListContactsByFirstLast_Name(srh);
 
-                    case enSearchMode.LastName:
-                        ListContactsBy = clsContacts.ListContactsByFirstLast_Name(false,srhBy);
-                        break;
-                }
                 _RemoveContactsCards();
 
             }
-            _GenerateContactsCards(ListContactsBy);
+            _GenerateContactsCards(ListFiltredContacts);
             txtSearch.Text = string.Empty;
         }
     }
