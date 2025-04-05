@@ -303,11 +303,11 @@ namespace ContactsConsoleApp
             //=================== Country Test ==================
             
             testFindCountryByID(3);
-            testAddNewCountry();
-            testFindCountryByName("Morocco");
-            testUpdateCountry(5);
-            testIsCountryExists(13);
-            testDeleteCountry(13);
+            //testAddNewCountry();
+            //testFindCountryByName("Morocco");
+            //testUpdateCountry(5);
+            //testIsCountryExists(13);
+            //testDeleteCountry(13);
 
 
         }

@@ -8,3 +8,8 @@ C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part
 C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\ContactsManagmentSystem\ContactsManagmentSystem\obj\Debug\ContactsManagmentSystem.csproj.CoreCompileInputs.cache
 C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\ContactsManagmentSystem\ContactsManagmentSystem\obj\Debug\ContactsManagmentSystem.exe
 C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\ContactsManagmentSystem\ContactsManagmentSystem\obj\Debug\ContactsManagmentSystem.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\ContactsManagmentSystem\ContactsManagmentSystem\bin\Debug\ContactsBusinessLayer.dll
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\ContactsManagmentSystem\ContactsManagmentSystem\bin\Debug\ContactsDataAccessLayer.dll
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\ContactsManagmentSystem\ContactsManagmentSystem\bin\Debug\ContactsBusinessLayer.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\ContactsManagmentSystem\ContactsManagmentSystem\bin\Debug\ContactsDataAccessLayer.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\ContactsManagmentSystem\ContactsManagmentSystem\obj\Debug\Contacts.1C7A6E9F.Up2Date

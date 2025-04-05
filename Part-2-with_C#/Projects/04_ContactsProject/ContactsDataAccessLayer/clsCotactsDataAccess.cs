@@ -246,6 +246,43 @@ namespace ContactsDataAccessLayer
             }
             return DT;
         }
-        
+
+       
+        public static DataTable FindByLastName(bool isFirstName,string  SearchTerm)
+        {
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString);
+            string Query = "";
+            if (isFirstName)
+                Query = @"SELECT * From Contacts WHERE FirstNAme LIKE '%'+ @SearchTerm +'%' ;";
+            else
+                Query = @"SELECT * From Contacts WHERE LastName LIKE '%'+ @SearchTerm +'%' ;";
+
+
+            DataTable DT = new DataTable();
+
+            SqlCommand command = new SqlCommand(Query, connection);
+            command.Parameters.AddWithValue("@SearchTerm", SearchTerm);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    DT.Load(reader);
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return DT;
+        }
+
     }
 }

@@ -12,13 +12,13 @@ namespace ContactsDataAccessLayer
     {
         public static  bool Find(int ID, ref string CountryName,ref string Code, ref string PhoneCode)
         {
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.CountriesConnectionStrng);
-            string Query = @"SELECT * From Countries WHERE CountryID=@CountryID";
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString);
+            string Query = @"Select * from Countries Where CountryID = @ID";
 
             bool ISFound = false;
 
             SqlCommand command = new SqlCommand(Query, connection);
-            command.Parameters.AddWithValue("@CountryID", ID);
+            command.Parameters.AddWithValue("@ID", ID);
 
             try
             {
@@ -28,7 +28,7 @@ namespace ContactsDataAccessLayer
                 {
                     ISFound = true;
                     CountryName = (string)reader["CountryName"];
-
+                   
                     if (reader["Code"] == DBNull.Value)
                         Code = "";
                     else
@@ -53,13 +53,13 @@ namespace ContactsDataAccessLayer
 
         public static bool Find(string CountryName, ref int CountryID,ref string Code, ref string PhoneCode )
         {
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.CountriesConnectionStrng);
-            string Query = @"SELECT * From Countries WHERE CountryName = @CountryName";
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString);
+            string Query = @"SELECT * From Countries WHERE CountryName = @countryName";
 
             bool ISFound = false;
 
             SqlCommand command = new SqlCommand(Query, connection);
-            command.Parameters.AddWithValue("@CountryName", CountryName);
+            command.Parameters.AddWithValue("@countryName", CountryName);
 
             try
             {
@@ -94,9 +94,39 @@ namespace ContactsDataAccessLayer
 
         }
         
+        public static int FindCountryID(string CountryName)
+        {
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString);
+            string Query = @"SELECT CountryID From Countries WHERE CountryName = @CountryName";
+
+
+            SqlCommand command = new SqlCommand(Query, connection);
+            command.Parameters.AddWithValue("@CountryName", CountryName);
+            int CountryID = -1;
+            try
+            {
+                connection.Open();
+                
+                object result = command.ExecuteScalar();
+                if (result != null && int.TryParse(result.ToString(), out int ID))
+                {
+                    CountryID = ID;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return CountryID;
+        }
         public static bool ISExist(int CountryID)
         {
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.CountriesConnectionStrng);
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString);
             string Query = @"SELECT Found=1 From Countries WHERE CountryID=@CountryID";
             
             bool isFound  = false;
@@ -128,7 +158,7 @@ namespace ContactsDataAccessLayer
         
         public static int AddNewCountry(string CountryName, string Code, string PhoneCode)
         {
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.CountriesConnectionStrng);
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString);
             string Query = @"Insert INTO Countries(CountryName, Code, PhoneCode)
                                         Values(@CountryName,@Code,@PhoneCode);
                                         SELECT SCOPE_IDENTITY();";
@@ -160,7 +190,7 @@ namespace ContactsDataAccessLayer
 
         public static bool UpdateCountry(int ID,string CountryName,string Code,string PhoneCode)
         {
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.CountriesConnectionStrng);
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString);
             string Query = @"UPDATE Countries
                             SET
                                CountryName=@CountryName,
@@ -169,10 +199,20 @@ namespace ContactsDataAccessLayer
                             WHERE CountryID=@CountryID ;";
             
             SqlCommand command = new SqlCommand(Query, connection);
+           
             command.Parameters.AddWithValue("@CountryID",ID);
             command.Parameters.AddWithValue("@CountryName",CountryName);
-            command.Parameters.AddWithValue("@Code",Code);
-            command.Parameters.AddWithValue("@PhoneCode",PhoneCode);
+            if (Code == string.Empty)
+            {
+                command.Parameters.AddWithValue("@Code", DBNull.Value);
+            }else
+                command.Parameters.AddWithValue("@Code", Code);
+
+            if(PhoneCode == string.Empty)
+                command.Parameters.AddWithValue("@PhoneCode",DBNull.Value);
+            else
+                command.Parameters.AddWithValue("@PhoneCode", PhoneCode);
+
 
             int rowsAffected = 0;
 
@@ -193,7 +233,7 @@ namespace ContactsDataAccessLayer
         
         public static bool DeleteCountry(int ID)
         {
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.CountriesConnectionStrng);
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString);
             string Query = "DELETE Countries WHERE CountryID=@COuntryID";
 
             SqlCommand command = new SqlCommand(Query, connection);
@@ -218,7 +258,7 @@ namespace ContactsDataAccessLayer
         
         public static DataTable GetAllCountries()
         {
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.CountriesConnectionStrng);
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString);
             string Query = @"Select * from Countries";
 
             SqlCommand command = new SqlCommand(Query, connection);
@@ -238,6 +278,37 @@ namespace ContactsDataAccessLayer
             {
 
             }finally
+            {
+                connection.Close();
+            }
+            return DT;
+        }
+        public static DataTable ListByCountry(string SetCountryName)
+        {
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.connectionString);
+            string Query = @"Select * from Countries WHERE CountryName LIKE '%'+ @CountryName +'%';";
+
+            SqlCommand command = new SqlCommand(Query, connection);
+            command.Parameters.AddWithValue("@CountryName", SetCountryName);
+            DataTable DT = new DataTable();
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    DT.Load(reader);
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
             {
                 connection.Close();
             }
