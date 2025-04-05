@@ -118,9 +118,9 @@ namespace ContactsBusinessLayer
         {
             return clsCotactsDataAccess.GetAllContacts();
         }
-       public static DataTable ListContactsByFirstLast_Name(bool IsFirstName,string LastName)
+       public static DataTable ListContactsByFirstLast_Name(string SearchTerm)
         {
-            return clsCotactsDataAccess.FindByLastName(IsFirstName, LastName);
+            return clsCotactsDataAccess.FindByFirstLast_Name(SearchTerm);
         }
     }
 }

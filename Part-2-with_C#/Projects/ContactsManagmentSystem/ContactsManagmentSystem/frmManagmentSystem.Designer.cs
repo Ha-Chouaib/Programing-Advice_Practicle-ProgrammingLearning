@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnlDisplayConctactInf = new System.Windows.Forms.Panel();
             this.btnBackToAddNewMode = new System.Windows.Forms.Button();
-            this.btnRestAll = new System.Windows.Forms.Button();
+            this.btnResetAll = new System.Windows.Forms.Button();
             this.dtDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.cmbCountries = new System.Windows.Forms.ComboBox();
@@ -50,8 +50,6 @@
             this.pnlListContainer = new System.Windows.Forms.Panel();
             this.btnListAll = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnSearchBy1rsName = new System.Windows.Forms.Button();
-            this.btnSearchByLastName = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.pnlDisplayConctactInf.SuspendLayout();
@@ -72,7 +70,7 @@
             // 
             this.pnlDisplayConctactInf.BackColor = System.Drawing.Color.Black;
             this.pnlDisplayConctactInf.Controls.Add(this.btnBackToAddNewMode);
-            this.pnlDisplayConctactInf.Controls.Add(this.btnRestAll);
+            this.pnlDisplayConctactInf.Controls.Add(this.btnResetAll);
             this.pnlDisplayConctactInf.Controls.Add(this.dtDateOfBirth);
             this.pnlDisplayConctactInf.Controls.Add(this.label8);
             this.pnlDisplayConctactInf.Controls.Add(this.cmbCountries);
@@ -106,19 +104,19 @@
             this.btnBackToAddNewMode.UseVisualStyleBackColor = false;
             this.btnBackToAddNewMode.Click += new System.EventHandler(this.btnBackToAddNewMode_Click);
             // 
-            // btnRestAll
+            // btnResetAll
             // 
-            this.btnRestAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(26)))), ((int)(((byte)(166)))));
-            this.btnRestAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRestAll.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestAll.ForeColor = System.Drawing.Color.OldLace;
-            this.btnRestAll.Location = new System.Drawing.Point(889, 243);
-            this.btnRestAll.Name = "btnRestAll";
-            this.btnRestAll.Size = new System.Drawing.Size(116, 39);
-            this.btnRestAll.TabIndex = 20;
-            this.btnRestAll.Text = "Reste All";
-            this.btnRestAll.UseVisualStyleBackColor = false;
-            this.btnRestAll.Click += new System.EventHandler(this.btnRestAll_Click);
+            this.btnResetAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(26)))), ((int)(((byte)(166)))));
+            this.btnResetAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnResetAll.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetAll.ForeColor = System.Drawing.Color.OldLace;
+            this.btnResetAll.Location = new System.Drawing.Point(889, 243);
+            this.btnResetAll.Name = "btnResetAll";
+            this.btnResetAll.Size = new System.Drawing.Size(116, 39);
+            this.btnResetAll.TabIndex = 20;
+            this.btnResetAll.Text = "Reset All";
+            this.btnResetAll.UseVisualStyleBackColor = false;
+            this.btnResetAll.Click += new System.EventHandler(this.btnRestAll_Click);
             // 
             // dtDateOfBirth
             // 
@@ -289,18 +287,18 @@
             // pnlListContainer
             // 
             this.pnlListContainer.BackColor = System.Drawing.Color.Black;
-            this.pnlListContainer.Location = new System.Drawing.Point(145, 547);
+            this.pnlListContainer.Location = new System.Drawing.Point(145, 511);
             this.pnlListContainer.Name = "pnlListContainer";
-            this.pnlListContainer.Size = new System.Drawing.Size(1008, 370);
+            this.pnlListContainer.Size = new System.Drawing.Size(1008, 406);
             this.pnlListContainer.TabIndex = 17;
             // 
             // btnListAll
             // 
-            this.btnListAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(26)))), ((int)(((byte)(166)))));
+            this.btnListAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(10)))), ((int)(((byte)(107)))));
             this.btnListAll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnListAll.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListAll.ForeColor = System.Drawing.Color.OldLace;
-            this.btnListAll.Location = new System.Drawing.Point(900, 501);
+            this.btnListAll.Location = new System.Drawing.Point(900, 440);
             this.btnListAll.Name = "btnListAll";
             this.btnListAll.Size = new System.Drawing.Size(253, 39);
             this.btnListAll.TabIndex = 18;
@@ -314,39 +312,11 @@
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSearch.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.txtSearch.Location = new System.Drawing.Point(148, 501);
+            this.txtSearch.Location = new System.Drawing.Point(148, 440);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(606, 39);
             this.txtSearch.TabIndex = 22;
-            // 
-            // btnSearchBy1rsName
-            // 
-            this.btnSearchBy1rsName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(10)))), ((int)(((byte)(107)))));
-            this.btnSearchBy1rsName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSearchBy1rsName.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchBy1rsName.ForeColor = System.Drawing.Color.White;
-            this.btnSearchBy1rsName.Location = new System.Drawing.Point(708, 415);
-            this.btnSearchBy1rsName.Name = "btnSearchBy1rsName";
-            this.btnSearchBy1rsName.Size = new System.Drawing.Size(445, 39);
-            this.btnSearchBy1rsName.TabIndex = 23;
-            this.btnSearchBy1rsName.Text = "Search By First Name";
-            this.btnSearchBy1rsName.UseVisualStyleBackColor = false;
-            this.btnSearchBy1rsName.Click += new System.EventHandler(this.btnSearchByCountryName_Click);
-            // 
-            // btnSearchByLastName
-            // 
-            this.btnSearchByLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(10)))), ((int)(((byte)(107)))));
-            this.btnSearchByLastName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSearchByLastName.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchByLastName.ForeColor = System.Drawing.Color.White;
-            this.btnSearchByLastName.Location = new System.Drawing.Point(145, 415);
-            this.btnSearchByLastName.Name = "btnSearchByLastName";
-            this.btnSearchByLastName.Size = new System.Drawing.Size(445, 39);
-            this.btnSearchByLastName.TabIndex = 24;
-            this.btnSearchByLastName.Text = "Search By Last Name";
-            this.btnSearchByLastName.UseVisualStyleBackColor = false;
-            this.btnSearchByLastName.Click += new System.EventHandler(this.btnSearchByLastName_Click);
             // 
             // btnSearch
             // 
@@ -354,7 +324,7 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSearch.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(751, 501);
+            this.btnSearch.Location = new System.Drawing.Point(751, 440);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(78, 39);
             this.btnSearch.TabIndex = 25;
@@ -367,7 +337,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Sitka Small", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.Info;
-            this.label9.Location = new System.Drawing.Point(145, 481);
+            this.label9.Location = new System.Drawing.Point(145, 420);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(350, 19);
             this.label9.TabIndex = 22;
@@ -381,8 +351,6 @@
             this.ClientSize = new System.Drawing.Size(1292, 938);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.btnSearchByLastName);
-            this.Controls.Add(this.btnSearchBy1rsName);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnListAll);
             this.Controls.Add(this.pnlListContainer);
@@ -420,11 +388,9 @@
         private System.Windows.Forms.Panel pnlListContainer;
         private System.Windows.Forms.DateTimePicker dtDateOfBirth;
         private System.Windows.Forms.Button btnListAll;
-        private System.Windows.Forms.Button btnRestAll;
+        private System.Windows.Forms.Button btnResetAll;
         private System.Windows.Forms.Button btnBackToAddNewMode;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Button btnSearchBy1rsName;
-        private System.Windows.Forms.Button btnSearchByLastName;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label9;
     }
