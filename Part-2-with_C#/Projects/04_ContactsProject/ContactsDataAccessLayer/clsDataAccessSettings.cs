@@ -10,6 +10,5 @@ namespace ContactsDataAccessLayer
     {
         public static string connectionString = "server=.;Database=Contacts;User Id=sa;Password=123456";
         
-        public static string CountriesConnectionStrng= "server=.;Database=Countries;User Id=sa;Password=123456";
     }
 }

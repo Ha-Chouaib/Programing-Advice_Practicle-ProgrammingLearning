@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\ContactsManagmentSystem\\ContactsManagmentSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C2284445-EA93-4504-B1B4-F37A04CA21A2}|ContactsManagmentSystem.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\contactsmanagmentsystem\\contactsmanagmentsystem\\frmmanagmentsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C2284445-EA93-4504-B1B4-F37A04CA21A2}|ContactsManagmentSystem.csproj|solutionrelative:frmmanagmentsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6E750505-5E9F-4A75-9B13-0AAA6DF108DC}|..\\..\\04_ContactsProject\\ContactsDataAccessLayer\\ContactsDataAccessLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\04_contactsproject\\contactsdataaccesslayer\\clscotactsdataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C2284445-EA93-4504-B1B4-F37A04CA21A2}|ContactsManagmentSystem.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\contactsmanagmentsystem\\contactsmanagmentsystem\\frmmanagmentsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C2284445-EA93-4504-B1B4-F37A04CA21A2}|ContactsManagmentSystem.csproj|solutionrelative:frmmanagmentsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2284445-EA93-4504-B1B4-F37A04CA21A2}|ContactsManagmentSystem.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\ContactsManagmentSystem\\ContactsManagmentSystem\\frmmanagmentsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C2284445-EA93-4504-B1B4-F37A04CA21A2}|ContactsManagmentSystem.csproj|solutionrelative:frmmanagmentsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2284445-EA93-4504-B1B4-F37A04CA21A2}|ContactsManagmentSystem.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\contactsmanagmentsystem\\contactsmanagmentsystem\\frmmanagmentsystem.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2284445-EA93-4504-B1B4-F37A04CA21A2}|ContactsManagmentSystem.csproj|solutionrelative:frmmanagmentsystem.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2221725-F674-4480-A8D2-E1D83C0DC9B8}|..\\..\\04_ContactsProject\\ContactsBusinessLayer\\ContactsBusinessLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\04_contactsproject\\contactsbusinesslayer\\clscontacts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E750505-5E9F-4A75-9B13-0AAA6DF108DC}|..\\..\\04_ContactsProject\\ContactsDataAccessLayer\\ContactsDataAccessLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\04_contactsproject\\contactsdataaccesslayer\\clscountriesdataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2221725-F674-4480-A8D2-E1D83C0DC9B8}|..\\..\\04_ContactsProject\\ContactsBusinessLayer\\ContactsBusinessLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\04_contactsproject\\contactsbusinesslayer\\clscountries.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +34,85 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmManagmentSystem.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\ContactsManagmentSystem\\ContactsManagmentSystem\\frmManagmentSystem.Designer.cs",
+              "RelativeDocumentMoniker": "frmManagmentSystem.Designer.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\ContactsManagmentSystem\\ContactsManagmentSystem\\frmManagmentSystem.Designer.cs",
+              "RelativeToolTip": "frmManagmentSystem.Designer.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAmwJcBAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-05T05:30:05.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "clsContacts.cs",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\04_ContactsProject\\ContactsBusinessLayer\\clsContacts.cs",
+              "RelativeDocumentMoniker": "..\\..\\04_ContactsProject\\ContactsBusinessLayer\\clsContacts.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\04_ContactsProject\\ContactsBusinessLayer\\clsContacts.cs",
+              "RelativeToolTip": "..\\..\\04_ContactsProject\\ContactsBusinessLayer\\clsContacts.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAD4v3oAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-04T16:42:56.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "clsCotactsDataAccess.cs",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\04_ContactsProject\\ContactsDataAccessLayer\\clsCotactsDataAccess.cs",
+              "RelativeDocumentMoniker": "..\\..\\04_ContactsProject\\ContactsDataAccessLayer\\clsCotactsDataAccess.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\04_ContactsProject\\ContactsDataAccessLayer\\clsCotactsDataAccess.cs",
+              "RelativeToolTip": "..\\..\\04_ContactsProject\\ContactsDataAccessLayer\\clsCotactsDataAccess.cs",
+              "ViewState": "AgIAAPIAAAAAAAAAAAAQwAEBAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-04T16:36:01.956Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "clsCountries.cs",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\04_ContactsProject\\ContactsBusinessLayer\\clsCountries.cs",
+              "RelativeDocumentMoniker": "..\\..\\04_ContactsProject\\ContactsBusinessLayer\\clsCountries.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\04_ContactsProject\\ContactsBusinessLayer\\clsCountries.cs",
+              "RelativeToolTip": "..\\..\\04_ContactsProject\\ContactsBusinessLayer\\clsCountries.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAWwD8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-04T16:06:37.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "clsCountriesDataAccess.cs",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\04_ContactsProject\\ContactsDataAccessLayer\\clsCountriesDataAccess.cs",
+              "RelativeDocumentMoniker": "..\\..\\04_ContactsProject\\ContactsDataAccessLayer\\clsCountriesDataAccess.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\04_ContactsProject\\ContactsDataAccessLayer\\clsCountriesDataAccess.cs",
+              "RelativeToolTip": "..\\..\\04_ContactsProject\\ContactsDataAccessLayer\\clsCountriesDataAccess.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAmwGAAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T21:42:19.259Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmManagmentSystem.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\ContactsManagmentSystem\\ContactsManagmentSystem\\frmManagmentSystem.cs",
+              "RelativeDocumentMoniker": "frmManagmentSystem.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\ContactsManagmentSystem\\ContactsManagmentSystem\\frmManagmentSystem.cs [Design]",
+              "RelativeToolTip": "frmManagmentSystem.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T16:21:43.726Z",
+              "EditorCaption": " [Design]"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -28,22 +121,10 @@
               "RelativeDocumentMoniker": "frmManagmentSystem.cs",
               "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\ContactsManagmentSystem\\ContactsManagmentSystem\\frmManagmentSystem.cs",
               "RelativeToolTip": "frmManagmentSystem.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAiwCkAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAPMBAAAAAAAAAAAqwN8BAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-29T23:45:41.485Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmManagmentSystem.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\ContactsManagmentSystem\\ContactsManagmentSystem\\frmManagmentSystem.cs",
-              "RelativeDocumentMoniker": "frmManagmentSystem.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\ContactsManagmentSystem\\ContactsManagmentSystem\\frmManagmentSystem.cs [Design]",
-              "RelativeToolTip": "frmManagmentSystem.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-29T19:18:34.088Z",
-              "EditorCaption": " [Design]"
             }
           ]
         }

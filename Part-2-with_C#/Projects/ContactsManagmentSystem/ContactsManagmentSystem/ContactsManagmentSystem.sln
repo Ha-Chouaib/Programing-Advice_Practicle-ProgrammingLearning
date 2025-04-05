@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35806.99 d17.13
+VisualStudioVersion = 17.13.35806.99
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsManagmentSystem", "ContactsManagmentSystem.csproj", "{C2284445-EA93-4504-B1B4-F37A04CA21A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsBusinessLayer", "..\..\04_ContactsProject\ContactsBusinessLayer\ContactsBusinessLayer.csproj", "{C2221725-F674-4480-A8D2-E1D83C0DC9B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsDataAccessLayer", "..\..\04_ContactsProject\ContactsDataAccessLayer\ContactsDataAccessLayer.csproj", "{6E750505-5E9F-4A75-9B13-0AAA6DF108DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{C2284445-EA93-4504-B1B4-F37A04CA21A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2284445-EA93-4504-B1B4-F37A04CA21A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2284445-EA93-4504-B1B4-F37A04CA21A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2221725-F674-4480-A8D2-E1D83C0DC9B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2221725-F674-4480-A8D2-E1D83C0DC9B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2221725-F674-4480-A8D2-E1D83C0DC9B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2221725-F674-4480-A8D2-E1D83C0DC9B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E750505-5E9F-4A75-9B13-0AAA6DF108DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E750505-5E9F-4A75-9B13-0AAA6DF108DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E750505-5E9F-4A75-9B13-0AAA6DF108DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E750505-5E9F-4A75-9B13-0AAA6DF108DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

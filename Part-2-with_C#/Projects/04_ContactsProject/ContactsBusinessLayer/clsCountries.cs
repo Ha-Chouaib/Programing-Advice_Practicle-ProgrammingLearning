@@ -23,8 +23,9 @@ namespace ContactsBusinessLayer
         {
             this.CountryID = CountryID;
             this.CountryName = CountryName;
-            this.CountryName = Code;
+            this.Code = Code;
             this.PhoneCode = PhoneCode;
+            Console.WriteLine($"Country Name: {CountryName}");
 
             Mode = enMode.Update;
         }
@@ -42,9 +43,12 @@ namespace ContactsBusinessLayer
 
         public static clsCountries Find(int ID)
         {
-            string CountryName = "", Code = "", PhoneCode = "";
-            if (clsCountriesDataAccess.Find(ID, ref CountryName, ref Code, ref PhoneCode))
-                return new clsCountries(ID, CountryName, Code, PhoneCode);
+            string countryName = "", Code = "", PhoneCode = "";
+            if (clsCountriesDataAccess.Find(ID, ref countryName, ref Code, ref PhoneCode))
+            {
+                return new clsCountries(ID, countryName, Code, PhoneCode);
+            }
+               
             else
                 return null;
         }
@@ -57,6 +61,10 @@ namespace ContactsBusinessLayer
                 return new clsCountries(ID, CountryName, Code, PhoneCode);
             else
                 return null;
+        }
+        public static int FindCountryIDByName(string CountryName)
+        {
+            return clsCountriesDataAccess.FindCountryID(CountryName);
         }
 
          private bool _AddNewCountry()
@@ -103,6 +111,11 @@ namespace ContactsBusinessLayer
         public static DataTable GetAllCountries()
         {
             return clsCountriesDataAccess.GetAllCountries();
+        }
+
+        public static DataTable FindCountriesByName(string CountryName)
+        {
+            return clsCountriesDataAccess.ListByCountry(CountryName);
         }
     }
 }
