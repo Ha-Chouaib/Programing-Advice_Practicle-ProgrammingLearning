@@ -1,0 +1,11 @@
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\04_Windows-Forms\09_SendDataby_delegate\Send DataByDelegate\bin\Debug\Send DataByDelegate.exe.config
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\04_Windows-Forms\09_SendDataby_delegate\Send DataByDelegate\bin\Debug\Send DataByDelegate.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\04_Windows-Forms\09_SendDataby_delegate\Send DataByDelegate\bin\Debug\Send DataByDelegate.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\04_Windows-Forms\09_SendDataby_delegate\Send DataByDelegate\obj\Debug\Send DataByDelegate.csproj.AssemblyReference.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\04_Windows-Forms\09_SendDataby_delegate\Send DataByDelegate\obj\Debug\Send_DataByDelegate.Form1.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\04_Windows-Forms\09_SendDataby_delegate\Send DataByDelegate\obj\Debug\Send_DataByDelegate.Form2.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\04_Windows-Forms\09_SendDataby_delegate\Send DataByDelegate\obj\Debug\Send_DataByDelegate.Properties.Resources.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\04_Windows-Forms\09_SendDataby_delegate\Send DataByDelegate\obj\Debug\Send DataByDelegate.csproj.GenerateResource.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\04_Windows-Forms\09_SendDataby_delegate\Send DataByDelegate\obj\Debug\Send DataByDelegate.csproj.CoreCompileInputs.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\04_Windows-Forms\09_SendDataby_delegate\Send DataByDelegate\obj\Debug\Send DataByDelegate.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\04_Windows-Forms\09_SendDataby_delegate\Send DataByDelegate\obj\Debug\Send DataByDelegate.pdb
