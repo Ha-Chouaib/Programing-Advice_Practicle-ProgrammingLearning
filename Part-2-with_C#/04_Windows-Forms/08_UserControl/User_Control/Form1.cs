@@ -21,5 +21,11 @@ namespace User_Control
         {
             MessageBox.Show($"The Calculation Result is: {ctrlSimpleCalc1.Result}");
         }
+
+        private void ctrlSimpleCalc1_OnCalculationComplete(int obj)
+        {
+            int ID = obj;
+            MessageBox.Show($"The Calculation Result From The Event Is: {ID}");
+        }
     }
 }
