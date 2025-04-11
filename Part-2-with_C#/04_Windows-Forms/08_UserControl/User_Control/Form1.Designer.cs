@@ -28,41 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctrlSimpleCalc1 = new User_Control.ctrlSimpleCalc();
-            this.ctrlSimpleCalc2 = new User_Control.ctrlSimpleCalc();
-            this.ctrlSimpleCalc3 = new User_Control.ctrlSimpleCalc();
             this.button1 = new System.Windows.Forms.Button();
+            this.ctrlSimpleCalc3 = new User_Control.ctrlSimpleCalc();
+            this.ctrlSimpleCalc2 = new User_Control.ctrlSimpleCalc();
+            this.ctrlSimpleCalc1 = new User_Control.ctrlSimpleCalc();
             this.SuspendLayout();
-            // 
-            // ctrlSimpleCalc1
-            // 
-            this.ctrlSimpleCalc1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.ctrlSimpleCalc1.Font = new System.Drawing.Font("Yu Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrlSimpleCalc1.Location = new System.Drawing.Point(13, 11);
-            this.ctrlSimpleCalc1.Margin = new System.Windows.Forms.Padding(4);
-            this.ctrlSimpleCalc1.Name = "ctrlSimpleCalc1";
-            this.ctrlSimpleCalc1.Size = new System.Drawing.Size(541, 142);
-            this.ctrlSimpleCalc1.TabIndex = 0;
-            // 
-            // ctrlSimpleCalc2
-            // 
-            this.ctrlSimpleCalc2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.ctrlSimpleCalc2.Font = new System.Drawing.Font("Yu Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrlSimpleCalc2.Location = new System.Drawing.Point(13, 161);
-            this.ctrlSimpleCalc2.Margin = new System.Windows.Forms.Padding(4);
-            this.ctrlSimpleCalc2.Name = "ctrlSimpleCalc2";
-            this.ctrlSimpleCalc2.Size = new System.Drawing.Size(541, 142);
-            this.ctrlSimpleCalc2.TabIndex = 1;
-            // 
-            // ctrlSimpleCalc3
-            // 
-            this.ctrlSimpleCalc3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.ctrlSimpleCalc3.Font = new System.Drawing.Font("Yu Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrlSimpleCalc3.Location = new System.Drawing.Point(13, 311);
-            this.ctrlSimpleCalc3.Margin = new System.Windows.Forms.Padding(4);
-            this.ctrlSimpleCalc3.Name = "ctrlSimpleCalc3";
-            this.ctrlSimpleCalc3.Size = new System.Drawing.Size(541, 142);
-            this.ctrlSimpleCalc3.TabIndex = 2;
             // 
             // button1
             // 
@@ -77,6 +47,37 @@
             this.button1.Text = "get Calc Result";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // ctrlSimpleCalc3
+            // 
+            this.ctrlSimpleCalc3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.ctrlSimpleCalc3.Font = new System.Drawing.Font("Yu Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrlSimpleCalc3.Location = new System.Drawing.Point(13, 311);
+            this.ctrlSimpleCalc3.Margin = new System.Windows.Forms.Padding(4);
+            this.ctrlSimpleCalc3.Name = "ctrlSimpleCalc3";
+            this.ctrlSimpleCalc3.Size = new System.Drawing.Size(541, 142);
+            this.ctrlSimpleCalc3.TabIndex = 2;
+            // 
+            // ctrlSimpleCalc2
+            // 
+            this.ctrlSimpleCalc2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.ctrlSimpleCalc2.Font = new System.Drawing.Font("Yu Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrlSimpleCalc2.Location = new System.Drawing.Point(13, 161);
+            this.ctrlSimpleCalc2.Margin = new System.Windows.Forms.Padding(4);
+            this.ctrlSimpleCalc2.Name = "ctrlSimpleCalc2";
+            this.ctrlSimpleCalc2.Size = new System.Drawing.Size(541, 142);
+            this.ctrlSimpleCalc2.TabIndex = 1;
+            // 
+            // ctrlSimpleCalc1
+            // 
+            this.ctrlSimpleCalc1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.ctrlSimpleCalc1.Font = new System.Drawing.Font("Yu Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrlSimpleCalc1.Location = new System.Drawing.Point(13, 11);
+            this.ctrlSimpleCalc1.Margin = new System.Windows.Forms.Padding(4);
+            this.ctrlSimpleCalc1.Name = "ctrlSimpleCalc1";
+            this.ctrlSimpleCalc1.Size = new System.Drawing.Size(541, 142);
+            this.ctrlSimpleCalc1.TabIndex = 0;
+            this.ctrlSimpleCalc1.OnCalculationComplete += new System.Action<int>(this.ctrlSimpleCalc1_OnCalculationComplete);
             // 
             // Form1
             // 

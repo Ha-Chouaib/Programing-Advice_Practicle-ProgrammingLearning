@@ -12,9 +12,18 @@ namespace User_Control
 {
     public partial class ctrlSimpleCalc: UserControl
     {
+
         public ctrlSimpleCalc()
         {
             InitializeComponent();
+        }
+        public event Action<int> OnCalculationComplete;
+
+        protected void CalculationComplete(int ID)
+        {
+            Action<int> handler = OnCalculationComplete;
+            if (handler != null) handler(ID);
+
         }
         public float Result
         {
@@ -23,7 +32,9 @@ namespace User_Control
 
         private void button1_Click(object sender, EventArgs e)
         {
-            lblresult.Text =(float.Parse( textBox1.Text) + float.Parse(textBox2.Text)).ToString();
+            int result = (int.Parse(textBox1.Text) + int.Parse(textBox2.Text));
+            lblresult.Text =result.ToString();
+            if (OnCalculationComplete != null) CalculationComplete(result);
         }
     }
 }
