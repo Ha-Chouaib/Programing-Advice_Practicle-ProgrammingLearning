@@ -92,12 +92,12 @@ namespace DVLD_BusinessLayer
                     Phone = "",
                     ImagePath = "";
             DateTime DateOfBirth = DateTime.Now;
-            byte Gender =3;
+            byte Gendor =3;
             int NationalityCountryID = -1;
             if (clsPeopleDataAccess.Find(PersonID, ref NationalNo, ref FirstName, ref SecondName, ref ThirdName, ref LastName,
-                                        ref DateOfBirth, ref Gender, ref Address, ref Phone, ref Email, ref NationalityCountryID, ref ImagePath))
+                                        ref DateOfBirth, ref Gendor, ref Address, ref Phone, ref Email, ref NationalityCountryID, ref ImagePath))
             {
-                return new clsPeople(NationalNo,FirstName,SecondName,ThirdName,LastName,DateOfBirth,Gender,Address,Phone,
+                return new clsPeople(NationalNo,FirstName,SecondName,ThirdName,LastName,DateOfBirth,Gendor,Address,Phone,
                                     Email,NationalityCountryID,ImagePath);
             }
             else
@@ -122,12 +122,12 @@ namespace DVLD_BusinessLayer
                     Phone = "",
                     ImagePath = "";
             DateTime DateOfBirth = DateTime.Now;
-            byte Gender = 3;
+            byte Gendor = 3;
             int NationalityCountryID = -1;
             if (clsPeopleDataAccess.Find(NationalNo, ref PersonID,ref FirstName, ref SecondName, ref ThirdName, ref LastName,
-                                        ref DateOfBirth, ref Gender, ref Address, ref Phone, ref Email, ref NationalityCountryID, ref ImagePath))
+                                        ref DateOfBirth, ref Gendor, ref Address, ref Phone, ref Email, ref NationalityCountryID, ref ImagePath))
             {
-                return new clsPeople(NationalNo, FirstName, SecondName, ThirdName, LastName, DateOfBirth, Gender, Address, Phone,
+                return new clsPeople(NationalNo, FirstName, SecondName, ThirdName, LastName, DateOfBirth, Gendor, Address, Phone,
                                     Email, NationalityCountryID, ImagePath);
             }
             else
@@ -179,13 +179,13 @@ namespace DVLD_BusinessLayer
         {
             return clsPeopleDataAccess.ListAll();
         }
-        public static DataTable FilterPeople(string Column,string FilterTerm)
+        public static DataTable FilterPeople<T>(string Column,T FilterTerm)
         {
             return clsPeopleDataAccess.FilterPeople(Column, FilterTerm);
         }
-        public static DataTable FilterPeople(int NationalityCountryID)
-        {
-            return clsPeopleDataAccess.FilterPeople(NationalityCountryID);
-        }
+        //public static DataTable FilterPeople(string Column,int FilterTerm)
+        //{
+        //    return clsPeopleDataAccess.FilterPeople(Column,FilterTerm);
+        //}
     }
 }

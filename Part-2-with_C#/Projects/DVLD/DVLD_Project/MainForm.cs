@@ -20,9 +20,8 @@ namespace DVLD_Project
         private void peopleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form MangePeopleForm = new frmManagePeople();
-            MangePeopleForm.MdiParent = this;
 
-            MangePeopleForm.Show();
+            MangePeopleForm.ShowDialog();
         }
     }
 }
