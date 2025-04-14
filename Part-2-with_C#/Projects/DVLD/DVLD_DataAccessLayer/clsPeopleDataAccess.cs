@@ -333,10 +333,10 @@ namespace DVLD_DataAccessLayer
             return DT;
         }
 
-        public static DataTable FilterPeople(string Column, string FilterTerm)
+        public static DataTable FilterPeople<T>(string Column, T FilterTerm)
         {
 
-            string[] AllowedColumns = new [] {"ColumnNo","FirstName","SecondName","ThirdName","LastName","Gender","Address" };
+            string[] AllowedColumns = new [] { "PersonID", "NationalityCountryID", "NationalNo","FirstName","SecondName","ThirdName","LastName","Gendor","Address","Email","Phone" };
             if(! AllowedColumns.Contains(Column))
             {
                 throw new ArgumentException("Invalid Column Name");
@@ -368,36 +368,43 @@ namespace DVLD_DataAccessLayer
             return DT;
         }
 
-        public static DataTable FilterPeople(int NationalityCountryID)
-        {
+        //public static DataTable FilterPeople(string Column,int FilterTerm)
+        //{
 
             
-            SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
+        //    SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
 
-            string Query = $"Select * From People Where NationalityCountryID = @CountryID";
+        //    string[] Columns = new string[] { "PersonID", "NationalityCountryID" };
 
-            SqlCommand command = new SqlCommand(Query, connection);
-            command.Parameters.AddWithValue("@CountryID", NationalityCountryID);
+        //    if (!Columns.Contains(Column))
+        //    {
+        //        throw new ArgumentException("Not A Valid Column Name");
+        //    }
 
-            DataTable DT = new DataTable();
-            try
-            {
-                connection.Open();
-                SqlDataReader Reader = command.ExecuteReader();
-                DT.Load(Reader);
+        //    string Query = $"Select * From People Where {Column} Like @Term";
 
-            }
-            catch (Exception ex)
-            {
+        //    SqlCommand command = new SqlCommand(Query, connection);
+        //    command.Parameters.AddWithValue("@Term", "%"+ FilterTerm +"%");
 
-            }
-            finally
-            {
-                connection.Close();
-            }
+        //    DataTable DT = new DataTable();
+        //    try
+        //    {
+        //        connection.Open();
+        //        SqlDataReader Reader = command.ExecuteReader();
+        //        DT.Load(Reader);
 
-            return DT;
-        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //    }
+        //    finally
+        //    {
+        //        connection.Close();
+        //    }
+
+        //    return DT;
+        //}
 
 
     }
