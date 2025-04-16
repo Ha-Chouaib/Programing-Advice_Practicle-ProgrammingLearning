@@ -111,5 +111,12 @@ namespace DVLD_Project
                 e.FormattingApplied = true;
             }
         }
+
+        private void pbAddNew_Click(object sender, EventArgs e)
+        {
+            Form Add_Edit = new frmAddEdit_Person();
+
+            Add_Edit.ShowDialog();
+        }
     }
 }
