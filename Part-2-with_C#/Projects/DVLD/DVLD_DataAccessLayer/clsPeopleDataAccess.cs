@@ -36,10 +36,15 @@ namespace DVLD_DataAccessLayer
                     ThirdName = (string)reader["ThirdName"];
                     LastName = (string)reader["LastName"];
                     DateOfBirth = (DateTime)reader["DateOfBirth"];
-                    Gender = (byte)reader["Gender"];
+                    Gender = (byte)reader["Gendor"];
                     Address = (string)reader["Address"];
                     Phone = (string)reader["Phone"];
-                    Email = (string)reader["Email"];
+
+                    if (reader["Email"] == DBNull.Value)
+                        Email = "";
+                    else
+                        Email = (string)reader["Email"];
+
                     NationalityCountryID = (int)reader["NationalityCountryID"];
 
                     if (reader["ImagePath"] != DBNull.Value)
@@ -90,10 +95,15 @@ namespace DVLD_DataAccessLayer
                     ThirdName = (string)reader["ThirdName"];
                     LastName = (string)reader["LastName"];
                     DateOfBirth = (DateTime)reader["DateOfBirth"];
-                    Gender = (byte)reader["Gender"];
+                    Gender = (byte)reader["Gendor"];
                     Address = (string)reader["Address"];
                     Phone = (string)reader["Phone"];
-                    Email = (string)reader["Email"];
+                    
+                    if(reader["Email"] == DBNull.Value)
+                        Email = "";
+                    else
+                        Email = (string)reader["Email"];
+
                     NationalityCountryID = (int)reader["NationalityCountryID"];
 
                     if (reader["ImagePath"] != DBNull.Value)
@@ -256,8 +266,14 @@ namespace DVLD_DataAccessLayer
 
             command.Parameters.AddWithValue("@Address", Address);
             command.Parameters.AddWithValue("@Phone", Phone);
-            command.Parameters.AddWithValue("@Email", Email);
             command.Parameters.AddWithValue("@NationalityCountryID", NationalityCountryID);
+            
+            
+            if (Email == string.Empty)
+                command.Parameters.AddWithValue("@Email", DBNull.Value);
+            else
+                command.Parameters.AddWithValue("@Email", Email);
+
 
             if (ImagePath == string.Empty)
                 command.Parameters.AddWithValue("@ImagePath", DBNull.Value);
@@ -367,44 +383,6 @@ namespace DVLD_DataAccessLayer
 
             return DT;
         }
-
-        //public static DataTable FilterPeople(string Column,int FilterTerm)
-        //{
-
-            
-        //    SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
-
-        //    string[] Columns = new string[] { "PersonID", "NationalityCountryID" };
-
-        //    if (!Columns.Contains(Column))
-        //    {
-        //        throw new ArgumentException("Not A Valid Column Name");
-        //    }
-
-        //    string Query = $"Select * From People Where {Column} Like @Term";
-
-        //    SqlCommand command = new SqlCommand(Query, connection);
-        //    command.Parameters.AddWithValue("@Term", "%"+ FilterTerm +"%");
-
-        //    DataTable DT = new DataTable();
-        //    try
-        //    {
-        //        connection.Open();
-        //        SqlDataReader Reader = command.ExecuteReader();
-        //        DT.Load(Reader);
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //    }
-        //    finally
-        //    {
-        //        connection.Close();
-        //    }
-
-        //    return DT;
-        //}
 
 
     }

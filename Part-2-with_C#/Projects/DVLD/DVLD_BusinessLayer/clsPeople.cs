@@ -28,7 +28,7 @@ namespace DVLD_BusinessLayer
         public int NationalityCountryID { get; set; }
         public string ImagePath { get; set; }
 
-        clsPeople(string NationalNo, string FirstName, string SecondName, string ThirdName,
+        public clsPeople(string NationalNo, string FirstName, string SecondName, string ThirdName,
             string LastName, DateTime DateOfBirth, byte Gender, string Address, string Phone, string Email,
             int NationalityCountryID, string ImagePath)
         {
@@ -47,7 +47,7 @@ namespace DVLD_BusinessLayer
 
             _Mode = enMode.eUpdate;
         }
-        clsPeople()
+        public clsPeople()
         {
             this.PersonID = -1;
             this.NationalNo = "";
@@ -183,9 +183,6 @@ namespace DVLD_BusinessLayer
         {
             return clsPeopleDataAccess.FilterPeople(Column, FilterTerm);
         }
-        //public static DataTable FilterPeople(string Column,int FilterTerm)
-        //{
-        //    return clsPeopleDataAccess.FilterPeople(Column,FilterTerm);
-        //}
+       
     }
 }

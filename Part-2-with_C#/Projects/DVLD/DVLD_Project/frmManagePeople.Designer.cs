@@ -30,22 +30,23 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtFilterPeople = new System.Windows.Forms.TextBox();
-            this.btnAddNew = new System.Windows.Forms.Button();
             this.cmbFilter = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvLsitPeople = new System.Windows.Forms.DataGridView();
             this.btnClose = new System.Windows.Forms.Button();
             this.lblRecordNumber = new System.Windows.Forms.Label();
+            this.pbAddNew = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLsitPeople)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAddNew)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.panel1.Controls.Add(this.pbAddNew);
             this.panel1.Controls.Add(this.txtFilterPeople);
-            this.panel1.Controls.Add(this.btnAddNew);
             this.panel1.Controls.Add(this.cmbFilter);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dgvLsitPeople);
@@ -68,19 +69,6 @@
             this.txtFilterPeople.TabIndex = 5;
             this.txtFilterPeople.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilterPeople_KeyPress);
             this.txtFilterPeople.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFilterPeople_KeyUp);
-            // 
-            // btnAddNew
-            // 
-            this.btnAddNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-            this.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddNew.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNew.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnAddNew.Location = new System.Drawing.Point(1238, 4);
-            this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.Size = new System.Drawing.Size(71, 48);
-            this.btnAddNew.TabIndex = 3;
-            this.btnAddNew.Text = "Add";
-            this.btnAddNew.UseVisualStyleBackColor = false;
             // 
             // cmbFilter
             // 
@@ -156,6 +144,17 @@
             this.lblRecordNumber.TabIndex = 2;
             this.lblRecordNumber.Text = "Records:";
             // 
+            // pbAddNew
+            // 
+            this.pbAddNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(145)))), ((int)(((byte)(145)))));
+            this.pbAddNew.Location = new System.Drawing.Point(1237, 8);
+            this.pbAddNew.Name = "pbAddNew";
+            this.pbAddNew.Size = new System.Drawing.Size(61, 44);
+            this.pbAddNew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbAddNew.TabIndex = 6;
+            this.pbAddNew.TabStop = false;
+            this.pbAddNew.Click += new System.EventHandler(this.pbAddNew_Click);
+            // 
             // frmManagePeople
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,6 +170,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLsitPeople)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAddNew)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,7 +184,7 @@
         private System.Windows.Forms.DataGridView dgvLsitPeople;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbFilter;
-        private System.Windows.Forms.Button btnAddNew;
         private System.Windows.Forms.TextBox txtFilterPeople;
+        private System.Windows.Forms.PictureBox pbAddNew;
     }
 }

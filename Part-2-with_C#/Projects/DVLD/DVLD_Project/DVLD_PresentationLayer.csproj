@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DVLD_Project">
+      <HintPath>obj\Debug\DVLD_Project.exe</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,6 +55,12 @@
     <Compile Include="ctrlAdd-Edit_PersonIfo.Designer.cs">
       <DependentUpon>ctrlAdd-Edit_PersonIfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAddEdit_Person.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddEdit_Person.Designer.cs">
+      <DependentUpon>frmAddEdit_Person.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmManagePeople.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +75,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ctrlAdd-Edit_PersonIfo.resx">
+      <DependentUpon>ctrlAdd-Edit_PersonIfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddEdit_Person.resx">
+      <DependentUpon>frmAddEdit_Person.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmManagePeople.resx">
       <DependentUpon>frmManagePeople.cs</DependentUpon>
     </EmbeddedResource>
