@@ -31,7 +31,12 @@ namespace DVLD_Project
 
             dgvLsitPeople.DataSource = dtPeople;
             cmbFilter.SelectedIndex = 0;
+            lblRecordsCount.Text = dgvLsitPeople.RowCount.ToString();
 
+        }
+        private void ReloadPeople(object sender)
+        {
+            _LoadPeople();
         }
         private void _FilterPeopole()
         {
@@ -114,9 +119,9 @@ namespace DVLD_Project
 
         private void pbAddNew_Click(object sender, EventArgs e)
         {
-            Form Add_Edit = new frmAddEdit_Person();
-
-            Add_Edit.ShowDialog();
+            frmAdd_Edit_People frmAddEdit = new frmAdd_Edit_People();
+            frmAddEdit.ReLoadPeopleList += ReloadPeople;
+            frmAddEdit.Show();
         }
     }
 }
