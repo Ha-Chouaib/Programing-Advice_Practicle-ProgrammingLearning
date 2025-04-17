@@ -21,7 +21,7 @@ namespace DVLD_BusinessLayer
         public string ThirdName { get; set; }
         public string LastName { get; set; }
         public DateTime DateOfBirth { get; set; }
-        public byte Gender { get; set; }
+        public short Gender { get; set; }
         public string Address { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
@@ -29,7 +29,7 @@ namespace DVLD_BusinessLayer
         public string ImagePath { get; set; }
 
         public clsPeople(string NationalNo, string FirstName, string SecondName, string ThirdName,
-            string LastName, DateTime DateOfBirth, byte Gender, string Address, string Phone, string Email,
+            string LastName, DateTime DateOfBirth, short Gender, string Address, string Phone, string Email,
             int NationalityCountryID, string ImagePath)
         {
             this.NationalNo = NationalNo;
@@ -63,7 +63,7 @@ namespace DVLD_BusinessLayer
             this.NationalityCountryID = -1;
             this.ImagePath = "";
 
-            _Mode = enMode.eUpdate;
+            _Mode = enMode.eAddNew;
 
         }
 
@@ -92,7 +92,7 @@ namespace DVLD_BusinessLayer
                     Phone = "",
                     ImagePath = "";
             DateTime DateOfBirth = DateTime.Now;
-            byte Gendor =3;
+            short Gendor =3;
             int NationalityCountryID = -1;
             if (clsPeopleDataAccess.Find(PersonID, ref NationalNo, ref FirstName, ref SecondName, ref ThirdName, ref LastName,
                                         ref DateOfBirth, ref Gendor, ref Address, ref Phone, ref Email, ref NationalityCountryID, ref ImagePath))
@@ -122,9 +122,9 @@ namespace DVLD_BusinessLayer
                     Phone = "",
                     ImagePath = "";
             DateTime DateOfBirth = DateTime.Now;
-            byte Gendor = 3;
+            short Gendor = -1;
             int NationalityCountryID = -1;
-            if (clsPeopleDataAccess.Find(NationalNo, ref PersonID,ref FirstName, ref SecondName, ref ThirdName, ref LastName,
+            if (clsPeopleDataAccess.Find(PersonID,ref NationalNo,ref FirstName, ref SecondName, ref ThirdName, ref LastName,
                                         ref DateOfBirth, ref Gendor, ref Address, ref Phone, ref Email, ref NationalityCountryID, ref ImagePath))
             {
                 return new clsPeople(NationalNo, FirstName, SecondName, ThirdName, LastName, DateOfBirth, Gendor, Address, Phone,

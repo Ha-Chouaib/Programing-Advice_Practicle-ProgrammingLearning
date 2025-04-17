@@ -12,7 +12,7 @@ namespace DVLD_DataAccessLayer
     {
         
         public static bool Find(int PersonID,ref string NationalNo,ref string FirstName,ref string SecondName,ref string ThirdName,
-            ref string LastName,ref DateTime DateOfBirth, ref byte Gender,ref string Address, ref string Phone,ref string Email,
+            ref string LastName,ref DateTime DateOfBirth, ref short Gender,ref string Address, ref string Phone,ref string Email,
             ref int NationalityCountryID,ref string ImagePath)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
@@ -71,7 +71,7 @@ namespace DVLD_DataAccessLayer
         }
 
         public static bool Find(string NationalNo,ref int PersonID ,ref string FirstName, ref string SecondName, ref string ThirdName,
-           ref string LastName, ref DateTime DateOfBirth, ref byte Gender, ref string Address, ref string Phone, ref string Email,
+           ref string LastName, ref DateTime DateOfBirth, ref short Gender, ref string Address, ref string Phone, ref string Email,
            ref int NationalityCountryID, ref string ImagePath)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
@@ -184,15 +184,15 @@ namespace DVLD_DataAccessLayer
         }
         
         public static int AddNew(string NationalNo, string FirstName,  string SecondName,  string ThirdName,
-            string LastName,  DateTime DateOfBirth,  byte Gender,  string Address,  string Phone,  string Email,
+            string LastName,  DateTime DateOfBirth,  short Gender,  string Address,  string Phone,  string Email,
             int NationalityCountryID, string ImagePath)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
-            string Query = @"Insert Into People (NationalNo ,FirstName,SecondName,ThirdName,LastName,DateOfBirth,Gender,Address,
+            string Query = @"Insert Into People (NationalNo ,FirstName,SecondName,ThirdName,LastName,DateOfBirth,Gendor,Address,
                                                 Phone,Email,NationalityCountryID,ImagePath)
                                          Values(@NationalNo,@FirstName,@SecondName,@ThirdName,@LastName,@DateOfBirth,
-                                                @Gender,@Address,@Phone,@Email,@NationalityCountryID,@ImagePath);
-                             Select SCOPE_Identity()";
+                                                @Gendor,@Address,@Phone,@Email,@NationalityCountryID,@ImagePath);
+                             Select SCOPE_IDENTITY();";
 
             SqlCommand command = new SqlCommand(Query, connection);
             command.Parameters.AddWithValue("@NationalNo", NationalNo);
@@ -202,7 +202,7 @@ namespace DVLD_DataAccessLayer
             command.Parameters.AddWithValue("@LastName", LastName);
             command.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
 
-            command.Parameters.AddWithValue("@Gender", Gender);
+            command.Parameters.AddWithValue("@Gendor", Gender);
 
             command.Parameters.AddWithValue("@Address", Address);
             command.Parameters.AddWithValue("@Phone", Phone);
@@ -225,8 +225,10 @@ namespace DVLD_DataAccessLayer
 
             }catch(Exception ex)
             {
+                Console.WriteLine($"ADD Errot {ex.Message}");
 
-            }finally
+            }
+            finally
             {
                 connection.Close();
             }
@@ -235,7 +237,7 @@ namespace DVLD_DataAccessLayer
         }
 
         public static bool Update(string NationalNo, string FirstName, string SecondName, string ThirdName,
-            string LastName, DateTime DateOfBirth, byte Gender, string Address, string Phone, string Email,
+            string LastName, DateTime DateOfBirth, short Gender, string Address, string Phone, string Email,
             int NationalityCountryID, string ImagePath)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);

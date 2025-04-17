@@ -17,13 +17,21 @@ namespace DVLD_Project
         {
             InitializeComponent();
         }
+       
         private void ctrlAdd_Edit_PersonIfo_Load(object sender, EventArgs e)
         {
             _LoadCountriesToComboBox();
             rbGender_M.Checked = true;
         }
-        clsPeople NewPerson = new clsPeople();
 
+        public delegate void ReturnPersonInfoHandler(object sender, int PersonID);
+        public event ReturnPersonInfoHandler ReturnID;
+
+        public delegate void TriggerFunction(object sender);
+        public event TriggerFunction LeaveForm;
+
+        clsPeople NewPerson = new clsPeople();
+        //public int NewPersonID { get { return NewPerson.PersonID; } }
         enum enMode { eAddNew,eUpdate}
         enMode _Mode;
         private void _LoadCountriesToComboBox()
@@ -31,9 +39,9 @@ namespace DVLD_Project
             DataTable DT = clsCountries.ListAll();
             foreach(DataRow row in DT.Rows)
             {
-                cmbCountry.Items.Add(row);
+                cmbCountry.Items.Add(row["CountryName"]);
             }
-            cmbCountry.SelectedIndex = 50;
+            cmbCountry.SelectedIndex = 10;
         }
         
         ErrorProvider errProv = new ErrorProvider();
@@ -69,14 +77,16 @@ namespace DVLD_Project
         }
 
         private void btnSave_Click(object sender, EventArgs e)
-        {   
+        {
+
             if(_Mode == enMode.eAddNew)
             {
-                if (MessageBox.Show("Are you Sure to add New Person?", "Confirm", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                if (MessageBox.Show("Are you Sure to add New Person? ", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     if(_AddNewPerson())
                     {
                         MessageBox.Show("Added Successfully");
+                        ReturnID?.Invoke(this, NewPerson.PersonID);
                     }
                     else
                     {
@@ -95,7 +105,7 @@ namespace DVLD_Project
         {
             if(MessageBox.Show("Sure To Leave ?","Confirm",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                
+                LeaveForm?.Invoke(this);
             }
 
         }
@@ -133,16 +143,20 @@ namespace DVLD_Project
 
         private void txtEmail_Validating(object sender, CancelEventArgs e)
         {
-            if (!txtEmail.Text.EndsWith(".com") || !txtEmail.Text.Contains("@") || txtEmail.Text.EndsWith("@.com"))
+            if(txtEmail.Text != string.Empty)
             {
-                e.Cancel = true;
-                errProv.SetError(txtEmail, "Email Format Must be Like: example@example.com");
+                if (!txtEmail.Text.EndsWith(".com") || !txtEmail.Text.Contains("@") || txtEmail.Text.EndsWith("@.com"))
+                {
+                    e.Cancel = true;
+                    errProv.SetError(txtEmail, "Email Format Must be Like: example@example.com");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errProv.SetError(txtEmail, "");
+                }
             }
-            else
-            {
-                e.Cancel = false;
-                errProv.SetError(txtEmail, "");
-            }
+            
         }
 
         
