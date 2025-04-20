@@ -28,18 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pbAddNew = new System.Windows.Forms.PictureBox();
             this.txtFilterPeople = new System.Windows.Forms.TextBox();
             this.cmbFilter = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvLsitPeople = new System.Windows.Forms.DataGridView();
+            this.cmsManagePeople = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmShowDetails = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmAddNew = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmSendEmail = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmPhoneCall = new System.Windows.Forms.ToolStripMenuItem();
             this.btnClose = new System.Windows.Forms.Button();
             this.lblRecordNumber = new System.Windows.Forms.Label();
             this.lblRecordsCount = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAddNew)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLsitPeople)).BeginInit();
+            this.cmsManagePeople.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -53,15 +62,17 @@
             this.panel1.Controls.Add(this.dgvLsitPeople);
             this.panel1.Location = new System.Drawing.Point(12, 111);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1312, 524);
+            this.panel1.Size = new System.Drawing.Size(1394, 524);
             this.panel1.TabIndex = 0;
             // 
             // pbAddNew
             // 
-            this.pbAddNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(145)))), ((int)(((byte)(145)))));
-            this.pbAddNew.Location = new System.Drawing.Point(1237, 8);
+            this.pbAddNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.pbAddNew.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbAddNew.Image = global::DVLD_Project.Properties.Resources.add;
+            this.pbAddNew.Location = new System.Drawing.Point(1335, 8);
             this.pbAddNew.Name = "pbAddNew";
-            this.pbAddNew.Size = new System.Drawing.Size(61, 44);
+            this.pbAddNew.Size = new System.Drawing.Size(46, 44);
             this.pbAddNew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbAddNew.TabIndex = 6;
             this.pbAddNew.TabStop = false;
@@ -125,12 +136,72 @@
             this.dgvLsitPeople.AllowUserToDeleteRows = false;
             this.dgvLsitPeople.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.dgvLsitPeople.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLsitPeople.ContextMenuStrip = this.cmsManagePeople;
             this.dgvLsitPeople.Location = new System.Drawing.Point(13, 58);
             this.dgvLsitPeople.Name = "dgvLsitPeople";
             this.dgvLsitPeople.ReadOnly = true;
-            this.dgvLsitPeople.Size = new System.Drawing.Size(1285, 269);
+            this.dgvLsitPeople.Size = new System.Drawing.Size(1368, 269);
             this.dgvLsitPeople.TabIndex = 0;
             this.dgvLsitPeople.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvLsitPeople_CellFormatting);
+            // 
+            // cmsManagePeople
+            // 
+            this.cmsManagePeople.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(79)))), ((int)(((byte)(79)))));
+            this.cmsManagePeople.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmsManagePeople.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmShowDetails,
+            this.tsmAddNew,
+            this.tsmEdit,
+            this.tsmDelete,
+            this.tsmSendEmail,
+            this.tsmPhoneCall});
+            this.cmsManagePeople.Name = "cmsManagePeople";
+            this.cmsManagePeople.Size = new System.Drawing.Size(179, 136);
+            // 
+            // tsmShowDetails
+            // 
+            this.tsmShowDetails.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.tsmShowDetails.Name = "tsmShowDetails";
+            this.tsmShowDetails.Size = new System.Drawing.Size(178, 22);
+            this.tsmShowDetails.Text = "Show Details";
+            // 
+            // tsmAddNew
+            // 
+            this.tsmAddNew.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.tsmAddNew.Name = "tsmAddNew";
+            this.tsmAddNew.Size = new System.Drawing.Size(178, 22);
+            this.tsmAddNew.Text = "Add New Person";
+            this.tsmAddNew.Click += new System.EventHandler(this.tsmAddNew_Click);
+            // 
+            // tsmEdit
+            // 
+            this.tsmEdit.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.tsmEdit.Name = "tsmEdit";
+            this.tsmEdit.Size = new System.Drawing.Size(178, 22);
+            this.tsmEdit.Text = "Edit";
+            this.tsmEdit.Click += new System.EventHandler(this.tsmEdit_Click);
+            // 
+            // tsmDelete
+            // 
+            this.tsmDelete.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.tsmDelete.Name = "tsmDelete";
+            this.tsmDelete.Size = new System.Drawing.Size(180, 22);
+            this.tsmDelete.Text = "Delete";
+            this.tsmDelete.Click += new System.EventHandler(this.tsmDelete_Click);
+            // 
+            // tsmSendEmail
+            // 
+            this.tsmSendEmail.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.tsmSendEmail.Name = "tsmSendEmail";
+            this.tsmSendEmail.Size = new System.Drawing.Size(178, 22);
+            this.tsmSendEmail.Text = "Send Email";
+            // 
+            // tsmPhoneCall
+            // 
+            this.tsmPhoneCall.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.tsmPhoneCall.Name = "tsmPhoneCall";
+            this.tsmPhoneCall.Size = new System.Drawing.Size(178, 22);
+            this.tsmPhoneCall.Text = "Phone Call";
             // 
             // btnClose
             // 
@@ -138,12 +209,14 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.SystemColors.Menu;
-            this.btnClose.Location = new System.Drawing.Point(1249, 662);
+            this.btnClose.Location = new System.Drawing.Point(1301, 662);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(92, 33);
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.MouseHover += new System.EventHandler(this.btnClose_MouseHover);
             // 
             // lblRecordNumber
             // 
@@ -172,7 +245,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.ClientSize = new System.Drawing.Size(1336, 707);
+            this.ClientSize = new System.Drawing.Size(1418, 707);
             this.Controls.Add(this.lblRecordsCount);
             this.Controls.Add(this.lblRecordNumber);
             this.Controls.Add(this.btnClose);
@@ -184,6 +257,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAddNew)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLsitPeople)).EndInit();
+            this.cmsManagePeople.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,5 +274,12 @@
         private System.Windows.Forms.TextBox txtFilterPeople;
         private System.Windows.Forms.PictureBox pbAddNew;
         private System.Windows.Forms.Label lblRecordsCount;
+        private System.Windows.Forms.ContextMenuStrip cmsManagePeople;
+        private System.Windows.Forms.ToolStripMenuItem tsmShowDetails;
+        private System.Windows.Forms.ToolStripMenuItem tsmAddNew;
+        private System.Windows.Forms.ToolStripMenuItem tsmEdit;
+        private System.Windows.Forms.ToolStripMenuItem tsmDelete;
+        private System.Windows.Forms.ToolStripMenuItem tsmSendEmail;
+        private System.Windows.Forms.ToolStripMenuItem tsmPhoneCall;
     }
 }

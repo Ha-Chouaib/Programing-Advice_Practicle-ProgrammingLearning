@@ -134,7 +134,7 @@ namespace DVLD_DataAccessLayer
         public static bool IsExist(int PersonID)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
-            string Query = @"Select Found=1 From People Where PersonID=@PersoonID";
+            string Query = @"Select Found = 1 From People Where PersonID=@PersonID";
 
             bool isFound = false;
             SqlCommand command = new SqlCommand(Query, connection);
@@ -236,7 +236,7 @@ namespace DVLD_DataAccessLayer
 
         }
 
-        public static bool Update(string NationalNo, string FirstName, string SecondName, string ThirdName,
+        public static bool Update(int ID,string NationalNo, string FirstName, string SecondName, string ThirdName,
             string LastName, DateTime DateOfBirth, short Gender, string Address, string Phone, string Email,
             int NationalityCountryID, string ImagePath)
         {
@@ -249,14 +249,16 @@ namespace DVLD_DataAccessLayer
                                     ThirdName= @ThirdName,
                                     LastName= @LastName,
                                     DateOfBirth= @DateOfBirth,
-                                    Gender= @Gender,
+                                    Gendor= @Gender,
                                     Address= @Address,
                                     Phone= @Phone,
                                     Email= @Email,
                                     NationalityCountryID= @NationalityCountryID,
-                                    ImagePath= @ImagePath ";
+                                    ImagePath= @ImagePath 
+                            WHERE PersonID=@ID ;";
 
             SqlCommand command = new SqlCommand(Query, connection);
+            command.Parameters.AddWithValue("@ID", ID);
             command.Parameters.AddWithValue("@NationalNo", NationalNo);
             command.Parameters.AddWithValue("@FirstName", FirstName);
             command.Parameters.AddWithValue("@SecondName", SecondName);
