@@ -36,7 +36,8 @@ namespace DVLD_Project
         }
         private void ReloadPeople(object sender)
         {
-            _LoadPeople();
+            dgvLsitPeople.DataSource = clsPeople.ListAll();
+            lblRecordsCount.Text = dgvLsitPeople.RowCount.ToString();
         }
         private void _FilterPeopole()
         {
@@ -122,6 +123,51 @@ namespace DVLD_Project
             frmAdd_Edit_People frmAddEdit = new frmAdd_Edit_People();
             frmAddEdit.ReLoadPeopleList += ReloadPeople;
             frmAddEdit.Show();
+        }
+
+        private void tsmAddNew_Click(object sender, EventArgs e)
+        {
+            pbAddNew_Click(sender, e);
+        }
+
+        private void tsmEdit_Click(object sender, EventArgs e)
+        {
+            
+            frmAdd_Edit_People frmAddEdit = new frmAdd_Edit_People((int)dgvLsitPeople.CurrentRow.Cells[0].Value);
+            frmAddEdit.ReLoadPeopleList += ReloadPeople;
+            frmAddEdit.Show();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void tsmDelete_Click(object sender, EventArgs e)
+        {
+            int ID =(int) dgvLsitPeople.CurrentRow.Cells[0].Value;
+            if(!clsPeople.IsExist(ID))
+            {
+                MessageBox.Show("Person Not Found");
+                return;
+            }
+
+            if(MessageBox.Show("Sure To Delete this Record?","Confirm",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if(clsPeople.DeletePerson(ID))
+                {
+                    MessageBox.Show("Deleted Successfully", "Alert");
+                    ReloadPeople(sender);
+                }else
+                {
+                    MessageBox.Show("Couldn't Delete the Record, Cause Of Refrential Intigrity !!");
+                }
+            }
+        }
+
+        private void btnClose_MouseHover(object sender, EventArgs e)
+        {
+       
         }
     }
 }

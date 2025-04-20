@@ -12,16 +12,20 @@ namespace DVLD_Project
 {
     public partial class frmAdd_Edit_People: Form
     {
-        
+        int _PersonID;
+        enum enMode { eAddNew, eupdate }
+        enMode _Mode;
         public frmAdd_Edit_People(int PersonID)
         {
             InitializeComponent();
             _PersonID = PersonID;
+            _Mode = enMode.eupdate;
         }
         public frmAdd_Edit_People()
         {
             InitializeComponent();
             _PersonID = -1;
+            _Mode = enMode.eAddNew;
         }
 
         public delegate void TriggerFunction(object sender);
@@ -32,24 +36,25 @@ namespace DVLD_Project
         {
             _PerformAdd_EditActions();
         }
-        int _PersonID;
-        enum enMode { eAddNew,eupdate}
-        enMode _Mode;
+       
 
         private void _PerformAdd_EditActions()
         {
-            if (_PersonID == -1)
+            if (_Mode==enMode.eAddNew)
             {
                 lblHeader.Text = "Add New Person";
+                ctrlAdd_Edit_PersonIfo1.ApplyMode(-1);
                 ctrlAdd_Edit_PersonIfo1.ReturnID += SetPersonIDToField;
-                ctrlAdd_Edit_PersonIfo1.LeaveForm += LeaveTheForm;
 
             }
             else
             {
                 lblHeader.Text = "Edit Person";
+                ctrlAdd_Edit_PersonIfo1.ApplyMode(_PersonID);
+                lblPersonID.Text = _PersonID.ToString();
+
             }
-            ReLoadPeopleList?.Invoke(this);
+            ctrlAdd_Edit_PersonIfo1.LeaveForm += LeaveTheForm;
         }
         private void SetPersonIDToField(object sender,int PersonID)
         {
@@ -58,6 +63,7 @@ namespace DVLD_Project
         }
         private void LeaveTheForm(object sender)
         {
+            ReLoadPeopleList?.Invoke(this);
             this.Close();
         }
         

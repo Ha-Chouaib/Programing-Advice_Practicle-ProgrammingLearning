@@ -28,10 +28,11 @@ namespace DVLD_BusinessLayer
         public int NationalityCountryID { get; set; }
         public string ImagePath { get; set; }
 
-        public clsPeople(string NationalNo, string FirstName, string SecondName, string ThirdName,
+        public clsPeople(int PersonID ,string NationalNo, string FirstName, string SecondName, string ThirdName,
             string LastName, DateTime DateOfBirth, short Gender, string Address, string Phone, string Email,
             int NationalityCountryID, string ImagePath)
         {
+            this.PersonID = PersonID;
             this.NationalNo = NationalNo;
             this.FirstName = FirstName;
             this.SecondName = SecondName;
@@ -76,7 +77,7 @@ namespace DVLD_BusinessLayer
         }
         private bool _UpdatePerson()
         {
-            return clsPeopleDataAccess.Update(this.NationalNo, this.FirstName, this.SecondName, this.ThirdName, this.LastName,
+            return clsPeopleDataAccess.Update(this.PersonID,this.NationalNo, this.FirstName, this.SecondName, this.ThirdName, this.LastName,
                                         this.DateOfBirth, this.Gender, this.Address, this.Phone, this.Email, this.NationalityCountryID, this.ImagePath);
         }
 
@@ -97,7 +98,7 @@ namespace DVLD_BusinessLayer
             if (clsPeopleDataAccess.Find(PersonID, ref NationalNo, ref FirstName, ref SecondName, ref ThirdName, ref LastName,
                                         ref DateOfBirth, ref Gendor, ref Address, ref Phone, ref Email, ref NationalityCountryID, ref ImagePath))
             {
-                return new clsPeople(NationalNo,FirstName,SecondName,ThirdName,LastName,DateOfBirth,Gendor,Address,Phone,
+                return new clsPeople(PersonID,NationalNo,FirstName,SecondName,ThirdName,LastName,DateOfBirth,Gendor,Address,Phone,
                                     Email,NationalityCountryID,ImagePath);
             }
             else
@@ -124,10 +125,10 @@ namespace DVLD_BusinessLayer
             DateTime DateOfBirth = DateTime.Now;
             short Gendor = -1;
             int NationalityCountryID = -1;
-            if (clsPeopleDataAccess.Find(PersonID,ref NationalNo,ref FirstName, ref SecondName, ref ThirdName, ref LastName,
+            if (clsPeopleDataAccess.Find(NationalNo,ref PersonID,ref FirstName, ref SecondName, ref ThirdName, ref LastName,
                                         ref DateOfBirth, ref Gendor, ref Address, ref Phone, ref Email, ref NationalityCountryID, ref ImagePath))
             {
-                return new clsPeople(NationalNo, FirstName, SecondName, ThirdName, LastName, DateOfBirth, Gendor, Address, Phone,
+                return new clsPeople(PersonID,NationalNo, FirstName, SecondName, ThirdName, LastName, DateOfBirth, Gendor, Address, Phone,
                                     Email, NationalityCountryID, ImagePath);
             }
             else

@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DVLD_BusinessLayer;
+using System.Runtime.CompilerServices;
+using DVLD_Project.Properties;
+using System.IO;
 
 namespace DVLD_Project
 {
@@ -17,12 +20,15 @@ namespace DVLD_Project
         {
             InitializeComponent();
         }
-       
+
+        enum enMode { eAddNew,eUpdate}
+        enMode _Mode;
         private void ctrlAdd_Edit_PersonIfo_Load(object sender, EventArgs e)
         {
             _LoadCountriesToComboBox();
             rbGender_M.Checked = true;
         }
+
 
         public delegate void ReturnPersonInfoHandler(object sender, int PersonID);
         public event ReturnPersonInfoHandler ReturnID;
@@ -30,76 +36,175 @@ namespace DVLD_Project
         public delegate void TriggerFunction(object sender);
         public event TriggerFunction LeaveForm;
 
-        clsPeople NewPerson = new clsPeople();
-        //public int NewPersonID { get { return NewPerson.PersonID; } }
-        enum enMode { eAddNew,eUpdate}
-        enMode _Mode;
+        private int _PersonID ; 
+        clsPeople Person ;
+        ErrorProvider errProv = new ErrorProvider();
+
         private void _LoadCountriesToComboBox()
         {
             DataTable DT = clsCountries.ListAll();
             foreach(DataRow row in DT.Rows)
             {
                 cmbCountry.Items.Add(row["CountryName"]);
-            }
-            cmbCountry.SelectedIndex = 10;
+            } 
+            cmbCountry.SelectedIndex = 119;
+            dtDateOfBirth.MaxDate = DateTime.Now.AddYears(-18);
         }
-        
-        ErrorProvider errProv = new ErrorProvider();
-
-        private void _FillPersonRecordWithNewInfo(clsPeople  _Person)
+        public void ApplyMode(int PersonID)
         {
-            _Person.FirstName = txtFirstName.Text;
-            _Person.SecondName = txtSecondName.Text;
-            _Person.ThirdName = txtThirdName.Text;
-            _Person.LastName = txtLastName.Text;
-            _Person.NationalNo = txtNationalNo.Text;
-            _Person.Address = txtAddress.Text;
-            _Person.DateOfBirth = dtDateOfBirth.Value;
-            _Person.Phone = txtPhone.Text;
-            _Person.Email = txtEmail.Text;
+            if (clsPeople.IsExist(PersonID))
+            {
+                _Mode = enMode.eUpdate;
+                _PersonID = PersonID;
+                Person = clsPeople.Find(_PersonID);
+                _UploadOldDataToFields();
+
+            }
+            else
+            {
+                _Mode = enMode.eAddNew;
+                Person = new clsPeople();
+            }
+        }
+
+
+        private void _FillPersonRecordWithNewInfo()
+        {
+            Person.FirstName = txtFirstName.Text;
+            Person.SecondName = txtSecondName.Text;
+            Person.ThirdName = txtThirdName.Text;
+            Person.LastName = txtLastName.Text;
+            Person.NationalNo = txtNationalNo.Text;
+            Person.Address = txtAddress.Text;
+            Person.DateOfBirth = dtDateOfBirth.Value;
+            Person.Phone = txtPhone.Text;
+            Person.Email = txtEmail.Text;
 
             if (rbGender_M.Checked)
-                _Person.Gender = 0;
+                Person.Gender = 0;
             else
-                _Person.Gender = 1;
+                Person.Gender = 1;
 
-            _Person.NationalityCountryID = clsCountries.Find(cmbCountry.SelectedItem.ToString()).CountryID;
-
-        }
-
-        private bool _AddNewPerson()
-        {
-            _Mode = enMode.eAddNew;
-            _FillPersonRecordWithNewInfo(NewPerson);
-            
-
-            return NewPerson.Save();
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-
-            if(_Mode == enMode.eAddNew)
+            Person.NationalityCountryID = clsCountries.Find(cmbCountry.SelectedItem.ToString()).CountryID;
+            if (pbPersonImg.Tag != null)
             {
-                if (MessageBox.Show("Are you Sure to add New Person? ", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    if(_AddNewPerson())
-                    {
-                        MessageBox.Show("Added Successfully");
-                        ReturnID?.Invoke(this, NewPerson.PersonID);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Something Seems To have Gone wrong. The Operation Faild !");
-
-                    }
-                }
+                Person.ImagePath = pbPersonImg.Tag as string;
+            }
+        }
+        
+        private void _UploadOldDataToFields()
+        {
+            if(Person != null)
+            {
+                txtFirstName.Text = Person.FirstName;
+                txtSecondName.Text = Person.SecondName;
+                txtThirdName.Text = Person.ThirdName;
+                txtLastName.Text = Person.LastName;
+                txtNationalNo.Text = Person.NationalNo;
+                txtAddress.Text = Person.Address;
+                txtPhone.Text = Person.Phone;
+                txtEmail.Text = Person.Email;
+                dtDateOfBirth.Value = Person.DateOfBirth;
+                if (Person.Gender == 0) rbGender_M.Checked = true;
                 else
+                    rbGender_F.Checked = true;
+                cmbCountry.SelectedIndex = cmbCountry.FindString(clsCountries.Find(Person.NationalityCountryID).CountryName);
+
+                if(Person.ImagePath != string.Empty && File.Exists(Person.ImagePath))
                 {
-                    MessageBox.Show("The Operation Ignored successfully", "Info");
+                    pbPersonImg.Image = Image.FromFile(Person.ImagePath);
+                    lnkRemoveImg.Visible = true;
+                }
+
+            }else
+            {
+                MessageBox.Show($"No Record With Person ID << {_PersonID} >>!","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+        private bool _FinalValidation()
+        {
+            txtEmail.Tag = "Email";
+            byte isEmpty = 0;
+            foreach(Control txtB in pnlContainer.Controls.OfType<TextBox>())
+            {
+                if(txtB.Text == string.Empty && string.IsNullOrWhiteSpace(txtB.Tag?.ToString()))
+                {
+                    errProv.SetError(txtB, "This Field is Required");
+                    isEmpty++;
+                }else
+                {
+                    errProv.SetError(txtB, "");
                 }
             }
+            txtEmail.Tag = string.Empty;
+            return (isEmpty == 0);
+        }
+        private bool _AddNewPerson()
+        {
+            _FillPersonRecordWithNewInfo();
+            
+            return Person.Save();
+        }
+        private bool _SaveUpdates()
+        {
+            if (Person != null)
+                _FillPersonRecordWithNewInfo();
+
+            return Person.Save();
+        }
+        private void AddOperation()
+        {   
+
+            if (_AddNewPerson())
+            {
+                MessageBox.Show("Added Successfully");
+                _CopyPersonImgToFile();
+                ReturnID?.Invoke(this, Person.PersonID);
+            }
+            else
+            {
+                MessageBox.Show("Something Seems To have Gone wrong.Can't Add The New Record !");
+            }
+        }
+        private void UpdateOperation()
+        {
+
+            if (_SaveUpdates())
+            {
+                MessageBox.Show("updated Successfully");
+                _CopyPersonImgToFile();
+            }
+            else
+            {
+                MessageBox.Show("Something Seems To have Gone wrong. The Can't Update the Recodr !");
+            }
+        }
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if(!_FinalValidation())
+            {
+                MessageBox.Show("You must Fill All Required Fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
            
+            if (MessageBox.Show("Are you sure to complete the operation", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                switch(_Mode)
+                {
+                    case enMode.eAddNew:
+                        AddOperation();
+                        break;
+                    case enMode.eUpdate:
+                        UpdateOperation();
+                        break;
+                    default:
+                        break;
+                }
+            }
+             else
+             {
+                MessageBox.Show("The Operation Ignored successfully", "Info");
+             }                      
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -159,6 +264,107 @@ namespace DVLD_Project
             
         }
 
+        private void rbGender_M_CheckedChanged(object sender, EventArgs e)
+        {
+            if(Person != null &&(Person.ImagePath  == string.Empty || !File.Exists(Person.ImagePath)))
+            {
+                if (rbGender_M.Checked == true)
+                {
+                    pbPersonImg.Image = Resources.user_Male;
+                }else
+                {
+                    pbPersonImg.Image = Resources.user_female;
+
+                }
+
+            }
+            
+        }
+
+        private void lnkImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ofdGetImgPath.InitialDirectory = @"C:\";
+            ofdGetImgPath.Title = "Pick an Image";
+            ofdGetImgPath.Filter = "Png (*.png)|*.png|Jpeg (*.jpeg)|*.jpeg|jpg(*.jpg)|*.jpg|HEIC (*.heic)|*.heic";
+            ofdGetImgPath.FilterIndex = 3;
+
+            if(ofdGetImgPath.ShowDialog()== DialogResult.OK)
+            {
+                pbPersonImg.Image = Image.FromFile(ofdGetImgPath.FileName);
+                pbPersonImg.Tag = ofdGetImgPath.FileName;
+                lnkRemoveImg.Visible = true;
+            }
+        }
+        private void lnkRemoveImg_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {   
+            if(rbGender_M.Checked ==true)
+            {
+                pbPersonImg.Image = Resources.user_Male;
+            }else
+            {
+                pbPersonImg.Image = Resources.user_female;
+            }
+            pbPersonImg.Tag = null;
+        }
+        public struct stPersonGuid
+        {
+            public int PersonID { get; set; }
+            public Guid ImgGuid { get; set; }
+
+            public void SetPersonImgGuid(int PersonID)
+            {
+                this.PersonID = PersonID;
+                this.ImgGuid = Guid.NewGuid();
+            }
+        }
         
+
+        Dictionary<int, Guid> PersonImgGuid = new Dictionary<int, Guid>();
+        private void _CopyPersonImgToFile()
+        {
+            stPersonGuid Person_ID_Guid = new stPersonGuid();
+
+            string DestinationFolder = @"C:\DVLD_PeopleImgs";
+            if (!Directory.Exists(DestinationFolder))
+            {
+                Directory.CreateDirectory(DestinationFolder);
+            }
+
+            if (Person.ImagePath != string.Empty)
+            {
+                string ImgExtension = Path.GetExtension(Person.ImagePath);
+                               
+                if(!PersonImgGuid.ContainsKey(Person_ID_Guid.PersonID))
+                {
+                    Person_ID_Guid.SetPersonImgGuid(Person.PersonID);
+                    PersonImgGuid.Add(Person_ID_Guid.PersonID, Person_ID_Guid.ImgGuid);
+                }
+
+
+                string ImgDestinationPath = Path.Combine(DestinationFolder, Person_ID_Guid.ImgGuid + ImgExtension);
+
+                var ExistingFiles = Directory.GetFiles(DestinationFolder, Person_ID_Guid.ImgGuid + ".*");
+                foreach(var file in ExistingFiles)
+                {
+                    if (file != ImgDestinationPath) File.Delete(file);
+                }
+
+                File.Copy(Person.ImagePath, ImgDestinationPath, true);
+
+            } else
+            {
+                if(PersonImgGuid.ContainsKey(Person.PersonID))
+                {
+                    string ImgExtension = Path.GetExtension(Person.ImagePath);
+                    string ImgPath = Path.Combine(DestinationFolder, Person_ID_Guid.ImgGuid + ImgExtension);
+                    File.Delete(ImgPath);
+                }
+            }
+
+
+
+        }
+
+       
     }
 }

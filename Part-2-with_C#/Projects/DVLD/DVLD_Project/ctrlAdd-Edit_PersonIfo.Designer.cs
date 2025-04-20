@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlContainer = new System.Windows.Forms.Panel();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
@@ -47,7 +47,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lnkImage = new System.Windows.Forms.LinkLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbPersonImg = new System.Windows.Forms.PictureBox();
             this.dtDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.cmbCountry = new System.Windows.Forms.ComboBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
@@ -66,7 +66,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.sfdSetPersonImgPath = new System.Windows.Forms.SaveFileDialog();
+            this.ofdGetImgPath = new System.Windows.Forms.OpenFileDialog();
+            this.lnkRemoveImg = new System.Windows.Forms.LinkLabel();
+            this.pnlContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -76,55 +79,56 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPersonImg)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlContainer
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Controls.Add(this.pictureBox11);
-            this.panel1.Controls.Add(this.rbGender_F);
-            this.panel1.Controls.Add(this.rbGender_M);
-            this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.pictureBox10);
-            this.panel1.Controls.Add(this.pictureBox9);
-            this.panel1.Controls.Add(this.pictureBox8);
-            this.panel1.Controls.Add(this.pictureBox7);
-            this.panel1.Controls.Add(this.pictureBox5);
-            this.panel1.Controls.Add(this.pictureBox4);
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.lnkImage);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.dtDateOfBirth);
-            this.panel1.Controls.Add(this.cmbCountry);
-            this.panel1.Controls.Add(this.txtPhone);
-            this.panel1.Controls.Add(this.txtSecondName);
-            this.panel1.Controls.Add(this.txtThirdName);
-            this.panel1.Controls.Add(this.txtLastName);
-            this.panel1.Controls.Add(this.txtNationalNo);
-            this.panel1.Controls.Add(this.txtEmail);
-            this.panel1.Controls.Add(this.txtAddress);
-            this.panel1.Controls.Add(this.txtFirstName);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(22)))), ((int)(((byte)(165)))));
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(947, 397);
-            this.panel1.TabIndex = 1;
+            this.pnlContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.pnlContainer.Controls.Add(this.lnkRemoveImg);
+            this.pnlContainer.Controls.Add(this.btnSave);
+            this.pnlContainer.Controls.Add(this.btnClose);
+            this.pnlContainer.Controls.Add(this.pictureBox11);
+            this.pnlContainer.Controls.Add(this.rbGender_F);
+            this.pnlContainer.Controls.Add(this.rbGender_M);
+            this.pnlContainer.Controls.Add(this.label15);
+            this.pnlContainer.Controls.Add(this.label14);
+            this.pnlContainer.Controls.Add(this.label13);
+            this.pnlContainer.Controls.Add(this.label12);
+            this.pnlContainer.Controls.Add(this.pictureBox10);
+            this.pnlContainer.Controls.Add(this.pictureBox9);
+            this.pnlContainer.Controls.Add(this.pictureBox8);
+            this.pnlContainer.Controls.Add(this.pictureBox7);
+            this.pnlContainer.Controls.Add(this.pictureBox5);
+            this.pnlContainer.Controls.Add(this.pictureBox4);
+            this.pnlContainer.Controls.Add(this.pictureBox3);
+            this.pnlContainer.Controls.Add(this.pictureBox2);
+            this.pnlContainer.Controls.Add(this.lnkImage);
+            this.pnlContainer.Controls.Add(this.pbPersonImg);
+            this.pnlContainer.Controls.Add(this.dtDateOfBirth);
+            this.pnlContainer.Controls.Add(this.cmbCountry);
+            this.pnlContainer.Controls.Add(this.txtPhone);
+            this.pnlContainer.Controls.Add(this.txtSecondName);
+            this.pnlContainer.Controls.Add(this.txtThirdName);
+            this.pnlContainer.Controls.Add(this.txtLastName);
+            this.pnlContainer.Controls.Add(this.txtNationalNo);
+            this.pnlContainer.Controls.Add(this.txtEmail);
+            this.pnlContainer.Controls.Add(this.txtAddress);
+            this.pnlContainer.Controls.Add(this.txtFirstName);
+            this.pnlContainer.Controls.Add(this.label9);
+            this.pnlContainer.Controls.Add(this.label8);
+            this.pnlContainer.Controls.Add(this.label7);
+            this.pnlContainer.Controls.Add(this.label6);
+            this.pnlContainer.Controls.Add(this.label5);
+            this.pnlContainer.Controls.Add(this.label4);
+            this.pnlContainer.Controls.Add(this.label3);
+            this.pnlContainer.Controls.Add(this.label2);
+            this.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContainer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(22)))), ((int)(((byte)(165)))));
+            this.pnlContainer.Location = new System.Drawing.Point(0, 0);
+            this.pnlContainer.Name = "pnlContainer";
+            this.pnlContainer.Size = new System.Drawing.Size(947, 397);
+            this.pnlContainer.TabIndex = 1;
             // 
             // btnSave
             // 
@@ -189,6 +193,7 @@
             this.rbGender_M.TabStop = true;
             this.rbGender_M.Text = "Male";
             this.rbGender_M.UseVisualStyleBackColor = true;
+            this.rbGender_M.CheckedChanged += new System.EventHandler(this.rbGender_M_CheckedChanged);
             // 
             // label15
             // 
@@ -325,16 +330,18 @@
             this.lnkImage.TabIndex = 13;
             this.lnkImage.TabStop = true;
             this.lnkImage.Text = "Set Image";
+            this.lnkImage.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkImage_LinkClicked);
             // 
-            // pictureBox1
+            // pbPersonImg
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.pictureBox1.Location = new System.Drawing.Point(744, 161);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(162, 108);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
+            this.pbPersonImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.pbPersonImg.Image = global::DVLD_Project.Properties.Resources.user_Male;
+            this.pbPersonImg.Location = new System.Drawing.Point(744, 161);
+            this.pbPersonImg.Name = "pbPersonImg";
+            this.pbPersonImg.Size = new System.Drawing.Size(162, 108);
+            this.pbPersonImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPersonImg.TabIndex = 18;
+            this.pbPersonImg.TabStop = false;
             // 
             // dtDateOfBirth
             // 
@@ -554,18 +561,36 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Country:";
             // 
+            // ofdGetImgPath
+            // 
+            this.ofdGetImgPath.FileName = "openFileDialog1";
+            // 
+            // lnkRemoveImg
+            // 
+            this.lnkRemoveImg.AutoSize = true;
+            this.lnkRemoveImg.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkRemoveImg.LinkColor = System.Drawing.Color.PaleTurquoise;
+            this.lnkRemoveImg.Location = new System.Drawing.Point(779, 296);
+            this.lnkRemoveImg.Name = "lnkRemoveImg";
+            this.lnkRemoveImg.Size = new System.Drawing.Size(94, 18);
+            this.lnkRemoveImg.TabIndex = 38;
+            this.lnkRemoveImg.TabStop = true;
+            this.lnkRemoveImg.Text = "Remove Image";
+            this.lnkRemoveImg.Visible = false;
+            this.lnkRemoveImg.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkRemoveImg_LinkClicked);
+            // 
             // ctrlAdd_Edit_PersonIfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlContainer);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.Name = "ctrlAdd_Edit_PersonIfo";
             this.Size = new System.Drawing.Size(947, 397);
             this.Load += new System.EventHandler(this.ctrlAdd_Edit_PersonIfo_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlContainer.ResumeLayout(false);
+            this.pnlContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
@@ -575,13 +600,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPersonImg)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlContainer;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -599,7 +624,7 @@
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.ComboBox cmbCountry;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbPersonImg;
         private System.Windows.Forms.DateTimePicker dtDateOfBirth;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.LinkLabel lnkImage;
@@ -619,5 +644,8 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.SaveFileDialog sfdSetPersonImgPath;
+        private System.Windows.Forms.OpenFileDialog ofdGetImgPath;
+        private System.Windows.Forms.LinkLabel lnkRemoveImg;
     }
 }
