@@ -169,5 +169,12 @@ namespace DVLD_Project
         {
        
         }
+
+        private void tsmShowDetails_Click(object sender, EventArgs e)
+        {
+            int ID =(int) dgvLsitPeople.CurrentRow.Cells[0].Value;
+            Form PrsnDetails = new frmPersonDetails(ID);
+            PrsnDetails.ShowDialog();
+        }
     }
 }
