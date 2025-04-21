@@ -156,14 +156,15 @@
             this.tsmSendEmail,
             this.tsmPhoneCall});
             this.cmsManagePeople.Name = "cmsManagePeople";
-            this.cmsManagePeople.Size = new System.Drawing.Size(179, 136);
+            this.cmsManagePeople.Size = new System.Drawing.Size(181, 158);
             // 
             // tsmShowDetails
             // 
             this.tsmShowDetails.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.tsmShowDetails.Name = "tsmShowDetails";
-            this.tsmShowDetails.Size = new System.Drawing.Size(178, 22);
+            this.tsmShowDetails.Size = new System.Drawing.Size(180, 22);
             this.tsmShowDetails.Text = "Show Details";
+            this.tsmShowDetails.Click += new System.EventHandler(this.tsmShowDetails_Click);
             // 
             // tsmAddNew
             // 
@@ -185,7 +186,7 @@
             // 
             this.tsmDelete.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.tsmDelete.Name = "tsmDelete";
-            this.tsmDelete.Size = new System.Drawing.Size(180, 22);
+            this.tsmDelete.Size = new System.Drawing.Size(178, 22);
             this.tsmDelete.Text = "Delete";
             this.tsmDelete.Click += new System.EventHandler(this.tsmDelete_Click);
             // 
