@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pbAddNew = new System.Windows.Forms.PictureBox();
+            this.btnAddNew = new System.Windows.Forms.Button();
             this.txtFilterPeople = new System.Windows.Forms.TextBox();
             this.cmbFilter = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,8 +45,8 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.lblRecordNumber = new System.Windows.Forms.Label();
             this.lblRecordsCount = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAddNew)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLsitPeople)).BeginInit();
             this.cmsManagePeople.SuspendLayout();
             this.SuspendLayout();
@@ -55,7 +55,7 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.panel1.Controls.Add(this.pbAddNew);
+            this.panel1.Controls.Add(this.btnAddNew);
             this.panel1.Controls.Add(this.txtFilterPeople);
             this.panel1.Controls.Add(this.cmbFilter);
             this.panel1.Controls.Add(this.label1);
@@ -65,18 +65,19 @@
             this.panel1.Size = new System.Drawing.Size(1394, 524);
             this.panel1.TabIndex = 0;
             // 
-            // pbAddNew
+            // btnAddNew
             // 
-            this.pbAddNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pbAddNew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbAddNew.Image = global::DVLD_Project.Properties.Resources.add;
-            this.pbAddNew.Location = new System.Drawing.Point(1335, 8);
-            this.pbAddNew.Name = "pbAddNew";
-            this.pbAddNew.Size = new System.Drawing.Size(46, 44);
-            this.pbAddNew.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbAddNew.TabIndex = 6;
-            this.pbAddNew.TabStop = false;
-            this.pbAddNew.Click += new System.EventHandler(this.pbAddNew_Click);
+            this.btnAddNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAddNew.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAddNew.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNew.Location = new System.Drawing.Point(1285, 12);
+            this.btnAddNew.Name = "btnAddNew";
+            this.btnAddNew.Size = new System.Drawing.Size(96, 38);
+            this.btnAddNew.TabIndex = 7;
+            this.btnAddNew.Text = "Add New +";
+            this.btnAddNew.UseVisualStyleBackColor = false;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // txtFilterPeople
             // 
@@ -156,13 +157,13 @@
             this.tsmSendEmail,
             this.tsmPhoneCall});
             this.cmsManagePeople.Name = "cmsManagePeople";
-            this.cmsManagePeople.Size = new System.Drawing.Size(181, 158);
+            this.cmsManagePeople.Size = new System.Drawing.Size(179, 136);
             // 
             // tsmShowDetails
             // 
             this.tsmShowDetails.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.tsmShowDetails.Name = "tsmShowDetails";
-            this.tsmShowDetails.Size = new System.Drawing.Size(180, 22);
+            this.tsmShowDetails.Size = new System.Drawing.Size(178, 22);
             this.tsmShowDetails.Text = "Show Details";
             this.tsmShowDetails.Click += new System.EventHandler(this.tsmShowDetails_Click);
             // 
@@ -196,6 +197,7 @@
             this.tsmSendEmail.Name = "tsmSendEmail";
             this.tsmSendEmail.Size = new System.Drawing.Size(178, 22);
             this.tsmSendEmail.Text = "Send Email";
+            this.tsmSendEmail.Click += new System.EventHandler(this.tsmSendEmail_Click);
             // 
             // tsmPhoneCall
             // 
@@ -203,6 +205,7 @@
             this.tsmPhoneCall.Name = "tsmPhoneCall";
             this.tsmPhoneCall.Size = new System.Drawing.Size(178, 22);
             this.tsmPhoneCall.Text = "Phone Call";
+            this.tsmPhoneCall.Click += new System.EventHandler(this.tsmPhoneCall_Click);
             // 
             // btnClose
             // 
@@ -241,12 +244,24 @@
             this.lblRecordsCount.Size = new System.Drawing.Size(0, 20);
             this.lblRecordsCount.TabIndex = 3;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Trebuchet MS", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(24)))), ((int)(((byte)(211)))));
+            this.label2.Location = new System.Drawing.Point(553, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(365, 61);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Manage People";
+            // 
             // frmManagePeople
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.ClientSize = new System.Drawing.Size(1418, 707);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblRecordsCount);
             this.Controls.Add(this.lblRecordNumber);
             this.Controls.Add(this.btnClose);
@@ -256,7 +271,6 @@
             this.Load += new System.EventHandler(this.frmManagePeople_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAddNew)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLsitPeople)).EndInit();
             this.cmsManagePeople.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -273,7 +287,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbFilter;
         private System.Windows.Forms.TextBox txtFilterPeople;
-        private System.Windows.Forms.PictureBox pbAddNew;
         private System.Windows.Forms.Label lblRecordsCount;
         private System.Windows.Forms.ContextMenuStrip cmsManagePeople;
         private System.Windows.Forms.ToolStripMenuItem tsmShowDetails;
@@ -282,5 +295,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmDelete;
         private System.Windows.Forms.ToolStripMenuItem tsmSendEmail;
         private System.Windows.Forms.ToolStripMenuItem tsmPhoneCall;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnAddNew;
     }
 }

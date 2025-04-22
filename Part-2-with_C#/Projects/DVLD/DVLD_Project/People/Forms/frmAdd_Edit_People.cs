@@ -29,7 +29,7 @@ namespace DVLD_Project
         }
 
         public delegate void TriggerFunction(object sender);
-        public event TriggerFunction ReLoadPeopleList;
+        public event TriggerFunction ReLoadData;
             
 
         private void frmAdd_Edit_People_Load(object sender, EventArgs e)
@@ -63,7 +63,7 @@ namespace DVLD_Project
         }
         private void LeaveTheForm(object sender)
         {
-            ReLoadPeopleList?.Invoke(this);
+            ReLoadData?.Invoke(this);
             this.Close();
         }
         

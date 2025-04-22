@@ -46,76 +46,76 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ctrlAdd-Edit_PersonIfo.cs">
+    <Compile Include="People\User_Ctrl\ctrlAdd-Edit_PersonIfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrlAdd-Edit_PersonIfo.Designer.cs">
+    <Compile Include="People\User_Ctrl\ctrlAdd-Edit_PersonIfo.Designer.cs">
       <DependentUpon>ctrlAdd-Edit_PersonIfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="ctrlPersonDetails.cs">
+    <Compile Include="People\User_Ctrl\ctrlPersonDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrlPersonDetails.Designer.cs">
+    <Compile Include="People\User_Ctrl\ctrlPersonDetails.Designer.cs">
       <DependentUpon>ctrlPersonDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAdd_Edit_People.cs">
+    <Compile Include="People\Forms\frmAdd_Edit_People.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAdd_Edit_People.Designer.cs">
+    <Compile Include="People\Forms\frmAdd_Edit_People.Designer.cs">
       <DependentUpon>frmAdd_Edit_People.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmManagePeople.cs">
+    <Compile Include="People\Forms\frmManagePeople.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmManagePeople.Designer.cs">
+    <Compile Include="People\Forms\frmManagePeople.Designer.cs">
       <DependentUpon>frmManagePeople.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPersonDetails.cs">
+    <Compile Include="People\Forms\frmPersonDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPersonDetails.Designer.cs">
+    <Compile Include="People\Forms\frmPersonDetails.Designer.cs">
       <DependentUpon>frmPersonDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="People\Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="People\Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ctrlAdd-Edit_PersonIfo.resx">
+    <EmbeddedResource Include="People\User_Ctrl\ctrlAdd-Edit_PersonIfo.resx">
       <DependentUpon>ctrlAdd-Edit_PersonIfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrlPersonDetails.resx">
+    <EmbeddedResource Include="People\User_Ctrl\ctrlPersonDetails.resx">
       <DependentUpon>ctrlPersonDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAdd_Edit_People.resx">
+    <EmbeddedResource Include="People\Forms\frmAdd_Edit_People.resx">
       <DependentUpon>frmAdd_Edit_People.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmManagePeople.resx">
+    <EmbeddedResource Include="People\Forms\frmManagePeople.resx">
       <DependentUpon>frmManagePeople.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPersonDetails.resx">
+    <EmbeddedResource Include="People\Forms\frmPersonDetails.resx">
       <DependentUpon>frmPersonDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="People\Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -136,15 +136,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user_female.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\phone.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\mail.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\add.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
