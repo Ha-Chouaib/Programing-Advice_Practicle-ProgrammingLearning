@@ -19,13 +19,11 @@ namespace DVLD_Project
         {
             InitializeComponent();
         }
-
-        private void ctrlPersonDetails_Load(object sender, EventArgs e)
-        {
-        }
+        
 
         public int _PersonID { get; set; }
         clsPeople Person;
+       
         public void DisplayPersonInfo(int PersonID)
         {
             Person = clsPeople.Find(PersonID);
@@ -68,6 +66,7 @@ namespace DVLD_Project
             if(clsPeople.IsExist(_PersonID))
             {
                 frmAdd_Edit_People EditForm = new frmAdd_Edit_People(_PersonID);
+                EditForm.ReLoadData += ReloadInfo;
                 EditForm.ShowDialog();
             }else
             {
@@ -75,10 +74,10 @@ namespace DVLD_Project
             }
 
         }
-
-        private void gbPersonDetails_Enter(object sender, EventArgs e)
+        private void ReloadInfo(object sender)
         {
-
+            DisplayPersonInfo(_PersonID);
         }
+       
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlContainer = new System.Windows.Forms.Panel();
+            this.lnkRemoveImg = new System.Windows.Forms.LinkLabel();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
@@ -66,9 +67,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.sfdSetPersonImgPath = new System.Windows.Forms.SaveFileDialog();
             this.ofdGetImgPath = new System.Windows.Forms.OpenFileDialog();
-            this.lnkRemoveImg = new System.Windows.Forms.LinkLabel();
             this.pnlContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -129,6 +128,20 @@
             this.pnlContainer.Name = "pnlContainer";
             this.pnlContainer.Size = new System.Drawing.Size(947, 397);
             this.pnlContainer.TabIndex = 1;
+            // 
+            // lnkRemoveImg
+            // 
+            this.lnkRemoveImg.AutoSize = true;
+            this.lnkRemoveImg.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkRemoveImg.LinkColor = System.Drawing.Color.PaleTurquoise;
+            this.lnkRemoveImg.Location = new System.Drawing.Point(779, 296);
+            this.lnkRemoveImg.Name = "lnkRemoveImg";
+            this.lnkRemoveImg.Size = new System.Drawing.Size(94, 18);
+            this.lnkRemoveImg.TabIndex = 38;
+            this.lnkRemoveImg.TabStop = true;
+            this.lnkRemoveImg.Text = "Remove Image";
+            this.lnkRemoveImg.Visible = false;
+            this.lnkRemoveImg.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkRemoveImg_LinkClicked);
             // 
             // btnSave
             // 
@@ -335,7 +348,6 @@
             // pbPersonImg
             // 
             this.pbPersonImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.pbPersonImg.Image = global::DVLD_Project.Properties.Resources.user_Male;
             this.pbPersonImg.Location = new System.Drawing.Point(744, 161);
             this.pbPersonImg.Name = "pbPersonImg";
             this.pbPersonImg.Size = new System.Drawing.Size(162, 108);
@@ -565,20 +577,6 @@
             // 
             this.ofdGetImgPath.FileName = "openFileDialog1";
             // 
-            // lnkRemoveImg
-            // 
-            this.lnkRemoveImg.AutoSize = true;
-            this.lnkRemoveImg.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkRemoveImg.LinkColor = System.Drawing.Color.PaleTurquoise;
-            this.lnkRemoveImg.Location = new System.Drawing.Point(779, 296);
-            this.lnkRemoveImg.Name = "lnkRemoveImg";
-            this.lnkRemoveImg.Size = new System.Drawing.Size(94, 18);
-            this.lnkRemoveImg.TabIndex = 38;
-            this.lnkRemoveImg.TabStop = true;
-            this.lnkRemoveImg.Text = "Remove Image";
-            this.lnkRemoveImg.Visible = false;
-            this.lnkRemoveImg.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkRemoveImg_LinkClicked);
-            // 
             // ctrlAdd_Edit_PersonIfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -644,7 +642,6 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.SaveFileDialog sfdSetPersonImgPath;
         private System.Windows.Forms.OpenFileDialog ofdGetImgPath;
         private System.Windows.Forms.LinkLabel lnkRemoveImg;
     }

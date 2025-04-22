@@ -86,7 +86,6 @@
             this.gbPersonDetails.TabIndex = 0;
             this.gbPersonDetails.TabStop = false;
             this.gbPersonDetails.Text = "Person Information";
-            this.gbPersonDetails.Enter += new System.EventHandler(this.gbPersonDetails_Enter);
             // 
             // btnEditPersonInfo
             // 
@@ -105,77 +104,77 @@
             // 
             this.lblCountry.AutoSize = true;
             this.lblCountry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.lblCountry.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCountry.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCountry.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lblCountry.Location = new System.Drawing.Point(645, 290);
             this.lblCountry.Name = "lblCountry";
-            this.lblCountry.Size = new System.Drawing.Size(0, 17);
+            this.lblCountry.Size = new System.Drawing.Size(0, 20);
             this.lblCountry.TabIndex = 18;
             // 
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
             this.lblPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.lblPhone.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhone.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhone.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lblPhone.Location = new System.Drawing.Point(645, 252);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(0, 17);
+            this.lblPhone.Size = new System.Drawing.Size(0, 20);
             this.lblPhone.TabIndex = 17;
             // 
             // lblDateOfBirth
             // 
             this.lblDateOfBirth.AutoSize = true;
             this.lblDateOfBirth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.lblDateOfBirth.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateOfBirth.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateOfBirth.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lblDateOfBirth.Location = new System.Drawing.Point(645, 214);
             this.lblDateOfBirth.Name = "lblDateOfBirth";
-            this.lblDateOfBirth.Size = new System.Drawing.Size(0, 17);
+            this.lblDateOfBirth.Size = new System.Drawing.Size(0, 20);
             this.lblDateOfBirth.TabIndex = 16;
             // 
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
             this.lblAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.lblAddress.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddress.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lblAddress.Location = new System.Drawing.Point(137, 258);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(0, 17);
+            this.lblAddress.Size = new System.Drawing.Size(0, 20);
             this.lblAddress.TabIndex = 15;
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.lblEmail.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lblEmail.Location = new System.Drawing.Point(137, 304);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(0, 17);
+            this.lblEmail.Size = new System.Drawing.Size(0, 20);
             this.lblEmail.TabIndex = 14;
             // 
             // lblGender
             // 
             this.lblGender.AutoSize = true;
             this.lblGender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.lblGender.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGender.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGender.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lblGender.Location = new System.Drawing.Point(645, 177);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(0, 17);
+            this.lblGender.Size = new System.Drawing.Size(0, 20);
             this.lblGender.TabIndex = 13;
             // 
             // lblNationalNo
             // 
             this.lblNationalNo.AutoSize = true;
             this.lblNationalNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.lblNationalNo.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNationalNo.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNationalNo.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lblNationalNo.Location = new System.Drawing.Point(137, 220);
             this.lblNationalNo.Name = "lblNationalNo";
-            this.lblNationalNo.Size = new System.Drawing.Size(0, 17);
+            this.lblNationalNo.Size = new System.Drawing.Size(0, 20);
             this.lblNationalNo.TabIndex = 12;
             // 
             // lblPersonID
@@ -193,11 +192,11 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.lblName.Font = new System.Drawing.Font("MV Boli", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblName.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.Aqua;
             this.lblName.Location = new System.Drawing.Point(137, 176);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(0, 17);
+            this.lblName.Size = new System.Drawing.Size(0, 20);
             this.lblName.TabIndex = 10;
             // 
             // label9
@@ -296,6 +295,7 @@
             this.pbProfileImg.Location = new System.Drawing.Point(351, 24);
             this.pbProfileImg.Name = "pbProfileImg";
             this.pbProfileImg.Size = new System.Drawing.Size(100, 84);
+            this.pbProfileImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbProfileImg.TabIndex = 0;
             this.pbProfileImg.TabStop = false;
             // 
@@ -307,7 +307,6 @@
             this.Controls.Add(this.gbPersonDetails);
             this.Name = "ctrlPersonDetails";
             this.Size = new System.Drawing.Size(801, 347);
-            this.Load += new System.EventHandler(this.ctrlPersonDetails_Load);
             this.gbPersonDetails.ResumeLayout(false);
             this.gbPersonDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfileImg)).EndInit();

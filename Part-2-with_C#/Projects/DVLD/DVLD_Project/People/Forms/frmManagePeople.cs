@@ -117,24 +117,22 @@ namespace DVLD_Project
                 e.FormattingApplied = true;
             }
         }
-
-        private void pbAddNew_Click(object sender, EventArgs e)
+         private void btnAddNew_Click(object sender, EventArgs e)
         {
             frmAdd_Edit_People frmAddEdit = new frmAdd_Edit_People();
-            frmAddEdit.ReLoadPeopleList += ReloadPeople;
+            frmAddEdit.ReLoadData += ReloadPeople;
             frmAddEdit.Show();
         }
-
         private void tsmAddNew_Click(object sender, EventArgs e)
         {
-            pbAddNew_Click(sender, e);
+            btnAddNew_Click(sender, e);
         }
 
         private void tsmEdit_Click(object sender, EventArgs e)
         {
             
             frmAdd_Edit_People frmAddEdit = new frmAdd_Edit_People((int)dgvLsitPeople.CurrentRow.Cells[0].Value);
-            frmAddEdit.ReLoadPeopleList += ReloadPeople;
+            frmAddEdit.ReLoadData += ReloadPeople;
             frmAddEdit.Show();
         }
 
@@ -176,5 +174,18 @@ namespace DVLD_Project
             Form PrsnDetails = new frmPersonDetails(ID);
             PrsnDetails.ShowDialog();
         }
+
+        private void tsmSendEmail_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Not Implemented Yet", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void tsmPhoneCall_Click(object sender, EventArgs e)
+        {
+
+            MessageBox.Show("Not Implemented Yet", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+       
     }
 }
