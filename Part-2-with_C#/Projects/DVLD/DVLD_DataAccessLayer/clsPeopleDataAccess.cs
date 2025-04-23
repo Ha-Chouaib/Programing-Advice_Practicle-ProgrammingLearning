@@ -388,6 +388,36 @@ namespace DVLD_DataAccessLayer
             return DT;
         }
 
+        public static DataTable FilterbyFullName(string Term)
+        {
+            SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
+            string Query = @"Select * From People Where
+                            FirstName Like @Term
+                            OR SecondName Like @Term
+                            OR ThirdName Like @Term
+                            OR LastName Like @Term ;";
+
+            SqlCommand command = new SqlCommand(Query, connection);
+            command.Parameters.AddWithValue("@Term", "%" + Term + "%");
+
+            DataTable DT = new DataTable();
+            try
+            {
+                connection.Open();
+                SqlDataReader Reader = command.ExecuteReader();
+                DT.Load(Reader);
+
+            }catch(Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return DT;
+        }
+
 
     }
 }

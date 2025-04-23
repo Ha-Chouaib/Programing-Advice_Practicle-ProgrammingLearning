@@ -184,6 +184,10 @@ namespace DVLD_BusinessLayer
         {
             return clsPeopleDataAccess.FilterPeople(Column, FilterTerm);
         }
+        public static DataTable FilterByFullName(string Name)
+        {
+            return clsPeopleDataAccess.FilterbyFullName(Name);
+        }
        
     }
 }
