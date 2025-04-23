@@ -101,9 +101,13 @@ namespace DVLD_BusinessLayer
         {
             return clsUsersDataAccess.Exist(UserID);
         }
-        public static DataTable ListAll()
+        public static DataTable ListAll_RootInfo()
         {
-            return clsUsersDataAccess.ListAll();
+            return clsUsersDataAccess.ListAll_RootInfo();
+        }
+        public static DataTable UsersList_ViewInf()
+        {
+            return clsUsersDataAccess.UsersList();
         }
         public static DataTable FilterBy<T>(string Column, T FilterTerm)
         {

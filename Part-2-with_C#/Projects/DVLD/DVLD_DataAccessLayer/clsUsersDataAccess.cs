@@ -200,7 +200,7 @@ namespace DVLD_DataAccessLayer
             return (RowsAffected !=0);
         }
         
-        public static DataTable ListAll()
+        public static DataTable ListAll_RootInfo()
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
             string Query = @"Select * From Users";
@@ -225,7 +225,32 @@ namespace DVLD_DataAccessLayer
             }
             return DT;
         }
-        
+        public static DataTable UsersList()
+        {
+            SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
+            string Query = @"select Users.UserID, Users.PersonID, Users.UserName ,
+	                                CONCAT(People.FirstName,' ',People.SecondName,' ',People.ThirdName,' ',People.LastName) AS FullName,
+                                    Users.IsActive from Users Join People On Users.PersonID = People.PersonID ;";
+
+            SqlCommand command = new SqlCommand(Query, connection);
+
+            DataTable DT = new DataTable();
+            try
+            {
+                connection.Open();
+                SqlDataReader Reader = command.ExecuteReader();
+                DT.Load(Reader);
+
+            }catch(Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return DT;
+        }
         public static DataTable FilterBy<T>(string Column,T FilterTerm)
         {
             string[] AllowedColumn= new[] { "UserID","PersonID","UserName","IsActive"};
