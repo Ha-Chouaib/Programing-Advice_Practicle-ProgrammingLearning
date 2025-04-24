@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DVLD_Project.Users;
 
 namespace DVLD_Project
 {
@@ -22,6 +23,12 @@ namespace DVLD_Project
             Form MangePeopleForm = new frmManagePeople();
 
             MangePeopleForm.ShowDialog();
+        }
+
+        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmManageUsers ManageUsers = new frmManageUsers();
+            ManageUsers.ShowDialog();
         }
     }
 }
