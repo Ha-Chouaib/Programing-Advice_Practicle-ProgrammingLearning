@@ -237,5 +237,18 @@ namespace DVLD_Project.Users
         {
             MessageBox.Show("Not Implmented Yet", "Info",MessageBoxButtons.OK,MessageBoxIcon.Warning);
         }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int UserID = (int)dgvListUsers.CurrentRow.Cells[0].Value;
+            frmChangePassword ChangePass = new frmChangePassword(UserID);
+            ChangePass.ShowDialog();
+        }
+    
+    
+    
+    
+    
+    
     }
 }

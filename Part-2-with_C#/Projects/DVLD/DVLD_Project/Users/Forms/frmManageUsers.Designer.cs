@@ -30,17 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvListUsers = new System.Windows.Forms.DataGridView();
-            this.btnAddNewUser = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pbManageUser = new System.Windows.Forms.PictureBox();
-            this.cmbFilterUsers = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblRecord = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.txtFilterTerm = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cmbIsActiveOptions = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.cmsAddEditUserMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showUserDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,9 +40,21 @@
             this.callUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sendSMSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sendEmailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAddNewUser = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbFilterUsers = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblRecord = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.txtFilterTerm = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbIsActiveOptions = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pbManageUser = new System.Windows.Forms.PictureBox();
+            this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListUsers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbManageUser)).BeginInit();
             this.cmsAddEditUserMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbManageUser)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvListUsers
@@ -70,6 +71,90 @@
             this.dgvListUsers.ReadOnly = true;
             this.dgvListUsers.Size = new System.Drawing.Size(1083, 371);
             this.dgvListUsers.TabIndex = 0;
+            // 
+            // cmsAddEditUserMenu
+            // 
+            this.cmsAddEditUserMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.cmsAddEditUserMenu.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmsAddEditUserMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showUserDetailsToolStripMenuItem,
+            this.addNewUserToolStripMenuItem,
+            this.updateUserToolStripMenuItem,
+            this.deleteUserToolStripMenuItem,
+            this.changePasswordToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.callUserToolStripMenuItem,
+            this.sendSMSToolStripMenuItem,
+            this.sendEmailToolStripMenuItem});
+            this.cmsAddEditUserMenu.Name = "cmsAddEditUserMenu";
+            this.cmsAddEditUserMenu.Size = new System.Drawing.Size(187, 214);
+            // 
+            // showUserDetailsToolStripMenuItem
+            // 
+            this.showUserDetailsToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.showUserDetailsToolStripMenuItem.Name = "showUserDetailsToolStripMenuItem";
+            this.showUserDetailsToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.showUserDetailsToolStripMenuItem.Text = "Show User Details";
+            this.showUserDetailsToolStripMenuItem.Click += new System.EventHandler(this.showUserDetailsToolStripMenuItem_Click);
+            // 
+            // addNewUserToolStripMenuItem
+            // 
+            this.addNewUserToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.addNewUserToolStripMenuItem.Name = "addNewUserToolStripMenuItem";
+            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.addNewUserToolStripMenuItem.Text = "Add New User";
+            this.addNewUserToolStripMenuItem.Click += new System.EventHandler(this.addNewUserToolStripMenuItem_Click);
+            // 
+            // updateUserToolStripMenuItem
+            // 
+            this.updateUserToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.updateUserToolStripMenuItem.Name = "updateUserToolStripMenuItem";
+            this.updateUserToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.updateUserToolStripMenuItem.Text = "Update User";
+            this.updateUserToolStripMenuItem.Click += new System.EventHandler(this.updateUserToolStripMenuItem_Click);
+            // 
+            // deleteUserToolStripMenuItem
+            // 
+            this.deleteUserToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.deleteUserToolStripMenuItem.Name = "deleteUserToolStripMenuItem";
+            this.deleteUserToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.deleteUserToolStripMenuItem.Text = "Delete User";
+            this.deleteUserToolStripMenuItem.Click += new System.EventHandler(this.deleteUserToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(183, 6);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(183, 6);
+            // 
+            // callUserToolStripMenuItem
+            // 
+            this.callUserToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Info;
+            this.callUserToolStripMenuItem.Name = "callUserToolStripMenuItem";
+            this.callUserToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.callUserToolStripMenuItem.Text = "Call User";
+            this.callUserToolStripMenuItem.Click += new System.EventHandler(this.callUserToolStripMenuItem_Click);
+            // 
+            // sendSMSToolStripMenuItem
+            // 
+            this.sendSMSToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Info;
+            this.sendSMSToolStripMenuItem.Name = "sendSMSToolStripMenuItem";
+            this.sendSMSToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.sendSMSToolStripMenuItem.Text = "Send SMS";
+            this.sendSMSToolStripMenuItem.Click += new System.EventHandler(this.sendSMSToolStripMenuItem_Click);
+            // 
+            // sendEmailToolStripMenuItem
+            // 
+            this.sendEmailToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Info;
+            this.sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
+            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.sendEmailToolStripMenuItem.Text = "Send Email";
+            this.sendEmailToolStripMenuItem.Click += new System.EventHandler(this.sendEmailToolStripMenuItem_Click);
             // 
             // btnAddNewUser
             // 
@@ -96,15 +181,6 @@
             this.label1.Size = new System.Drawing.Size(154, 46);
             this.label1.TabIndex = 2;
             this.label1.Text = "Manage";
-            // 
-            // pbManageUser
-            // 
-            this.pbManageUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.pbManageUser.Location = new System.Drawing.Point(513, 12);
-            this.pbManageUser.Name = "pbManageUser";
-            this.pbManageUser.Size = new System.Drawing.Size(175, 97);
-            this.pbManageUser.TabIndex = 3;
-            this.pbManageUser.TabStop = false;
             // 
             // cmbFilterUsers
             // 
@@ -209,88 +285,22 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Users";
             // 
-            // cmsAddEditUserMenu
+            // pbManageUser
             // 
-            this.cmsAddEditUserMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            this.cmsAddEditUserMenu.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmsAddEditUserMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showUserDetailsToolStripMenuItem,
-            this.addNewUserToolStripMenuItem,
-            this.updateUserToolStripMenuItem,
-            this.deleteUserToolStripMenuItem,
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2,
-            this.callUserToolStripMenuItem,
-            this.sendSMSToolStripMenuItem,
-            this.sendEmailToolStripMenuItem});
-            this.cmsAddEditUserMenu.Name = "cmsAddEditUserMenu";
-            this.cmsAddEditUserMenu.Size = new System.Drawing.Size(187, 170);
+            this.pbManageUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.pbManageUser.Location = new System.Drawing.Point(513, 12);
+            this.pbManageUser.Name = "pbManageUser";
+            this.pbManageUser.Size = new System.Drawing.Size(175, 97);
+            this.pbManageUser.TabIndex = 3;
+            this.pbManageUser.TabStop = false;
             // 
-            // showUserDetailsToolStripMenuItem
+            // changePasswordToolStripMenuItem
             // 
-            this.showUserDetailsToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.showUserDetailsToolStripMenuItem.Name = "showUserDetailsToolStripMenuItem";
-            this.showUserDetailsToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.showUserDetailsToolStripMenuItem.Text = "Show User Details";
-            this.showUserDetailsToolStripMenuItem.Click += new System.EventHandler(this.showUserDetailsToolStripMenuItem_Click);
-            // 
-            // addNewUserToolStripMenuItem
-            // 
-            this.addNewUserToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.addNewUserToolStripMenuItem.Name = "addNewUserToolStripMenuItem";
-            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.addNewUserToolStripMenuItem.Text = "Add New User";
-            this.addNewUserToolStripMenuItem.Click += new System.EventHandler(this.addNewUserToolStripMenuItem_Click);
-            // 
-            // updateUserToolStripMenuItem
-            // 
-            this.updateUserToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.updateUserToolStripMenuItem.Name = "updateUserToolStripMenuItem";
-            this.updateUserToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.updateUserToolStripMenuItem.Text = "Update User";
-            this.updateUserToolStripMenuItem.Click += new System.EventHandler(this.updateUserToolStripMenuItem_Click);
-            // 
-            // deleteUserToolStripMenuItem
-            // 
-            this.deleteUserToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.deleteUserToolStripMenuItem.Name = "deleteUserToolStripMenuItem";
-            this.deleteUserToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.deleteUserToolStripMenuItem.Text = "Delete User";
-            this.deleteUserToolStripMenuItem.Click += new System.EventHandler(this.deleteUserToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(183, 6);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(183, 6);
-            // 
-            // callUserToolStripMenuItem
-            // 
-            this.callUserToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Info;
-            this.callUserToolStripMenuItem.Name = "callUserToolStripMenuItem";
-            this.callUserToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.callUserToolStripMenuItem.Text = "Call User";
-            this.callUserToolStripMenuItem.Click += new System.EventHandler(this.callUserToolStripMenuItem_Click);
-            // 
-            // sendSMSToolStripMenuItem
-            // 
-            this.sendSMSToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Info;
-            this.sendSMSToolStripMenuItem.Name = "sendSMSToolStripMenuItem";
-            this.sendSMSToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.sendSMSToolStripMenuItem.Text = "Send SMS";
-            this.sendSMSToolStripMenuItem.Click += new System.EventHandler(this.sendSMSToolStripMenuItem_Click);
-            // 
-            // sendEmailToolStripMenuItem
-            // 
-            this.sendEmailToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Info;
-            this.sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
-            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.sendEmailToolStripMenuItem.Text = "Send Email";
-            this.sendEmailToolStripMenuItem.Click += new System.EventHandler(this.sendEmailToolStripMenuItem_Click);
+            this.changePasswordToolStripMenuItem.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.changePasswordToolStripMenuItem.Text = "Change Password";
+            this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
             // 
             // frmManageUsers
             // 
@@ -314,8 +324,8 @@
             this.Text = "Manage Users";
             this.Load += new System.EventHandler(this.frmManageUsers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListUsers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbManageUser)).EndInit();
             this.cmsAddEditUserMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbManageUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,5 +355,6 @@
         private System.Windows.Forms.ToolStripMenuItem callUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sendSMSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sendEmailToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
     }
 }

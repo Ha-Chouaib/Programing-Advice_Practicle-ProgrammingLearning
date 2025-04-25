@@ -90,6 +90,12 @@
     <Compile Include="Users\Forms\frmAdd_EditUser.Designer.cs">
       <DependentUpon>frmAdd_EditUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Users\Forms\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\Forms\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users\Forms\frmManageUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,12 @@
     </Compile>
     <Compile Include="Users\UserControls\ctrlFilterPeople.Designer.cs">
       <DependentUpon>ctrlFilterPeople.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\UserControls\ctrlShowLoginInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users\UserControls\ctrlShowLoginInfo.Designer.cs">
+      <DependentUpon>ctrlShowLoginInfo.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="People\User_Ctrl\ctrlAdd-Edit_PersonIfo.resx">
       <DependentUpon>ctrlAdd-Edit_PersonIfo.cs</DependentUpon>
@@ -134,6 +146,9 @@
     <EmbeddedResource Include="Users\Forms\frmAdd_EditUser.resx">
       <DependentUpon>frmAdd_EditUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Users\Forms\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Users\Forms\frmManageUsers.resx">
       <DependentUpon>frmManageUsers.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Users\UserControls\ctrlFilterPeople.resx">
       <DependentUpon>ctrlFilterPeople.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\UserControls\ctrlShowLoginInfo.resx">
+      <DependentUpon>ctrlShowLoginInfo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
