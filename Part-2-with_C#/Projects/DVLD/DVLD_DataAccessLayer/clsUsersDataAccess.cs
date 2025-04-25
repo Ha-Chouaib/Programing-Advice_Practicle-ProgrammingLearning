@@ -13,7 +13,7 @@ namespace DVLD_DataAccessLayer
         public static bool Find(int UserID,ref int PersonID,ref string UserName,ref string Password,ref bool IsActive )
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
-            string Query = @"SELECT * From WHERE UserID=@UserID";
+            string Query = @"SELECT * From Users WHERE UserID=@UserID";
 
             SqlCommand command = new SqlCommand(Query, connection);
             command.Parameters.AddWithValue("@UserID", UserID);
@@ -48,10 +48,10 @@ namespace DVLD_DataAccessLayer
         public static bool Find(string UserName, ref int UserID, ref int PersonID, ref string Password, ref bool IsActive)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
-            string Query = @"SELECT * From WHERE UserName=@UserName";
+            string Query = @"SELECT * From Users WHERE UserName=@UserName";
 
             SqlCommand command = new SqlCommand(Query, connection);
-            command.Parameters.AddWithValue("@UserUserName", UserName);
+            command.Parameters.AddWithValue("@UserName", UserName);
 
             bool Found = false;
 
@@ -153,7 +153,7 @@ namespace DVLD_DataAccessLayer
         public static bool Exist(int UserID)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
-            string Query = @"SELECT Found=1 WHERE UserID=@UserID";
+            string Query = @"SELECT Found=1 From Users WHERE UserID=@UserID";
 
             SqlCommand command = new SqlCommand(Query, connection);
             command.Parameters.AddWithValue(@"UserID", UserID);
@@ -174,7 +174,32 @@ namespace DVLD_DataAccessLayer
             }
             return Found;
         }
-    
+        public static bool ExistByPersonID(int PersonID)
+        {
+            SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
+            string Query = @"SELECT Found=1 From Users WHERE PersonID=@PersonID";
+
+            SqlCommand command = new SqlCommand(Query, connection);
+            command.Parameters.AddWithValue(@"PersonID", PersonID);
+
+            bool Found = false;
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows) Found = true;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return Found;
+        }
+
         public static bool Delete(int UserID)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);

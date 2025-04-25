@@ -19,3 +19,6 @@ C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part
 C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.exe
 C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.pdb
 C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.Users.frmManageUsers.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.Users.UserControls.ctrlFilterPeople.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.Users.UserControls.ctrlAdd_EditUser.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.Users.Forms.frmAdd_EditUser.resources
