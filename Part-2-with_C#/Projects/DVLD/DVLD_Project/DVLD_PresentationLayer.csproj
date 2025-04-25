@@ -84,11 +84,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Users\frmManageUsers.cs">
+    <Compile Include="Users\Forms\frmAdd_EditUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Users\frmManageUsers.Designer.cs">
+    <Compile Include="Users\Forms\frmAdd_EditUser.Designer.cs">
+      <DependentUpon>frmAdd_EditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Forms\frmManageUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\Forms\frmManageUsers.Designer.cs">
       <DependentUpon>frmManageUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\UserControls\ctrlAdd_EditUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users\UserControls\ctrlAdd_EditUser.Designer.cs">
+      <DependentUpon>ctrlAdd_EditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\UserControls\ctrlFilterPeople.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users\UserControls\ctrlFilterPeople.Designer.cs">
+      <DependentUpon>ctrlFilterPeople.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="People\User_Ctrl\ctrlAdd-Edit_PersonIfo.resx">
       <DependentUpon>ctrlAdd-Edit_PersonIfo.cs</DependentUpon>
@@ -113,8 +131,17 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Users\frmManageUsers.resx">
+    <EmbeddedResource Include="Users\Forms\frmAdd_EditUser.resx">
+      <DependentUpon>frmAdd_EditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\Forms\frmManageUsers.resx">
       <DependentUpon>frmManageUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\UserControls\ctrlAdd_EditUser.resx">
+      <DependentUpon>ctrlAdd_EditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\UserControls\ctrlFilterPeople.resx">
+      <DependentUpon>ctrlFilterPeople.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -146,5 +173,6 @@
   <ItemGroup>
     <None Include="Resources\user_female.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -30,7 +30,9 @@ namespace DVLD_Project
 
         public delegate void TriggerFunction(object sender);
         public event TriggerFunction ReLoadData;
-            
+
+        public delegate void SendPersonID(object sender, int PersonID);
+        public event SendPersonID ReturnPersonID;
 
         private void frmAdd_Edit_People_Load(object sender, EventArgs e)
         {
@@ -46,6 +48,7 @@ namespace DVLD_Project
                 ctrlAdd_Edit_PersonIfo1.ApplyMode(-1);
                 ctrlAdd_Edit_PersonIfo1.ReturnID += SetPersonIDToField;
 
+
             }
             else
             {
@@ -59,7 +62,12 @@ namespace DVLD_Project
         private void SetPersonIDToField(object sender,int PersonID)
         {
             if (int.TryParse(PersonID.ToString(), out int ID))
-                lblPersonID.Text = ID.ToString();
+            {
+                _PersonID = ID;
+                ReturnPersonID?.Invoke(this, _PersonID);
+                lblPersonID.Text = _PersonID.ToString();
+
+            }
         }
         private void LeaveTheForm(object sender)
         {

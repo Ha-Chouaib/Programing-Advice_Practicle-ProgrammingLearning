@@ -108,8 +108,9 @@
             this.lblCountry.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lblCountry.Location = new System.Drawing.Point(645, 290);
             this.lblCountry.Name = "lblCountry";
-            this.lblCountry.Size = new System.Drawing.Size(0, 20);
+            this.lblCountry.Size = new System.Drawing.Size(27, 20);
             this.lblCountry.TabIndex = 18;
+            this.lblCountry.Text = "???";
             // 
             // lblPhone
             // 
@@ -119,8 +120,9 @@
             this.lblPhone.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lblPhone.Location = new System.Drawing.Point(645, 252);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(0, 20);
+            this.lblPhone.Size = new System.Drawing.Size(27, 20);
             this.lblPhone.TabIndex = 17;
+            this.lblPhone.Text = "???";
             // 
             // lblDateOfBirth
             // 
@@ -130,8 +132,9 @@
             this.lblDateOfBirth.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lblDateOfBirth.Location = new System.Drawing.Point(645, 214);
             this.lblDateOfBirth.Name = "lblDateOfBirth";
-            this.lblDateOfBirth.Size = new System.Drawing.Size(0, 20);
+            this.lblDateOfBirth.Size = new System.Drawing.Size(27, 20);
             this.lblDateOfBirth.TabIndex = 16;
+            this.lblDateOfBirth.Text = "???";
             // 
             // lblAddress
             // 
@@ -141,8 +144,9 @@
             this.lblAddress.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lblAddress.Location = new System.Drawing.Point(137, 258);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(0, 20);
+            this.lblAddress.Size = new System.Drawing.Size(27, 20);
             this.lblAddress.TabIndex = 15;
+            this.lblAddress.Text = "???";
             // 
             // lblEmail
             // 
@@ -152,8 +156,9 @@
             this.lblEmail.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lblEmail.Location = new System.Drawing.Point(137, 304);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(0, 20);
+            this.lblEmail.Size = new System.Drawing.Size(27, 20);
             this.lblEmail.TabIndex = 14;
+            this.lblEmail.Text = "???";
             // 
             // lblGender
             // 
@@ -163,8 +168,9 @@
             this.lblGender.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lblGender.Location = new System.Drawing.Point(645, 177);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(0, 20);
+            this.lblGender.Size = new System.Drawing.Size(27, 20);
             this.lblGender.TabIndex = 13;
+            this.lblGender.Text = "???";
             // 
             // lblNationalNo
             // 
@@ -174,8 +180,9 @@
             this.lblNationalNo.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lblNationalNo.Location = new System.Drawing.Point(137, 220);
             this.lblNationalNo.Name = "lblNationalNo";
-            this.lblNationalNo.Size = new System.Drawing.Size(0, 20);
+            this.lblNationalNo.Size = new System.Drawing.Size(27, 20);
             this.lblNationalNo.TabIndex = 12;
+            this.lblNationalNo.Text = "???";
             // 
             // lblPersonID
             // 
@@ -185,8 +192,9 @@
             this.lblPersonID.ForeColor = System.Drawing.Color.Cyan;
             this.lblPersonID.Location = new System.Drawing.Point(381, 132);
             this.lblPersonID.Name = "lblPersonID";
-            this.lblPersonID.Size = new System.Drawing.Size(0, 17);
+            this.lblPersonID.Size = new System.Drawing.Size(32, 17);
             this.lblPersonID.TabIndex = 11;
+            this.lblPersonID.Text = "???";
             // 
             // lblName
             // 
@@ -196,8 +204,9 @@
             this.lblName.ForeColor = System.Drawing.Color.Aqua;
             this.lblName.Location = new System.Drawing.Point(137, 176);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(0, 20);
+            this.lblName.Size = new System.Drawing.Size(27, 20);
             this.lblName.TabIndex = 10;
+            this.lblName.Text = "???";
             // 
             // label9
             // 

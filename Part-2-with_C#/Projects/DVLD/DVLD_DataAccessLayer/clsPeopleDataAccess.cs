@@ -114,8 +114,6 @@ namespace DVLD_DataAccessLayer
                     {
                         ImagePath = "";
                     }
-
-
                 }
 
             }

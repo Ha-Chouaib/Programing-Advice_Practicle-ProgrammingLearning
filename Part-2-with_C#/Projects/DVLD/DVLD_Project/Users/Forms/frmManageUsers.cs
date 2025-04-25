@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DVLD_BusinessLayer;
+using DVLD_Project.Users.Forms;
 
 namespace DVLD_Project.Users
 {
@@ -30,7 +31,11 @@ namespace DVLD_Project.Users
         {
             dgvListUsers.DataSource = clsUsers.UsersList_ViewInf();
             _ConvertDataGridViewCell_IsActiveToCheckBox();
-
+            lblRecord.Text = dgvListUsers.RowCount.ToString();
+        }
+        private void _RelaodUsersList(object sender)
+        {
+            _LoadUsersList();
         }
         Dictionary<string, string> FilterOptions = new Dictionary<string, string>();
         private void _LoadFilterOptions()
@@ -109,7 +114,10 @@ namespace DVLD_Project.Users
             }
             dgvListUsers.DataSource = DV;
         }
-
+        private void cmbIsActiveOptions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _FilterUsersBy_IsActive();
+        }
         private void cmbFilterUsers_SelectedIndexChanged(object sender, EventArgs e)
         {
             string FilterColumn = cmbFilterUsers.SelectedItem.ToString();
@@ -164,9 +172,70 @@ namespace DVLD_Project.Users
             dgvListUsers.Columns.Insert(ColIndex, CheckB_Col);
         }
 
-        private void cmbIsActiveOptions_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnAddNewUser_Click(object sender, EventArgs e)
         {
-            _FilterUsersBy_IsActive();
+            frmAdd_EditUser AddNewUser = new frmAdd_EditUser();
+            AddNewUser.RelaodContent += _RelaodUsersList;
+            AddNewUser.ShowDialog();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void showUserDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addNewUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnAddNewUser_Click(sender, e);
+        }
+
+        private void updateUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int UserID =(int) dgvListUsers.CurrentRow.Cells[0].Value;
+            frmAdd_EditUser UpdateUser = new frmAdd_EditUser(UserID);
+            UpdateUser.RelaodContent += _RelaodUsersList;
+            UpdateUser.Show();
+
+        }
+
+        private void deleteUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int UserID = (int)dgvListUsers.CurrentRow.Cells[0].Value;
+
+            if(MessageBox.Show("Sure To Delete The Record?","Confirm",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if(clsUsers.Delete(UserID))
+                {
+                    MessageBox.Show("Deleted Successfully", "Info");
+                    _LoadUsersList();
+                }else
+                {
+                    MessageBox.Show("The system not able to Delete This Record", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }else
+            {
+                MessageBox.Show("Ignored Successfully", "Info");
+            }
+        }
+
+        private void callUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Not Implmented Yet", "Info",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+        }
+
+        private void sendSMSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Not Implmented Yet", "Info",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+        }
+
+        private void sendEmailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Not Implmented Yet", "Info",MessageBoxButtons.OK,MessageBoxIcon.Warning);
         }
     }
 }
