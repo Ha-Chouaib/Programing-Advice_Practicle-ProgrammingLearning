@@ -65,7 +65,7 @@
             this.panel1.Controls.Add(this.txtConfirmPassword);
             this.panel1.Controls.Add(this.txtNewPassword);
             this.panel1.Controls.Add(this.txtCurrentPassword);
-            this.panel1.Location = new System.Drawing.Point(338, 491);
+            this.panel1.Location = new System.Drawing.Point(362, 470);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(348, 226);
             this.panel1.TabIndex = 3;
@@ -137,7 +137,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnSave.Location = new System.Drawing.Point(995, 664);
+            this.btnSave.Location = new System.Drawing.Point(947, 709);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(116, 37);
             this.btnSave.TabIndex = 4;
@@ -151,7 +151,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnClose.Location = new System.Drawing.Point(852, 664);
+            this.btnClose.Location = new System.Drawing.Point(804, 709);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(116, 37);
             this.btnClose.TabIndex = 5;
@@ -162,7 +162,7 @@
             // ctrlShowLoginInfo1
             // 
             this.ctrlShowLoginInfo1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.ctrlShowLoginInfo1.Location = new System.Drawing.Point(72, 355);
+            this.ctrlShowLoginInfo1.Location = new System.Drawing.Point(103, 355);
             this.ctrlShowLoginInfo1.Name = "ctrlShowLoginInfo1";
             this.ctrlShowLoginInfo1.Size = new System.Drawing.Size(866, 85);
             this.ctrlShowLoginInfo1.TabIndex = 1;
@@ -171,17 +171,18 @@
             // 
             this.ctrlPersonDetails1._PersonID = 0;
             this.ctrlPersonDetails1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
-            this.ctrlPersonDetails1.Location = new System.Drawing.Point(105, 2);
+            this.ctrlPersonDetails1.Location = new System.Drawing.Point(137, 2);
             this.ctrlPersonDetails1.Name = "ctrlPersonDetails1";
             this.ctrlPersonDetails1.Size = new System.Drawing.Size(801, 347);
             this.ctrlPersonDetails1.TabIndex = 0;
             // 
             // frmChangePassword
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.ClientSize = new System.Drawing.Size(1123, 729);
+            this.ClientSize = new System.Drawing.Size(1086, 758);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel1);

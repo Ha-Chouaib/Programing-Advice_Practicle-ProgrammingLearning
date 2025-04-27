@@ -74,7 +74,7 @@
             this.btnAddNew.Location = new System.Drawing.Point(1285, 12);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(96, 38);
-            this.btnAddNew.TabIndex = 7;
+            this.btnAddNew.TabIndex = 3;
             this.btnAddNew.Text = "Add New +";
             this.btnAddNew.UseVisualStyleBackColor = false;
             this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
@@ -90,7 +90,7 @@
             this.txtFilterPeople.Multiline = true;
             this.txtFilterPeople.Name = "txtFilterPeople";
             this.txtFilterPeople.Size = new System.Drawing.Size(238, 26);
-            this.txtFilterPeople.TabIndex = 5;
+            this.txtFilterPeople.TabIndex = 2;
             this.txtFilterPeople.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilterPeople_KeyPress);
             this.txtFilterPeople.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFilterPeople_KeyUp);
             // 
@@ -117,7 +117,7 @@
             this.cmbFilter.Location = new System.Drawing.Point(117, 20);
             this.cmbFilter.Name = "cmbFilter";
             this.cmbFilter.Size = new System.Drawing.Size(276, 26);
-            this.cmbFilter.TabIndex = 4;
+            this.cmbFilter.TabIndex = 1;
             this.cmbFilter.SelectedIndexChanged += new System.EventHandler(this.cmbFilter_SelectedIndexChanged);
             // 
             // label1
@@ -210,13 +210,14 @@
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.SystemColors.Menu;
             this.btnClose.Location = new System.Drawing.Point(1301, 662);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(92, 33);
-            this.btnClose.TabIndex = 1;
+            this.btnClose.TabIndex = 4;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -257,6 +258,7 @@
             // 
             // frmManagePeople
             // 
+            this.AcceptButton = this.btnClose;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));

@@ -46,6 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsGlobal.cs" />
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="People\User_Ctrl\ctrlAdd-Edit_PersonIfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -76,10 +83,10 @@
     <Compile Include="People\Forms\frmPersonDetails.Designer.cs">
       <DependentUpon>frmPersonDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="People\Forms\MainForm.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="People\Forms\MainForm.Designer.cs">
+    <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -95,6 +102,12 @@
     </Compile>
     <Compile Include="Users\Forms\frmChangePassword.Designer.cs">
       <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Forms\frmDisplayUserDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\Forms\frmDisplayUserDetails.Designer.cs">
+      <DependentUpon>frmDisplayUserDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Users\Forms\frmManageUsers.cs">
       <SubType>Form</SubType>
@@ -120,6 +133,9 @@
     <Compile Include="Users\UserControls\ctrlShowLoginInfo.Designer.cs">
       <DependentUpon>ctrlShowLoginInfo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="People\User_Ctrl\ctrlAdd-Edit_PersonIfo.resx">
       <DependentUpon>ctrlAdd-Edit_PersonIfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,7 +151,7 @@
     <EmbeddedResource Include="People\Forms\frmPersonDetails.resx">
       <DependentUpon>frmPersonDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="People\Forms\MainForm.resx">
+    <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -148,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Users\Forms\frmChangePassword.resx">
       <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\Forms\frmDisplayUserDetails.resx">
+      <DependentUpon>frmDisplayUserDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\Forms\frmManageUsers.resx">
       <DependentUpon>frmManageUsers.cs</DependentUpon>
