@@ -3,8 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\users\\forms\\frmchangepassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:users\\forms\\frmchangepassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\clsglobal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:clsglobal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\users\\forms\\frmdisplayuserdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:users\\forms\\frmdisplayuserdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\users\\forms\\frmmanageusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,70 +39,8 @@
       "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:users\\forms\\frmmanageusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\users\\forms\\frmchangepassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:users\\forms\\frmchangepassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\users\\usercontrols\\ctrlshowlogininfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:users\\usercontrols\\ctrlshowlogininfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\users\\usercontrols\\ctrlshowlogininfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:users\\usercontrols\\ctrlshowlogininfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\users\\usercontrols\\ctrlfilterpeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:users\\usercontrols\\ctrlfilterpeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\users\\usercontrols\\ctrladd_edituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:users\\usercontrols\\ctrladd_edituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\users\\forms\\frmadd_edituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:users\\forms\\frmadd_edituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\users\\forms\\frmadd_edituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:users\\forms\\frmadd_edituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ABCB3993-3822-4C0E-A5A0-75F67FDE7598}|..\\DVLD_DataAccessLayer\\DVLD_DataAccessLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_dataaccesslayer\\clsusersdataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FC20C891-3136-42F1-BDE3-BD963DB57C8B}|..\\DVLD_BusinessLayer\\DVLD_BusinessLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_businesslayer\\clsusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\users\\usercontrols\\ctrladd_edituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:users\\usercontrols\\ctrladd_edituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\people\\forms\\frmmanagepeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:people\\forms\\frmmanagepeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\people\\forms\\frmmanagepeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:people\\forms\\frmmanagepeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\people\\forms\\frmadd_edit_people.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:people\\forms\\frmadd_edit_people.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\users\\usercontrols\\ctrlfilterpeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:users\\usercontrols\\ctrlfilterpeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\people\\forms\\frmadd_edit_people.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:people\\forms\\frmadd_edit_people.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\people\\user_ctrl\\ctrlpersondetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:people\\user_ctrl\\ctrlpersondetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\people\\user_ctrl\\ctrladd-edit_personifo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:people\\user_ctrl\\ctrladd-edit_personifo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\users\\forms\\frmdisplayuserdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:users\\forms\\frmdisplayuserdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -88,84 +50,87 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmChangePassword.cs",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\Forms\\frmChangePassword.cs",
-              "RelativeDocumentMoniker": "Users\\Forms\\frmChangePassword.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\Forms\\frmChangePassword.cs*",
-              "RelativeToolTip": "Users\\Forms\\frmChangePassword.cs*",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAcwCkAAAAvAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T19:32:38.41Z",
+              "WhenOpened": "2025-04-26T15:35:58.83Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmChangePassword.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\Forms\\frmChangePassword.cs",
-              "RelativeDocumentMoniker": "Users\\Forms\\frmChangePassword.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\Forms\\frmChangePassword.cs [Design]*",
-              "RelativeToolTip": "Users\\Forms\\frmChangePassword.cs [Design]*",
+              "DocumentIndex": 0,
+              "Title": "frmLogin.cs",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\frmLogin.cs",
+              "RelativeDocumentMoniker": "frmLogin.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\frmLogin.cs*",
+              "RelativeToolTip": "frmLogin.cs*",
+              "ViewState": "AgIAADsAAAAAAAAAAAApwFkAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T19:14:36.111Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ctrlShowLoginInfo.cs",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\UserControls\\ctrlShowLoginInfo.cs",
-              "RelativeDocumentMoniker": "Users\\UserControls\\ctrlShowLoginInfo.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\UserControls\\ctrlShowLoginInfo.cs",
-              "RelativeToolTip": "Users\\UserControls\\ctrlShowLoginInfo.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAtwBMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T18:55:19.511Z",
+              "WhenOpened": "2025-04-26T15:03:40.628Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ctrlShowLoginInfo.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\UserControls\\ctrlShowLoginInfo.cs",
-              "RelativeDocumentMoniker": "Users\\UserControls\\ctrlShowLoginInfo.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\UserControls\\ctrlShowLoginInfo.cs [Design]",
-              "RelativeToolTip": "Users\\UserControls\\ctrlShowLoginInfo.cs [Design]",
+              "Title": "frmLogin.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\frmLogin.cs",
+              "RelativeDocumentMoniker": "frmLogin.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\frmLogin.cs [Design]*",
+              "RelativeToolTip": "frmLogin.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T18:48:02.819Z",
+              "WhenOpened": "2025-04-26T14:40:34.301Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "frmManagePeople.cs",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\People\\Forms\\frmManagePeople.cs",
-              "RelativeDocumentMoniker": "People\\Forms\\frmManagePeople.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\People\\Forms\\frmManagePeople.cs",
-              "RelativeToolTip": "People\\Forms\\frmManagePeople.cs",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAMwBYAAAAMAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "clsGlobal.cs",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\clsGlobal.cs",
+              "RelativeDocumentMoniker": "clsGlobal.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\clsGlobal.cs",
+              "RelativeToolTip": "clsGlobal.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T02:07:48.206Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "frmManagePeople.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\People\\Forms\\frmManagePeople.cs",
-              "RelativeDocumentMoniker": "People\\Forms\\frmManagePeople.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\People\\Forms\\frmManagePeople.cs [Design]",
-              "RelativeToolTip": "People\\Forms\\frmManagePeople.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T02:07:43.911Z"
+              "WhenOpened": "2025-04-26T14:34:00.241Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\MainForm.cs",
+              "RelativeDocumentMoniker": "MainForm.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\MainForm.cs",
+              "RelativeToolTip": "MainForm.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAASwDkAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T14:30:21.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\MainForm.cs",
+              "RelativeDocumentMoniker": "MainForm.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\MainForm.cs [Design]",
+              "RelativeToolTip": "MainForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T14:22:23.173Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "frmManageUsers.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\Forms\\frmManageUsers.cs",
               "RelativeDocumentMoniker": "Users\\Forms\\frmManageUsers.cs",
@@ -177,158 +142,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "clsUsersDataAccess.cs",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_DataAccessLayer\\clsUsersDataAccess.cs",
-              "RelativeDocumentMoniker": "..\\DVLD_DataAccessLayer\\clsUsersDataAccess.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_DataAccessLayer\\clsUsersDataAccess.cs",
-              "RelativeToolTip": "..\\DVLD_DataAccessLayer\\clsUsersDataAccess.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwC8AAAB6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T19:48:21.782Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "frmAdd_EditUser.cs",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\Forms\\frmAdd_EditUser.cs",
-              "RelativeDocumentMoniker": "Users\\Forms\\frmAdd_EditUser.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\Forms\\frmAdd_EditUser.cs",
-              "RelativeToolTip": "Users\\Forms\\frmAdd_EditUser.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAswCcAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T18:41:49.513Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "ctrlAdd_EditUser.cs",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\UserControls\\ctrlAdd_EditUser.cs",
-              "RelativeDocumentMoniker": "Users\\UserControls\\ctrlAdd_EditUser.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\UserControls\\ctrlAdd_EditUser.cs",
-              "RelativeToolTip": "Users\\UserControls\\ctrlAdd_EditUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T15:58:40.119Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "ctrlPersonDetails.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\People\\User_Ctrl\\ctrlPersonDetails.cs",
-              "RelativeDocumentMoniker": "People\\User_Ctrl\\ctrlPersonDetails.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\People\\User_Ctrl\\ctrlPersonDetails.cs [Design]",
-              "RelativeToolTip": "People\\User_Ctrl\\ctrlPersonDetails.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T15:07:27.454Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ctrlAdd_EditUser.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\UserControls\\ctrlAdd_EditUser.cs",
-              "RelativeDocumentMoniker": "Users\\UserControls\\ctrlAdd_EditUser.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\UserControls\\ctrlAdd_EditUser.cs [Design]",
-              "RelativeToolTip": "Users\\UserControls\\ctrlAdd_EditUser.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T14:57:16.852Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "ctrlAdd-Edit_PersonIfo.cs",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\People\\User_Ctrl\\ctrlAdd-Edit_PersonIfo.cs",
-              "RelativeDocumentMoniker": "People\\User_Ctrl\\ctrlAdd-Edit_PersonIfo.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\People\\User_Ctrl\\ctrlAdd-Edit_PersonIfo.cs",
-              "RelativeToolTip": "People\\User_Ctrl\\ctrlAdd-Edit_PersonIfo.cs",
-              "ViewState": "AgIAAIIAAAAAAAAAAAAEwLcAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T14:43:11.069Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "frmAdd_Edit_People.cs",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\People\\Forms\\frmAdd_Edit_People.cs",
-              "RelativeDocumentMoniker": "People\\Forms\\frmAdd_Edit_People.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\People\\Forms\\frmAdd_Edit_People.cs",
-              "RelativeToolTip": "People\\Forms\\frmAdd_Edit_People.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAcwEQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T14:36:03.109Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "frmAdd_Edit_People.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\People\\Forms\\frmAdd_Edit_People.cs",
-              "RelativeDocumentMoniker": "People\\Forms\\frmAdd_Edit_People.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\People\\Forms\\frmAdd_Edit_People.cs [Design]",
-              "RelativeToolTip": "People\\Forms\\frmAdd_Edit_People.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T14:35:41.326Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "frmAdd_EditUser.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\Forms\\frmAdd_EditUser.cs",
-              "RelativeDocumentMoniker": "Users\\Forms\\frmAdd_EditUser.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\Forms\\frmAdd_EditUser.cs [Design]",
-              "RelativeToolTip": "Users\\Forms\\frmAdd_EditUser.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T14:21:38.105Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ctrlFilterPeople.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\UserControls\\ctrlFilterPeople.cs",
-              "RelativeDocumentMoniker": "Users\\UserControls\\ctrlFilterPeople.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\UserControls\\ctrlFilterPeople.cs [Design]",
-              "RelativeToolTip": "Users\\UserControls\\ctrlFilterPeople.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T14:11:08.197Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "ctrlFilterPeople.cs",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\UserControls\\ctrlFilterPeople.cs",
-              "RelativeDocumentMoniker": "Users\\UserControls\\ctrlFilterPeople.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\UserControls\\ctrlFilterPeople.cs",
-              "RelativeToolTip": "Users\\UserControls\\ctrlFilterPeople.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAEwGgAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T13:51:19.517Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "frmManageUsers.cs",
               "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\Forms\\frmManageUsers.cs",
               "RelativeDocumentMoniker": "Users\\Forms\\frmManageUsers.cs",
               "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\Forms\\frmManageUsers.cs",
               "RelativeToolTip": "Users\\Forms\\frmManageUsers.cs",
-              "ViewState": "AgIAAMsAAAAAAAAAAAAnwNkAAAB0AAAAAAAAAA==",
+              "ViewState": "AgIAAKkAAAAAAAAAAAAEwL4AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-24T13:51:18.947Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "clsUsers.cs",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_BusinessLayer\\clsUsers.cs",
-              "RelativeDocumentMoniker": "..\\DVLD_BusinessLayer\\clsUsers.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_BusinessLayer\\clsUsers.cs",
-              "RelativeToolTip": "..\\DVLD_BusinessLayer\\clsUsers.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAawC4AAAAlAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "frmDisplayUserDetails.cs",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\Forms\\frmDisplayUserDetails.cs",
+              "RelativeDocumentMoniker": "Users\\Forms\\frmDisplayUserDetails.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\Forms\\frmDisplayUserDetails.cs",
+              "RelativeToolTip": "Users\\Forms\\frmDisplayUserDetails.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAMwB0AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T16:37:59.67Z"
+              "WhenOpened": "2025-04-26T14:10:20.42Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "frmDisplayUserDetails.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\Forms\\frmDisplayUserDetails.cs",
+              "RelativeDocumentMoniker": "Users\\Forms\\frmDisplayUserDetails.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\Forms\\frmDisplayUserDetails.cs [Design]",
+              "RelativeToolTip": "Users\\Forms\\frmDisplayUserDetails.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T14:05:40.476Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

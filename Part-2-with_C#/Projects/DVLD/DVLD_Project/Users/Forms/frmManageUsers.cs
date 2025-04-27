@@ -186,7 +186,9 @@ namespace DVLD_Project.Users
 
         private void showUserDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            int UserID =(int) dgvListUsers.CurrentRow.Cells[0].Value;
+            frmDisplayUserDetails UserDetails = new frmDisplayUserDetails(UserID);
+            UserDetails.Show();
         }
 
         private void addNewUserToolStripMenuItem_Click(object sender, EventArgs e)

@@ -53,6 +53,7 @@
             this.ctrlAdd_EditUser1.Name = "ctrlAdd_EditUser1";
             this.ctrlAdd_EditUser1.Size = new System.Drawing.Size(1083, 565);
             this.ctrlAdd_EditUser1.TabIndex = 1;
+            this.ctrlAdd_EditUser1.UserID = 0;
             // 
             // btnSave
             // 
@@ -84,6 +85,7 @@
             // 
             // frmAdd_EditUser
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
