@@ -26,3 +26,7 @@ C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part
 C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.Users.Forms.frmChangePassword.resources
 C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.frmLogin.resources
 C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.Users.Forms.frmDisplayUserDetails.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.Applications.ApplicationTypes.frmEditApplicationType.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.Applications.ApplicationTypes.frmManageApplicationTypes.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.Applications.TestTypes.frmEditTestType.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.Applications.TestTypes.frmManageTestTypes.resources
