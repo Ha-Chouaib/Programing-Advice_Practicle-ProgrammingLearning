@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DVLD_BusinessLayer;
+using DVLD_Project.Applications.ApplicationTypes;
 using DVLD_Project.Users;
 using DVLD_Project.Users.Forms;
 
@@ -56,6 +57,12 @@ namespace DVLD_Project
             clsUsers User = clsUsers.Find(clsGlobal.CurrentUserID);
             TriggerRememberMeFunc?.Invoke(this, User.UserName, User.Password);
             this.Close();
+        }
+
+        private void manageApplicationTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmManageApplicationTypes  AppType=new frmManageApplicationTypes();
+            AppType.ShowDialog();
         }
     }
 }
