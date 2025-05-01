@@ -50,6 +50,7 @@
             this.txtTestTitle.Name = "txtTestTitle";
             this.txtTestTitle.Size = new System.Drawing.Size(298, 30);
             this.txtTestTitle.TabIndex = 0;
+            this.txtTestTitle.Validating += new System.ComponentModel.CancelEventHandler(this.txtTestFields_Validating);
             // 
             // txtTestFees
             // 
@@ -62,6 +63,8 @@
             this.txtTestFees.Name = "txtTestFees";
             this.txtTestFees.Size = new System.Drawing.Size(298, 30);
             this.txtTestFees.TabIndex = 1;
+            this.txtTestFees.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTestFees_KeyPress);
+            this.txtTestFees.Validating += new System.ComponentModel.CancelEventHandler(this.txtTestFields_Validating);
             // 
             // txtDescription
             // 
@@ -74,6 +77,7 @@
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(298, 194);
             this.txtDescription.TabIndex = 2;
+            this.txtDescription.Validating += new System.ComponentModel.CancelEventHandler(this.txtTestFields_Validating);
             // 
             // label1
             // 
@@ -85,7 +89,6 @@
             this.label1.Size = new System.Drawing.Size(67, 18);
             this.label1.TabIndex = 3;
             this.label1.Text = "Test Title";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -122,6 +125,7 @@
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClose
             // 
@@ -136,6 +140,7 @@
             this.btnClose.TabIndex = 7;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label4
             // 
@@ -165,6 +170,7 @@
             this.Controls.Add(this.txtTestTitle);
             this.Name = "frmEditTestType";
             this.Text = "frmEditTestType";
+            this.Load += new System.EventHandler(this.frmEditTestType_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

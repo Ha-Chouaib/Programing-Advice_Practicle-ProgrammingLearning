@@ -45,19 +45,19 @@ namespace DVLD_Project
             if (_Mode==enMode.eAddNew)
             {
                 lblHeader.Text = "Add New Person";
-                ctrlAdd_Edit_PersonIfo1.ApplyMode(-1);
-                ctrlAdd_Edit_PersonIfo1.ReturnID += SetPersonIDToField;
+                ctrlAdd_Edit_PersonIfo1.__ApplyMode(-1);
+                ctrlAdd_Edit_PersonIfo1.__ReturnID += SetPersonIDToField;
 
 
             }
             else
             {
                 lblHeader.Text = "Edit Person";
-                ctrlAdd_Edit_PersonIfo1.ApplyMode(_PersonID);
+                ctrlAdd_Edit_PersonIfo1.__ApplyMode(_PersonID);
                 lblPersonID.Text = _PersonID.ToString();
 
             }
-            ctrlAdd_Edit_PersonIfo1.LeaveForm += LeaveTheForm;
+            ctrlAdd_Edit_PersonIfo1.__LeaveForm += LeaveTheForm;
         }
         private void SetPersonIDToField(object sender,int PersonID)
         {

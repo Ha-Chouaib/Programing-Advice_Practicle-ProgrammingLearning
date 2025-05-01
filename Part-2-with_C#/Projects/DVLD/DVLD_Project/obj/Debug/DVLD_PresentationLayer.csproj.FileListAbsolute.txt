@@ -30,3 +30,5 @@ C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part
 C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.Applications.ApplicationTypes.frmManageApplicationTypes.resources
 C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.Applications.TestTypes.frmEditTestType.resources
 C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.Applications.TestTypes.frmManageTestTypes.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.People.User_Ctrl.ctrlFindPerson.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.Applications.frmManageMainApplications.resources

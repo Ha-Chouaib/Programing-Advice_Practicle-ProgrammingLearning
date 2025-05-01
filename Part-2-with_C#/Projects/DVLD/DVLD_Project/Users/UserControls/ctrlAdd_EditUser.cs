@@ -25,13 +25,12 @@ namespace DVLD_Project.Users.UserControls
         clsUsers User;
         private void ctrlAdd_EditUser_Load(object sender, EventArgs e)
         {
-            ctrlFilterPeople1.GetPersonID += DisplayPersonalInfo;
         }
-        public void DisplayPersonalInfo(object sender, int PersonID)
+        public void __DisplayPersonalInfo(object sender, int PersonID)
         {
             User = clsUsers.Find(UserID);
-            ctrlPersonDetails_PersTab.DisplayPersonInfo(PersonID);
             _PersonID=PersonID;
+            ctrlFindPerson1.__DisplayPersonalInfo(sender,PersonID);
             lblUserID.Text = UserID.ToString();
 
             txtUserName.Text = User.UserName;
@@ -75,7 +74,7 @@ namespace DVLD_Project.Users.UserControls
         {
             User.UserName = txtUserName.Text;
             User.Password = txtPassword.Text;
-            User.PersonID = _PersonID;
+            User.PersonID = _PersonID ;
             if (cbIsActive.Checked == true)
             {
                 User.IsActive = true;
@@ -109,6 +108,11 @@ namespace DVLD_Project.Users.UserControls
         private void btnBack_Click(object sender, EventArgs e)
         {
             tabAddEditUser.SelectedTab = tabPersonInf;
+        }
+
+        private void tabPersonInf_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

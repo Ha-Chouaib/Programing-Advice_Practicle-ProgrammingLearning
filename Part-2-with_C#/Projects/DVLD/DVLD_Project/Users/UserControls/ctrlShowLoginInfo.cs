@@ -18,7 +18,7 @@ namespace DVLD_Project.Users.UserControls
             InitializeComponent();
         }
 
-        public void DisplayUserInfo(int UserID)
+        public void __DisplayUserInfo(int UserID)
         {
             clsUsers User = clsUsers.Find(UserID);
             if(User != null)
@@ -31,5 +31,7 @@ namespace DVLD_Project.Users.UserControls
                     lblIsActive.Text = "No";
             }
         }
+
+       
     }
 }

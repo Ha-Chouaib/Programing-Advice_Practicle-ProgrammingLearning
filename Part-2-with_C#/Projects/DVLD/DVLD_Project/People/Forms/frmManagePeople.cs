@@ -21,6 +21,7 @@ namespace DVLD_Project
         private void frmManagePeople_Load(object sender, EventArgs e)
         {
             _LoadPeople();
+            _LoadFilterOptions();
             txtFilterPeople.Visible = false;
         }
 
@@ -30,7 +31,6 @@ namespace DVLD_Project
             DataTable dtPeople = clsPeople.ListAll();
 
             dgvLsitPeople.DataSource = dtPeople;
-            cmbFilter.SelectedIndex = 0;
             lblRecordsCount.Text = dgvLsitPeople.RowCount.ToString();
 
         }
@@ -39,22 +39,39 @@ namespace DVLD_Project
             dgvLsitPeople.DataSource = clsPeople.ListAll();
             lblRecordsCount.Text = dgvLsitPeople.RowCount.ToString();
         }
+        Dictionary<string, string> FilterColumns = new Dictionary<string, string>();
+        private void _LoadFilterOptions()
+        {
+            FilterColumns.Add("_None", "None");
+            FilterColumns.Add("NationalNo", "National No");
+            FilterColumns.Add("FirstName", "First Name");
+            FilterColumns.Add("SecondName", "Second Name");
+            FilterColumns.Add("ThirdName", "Third Name");
+            FilterColumns.Add("LastName", "Last Name");
+            FilterColumns.Add("NationalityCountryID", "Nationality");
+            FilterColumns.Add("Gendor", "Gender");
+            FilterColumns.Add("Phone", "Phone");
+            FilterColumns.Add("Email", "Email");
+
+            cmbFilter.DataSource = new BindingSource(FilterColumns, null);
+            cmbFilter.DisplayMember = "Value";
+            cmbFilter.ValueMember = "Key";
+            cmbFilter.SelectedIndex = 0;
+        }
         private void _FilterPeopole()
         {
-
-            string[] FilteringColumns = new string[] {"None","PersonID","NationalNo","FirstName","SecondName","ThirdName",
-                                                      "LastName","NationalityCountryID","Gendor","Phone","Email"};
-
-            byte ColumnIndex =(byte) cmbFilter.SelectedIndex;
+    
             string FilterTerm = txtFilterPeople.Text;
-            if (cmbFilter.SelectedIndex != 0 || txtFilterPeople.Text != string.Empty)
+            string SelectedColumn = cmbFilter.SelectedValue.ToString();
+
+            if (SelectedColumn != "_None" || FilterTerm != string.Empty)
             {
-                if (cmbFilter.SelectedIndex != 1 && cmbFilter.SelectedIndex!= 7)
+                if (SelectedColumn != "PersonID" && SelectedColumn != "NationalityCountryID")
                 {
                     txtFilterPeople.KeyPress -= txtFilterPeople_KeyPress;
-                    if(cmbFilter.SelectedIndex != 8)
+                    if(SelectedColumn != "Gendor")
                     {
-                        dgvLsitPeople.DataSource = clsPeople.FilterPeople<string>(FilteringColumns[ColumnIndex], FilterTerm);
+                        dgvLsitPeople.DataSource = clsPeople.FilterPeople<string>(SelectedColumn, FilterTerm);
 
                     }else
                     {
@@ -68,7 +85,7 @@ namespace DVLD_Project
                             else
                                 Gender = 1;
 
-                            dgvLsitPeople.DataSource = clsPeople.FilterPeople<byte>(FilteringColumns[ColumnIndex], Gender);
+                            dgvLsitPeople.DataSource = clsPeople.FilterPeople<byte>(SelectedColumn, Gender);
                         }
 
                     }
@@ -78,7 +95,7 @@ namespace DVLD_Project
                 {
                     txtFilterPeople.KeyPress += txtFilterPeople_KeyPress;
                     if(int.TryParse(FilterTerm,out int Int_Value))
-                        dgvLsitPeople.DataSource=clsPeople.FilterPeople<int>(FilteringColumns[ColumnIndex],Int_Value);
+                        dgvLsitPeople.DataSource=clsPeople.FilterPeople<int>(SelectedColumn, Int_Value);
                 }
             }
             else
@@ -101,9 +118,12 @@ namespace DVLD_Project
 
         private void cmbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbFilter.SelectedIndex == 0)
+            if (cmbFilter.SelectedValue.ToString() == "_None")
             {
+                txtFilterPeople.Text=string.Empty;
                 txtFilterPeople.Visible = false;
+                _LoadPeople();
+
             }
             else
                 txtFilterPeople.Visible = true;
@@ -163,10 +183,6 @@ namespace DVLD_Project
             }
         }
 
-        private void btnClose_MouseHover(object sender, EventArgs e)
-        {
-       
-        }
 
         private void tsmShowDetails_Click(object sender, EventArgs e)
         {
