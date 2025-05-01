@@ -43,7 +43,10 @@ namespace DVLD_Project.Applications.TestTypes
 
         private void editTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            byte TestID =byte.Parse( dgvListTestTypes.CurrentRow.Cells[0].Value.ToString());
+            frmEditTestType EditTest = new frmEditTestType(TestID);
+            EditTest.ReloadContent += _ReloadTestsList;
+            EditTest.ShowDialog();
         }
 
         private void btnClose_Click(object sender, EventArgs e)

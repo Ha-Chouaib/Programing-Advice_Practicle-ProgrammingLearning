@@ -102,18 +102,6 @@
             this.cmbFilter.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFilter.ForeColor = System.Drawing.SystemColors.Menu;
             this.cmbFilter.FormattingEnabled = true;
-            this.cmbFilter.Items.AddRange(new object[] {
-            "None",
-            "Person ID",
-            "National No",
-            "First Name",
-            "Second Name",
-            "Third Name",
-            "Last Name",
-            "Nationality",
-            "Gendor",
-            "Phone",
-            "Email"});
             this.cmbFilter.Location = new System.Drawing.Point(117, 20);
             this.cmbFilter.Name = "cmbFilter";
             this.cmbFilter.Size = new System.Drawing.Size(276, 26);
@@ -221,7 +209,6 @@
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            this.btnClose.MouseHover += new System.EventHandler(this.btnClose_MouseHover);
             // 
             // lblRecordNumber
             // 

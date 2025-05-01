@@ -39,7 +39,7 @@ namespace DVLD_Project.Users.Forms
                 User = clsUsers.Find(_UserID);
                 ctrlAdd_EditUser1.UserID = _UserID;
                 lblAddEdit_Header.Text = "Update User";
-                ctrlAdd_EditUser1.DisplayPersonalInfo(this, User.PersonID);
+                ctrlAdd_EditUser1.__DisplayPersonalInfo(this, User.PersonID);
             }else
             {
                 lblAddEdit_Header.Text = "Add New User";

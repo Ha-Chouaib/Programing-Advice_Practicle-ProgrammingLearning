@@ -23,7 +23,7 @@ namespace DVLD_Project.Users.UserControls
         }
 
         public delegate void SendPersonIDHandler(object sender, int PersonID);
-        public event SendPersonIDHandler GetPersonID;
+        public event SendPersonIDHandler __GetPersonID;
 
         Dictionary<string,string>FindOpt=new Dictionary<string,string>();
         private void _LoadFindOptions()
@@ -35,7 +35,7 @@ namespace DVLD_Project.Users.UserControls
             cmbFilterOpts.ValueMember = "Key";
             cmbFilterOpts.SelectedIndex = 0;
         }
-        public int _PersonID { get; set; }
+        public int __PersonID { get; set; }
         private bool _FindPerson()
        {
             bool Found = false;
@@ -75,7 +75,7 @@ namespace DVLD_Project.Users.UserControls
             }
             else
             {
-                _PersonID =ID ;
+                __PersonID =ID ;
                 Found = true;
             }
             return Found;
@@ -84,7 +84,7 @@ namespace DVLD_Project.Users.UserControls
         private void btnFindPerson_Click(object sender, EventArgs e)
         {
             if(_FindPerson())
-                GetPersonID?.Invoke(this, _PersonID);
+                __GetPersonID?.Invoke(this, __PersonID);
         }
         private void txtSearchTerm_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -114,8 +114,8 @@ namespace DVLD_Project.Users.UserControls
         }
         private void GetNewPersonID(object sender, int PersonID)
         {
-            _PersonID = PersonID;
-            GetPersonID?.Invoke(this, _PersonID);
+            __PersonID = PersonID;
+            __GetPersonID?.Invoke(this, __PersonID);
 
         }
     }

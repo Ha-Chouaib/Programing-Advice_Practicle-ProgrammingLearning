@@ -58,7 +58,7 @@
             // 
             // ctrlPersonDetails1
             // 
-            this.ctrlPersonDetails1._PersonID = 0;
+            this.ctrlPersonDetails1.__PersonID = 0;
             this.ctrlPersonDetails1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.ctrlPersonDetails1.Location = new System.Drawing.Point(56, 12);
             this.ctrlPersonDetails1.Name = "ctrlPersonDetails1";

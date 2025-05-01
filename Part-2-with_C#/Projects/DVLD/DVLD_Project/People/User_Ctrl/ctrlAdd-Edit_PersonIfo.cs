@@ -31,10 +31,10 @@ namespace DVLD_Project
 
 
         public delegate void ReturnPersonInfoHandler(object sender, int PersonID);
-        public event ReturnPersonInfoHandler ReturnID;
+        public event ReturnPersonInfoHandler __ReturnID;
 
         public delegate void TriggerFunction(object sender);
-        public event TriggerFunction LeaveForm;
+        public event TriggerFunction __LeaveForm;
 
         private int _PersonID ; 
         clsPeople Person ;
@@ -50,7 +50,7 @@ namespace DVLD_Project
             cmbCountry.SelectedIndex = 119;
             dtDateOfBirth.MaxDate = DateTime.Now.AddYears(-18);
         }
-        public void ApplyMode(int PersonID)
+        public void __ApplyMode(int PersonID)
         {
             if (clsPeople.IsExist(PersonID))
             {
@@ -159,7 +159,7 @@ namespace DVLD_Project
             {
                 MessageBox.Show("Added Successfully");
                 _CopyPersonImgToFile();
-                ReturnID?.Invoke(this, Person.PersonID);
+                __ReturnID?.Invoke(this, Person.PersonID);
             }
             else
             {
@@ -210,7 +210,7 @@ namespace DVLD_Project
         {
             if(MessageBox.Show("Sure To Leave ?","Confirm",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                LeaveForm?.Invoke(this);
+                __LeaveForm?.Invoke(this);
             }
 
         }

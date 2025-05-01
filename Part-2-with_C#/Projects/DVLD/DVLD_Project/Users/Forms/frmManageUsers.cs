@@ -19,8 +19,7 @@ namespace DVLD_Project.Users
             InitializeComponent();
         }
 
-        enum enFilterMode { eNone,eIsActive,ePersonFullName,eUserInf}
-        enFilterMode _FilterMode;
+       
         private void frmManageUsers_Load(object sender, EventArgs e)
         {
             _LoadFilterOptions();
@@ -128,11 +127,13 @@ namespace DVLD_Project.Users
                 {
                     txtFilterTerm.Visible = false;
                     cmbIsActiveOptions.Visible = false;
+                    _LoadUsersList();
                     return;
 
                 }
                 else if (Column == "IsActive")
                 {
+                    _LoadUsersList();
                     cmbIsActiveOptions.Visible = true;
                     txtFilterTerm.Visible = false;
                     return;

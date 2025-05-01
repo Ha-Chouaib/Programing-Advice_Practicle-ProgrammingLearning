@@ -37,8 +37,8 @@ namespace DVLD_Project.Users.Forms
             User =clsUsers.Find(_UserID);
             if(User !=null)
             {
-                ctrlPersonDetails1.DisplayPersonInfo(User.PersonID);
-                ctrlShowLoginInfo1.DisplayUserInfo(User.UserID);
+                ctrlPersonDetails1.__DisplayPersonInfo(User.PersonID);
+                ctrlShowLoginInfo1.__DisplayUserInfo(User.UserID);
                 txtCurrentPassword.Validating += txtCurrentPassword_Validating;
             }
             else 

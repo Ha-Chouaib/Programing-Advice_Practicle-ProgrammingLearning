@@ -30,10 +30,9 @@
         {
             this.tabAddEditUser = new System.Windows.Forms.TabControl();
             this.tabPersonInf = new System.Windows.Forms.TabPage();
-            this.ctrlFilterPeople1 = new DVLD_Project.Users.UserControls.ctrlFilterPeople();
-            this.ctrlPersonDetails_PersTab = new DVLD_Project.ctrlPersonDetails();
             this.btnNext = new System.Windows.Forms.Button();
             this.tabLoginInf = new System.Windows.Forms.TabPage();
+            this.btnBack = new System.Windows.Forms.Button();
             this.lblUserID = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -44,7 +43,7 @@
             this.txtConfirmPass = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
-            this.btnBack = new System.Windows.Forms.Button();
+            this.ctrlFindPerson1 = new DVLD_Project.People.User_Ctrl.ctrlFindPerson();
             this.tabAddEditUser.SuspendLayout();
             this.tabPersonInf.SuspendLayout();
             this.tabLoginInf.SuspendLayout();
@@ -64,9 +63,8 @@
             // 
             // tabPersonInf
             // 
-            this.tabPersonInf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.tabPersonInf.Controls.Add(this.ctrlFilterPeople1);
-            this.tabPersonInf.Controls.Add(this.ctrlPersonDetails_PersTab);
+            this.tabPersonInf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tabPersonInf.Controls.Add(this.ctrlFindPerson1);
             this.tabPersonInf.Controls.Add(this.btnNext);
             this.tabPersonInf.Location = new System.Drawing.Point(4, 22);
             this.tabPersonInf.Name = "tabPersonInf";
@@ -74,24 +72,7 @@
             this.tabPersonInf.Size = new System.Drawing.Size(1075, 539);
             this.tabPersonInf.TabIndex = 0;
             this.tabPersonInf.Text = "Personal Info";
-            // 
-            // ctrlFilterPeople1
-            // 
-            this.ctrlFilterPeople1._PersonID = 0;
-            this.ctrlFilterPeople1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.ctrlFilterPeople1.Location = new System.Drawing.Point(65, 26);
-            this.ctrlFilterPeople1.Name = "ctrlFilterPeople1";
-            this.ctrlFilterPeople1.Size = new System.Drawing.Size(938, 66);
-            this.ctrlFilterPeople1.TabIndex = 4;
-            // 
-            // ctrlPersonDetails_PersTab
-            // 
-            this.ctrlPersonDetails_PersTab._PersonID = 0;
-            this.ctrlPersonDetails_PersTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
-            this.ctrlPersonDetails_PersTab.Location = new System.Drawing.Point(134, 122);
-            this.ctrlPersonDetails_PersTab.Name = "ctrlPersonDetails_PersTab";
-            this.ctrlPersonDetails_PersTab.Size = new System.Drawing.Size(801, 347);
-            this.ctrlPersonDetails_PersTab.TabIndex = 3;
+            this.tabPersonInf.Click += new System.EventHandler(this.tabPersonInf_Click);
             // 
             // btnNext
             // 
@@ -100,7 +81,7 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Trebuchet MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnNext.Location = new System.Drawing.Point(973, 487);
+            this.btnNext.Location = new System.Drawing.Point(973, 490);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(84, 32);
             this.btnNext.TabIndex = 2;
@@ -121,6 +102,21 @@
             this.tabLoginInf.Size = new System.Drawing.Size(1075, 539);
             this.tabLoginInf.TabIndex = 1;
             this.tabLoginInf.Text = "Login Info";
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(14)))), ((int)(((byte)(165)))));
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Trebuchet MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnBack.Location = new System.Drawing.Point(21, 492);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(84, 32);
+            this.btnBack.TabIndex = 7;
+            this.btnBack.Text = "<-- Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // lblUserID
             // 
@@ -245,20 +241,13 @@
             this.txtUserName.TabIndex = 1;
             this.txtUserName.Validating += new System.ComponentModel.CancelEventHandler(this.txtUserName_Validating);
             // 
-            // btnBack
+            // ctrlFindPerson1
             // 
-            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(14)))), ((int)(((byte)(165)))));
-            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Trebuchet MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnBack.Location = new System.Drawing.Point(21, 492);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(84, 32);
-            this.btnBack.TabIndex = 7;
-            this.btnBack.Text = "<-- Back";
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.ctrlFindPerson1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ctrlFindPerson1.Location = new System.Drawing.Point(46, 6);
+            this.ctrlFindPerson1.Name = "ctrlFindPerson1";
+            this.ctrlFindPerson1.Size = new System.Drawing.Size(980, 462);
+            this.ctrlFindPerson1.TabIndex = 3;
             // 
             // ctrlAdd_EditUser
             // 
@@ -285,8 +274,6 @@
         private System.Windows.Forms.TabPage tabPersonInf;
         private System.Windows.Forms.TabPage tabLoginInf;
         private System.Windows.Forms.Button btnNext;
-        private ctrlFilterPeople ctrlFilterPeople1;
-        private ctrlPersonDetails ctrlPersonDetails_PersTab;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label label3;
@@ -298,5 +285,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox cbIsActive;
         private System.Windows.Forms.Button btnBack;
+        private People.User_Ctrl.ctrlFindPerson ctrlFindPerson1;
     }
 }

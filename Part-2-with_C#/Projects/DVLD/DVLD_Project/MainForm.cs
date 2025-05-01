@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DVLD_BusinessLayer;
 using DVLD_Project.Applications.ApplicationTypes;
+using DVLD_Project.Applications.TestTypes;
 using DVLD_Project.Users;
 using DVLD_Project.Users.Forms;
 
@@ -63,6 +64,17 @@ namespace DVLD_Project
         {
             frmManageApplicationTypes  AppType=new frmManageApplicationTypes();
             AppType.ShowDialog();
+        }
+
+        private void manageTestTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmManageTestTypes TestsManagment = new frmManageTestTypes();
+            TestsManagment.ShowDialog();
+        }
+
+        private void localLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

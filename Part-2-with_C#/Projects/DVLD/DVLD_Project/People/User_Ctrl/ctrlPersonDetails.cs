@@ -21,16 +21,16 @@ namespace DVLD_Project
         }
         
 
-        public int _PersonID { get; set; }
+        public int __PersonID { get; set; }
         clsPeople Person;
        
-        public void DisplayPersonInfo(int PersonID)
+        public void __DisplayPersonInfo(int PersonID)
         {
             Person = clsPeople.Find(PersonID);
             if(Person != null)
             {
-                _PersonID = PersonID;
-                lblPersonID.Text = _PersonID.ToString();
+                __PersonID = PersonID;
+                lblPersonID.Text = __PersonID.ToString();
                 string FullName = Person.FirstName + " " + Person.SecondName + " " + Person.ThirdName + " " + Person.LastName;
                 lblName.Text = FullName;
                 lblNationalNo.Text = Person.NationalNo;
@@ -63,20 +63,20 @@ namespace DVLD_Project
 
         private void btnEditPersonInfo_Click(object sender, EventArgs e)
         {
-            if(clsPeople.IsExist(_PersonID))
+            if(clsPeople.IsExist(__PersonID))
             {
-                frmAdd_Edit_People EditForm = new frmAdd_Edit_People(_PersonID);
+                frmAdd_Edit_People EditForm = new frmAdd_Edit_People(__PersonID);
                 EditForm.ReLoadData += ReloadInfo;
                 EditForm.ShowDialog();
             }else
             {
-                MessageBox.Show($"No Person Exist With ID <<{_PersonID}>>");
+                MessageBox.Show($"No Person Exist With ID <<{__PersonID}>>");
             }
 
         }
         private void ReloadInfo(object sender)
         {
-            DisplayPersonInfo(_PersonID);
+            __DisplayPersonInfo(__PersonID);
         }
        
     }

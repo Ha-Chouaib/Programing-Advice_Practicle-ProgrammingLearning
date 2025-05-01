@@ -24,7 +24,7 @@ namespace DVLD_DataAccessLayer
                 if (Reader.Read())
                 {
                     IsFound = true;
-                    TestTitle = (string)Reader["ApplicationTypeTitle"];
+                    TestTitle = (string)Reader["TestTypeTitle"];
                     TestDescription = (string)Reader["TestTypeDescription"];
                     TestFees = (float)(decimal)Reader["TestTypeFees"];
                 }
@@ -78,12 +78,12 @@ namespace DVLD_DataAccessLayer
         public static bool UpdateTest(short TestID, string TestTitle,string TestDescription, double TestFees)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
-            string Query = @"Update ApplicationTypes
+            string Query = @"Update TestTypes
                                                     Set
-                                                        TestTypeTitle=@TestTitle,
-                                                        TestTypeTestDescription=@TestDescription
-                                                        TestTypeFees=@TestFees
-                                                    WHERE TestTypeID=@TestID";
+                                                        TestTypeTitle = @TestTitle,
+                                                        TestTypeDescription = @TestDescription,
+                                                        TestTypeFees = @TestFees
+                                                    WHERE TestTypeID = @TestID";
             SqlCommand command = new SqlCommand(Query, connection);
             command.Parameters.AddWithValue("@TestID", TestID);
             command.Parameters.AddWithValue("@TestTitle", TestTitle);

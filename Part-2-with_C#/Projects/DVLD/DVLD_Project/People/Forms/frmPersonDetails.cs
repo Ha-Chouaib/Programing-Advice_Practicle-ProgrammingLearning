@@ -24,7 +24,7 @@ namespace DVLD_Project
         }
         private void frmPersonDetails_Load(object sender, EventArgs e)
         {
-            ctrlPersonDetails1.DisplayPersonInfo(_PersonID);
+            ctrlPersonDetails1.__DisplayPersonInfo(_PersonID);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace DVLD_Project
             // 
             // ctrlPersonDetails1
             // 
-            this.ctrlPersonDetails1._PersonID = 0;
+            this.ctrlPersonDetails1.__PersonID = 0;
             this.ctrlPersonDetails1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.ctrlPersonDetails1.Location = new System.Drawing.Point(42, 135);
             this.ctrlPersonDetails1.Name = "ctrlPersonDetails1";
