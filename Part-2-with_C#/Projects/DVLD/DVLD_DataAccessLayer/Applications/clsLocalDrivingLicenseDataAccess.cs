@@ -101,6 +101,39 @@ namespace DVLD_DataAccessLayer.Applications
             return DT;
         }
 
+        public static DataTable FilterBy<T>(string Column,T Term)
+        {
+            SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
+
+            string[] AllowedColumns = new string[] { "LocalDrivingLicenseApplicationID", "NationalNo","FullName","Status" };
+            if (!AllowedColumns.Contains(Column))
+            {
+                throw new ArgumentException("Not Allowed Column");
+            }
+
+            string Query = $"Select * From LocalDrivingLicenseApplications_View  Where {Column} Like @Term";
+
+            SqlCommand cmd = new SqlCommand(Query, connection);
+            cmd.Parameters.AddWithValue("@Term", "%"+ Term +"%");
+
+            DataTable DT = new DataTable();
+            try
+            {
+                connection.Open();
+                SqlDataReader Reader = cmd.ExecuteReader();
+                DT.Load(Reader);
+            } catch (Exception ex)
+            {
+
+
+            }
+            finally 
+            {
+                connection.Close();    
+            }
+            return DT;
+        }
+
 
 
     }

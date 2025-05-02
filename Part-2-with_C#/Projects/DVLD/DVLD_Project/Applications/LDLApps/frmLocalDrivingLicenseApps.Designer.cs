@@ -1,6 +1,6 @@
 ﻿namespace DVLD_Project.Applications
 {
-    partial class frmManageMainApplications
+    partial class frmManageLocalDrivingLicenseApps
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvLDL_AppsList = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbListLocalLicenseApps = new System.Windows.Forms.ComboBox();
+            this.cmbFilterOptions = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtFilterTerm = new System.Windows.Forms.TextBox();
             this.btnAddNewLocalApp = new System.Windows.Forms.Button();
@@ -38,21 +38,23 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblRecords = new System.Windows.Forms.Label();
             this.pbLDLApp = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.cmbAppStatusFilter = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLDL_AppsList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLDLApp)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvLDL_AppsList
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 242);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1263, 407);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvLDL_AppsList.AllowUserToAddRows = false;
+            this.dgvLDL_AppsList.AllowUserToDeleteRows = false;
+            this.dgvLDL_AppsList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvLDL_AppsList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.dgvLDL_AppsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLDL_AppsList.Location = new System.Drawing.Point(12, 242);
+            this.dgvLDL_AppsList.Name = "dgvLDL_AppsList";
+            this.dgvLDL_AppsList.ReadOnly = true;
+            this.dgvLDL_AppsList.Size = new System.Drawing.Size(1263, 407);
+            this.dgvLDL_AppsList.TabIndex = 0;
             // 
             // label1
             // 
@@ -65,18 +67,19 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Local Driving License Applications";
             // 
-            // cmbListLocalLicenseApps
+            // cmbFilterOptions
             // 
-            this.cmbListLocalLicenseApps.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.cmbListLocalLicenseApps.Cursor = System.Windows.Forms.Cursors.SizeNESW;
-            this.cmbListLocalLicenseApps.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbListLocalLicenseApps.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbListLocalLicenseApps.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.cmbListLocalLicenseApps.FormattingEnabled = true;
-            this.cmbListLocalLicenseApps.Location = new System.Drawing.Point(133, 205);
-            this.cmbListLocalLicenseApps.Name = "cmbListLocalLicenseApps";
-            this.cmbListLocalLicenseApps.Size = new System.Drawing.Size(257, 28);
-            this.cmbListLocalLicenseApps.TabIndex = 2;
+            this.cmbFilterOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.cmbFilterOptions.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbFilterOptions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFilterOptions.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbFilterOptions.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.cmbFilterOptions.FormattingEnabled = true;
+            this.cmbFilterOptions.Location = new System.Drawing.Point(133, 205);
+            this.cmbFilterOptions.Name = "cmbFilterOptions";
+            this.cmbFilterOptions.Size = new System.Drawing.Size(257, 28);
+            this.cmbFilterOptions.TabIndex = 2;
+            this.cmbFilterOptions.SelectedIndexChanged += new System.EventHandler(this.cmbFilterOptions_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -100,6 +103,9 @@
             this.txtFilterTerm.Name = "txtFilterTerm";
             this.txtFilterTerm.Size = new System.Drawing.Size(257, 28);
             this.txtFilterTerm.TabIndex = 4;
+            this.txtFilterTerm.Visible = false;
+            this.txtFilterTerm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilterTerm_KeyPress);
+            this.txtFilterTerm.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFilterTerm_KeyUp);
             // 
             // btnAddNewLocalApp
             // 
@@ -128,6 +134,7 @@
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label3
             // 
@@ -162,13 +169,29 @@
             this.pbLDLApp.TabIndex = 9;
             this.pbLDLApp.TabStop = false;
             // 
-            // frmManageMainApplications
+            // cmbAppStatusFilter
+            // 
+            this.cmbAppStatusFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.cmbAppStatusFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbAppStatusFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAppStatusFilter.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAppStatusFilter.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.cmbAppStatusFilter.FormattingEnabled = true;
+            this.cmbAppStatusFilter.Location = new System.Drawing.Point(424, 205);
+            this.cmbAppStatusFilter.Name = "cmbAppStatusFilter";
+            this.cmbAppStatusFilter.Size = new System.Drawing.Size(186, 28);
+            this.cmbAppStatusFilter.TabIndex = 10;
+            this.cmbAppStatusFilter.Visible = false;
+            this.cmbAppStatusFilter.SelectedIndexChanged += new System.EventHandler(this.cmbAppStatusFilter_SelectedIndexChanged);
+            // 
+            // frmManageLocalDrivingLicenseApps
             // 
             this.AcceptButton = this.btnClose;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
             this.ClientSize = new System.Drawing.Size(1287, 731);
+            this.Controls.Add(this.cmbAppStatusFilter);
             this.Controls.Add(this.pbLDLApp);
             this.Controls.Add(this.lblRecords);
             this.Controls.Add(this.label3);
@@ -176,13 +199,13 @@
             this.Controls.Add(this.btnAddNewLocalApp);
             this.Controls.Add(this.txtFilterTerm);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.cmbListLocalLicenseApps);
+            this.Controls.Add(this.cmbFilterOptions);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
-            this.Name = "frmManageMainApplications";
-            this.Text = "frmManageMainApplications";
+            this.Controls.Add(this.dgvLDL_AppsList);
+            this.Name = "frmManageLocalDrivingLicenseApps";
+            this.Text = "frmManageLocalDrivingLicenseApps";
             this.Load += new System.EventHandler(this.frmManageMainApplications_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLDL_AppsList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLDLApp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -191,9 +214,9 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvLDL_AppsList;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbListLocalLicenseApps;
+        private System.Windows.Forms.ComboBox cmbFilterOptions;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtFilterTerm;
         private System.Windows.Forms.Button btnAddNewLocalApp;
@@ -201,5 +224,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblRecords;
         private System.Windows.Forms.PictureBox pbLDLApp;
+        private System.Windows.Forms.ComboBox cmbAppStatusFilter;
     }
 }

@@ -52,5 +52,9 @@ namespace DVLD_BusinessLayer.Applications
         {
             return clsLocalDrivingLicenseDataAccess.ListAll_View();
         }
+        public static DataTable FilterBy<T>(string Column,T Term)
+        {
+            return clsLocalDrivingLicenseDataAccess.FilterBy<T>(Column, Term);
+        }
     }
 }
