@@ -69,6 +69,7 @@
             this.gbFilterContainer.TabIndex = 1;
             this.gbFilterContainer.TabStop = false;
             this.gbFilterContainer.Text = "Filter";
+            this.gbFilterContainer.Enter += new System.EventHandler(this.gbFilterContainer_Enter);
             // 
             // txtSearchTerm
             // 

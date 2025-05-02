@@ -50,7 +50,6 @@
             this.txtFilterTerm = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbIsActiveOptions = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.pbManageUser = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListUsers)).BeginInit();
             this.cmsAddEditUserMenu.SuspendLayout();
@@ -66,7 +65,7 @@
             this.dgvListUsers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvListUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListUsers.ContextMenuStrip = this.cmsAddEditUserMenu;
-            this.dgvListUsers.Location = new System.Drawing.Point(26, 226);
+            this.dgvListUsers.Location = new System.Drawing.Point(26, 257);
             this.dgvListUsers.Name = "dgvListUsers";
             this.dgvListUsers.ReadOnly = true;
             this.dgvListUsers.Size = new System.Drawing.Size(1083, 371);
@@ -171,7 +170,7 @@
             this.btnAddNewUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddNewUser.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddNewUser.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAddNewUser.Location = new System.Drawing.Point(1023, 175);
+            this.btnAddNewUser.Location = new System.Drawing.Point(1023, 206);
             this.btnAddNewUser.Name = "btnAddNewUser";
             this.btnAddNewUser.Size = new System.Drawing.Size(86, 30);
             this.btnAddNewUser.TabIndex = 2;
@@ -182,13 +181,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 30.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(34)))), ((int)(((byte)(206)))));
-            this.label1.Location = new System.Drawing.Point(353, 37);
+            this.label1.Location = new System.Drawing.Point(423, 137);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 46);
+            this.label1.Size = new System.Drawing.Size(288, 50);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Manage";
+            this.label1.Text = "Manage Users";
             // 
             // cmbFilterUsers
             // 
@@ -198,7 +197,7 @@
             this.cmbFilterUsers.Font = new System.Drawing.Font("Trebuchet MS", 10.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.cmbFilterUsers.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.cmbFilterUsers.FormattingEnabled = true;
-            this.cmbFilterUsers.Location = new System.Drawing.Point(124, 180);
+            this.cmbFilterUsers.Location = new System.Drawing.Point(124, 211);
             this.cmbFilterUsers.Name = "cmbFilterUsers";
             this.cmbFilterUsers.Size = new System.Drawing.Size(192, 26);
             this.cmbFilterUsers.TabIndex = 1;
@@ -210,7 +209,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.label2.Font = new System.Drawing.Font("Trebuchet MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(23, 633);
+            this.label2.Location = new System.Drawing.Point(23, 664);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 22);
             this.label2.TabIndex = 4;
@@ -222,7 +221,7 @@
             this.lblRecord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.lblRecord.Font = new System.Drawing.Font("Trebuchet MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRecord.ForeColor = System.Drawing.Color.Cyan;
-            this.lblRecord.Location = new System.Drawing.Point(120, 633);
+            this.lblRecord.Location = new System.Drawing.Point(120, 664);
             this.lblRecord.Name = "lblRecord";
             this.lblRecord.Size = new System.Drawing.Size(19, 22);
             this.lblRecord.TabIndex = 5;
@@ -235,7 +234,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnClose.Location = new System.Drawing.Point(1034, 627);
+            this.btnClose.Location = new System.Drawing.Point(1034, 658);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 28);
             this.btnClose.TabIndex = 6;
@@ -247,7 +246,7 @@
             // 
             this.txtFilterTerm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.txtFilterTerm.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtFilterTerm.Location = new System.Drawing.Point(349, 180);
+            this.txtFilterTerm.Location = new System.Drawing.Point(349, 211);
             this.txtFilterTerm.Multiline = true;
             this.txtFilterTerm.Name = "txtFilterTerm";
             this.txtFilterTerm.Size = new System.Drawing.Size(192, 26);
@@ -261,7 +260,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.label3.Font = new System.Drawing.Font("Trebuchet MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Location = new System.Drawing.Point(23, 183);
+            this.label3.Location = new System.Drawing.Point(23, 214);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 22);
             this.label3.TabIndex = 8;
@@ -275,30 +274,19 @@
             this.cmbIsActiveOptions.Font = new System.Drawing.Font("Trebuchet MS", 10.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.cmbIsActiveOptions.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.cmbIsActiveOptions.FormattingEnabled = true;
-            this.cmbIsActiveOptions.Location = new System.Drawing.Point(349, 180);
+            this.cmbIsActiveOptions.Location = new System.Drawing.Point(349, 211);
             this.cmbIsActiveOptions.Name = "cmbIsActiveOptions";
             this.cmbIsActiveOptions.Size = new System.Drawing.Size(192, 26);
             this.cmbIsActiveOptions.TabIndex = 9;
             this.cmbIsActiveOptions.Visible = false;
             this.cmbIsActiveOptions.SelectedIndexChanged += new System.EventHandler(this.cmbIsActiveOptions_SelectedIndexChanged);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Trebuchet MS", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(34)))), ((int)(((byte)(206)))));
-            this.label4.Location = new System.Drawing.Point(694, 37);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 46);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Users";
-            // 
             // pbManageUser
             // 
             this.pbManageUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.pbManageUser.Location = new System.Drawing.Point(513, 12);
+            this.pbManageUser.Location = new System.Drawing.Point(480, 12);
             this.pbManageUser.Name = "pbManageUser";
-            this.pbManageUser.Size = new System.Drawing.Size(175, 97);
+            this.pbManageUser.Size = new System.Drawing.Size(175, 122);
             this.pbManageUser.TabIndex = 3;
             this.pbManageUser.TabStop = false;
             // 
@@ -308,8 +296,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(1135, 669);
-            this.Controls.Add(this.label4);
+            this.ClientSize = new System.Drawing.Size(1135, 701);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblRecord);
@@ -345,7 +332,6 @@
         private System.Windows.Forms.TextBox txtFilterTerm;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbIsActiveOptions;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ContextMenuStrip cmsAddEditUserMenu;
         private System.Windows.Forms.ToolStripMenuItem showUserDetailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNewUserToolStripMenuItem;

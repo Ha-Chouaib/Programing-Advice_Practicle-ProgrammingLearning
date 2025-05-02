@@ -118,5 +118,10 @@ namespace DVLD_Project.Users.UserControls
             __GetPersonID?.Invoke(this, __PersonID);
 
         }
+
+        private void gbFilterContainer_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DVLD_BusinessLayer;
+using DVLD_Project.Applications;
 using DVLD_Project.Applications.ApplicationTypes;
 using DVLD_Project.Applications.TestTypes;
 using DVLD_Project.Users;
@@ -70,11 +71,13 @@ namespace DVLD_Project
         {
             frmManageTestTypes TestsManagment = new frmManageTestTypes();
             TestsManagment.ShowDialog();
+           
         }
 
-        private void localLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        private void localDrivingLicenseApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmManageLocalDrivingLicenseApps LDL_Apps = new frmManageLocalDrivingLicenseApps();
+            LDL_Apps.ShowDialog();
         }
     }
 }
