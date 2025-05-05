@@ -67,15 +67,18 @@ namespace DVLD_BusinessLayer.Applications
 
         bool _AddNewApp()
         {
-            int AppID=-1;
-                AppID=clsMainApplicationDataAccess.AddNewApp(this.ApplicantPersonID,this.AppDate,this.AppTypeID,this.AppStatus,
+                this.AppID=clsMainApplicationDataAccess.AddNewApp(this.ApplicantPersonID,this.AppDate,this.AppTypeID,this.AppStatus,
                                                             this.LastStatusDate,this.PaidFees,this.CreatedByUserID);
-            return (AppID > 0);
+            return (this.AppID > 0);
         }
 
         bool _UpdateApp()
         {
             return clsMainApplicationDataAccess.UpdateApp(this.AppID, this.AppStatus, this.LastStatusDate);
+        }
+        public static bool DeleteApp(int AppID)
+        {
+            return clsMainApplicationDataAccess.DeleteApplication(AppID);
         }
 
         public bool Save()

@@ -25,12 +25,24 @@ namespace DVLD_Project.Users.UserControls
         clsUsers User;
         private void ctrlAdd_EditUser_Load(object sender, EventArgs e)
         {
+            ctrlFindPerson1.__ReturnPersonID += _GetPersonID;
         }
-        public void __DisplayPersonalInfo(object sender, int PersonID)
+        private void _GetPersonID(object sender,int PersonID)
+        {
+            _PersonID = PersonID;
+            if(!clsUsers.ExistByPersonID(_PersonID))
+            {
+                ctrlFindPerson1.__DisplayPersonalInfo(_PersonID);
+            }else
+            {
+                MessageBox.Show($"The Person With ID << {_PersonID} >> Is Already a User! You Cannot Add It Twice!!","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
+        }
+        public void __DisplayPersonalInfo(int PersonID)
         {
             User = clsUsers.Find(UserID);
             _PersonID=PersonID;
-            ctrlFindPerson1.__DisplayPersonalInfo(sender,PersonID);
+            ctrlFindPerson1.__DisplayPersonalInfo(PersonID);
             lblUserID.Text = UserID.ToString();
 
             txtUserName.Text = User.UserName;

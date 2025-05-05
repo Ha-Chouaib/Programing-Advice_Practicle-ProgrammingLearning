@@ -8,7 +8,7 @@ namespace DVLD_DataAccessLayer.Applications
 {
     public class clsLocalDrivingLicenseDataAccess
     {
-        public static bool Find(int LDL_ID, ref short AppID,ref short LicenseClassID)
+        public static bool Find(int LDL_ID, ref int AppID,ref short LicenseClassID)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
             string Query = @"Select * from LocalDrivingLicenseApplications Where LocalDrivingLicenseApplicationID= @LDLid";
@@ -24,7 +24,7 @@ namespace DVLD_DataAccessLayer.Applications
                 if (Reader.Read())
                 {
                     Found = true;
-                    AppID = (short)Reader["ApplicationID"];
+                    AppID = (int)Reader["ApplicationID"];
                     LicenseClassID = (short)Reader["LicenseClassID"];
                 }
 
@@ -41,14 +41,14 @@ namespace DVLD_DataAccessLayer.Applications
             return Found;
         }
 
-        public static bool AddNewLicense( short AppID,short LicenseClassID)
+        public static bool AddNewLicense( int AppID,short LicenseClassID)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
-            string Query = @"Insert Into  LocalDrivingLicenseApplications SET
-                                                                           (ApplicationID,LicenseClassID)
-                                                                          Values
-                                                                            (@AppID,@LicenseClassID);
-                            Select SCOPE_IDENTITY();";
+            string Query = @" INSERT INTO LocalDrivingLicenseApplications 
+                                          (ApplicationID,LicenseClassID)
+                                          VALUES
+                                          (@AppID,@LicenseClassID);
+                            select SCOPE_IDENTITY();";
 
             SqlCommand cmd = new SqlCommand(Query, connection);
             cmd.Parameters.AddWithValue("@AppID", AppID);
@@ -64,7 +64,6 @@ namespace DVLD_DataAccessLayer.Applications
             }
             catch (Exception ex)
             {
-
             }
             finally
             {
@@ -134,7 +133,38 @@ namespace DVLD_DataAccessLayer.Applications
             return DT;
         }
 
+        public static bool IsAppStatusNew(int ApplicantPersonID, short LicenseClassID)
+        {
+            SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
+            string Query = @"SELECT 
+                            CheckAppStatus= 1 from Applications join LocalDrivingLicenseApplications 
+                            On 
+                            Applications.ApplicationID = LocalDrivingLicenseApplications.ApplicationID
+                            Where 
+                            ApplicantPersonID = @PersonID AND LocalDrivingLicenseApplications.LicenseClassID = @LicenseClassID AND Applications.ApplicationStatus =1 ;";
 
+            SqlCommand cmd = new SqlCommand(Query, connection);
+            cmd.Parameters.AddWithValue("@PersonID", ApplicantPersonID);
+            cmd.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+
+            bool NewState=false;
+            try
+            {
+                connection.Open();
+                SqlDataReader Reader = cmd.ExecuteReader();
+                if (Reader.HasRows) NewState = true;
+
+            }catch(Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return NewState;
+        }
 
     }
 }

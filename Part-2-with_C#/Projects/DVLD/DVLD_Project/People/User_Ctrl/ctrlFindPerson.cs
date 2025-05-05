@@ -18,17 +18,24 @@ namespace DVLD_Project.People.User_Ctrl
             InitializeComponent();
         }
 
-        public int __PersonID { get; set; }
+        private int _PersonID { get; set; }
+        public delegate void TriggerFunctionEventHandler(object sender, int PersonID);
+        public event TriggerFunctionEventHandler __ReturnPersonID;
         private void ctrlFindPerson_Load(object sender, EventArgs e)
         {
-            ctrlFilterPeople1.__GetPersonID += __DisplayPersonalInfo;
+            ctrlFilterPeople1.__GetPersonID += _GetPersonID;
 
         }
+        private void _GetPersonID(object sender, int PersonID)
+        {
+            _PersonID=PersonID;
+            __ReturnPersonID?.Invoke(this, PersonID);
+        }
 
-        public void __DisplayPersonalInfo(object sender, int PersonID)
+        public void __DisplayPersonalInfo(int PersonID)
         {
             ctrlPersonDetails1.__DisplayPersonInfo(PersonID);
-            this.__PersonID = PersonID;
+           
         }
 
     }

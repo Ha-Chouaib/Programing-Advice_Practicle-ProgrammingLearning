@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DVLD_BusinessLayer;
 using DVLD_Project.Applications;
 using DVLD_Project.Applications.ApplicationTypes;
+using DVLD_Project.Applications.LDLApps;
 using DVLD_Project.Applications.TestTypes;
 using DVLD_Project.Users;
 using DVLD_Project.Users.Forms;
@@ -78,6 +79,12 @@ namespace DVLD_Project
         {
             frmManageLocalDrivingLicenseApps LDL_Apps = new frmManageLocalDrivingLicenseApps();
             LDL_Apps.ShowDialog();
+        }
+
+        private void localLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddNewLocalDrivingLicense AddNewLocalLicense = new frmAddNewLocalDrivingLicense();
+            AddNewLocalLicense.ShowDialog();
         }
     }
 }
