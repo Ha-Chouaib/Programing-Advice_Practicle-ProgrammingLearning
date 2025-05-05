@@ -10,29 +10,30 @@ namespace DVLD_BusinessLayer.Applications
 {
     public class clsLocalDrivingLicense
     {
-        private int _LDL_ID{ get; set; }
-        private short _AppID{ get; set; }
-        private short _LicenseClassID{ get; set; }
+        public int LDL_ID{ get; set; }
+        public int AppID{ get; set; }
+        public short LicenseClassID{ get; set; }
 
-        public clsLocalDrivingLicense(int LDL_id,short AppID,short LicenseClassID)
+        public clsLocalDrivingLicense(int LDL_id,int AppID,short LicenseClassID)
         {
-            this._LDL_ID = LDL_id;
-            this._AppID = AppID;
-            this._LicenseClassID = LicenseClassID;
+            this.LDL_ID = LDL_id;
+            this.AppID = AppID;
+            this.LicenseClassID = LicenseClassID;
 
         }
 
         public clsLocalDrivingLicense()
         {
-            this._LDL_ID = -1;
-            this._AppID = -1;
-            this._LicenseClassID = -1;
+            this.LDL_ID = -1;
+            this.AppID = -1;
+            this.LicenseClassID = -1;
 
         }
 
         public static clsLocalDrivingLicense Find(int LDLid)
         {
-            short AppID = -1, LicenseClassID = -1;
+            int AppID = -1; 
+            short LicenseClassID = -1;
             if (clsLocalDrivingLicenseDataAccess.Find(LDLid, ref AppID, ref LicenseClassID))
                 return new clsLocalDrivingLicense(LDLid, AppID, LicenseClassID);
             else
@@ -41,7 +42,7 @@ namespace DVLD_BusinessLayer.Applications
 
         private bool _AddNewLocLic()
         {
-            return clsLocalDrivingLicenseDataAccess.AddNewLicense(this._AppID, this._LicenseClassID);
+            return clsLocalDrivingLicenseDataAccess.AddNewLicense(this.AppID, this.LicenseClassID);
         }
         public bool Save()
         {
@@ -55,6 +56,10 @@ namespace DVLD_BusinessLayer.Applications
         public static DataTable FilterBy<T>(string Column,T Term)
         {
             return clsLocalDrivingLicenseDataAccess.FilterBy<T>(Column, Term);
+        }
+        public static bool IsAppHas_NewStatus(int ApplicanttPersonID, short LicenseClassID)
+        {
+            return clsLocalDrivingLicenseDataAccess.IsAppStatusNew(ApplicanttPersonID, LicenseClassID);
         }
     }
 }

@@ -3,18 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\applications\\ldlapps\\frmlocaldrivinglicenseapps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\ldlapps\\frmlocaldrivinglicenseapps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FC20C891-3136-42F1-BDE3-BD963DB57C8B}|..\\DVLD_BusinessLayer\\DVLD_BusinessLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_businesslayer\\applications\\clsmainapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABCB3993-3822-4C0E-A5A0-75F67FDE7598}|..\\DVLD_DataAccessLayer\\DVLD_DataAccessLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_dataaccesslayer\\applications\\clsmainapplicationdataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC20C891-3136-42F1-BDE3-BD963DB57C8B}|..\\DVLD_BusinessLayer\\DVLD_BusinessLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_businesslayer\\applications\\clslocaldrivinglicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\applications\\ldlapps\\frmlocaldrivinglicenseapps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\ldlapps\\frmlocaldrivinglicenseapps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABCB3993-3822-4C0E-A5A0-75F67FDE7598}|..\\DVLD_DataAccessLayer\\DVLD_DataAccessLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_dataaccesslayer\\applications\\clslocaldrivinglicensedataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\applications\\ldlapps\\frmlocaldrivinglicenseapps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\ldlapps\\frmlocaldrivinglicenseapps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FC20C891-3136-42F1-BDE3-BD963DB57C8B}|..\\DVLD_BusinessLayer\\DVLD_BusinessLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_businesslayer\\applications\\clslocaldrivinglicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ABCB3993-3822-4C0E-A5A0-75F67FDE7598}|..\\DVLD_DataAccessLayer\\DVLD_DataAccessLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_dataaccesslayer\\applications\\clslocaldrivinglicensedataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,7 +31,14 @@
       "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABCB3993-3822-4C0E-A5A0-75F67FDE7598}|..\\DVLD_DataAccessLayer\\DVLD_DataAccessLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_dataaccesslayer\\applications\\clsmainapplicationdataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FC20C891-3136-42F1-BDE3-BD963DB57C8B}|..\\DVLD_BusinessLayer\\DVLD_BusinessLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_businesslayer\\clslicenseclasses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\applications\\ldlapps\\frmaddnewlocaldrivinglicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\ldlapps\\frmaddnewlocaldrivinglicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABCB3993-3822-4C0E-A5A0-75F67FDE7598}|..\\DVLD_DataAccessLayer\\DVLD_DataAccessLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_dataaccesslayer\\clslicenseclassesdataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -40,19 +53,68 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "clsMainApplication.cs",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_BusinessLayer\\Applications\\clsMainApplication.cs",
+              "RelativeDocumentMoniker": "..\\DVLD_BusinessLayer\\Applications\\clsMainApplication.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_BusinessLayer\\Applications\\clsMainApplication.cs",
+              "RelativeToolTip": "..\\DVLD_BusinessLayer\\Applications\\clsMainApplication.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAwFAAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T22:35:43.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "frmAddNewLocalDrivingLicense.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\LDLApps\\frmAddNewLocalDrivingLicense.cs",
+              "RelativeDocumentMoniker": "Applications\\LDLApps\\frmAddNewLocalDrivingLicense.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\LDLApps\\frmAddNewLocalDrivingLicense.cs [Design]",
+              "RelativeToolTip": "Applications\\LDLApps\\frmAddNewLocalDrivingLicense.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T14:53:40.409Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "clsLicenseClasses.cs",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_BusinessLayer\\clsLicenseClasses.cs",
+              "RelativeDocumentMoniker": "..\\DVLD_BusinessLayer\\clsLicenseClasses.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_BusinessLayer\\clsLicenseClasses.cs",
+              "RelativeToolTip": "..\\DVLD_BusinessLayer\\clsLicenseClasses.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAAC8AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T13:43:35.187Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "clsLicenseClassesDataAccess.cs",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_DataAccessLayer\\clsLicenseClassesDataAccess.cs",
+              "RelativeDocumentMoniker": "..\\DVLD_DataAccessLayer\\clsLicenseClassesDataAccess.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_DataAccessLayer\\clsLicenseClassesDataAccess.cs",
+              "RelativeToolTip": "..\\DVLD_DataAccessLayer\\clsLicenseClassesDataAccess.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAgwB4AAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T13:43:26.352Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "frmLocalDrivingLicenseApps.cs",
               "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\LDLApps\\frmLocalDrivingLicenseApps.cs",
               "RelativeDocumentMoniker": "Applications\\LDLApps\\frmLocalDrivingLicenseApps.cs",
               "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\LDLApps\\frmLocalDrivingLicenseApps.cs",
               "RelativeToolTip": "Applications\\LDLApps\\frmLocalDrivingLicenseApps.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAIAwwHUAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAIcAAAAAAAAAAAD4v6YAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-01T01:12:09.08Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "frmLocalDrivingLicenseApps.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\LDLApps\\frmLocalDrivingLicenseApps.cs",
               "RelativeDocumentMoniker": "Applications\\LDLApps\\frmLocalDrivingLicenseApps.cs",
@@ -64,58 +126,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "clsLocalDrivingLicense.cs",
               "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_BusinessLayer\\Applications\\clsLocalDrivingLicense.cs",
               "RelativeDocumentMoniker": "..\\DVLD_BusinessLayer\\Applications\\clsLocalDrivingLicense.cs",
               "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_BusinessLayer\\Applications\\clsLocalDrivingLicense.cs",
               "RelativeToolTip": "..\\DVLD_BusinessLayer\\Applications\\clsLocalDrivingLicense.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAvwDgAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAwwBoAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-30T23:48:07.587Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "clsLocalDrivingLicenseDataAccess.cs",
               "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_DataAccessLayer\\Applications\\clsLocalDrivingLicenseDataAccess.cs",
               "RelativeDocumentMoniker": "..\\DVLD_DataAccessLayer\\Applications\\clsLocalDrivingLicenseDataAccess.cs",
               "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_DataAccessLayer\\Applications\\clsLocalDrivingLicenseDataAccess.cs",
               "RelativeToolTip": "..\\DVLD_DataAccessLayer\\Applications\\clsLocalDrivingLicenseDataAccess.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAlwGsAAABWAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAADwv0IAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-30T22:51:07.489Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "clsMainApplicationDataAccess.cs",
               "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_DataAccessLayer\\Applications\\clsMainApplicationDataAccess.cs",
               "RelativeDocumentMoniker": "..\\DVLD_DataAccessLayer\\Applications\\clsMainApplicationDataAccess.cs",
               "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_DataAccessLayer\\Applications\\clsMainApplicationDataAccess.cs",
               "RelativeToolTip": "..\\DVLD_DataAccessLayer\\Applications\\clsMainApplicationDataAccess.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAwwJEAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T22:44:58.866Z"
+              "WhenOpened": "2025-04-30T22:44:58.866Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "MainForm.cs",
               "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\MainForm.cs",
               "RelativeDocumentMoniker": "MainForm.cs",
               "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\MainForm.cs",
               "RelativeToolTip": "MainForm.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAASwE8AAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAEUAAAAAAAAAAAApwFYAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-26T14:30:21.909Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "MainForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\MainForm.cs",
               "RelativeDocumentMoniker": "MainForm.cs",

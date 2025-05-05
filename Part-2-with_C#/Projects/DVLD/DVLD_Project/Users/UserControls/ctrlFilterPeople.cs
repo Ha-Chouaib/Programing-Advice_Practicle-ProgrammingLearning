@@ -35,7 +35,8 @@ namespace DVLD_Project.Users.UserControls
             cmbFilterOpts.ValueMember = "Key";
             cmbFilterOpts.SelectedIndex = 0;
         }
-        public int __PersonID { get; set; }
+        private int _PersonID = -1;
+        
         private bool _FindPerson()
        {
             bool Found = false;
@@ -43,7 +44,6 @@ namespace DVLD_Project.Users.UserControls
 
             string Term = txtSearchTerm.Text;
             string FindBy = cmbFilterOpts.SelectedValue.ToString();
-            int ID = -1;
 
             if ( FindBy== "NationalNo")
             {
@@ -51,8 +51,10 @@ namespace DVLD_Project.Users.UserControls
                 Person = clsPeople.Find(Term);
                 if(Person != null)
                 {
-                    ID = Person.PersonID;
-                }else
+                    _PersonID = Person.PersonID;
+                    Found = true;
+                }
+                else
                 {
                     MessageBox.Show($"No Person with National No << {Term} >>","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
@@ -62,29 +64,22 @@ namespace DVLD_Project.Users.UserControls
                 int Pid = int.Parse(Term);
                 if (clsPeople.IsExist(Pid))
                 {
-                    ID = Pid;
-                }else
+                    _PersonID = Pid;
+                    Found = true;
+                }
+                else
                 {
                     MessageBox.Show($"No Person with ID << {Term} >>", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
-            if (clsUsers.ExistByPersonID(ID))
-            {
-                MessageBox.Show($"The Person With ID << {ID} >> is Already a User !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                __PersonID =ID ;
-                Found = true;
-            }
+       
             return Found;
 
         }
         private void btnFindPerson_Click(object sender, EventArgs e)
         {
             if(_FindPerson())
-                __GetPersonID?.Invoke(this, __PersonID);
+                __GetPersonID?.Invoke(this, _PersonID);
         }
         private void txtSearchTerm_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -114,8 +109,8 @@ namespace DVLD_Project.Users.UserControls
         }
         private void GetNewPersonID(object sender, int PersonID)
         {
-            __PersonID = PersonID;
-            __GetPersonID?.Invoke(this, __PersonID);
+            _PersonID = PersonID;
+            __GetPersonID?.Invoke(this, _PersonID);
 
         }
 

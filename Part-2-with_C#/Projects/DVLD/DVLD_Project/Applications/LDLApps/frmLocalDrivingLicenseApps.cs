@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DVLD_BusinessLayer.Applications;
+using DVLD_Project.Applications.LDLApps;
 
 namespace DVLD_Project.Applications
 {
@@ -37,6 +38,10 @@ namespace DVLD_Project.Applications
             dgvLDL_AppsList.Columns["PassedTestCount"].HeaderText = "Passed Teste";
 
             lblRecords.Text = dgvLDL_AppsList.RowCount.ToString();
+        }
+        private void _ReLoadLocalAppList(object sender)
+        {
+            _LoadAppsList();
         }
 
         Dictionary<string, string> FilterOpts = new Dictionary<string, string>();
@@ -154,6 +159,13 @@ namespace DVLD_Project.Applications
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAddNewLocalApp_Click(object sender, EventArgs e)
+        {
+            frmAddNewLocalDrivingLicense NewLocalLicense=new frmAddNewLocalDrivingLicense();
+            NewLocalLicense.__ReloadContent += _ReLoadLocalAppList;
+            NewLocalLicense.ShowDialog();
         }
     }
 }

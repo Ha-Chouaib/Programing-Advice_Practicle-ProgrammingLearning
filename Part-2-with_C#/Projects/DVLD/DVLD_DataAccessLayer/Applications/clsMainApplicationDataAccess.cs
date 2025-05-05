@@ -52,7 +52,7 @@ namespace DVLD_DataAccessLayer.Applications
             DateTime LastStatusDate, float PaidFees, int CreatedByUserID)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
-            string Query = @"Insert INTO Applications SET
+            string Query = @"Insert INTO Applications 
                                     (ApplicantPersonID,ApplicationDate,ApplicationTypeID,ApplicationStatus,LastStatusDate,PaidFees,CreatedByUserID)
                                     Values
                                     (@ApplicantPersonID,@AppDate,@AppTypeID,@AppStatus,@LastStatusDate,@PaidFees,@CreatedByUserID);
@@ -86,11 +86,11 @@ namespace DVLD_DataAccessLayer.Applications
 
             return AppID;
         }
-
+        
         public static bool UpdateApp(int AppID, byte AppStatus,DateTime LastStatusDate)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
-            string Query = @"Update Applications 
+            string Query = @"Update Applications SET
                                     ApplicationStatus = @AppStatus ,LastStatusDate= @LastStatusDate
                                     WHERE ApplicationID = @AppID;";
 
@@ -120,6 +120,31 @@ namespace DVLD_DataAccessLayer.Applications
             return (RowAffected > 0);
         }
 
+        public static bool DeleteApplication(int AppID)
+        {
+            SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
+            string Query = @"Delete Applications Where ApplicationID=@AppID";
+
+            SqlCommand cmd = new SqlCommand(Query, connection);
+            cmd.Parameters.AddWithValue("@AppID", AppID);
+           
+            byte RowsAffected = 0;
+            try
+            {
+                connection.Open();
+                RowsAffected =(byte) cmd.ExecuteNonQuery();
+                
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return (RowsAffected > 0);
+        }
 
         public static DataTable ListAll()
         {
