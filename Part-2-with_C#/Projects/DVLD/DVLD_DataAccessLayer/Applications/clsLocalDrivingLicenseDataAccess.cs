@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Data;
 using System.Data.SqlClient;
+using System.Data.Common;
 
 namespace DVLD_DataAccessLayer.Applications
 {
@@ -164,6 +165,34 @@ namespace DVLD_DataAccessLayer.Applications
             }
 
             return NewState;
+        }
+
+        public static byte GetPassedTestCount(int LDL_AppID)
+        {
+
+            SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
+            string Query = $"Select PassedTestCount From LocalDrivingLicenseApplications_View  Where LocalDrivingLicenseApplicationID = @LDL_AppID";
+
+            SqlCommand cmd = new SqlCommand(Query, connection);
+            cmd.Parameters.AddWithValue("@LDL_AppID", LDL_AppID );
+
+            byte TestsCount = 40;
+            try
+            {
+                connection.Open();
+                object Result = cmd.ExecuteScalar();
+                if (Result != null && byte.TryParse(Result.ToString(), out byte PassedCountTests)) TestsCount = PassedCountTests;
+            }
+            catch (Exception ex)
+            {
+
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return TestsCount;
         }
 
     }

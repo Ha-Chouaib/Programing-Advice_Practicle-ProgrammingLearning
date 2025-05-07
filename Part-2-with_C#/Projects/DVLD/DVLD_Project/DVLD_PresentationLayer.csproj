@@ -70,6 +70,12 @@
     <Compile Include="Applications\LDLApps\frmLocalDrivingLicenseApps.Designer.cs">
       <DependentUpon>frmLocalDrivingLicenseApps.cs</DependentUpon>
     </Compile>
+    <Compile Include="Applications\Tests\frmVisionTestAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\Tests\frmVisionTestAppointment.Designer.cs">
+      <DependentUpon>frmVisionTestAppointment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Applications\TestTypes\frmEditTestType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,18 @@
     </Compile>
     <Compile Include="Applications\TestTypes\frmManageTestTypes.Designer.cs">
       <DependentUpon>frmManageTestTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\User_Controls\ctrlDisplayApplicationInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Applications\User_Controls\ctrlDisplayApplicationInfo.Designer.cs">
+      <DependentUpon>ctrlDisplayApplicationInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\User_Controls\ctrlDisplayApplicationLicenseInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Applications\User_Controls\ctrlDisplayApplicationLicenseInfo.Designer.cs">
+      <DependentUpon>ctrlDisplayApplicationLicenseInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="clsGlobal.cs" />
     <Compile Include="frmLogin.cs">
@@ -187,11 +205,20 @@
     <EmbeddedResource Include="Applications\LDLApps\frmLocalDrivingLicenseApps.resx">
       <DependentUpon>frmLocalDrivingLicenseApps.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Applications\Tests\frmVisionTestAppointment.resx">
+      <DependentUpon>frmVisionTestAppointment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Applications\TestTypes\frmEditTestType.resx">
       <DependentUpon>frmEditTestType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\TestTypes\frmManageTestTypes.resx">
       <DependentUpon>frmManageTestTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\User_Controls\ctrlDisplayApplicationInfo.resx">
+      <DependentUpon>ctrlDisplayApplicationInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\User_Controls\ctrlDisplayApplicationLicenseInfo.resx">
+      <DependentUpon>ctrlDisplayApplicationLicenseInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
