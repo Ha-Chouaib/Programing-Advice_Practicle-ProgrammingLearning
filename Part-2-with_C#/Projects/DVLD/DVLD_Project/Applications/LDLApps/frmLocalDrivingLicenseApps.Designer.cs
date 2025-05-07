@@ -95,7 +95,7 @@
             this.toolStripMenuItem7,
             this.showPersonLicenseHistoryToolStripMenuItem});
             this.cmsLDL_Apps.Name = "cmsLDL_Apps";
-            this.cmsLDL_Apps.Size = new System.Drawing.Size(286, 294);
+            this.cmsLDL_Apps.Size = new System.Drawing.Size(286, 316);
             // 
             // showApplicationDetailsToolStripMenuItem
             // 
@@ -107,6 +107,7 @@
             this.showApplicationDetailsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.showApplicationDetailsToolStripMenuItem.Size = new System.Drawing.Size(285, 26);
             this.showApplicationDetailsToolStripMenuItem.Text = "Show Application Details";
+            this.showApplicationDetailsToolStripMenuItem.Click += new System.EventHandler(this.showApplicationDetailsToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -125,6 +126,7 @@
             this.editApplicationToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.editApplicationToolStripMenuItem.Size = new System.Drawing.Size(285, 26);
             this.editApplicationToolStripMenuItem.Text = "Edit Application";
+            this.editApplicationToolStripMenuItem.Click += new System.EventHandler(this.editApplicationToolStripMenuItem_Click);
             // 
             // deleteApplicationToolStripMenuItem
             // 
@@ -136,6 +138,7 @@
             this.deleteApplicationToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.deleteApplicationToolStripMenuItem.Size = new System.Drawing.Size(285, 26);
             this.deleteApplicationToolStripMenuItem.Text = "Delete Application";
+            this.deleteApplicationToolStripMenuItem.Click += new System.EventHandler(this.deleteApplicationToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -154,6 +157,7 @@
             this.cancelApplicationToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.cancelApplicationToolStripMenuItem.Size = new System.Drawing.Size(285, 26);
             this.cancelApplicationToolStripMenuItem.Text = "Cancel Application";
+            this.cancelApplicationToolStripMenuItem.Click += new System.EventHandler(this.cancelApplicationToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 

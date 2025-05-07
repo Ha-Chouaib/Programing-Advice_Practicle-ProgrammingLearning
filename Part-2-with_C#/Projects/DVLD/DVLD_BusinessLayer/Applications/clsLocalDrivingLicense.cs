@@ -61,5 +61,9 @@ namespace DVLD_BusinessLayer.Applications
         {
             return clsLocalDrivingLicenseDataAccess.IsAppStatusNew(ApplicanttPersonID, LicenseClassID);
         }
+        public static byte GetPassedTestsCount(int LDL_App)
+        {
+            return clsLocalDrivingLicenseDataAccess.GetPassedTestCount(LDL_App);
+        }
     }
 }

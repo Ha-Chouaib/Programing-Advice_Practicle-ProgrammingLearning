@@ -167,5 +167,25 @@ namespace DVLD_Project.Applications
             NewLocalLicense.__ReloadContent += _ReLoadLocalAppList;
             NewLocalLicense.ShowDialog();
         }
+
+        private void editApplicationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void showApplicationDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deleteApplicationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cancelApplicationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

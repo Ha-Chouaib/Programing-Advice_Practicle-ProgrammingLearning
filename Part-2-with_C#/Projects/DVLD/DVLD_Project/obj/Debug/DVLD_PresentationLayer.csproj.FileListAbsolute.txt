@@ -33,3 +33,6 @@ C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part
 C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.People.User_Ctrl.ctrlFindPerson.resources
 C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.Applications.frmManageLocalDrivingLicenseApps.resources
 C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.Applications.LDLApps.frmAddNewLocalDrivingLicense.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.Applications.User_Controls.ctrlDisplayApplicationInfo.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.Applications.Tests.frmVisionTestAppointment.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.Applications.User_Controls.ctrlDisplayApplicationLicenseInfo.resources
