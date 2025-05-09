@@ -54,8 +54,11 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lblRecords = new System.Windows.Forms.Label();
-            this.pbLDLApp = new System.Windows.Forms.PictureBox();
             this.cmbAppStatusFilter = new System.Windows.Forms.ComboBox();
+            this.pbLDLApp = new System.Windows.Forms.PictureBox();
+            this.schedualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.schedualWrittenTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.schedualStreetTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLDL_AppsList)).BeginInit();
             this.cmsLDL_Apps.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLDLApp)).BeginInit();
@@ -95,7 +98,7 @@
             this.toolStripMenuItem7,
             this.showPersonLicenseHistoryToolStripMenuItem});
             this.cmsLDL_Apps.Name = "cmsLDL_Apps";
-            this.cmsLDL_Apps.Size = new System.Drawing.Size(286, 316);
+            this.cmsLDL_Apps.Size = new System.Drawing.Size(286, 294);
             // 
             // showApplicationDetailsToolStripMenuItem
             // 
@@ -176,6 +179,10 @@
             // scheduleTestsToolStripMenuItem
             // 
             this.scheduleTestsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.scheduleTestsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.schedualToolStripMenuItem,
+            this.schedualWrittenTestToolStripMenuItem,
+            this.schedualStreetTestToolStripMenuItem});
             this.scheduleTestsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scheduleTestsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.scheduleTestsToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
@@ -342,16 +349,6 @@
             this.lblRecords.TabIndex = 8;
             this.lblRecords.Text = "???";
             // 
-            // pbLDLApp
-            // 
-            this.pbLDLApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.pbLDLApp.Location = new System.Drawing.Point(551, 12);
-            this.pbLDLApp.Name = "pbLDLApp";
-            this.pbLDLApp.Size = new System.Drawing.Size(175, 127);
-            this.pbLDLApp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLDLApp.TabIndex = 9;
-            this.pbLDLApp.TabStop = false;
-            // 
             // cmbAppStatusFilter
             // 
             this.cmbAppStatusFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
@@ -366,6 +363,44 @@
             this.cmbAppStatusFilter.TabIndex = 10;
             this.cmbAppStatusFilter.Visible = false;
             this.cmbAppStatusFilter.SelectedIndexChanged += new System.EventHandler(this.cmbAppStatusFilter_SelectedIndexChanged);
+            // 
+            // pbLDLApp
+            // 
+            this.pbLDLApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.pbLDLApp.Location = new System.Drawing.Point(551, 12);
+            this.pbLDLApp.Name = "pbLDLApp";
+            this.pbLDLApp.Size = new System.Drawing.Size(175, 127);
+            this.pbLDLApp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLDLApp.TabIndex = 9;
+            this.pbLDLApp.TabStop = false;
+            // 
+            // schedualToolStripMenuItem
+            // 
+            this.schedualToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.schedualToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.schedualToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.schedualToolStripMenuItem.Name = "schedualToolStripMenuItem";
+            this.schedualToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.schedualToolStripMenuItem.Text = "Schedual Vision Test";
+            this.schedualToolStripMenuItem.Click += new System.EventHandler(this.schedualToolStripMenuItem_Click);
+            // 
+            // schedualWrittenTestToolStripMenuItem
+            // 
+            this.schedualWrittenTestToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.schedualWrittenTestToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.schedualWrittenTestToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.schedualWrittenTestToolStripMenuItem.Name = "schedualWrittenTestToolStripMenuItem";
+            this.schedualWrittenTestToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.schedualWrittenTestToolStripMenuItem.Text = "Schedual Written Test";
+            // 
+            // schedualStreetTestToolStripMenuItem
+            // 
+            this.schedualStreetTestToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.schedualStreetTestToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.schedualStreetTestToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.schedualStreetTestToolStripMenuItem.Name = "schedualStreetTestToolStripMenuItem";
+            this.schedualStreetTestToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.schedualStreetTestToolStripMenuItem.Text = "Schedual Street Test";
             // 
             // frmManageLocalDrivingLicenseApps
             // 
@@ -425,5 +460,8 @@
         private System.Windows.Forms.ToolStripMenuItem showLicenseToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem7;
         private System.Windows.Forms.ToolStripMenuItem showPersonLicenseHistoryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem schedualToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem schedualWrittenTestToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem schedualStreetTestToolStripMenuItem;
     }
 }

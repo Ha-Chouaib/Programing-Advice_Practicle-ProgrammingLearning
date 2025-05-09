@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DVLD_BusinessLayer.Applications;
 using DVLD_Project.Applications.LDLApps;
+using DVLD_Project.Applications.Tests;
 
 namespace DVLD_Project.Applications
 {
@@ -186,6 +187,13 @@ namespace DVLD_Project.Applications
         private void cancelApplicationToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void schedualToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int LDL_AppID = (int)dgvLDL_AppsList.CurrentRow.Cells[0].Value;
+            frmVisionTestAppointment VisionTest = new frmVisionTestAppointment(LDL_AppID);
+            VisionTest.ShowDialog();
         }
     }
 }
