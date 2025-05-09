@@ -8,13 +8,13 @@ namespace DVLD_DataAccessLayer.Tests
 {
     public class clsTestsDataAccess
     {
-        public static bool Find(int TestID, ref int TestAppointmentID, ref bool TestResult, ref string Notes, ref short CreatedByUserID)
+        public static bool Find(int TestAppointmentID, ref int TestID, ref bool TestResult, ref string Notes, ref short CreatedByUserID)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
-            string Query = @"SELECT * FROM Tests where TestID=@TestID";
+            string Query = @"SELECT * FROM Tests where TestAppointmnetID=@TestAppID";
 
             SqlCommand cmd = new SqlCommand(Query, connection);
-            cmd.Parameters.AddWithValue("@TestID", TestID);
+            cmd.Parameters.AddWithValue("@TestAppID", TestAppointmentID);
 
             bool Found = false;
             try
@@ -25,9 +25,14 @@ namespace DVLD_DataAccessLayer.Tests
                 if (reader.Read())
                 {
                     Found = true;
-                    TestAppointmentID = (int)reader["TestAppointmentID"];
+                    TestID = (int)reader["TestID"];
                     TestResult = (bool)reader["TestResult"];
-                    Notes = (string)reader["Notes"];
+
+                    if (reader["Notes"] == DBNull.Value)
+                        Notes = "";
+                    else
+                        Notes = (string)reader["Notes"];
+
                     CreatedByUserID = (short)reader["CreatedByUserID"];
                 }
 
@@ -52,7 +57,12 @@ namespace DVLD_DataAccessLayer.Tests
             SqlCommand cmd = new SqlCommand(Query, connection);
             cmd.Parameters.AddWithValue("@TestAppointmentID", TestAppointmentID);
             cmd.Parameters.AddWithValue("@TestResult", TestResult);
-            cmd.Parameters.AddWithValue("Notes@", Notes);
+
+            if(Notes == string.Empty)
+                cmd.Parameters.AddWithValue("Notes@", DBNull.Value);
+            else
+                cmd.Parameters.AddWithValue("Notes@", Notes);
+
             cmd.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
 
             int TestID = -1;

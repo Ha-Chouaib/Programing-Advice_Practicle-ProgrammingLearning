@@ -70,6 +70,18 @@
     <Compile Include="Applications\LDLApps\frmLocalDrivingLicenseApps.Designer.cs">
       <DependentUpon>frmLocalDrivingLicenseApps.cs</DependentUpon>
     </Compile>
+    <Compile Include="Applications\Tests\frmSchedualeTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\Tests\frmSchedualeTest.Designer.cs">
+      <DependentUpon>frmSchedualeTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\Tests\frmTakeTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\Tests\frmTakeTest.Designer.cs">
+      <DependentUpon>frmTakeTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Applications\Tests\frmVisionTestAppointment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +216,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\LDLApps\frmLocalDrivingLicenseApps.resx">
       <DependentUpon>frmLocalDrivingLicenseApps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\Tests\frmSchedualeTest.resx">
+      <DependentUpon>frmSchedualeTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\Tests\frmTakeTest.resx">
+      <DependentUpon>frmTakeTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\Tests\frmVisionTestAppointment.resx">
       <DependentUpon>frmVisionTestAppointment.cs</DependentUpon>

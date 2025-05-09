@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.pbVisionTest = new System.Windows.Forms.PictureBox();
             this.dgvListVisionTests = new System.Windows.Forms.DataGridView();
             this.btnAddAppointmrnt = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
@@ -38,8 +38,13 @@
             this.lblRecords = new System.Windows.Forms.Label();
             this.ctrlDisplayApplicationLicenseInfo1 = new DVLD_Project.Applications.User_Controls.ctrlDisplayApplicationLicenseInfo();
             this.ctrlDisplayApplicationInfo1 = new DVLD_Project.Applications.User_Controls.ctrlDisplayApplicationInfo();
-            ((System.ComponentModel.ISupportInitialize)(this.pbVisionTest)).BeginInit();
+            this.pbVisionTest = new System.Windows.Forms.PictureBox();
+            this.cmsSheduale = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.takeTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListVisionTests)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbVisionTest)).BeginInit();
+            this.cmsSheduale.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -52,16 +57,6 @@
             this.label1.Size = new System.Drawing.Size(494, 50);
             this.label1.TabIndex = 2;
             this.label1.Text = "Visoin Test Appointment";
-            // 
-            // pbVisionTest
-            // 
-            this.pbVisionTest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.pbVisionTest.Location = new System.Drawing.Point(498, 12);
-            this.pbVisionTest.Name = "pbVisionTest";
-            this.pbVisionTest.Size = new System.Drawing.Size(166, 129);
-            this.pbVisionTest.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbVisionTest.TabIndex = 3;
-            this.pbVisionTest.TabStop = false;
             // 
             // dgvListVisionTests
             // 
@@ -84,6 +79,7 @@
             this.btnAddAppointmrnt.TabIndex = 7;
             this.btnAddAppointmrnt.Text = "Add Appointment +";
             this.btnAddAppointmrnt.UseVisualStyleBackColor = false;
+            this.btnAddAppointmrnt.Click += new System.EventHandler(this.btnAddAppointmrnt_Click);
             // 
             // btnClose
             // 
@@ -152,6 +148,48 @@
             this.ctrlDisplayApplicationInfo1.Size = new System.Drawing.Size(1081, 230);
             this.ctrlDisplayApplicationInfo1.TabIndex = 4;
             // 
+            // pbVisionTest
+            // 
+            this.pbVisionTest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.pbVisionTest.Location = new System.Drawing.Point(498, 12);
+            this.pbVisionTest.Name = "pbVisionTest";
+            this.pbVisionTest.Size = new System.Drawing.Size(166, 129);
+            this.pbVisionTest.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbVisionTest.TabIndex = 3;
+            this.pbVisionTest.TabStop = false;
+            // 
+            // cmsSheduale
+            // 
+            this.cmsSheduale.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuItem,
+            this.takeTestToolStripMenuItem});
+            this.cmsSheduale.Name = "cmsSheduale";
+            this.cmsSheduale.Size = new System.Drawing.Size(181, 84);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.BackColor = System.Drawing.SystemColors.MenuText;
+            this.editToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editToolStripMenuItem.ForeColor = System.Drawing.Color.Cyan;
+            this.editToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
+            // takeTestToolStripMenuItem
+            // 
+            this.takeTestToolStripMenuItem.BackColor = System.Drawing.SystemColors.MenuText;
+            this.takeTestToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.takeTestToolStripMenuItem.ForeColor = System.Drawing.Color.Cyan;
+            this.takeTestToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.takeTestToolStripMenuItem.Name = "takeTestToolStripMenuItem";
+            this.takeTestToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.takeTestToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.takeTestToolStripMenuItem.Text = "Take Test";
+            this.takeTestToolStripMenuItem.Click += new System.EventHandler(this.takeTestToolStripMenuItem_Click);
+            // 
             // frmVisionTestAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -170,12 +208,13 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.Info;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmVisionTestAppointment";
             this.Text = "Vision Test Appointment";
             this.Load += new System.EventHandler(this.frmVisionTestAppointment_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbVisionTest)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListVisionTests)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbVisionTest)).EndInit();
+            this.cmsSheduale.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,5 +231,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblRecords;
+        private System.Windows.Forms.ContextMenuStrip cmsSheduale;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem takeTestToolStripMenuItem;
     }
 }
