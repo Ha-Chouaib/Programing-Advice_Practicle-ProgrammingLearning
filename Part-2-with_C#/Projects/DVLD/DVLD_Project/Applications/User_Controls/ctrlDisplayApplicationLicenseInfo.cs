@@ -21,9 +21,14 @@ namespace DVLD_Project.Applications.User_Controls
         int _LDL_AppID = -1;
         private void ctrlDisplayApplicationLicenseInfo_Load(object sender, EventArgs e)
         {
-            _ShowInfo();
+            
         }
 
+        public void __DisplayLDL_AppInfo(int LDL_AppID)
+        {
+            _LDL_AppID = LDL_AppID;
+            _ShowInfo();
+        } 
         private void _ShowInfo()
         {
             if(_LDL_AppID != -1)
@@ -35,10 +40,7 @@ namespace DVLD_Project.Applications.User_Controls
                 lblLicenseClassName.Text = clsLicenseClasses.Find(LocalApp.LicenseClassID).LicenseClassName;
             }
         }
-        public void __DisplayLDL_AppInfo(int LDL_AppID)
-        {
-            _LDL_AppID = LDL_AppID;
-        }
+       
 
         private void lnkShoeLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

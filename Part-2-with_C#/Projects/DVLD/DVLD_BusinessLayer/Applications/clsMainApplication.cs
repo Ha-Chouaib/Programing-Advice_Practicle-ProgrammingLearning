@@ -13,7 +13,7 @@ namespace DVLD_BusinessLayer.Applications
         public int AppID { get; set; }
         public int ApplicantPersonID { get; set; }
         public DateTime AppDate { get; set; }
-        public short AppTypeID { get; set; }
+        public int AppTypeID { get; set; }
         public byte AppStatus { get; set; }
         public DateTime LastStatusDate { get; set; }
         public float PaidFees { get; set; }
@@ -22,7 +22,7 @@ namespace DVLD_BusinessLayer.Applications
         enum enMode { eAddNew,eUpdate}
         enMode _Mode;
 
-        public clsMainApplication(int AppID,int ApplicantPersonID,DateTime AppDate,short AppTypeID,byte AppStatus,
+        public clsMainApplication(int AppID,int ApplicantPersonID,DateTime AppDate,int AppTypeID,byte AppStatus,
                                     DateTime LastStatusDate,float PaidFees,int CreatedByUserID)
         {
             this.AppID = AppID;
@@ -53,9 +53,10 @@ namespace DVLD_BusinessLayer.Applications
 
         public static clsMainApplication Find(int AppID)
         {
-            int  ApplicantPersonID=-1, CreatedByUserID=-1;
+            int ApplicantPersonID = -1;
+            int CreatedByUserID=-1;
             DateTime AppDate=DateTime.Now, LastStatusDate=DateTime.Now;
-            short AppTypeID=-1;
+            int AppTypeID=-1;
             byte AppStatus=0;
             float PaidFees=0;
             if (clsMainApplicationDataAccess.Find(AppID, ref ApplicantPersonID, ref AppDate, ref AppTypeID, ref AppStatus,

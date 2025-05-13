@@ -8,7 +8,7 @@ namespace DVLD_DataAccessLayer
 {
     public class clsTestTypesDataAccess
     {
-        public static bool Find(short TestID, ref string TestTitle,ref string TestDescription ,ref float TestFees)
+        public static bool Find(int TestID, ref string TestTitle,ref string TestDescription ,ref float TestFees)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
             string Query = @"Select * From TestTypes Where TestTypeID = @TestID";
@@ -32,7 +32,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine("-----------------------------DB Error: " + ex.Message);
             }
             finally
             {
@@ -41,7 +41,7 @@ namespace DVLD_DataAccessLayer
             return IsFound;
         }
 
-        public static bool Find(string TestTitle,ref short TestID, ref string TestDescription, ref float TestFees)
+        public static bool Find(string TestTitle,ref int TestID, ref string TestDescription, ref float TestFees)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
             string Query = @"Select * From TestTypes Where TestTypeTitle = @TestTitle";
@@ -65,7 +65,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine("-----------------------------DB Error: " + ex.Message);
             }
             finally
             {
@@ -75,7 +75,7 @@ namespace DVLD_DataAccessLayer
         }
 
 
-        public static bool UpdateTest(short TestID, string TestTitle,string TestDescription, double TestFees)
+        public static bool UpdateTest(int TestID, string TestTitle,string TestDescription, double TestFees)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
             string Query = @"Update TestTypes
@@ -99,7 +99,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine("-----------------------------DB Error: " + ex.Message);
             }
             finally
             {
@@ -123,7 +123,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine("-----------------------------DB Error: " + ex.Message);
             }
             finally
             {

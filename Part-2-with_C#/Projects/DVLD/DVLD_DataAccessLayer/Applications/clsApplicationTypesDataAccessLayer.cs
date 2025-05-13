@@ -9,7 +9,7 @@ namespace DVLD_DataAccessLayer
 {
     public class clsApplicationTypesDataAccessLayer
     {
-        public static bool Find(short AppID,ref string AppTitle,ref float AppFees )
+        public static bool Find(int AppID,ref string AppTitle,ref float AppFees )
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
             string Query = @"Select * From ApplicationTypes Where ApplicationTypeID = @AppID";
@@ -40,7 +40,7 @@ namespace DVLD_DataAccessLayer
             return IsFound;
         }
 
-        public static bool Find(string AppTitle, ref short AppID, ref float AppFees)
+        public static bool Find(string AppTitle, ref int AppID, ref float AppFees)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
             string Query = @"Select * From ApplicationTypes Where ApplicationTypeTitle = @AppTitle";
@@ -72,7 +72,7 @@ namespace DVLD_DataAccessLayer
             return IsFound;
         }
 
-        public static bool UpdateApp(short AppID,string AppTitle,double AppFees)
+        public static bool UpdateApp(int AppID,string AppTitle,double AppFees)
         {
             SqlConnection connection = new SqlConnection(   DataAccessSettings.connectionString);
             string Query = @"Update ApplicationTypes

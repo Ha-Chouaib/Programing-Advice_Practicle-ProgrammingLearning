@@ -39,7 +39,10 @@
             this.cancelApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
-            this.scheduleTestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmSchedualeTests = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSchedualeVisionTest = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSchedualWrittenTest = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSchedualStreetTest = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
             this.issueDrivingLicenseFirstTimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
@@ -56,9 +59,6 @@
             this.lblRecords = new System.Windows.Forms.Label();
             this.cmbAppStatusFilter = new System.Windows.Forms.ComboBox();
             this.pbLDLApp = new System.Windows.Forms.PictureBox();
-            this.schedualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.schedualWrittenTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.schedualStreetTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLDL_AppsList)).BeginInit();
             this.cmsLDL_Apps.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLDLApp)).BeginInit();
@@ -80,7 +80,7 @@
             // 
             // cmsLDL_Apps
             // 
-            this.cmsLDL_Apps.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.cmsLDL_Apps.BackColor = System.Drawing.Color.Teal;
             this.cmsLDL_Apps.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showApplicationDetailsToolStripMenuItem,
             this.toolStripMenuItem1,
@@ -90,7 +90,7 @@
             this.cancelApplicationToolStripMenuItem,
             this.toolStripMenuItem3,
             this.toolStripMenuItem4,
-            this.scheduleTestsToolStripMenuItem,
+            this.tsmSchedualeTests,
             this.toolStripMenuItem5,
             this.issueDrivingLicenseFirstTimeToolStripMenuItem,
             this.toolStripMenuItem6,
@@ -98,151 +98,188 @@
             this.toolStripMenuItem7,
             this.showPersonLicenseHistoryToolStripMenuItem});
             this.cmsLDL_Apps.Name = "cmsLDL_Apps";
-            this.cmsLDL_Apps.Size = new System.Drawing.Size(286, 294);
+            this.cmsLDL_Apps.Size = new System.Drawing.Size(340, 326);
+            this.cmsLDL_Apps.Opening += new System.ComponentModel.CancelEventHandler(this.cmsLDL_Apps_Opening);
             // 
             // showApplicationDetailsToolStripMenuItem
             // 
-            this.showApplicationDetailsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.showApplicationDetailsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showApplicationDetailsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.showApplicationDetailsToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.showApplicationDetailsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 11.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.showApplicationDetailsToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.showApplicationDetailsToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.showApplicationDetailsToolStripMenuItem.Name = "showApplicationDetailsToolStripMenuItem";
             this.showApplicationDetailsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.showApplicationDetailsToolStripMenuItem.Size = new System.Drawing.Size(285, 26);
+            this.showApplicationDetailsToolStripMenuItem.Size = new System.Drawing.Size(339, 30);
             this.showApplicationDetailsToolStripMenuItem.Text = "Show Application Details";
             this.showApplicationDetailsToolStripMenuItem.Click += new System.EventHandler(this.showApplicationDetailsToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
-            this.toolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.toolStripMenuItem1.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.toolStripMenuItem1.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.Black;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(282, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(336, 6);
             // 
             // editApplicationToolStripMenuItem
             // 
-            this.editApplicationToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.editApplicationToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editApplicationToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.editApplicationToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.editApplicationToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 11.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.editApplicationToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.editApplicationToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.editApplicationToolStripMenuItem.Name = "editApplicationToolStripMenuItem";
             this.editApplicationToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.editApplicationToolStripMenuItem.Size = new System.Drawing.Size(285, 26);
+            this.editApplicationToolStripMenuItem.Size = new System.Drawing.Size(339, 30);
             this.editApplicationToolStripMenuItem.Text = "Edit Application";
             this.editApplicationToolStripMenuItem.Click += new System.EventHandler(this.editApplicationToolStripMenuItem_Click);
             // 
             // deleteApplicationToolStripMenuItem
             // 
-            this.deleteApplicationToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.deleteApplicationToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteApplicationToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.deleteApplicationToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.deleteApplicationToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 11.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.deleteApplicationToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.deleteApplicationToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.deleteApplicationToolStripMenuItem.Name = "deleteApplicationToolStripMenuItem";
             this.deleteApplicationToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.deleteApplicationToolStripMenuItem.Size = new System.Drawing.Size(285, 26);
+            this.deleteApplicationToolStripMenuItem.Size = new System.Drawing.Size(339, 30);
             this.deleteApplicationToolStripMenuItem.Text = "Delete Application";
             this.deleteApplicationToolStripMenuItem.Click += new System.EventHandler(this.deleteApplicationToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
-            this.toolStripMenuItem2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.toolStripMenuItem2.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.toolStripMenuItem2.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripMenuItem2.ForeColor = System.Drawing.Color.Black;
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(282, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(336, 6);
             // 
             // cancelApplicationToolStripMenuItem
             // 
-            this.cancelApplicationToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.cancelApplicationToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelApplicationToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.cancelApplicationToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.cancelApplicationToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 11.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.cancelApplicationToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.cancelApplicationToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.cancelApplicationToolStripMenuItem.Name = "cancelApplicationToolStripMenuItem";
             this.cancelApplicationToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.cancelApplicationToolStripMenuItem.Size = new System.Drawing.Size(285, 26);
+            this.cancelApplicationToolStripMenuItem.Size = new System.Drawing.Size(339, 30);
             this.cancelApplicationToolStripMenuItem.Text = "Cancel Application";
             this.cancelApplicationToolStripMenuItem.Click += new System.EventHandler(this.cancelApplicationToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
-            this.toolStripMenuItem3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.toolStripMenuItem3.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.toolStripMenuItem3.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripMenuItem3.ForeColor = System.Drawing.Color.Black;
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(282, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(336, 6);
             // 
             // toolStripMenuItem4
             // 
-            this.toolStripMenuItem4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.toolStripMenuItem4.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.toolStripMenuItem4.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripMenuItem4.ForeColor = System.Drawing.Color.Black;
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(282, 6);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(336, 6);
             // 
-            // scheduleTestsToolStripMenuItem
+            // tsmSchedualeTests
             // 
-            this.scheduleTestsToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.scheduleTestsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.schedualToolStripMenuItem,
-            this.schedualWrittenTestToolStripMenuItem,
-            this.schedualStreetTestToolStripMenuItem});
-            this.scheduleTestsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scheduleTestsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.scheduleTestsToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.scheduleTestsToolStripMenuItem.Name = "scheduleTestsToolStripMenuItem";
-            this.scheduleTestsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.scheduleTestsToolStripMenuItem.Size = new System.Drawing.Size(285, 26);
-            this.scheduleTestsToolStripMenuItem.Text = "Schedule Tests";
+            this.tsmSchedualeTests.BackColor = System.Drawing.Color.Transparent;
+            this.tsmSchedualeTests.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiSchedualeVisionTest,
+            this.tsmiSchedualWrittenTest,
+            this.tsmiSchedualStreetTest});
+            this.tsmSchedualeTests.Font = new System.Drawing.Font("Segoe UI Black", 11.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.tsmSchedualeTests.ForeColor = System.Drawing.Color.Black;
+            this.tsmSchedualeTests.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.tsmSchedualeTests.Name = "tsmSchedualeTests";
+            this.tsmSchedualeTests.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.tsmSchedualeTests.Size = new System.Drawing.Size(339, 30);
+            this.tsmSchedualeTests.Text = "Scheduale Tests";
+            // 
+            // tsmiSchedualeVisionTest
+            // 
+            this.tsmiSchedualeVisionTest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.tsmiSchedualeVisionTest.Font = new System.Drawing.Font("Segoe UI Black", 10.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.tsmiSchedualeVisionTest.ForeColor = System.Drawing.Color.Black;
+            this.tsmiSchedualeVisionTest.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.tsmiSchedualeVisionTest.Name = "tsmiSchedualeVisionTest";
+            this.tsmiSchedualeVisionTest.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            this.tsmiSchedualeVisionTest.Size = new System.Drawing.Size(246, 42);
+            this.tsmiSchedualeVisionTest.Text = "Scheduale Vision Test";
+            this.tsmiSchedualeVisionTest.Click += new System.EventHandler(this.schedualToolStripMenuItem_Click);
+            // 
+            // tsmiSchedualWrittenTest
+            // 
+            this.tsmiSchedualWrittenTest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.tsmiSchedualWrittenTest.Font = new System.Drawing.Font("Segoe UI Black", 10.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.tsmiSchedualWrittenTest.ForeColor = System.Drawing.Color.Black;
+            this.tsmiSchedualWrittenTest.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.tsmiSchedualWrittenTest.Name = "tsmiSchedualWrittenTest";
+            this.tsmiSchedualWrittenTest.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            this.tsmiSchedualWrittenTest.Size = new System.Drawing.Size(246, 42);
+            this.tsmiSchedualWrittenTest.Text = "Scheduale Written Test";
+            this.tsmiSchedualWrittenTest.Click += new System.EventHandler(this.schedualWrittenTestToolStripMenuItem_Click);
+            // 
+            // tsmiSchedualStreetTest
+            // 
+            this.tsmiSchedualStreetTest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.tsmiSchedualStreetTest.Font = new System.Drawing.Font("Segoe UI Black", 10.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.tsmiSchedualStreetTest.ForeColor = System.Drawing.Color.Black;
+            this.tsmiSchedualStreetTest.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.tsmiSchedualStreetTest.Name = "tsmiSchedualStreetTest";
+            this.tsmiSchedualStreetTest.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            this.tsmiSchedualStreetTest.Size = new System.Drawing.Size(246, 42);
+            this.tsmiSchedualStreetTest.Text = "Scheduale Street Test";
+            this.tsmiSchedualStreetTest.Click += new System.EventHandler(this.schedualStreetTestToolStripMenuItem_Click);
             // 
             // toolStripMenuItem5
             // 
-            this.toolStripMenuItem5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.toolStripMenuItem5.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.toolStripMenuItem5.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripMenuItem5.ForeColor = System.Drawing.Color.Black;
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(282, 6);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(336, 6);
             // 
             // issueDrivingLicenseFirstTimeToolStripMenuItem
             // 
-            this.issueDrivingLicenseFirstTimeToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.issueDrivingLicenseFirstTimeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.issueDrivingLicenseFirstTimeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.issueDrivingLicenseFirstTimeToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.issueDrivingLicenseFirstTimeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 11.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.issueDrivingLicenseFirstTimeToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.issueDrivingLicenseFirstTimeToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.issueDrivingLicenseFirstTimeToolStripMenuItem.Name = "issueDrivingLicenseFirstTimeToolStripMenuItem";
             this.issueDrivingLicenseFirstTimeToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.issueDrivingLicenseFirstTimeToolStripMenuItem.Size = new System.Drawing.Size(285, 26);
+            this.issueDrivingLicenseFirstTimeToolStripMenuItem.Size = new System.Drawing.Size(339, 30);
             this.issueDrivingLicenseFirstTimeToolStripMenuItem.Text = "Issue Driving License (First Time)";
             // 
             // toolStripMenuItem6
             // 
-            this.toolStripMenuItem6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.toolStripMenuItem6.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.toolStripMenuItem6.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripMenuItem6.ForeColor = System.Drawing.Color.Black;
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(282, 6);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(336, 6);
             // 
             // showLicenseToolStripMenuItem
             // 
-            this.showLicenseToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.showLicenseToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showLicenseToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.showLicenseToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.showLicenseToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 11.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.showLicenseToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.showLicenseToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.showLicenseToolStripMenuItem.Name = "showLicenseToolStripMenuItem";
             this.showLicenseToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.showLicenseToolStripMenuItem.Size = new System.Drawing.Size(285, 26);
+            this.showLicenseToolStripMenuItem.Size = new System.Drawing.Size(339, 30);
             this.showLicenseToolStripMenuItem.Text = "Show License";
             // 
             // toolStripMenuItem7
             // 
-            this.toolStripMenuItem7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.toolStripMenuItem7.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.toolStripMenuItem7.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripMenuItem7.ForeColor = System.Drawing.Color.Black;
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(282, 6);
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(336, 6);
             // 
             // showPersonLicenseHistoryToolStripMenuItem
             // 
-            this.showPersonLicenseHistoryToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.showPersonLicenseHistoryToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showPersonLicenseHistoryToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.showPersonLicenseHistoryToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.showPersonLicenseHistoryToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 11.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.showPersonLicenseHistoryToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.showPersonLicenseHistoryToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.showPersonLicenseHistoryToolStripMenuItem.Name = "showPersonLicenseHistoryToolStripMenuItem";
             this.showPersonLicenseHistoryToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.showPersonLicenseHistoryToolStripMenuItem.Size = new System.Drawing.Size(285, 26);
+            this.showPersonLicenseHistoryToolStripMenuItem.Size = new System.Drawing.Size(339, 30);
             this.showPersonLicenseHistoryToolStripMenuItem.Text = "Show Person License History";
             // 
             // label1
@@ -374,34 +411,6 @@
             this.pbLDLApp.TabIndex = 9;
             this.pbLDLApp.TabStop = false;
             // 
-            // schedualToolStripMenuItem
-            // 
-            this.schedualToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
-            this.schedualToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.schedualToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.schedualToolStripMenuItem.Name = "schedualToolStripMenuItem";
-            this.schedualToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
-            this.schedualToolStripMenuItem.Text = "Schedual Vision Test";
-            this.schedualToolStripMenuItem.Click += new System.EventHandler(this.schedualToolStripMenuItem_Click);
-            // 
-            // schedualWrittenTestToolStripMenuItem
-            // 
-            this.schedualWrittenTestToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
-            this.schedualWrittenTestToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.schedualWrittenTestToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.schedualWrittenTestToolStripMenuItem.Name = "schedualWrittenTestToolStripMenuItem";
-            this.schedualWrittenTestToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
-            this.schedualWrittenTestToolStripMenuItem.Text = "Schedual Written Test";
-            // 
-            // schedualStreetTestToolStripMenuItem
-            // 
-            this.schedualStreetTestToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
-            this.schedualStreetTestToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.schedualStreetTestToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.schedualStreetTestToolStripMenuItem.Name = "schedualStreetTestToolStripMenuItem";
-            this.schedualStreetTestToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
-            this.schedualStreetTestToolStripMenuItem.Text = "Schedual Street Test";
-            // 
             // frmManageLocalDrivingLicenseApps
             // 
             this.AcceptButton = this.btnClose;
@@ -421,7 +430,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvLDL_AppsList);
             this.Name = "frmManageLocalDrivingLicenseApps";
-            this.Text = "frmManageLocalDrivingLicenseApps";
+            this.Text = "Manage Local Driving License Apps";
             this.Load += new System.EventHandler(this.frmManageMainApplications_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLDL_AppsList)).EndInit();
             this.cmsLDL_Apps.ResumeLayout(false);
@@ -453,15 +462,15 @@
         private System.Windows.Forms.ToolStripMenuItem cancelApplicationToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
-        private System.Windows.Forms.ToolStripMenuItem scheduleTestsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmSchedualeTests;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem issueDrivingLicenseFirstTimeToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
         private System.Windows.Forms.ToolStripMenuItem showLicenseToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem7;
         private System.Windows.Forms.ToolStripMenuItem showPersonLicenseHistoryToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem schedualToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem schedualWrittenTestToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem schedualStreetTestToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSchedualeVisionTest;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSchedualWrittenTest;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSchedualStreetTest;
     }
 }

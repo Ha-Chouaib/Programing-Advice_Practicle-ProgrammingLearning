@@ -12,17 +12,17 @@ namespace DVLD_BusinessLayer
     public class clsApplicationTypes
     {
 
-        public short AppID { get; set; }
+        public int AppID { get; set; }
         public string AppTitle { get; set; }
         public  float AppFees { get; set; }
-        public clsApplicationTypes(short AppID,string AppTitle,float AppFees) 
+        public clsApplicationTypes(int AppID,string AppTitle,float AppFees) 
         {
             this.AppID = AppID;
             this.AppTitle= AppTitle;
             this.AppFees= AppFees;
         }
 
-        public static clsApplicationTypes Find(short AppID)
+        public static clsApplicationTypes Find(int AppID)
         {
             string AppTitle = "";
             float AppFees = 0;
@@ -34,7 +34,7 @@ namespace DVLD_BusinessLayer
         }
         public static clsApplicationTypes Find(string AppTitle)
         {
-            short AppID = -1;
+            int AppID = -1;
             float AppFees = 0;
             if (clsApplicationTypesDataAccessLayer.Find(AppTitle,ref AppID, ref AppFees))
             {

@@ -11,11 +11,11 @@ namespace DVLD_BusinessLayer
     public class clsTestTypes
     {
 
-        public short TestID { get; set; }
+        public int TestID { get; set; }
         public string TestDescription { get; set; }
         public string TestTitle { get; set; }
         public float TestFees { get; set; }
-        public clsTestTypes(short TestID, string TestTitle,string TestDescription, float TestFees)
+        public clsTestTypes(int TestID, string TestTitle,string TestDescription, float TestFees)
         {
             this.TestID = TestID;
             this.TestTitle = TestTitle;
@@ -23,7 +23,7 @@ namespace DVLD_BusinessLayer
             this.TestFees = TestFees;
         }
 
-        public static clsTestTypes Find(short TestID)
+        public static clsTestTypes Find(int TestID)
         {
             string TestTitle = "";
             string TestDescription = "";
@@ -37,7 +37,7 @@ namespace DVLD_BusinessLayer
 
         public static clsTestTypes Find(string TestTitle)
         {
-            short TestID = -1;
+            int TestID = -1;
             string TestDescription = "";
             float TestFees = 0;
             if (clsTestTypesDataAccess.Find(TestTitle,ref TestID, ref TestDescription, ref TestFees))

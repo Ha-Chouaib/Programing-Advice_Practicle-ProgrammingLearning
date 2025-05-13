@@ -8,7 +8,7 @@ namespace DVLD_DataAccessLayer.Applications
 {
     public class clsMainApplicationDataAccess
     {
-        public static bool Find(int AppID, ref int ApplicantPersonID, ref DateTime AppDate, ref short AppTypeID, ref byte AppStatus,
+        public static bool Find(int AppID, ref int ApplicantPersonID, ref DateTime AppDate, ref int AppTypeID, ref byte AppStatus,
             ref DateTime LastStatusDate, ref float PaidFees, ref int CreatedByUserID)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
@@ -28,7 +28,7 @@ namespace DVLD_DataAccessLayer.Applications
                     ISFound = true;
                     ApplicantPersonID = (int)Reader["ApplicantPersonID"];
                     AppDate = (DateTime)Reader["ApplicationDate"];
-                    AppTypeID = (short)Reader["ApplicationTypeID"];
+                    AppTypeID= (int) Reader["ApplicationTypeID"];
                     AppStatus = (byte)Reader["ApplicationStatus"];
                     LastStatusDate = (DateTime)Reader["LastStatusDate"];
                     PaidFees = (float)(decimal)Reader["PaidFees"];
@@ -48,7 +48,7 @@ namespace DVLD_DataAccessLayer.Applications
         }
 
 
-        public static int AddNewApp(int ApplicantPersonID, DateTime AppDate, short AppTypeID, byte AppStatus,
+        public static int AddNewApp(int ApplicantPersonID, DateTime AppDate, int AppTypeID, byte AppStatus,
             DateTime LastStatusDate, float PaidFees, int CreatedByUserID)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);

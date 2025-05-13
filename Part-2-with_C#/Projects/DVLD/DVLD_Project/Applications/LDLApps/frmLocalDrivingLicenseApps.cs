@@ -133,6 +133,16 @@ namespace DVLD_Project.Applications
 
         }
 
+        private void _Disable_EnableTests(bool VisionTestEnabled, bool WrittenTestEnabled, bool StreetTestEnabled,bool IsCompleteAllTests=false)
+        {
+            tsmiSchedualeVisionTest.Enabled = VisionTestEnabled;
+            tsmiSchedualWrittenTest.Enabled = WrittenTestEnabled;
+            tsmiSchedualStreetTest.Enabled = StreetTestEnabled;
+
+            tsmSchedualeTests.Enabled= !IsCompleteAllTests;
+
+
+        }
         private void txtFilterTerm_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -192,8 +202,57 @@ namespace DVLD_Project.Applications
         private void schedualToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int LDL_AppID = (int)dgvLDL_AppsList.CurrentRow.Cells[0].Value;
-            frmVisionTestAppointment VisionTest = new frmVisionTestAppointment(LDL_AppID);
+            int VisionTestID = 1;
+            frmTestAppointment VisionTest = new frmTestAppointment(LDL_AppID,VisionTestID);
+            VisionTest.__ReLoadList+=_ReLoadLocalAppList;
             VisionTest.ShowDialog();
         }
+
+        private void schedualWrittenTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int LDL_AppID = (int)dgvLDL_AppsList.CurrentRow.Cells[0].Value;
+            int WrittenTestID = 2;
+            frmTestAppointment WrittenTest = new frmTestAppointment(LDL_AppID, WrittenTestID);
+            WrittenTest.__ReLoadList += _ReLoadLocalAppList;
+            WrittenTest.ShowDialog();
+        }
+
+        private void schedualStreetTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int LDL_AppID = (int)dgvLDL_AppsList.CurrentRow.Cells[0].Value;
+            int StreetTestID = 3;
+            frmTestAppointment StreetTest = new frmTestAppointment(LDL_AppID, StreetTestID);
+            StreetTest.__ReLoadList += _ReLoadLocalAppList;
+            StreetTest.ShowDialog();
+        }
+
+        private void cmsLDL_Apps_Opening(object sender, CancelEventArgs e)
+        {
+            int LDL_AppID = (int)dgvLDL_AppsList.CurrentRow.Cells[0].Value;
+            
+            byte PassedTests = (byte)clsLocalDrivingLicense.GetPassedTestsCount(LDL_AppID);
+            
+
+            switch(PassedTests)
+            {
+                case 0:
+                    _Disable_EnableTests(true, false, false);
+                    break;
+                case 1:
+                    _Disable_EnableTests(false, true, false);
+                    break;
+                case 2:
+                    _Disable_EnableTests(false, false, true);
+                    break;
+                case 3:
+                    _Disable_EnableTests(false, false, false,true);
+                    break;
+                default:
+                    _Disable_EnableTests(false, false, false);
+                    break;
+            }
+        }
+
+       
     }
 }

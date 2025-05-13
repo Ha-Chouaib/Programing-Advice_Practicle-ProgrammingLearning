@@ -8,8 +8,8 @@ namespace DVLD_DataAccessLayer.Tests
 {
     public class clsTestAppointmentDataAccess
     {
-        public static bool Find(int TestAppointmentID, ref byte TestTypeID, ref int LocalDrivingLicenseApplicationID,ref DateTime AppointmentDate,
-                                ref float PaidFees, ref short CreatedByUserID, ref bool IsLocked)
+        public static bool Find(int TestAppointmentID, ref int TestTypeID, ref int LocalDrivingLicenseApplicationID,ref DateTime AppointmentDate,
+                                ref float PaidFees, ref int CreatedByUserID, ref bool IsLocked)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
             string Query = @"SELECT * From TestAppointments Where TestAppointmentID = @TestAppID ";
@@ -26,11 +26,11 @@ namespace DVLD_DataAccessLayer.Tests
                 {
                     Found = true;
 
-                    TestTypeID = (byte)reader["TestTypeID"];
+                    TestTypeID = (int)reader["TestTypeID"];
                     LocalDrivingLicenseApplicationID = (int)reader["LocalDrivingLicenseApplicationID"];
                     AppointmentDate = (DateTime)reader["AppointmentDate"];
-                    PaidFees = (float)reader["PaidFees"];
-                    CreatedByUserID = (short)reader["CreatedByUserID"];
+                    PaidFees = (float)(decimal)reader["PaidFees"];
+                    CreatedByUserID = (int)reader["CreatedByUserID"];
                     IsLocked = (bool)reader["IsLocked"];
                 }
 
@@ -43,8 +43,8 @@ namespace DVLD_DataAccessLayer.Tests
             return Found;
         }
 
-        public static int AddNewAppointment(byte TestTypeID, int LocalDrivingLicenseApplicationID, DateTime AppointmentDate,
-                                float PaidFees, short CreatedByUserID, bool IsLocked)
+        public static int AddNewAppointment(int TestTypeID, int LocalDrivingLicenseApplicationID, DateTime AppointmentDate,
+                                float PaidFees, int CreatedByUserID, bool IsLocked)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
             string Query = @"Insert INto TestAppointments (TestTypeID,LocalDrivingLicenseApplicationID, AppointmentDate,PaidFees,CreatedByUserID,IsLocked )
@@ -76,16 +76,18 @@ namespace DVLD_DataAccessLayer.Tests
             return TestAppointmentID;
         }
 
-        public static bool UpdateAppointment(int TestAppointmentID,bool IsLocked)
+        public static bool UpdateAppointment(int TestAppointmentID,DateTime AppointmentDate,bool IsLocked)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
             string Query = @"Update TestAppointments SET
+                                                    AppointmentDate = @AppointmentDate,
                                                     IsLocked = @IsLocked
                                                     WHERE TestAppointmentID = @TestAppID";
 
             SqlCommand cmd = new SqlCommand(Query, connection);
 
             cmd.Parameters.AddWithValue("@TestAppID", TestAppointmentID);
+            cmd.Parameters.AddWithValue("@AppointmentDate", AppointmentDate);
             cmd.Parameters.AddWithValue("@IsLocked", IsLocked);
 
             int RowsAffected = 0;
@@ -95,7 +97,10 @@ namespace DVLD_DataAccessLayer.Tests
                 RowsAffected = cmd.ExecuteNonQuery();
                
             }
-            catch (Exception ex) { }
+            catch (Exception ex) 
+            {
+                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+            }
             finally
             {
                 connection.Close();
@@ -117,7 +122,10 @@ namespace DVLD_DataAccessLayer.Tests
                 RowsAffected = cmd.ExecuteNonQuery();
 
             }
-            catch (Exception ex) { }
+            catch (Exception ex) 
+            { 
+                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+            }
             finally
             {
                 connection.Close();
@@ -140,18 +148,22 @@ namespace DVLD_DataAccessLayer.Tests
                 SqlDataReader reader = cmd.ExecuteReader();
                 DT.Load(reader);
             }
-            catch (Exception ex) { }
+            catch (Exception ex) 
+            {
+                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+            }
             finally
             {
                 connection.Close();
             }
             return DT;
         }
-        public static DataTable ListAppointments_SchedualeInfo(int LocalDrivingLicenseApp_ID,byte TestTypeID)
+        public static DataTable ListAppointments_SchedualeInfo(int LocalDrivingLicenseApp_ID,int TestTypeID)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
             string Query = @"Select TestAppointmentID, AppointmentDate,PaidFees,IsLocked from TestAppointments
-                             Where LocalDrivingLicenseApplicationID = @LDL_AppID AND TestTypeID=@TestTypeID;";
+                             Where LocalDrivingLicenseApplicationID = @LDL_AppID AND TestTypeID=@TestTypeID 
+                             Order By TestAppointmentID DESC;";
 
             SqlCommand cmd = new SqlCommand(Query, connection);
             cmd.Parameters.AddWithValue("@LDL_AppID", LocalDrivingLicenseApp_ID);
@@ -165,13 +177,53 @@ namespace DVLD_DataAccessLayer.Tests
                 SqlDataReader reader = cmd.ExecuteReader();
                 DT.Load(reader);
             }
-            catch (Exception ex) { }
+            catch (Exception ex) 
+            { 
+                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+            }
             finally
             {
                 connection.Close();
             }
             return DT;
         }
+
+        public static int GetCurrentTestAppointmentID(int LocalDrivingLicenseApplicationID, int TestTypeID)
+        {
+            SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
+            string Query = @"SELECT Top 1 TestAppointmentID FROM TestAppointments 
+                                                            WHERE
+                                                            LocalDrivingLicenseApplicationID = 30 
+                                                            AND
+                                                            TestTypeID=1 
+                                                            ORDER By 
+                                                            AppointmentDate DESC;";
+
+            SqlCommand cmd = new SqlCommand(Query, connection);
+
+            cmd.Parameters.AddWithValue("@TestTypeID", TestTypeID);
+            cmd.Parameters.AddWithValue("@LDL_AppID", LocalDrivingLicenseApplicationID);
+            
+
+            int TestAppointmentID = -1;
+            try
+            {
+                connection.Open();
+                object result = cmd.ExecuteScalar();
+                if (result != null && int.TryParse(result.ToString(), out int ID)) TestAppointmentID = ID;
+
+            }
+            catch (Exception ex) 
+            {
+                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return TestAppointmentID;
+        }
+
 
 
     }

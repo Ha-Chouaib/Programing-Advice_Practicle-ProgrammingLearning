@@ -8,10 +8,10 @@ namespace DVLD_DataAccessLayer.Tests
 {
     public class clsTestsDataAccess
     {
-        public static bool Find(int TestAppointmentID, ref int TestID, ref bool TestResult, ref string Notes, ref short CreatedByUserID)
+        public static bool Find(int TestAppointmentID, ref int TestID, ref bool TestResult_IsPassed, ref string Notes, ref int CreatedByUserID)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
-            string Query = @"SELECT * FROM Tests where TestAppointmnetID=@TestAppID";
+            string Query = @"SELECT * FROM Tests where TestAppointmentID=@TestAppID";
 
             SqlCommand cmd = new SqlCommand(Query, connection);
             cmd.Parameters.AddWithValue("@TestAppID", TestAppointmentID);
@@ -26,19 +26,19 @@ namespace DVLD_DataAccessLayer.Tests
                 {
                     Found = true;
                     TestID = (int)reader["TestID"];
-                    TestResult = (bool)reader["TestResult"];
+                    TestResult_IsPassed = (bool)reader["TestResult"];
 
                     if (reader["Notes"] == DBNull.Value)
                         Notes = "";
                     else
                         Notes = (string)reader["Notes"];
 
-                    CreatedByUserID = (short)reader["CreatedByUserID"];
+                    CreatedByUserID = (int)reader["CreatedByUserID"];
                 }
 
             } catch (Exception ex)
             {
-
+                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
             }
             finally
             {
@@ -47,21 +47,22 @@ namespace DVLD_DataAccessLayer.Tests
             return Found;
         }
 
-        public static int AddNewTest(int TestAppointmentID, bool TestResult, string Notes, short CreatedByUserID)
+        public static int AddNewTest(int TestAppointmentID, bool TestResult_IsPassed, string Notes, int CreatedByUserID)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
-            string Query = @"Insert Into Tests  (TestAppointmentID ,TestResult, Notes,CreatedByUserID)
-                                       VALUES (@TestAppointment,@TestResult,@Notes,@CreatedByUserID);
-                            SELECT SCOPE_IDENTITY() ;";
+            string Query = @"INSERT INTO Tests 
+                                                (TestAppointmentID ,TestResult, Notes,CreatedByUserID)
+                                       VALUES   (@TestAppointmentID, @TestResult_IsPassed, @Notes, @CreatedByUserID);
+                            SELECT SCOPE_IDENTITY();";
 
             SqlCommand cmd = new SqlCommand(Query, connection);
             cmd.Parameters.AddWithValue("@TestAppointmentID", TestAppointmentID);
-            cmd.Parameters.AddWithValue("@TestResult", TestResult);
-
-            if(Notes == string.Empty)
-                cmd.Parameters.AddWithValue("Notes@", DBNull.Value);
+            cmd.Parameters.AddWithValue("@TestResult_IsPassed", TestResult_IsPassed);
+           
+            if (Notes == string.Empty)
+                cmd.Parameters.AddWithValue("@Notes", DBNull.Value);
             else
-                cmd.Parameters.AddWithValue("Notes@", Notes);
+                cmd.Parameters.AddWithValue("@Notes", Notes);
 
             cmd.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
 
@@ -72,7 +73,10 @@ namespace DVLD_DataAccessLayer.Tests
                 object result = cmd.ExecuteScalar();
                 if (result != null && int.TryParse(result.ToString(), out int ID)) TestID = ID;
 
-            } catch (Exception ex) { }
+            } catch (Exception ex) 
+            {
+                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+            }
             finally
             {
                 connection.Close();
