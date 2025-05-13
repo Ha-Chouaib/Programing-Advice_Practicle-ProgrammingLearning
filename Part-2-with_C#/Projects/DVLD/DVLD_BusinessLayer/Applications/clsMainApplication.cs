@@ -107,5 +107,9 @@ namespace DVLD_BusinessLayer.Applications
             return clsMainApplicationDataAccess.ListAll();
         }
     
+        public static bool CheckApplicationStatus(int ApplicantPersonID,int LicenseClassID,byte IsInStatus)
+        {
+            return clsMainApplicationDataAccess.CheckApplicationStatus(ApplicantPersonID, LicenseClassID, IsInStatus);
+        }
     }
 }

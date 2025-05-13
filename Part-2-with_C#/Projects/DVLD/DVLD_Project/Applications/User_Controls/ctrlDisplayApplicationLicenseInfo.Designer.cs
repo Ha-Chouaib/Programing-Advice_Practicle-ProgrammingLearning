@@ -91,12 +91,12 @@
             this.lnkShoeLicenseInfo.AutoSize = true;
             this.lnkShoeLicenseInfo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lnkShoeLicenseInfo.LinkColor = System.Drawing.Color.Cyan;
-            this.lnkShoeLicenseInfo.Location = new System.Drawing.Point(79, 11);
+            this.lnkShoeLicenseInfo.Location = new System.Drawing.Point(98, 12);
             this.lnkShoeLicenseInfo.Name = "lnkShoeLicenseInfo";
-            this.lnkShoeLicenseInfo.Size = new System.Drawing.Size(128, 20);
+            this.lnkShoeLicenseInfo.Size = new System.Drawing.Size(148, 20);
             this.lnkShoeLicenseInfo.TabIndex = 0;
             this.lnkShoeLicenseInfo.TabStop = true;
-            this.lnkShoeLicenseInfo.Text = "Shoe License Info";
+            this.lnkShoeLicenseInfo.Text = "Display License Info";
             this.lnkShoeLicenseInfo.VisitedLinkColor = System.Drawing.Color.Teal;
             this.lnkShoeLicenseInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkShoeLicenseInfo_LinkClicked);
             // 

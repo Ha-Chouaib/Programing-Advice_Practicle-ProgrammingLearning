@@ -99,7 +99,7 @@ namespace DVLD_Project.Applications.LDLApps
                     return;
                 }
 
-                if (clsLocalDrivingLicense.IsAppHas_NewStatus(_PersonID,LicenseClassID))
+                if (clsMainApplication.CheckApplicationStatus(Person.PersonID,LicenseClassID,clsGlobal.ApplicationStatus_New))
                 {
                     MessageBox.Show($"Not Able To Add A New App of This Class Is Already Exist At New State !!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -111,7 +111,7 @@ namespace DVLD_Project.Applications.LDLApps
                     {
                         clsMainApplication NewApp = new clsMainApplication();
                         NewApp.AppDate = DateTime.Now;
-                        NewApp.AppStatus = 1;
+                        NewApp.AppStatus = clsGlobal.ApplicationStatus_New;
                         NewApp.ApplicantPersonID = _PersonID;
                         NewApp.LastStatusDate = DateTime.Now;
                         NewApp.CreatedByUserID = clsGlobal.CurrentUserID;

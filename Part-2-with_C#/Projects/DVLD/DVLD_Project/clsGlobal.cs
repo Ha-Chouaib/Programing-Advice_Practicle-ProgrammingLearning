@@ -10,5 +10,9 @@ namespace DVLD_Project
     {
         public static int CurrentUserID { get; set; }
         public static bool IsRememberMe { get; set; }
+
+        public static byte ApplicationStatus_New = 1;
+        public static byte ApplicationStatus_Canceled = 2;
+        public static byte ApplicationStatus_Complete = 3;
     }
 }

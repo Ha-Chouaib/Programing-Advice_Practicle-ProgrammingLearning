@@ -58,6 +58,12 @@
     <Compile Include="Applications\ApplicationTypes\frmManageApplicationTypes.Designer.cs">
       <DependentUpon>frmManageApplicationTypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Applications\frmDisplayApplicationDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\frmDisplayApplicationDetails.Designer.cs">
+      <DependentUpon>frmDisplayApplicationDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Applications\LDLApps\frmAddNewLocalDrivingLicense.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,12 @@
     </Compile>
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="License\frmIssueDrivingLicense_1rstTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="License\frmIssueDrivingLicense_1rstTime.Designer.cs">
+      <DependentUpon>frmIssueDrivingLicense_1rstTime.cs</DependentUpon>
     </Compile>
     <Compile Include="People\User_Ctrl\ctrlAdd-Edit_PersonIfo.cs">
       <SubType>UserControl</SubType>
@@ -211,6 +223,9 @@
     <EmbeddedResource Include="Applications\ApplicationTypes\frmManageApplicationTypes.resx">
       <DependentUpon>frmManageApplicationTypes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Applications\frmDisplayApplicationDetails.resx">
+      <DependentUpon>frmDisplayApplicationDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Applications\LDLApps\frmAddNewLocalDrivingLicense.resx">
       <DependentUpon>frmAddNewLocalDrivingLicense.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\frmIssueDrivingLicense_1rstTime.resx">
+      <DependentUpon>frmIssueDrivingLicense_1rstTime.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="People\User_Ctrl\ctrlAdd-Edit_PersonIfo.resx">
       <DependentUpon>ctrlAdd-Edit_PersonIfo.cs</DependentUpon>

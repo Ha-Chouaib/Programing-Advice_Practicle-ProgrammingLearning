@@ -57,13 +57,14 @@ namespace DVLD_BusinessLayer.Applications
         {
             return clsLocalDrivingLicenseDataAccess.FilterBy<T>(Column, Term);
         }
-        public static bool IsAppHas_NewStatus(int ApplicanttPersonID, short LicenseClassID)
-        {
-            return clsLocalDrivingLicenseDataAccess.IsAppStatusNew(ApplicanttPersonID, LicenseClassID);
-        }
+      
         public static byte GetPassedTestsCount(int LDL_App)
         {
             return clsLocalDrivingLicenseDataAccess.GetPassedTestCount(LDL_App);
+        }
+        public static bool Delete(int LocalLicensAppID)
+        {
+            return clsLocalDrivingLicenseDataAccess.Delete(LocalLicensAppID);
         }
     }
 }

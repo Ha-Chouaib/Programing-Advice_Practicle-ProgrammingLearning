@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DVLD_BusinessLayer.Applications;
 using DVLD_Project.Applications.LDLApps;
 using DVLD_Project.Applications.Tests;
+using DVLD_Project.License;
 
 namespace DVLD_Project.Applications
 {
@@ -140,8 +141,54 @@ namespace DVLD_Project.Applications
             tsmiSchedualStreetTest.Enabled = StreetTestEnabled;
 
             tsmSchedualeTests.Enabled= !IsCompleteAllTests;
+        }
+        private void _ManageLocalDrivingLicenseMenu()
+        {
+            int LDL_AppID = (int)dgvLDL_AppsList.CurrentRow.Cells[0].Value;
+
+            clsLocalDrivingLicense LocalLicenseApp = clsLocalDrivingLicense.Find(LDL_AppID);
+            byte PassedTests = (byte)clsLocalDrivingLicense.GetPassedTestsCount(LDL_AppID);
+
+            tsmIssueDrivingLicenseFirstTime.Enabled = false;
+            tsmShowLicense.Enabled = false;
 
 
+            switch (PassedTests)
+            {
+                case 0:
+                    _Disable_EnableTests(true, false, false);
+                    break;
+                case 1:
+                    _Disable_EnableTests(false, true, false);
+                    break;
+                case 2:
+                    _Disable_EnableTests(false, false, true);
+                    break;
+                case 3:
+                    _Disable_EnableTests(false, false, false, true);
+                    tsmIssueDrivingLicenseFirstTime.Enabled = true;
+
+                    break;
+                default:
+                    _Disable_EnableTests(false, false, false);
+                    break;
+            }
+            int PersonID = clsMainApplication.Find(LocalLicenseApp.MainApplicationID).ApplicantPersonID;
+
+            if (clsMainApplication.CheckApplicationStatus(PersonID, LocalLicenseApp.LicenseClassID, clsGlobal.ApplicationStatus_Complete))
+            {
+                tsmCancelApplication.Enabled = false;
+                tsmDeleteApplication.Enabled = false;
+                tsmEditApplication.Enabled = false;
+                tsmIssueDrivingLicenseFirstTime.Enabled = false;
+
+                tsmShowLicense.Enabled = true;
+            }
+            if (clsMainApplication.CheckApplicationStatus(PersonID, LocalLicenseApp.LicenseClassID, clsGlobal.ApplicationStatus_Canceled))
+            {
+                tsmCancelApplication.Enabled = false;
+               
+            }
         }
         private void txtFilterTerm_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -179,26 +226,58 @@ namespace DVLD_Project.Applications
             NewLocalLicense.ShowDialog();
         }
 
+        private void showApplicationDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int LDL_AppID = (int)dgvLDL_AppsList.CurrentRow.Cells[0].Value;
+            frmDisplayApplicationDetails DisplayApplicatioonIfo = new frmDisplayApplicationDetails(LDL_AppID);
+            DisplayApplicatioonIfo.ShowDialog();
+        }
+
         private void editApplicationToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void showApplicationDetailsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void deleteApplicationToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if(MessageBox.Show("Sure To Delete This Application ?","Confirm",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                int LDL_AppID = (int)dgvLDL_AppsList.CurrentRow.Cells[0].Value;
+                int MainApplicationID = clsLocalDrivingLicense.Find(LDL_AppID).MainApplicationID;
 
+                if (clsLocalDrivingLicense.Delete(LDL_AppID) &&clsMainApplication.DeleteApp(MainApplicationID))
+                {
+                    MessageBox.Show("Done Successfully");
+                    _LoadAppsList();
+
+                }
+                else
+                {
+                    MessageBox.Show("Couldn't Delete The Record ! Operation Failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void cancelApplicationToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Sure To Cancele the application ?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                int LDL_AppID = (int)dgvLDL_AppsList.CurrentRow.Cells[0].Value;
+                clsMainApplication MainApplication = clsMainApplication.Find(clsLocalDrivingLicense.Find(LDL_AppID).MainApplicationID);
+                MainApplication.AppStatus = clsGlobal.ApplicationStatus_Canceled;
+                MainApplication.LastStatusDate = DateTime.Now;
+                if (MainApplication.Save())
+                {
+                    MessageBox.Show("Done Successfully");
+                    _LoadAppsList();
 
+                }
+                else
+                {
+                    MessageBox.Show("Couldn't Save The Current Changes ! Operation Failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
-
         private void schedualToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int LDL_AppID = (int)dgvLDL_AppsList.CurrentRow.Cells[0].Value;
@@ -226,31 +305,30 @@ namespace DVLD_Project.Applications
             StreetTest.ShowDialog();
         }
 
-        private void cmsLDL_Apps_Opening(object sender, CancelEventArgs e)
+        private void cmsiIssueDrivingLicenseFirstTime_Click(object sender, EventArgs e)
         {
             int LDL_AppID = (int)dgvLDL_AppsList.CurrentRow.Cells[0].Value;
-            
-            byte PassedTests = (byte)clsLocalDrivingLicense.GetPassedTestsCount(LDL_AppID);
-            
+            frmIssueDrivingLicense_1rstTime IssueNewLicense = new frmIssueDrivingLicense_1rstTime(LDL_AppID);
+            IssueNewLicense.__ReloadContent += _ReLoadLocalAppList;
+            IssueNewLicense.ShowDialog();
+        }
 
-            switch(PassedTests)
-            {
-                case 0:
-                    _Disable_EnableTests(true, false, false);
-                    break;
-                case 1:
-                    _Disable_EnableTests(false, true, false);
-                    break;
-                case 2:
-                    _Disable_EnableTests(false, false, true);
-                    break;
-                case 3:
-                    _Disable_EnableTests(false, false, false,true);
-                    break;
-                default:
-                    _Disable_EnableTests(false, false, false);
-                    break;
-            }
+        private void tsmShowPersonLicenseHistory_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmShowLicense_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void cmsLDL_Apps_Opening(object sender, CancelEventArgs e)
+        {
+            tsmCancelApplication.Enabled = true;
+            tsmDeleteApplication.Enabled = true;
+            tsmEditApplication.Enabled = true;
+            
+            _ManageLocalDrivingLicenseMenu();
         }
 
        
