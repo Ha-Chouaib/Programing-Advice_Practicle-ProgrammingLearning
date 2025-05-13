@@ -9,7 +9,7 @@ namespace DVLD_DataAccessLayer.Applications
 {
     public class clsLocalDrivingLicenseDataAccess
     {
-        public static bool Find(int LDL_ID, ref int AppID,ref short LicenseClassID)
+        public static bool Find(int LDL_ID, ref int AppID,ref byte LicenseClassID)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
             string Query = @"Select * from LocalDrivingLicenseApplications Where LocalDrivingLicenseApplicationID= @LDLid";
@@ -26,7 +26,7 @@ namespace DVLD_DataAccessLayer.Applications
                 {
                     Found = true;
                     AppID = (int)Reader["ApplicationID"];
-                    LicenseClassID = (short)Reader["LicenseClassID"];
+                    LicenseClassID = Convert.ToByte( Reader["LicenseClassID"] );
                 }
 
 

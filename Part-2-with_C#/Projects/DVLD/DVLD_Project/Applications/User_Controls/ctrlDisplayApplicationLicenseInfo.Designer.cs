@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lable6 = new System.Windows.Forms.Label();
             this.lblLDL_AppID = new System.Windows.Forms.Label();
+            this.lable6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lnkShoeLicenseInfo = new System.Windows.Forms.LinkLabel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.lblPassedTests = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.lblLicenseClassName = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -52,19 +52,10 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.panel3.Controls.Add(this.lblLDL_AppID);
             this.panel3.Controls.Add(this.lable6);
-            this.panel3.Location = new System.Drawing.Point(56, 24);
+            this.panel3.Location = new System.Drawing.Point(54, 24);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(445, 43);
+            this.panel3.Size = new System.Drawing.Size(468, 43);
             this.panel3.TabIndex = 4;
-            // 
-            // lable6
-            // 
-            this.lable6.AutoSize = true;
-            this.lable6.Location = new System.Drawing.Point(12, 12);
-            this.lable6.Name = "lable6";
-            this.lable6.Size = new System.Drawing.Size(89, 20);
-            this.lable6.TabIndex = 0;
-            this.lable6.Text = "LDL_AppID:";
             // 
             // lblLDL_AppID
             // 
@@ -76,13 +67,23 @@
             this.lblLDL_AppID.TabIndex = 1;
             this.lblLDL_AppID.Text = "???";
             // 
+            // lable6
+            // 
+            this.lable6.AutoSize = true;
+            this.lable6.ForeColor = System.Drawing.SystemColors.Info;
+            this.lable6.Location = new System.Drawing.Point(12, 12);
+            this.lable6.Name = "lable6";
+            this.lable6.Size = new System.Drawing.Size(89, 20);
+            this.lable6.TabIndex = 0;
+            this.lable6.Text = "LDL_AppID:";
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.panel1.Controls.Add(this.lnkShoeLicenseInfo);
-            this.panel1.Location = new System.Drawing.Point(687, 73);
+            this.panel1.Location = new System.Drawing.Point(694, 73);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(281, 43);
+            this.panel1.Size = new System.Drawing.Size(329, 43);
             this.panel1.TabIndex = 5;
             // 
             // lnkShoeLicenseInfo
@@ -104,19 +105,10 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.panel2.Controls.Add(this.lblPassedTests);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(517, 24);
+            this.panel2.Location = new System.Drawing.Point(555, 24);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(451, 43);
+            this.panel2.Size = new System.Drawing.Size(468, 43);
             this.panel2.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 12);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(114, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Passeed Tests:";
             // 
             // lblPassedTests
             // 
@@ -128,24 +120,25 @@
             this.lblPassedTests.TabIndex = 1;
             this.lblPassedTests.Text = "???";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.Info;
+            this.label4.Location = new System.Drawing.Point(12, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(114, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Passeed Tests:";
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.panel4.Controls.Add(this.lblLicenseClassName);
             this.panel4.Controls.Add(this.label6);
-            this.panel4.Location = new System.Drawing.Point(56, 73);
+            this.panel4.Location = new System.Drawing.Point(54, 73);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(614, 43);
+            this.panel4.Size = new System.Drawing.Size(607, 43);
             this.panel4.TabIndex = 7;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 12);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(154, 20);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Applied For License:";
             // 
             // lblLicenseClassName
             // 
@@ -157,6 +150,16 @@
             this.lblLicenseClassName.TabIndex = 1;
             this.lblLicenseClassName.Text = "???";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.Info;
+            this.label6.Location = new System.Drawing.Point(12, 12);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(154, 20);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Applied For License:";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.panel4);
@@ -164,10 +167,10 @@
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.panel3);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.Info;
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1026, 134);
+            this.groupBox1.Size = new System.Drawing.Size(1080, 135);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Driving License Application Info";
@@ -182,7 +185,7 @@
             this.ForeColor = System.Drawing.SystemColors.Info;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ctrlDisplayApplicationLicenseInfo";
-            this.Size = new System.Drawing.Size(1026, 134);
+            this.Size = new System.Drawing.Size(1080, 135);
             this.Load += new System.EventHandler(this.ctrlDisplayApplicationLicenseInfo_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

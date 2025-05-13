@@ -11,13 +11,13 @@ namespace DVLD_BusinessLayer.Applications
     public class clsLocalDrivingLicense
     {
         public int LDL_ID{ get; set; }
-        public int AppID{ get; set; }
-        public short LicenseClassID{ get; set; }
+        public int MainApplicationID{ get; set; }
+        public byte LicenseClassID{ get; set; }
 
-        public clsLocalDrivingLicense(int LDL_id,int AppID,short LicenseClassID)
+        public clsLocalDrivingLicense(int LDL_id,int AppID,byte LicenseClassID)
         {
             this.LDL_ID = LDL_id;
-            this.AppID = AppID;
+            this.MainApplicationID = AppID;
             this.LicenseClassID = LicenseClassID;
 
         }
@@ -25,24 +25,24 @@ namespace DVLD_BusinessLayer.Applications
         public clsLocalDrivingLicense()
         {
             this.LDL_ID = -1;
-            this.AppID = -1;
-            this.LicenseClassID = -1;
+            this.MainApplicationID = -1;
+            this.LicenseClassID = 0;
 
         }
 
         public static clsLocalDrivingLicense Find(int LDLid)
         {
             int AppID = -1; 
-            short LicenseClassID = -1;
-            if (clsLocalDrivingLicenseDataAccess.Find(LDLid, ref AppID, ref LicenseClassID))
-                return new clsLocalDrivingLicense(LDLid, AppID, LicenseClassID);
+            byte LicenseID = 0;
+            if (clsLocalDrivingLicenseDataAccess.Find(LDLid, ref AppID, ref LicenseID))
+                return new clsLocalDrivingLicense(LDLid, AppID, LicenseID);
             else
                 return null;
         }
 
         private bool _AddNewLocLic()
         {
-            return clsLocalDrivingLicenseDataAccess.AddNewLicense(this.AppID, this.LicenseClassID);
+            return clsLocalDrivingLicenseDataAccess.AddNewLicense(this.MainApplicationID, this.LicenseClassID);
         }
         public bool Save()
         {

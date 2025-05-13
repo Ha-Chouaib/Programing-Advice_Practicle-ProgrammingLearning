@@ -87,18 +87,18 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Info;
             this.groupBox1.Location = new System.Drawing.Point(19, 22);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(789, 913);
+            this.groupBox1.Size = new System.Drawing.Size(789, 859);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Vision Test";
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.panel7.Controls.Add(this.rbFail);
             this.panel7.Controls.Add(this.rbPass);
             this.panel7.Controls.Add(this.label7);
-            this.panel7.Location = new System.Drawing.Point(187, 605);
+            this.panel7.Location = new System.Drawing.Point(187, 571);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(422, 43);
             this.panel7.TabIndex = 12;
@@ -141,7 +141,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(103, 641);
+            this.label2.Location = new System.Drawing.Point(96, 607);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 20);
             this.label2.TabIndex = 3;
@@ -152,7 +152,7 @@
             this.txtNotes.BackColor = System.Drawing.Color.Black;
             this.txtNotes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNotes.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.txtNotes.Location = new System.Drawing.Point(91, 664);
+            this.txtNotes.Location = new System.Drawing.Point(91, 630);
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.Size = new System.Drawing.Size(614, 167);
@@ -163,9 +163,9 @@
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.Color.Cyan;
-            this.btnSave.Location = new System.Drawing.Point(692, 857);
+            this.btnSave.Location = new System.Drawing.Point(348, 813);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(81, 31);
+            this.btnSave.Size = new System.Drawing.Size(101, 31);
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -173,7 +173,7 @@
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.panel6.Controls.Add(this.lblDL_AppID);
             this.panel6.Controls.Add(this.label12);
             this.panel6.Location = new System.Drawing.Point(250, 280);
@@ -202,7 +202,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.panel1.Controls.Add(this.lblFullName);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(91, 397);
@@ -260,7 +260,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.panel3.Controls.Add(this.lblTestDate);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Location = new System.Drawing.Point(91, 515);
@@ -289,7 +289,7 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.panel5.Controls.Add(this.lblLicenseClass);
             this.panel5.Controls.Add(this.label10);
             this.panel5.Location = new System.Drawing.Point(91, 339);
@@ -373,7 +373,7 @@
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnClose.Location = new System.Drawing.Point(365, 966);
+            this.btnClose.Location = new System.Drawing.Point(367, 897);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(101, 31);
             this.btnClose.TabIndex = 3;
@@ -386,7 +386,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            this.ClientSize = new System.Drawing.Size(829, 1009);
+            this.ClientSize = new System.Drawing.Size(829, 935);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));

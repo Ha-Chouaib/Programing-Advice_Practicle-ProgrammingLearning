@@ -23,7 +23,7 @@ namespace DVLD_Project.Applications.User_Controls
         int _PersonID =-1;
         private void ctrlDisplayApplicationInfo_Load(object sender, EventArgs e)
         {
-            _ShowAppDetails();
+            
         }
 
         private void _ShowAppDetails()
@@ -69,6 +69,7 @@ namespace DVLD_Project.Applications.User_Controls
         public void __DisplayApplicationInfo(int AppID)
         {
             _AppID = AppID;
+            _ShowAppDetails();
         }
 
         private void lnkPersonDetails_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -82,11 +82,11 @@
     <Compile Include="Applications\Tests\frmTakeTest.Designer.cs">
       <DependentUpon>frmTakeTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Applications\Tests\frmVisionTestAppointment.cs">
+    <Compile Include="Applications\Tests\frmTestAppointment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Applications\Tests\frmVisionTestAppointment.Designer.cs">
-      <DependentUpon>frmVisionTestAppointment.cs</DependentUpon>
+    <Compile Include="Applications\Tests\frmTestAppointment.Designer.cs">
+      <DependentUpon>frmTestAppointment.cs</DependentUpon>
     </Compile>
     <Compile Include="Applications\TestTypes\frmEditTestType.cs">
       <SubType>Form</SubType>
@@ -223,8 +223,8 @@
     <EmbeddedResource Include="Applications\Tests\frmTakeTest.resx">
       <DependentUpon>frmTakeTest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Applications\Tests\frmVisionTestAppointment.resx">
-      <DependentUpon>frmVisionTestAppointment.cs</DependentUpon>
+    <EmbeddedResource Include="Applications\Tests\frmTestAppointment.resx">
+      <DependentUpon>frmTestAppointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\TestTypes\frmEditTestType.resx">
       <DependentUpon>frmEditTestType.cs</DependentUpon>

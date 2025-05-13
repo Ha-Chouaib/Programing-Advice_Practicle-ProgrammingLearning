@@ -21,17 +21,18 @@ namespace DVLD_Project.Applications.Tests
         }
 
         int _SchedualedTestAppID = -1;
+        byte _Trials=0;
         clsTestAppointments TestAppointment;
-        clsTests MainTest;
 
         public delegate void TriggerFunctionEventHandler(object sender);
-        public event TriggerFunctionEventHandler __ReloadSchedualTestList;
+        public event TriggerFunctionEventHandler __ReloadList;
 
-        public frmTakeTest(int TestAppointmentID)
+        public frmTakeTest(int TestAppointmentID,byte Trials)
         {
             InitializeComponent();
 
             _SchedualedTestAppID = TestAppointmentID;
+            _Trials = Trials;
         }
 
         private void frmTakeTest_Load(object sender, EventArgs e)
@@ -47,7 +48,7 @@ namespace DVLD_Project.Applications.Tests
                 TestAppointment = clsTestAppointments.Find(_SchedualedTestAppID);
 
                 clsLocalDrivingLicense LocalLicenseApp = clsLocalDrivingLicense.Find(TestAppointment.LDL_AppID);
-                clsMainApplication MainApp = clsMainApplication.Find(LocalLicenseApp.AppID);
+                clsMainApplication MainApp = clsMainApplication.Find(LocalLicenseApp.MainApplicationID);
                 clsPeople Person = clsPeople.Find(MainApp.ApplicantPersonID);
 
                 lblDL_AppID.Text = TestAppointment.LDL_AppID.ToString();
@@ -57,49 +58,57 @@ namespace DVLD_Project.Applications.Tests
 
                 lblFees.Text = clsTestTypes.Find(1).TestFees.ToString();
                 lblTestDate.Text=TestAppointment.AppointmentDate.ToShortDateString();
+                lblTrial.Text = _Trials.ToString();
 
             }
         }
-        private void _GetTestResult()
-        {
-            MainTest = new clsTests();
-            if(rbPass.Checked==true)
-            {
-                MainTest.TestResult_IsPassed = true;
-            }else
-            {
-               MainTest.TestResult_IsPassed = false;
-            }
-
-        }
+        
         private void _Save()
-        {   if (MainTest != null)
+        {  
+            clsTests MainTest = new clsTests();
+            if (rbPass.Checked == true)
             {
-                _GetTestResult();
-                MainTest.TestAppointmentID = _SchedualedTestAppID;
-                MainTest.Notes = txtNotes.Text;
-                MainTest.CreatedByUserID = TestAppointment.CreatedByUserID;
-                if(MainTest.Save())
+                MainTest.TestResult_IsPassed = true;                
+            }
+            else
+            {
+                MainTest.TestResult_IsPassed = false;
+            }
+            MainTest.TestAppointmentID = _SchedualedTestAppID;
+            MainTest.Notes = txtNotes.Text;
+            MainTest.CreatedByUserID = TestAppointment.CreatedByUserID;
+            if(MainTest.Save())
+            {
+                
+                TestAppointment.IsLocked = true;
+                if(TestAppointment.Save())
                 {
                     MessageBox.Show("Done Successfully");
-                    
-                    TestAppointment.IsLocked = true;
-                    if(TestAppointment.Save())
-                    {
-                        __ReloadSchedualTestList?.Invoke(this);
-                    }else
-                    {
-                        MessageBox.Show("Error! Couldn't Lock This Test Appointment Scheduale !!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    __ReloadList?.Invoke(this);
+                    btnSave.Enabled = false;
 
+                }
+                else
+                {
+                    MessageBox.Show("Error! Couldn't Lock This Test Appointment Scheduale, Please Try Again Later !!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if(!clsTests.DeleteTest(MainTest.TestID))
+                    {
+                        MessageBox.Show("Error! Couldn't Remove this Extra Test result Please Check Your DB [<Tests> Table] !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
                 }
 
             }
+            else
+            {
+                MessageBox.Show("Error! Couldn't Save Test Result !!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("The Current Data Will be Saved Permenently once you click [OK] btn","Confirm",MessageBoxButtons.OKCancel,MessageBoxIcon.Question)== DialogResult.OK)
+            if(MessageBox.Show("The Current Data Will be Saved Permenently once you click [Save] btn","Confirm",MessageBoxButtons.OKCancel,MessageBoxIcon.Question)== DialogResult.OK)
             {
                 _Save();
             }else

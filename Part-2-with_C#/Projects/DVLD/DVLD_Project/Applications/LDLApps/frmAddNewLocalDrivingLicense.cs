@@ -122,8 +122,8 @@ namespace DVLD_Project.Applications.LDLApps
                         {
 
                             clsLocalDrivingLicense NewLocalLicense = new clsLocalDrivingLicense();
-                            NewLocalLicense.AppID = NewApp.AppID;
-                            NewLocalLicense.LicenseClassID = LicenseClassID;
+                            NewLocalLicense.MainApplicationID = NewApp.AppID;
+                            NewLocalLicense.LicenseClassID =(byte) LicenseClassID;
                             if (NewLocalLicense.Save())
                             {
                                 MessageBox.Show("Done Successfully", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);

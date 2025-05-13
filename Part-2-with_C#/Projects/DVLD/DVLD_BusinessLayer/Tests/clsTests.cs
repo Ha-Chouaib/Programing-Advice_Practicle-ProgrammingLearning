@@ -15,10 +15,10 @@ namespace DVLD_BusinessLayer.Tests
         public int TestAppointmentID { get; set; }
         public bool TestResult_IsPassed { get; set; }
         public string Notes { get; set; }
-        public short CreatedByUserID { get; set; }
+        public int CreatedByUserID { get; set; }
 
 
-        public clsTests(int TestID, int TestAppointmentID,bool TestResult,string Notes, short CreatedByUserID)
+        public clsTests(int TestID, int TestAppointmentID,bool TestResult,string Notes, int CreatedByUserID)
         {
             this.TestID = TestID;
             this.TestAppointmentID = TestAppointmentID;
@@ -41,7 +41,7 @@ namespace DVLD_BusinessLayer.Tests
             int TestID = -1;
             bool TestResult = false; 
             string Notes = "";
-            short CreatedByUserID = -1;
+            int CreatedByUserID = -1;
 
             if (clsTestsDataAccess.Find(TestAppointmentID,ref TestID ,ref TestResult, ref Notes, ref CreatedByUserID))
                 return new clsTests(TestID, TestAppointmentID, TestResult, Notes, CreatedByUserID);
@@ -50,7 +50,7 @@ namespace DVLD_BusinessLayer.Tests
 
         }
 
-        bool _AddNewTest()
+        private bool _AddNewTest()
         {
             this.TestID = clsTestsDataAccess.AddNewTest(this.TestAppointmentID, this.TestResult_IsPassed, this.Notes, this.CreatedByUserID);
             return (this.TestID > 0);

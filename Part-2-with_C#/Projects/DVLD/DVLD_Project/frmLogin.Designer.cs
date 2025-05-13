@@ -150,7 +150,7 @@
             this.ClientSize = new System.Drawing.Size(789, 450);
             this.Controls.Add(this.panel1);
             this.Name = "frmLogin";
-            this.Text = "frmLogin";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
