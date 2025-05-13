@@ -45,8 +45,10 @@
     <Compile Include="Applications\clsLocalDrivingLicenseDataAccess.cs" />
     <Compile Include="Applications\clsMainApplicationDataAccess.cs" />
     <Compile Include="clsCountriesDataAccess.cs" />
-    <Compile Include="clsLicenseClassesDataAccess.cs" />
+    <Compile Include="clsDriverDataAccess.cs" />
+    <Compile Include="License\clsLicenseClassesDataAccess.cs" />
     <Compile Include="clsPeopleDataAccess.cs" />
+    <Compile Include="License\clsLicensesDataAccess.cs" />
     <Compile Include="Tests\clsTestAppointmentDataAccess.cs" />
     <Compile Include="Tests\clsTestsDataAccess.cs" />
     <Compile Include="Tests\clsTestTypesDataAccess.cs" />

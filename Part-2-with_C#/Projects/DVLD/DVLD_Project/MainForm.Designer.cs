@@ -97,7 +97,7 @@
             this.drivingLicensesServicsToolStripMenuItem.Name = "drivingLicensesServicsToolStripMenuItem";
             this.drivingLicensesServicsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.drivingLicensesServicsToolStripMenuItem.Size = new System.Drawing.Size(245, 26);
-            this.drivingLicensesServicsToolStripMenuItem.Text = "Driving Licenses Servics";
+            this.drivingLicensesServicsToolStripMenuItem.Text = "Driving clsLicenses Servics";
             // 
             // newDrivingLicenseToolStripMenuItem
             // 
@@ -206,7 +206,7 @@
             this.detainLicensesToolStripMenuItem.Name = "detainLicensesToolStripMenuItem";
             this.detainLicensesToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.detainLicensesToolStripMenuItem.Size = new System.Drawing.Size(245, 26);
-            this.detainLicensesToolStripMenuItem.Text = "Detain Licenses";
+            this.detainLicensesToolStripMenuItem.Text = "Detain clsLicenses";
             // 
             // manageApplicationTypesToolStripMenuItem
             // 

@@ -134,38 +134,7 @@ namespace DVLD_DataAccessLayer.Applications
             return DT;
         }
 
-        public static bool IsAppStatusNew(int ApplicantPersonID, short LicenseClassID)
-        {
-            SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
-            string Query = @"SELECT 
-                            CheckAppStatus= 1 from Applications join LocalDrivingLicenseApplications 
-                            On 
-                            Applications.ApplicationID = LocalDrivingLicenseApplications.ApplicationID
-                            Where 
-                            ApplicantPersonID = @PersonID AND LocalDrivingLicenseApplications.LicenseClassID = @LicenseClassID AND Applications.ApplicationStatus =1 ;";
-
-            SqlCommand cmd = new SqlCommand(Query, connection);
-            cmd.Parameters.AddWithValue("@PersonID", ApplicantPersonID);
-            cmd.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
-
-            bool NewState=false;
-            try
-            {
-                connection.Open();
-                SqlDataReader Reader = cmd.ExecuteReader();
-                if (Reader.HasRows) NewState = true;
-
-            }catch(Exception ex)
-            {
-
-            }
-            finally
-            {
-                connection.Close();
-            }
-
-            return NewState;
-        }
+       
 
         public static byte GetPassedTestCount(int LDL_AppID)
         {
@@ -194,6 +163,33 @@ namespace DVLD_DataAccessLayer.Applications
             }
             return TestsCount;
         }
+
+        public static bool Delete(int LocalDrivinglicenseID)
+        {
+            SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
+            string Query = @" Delete LocalDrivingLicenseApplications WHERE LocalDrivingLicenseApplicationID= @LocalDrivinglicenseID";
+
+            SqlCommand cmd = new SqlCommand(Query, connection);
+            cmd.Parameters.AddWithValue("@LocalDrivinglicenseID", LocalDrivinglicenseID);
+
+            int rowsAffected = 0;
+            try
+            {
+                connection.Open();
+                rowsAffected = cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("----------------------------DB Error: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return (rowsAffected > 0);
+        }
+
 
     }
 }

@@ -66,9 +66,9 @@ namespace DVLD_Project.Applications.User_Controls
 
             }
         }
-        public void __DisplayApplicationInfo(int AppID)
+        public void __DisplayApplicationInfo(int MainApplicationID)
         {
-            _AppID = AppID;
+            _AppID = MainApplicationID;
             _ShowAppDetails();
         }
 

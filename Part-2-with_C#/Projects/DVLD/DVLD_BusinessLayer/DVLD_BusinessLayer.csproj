@@ -45,8 +45,10 @@
     <Compile Include="Applications\clsLocalDrivingLicense.cs" />
     <Compile Include="Applications\clsMainApplication.cs" />
     <Compile Include="clsCountries.cs" />
-    <Compile Include="clsLicenseClasses.cs" />
+    <Compile Include="clsDrivers.cs" />
+    <Compile Include="Licenses\clsLicenseClasses.cs" />
     <Compile Include="clsPeople.cs" />
+    <Compile Include="Licenses\clsLicenses.cs" />
     <Compile Include="Tests\clsTestAppointments.cs" />
     <Compile Include="Tests\clsTests.cs" />
     <Compile Include="Tests\clsTestTypes.cs" />

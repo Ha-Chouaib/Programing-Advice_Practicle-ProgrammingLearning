@@ -137,7 +137,7 @@ namespace DVLD_DataAccessLayer.Applications
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine("-------------------------DB Error: "+ex.Message);
             }
             finally
             {
@@ -169,6 +169,43 @@ namespace DVLD_DataAccessLayer.Applications
                 connection.Close();
             }
             return DT;
+        }
+        public static bool CheckApplicationStatus(int ApplicantPersonID, int LicenseClassID, byte IsInSatus)
+        {
+            SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
+           
+            string Query = @"SELECT 
+                            CheckAppStatus= 1 from Applications join LocalDrivingLicenseApplications 
+                            On 
+                            Applications.ApplicationID = LocalDrivingLicenseApplications.ApplicationID
+                            Where 
+                            ApplicantPersonID = @PersonID AND 
+                            LocalDrivingLicenseApplications.LicenseClassID = @LicenseClassID AND 
+                            Applications.ApplicationStatus = @Status ;";
+
+            SqlCommand cmd = new SqlCommand(Query, connection);
+            cmd.Parameters.AddWithValue("@PersonID", ApplicantPersonID);
+            cmd.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+            cmd.Parameters.AddWithValue("@Status", IsInSatus);
+
+            bool AppState = false;
+            try
+            {
+                connection.Open();
+                SqlDataReader Reader = cmd.ExecuteReader();
+                if (Reader.HasRows) AppState = true;
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return AppState;
         }
     }
 }

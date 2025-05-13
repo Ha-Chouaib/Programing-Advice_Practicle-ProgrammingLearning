@@ -24,9 +24,9 @@ namespace DVLD_Project.Applications.User_Controls
             
         }
 
-        public void __DisplayLDL_AppInfo(int LDL_AppID)
+        public void __DisplayLDL_AppInfo(int LocalDrivingLicense_AppID)
         {
-            _LDL_AppID = LDL_AppID;
+            _LDL_AppID = LocalDrivingLicense_AppID;
             _ShowInfo();
         } 
         private void _ShowInfo()
