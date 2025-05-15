@@ -84,7 +84,34 @@ namespace DVLD_BusinessLayer.Licenses
             
 
         }
-        
+
+        public static clsLicenses Find_ByApplicationID(int ApplicationID)
+        {
+            int LicenseID = -1;
+            int DriverID = -1;
+            int LicenseClassID = -1;
+            DateTime IssueDate = DateTime.Now;
+            DateTime ExpirationDate = DateTime.Now;
+            string Notes = "";
+            float PaidFees = 0;
+            bool IsActive = false;
+            byte IssueReason = 0;
+            int CreatedByUserID = -1;
+
+            if (clsLicensesDataAccess.Find_ByApplicationID(ApplicationID, ref LicenseID, ref DriverID, ref LicenseClassID, ref IssueDate,
+                               ref ExpirationDate, ref Notes, ref PaidFees, ref IsActive, ref IssueReason, ref CreatedByUserID))
+            {
+                return new clsLicenses(LicenseID, ApplicationID, DriverID, LicenseClassID, IssueDate,
+                                 ExpirationDate, Notes, PaidFees, IsActive, IssueReason, CreatedByUserID);
+            }
+            else
+                return null;
+
+
+
+
+        }
+
         private bool _AddNewLicense()
         {
             this.LicenseID = clsLicensesDataAccess.AddNewLicense(this.ApplicationID, this.DriverID, this.LicenseClassID, this.IssueDate,
@@ -125,6 +152,14 @@ namespace DVLD_BusinessLayer.Licenses
         public static DataTable ListLicenses()
         {
             return clsLicensesDataAccess.ListLicenses();
+        }
+        public static DataTable List_LocalLicense_History(int DriverID)
+        {
+            return clsLicensesDataAccess.ListLocalLicenses_DriverHistory(DriverID);
+        }
+        public static DataTable List_InternationalLicenses_History(int DriverID)
+        {
+            return clsLicensesDataAccess.ListInternationalLicenses_History(DriverID);
         }
 
     }

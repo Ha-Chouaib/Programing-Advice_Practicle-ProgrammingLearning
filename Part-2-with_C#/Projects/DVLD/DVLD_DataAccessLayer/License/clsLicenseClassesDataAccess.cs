@@ -9,7 +9,7 @@ namespace DVLD_DataAccessLayer
 {
     public class clsLicenseClassesDataAccess
     {
-        public static bool Find(short LicenseCalassID,ref string ClassName,ref string LicenseDescription,
+        public static bool Find(int LicenseCalassID,ref string ClassName,ref string LicenseDescription,
             ref byte MinAllowedAge,ref byte DefaultValidityLength,ref float ClassFees )
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
@@ -29,8 +29,8 @@ namespace DVLD_DataAccessLayer
                     Found = true;
                     ClassName = (string)Reader["ClassName"];
                     LicenseDescription = (string)Reader["ClassDescription"];
-                    MinAllowedAge = (byte)Reader["MinimumAllowedAge"];
-                    DefaultValidityLength = (byte)Reader["DefaultValidityLength"];
+                    MinAllowedAge =Convert.ToByte( Reader["MinimumAllowedAge"] );
+                    DefaultValidityLength = Convert.ToByte( Reader["DefaultValidityLength"] );
                     ClassFees = (float)(decimal)Reader["ClassFees"];
                 }
                 
@@ -45,7 +45,7 @@ namespace DVLD_DataAccessLayer
             return Found;
         }
 
-        public static bool Find(string ClassName,ref short LicenseCalassID, ref string LicenseDescription,
+        public static bool Find(string ClassName,ref int LicenseCalassID, ref string LicenseDescription,
            ref byte MinAllowedAge, ref byte DefaultValidityLength, ref float ClassFees)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
@@ -63,10 +63,10 @@ namespace DVLD_DataAccessLayer
                 if (Reader.Read())
                 {
                     Found = true;
-                    LicenseCalassID = (short)Reader["LicenseClassID"];
+                    LicenseCalassID = (int)Reader["LicenseClassID"];
                     LicenseDescription = (string)Reader["ClassDescription"];
-                    MinAllowedAge = (byte)Reader["MinimumAllowedAge"];
-                    DefaultValidityLength = (byte)Reader["DefaultValidityLength"];
+                    MinAllowedAge =Convert.ToByte( Reader["MinimumAllowedAge"]);
+                    DefaultValidityLength = Convert.ToByte(Reader["DefaultValidityLength"]);
                     ClassFees = (float)(decimal)Reader["ClassFees"];
                 }
 

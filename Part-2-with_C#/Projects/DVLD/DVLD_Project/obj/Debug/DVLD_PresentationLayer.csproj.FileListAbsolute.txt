@@ -40,3 +40,7 @@ C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part
 C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.pdb
 C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.License.frmIssueDrivingLicense_1rstTime.resources
 C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.Applications.frmDisplayApplicationDetails.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.License.frmLicenseInfo.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.License.UserControls.ctrlDisplayDriverLicenseInfo.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.License.UserControls.ctrlDriverLicensesHistory.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\DVLD\DVLD_Project\obj\Debug\DVLD_Project.License.frmShowDriverLicensesHistory.resources

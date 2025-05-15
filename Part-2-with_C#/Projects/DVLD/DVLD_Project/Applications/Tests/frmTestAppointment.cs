@@ -22,7 +22,6 @@ namespace DVLD_Project.Applications.Tests
 
         int _LDL_AppID = -1;
         int _TestTypeID = -1;
-        Image _HeaderPicture;
 
         public delegate void TriggerFunctionEventHandler(object sender);
         public event TriggerFunctionEventHandler __ReLoadList;
@@ -42,7 +41,6 @@ namespace DVLD_Project.Applications.Tests
         private void _DisplayLocalAppInfo()
         {
             lblTestApointmentName.Text = clsTestTypes.Find(_TestTypeID).TestTitle+" Appointment";
-            pbTestAppointment.Image = _HeaderPicture;
             ctrlDisplayApplicationLicenseInfo1.__DisplayLDL_AppInfo(_LDL_AppID);
             ctrlDisplayApplicationInfo1.__DisplayApplicationInfo(clsLocalDrivingLicense.Find(_LDL_AppID).MainApplicationID);
         }
