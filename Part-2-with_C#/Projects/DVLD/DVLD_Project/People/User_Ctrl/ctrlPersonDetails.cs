@@ -30,7 +30,7 @@ namespace DVLD_Project
             if(Person != null)
             {
                 __PersonID = PersonID;
-                lblPersonID.Text = __PersonID.ToString();
+                lblPersonID.Text ="[ "+ __PersonID.ToString()+" ]";
                 string FullName = Person.FirstName + " " + Person.SecondName + " " + Person.ThirdName + " " + Person.LastName;
                 lblName.Text = FullName;
                 lblNationalNo.Text = Person.NationalNo;

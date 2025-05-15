@@ -9,14 +9,14 @@ namespace DVLD_BusinessLayer
 {
     public class clsLicenseClasses
     {
-        public short LicenseClassID { get; set; }
+        public int LicenseClassID { get; set; }
         public string LicenseClassName { get; set; }
         public string LicenseDescription { get; set; }
         public byte MinAllowedAge { get; set; }
         public byte DefaultValidityLength { get; set; }
         public float LicenseFees { get; set; }
 
-        public clsLicenseClasses(short LicenseClassID, string LicenseClassName, string LicenseDescription, byte MinAllowedAge, byte DefaultValidityLength, float LicenseFees)
+        public clsLicenseClasses(int LicenseClassID, string LicenseClassName, string LicenseDescription, byte MinAllowedAge, byte DefaultValidityLength, float LicenseFees)
         {
             this.LicenseClassID = LicenseClassID;
             this.LicenseClassName = LicenseClassName;
@@ -26,7 +26,7 @@ namespace DVLD_BusinessLayer
             this.LicenseFees = LicenseFees;
         } 
 
-        public static clsLicenseClasses Find(short LicenseClassID)
+        public static clsLicenseClasses Find(int LicenseClassID)
         {
             string LicenseClassName = "", LicenseDescription = "";
             byte MinAllowedAge = 0, DefaultValidityLength = 0;
@@ -42,7 +42,7 @@ namespace DVLD_BusinessLayer
         public static clsLicenseClasses Find(string LicenseClassName)
         {
             string  LicenseDescription = "";
-            short LicenseClassID = -1;
+            int LicenseClassID = -1;
             byte MinAllowedAge = 0, DefaultValidityLength = 0;
             float LicenseFees = 0;
             if (clsLicenseClassesDataAccess.Find(LicenseClassName,ref LicenseClassID, ref LicenseDescription, ref MinAllowedAge, ref DefaultValidityLength, ref LicenseFees))

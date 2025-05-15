@@ -28,8 +28,11 @@ namespace DVLD_DataAccessLayer.License
 
                     ApplicationID   = (int)Reader["ApplicationID"];
                     DriverID        = (int)Reader["DriverID"];
+                    LicenseClassID    = (int)Reader["LicenseClass"];
+                    IssueReason    = Convert.ToByte(Reader["IssueReason"]);
                     IssueDate       = (DateTime)Reader["IssueDate"];
                     ExpirationDate  = (DateTime)Reader["ExpirationDate"];
+
 
                     if(Reader["Notes"] == DBNull.Value)
                         Notes = "";
@@ -41,6 +44,51 @@ namespace DVLD_DataAccessLayer.License
                     CreatedByUserID = (int)Reader["CreatedByUserID"];
                 }
             }catch(Exception ex)
+            {
+                Console.WriteLine("------------------ DB Error " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return IsFound;
+        }
+
+        public static bool Find_ByApplicationID(int ApplicationID, ref int LicenseID, ref int DriverID, ref int LicenseClassID, ref DateTime IssueDate,
+                                ref DateTime ExpirationDate, ref string Notes, ref float PaidFees, ref bool IsActive, ref byte IssueReason, ref int CreatedByUserID)
+        {
+            SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
+            string Query = @"SELECT * From Licenses WHERE ApplicationID = @ApplicationID";
+
+            SqlCommand cmd = new SqlCommand(Query, connection);
+            cmd.Parameters.AddWithValue("@ApplicationID", ApplicationID);
+            bool IsFound = false;
+            try
+            {
+                connection.Open();
+                SqlDataReader Reader = cmd.ExecuteReader();
+                if (Reader.Read())
+                {
+                    IsFound = true;
+
+                    LicenseID = (int)Reader["LicenseID"];
+                    DriverID = (int)Reader["DriverID"];
+                    LicenseClassID    = (int)Reader["LicensClass"];
+                    IssueDate = (DateTime)Reader["IssueDate"];
+                    ExpirationDate = (DateTime)Reader["ExpirationDate"];
+
+                    if (Reader["Notes"] == DBNull.Value)
+                        Notes = "";
+                    else
+                        Notes = (string)Reader["Notes"];
+
+                    IssueReason    = Convert.ToByte(Reader["IssueReason"]);
+                    PaidFees = (float)(decimal)Reader["PaidFees"];
+                    IsActive = (bool)Reader["IsActive"];
+                    CreatedByUserID = (int)Reader["CreatedByUserID"];
+                }
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine("------------------ DB Error " + ex.Message);
             }
@@ -67,7 +115,11 @@ namespace DVLD_DataAccessLayer.License
             cmd.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
             cmd.Parameters.AddWithValue("@IssueDate", IssueDate);
             cmd.Parameters.AddWithValue("@ExpirationDate", ExpirationDate);
-            cmd.Parameters.AddWithValue("@Notes", Notes);
+            if(Notes == string.Empty)
+                cmd.Parameters.AddWithValue("@Notes", DBNull.Value);
+            else
+                cmd.Parameters.AddWithValue("@Notes", Notes);
+
             cmd.Parameters.AddWithValue("@PaidFees", PaidFees);
             cmd.Parameters.AddWithValue("@IsActive", IsActive);
             cmd.Parameters.AddWithValue("@IssueReason", IssueReason);
@@ -180,6 +232,68 @@ namespace DVLD_DataAccessLayer.License
             return DT;
         }
 
+        public static DataTable ListLocalLicenses_DriverHistory(int DriverID)
+        {
+            SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
+            string Query = @"
+                            SELECT LicenseID,ApplicationID, 
+		                    (Select LicenseClasses.ClassName from LicenseClasses Where LicenseClassID = Licenses.LicenseClass) As ClassName,
+		                    IssueDate,ExpirationDate,IsActive FROM Licenses
+		                    WHERE DriverID = @DriverID ;";
+
+            SqlCommand cmd = new SqlCommand(Query, connection);
+            cmd.Parameters.AddWithValue("@DriverID", DriverID);
+
+            DataTable DT = new DataTable();
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                DT.Load(reader);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return DT;
+        }
+
+        public static DataTable ListInternationalLicenses_History(int DriverID)
+        {
+            SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
+            string Query = @"SELECT InternationalLicenseID, ApplicationID, 
+                                    (SELECT LocalDrivingLicenseApplicationID from LocalDrivingLicenseApplications
+                                            Where ApplicationID = InternationalLicenses.ApplicationID) As LocalLicenseID,
+		                            IssueDate,ExpirationDate,IsActive 
+                            FROM InternationalLicenses
+		                    WHERE DriverID = @DriverID;";
+
+            SqlCommand cmd = new SqlCommand(Query, connection);
+            cmd.Parameters.AddWithValue("@DriverID", DriverID);
+
+            DataTable DT = new DataTable();
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                DT.Load(reader);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return DT;
+        }
 
 
     }

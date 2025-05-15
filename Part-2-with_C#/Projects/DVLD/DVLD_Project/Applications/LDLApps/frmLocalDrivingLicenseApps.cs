@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DVLD_BusinessLayer.Applications;
+using DVLD_BusinessLayer.Licenses;
 using DVLD_Project.Applications.LDLApps;
 using DVLD_Project.Applications.Tests;
 using DVLD_Project.License;
@@ -312,16 +313,22 @@ namespace DVLD_Project.Applications
             IssueNewLicense.__ReloadContent += _ReLoadLocalAppList;
             IssueNewLicense.ShowDialog();
         }
-
-        private void tsmShowPersonLicenseHistory_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void tsmShowLicense_Click(object sender, EventArgs e)
         {
+            int LDL_AppID = (int)dgvLDL_AppsList.CurrentRow.Cells[0].Value;
+            int LicenseID = clsLicenses.Find_ByApplicationID(clsLocalDrivingLicense.Find(LDL_AppID).MainApplicationID).LicenseID;
 
+            frmLicenseInfo DisplayDruverLicenseInfo = new frmLicenseInfo(LicenseID);
+            DisplayDruverLicenseInfo.ShowDialog();
         }
+        private void tsmShowPersonLicenseHistory_Click(object sender, EventArgs e)
+        {
+            int LDL_AppID = (int)dgvLDL_AppsList.CurrentRow.Cells[0].Value;
+            int PersonID = clsMainApplication.Find(clsLocalDrivingLicense.Find(LDL_AppID).MainApplicationID).ApplicantPersonID;
+            frmShowDriverLicensesHistory DriverLicensesHist = new frmShowDriverLicensesHistory(PersonID);
+            DriverLicensesHist.ShowDialog();
+        }
+
         private void cmsLDL_Apps_Opening(object sender, CancelEventArgs e)
         {
             tsmCancelApplication.Enabled = true;

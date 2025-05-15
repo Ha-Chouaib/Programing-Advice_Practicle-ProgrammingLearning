@@ -131,6 +131,30 @@
     <Compile Include="License\frmIssueDrivingLicense_1rstTime.Designer.cs">
       <DependentUpon>frmIssueDrivingLicense_1rstTime.cs</DependentUpon>
     </Compile>
+    <Compile Include="License\frmLicenseInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="License\frmLicenseInfo.Designer.cs">
+      <DependentUpon>frmLicenseInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="License\frmShowDriverLicensesHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="License\frmShowDriverLicensesHistory.Designer.cs">
+      <DependentUpon>frmShowDriverLicensesHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="License\UserControls\ctrlDisplayDriverLicenseInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="License\UserControls\ctrlDisplayDriverLicenseInfo.Designer.cs">
+      <DependentUpon>ctrlDisplayDriverLicenseInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="License\UserControls\ctrlDriverLicensesHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="License\UserControls\ctrlDriverLicensesHistory.Designer.cs">
+      <DependentUpon>ctrlDriverLicensesHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="People\User_Ctrl\ctrlAdd-Edit_PersonIfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -258,6 +282,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="License\frmIssueDrivingLicense_1rstTime.resx">
       <DependentUpon>frmIssueDrivingLicense_1rstTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\frmLicenseInfo.resx">
+      <DependentUpon>frmLicenseInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\frmShowDriverLicensesHistory.resx">
+      <DependentUpon>frmShowDriverLicensesHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\UserControls\ctrlDisplayDriverLicenseInfo.resx">
+      <DependentUpon>ctrlDisplayDriverLicenseInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\UserControls\ctrlDriverLicensesHistory.resx">
+      <DependentUpon>ctrlDriverLicensesHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="People\User_Ctrl\ctrlAdd-Edit_PersonIfo.resx">
       <DependentUpon>ctrlAdd-Edit_PersonIfo.cs</DependentUpon>
