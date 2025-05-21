@@ -53,7 +53,7 @@ namespace DVLD_Project.License.UserControls
 
         private void _ListInternationalLicenses()
         {
-            DataTable DT = clsLicenses.List_InternationalLicenses_History(_DriverID);
+            DataTable DT = clsInternationalLicenses.List_InternationalLicenses_History(_DriverID);
 
             dgvIntreNationalLicenses.DataSource = DT;
 
@@ -75,6 +75,20 @@ namespace DVLD_Project.License.UserControls
             dgvIntreNationalLicenses.Columns.Insert(IsActiveColumnID, CheckBox_IsActive);
 
             lblRecords_Inter.Text = "[ "+dgvIntreNationalLicenses.RowCount.ToString()+" ]";
+        }
+
+        private void tsmShowLocalLicenseDetials_Click(object sender, EventArgs e)
+        {
+            int LocalLicenseID = (int)dgvLocalLicenses.CurrentRow.Cells[0].Value;
+            frmDisplayLocalLicenseInfo DisplayLocalLicenseInfo = new frmDisplayLocalLicenseInfo(LocalLicenseID);
+            DisplayLocalLicenseInfo.ShowDialog();
+        }
+
+        private void tsmShowInternationalLicense_Click(object sender, EventArgs e)
+        {
+            int InternationalLicenseID = (int)dgvLocalLicenses.CurrentRow.Cells[0].Value;
+            frmDisplayInternationalLicenseInfo DisplayInternationalInfo = new frmDisplayInternationalLicenseInfo(InternationalLicenseID);
+            DisplayInternationalInfo.ShowDialog();
         }
     }
 }

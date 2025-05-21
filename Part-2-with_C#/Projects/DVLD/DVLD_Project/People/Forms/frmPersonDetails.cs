@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DVLD_BusinessLayer;
 
 namespace DVLD_Project
 {
@@ -21,6 +22,11 @@ namespace DVLD_Project
         {
             InitializeComponent();
             _PersonID = PersonID;
+        }
+        public frmPersonDetails(string NationalNo)
+        {
+            InitializeComponent();
+            _PersonID = clsPeople.Find(NationalNo).PersonID;
         }
         private void frmPersonDetails_Load(object sender, EventArgs e)
         {

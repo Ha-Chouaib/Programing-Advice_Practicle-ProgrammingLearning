@@ -47,7 +47,7 @@ namespace DVLD_DataAccessLayer
         public static int AddNewDriver(int PersonID, int CreatedByUserID, DateTime CreatedDate)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
-            string Query = @"Insert INto Licenses (PersonID,CreatedByUserID, CreatedDate )
+            string Query = @"Insert INto Drivers (PersonID,CreatedByUserID, CreatedDate )
                                          Values
                                             (@PersonID, @CreatedByUserID, @CreatedDate );
                             SELECT SCOPE_IDENTITY();";
@@ -66,7 +66,10 @@ namespace DVLD_DataAccessLayer
                 if (result != null && int.TryParse(result.ToString(), out int ID)) DriverID = ID;
 
             }
-            catch (Exception ex) { }
+            catch (Exception ex) 
+            {
+                Console.WriteLine("----------------DB Error " + ex.Message);
+            }
             finally
             {
                 connection.Close();
@@ -151,8 +154,44 @@ namespace DVLD_DataAccessLayer
             }
             return DT;
         }
-        
-    
-    
+
+        public static DataTable FilterBy<T>(string FilterByColumn, T FilterTerm)
+        {
+            string[] AllowedColumn = new string[] { "DriverID", "PersonID", "FullName" };
+
+            SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
+
+            DataTable DT = new DataTable();
+            try
+            {
+
+
+                if (! AllowedColumn.Contains(FilterByColumn))
+                {
+                    throw new ArgumentException($"Invalide Column Name [{FilterByColumn}]!");
+                }
+
+                string Query = $"SELECT * From Drivers_View  Where {FilterByColumn} Like @Term;";
+
+                SqlCommand cmd = new SqlCommand(Query, connection);
+                cmd.Parameters.AddWithValue("@Term", "%" + FilterTerm + "%");
+                connection.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                DT.Load(reader);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return DT;
+        }
+
+
+
     }
 }

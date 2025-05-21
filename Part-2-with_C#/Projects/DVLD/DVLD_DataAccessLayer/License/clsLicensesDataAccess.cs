@@ -4,6 +4,7 @@ using System.Linq;
 using System.Data.SqlClient;
 using System.Data;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace DVLD_DataAccessLayer.License
 {
@@ -143,25 +144,16 @@ namespace DVLD_DataAccessLayer.License
             }
             return LicenseID;
         }
-        public static bool UpdateLicense(int LicenseID)
+        public static bool UpdateLicense(int LicenseID, bool IsActive)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
             string Query = @"Update Licenses SET
-                                                   ApplicationID    = @ApplicationID,
-                                                   DriverID         = @DriverID,
-                                                   LicenseClass     = @LicenseClassID,
-                                                   IssueDate        = @IssueDate,
-                                                   ExpirationDate   = @ExpirationDate,
-                                                   Notes            = @Notes,
-                                                   PaidFees         = @PaidFees,
-                                                   IsActive         = @IsActive,
-                                                   IssueReason      = @IssueReason,
-                                                   CreatedByUSerID  = @CreatedByUserID,
-                                                    WHERE LicenseID = @LicenseID";
+                                                   IsActive = @IsActive Where LicenseID= @LicenseID;";
 
             SqlCommand cmd = new SqlCommand(Query, connection);
 
             cmd.Parameters.AddWithValue("@LicenseID", LicenseID);
+            cmd.Parameters.AddWithValue("@IsActive", IsActive);
 
             int RowsAffected = 0;
             try
@@ -206,6 +198,33 @@ namespace DVLD_DataAccessLayer.License
             return (RowsAffected > 0);
         }
 
+        public static bool Exist(int LicenseID)
+        {
+            SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
+            string Query = @"Select Found=1 from Licenses Where LicenseID=@LicenseID ;";
+
+            SqlCommand cmd = new SqlCommand(Query, connection);
+            cmd.Parameters.AddWithValue("@LicenseID", LicenseID);
+
+            bool Found = false;
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows) Found = true;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return Found;
+        }
+
         public static DataTable ListLicenses()
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
@@ -239,7 +258,8 @@ namespace DVLD_DataAccessLayer.License
                             SELECT LicenseID,ApplicationID, 
 		                    (Select LicenseClasses.ClassName from LicenseClasses Where LicenseClassID = Licenses.LicenseClass) As ClassName,
 		                    IssueDate,ExpirationDate,IsActive FROM Licenses
-		                    WHERE DriverID = @DriverID ;";
+		                    WHERE DriverID = @DriverID 
+                            Order By IsActive Desc;";
 
             SqlCommand cmd = new SqlCommand(Query, connection);
             cmd.Parameters.AddWithValue("@DriverID", DriverID);
@@ -263,38 +283,7 @@ namespace DVLD_DataAccessLayer.License
             return DT;
         }
 
-        public static DataTable ListInternationalLicenses_History(int DriverID)
-        {
-            SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
-            string Query = @"SELECT InternationalLicenseID, ApplicationID, 
-                                    (SELECT LocalDrivingLicenseApplicationID from LocalDrivingLicenseApplications
-                                            Where ApplicationID = InternationalLicenses.ApplicationID) As LocalLicenseID,
-		                            IssueDate,ExpirationDate,IsActive 
-                            FROM InternationalLicenses
-		                    WHERE DriverID = @DriverID;";
-
-            SqlCommand cmd = new SqlCommand(Query, connection);
-            cmd.Parameters.AddWithValue("@DriverID", DriverID);
-
-            DataTable DT = new DataTable();
-            try
-            {
-                connection.Open();
-
-                SqlDataReader reader = cmd.ExecuteReader();
-                DT.Load(reader);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
-            }
-            finally
-            {
-                connection.Close();
-            }
-            return DT;
-        }
-
+       
 
     }
 }

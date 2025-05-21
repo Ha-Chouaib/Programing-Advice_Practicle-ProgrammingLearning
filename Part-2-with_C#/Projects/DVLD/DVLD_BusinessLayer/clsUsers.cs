@@ -18,7 +18,6 @@ namespace DVLD_BusinessLayer
 
         enum enMode { eAddNew,eUpdate}
         enMode _Mode;
-        clsPeople Person;
         public clsUsers(int UserID,int PersonID,string UserName, string Password,bool IsActive)
         {
             this.UserID = UserID;

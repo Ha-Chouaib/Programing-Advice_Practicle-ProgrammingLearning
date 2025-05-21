@@ -50,9 +50,9 @@ namespace DVLD_Project
             cmbCountry.SelectedIndex = 119;
             dtDateOfBirth.MaxDate = DateTime.Now.AddYears(-18);
         }
-        public void __ApplyMode(int PersonID)
+        public void __ApplyMode(bool IsAddNewMode ,int PersonID= -1)
         {
-            if (clsPeople.IsExist(PersonID))
+            if (!IsAddNewMode&& clsPeople.IsExist(PersonID))
             {
                 _Mode = enMode.eUpdate;
                 _PersonID = PersonID;
@@ -141,30 +141,54 @@ namespace DVLD_Project
         }
         private bool _AddNewPerson()
         {
+            if (clsPeople.IsExist(Person.PersonID))
+            {
+                MessageBox.Show($"This Person Is Already Exist You Can Not Add It Twice !","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return false;
+
+            }
             _FillPersonRecordWithNewInfo();
-            
-            return Person.Save();
+            if (!Person.Save())
+            {
+                MessageBox.Show($"Can't Add The New Person Record Properly !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+
+            }
+            return true;
         }
         private bool _SaveUpdates()
         {
+            if (!clsPeople.IsExist(Person.PersonID))
+            {
+                MessageBox.Show($"No Person Exist With ID: << {Person.PersonID} >> !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+
+            }
+
             if (Person != null)
                 _FillPersonRecordWithNewInfo();
 
-            return Person.Save();
+            if (!Person.Save())
+            {
+                MessageBox.Show($"Can't Add The New Person Record Properly !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+
+            }
+
+            return true;
         }
         private void AddOperation()
-        {   
-
+        {
+           
             if (_AddNewPerson())
             {
                 MessageBox.Show("Added Successfully");
                 _CopyPersonImgToFile();
                 __ReturnID?.Invoke(this, Person.PersonID);
+
+                _Mode = enMode.eUpdate;
             }
-            else
-            {
-                MessageBox.Show("Something Seems To have Gone wrong.Can't Add The New Record !");
-            }
+           
         }
         private void UpdateOperation()
         {
@@ -174,10 +198,7 @@ namespace DVLD_Project
                 MessageBox.Show("updated Successfully");
                 _CopyPersonImgToFile();
             }
-            else
-            {
-                MessageBox.Show("Something Seems To have Gone wrong. The Can't Update the Recodr !");
-            }
+           
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -334,7 +355,7 @@ namespace DVLD_Project
             {
                 string ImgExtension = Path.GetExtension(Person.ImagePath);
                                
-                if(!PersonImgGuid.ContainsKey(Person_ID_Guid.PersonID))
+                if(!PersonImgGuid.ContainsKey(Person.PersonID))
                 {
                     Person_ID_Guid.SetPersonImgGuid(Person.PersonID);
                     PersonImgGuid.Add(Person_ID_Guid.PersonID, Person_ID_Guid.ImgGuid);

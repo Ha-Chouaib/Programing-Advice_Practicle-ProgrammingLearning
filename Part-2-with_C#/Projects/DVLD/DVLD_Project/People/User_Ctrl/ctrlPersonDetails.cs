@@ -28,8 +28,11 @@ namespace DVLD_Project
         {
             Person = clsPeople.Find(PersonID);
             if(Person != null)
-            {
+            {   
+
                 __PersonID = PersonID;
+                lnkEditPersonInfo.Text = $"Edit {Person.FirstName}'s Info";
+
                 lblPersonID.Text ="[ "+ __PersonID.ToString()+" ]";
                 string FullName = Person.FirstName + " " + Person.SecondName + " " + Person.ThirdName + " " + Person.LastName;
                 lblName.Text = FullName;
@@ -61,23 +64,24 @@ namespace DVLD_Project
 
         }
 
-        private void btnEditPersonInfo_Click(object sender, EventArgs e)
+        private void lnkEditPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if(clsPeople.IsExist(__PersonID))
+            if (clsPeople.IsExist(__PersonID))
             {
                 frmAdd_Edit_People EditForm = new frmAdd_Edit_People(__PersonID);
                 EditForm.ReLoadData += ReloadInfo;
                 EditForm.ShowDialog();
-            }else
+            }
+            else
             {
                 MessageBox.Show($"No Person Exist With ID <<{__PersonID}>>");
             }
-
         }
         private void ReloadInfo(object sender)
         {
             __DisplayPersonInfo(__PersonID);
         }
+
        
     }
 }

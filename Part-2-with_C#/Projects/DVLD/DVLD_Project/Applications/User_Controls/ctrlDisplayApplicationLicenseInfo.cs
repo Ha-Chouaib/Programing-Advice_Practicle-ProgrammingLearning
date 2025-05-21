@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DVLD_BusinessLayer;
 using DVLD_BusinessLayer.Applications;
+using DVLD_Project.License;
 
 namespace DVLD_Project.Applications.User_Controls
 {
@@ -45,6 +46,9 @@ namespace DVLD_Project.Applications.User_Controls
         private void lnkShoeLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
+            frmLicenseClassDetails LicenseClassInfo = new frmLicenseClassDetails(clsLocalDrivingLicense.Find(_LDL_AppID).LicenseClassID);
+
+            LicenseClassInfo.ShowDialog();
         }
     }
 }

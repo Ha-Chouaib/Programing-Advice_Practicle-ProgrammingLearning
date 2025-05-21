@@ -90,6 +90,10 @@ namespace DVLD_BusinessLayer
         {
             return clsDriverDataAccess.ListDrivers();
         }
+        public static DataTable FilterBy<T>(string FilterByColumn, T FilterTerm)
+        {
+            return clsDriverDataAccess.FilterBy<T>(FilterByColumn,FilterTerm);
+        }
 
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabLocal = new System.Windows.Forms.TabPage();
@@ -35,17 +36,23 @@
             this.lblRecords_Loc = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvLocalLicenses = new System.Windows.Forms.DataGridView();
+            this.cmsLocalLicenseDetails = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmShowLocalLicenseDetials = new System.Windows.Forms.ToolStripMenuItem();
             this.tabIntrenational = new System.Windows.Forms.TabPage();
             this.lblRecords_Inter = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvIntreNationalLicenses = new System.Windows.Forms.DataGridView();
+            this.cmsInternationalLicenses = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmShowInternationalLicense = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabLocal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocalLicenses)).BeginInit();
+            this.cmsLocalLicenseDetails.SuspendLayout();
             this.tabIntrenational.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIntreNationalLicenses)).BeginInit();
+            this.cmsInternationalLicenses.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -126,11 +133,30 @@
             this.dgvLocalLicenses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLocalLicenses.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.dgvLocalLicenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLocalLicenses.ContextMenuStrip = this.cmsLocalLicenseDetails;
             this.dgvLocalLicenses.Location = new System.Drawing.Point(20, 44);
             this.dgvLocalLicenses.Name = "dgvLocalLicenses";
             this.dgvLocalLicenses.ReadOnly = true;
             this.dgvLocalLicenses.Size = new System.Drawing.Size(1124, 222);
             this.dgvLocalLicenses.TabIndex = 1;
+            // 
+            // cmsLocalLicenseDetails
+            // 
+            this.cmsLocalLicenseDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.cmsLocalLicenseDetails.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmsLocalLicenseDetails.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmShowLocalLicenseDetials});
+            this.cmsLocalLicenseDetails.Name = "cmsLocalLicenseDetails";
+            this.cmsLocalLicenseDetails.Size = new System.Drawing.Size(206, 30);
+            // 
+            // tsmShowLocalLicenseDetials
+            // 
+            this.tsmShowLocalLicenseDetials.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.tsmShowLocalLicenseDetials.Name = "tsmShowLocalLicenseDetials";
+            this.tsmShowLocalLicenseDetials.Padding = new System.Windows.Forms.Padding(0, 5, 0, 1);
+            this.tsmShowLocalLicenseDetials.Size = new System.Drawing.Size(205, 26);
+            this.tsmShowLocalLicenseDetials.Text = "Show License Details";
+            this.tsmShowLocalLicenseDetials.Click += new System.EventHandler(this.tsmShowLocalLicenseDetials_Click);
             // 
             // tabIntrenational
             // 
@@ -193,6 +219,24 @@
             this.dgvIntreNationalLicenses.Size = new System.Drawing.Size(1123, 222);
             this.dgvIntreNationalLicenses.TabIndex = 0;
             // 
+            // cmsInternationalLicenses
+            // 
+            this.cmsInternationalLicenses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.cmsInternationalLicenses.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmShowInternationalLicense});
+            this.cmsInternationalLicenses.Name = "cmsInternationalLicenses";
+            this.cmsInternationalLicenses.Size = new System.Drawing.Size(205, 52);
+            // 
+            // tsmShowInternationalLicense
+            // 
+            this.tsmShowInternationalLicense.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmShowInternationalLicense.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.tsmShowInternationalLicense.Name = "tsmShowInternationalLicense";
+            this.tsmShowInternationalLicense.Padding = new System.Windows.Forms.Padding(0, 5, 0, 1);
+            this.tsmShowInternationalLicense.Size = new System.Drawing.Size(204, 26);
+            this.tsmShowInternationalLicense.Text = "Show License Details";
+            this.tsmShowInternationalLicense.Click += new System.EventHandler(this.tsmShowInternationalLicense_Click);
+            // 
             // ctrlDriverLicensesHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -206,9 +250,11 @@
             this.tabLocal.ResumeLayout(false);
             this.tabLocal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocalLicenses)).EndInit();
+            this.cmsLocalLicenseDetails.ResumeLayout(false);
             this.tabIntrenational.ResumeLayout(false);
             this.tabIntrenational.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIntreNationalLicenses)).EndInit();
+            this.cmsInternationalLicenses.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -227,5 +273,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblRecords_Loc;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ContextMenuStrip cmsLocalLicenseDetails;
+        private System.Windows.Forms.ToolStripMenuItem tsmShowLocalLicenseDetials;
+        private System.Windows.Forms.ContextMenuStrip cmsInternationalLicenses;
+        private System.Windows.Forms.ToolStripMenuItem tsmShowInternationalLicense;
     }
 }
