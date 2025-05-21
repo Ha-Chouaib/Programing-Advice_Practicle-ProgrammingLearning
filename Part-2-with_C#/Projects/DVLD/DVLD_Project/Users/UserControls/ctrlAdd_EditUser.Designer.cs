@@ -43,7 +43,7 @@
             this.txtConfirmPass = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
-            this.ctrlFindPerson1 = new DVLD_Project.People.User_Ctrl.ctrlFindPerson();
+            this.ctrlFindPerson1 = new DVLD_Project.People.User_Ctrl.ctrlFindAndDisplayPersonDetails();
             this.tabAddEditUser.SuspendLayout();
             this.tabPersonInf.SuspendLayout();
             this.tabLoginInf.SuspendLayout();
@@ -285,6 +285,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox cbIsActive;
         private System.Windows.Forms.Button btnBack;
-        private People.User_Ctrl.ctrlFindPerson ctrlFindPerson1;
+        private People.User_Ctrl.ctrlFindAndDisplayPersonDetails ctrlFindPerson1;
     }
 }

@@ -120,7 +120,7 @@ namespace DVLD_BusinessLayer.Licenses
         }
         private bool _Update()
         {
-            return false;
+            return clsLicensesDataAccess.UpdateLicense(this.LicenseID,this.IsActive);
         }
 
         public bool Save()
@@ -149,6 +149,10 @@ namespace DVLD_BusinessLayer.Licenses
             return clsLicensesDataAccess.DeleteLicense(LicenseID);
         }
 
+        public static bool Exist(int LicenseID)
+        {
+            return clsLicensesDataAccess.Exist(LicenseID);
+        }
         public static DataTable ListLicenses()
         {
             return clsLicensesDataAccess.ListLicenses();
@@ -157,10 +161,7 @@ namespace DVLD_BusinessLayer.Licenses
         {
             return clsLicensesDataAccess.ListLocalLicenses_DriverHistory(DriverID);
         }
-        public static DataTable List_InternationalLicenses_History(int DriverID)
-        {
-            return clsLicensesDataAccess.ListInternationalLicenses_History(DriverID);
-        }
+       
 
     }
 }

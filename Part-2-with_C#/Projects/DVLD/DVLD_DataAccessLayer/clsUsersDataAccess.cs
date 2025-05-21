@@ -279,19 +279,20 @@ namespace DVLD_DataAccessLayer
         public static DataTable FilterBy<T>(string Column,T FilterTerm)
         {
             string[] AllowedColumn= new[] { "UserID","PersonID","UserName","IsActive"};
-            if(!AllowedColumn.Contains(Column))
-            {
-                throw new ArgumentException("Not Allowed Column! Invalid Column Name");
-            }
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
-            string Query = $"Select * From Users Where {Column} =@Term";
 
-            SqlCommand command = new SqlCommand(Query, connection);
-            command.Parameters.AddWithValue(@"Term", FilterTerm);
 
             DataTable DT = new DataTable();
             try
             {
+                if (!AllowedColumn.Contains(Column))
+                {
+                    throw new ArgumentException("Not Allowed Column! Invalid Column Name");
+                }
+                string Query = $"Select * From Users Where {Column} =@Term";
+
+                SqlCommand command = new SqlCommand(Query, connection);
+                command.Parameters.AddWithValue(@"Term", FilterTerm);
                 connection.Open();
                 SqlDataReader Reader = command.ExecuteReader();
                 DT.Load(Reader);

@@ -119,7 +119,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine("----------------------DB Error: " + ex.Message);
             }
             finally
             {
@@ -354,22 +354,22 @@ namespace DVLD_DataAccessLayer
         public static DataTable FilterPeople<T>(string Column, T FilterTerm)
         {
 
-            string[] AllowedColumns = new [] { "PersonID", "NationalityCountryID", "NationalNo","FirstName","SecondName","ThirdName","LastName","Gendor","Address","Email","Phone" };
-            if(! AllowedColumns.Contains(Column))
-            {
-                throw new ArgumentException("Invalid Column Name");
-            }
-
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
-
-            string Query = $"Select * From People Where {Column} Like @FilterTerm";
-
-            SqlCommand command = new SqlCommand(Query, connection);
-            command.Parameters.AddWithValue("@FilterTerm","%"+ FilterTerm +"%");
-
             DataTable DT = new DataTable();
             try
             {
+                string[] AllowedColumns = new[] { "PersonID", "NationalityCountryID", "NationalNo", "FirstName", "SecondName", "ThirdName", "LastName", "Gendor", "Address", "Email", "Phone" };
+                if (!AllowedColumns.Contains(Column))
+                {
+                    throw new ArgumentException("Invalid Column Name");
+                }
+
+
+                string Query = $"Select * From People Where {Column} Like @FilterTerm";
+
+                SqlCommand command = new SqlCommand(Query, connection);
+                command.Parameters.AddWithValue("@FilterTerm", "%" + FilterTerm + "%");
+
                 connection.Open();
                 SqlDataReader Reader = command.ExecuteReader();
                 DT.Load(Reader);

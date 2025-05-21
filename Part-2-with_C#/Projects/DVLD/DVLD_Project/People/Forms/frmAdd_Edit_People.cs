@@ -45,7 +45,7 @@ namespace DVLD_Project
             if (_Mode==enMode.eAddNew)
             {
                 lblHeader.Text = "Add New Person";
-                ctrlAdd_Edit_PersonIfo1.__ApplyMode(-1);
+                ctrlAdd_Edit_PersonIfo1.__ApplyMode(true);
                 ctrlAdd_Edit_PersonIfo1.__ReturnID += SetPersonIDToField;
 
 
@@ -53,7 +53,7 @@ namespace DVLD_Project
             else
             {
                 lblHeader.Text = "Edit Person";
-                ctrlAdd_Edit_PersonIfo1.__ApplyMode(_PersonID);
+                ctrlAdd_Edit_PersonIfo1.__ApplyMode(false,_PersonID);
                 lblPersonID.Text = _PersonID.ToString();
 
             }
@@ -66,7 +66,8 @@ namespace DVLD_Project
                 _PersonID = ID;
                 ReturnPersonID?.Invoke(this, _PersonID);
                 lblPersonID.Text = _PersonID.ToString();
-
+                lblHeader.Text = "Edit Person";
+                _Mode = enMode.eupdate;
             }
         }
         private void LeaveTheForm(object sender)
