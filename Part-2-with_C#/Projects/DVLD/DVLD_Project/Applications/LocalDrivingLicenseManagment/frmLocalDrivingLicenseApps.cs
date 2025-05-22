@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using DVLD_BusinessLayer.Licenses;
 using DVLD_Project.Applications.LDLApps;
 using DVLD_Project.Applications.Tests;
 using DVLD_Project.License;
+using DVLD_Project.Properties;
 
 namespace DVLD_Project.Applications
 {
@@ -176,7 +178,7 @@ namespace DVLD_Project.Applications
             }
             int PersonID = clsMainApplication.Find(LocalLicenseApp.MainApplicationID).ApplicantPersonID;
 
-            if (clsMainApplication.CheckApplicationStatus(PersonID, LocalLicenseApp.LicenseClassID,(int) clsGlobal.enApplicationStatus.Complete))
+            if (clsMainApplication.CheckApplicationStatus(PersonID, LocalLicenseApp.LicenseClassID,(int) clsGlobal.enApplicationStatus.Completed))
             {
                 tsmCancelApplication.Enabled = false;
                 tsmDeleteApplication.Enabled = false;
@@ -283,7 +285,8 @@ namespace DVLD_Project.Applications
         {
             int LDL_AppID = (int)dgvLDL_AppsList.CurrentRow.Cells[0].Value;
             int VisionTestID = 1;
-            frmTestAppointment VisionTest = new frmTestAppointment(LDL_AppID,VisionTestID);
+            Image VisionTestImg = Resources.VisionTest;
+            frmTestAppointment VisionTest = new frmTestAppointment(LDL_AppID,VisionTestID,VisionTestImg);
             VisionTest.__ReLoadList+=_ReLoadLocalAppList;
             VisionTest.ShowDialog();
         }
@@ -292,7 +295,9 @@ namespace DVLD_Project.Applications
         {
             int LDL_AppID = (int)dgvLDL_AppsList.CurrentRow.Cells[0].Value;
             int WrittenTestID = 2;
-            frmTestAppointment WrittenTest = new frmTestAppointment(LDL_AppID, WrittenTestID);
+            Image WrittenTestImg = Resources.WrittenTestImg;
+
+            frmTestAppointment WrittenTest = new frmTestAppointment(LDL_AppID, WrittenTestID,WrittenTestImg);
             WrittenTest.__ReLoadList += _ReLoadLocalAppList;
             WrittenTest.ShowDialog();
         }
@@ -301,7 +306,9 @@ namespace DVLD_Project.Applications
         {
             int LDL_AppID = (int)dgvLDL_AppsList.CurrentRow.Cells[0].Value;
             int StreetTestID = 3;
-            frmTestAppointment StreetTest = new frmTestAppointment(LDL_AppID, StreetTestID);
+            Image StreetTestImg = Resources.StreetTestImg;
+
+            frmTestAppointment StreetTest = new frmTestAppointment(LDL_AppID, StreetTestID,StreetTestImg);
             StreetTest.__ReLoadList += _ReLoadLocalAppList;
             StreetTest.ShowDialog();
         }

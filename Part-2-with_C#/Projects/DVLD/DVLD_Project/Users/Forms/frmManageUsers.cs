@@ -173,7 +173,7 @@ namespace DVLD_Project.Users
             dgvListUsers.Columns.Insert(ColIndex, CheckB_Col);
         }
 
-        private void btnAddNewUser_Click(object sender, EventArgs e)
+        private void pbAddNew_Click(object sender, EventArgs e)
         {
             frmAdd_EditUser AddNewUser = new frmAdd_EditUser();
             AddNewUser.RelaodContent += _RelaodUsersList;
@@ -194,7 +194,7 @@ namespace DVLD_Project.Users
 
         private void addNewUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            btnAddNewUser_Click(sender, e);
+            pbAddNew_Click(sender, e);
         }
 
         private void updateUserToolStripMenuItem_Click(object sender, EventArgs e)
@@ -247,11 +247,7 @@ namespace DVLD_Project.Users
             frmChangePassword ChangePass = new frmChangePassword(UserID);
             ChangePass.ShowDialog();
         }
-    
-    
-    
-    
-    
-    
+
+       
     }
 }

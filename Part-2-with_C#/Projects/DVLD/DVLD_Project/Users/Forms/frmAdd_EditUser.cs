@@ -49,7 +49,7 @@ namespace DVLD_Project.Users.Forms
         private void btnSave_Click(object sender, EventArgs e)
         {
             
-            if (MessageBox.Show("Sure To Complete The Operation", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Sure To Completed The Operation", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 bool IsUpdated=false;
                 if (_Mode == enMode.eAddNew)

@@ -41,7 +41,6 @@
             this.callUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sendSMSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sendEmailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnAddNewUser = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbFilterUsers = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,9 +49,11 @@
             this.txtFilterTerm = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbIsActiveOptions = new System.Windows.Forms.ComboBox();
+            this.pbAddNewUser = new System.Windows.Forms.PictureBox();
             this.pbManageUser = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListUsers)).BeginInit();
             this.cmsAddEditUserMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAddNewUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbManageUser)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +66,7 @@
             this.dgvListUsers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvListUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListUsers.ContextMenuStrip = this.cmsAddEditUserMenu;
-            this.dgvListUsers.Location = new System.Drawing.Point(26, 257);
+            this.dgvListUsers.Location = new System.Drawing.Point(25, 309);
             this.dgvListUsers.Name = "dgvListUsers";
             this.dgvListUsers.ReadOnly = true;
             this.dgvListUsers.Size = new System.Drawing.Size(1083, 371);
@@ -163,29 +164,14 @@
             this.sendEmailToolStripMenuItem.Text = "Send Email";
             this.sendEmailToolStripMenuItem.Click += new System.EventHandler(this.sendEmailToolStripMenuItem_Click);
             // 
-            // btnAddNewUser
-            // 
-            this.btnAddNewUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(35)))), ((int)(((byte)(205)))));
-            this.btnAddNewUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddNewUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddNewUser.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNewUser.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAddNewUser.Location = new System.Drawing.Point(1023, 206);
-            this.btnAddNewUser.Name = "btnAddNewUser";
-            this.btnAddNewUser.Size = new System.Drawing.Size(86, 30);
-            this.btnAddNewUser.TabIndex = 2;
-            this.btnAddNewUser.Text = "Add New +";
-            this.btnAddNewUser.UseVisualStyleBackColor = false;
-            this.btnAddNewUser.Click += new System.EventHandler(this.btnAddNewUser_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Trebuchet MS", 30.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(34)))), ((int)(((byte)(206)))));
-            this.label1.Location = new System.Drawing.Point(423, 137);
+            this.label1.Font = new System.Drawing.Font("Tahoma", 37.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label1.ForeColor = System.Drawing.SystemColors.Info;
+            this.label1.Location = new System.Drawing.Point(373, 188);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(288, 50);
+            this.label1.Size = new System.Drawing.Size(387, 62);
             this.label1.TabIndex = 2;
             this.label1.Text = "Manage Users";
             // 
@@ -197,7 +183,7 @@
             this.cmbFilterUsers.Font = new System.Drawing.Font("Trebuchet MS", 10.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.cmbFilterUsers.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.cmbFilterUsers.FormattingEnabled = true;
-            this.cmbFilterUsers.Location = new System.Drawing.Point(124, 211);
+            this.cmbFilterUsers.Location = new System.Drawing.Point(123, 263);
             this.cmbFilterUsers.Name = "cmbFilterUsers";
             this.cmbFilterUsers.Size = new System.Drawing.Size(192, 26);
             this.cmbFilterUsers.TabIndex = 1;
@@ -209,7 +195,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.label2.Font = new System.Drawing.Font("Trebuchet MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(23, 664);
+            this.label2.Location = new System.Drawing.Point(22, 716);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 22);
             this.label2.TabIndex = 4;
@@ -221,7 +207,7 @@
             this.lblRecord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.lblRecord.Font = new System.Drawing.Font("Trebuchet MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRecord.ForeColor = System.Drawing.Color.Cyan;
-            this.lblRecord.Location = new System.Drawing.Point(120, 664);
+            this.lblRecord.Location = new System.Drawing.Point(119, 716);
             this.lblRecord.Name = "lblRecord";
             this.lblRecord.Size = new System.Drawing.Size(19, 22);
             this.lblRecord.TabIndex = 5;
@@ -234,7 +220,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnClose.Location = new System.Drawing.Point(1034, 658);
+            this.btnClose.Location = new System.Drawing.Point(1033, 710);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 28);
             this.btnClose.TabIndex = 6;
@@ -246,7 +232,7 @@
             // 
             this.txtFilterTerm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.txtFilterTerm.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtFilterTerm.Location = new System.Drawing.Point(349, 211);
+            this.txtFilterTerm.Location = new System.Drawing.Point(348, 263);
             this.txtFilterTerm.Multiline = true;
             this.txtFilterTerm.Name = "txtFilterTerm";
             this.txtFilterTerm.Size = new System.Drawing.Size(192, 26);
@@ -260,7 +246,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.label3.Font = new System.Drawing.Font("Trebuchet MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Location = new System.Drawing.Point(23, 214);
+            this.label3.Location = new System.Drawing.Point(22, 266);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 22);
             this.label3.TabIndex = 8;
@@ -274,19 +260,33 @@
             this.cmbIsActiveOptions.Font = new System.Drawing.Font("Trebuchet MS", 10.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.cmbIsActiveOptions.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.cmbIsActiveOptions.FormattingEnabled = true;
-            this.cmbIsActiveOptions.Location = new System.Drawing.Point(349, 211);
+            this.cmbIsActiveOptions.Location = new System.Drawing.Point(348, 263);
             this.cmbIsActiveOptions.Name = "cmbIsActiveOptions";
             this.cmbIsActiveOptions.Size = new System.Drawing.Size(192, 26);
             this.cmbIsActiveOptions.TabIndex = 9;
             this.cmbIsActiveOptions.Visible = false;
             this.cmbIsActiveOptions.SelectedIndexChanged += new System.EventHandler(this.cmbIsActiveOptions_SelectedIndexChanged);
             // 
+            // pbAddNewUser
+            // 
+            this.pbAddNewUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbAddNewUser.Image = global::DVLD_Project.Properties.Resources.add__1_;
+            this.pbAddNewUser.Location = new System.Drawing.Point(1052, 249);
+            this.pbAddNewUser.Name = "pbAddNewUser";
+            this.pbAddNewUser.Size = new System.Drawing.Size(56, 40);
+            this.pbAddNewUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbAddNewUser.TabIndex = 10;
+            this.pbAddNewUser.TabStop = false;
+            this.pbAddNewUser.Click += new System.EventHandler(this.pbAddNew_Click);
+            // 
             // pbManageUser
             // 
-            this.pbManageUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.pbManageUser.Location = new System.Drawing.Point(480, 12);
+            this.pbManageUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pbManageUser.Image = global::DVLD_Project.Properties.Resources.ManageUsersImg;
+            this.pbManageUser.Location = new System.Drawing.Point(466, 12);
             this.pbManageUser.Name = "pbManageUser";
-            this.pbManageUser.Size = new System.Drawing.Size(175, 122);
+            this.pbManageUser.Size = new System.Drawing.Size(200, 160);
+            this.pbManageUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbManageUser.TabIndex = 3;
             this.pbManageUser.TabStop = false;
             // 
@@ -296,7 +296,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(1135, 701);
+            this.ClientSize = new System.Drawing.Size(1135, 756);
+            this.Controls.Add(this.pbAddNewUser);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblRecord);
@@ -304,7 +305,6 @@
             this.Controls.Add(this.cmbFilterUsers);
             this.Controls.Add(this.pbManageUser);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnAddNewUser);
             this.Controls.Add(this.dgvListUsers);
             this.Controls.Add(this.cmbIsActiveOptions);
             this.Controls.Add(this.txtFilterTerm);
@@ -313,6 +313,7 @@
             this.Load += new System.EventHandler(this.frmManageUsers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListUsers)).EndInit();
             this.cmsAddEditUserMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbAddNewUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbManageUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -322,7 +323,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvListUsers;
-        private System.Windows.Forms.Button btnAddNewUser;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pbManageUser;
         private System.Windows.Forms.ComboBox cmbFilterUsers;
@@ -343,5 +343,6 @@
         private System.Windows.Forms.ToolStripMenuItem sendSMSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sendEmailToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pbAddNewUser;
     }
 }

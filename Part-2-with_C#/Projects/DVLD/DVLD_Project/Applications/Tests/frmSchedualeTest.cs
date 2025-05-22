@@ -19,18 +19,20 @@ namespace DVLD_Project.Applications.Tests
         int _LDLApp_OR_Appointment_ID = -1;
         byte _Trials = 0;
         int _TestTypeID=-1;
+        Image TestImg;
         enum enMode { eAddNew, eUpdate }
         enMode _Mode;
         public frmSchedualeTest()
         {
             InitializeComponent();
         }
-        public frmSchedualeTest( int LDLApp_OR_Appointment_ID, byte Trials, bool isAddNewMode, int TestTypeID)
+        public frmSchedualeTest( int LDLApp_OR_Appointment_ID, byte Trials, bool isAddNewMode, int TestTypeID,Image TestImg)
         {
             InitializeComponent();
             this._LDLApp_OR_Appointment_ID = LDLApp_OR_Appointment_ID;
             this._Trials = Trials;
             this._TestTypeID = TestTypeID;
+            this.TestImg = TestImg;
             if (isAddNewMode)
             {
                 _Mode = enMode.eAddNew;
@@ -78,6 +80,7 @@ namespace DVLD_Project.Applications.Tests
         {
             if (_LDLApp_OR_Appointment_ID != -1)
             {
+                pbTestIMG.Image = TestImg;
                 gbSchedualeTestContainer.Text = clsTestTypes.Find(_TestTypeID).TestTitle;
                 gbRetakeTestInfo.Enabled = false;
                 _RetakeTestGroupBox_BackColorHandler(false);
@@ -139,21 +142,23 @@ namespace DVLD_Project.Applications.Tests
             NewAppointment.CreatedByUserID = (short)clsGlobal.CurrentUserID;
             if (_Trials > 0)
             {
+               
                 clsMainApplication RetakeTest_App = new clsMainApplication();
                 RetakeTest_App.CreatedByUserID = clsGlobal.CurrentUserID;
                 RetakeTest_App.ApplicantPersonID = Person.PersonID;
                 RetakeTest_App.AppDate = DateTime.Now;
-                RetakeTest_App.AppTypeID = 2;//2== Retake Test
-                RetakeTest_App.AppStatus = 3;//3 == Complete
+                RetakeTest_App.AppTypeID = (int)clsGlobal.enApplicationTypes_IDs.RetakeTest;
+                RetakeTest_App.AppStatus = (byte)clsGlobal.enApplicationStatus.Completed; 
                 RetakeTest_App.LastStatusDate = DateTime.Now;
-                RetakeTest_App.PaidFees = clsApplicationTypes.Find(2).AppFees;
+                RetakeTest_App.PaidFees = clsApplicationTypes.Find(RetakeTest_App.AppTypeID).AppFees;
                 if (!RetakeTest_App.Save())
                 {
                     MessageBox.Show("Error Cannot Save Retake Test Application !!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-                else
-                    lblR_TestAppID.Text = RetakeTest_App.AppID.ToString();
+                
+                lblR_TestAppID.Text = RetakeTest_App.AppID.ToString();
+                NewAppointment.RetakeTestApplicationID= RetakeTest_App.AppID;
             }
             return NewAppointment.Save();
         }
@@ -165,7 +170,7 @@ namespace DVLD_Project.Applications.Tests
         }
         private void _SaveSchedualedTestData()
         {
-            if (MessageBox.Show("Sure to Complete Test Schedualing Operation ?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Sure to Completed Test Schedualing Operation ?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
 
                 switch (_Mode)
@@ -216,6 +221,9 @@ namespace DVLD_Project.Applications.Tests
             this.Close();
         }
 
-        
+        private void gbSchedualeTestContainer_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

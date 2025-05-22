@@ -17,10 +17,11 @@ namespace DVLD_BusinessLayer.Tests
         public float PaidFees { get; set; }
         public int CreatedByUserID { get; set; }
         public bool IsLocked { get; set; }
-        enum enMode { eAddNew,eUpdate}
+        public int RetakeTestApplicationID { get; set; }
+        enum enMode { eAddNew,eUpdate }
         enMode _Mode;
 
-        public clsTestAppointments(int TestAppointmentID,int TestTypeID,int LDL_AppID, DateTime AppointmentDate, float PaidFees,int CreatedByUserID,bool IsLocked)
+        public clsTestAppointments(int TestAppointmentID,int TestTypeID,int LDL_AppID, DateTime AppointmentDate, float PaidFees,int CreatedByUserID,bool IsLocked,int RetakeTestApplicationID)
         {
             this.TestAppointmentID = TestAppointmentID;
             this.TestTypeID = TestTypeID;
@@ -29,6 +30,7 @@ namespace DVLD_BusinessLayer.Tests
             this.PaidFees = PaidFees;
             this.CreatedByUserID = CreatedByUserID;
             this.IsLocked = IsLocked;
+            this.RetakeTestApplicationID = RetakeTestApplicationID;
             _Mode = enMode.eUpdate;
         }
 
@@ -41,6 +43,7 @@ namespace DVLD_BusinessLayer.Tests
             this.PaidFees = 0;
             this.CreatedByUserID = -1;
             this.IsLocked = true;
+            this.RetakeTestApplicationID = RetakeTestApplicationID;
             _Mode = enMode.eAddNew;
         }
 
@@ -52,9 +55,10 @@ namespace DVLD_BusinessLayer.Tests
             float PaidFees = 0;
             int CreatedByUserID = -1;
             bool IsLocked = true;
+            int RetakeTestApplicationID = -1;
 
-            if (clsTestAppointmentDataAccess.Find(TestAppointmentID,ref TestTypeID,ref LDL_AppID,ref AppointmentDate,ref PaidFees,ref CreatedByUserID,ref IsLocked))
-                return new clsTestAppointments(TestAppointmentID, TestTypeID, LDL_AppID, AppointmentDate, PaidFees, CreatedByUserID, IsLocked);
+            if (clsTestAppointmentDataAccess.Find(TestAppointmentID,ref TestTypeID,ref LDL_AppID,ref AppointmentDate,ref PaidFees,ref CreatedByUserID,ref IsLocked,ref RetakeTestApplicationID))
+                return new clsTestAppointments(TestAppointmentID, TestTypeID, LDL_AppID, AppointmentDate, PaidFees, CreatedByUserID, IsLocked, RetakeTestApplicationID);
             else
                 return null;
         }
@@ -63,7 +67,7 @@ namespace DVLD_BusinessLayer.Tests
 
         bool _AddNewTestApp()
         {
-            this.TestAppointmentID = clsTestAppointmentDataAccess.AddNewAppointment(this.TestTypeID,this.LDL_AppID,this.AppointmentDate,this.PaidFees,this.CreatedByUserID,this.IsLocked);
+            this.TestAppointmentID = clsTestAppointmentDataAccess.AddNewAppointment(this.TestTypeID,this.LDL_AppID,this.AppointmentDate,this.PaidFees,this.CreatedByUserID,this.IsLocked,this.RetakeTestApplicationID);
             return (this.TestAppointmentID > 0);
         }
         bool _UpdateTestApp()

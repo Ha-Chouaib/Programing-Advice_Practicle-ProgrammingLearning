@@ -89,7 +89,7 @@ namespace DVLD_Project.License
                
                 NewInternationalLic_Application.AppDate = DateTime.Now;
                 NewInternationalLic_Application.ApplicantPersonID = clsMainApplication.Find(_License.ApplicationID).ApplicantPersonID;
-                NewInternationalLic_Application.AppStatus =(byte) clsGlobal.enApplicationStatus.Complete;
+                NewInternationalLic_Application.AppStatus =(byte) clsGlobal.enApplicationStatus.Completed;
                 NewInternationalLic_Application.AppTypeID = (int)clsGlobal.enApplicationTypes_IDs.NewInternationalLicense;
                 NewInternationalLic_Application.LastStatusDate = DateTime.Now;
                 NewInternationalLic_Application.CreatedByUserID = clsGlobal.CurrentUserID;
@@ -128,7 +128,7 @@ namespace DVLD_Project.License
         private void btnSave_Click(object sender, EventArgs e)
         {
            
-            if (MessageBox.Show("Sure To Complete The Operation ?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Sure To Completed The Operation ?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 if (_AddNewInternationalLicense())
                 {

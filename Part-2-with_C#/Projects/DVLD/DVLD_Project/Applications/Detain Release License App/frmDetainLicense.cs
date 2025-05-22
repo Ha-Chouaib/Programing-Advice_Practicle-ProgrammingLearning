@@ -107,7 +107,7 @@ namespace DVLD_Project.Applications.Detain_License_App
                 return;
             }
 
-            if(MessageBox.Show("Sure To Complete The Operation?","Confirm",MessageBoxButtons.YesNo,MessageBoxIcon.Question)== DialogResult.Yes)
+            if(MessageBox.Show("Sure To Completed The Operation?","Confirm",MessageBoxButtons.YesNo,MessageBoxIcon.Question)== DialogResult.Yes)
             {
                 if(_DetainLicens())
                 {

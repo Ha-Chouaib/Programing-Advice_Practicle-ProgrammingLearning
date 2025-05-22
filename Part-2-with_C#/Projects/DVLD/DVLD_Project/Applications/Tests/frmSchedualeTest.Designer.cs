@@ -30,7 +30,6 @@
         {
             this.gbSchedualeTestContainer = new System.Windows.Forms.GroupBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.pbTestIMG = new System.Windows.Forms.PictureBox();
             this.lblUpdateErrorMSG = new System.Windows.Forms.Label();
             this.gbRetakeTestInfo = new System.Windows.Forms.GroupBox();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -62,8 +61,8 @@
             this.lbl_Fees = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.pbTestIMG = new System.Windows.Forms.PictureBox();
             this.gbSchedualeTestContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTestIMG)).BeginInit();
             this.gbRetakeTestInfo.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -74,6 +73,7 @@
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTestIMG)).BeginInit();
             this.SuspendLayout();
             // 
             // gbSchedualeTestContainer
@@ -97,6 +97,7 @@
             this.gbSchedualeTestContainer.TabIndex = 0;
             this.gbSchedualeTestContainer.TabStop = false;
             this.gbSchedualeTestContainer.Text = "???";
+            this.gbSchedualeTestContainer.Enter += new System.EventHandler(this.gbSchedualeTestContainer_Enter);
             // 
             // btnSave
             // 
@@ -110,15 +111,6 @@
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // pbTestIMG
-            // 
-            this.pbTestIMG.Location = new System.Drawing.Point(296, 24);
-            this.pbTestIMG.Name = "pbTestIMG";
-            this.pbTestIMG.Size = new System.Drawing.Size(184, 135);
-            this.pbTestIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbTestIMG.TabIndex = 20;
-            this.pbTestIMG.TabStop = false;
             // 
             // lblUpdateErrorMSG
             // 
@@ -429,6 +421,15 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnCLose_Click);
             // 
+            // pbTestIMG
+            // 
+            this.pbTestIMG.Location = new System.Drawing.Point(296, 24);
+            this.pbTestIMG.Name = "pbTestIMG";
+            this.pbTestIMG.Size = new System.Drawing.Size(184, 135);
+            this.pbTestIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbTestIMG.TabIndex = 20;
+            this.pbTestIMG.TabStop = false;
+            // 
             // frmSchedualeTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -445,7 +446,6 @@
             this.Load += new System.EventHandler(this.frmSchedulingTest_Load);
             this.gbSchedualeTestContainer.ResumeLayout(false);
             this.gbSchedualeTestContainer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTestIMG)).EndInit();
             this.gbRetakeTestInfo.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
@@ -465,6 +465,7 @@
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTestIMG)).EndInit();
             this.ResumeLayout(false);
 
         }

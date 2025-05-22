@@ -78,7 +78,7 @@ namespace DVLD_Project.Applications.ReplaceLocalLicense_Damage_Lost
 
             _ReplaceLicenseApplication.AppDate = DateTime.Now;
             _ReplaceLicenseApplication.CreatedByUserID = clsGlobal.CurrentUserID;
-            _ReplaceLicenseApplication.AppStatus =(byte) clsGlobal.enApplicationStatus.Complete;
+            _ReplaceLicenseApplication.AppStatus =(byte) clsGlobal.enApplicationStatus.Completed;
             _ReplaceLicenseApplication.ApplicantPersonID = _OldApplication.ApplicantPersonID;
             _ReplaceLicenseApplication.LastStatusDate = DateTime.Now;
 
@@ -137,7 +137,7 @@ namespace DVLD_Project.Applications.ReplaceLocalLicense_Damage_Lost
 
         private void btnIssueReplace_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Sure To Complete The Operation ?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Sure To Completed The Operation ?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 if (_AddNewLicense())
                 {

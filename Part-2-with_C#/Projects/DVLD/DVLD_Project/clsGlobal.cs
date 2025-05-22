@@ -15,7 +15,7 @@ namespace DVLD_Project
         {
             New = 1,
             Canceled = 2,
-            Complete = 3,
+            Completed = 3,
         }
         public enum enIssueReason: byte
         {
@@ -33,6 +33,7 @@ namespace DVLD_Project
             ReplacementFor_DamagedDrivingLicense=4,
             ReleaseDetainedDrivingLicsense=5,
             NewInternationalLicense=6,
+            RetakeTest=8,
         }
         
         

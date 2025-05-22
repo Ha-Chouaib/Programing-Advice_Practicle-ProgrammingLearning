@@ -72,7 +72,7 @@ namespace DVLD_Project.Applications.Detain_Release_License_App
             _ReleaseLicense_Application.AppTypeID = (int)clsGlobal.enApplicationTypes_IDs.ReleaseDetainedDrivingLicsense;
             _ReleaseLicense_Application.ApplicantPersonID = clsMainApplication.Find(_License_To_Release.ApplicationID).ApplicantPersonID;
             _ReleaseLicense_Application.AppDate = DateTime.Now;
-            _ReleaseLicense_Application.AppStatus = (byte)clsGlobal.enApplicationStatus.Complete;
+            _ReleaseLicense_Application.AppStatus = (byte)clsGlobal.enApplicationStatus.Completed;
             _ReleaseLicense_Application.CreatedByUserID = clsGlobal.CurrentUserID;
             _ReleaseLicense_Application.LastStatusDate = DateTime.Now;
             _ReleaseLicense_Application.PaidFees = clsApplicationTypes.Find(_ReleaseLicense_Application.AppTypeID).AppFees;
@@ -138,7 +138,7 @@ namespace DVLD_Project.Applications.Detain_Release_License_App
         private void btnRelease_Click(object sender, EventArgs e)
         {
 
-            if (MessageBox.Show("Sure To Complete The Operation?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Sure To Completed The Operation?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 if (_ReleaseLicense())
                 {

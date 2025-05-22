@@ -489,6 +489,62 @@
   <ItemGroup>
     <None Include="Resources\user_female.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\ManageUsersImg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ManagePeopleImg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InternationalLicenseImg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ManageDriversImg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ApplicationTypesImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LocalDrivingLicenseImg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Test-AppointmentImg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StreetTestImg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VisionTest.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WrittenTestImg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TestTypeManagImg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Team.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Applications.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\driver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MainBackImg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DetainLicenseImg.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

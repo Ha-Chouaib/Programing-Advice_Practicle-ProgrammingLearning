@@ -9,7 +9,7 @@ namespace DVLD_DataAccessLayer.Tests
     public class clsTestAppointmentDataAccess
     {
         public static bool Find(int TestAppointmentID, ref int TestTypeID, ref int LocalDrivingLicenseApplicationID,ref DateTime AppointmentDate,
-                                ref float PaidFees, ref int CreatedByUserID, ref bool IsLocked)
+                                ref float PaidFees, ref int CreatedByUserID, ref bool IsLocked,ref int RetakeTestApplicationID)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
             string Query = @"SELECT * From TestAppointments Where TestAppointmentID = @TestAppID ";
@@ -32,6 +32,12 @@ namespace DVLD_DataAccessLayer.Tests
                     PaidFees = (float)(decimal)reader["PaidFees"];
                     CreatedByUserID = (int)reader["CreatedByUserID"];
                     IsLocked = (bool)reader["IsLocked"];
+
+                    if (reader["RetakeTestApplicationID"] == DBNull.Value)
+                        RetakeTestApplicationID =-1;
+                    else
+                        RetakeTestApplicationID = (int)reader["RetakeTestApplicationID"];
+
                 }
 
             }
@@ -44,12 +50,12 @@ namespace DVLD_DataAccessLayer.Tests
         }
 
         public static int AddNewAppointment(int TestTypeID, int LocalDrivingLicenseApplicationID, DateTime AppointmentDate,
-                                float PaidFees, int CreatedByUserID, bool IsLocked)
+                                float PaidFees, int CreatedByUserID, bool IsLocked,int RetakeTestApplicationID)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
-            string Query = @"Insert INto TestAppointments (TestTypeID,LocalDrivingLicenseApplicationID, AppointmentDate,PaidFees,CreatedByUserID,IsLocked )
+            string Query = @"Insert INto TestAppointments (TestTypeID,LocalDrivingLicenseApplicationID, AppointmentDate,PaidFees,CreatedByUserID,IsLocked,RetakeTestApplicationID )
                                          Values
-                                            (@TestTypeID, @LDL_AppID, @AppointmentDate, @PaidFees, @CreatedByUSerID, @IsLocked);
+                                            (@TestTypeID, @LDL_AppID, @AppointmentDate, @PaidFees, @CreatedByUSerID, @IsLocked,@RetakeTestApplicationID);
                             SELECT SCOPE_IDENTITY();";
 
             SqlCommand cmd = new SqlCommand(Query, connection);
@@ -60,6 +66,11 @@ namespace DVLD_DataAccessLayer.Tests
             cmd.Parameters.AddWithValue("@PaidFees", PaidFees);
             cmd.Parameters.AddWithValue("@CreatedByUSerID", CreatedByUserID);
             cmd.Parameters.AddWithValue("@IsLocked", IsLocked);
+
+            if(RetakeTestApplicationID == -1)
+                cmd.Parameters.AddWithValue("@RetakeTestApplicationID", DBNull.Value);
+            else
+                cmd.Parameters.AddWithValue("@RetakeTestApplicationID", RetakeTestApplicationID);
 
             int TestAppointmentID = -1;
             try
