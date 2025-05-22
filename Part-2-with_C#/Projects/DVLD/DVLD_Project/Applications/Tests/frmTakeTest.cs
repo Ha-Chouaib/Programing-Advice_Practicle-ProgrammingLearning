@@ -22,17 +22,19 @@ namespace DVLD_Project.Applications.Tests
 
         int _SchedualedTestAppID = -1;
         byte _Trials=0;
+        Image TestImg;
         clsTestAppointments TestAppointment;
 
         public delegate void TriggerFunctionEventHandler(object sender);
         public event TriggerFunctionEventHandler __ReloadList;
 
-        public frmTakeTest(int TestAppointmentID,byte Trials)
+        public frmTakeTest(int TestAppointmentID,byte Trials,Image TestImg)
         {
             InitializeComponent();
 
             _SchedualedTestAppID = TestAppointmentID;
             _Trials = Trials;
+            this.TestImg = TestImg;
         }
 
         private void frmTakeTest_Load(object sender, EventArgs e)
@@ -45,6 +47,7 @@ namespace DVLD_Project.Applications.Tests
         {
             if (_SchedualedTestAppID != -1)
             {
+                pbSchedualeImg.Image = TestImg;
                 TestAppointment = clsTestAppointments.Find(_SchedualedTestAppID);
 
                 clsLocalDrivingLicense LocalLicenseApp = clsLocalDrivingLicense.Find(TestAppointment.LDL_AppID);

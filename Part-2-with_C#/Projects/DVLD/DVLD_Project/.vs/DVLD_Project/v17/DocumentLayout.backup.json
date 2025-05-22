@@ -3,85 +3,108 @@
   "WorkspaceRootPath": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\applications\\localdrivinglicensemanagment\\frmaddnewlocaldrivinglicense_app.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\localdrivinglicensemanagment\\frmaddnewlocaldrivinglicense_app.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\drivers\\frmmanagedrivers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:drivers\\frmmanagedrivers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\applications\\localdrivinglicensemanagment\\frmaddnewlocaldrivinglicense_app.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\localdrivinglicensemanagment\\frmaddnewlocaldrivinglicense_app.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\drivers\\frmmanagedrivers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:drivers\\frmmanagedrivers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\license\\forms\\frmmanageinternationallicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:license\\forms\\frmmanageinternationallicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\license\\forms\\frmmanageinternationallicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:license\\forms\\frmmanageinternationallicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\applications\\detain release license app\\frmmanagedetainedlicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\detain release license app\\frmmanagedetainedlicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ABCB3993-3822-4C0E-A5A0-75F67FDE7598}|..\\DVLD_DataAccessLayer\\DVLD_DataAccessLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_dataaccesslayer\\license\\clsinternationallicensedataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\applications\\detain release license app\\frmmanagedetainedlicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\detain release license app\\frmmanagedetainedlicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\applications\\detain release license app\\frmdetainlicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\detain release license app\\frmdetainlicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\people\\forms\\frmpersondetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:people\\forms\\frmpersondetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\applications\\detain release license app\\frmreleasedetainedlicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\detain release license app\\frmreleasedetainedlicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ABCB3993-3822-4C0E-A5A0-75F67FDE7598}|..\\DVLD_DataAccessLayer\\DVLD_DataAccessLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_dataaccesslayer\\clsdetainlicensedataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\applications\\detain release license app\\frmreleasedetainedlicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\detain release license app\\frmreleasedetainedlicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\applications\\detain release license app\\frmdetainlicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\detain release license app\\frmdetainlicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\users\\forms\\frmmanageusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:users\\forms\\frmmanageusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FC20C891-3136-42F1-BDE3-BD963DB57C8B}|..\\DVLD_BusinessLayer\\DVLD_BusinessLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_businesslayer\\clsdetainlicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\applications\\localdrivinglicensemanagment\\frmlocaldrivinglicenseapps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\localdrivinglicensemanagment\\frmlocaldrivinglicenseapps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\license\\usercontrols\\ctrlfindanddisplaydriverlicense.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:license\\usercontrols\\ctrlfindanddisplaydriverlicense.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\applications\\applicationtypes\\frmmanageapplicationtypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\applicationtypes\\frmmanageapplicationtypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\users\\usercontrols\\ctrlfilterpeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:users\\usercontrols\\ctrlfilterpeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\applications\\localdrivinglicensemanagment\\frmlocaldrivinglicenseapps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\localdrivinglicensemanagment\\frmlocaldrivinglicenseapps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\clsglobal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:clsglobal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\people\\forms\\frmadd_edit_people.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:people\\forms\\frmadd_edit_people.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\people\\forms\\frmmanagepeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:people\\forms\\frmmanagepeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\applications\\frmdisplayapplicationdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\frmdisplayapplicationdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\drivers\\frmmanagedrivers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:drivers\\frmmanagedrivers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\license\\forms\\frmmanageinternationallicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:license\\forms\\frmmanageinternationallicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\users\\forms\\frmadd_edituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:users\\forms\\frmadd_edituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\people\\forms\\frmpersondetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:people\\forms\\frmpersondetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\users\\forms\\frmdisplayuserdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:users\\forms\\frmdisplayuserdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\applications\\testtypes\\frmmanagetesttypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\testtypes\\frmmanagetesttypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\applications\\tests\\frmtaketest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\tests\\frmtaketest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\applications\\tests\\frmtestappointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\tests\\frmtestappointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\applications\\tests\\frmschedualetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\tests\\frmschedualetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\applications\\tests\\frmschedualetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\tests\\frmschedualetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\applications\\tests\\frmtestappointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\tests\\frmtestappointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\applications\\replacelocallicense_damage_lost\\frmreplacelocallicense_application.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\replacelocallicense_damage_lost\\frmreplacelocallicense_application.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\applications\\renewlocaldrivinglicense_app\\frmrenewlocaldrivinglicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\renewlocaldrivinglicense_app\\frmrenewlocaldrivinglicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\applications\\localdrivinglicensemanagment\\frmaddnewlocaldrivinglicense_app.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\localdrivinglicensemanagment\\frmaddnewlocaldrivinglicense_app.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\users\\forms\\frmchangepassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:users\\forms\\frmchangepassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\dvld\\dvld_project\\users\\forms\\frmmanageusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:users\\forms\\frmmanageusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -91,87 +114,159 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmAddNewLocalDrivingLicense_App.cs",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\LocalDrivingLicenseManagment\\frmAddNewLocalDrivingLicense_App.cs",
-              "RelativeDocumentMoniker": "Applications\\LocalDrivingLicenseManagment\\frmAddNewLocalDrivingLicense_App.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\LocalDrivingLicenseManagment\\frmAddNewLocalDrivingLicense_App.cs*",
-              "RelativeToolTip": "Applications\\LocalDrivingLicenseManagment\\frmAddNewLocalDrivingLicense_App.cs*",
-              "ViewState": "AgIAABYAAAAAAAAAAAA1wCgAAAANAAAAAAAAAA==",
+              "DocumentIndex": 15,
+              "Title": "frmManageTestTypes.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\TestTypes\\frmManageTestTypes.cs",
+              "RelativeDocumentMoniker": "Applications\\TestTypes\\frmManageTestTypes.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\TestTypes\\frmManageTestTypes.cs [Design]",
+              "RelativeToolTip": "Applications\\TestTypes\\frmManageTestTypes.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T17:22:50.387Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmAddNewLocalDrivingLicense_App.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\LocalDrivingLicenseManagment\\frmAddNewLocalDrivingLicense_App.cs",
-              "RelativeDocumentMoniker": "Applications\\LocalDrivingLicenseManagment\\frmAddNewLocalDrivingLicense_App.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\LocalDrivingLicenseManagment\\frmAddNewLocalDrivingLicense_App.cs [Design]*",
-              "RelativeToolTip": "Applications\\LocalDrivingLicenseManagment\\frmAddNewLocalDrivingLicense_App.cs [Design]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T17:24:33.366Z",
+              "WhenOpened": "2025-05-22T13:57:27.598Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmManageDrivers.cs",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Drivers\\frmManageDrivers.cs",
-              "RelativeDocumentMoniker": "Drivers\\frmManageDrivers.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Drivers\\frmManageDrivers.cs*",
-              "RelativeToolTip": "Drivers\\frmManageDrivers.cs*",
-              "ViewState": "AgIAAH4AAAAAAAAAAAAkwJAAAABqAAAAAAAAAA==",
+              "DocumentIndex": 16,
+              "Title": "frmTakeTest.cs",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\Tests\\frmTakeTest.cs",
+              "RelativeDocumentMoniker": "Applications\\Tests\\frmTakeTest.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\Tests\\frmTakeTest.cs",
+              "RelativeToolTip": "Applications\\Tests\\frmTakeTest.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwDEAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T17:12:05.857Z",
+              "WhenOpened": "2025-05-22T13:55:35.915Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmManageDrivers.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Drivers\\frmManageDrivers.cs",
-              "RelativeDocumentMoniker": "Drivers\\frmManageDrivers.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Drivers\\frmManageDrivers.cs [Design]*",
-              "RelativeToolTip": "Drivers\\frmManageDrivers.cs [Design]*",
+              "DocumentIndex": 18,
+              "Title": "frmSchedualeTest.cs",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\Tests\\frmSchedualeTest.cs",
+              "RelativeDocumentMoniker": "Applications\\Tests\\frmSchedualeTest.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\Tests\\frmSchedualeTest.cs",
+              "RelativeToolTip": "Applications\\Tests\\frmSchedualeTest.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAlwFIAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T17:07:49.923Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "frmManageInternationalLicenses.cs",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\License\\Forms\\frmManageInternationalLicenses.cs",
-              "RelativeDocumentMoniker": "License\\Forms\\frmManageInternationalLicenses.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\License\\Forms\\frmManageInternationalLicenses.cs",
-              "RelativeToolTip": "License\\Forms\\frmManageInternationalLicenses.cs",
-              "ViewState": "AgIAAJcAAAAAAAAAAAAvwKkAAABNAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T15:31:43.344Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "clsInternationalLicensedataAccess.cs",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_DataAccessLayer\\License\\clsInternationalLicensedataAccess.cs",
-              "RelativeDocumentMoniker": "..\\DVLD_DataAccessLayer\\License\\clsInternationalLicensedataAccess.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_DataAccessLayer\\License\\clsInternationalLicensedataAccess.cs",
-              "RelativeToolTip": "..\\DVLD_DataAccessLayer\\License\\clsInternationalLicensedataAccess.cs",
-              "ViewState": "AgIAAMcAAAAAAAAAAADwv/EAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T15:25:03.438Z",
+              "WhenOpened": "2025-05-22T13:38:54.425Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "frmLocalDrivingLicenseApps.cs",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\LocalDrivingLicenseManagment\\frmLocalDrivingLicenseApps.cs",
+              "RelativeDocumentMoniker": "Applications\\LocalDrivingLicenseManagment\\frmLocalDrivingLicenseApps.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\LocalDrivingLicenseManagment\\frmLocalDrivingLicenseApps.cs",
+              "RelativeToolTip": "Applications\\LocalDrivingLicenseManagment\\frmLocalDrivingLicenseApps.cs",
+              "ViewState": "AgIAABcBAAAAAAAAAAArwDYBAABoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T13:28:18.629Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "frmTestAppointment.cs",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\Tests\\frmTestAppointment.cs",
+              "RelativeDocumentMoniker": "Applications\\Tests\\frmTestAppointment.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\Tests\\frmTestAppointment.cs",
+              "RelativeToolTip": "Applications\\Tests\\frmTestAppointment.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAADwv38AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T13:27:07.763Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "frmReplaceLocalLicense_Application.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\ReplaceLocalLicense_Damage_Lost\\frmReplaceLocalLicense_Application.cs",
+              "RelativeDocumentMoniker": "Applications\\ReplaceLocalLicense_Damage_Lost\\frmReplaceLocalLicense_Application.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\ReplaceLocalLicense_Damage_Lost\\frmReplaceLocalLicense_Application.cs [Design]",
+              "RelativeToolTip": "Applications\\ReplaceLocalLicense_Damage_Lost\\frmReplaceLocalLicense_Application.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T13:22:02.773Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "frmRenewLocalDrivingLicense.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\RenewLocalDrivingLicense_App\\frmRenewLocalDrivingLicense.cs",
+              "RelativeDocumentMoniker": "Applications\\RenewLocalDrivingLicense_App\\frmRenewLocalDrivingLicense.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\RenewLocalDrivingLicense_App\\frmRenewLocalDrivingLicense.cs [Design]",
+              "RelativeToolTip": "Applications\\RenewLocalDrivingLicense_App\\frmRenewLocalDrivingLicense.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T13:21:27.682Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "frmAddNewLocalDrivingLicense_App.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\LocalDrivingLicenseManagment\\frmAddNewLocalDrivingLicense_App.cs",
+              "RelativeDocumentMoniker": "Applications\\LocalDrivingLicenseManagment\\frmAddNewLocalDrivingLicense_App.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\LocalDrivingLicenseManagment\\frmAddNewLocalDrivingLicense_App.cs [Design]",
+              "RelativeToolTip": "Applications\\LocalDrivingLicenseManagment\\frmAddNewLocalDrivingLicense_App.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T13:20:55.995Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmLocalDrivingLicenseApps.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\LocalDrivingLicenseManagment\\frmLocalDrivingLicenseApps.cs",
+              "RelativeDocumentMoniker": "Applications\\LocalDrivingLicenseManagment\\frmLocalDrivingLicenseApps.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\LocalDrivingLicenseManagment\\frmLocalDrivingLicenseApps.cs [Design]",
+              "RelativeToolTip": "Applications\\LocalDrivingLicenseManagment\\frmLocalDrivingLicenseApps.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T13:17:32.959Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmManageApplicationTypes.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\ApplicationTypes\\frmManageApplicationTypes.cs",
+              "RelativeDocumentMoniker": "Applications\\ApplicationTypes\\frmManageApplicationTypes.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\ApplicationTypes\\frmManageApplicationTypes.cs [Design]",
+              "RelativeToolTip": "Applications\\ApplicationTypes\\frmManageApplicationTypes.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T13:13:01.382Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "frmDisplayApplicationDetails.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\frmDisplayApplicationDetails.cs",
+              "RelativeDocumentMoniker": "Applications\\frmDisplayApplicationDetails.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\frmDisplayApplicationDetails.cs [Design]",
+              "RelativeToolTip": "Applications\\frmDisplayApplicationDetails.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T13:12:29.023Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "frmManageDrivers.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Drivers\\frmManageDrivers.cs",
+              "RelativeDocumentMoniker": "Drivers\\frmManageDrivers.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Drivers\\frmManageDrivers.cs [Design]",
+              "RelativeToolTip": "Drivers\\frmManageDrivers.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T13:06:02.449Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "frmManageInternationalLicenses.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\License\\Forms\\frmManageInternationalLicenses.cs",
               "RelativeDocumentMoniker": "License\\Forms\\frmManageInternationalLicenses.cs",
@@ -183,170 +278,157 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "frmPersonDetails.cs",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\People\\Forms\\frmPersonDetails.cs",
-              "RelativeDocumentMoniker": "People\\Forms\\frmPersonDetails.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\People\\Forms\\frmPersonDetails.cs",
-              "RelativeToolTip": "People\\Forms\\frmPersonDetails.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T14:26:56.699Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "frmReleaseDetainedLicense.cs",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\Detain Release License App\\frmReleaseDetainedLicense.cs",
-              "RelativeDocumentMoniker": "Applications\\Detain Release License App\\frmReleaseDetainedLicense.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\Detain Release License App\\frmReleaseDetainedLicense.cs",
-              "RelativeToolTip": "Applications\\Detain Release License App\\frmReleaseDetainedLicense.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAgwJ0AAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T00:20:39Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "clsDetainLicenses.cs",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_BusinessLayer\\clsDetainLicenses.cs",
-              "RelativeDocumentMoniker": "..\\DVLD_BusinessLayer\\clsDetainLicenses.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_BusinessLayer\\clsDetainLicenses.cs",
-              "RelativeToolTip": "..\\DVLD_BusinessLayer\\clsDetainLicenses.cs",
-              "ViewState": "AgIAAHkAAAAAAAAAAAAwwJAAAABOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T00:05:33.373Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "frmDetainLicense.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\Detain Release License App\\frmDetainLicense.cs",
-              "RelativeDocumentMoniker": "Applications\\Detain Release License App\\frmDetainLicense.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\Detain Release License App\\frmDetainLicense.cs [Design]",
-              "RelativeToolTip": "Applications\\Detain Release License App\\frmDetainLicense.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T23:27:18.987Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "ctrlFindAndDisplayDriverLicense.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\License\\UserControls\\ctrlFindAndDisplayDriverLicense.Designer.cs",
-              "RelativeDocumentMoniker": "License\\UserControls\\ctrlFindAndDisplayDriverLicense.Designer.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\License\\UserControls\\ctrlFindAndDisplayDriverLicense.Designer.cs",
-              "RelativeToolTip": "License\\UserControls\\ctrlFindAndDisplayDriverLicense.Designer.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAApwDcAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T23:25:16.357Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "ctrlFilterPeople.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\UserControls\\ctrlFilterPeople.cs",
-              "RelativeDocumentMoniker": "Users\\UserControls\\ctrlFilterPeople.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\UserControls\\ctrlFilterPeople.cs [Design]",
-              "RelativeToolTip": "Users\\UserControls\\ctrlFilterPeople.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T23:24:55.753Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "clsDetainLicenseDataAccess.cs",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_DataAccessLayer\\clsDetainLicenseDataAccess.cs",
-              "RelativeDocumentMoniker": "..\\DVLD_DataAccessLayer\\clsDetainLicenseDataAccess.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_DataAccessLayer\\clsDetainLicenseDataAccess.cs",
-              "RelativeToolTip": "..\\DVLD_DataAccessLayer\\clsDetainLicenseDataAccess.cs",
-              "ViewState": "AgIAACYBAAAAAAAAAAAAACkBAACBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T22:58:06.139Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "frmDetainLicense.cs",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\Detain Release License App\\frmDetainLicense.cs",
-              "RelativeDocumentMoniker": "Applications\\Detain Release License App\\frmDetainLicense.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\Detain Release License App\\frmDetainLicense.cs",
-              "RelativeToolTip": "Applications\\Detain Release License App\\frmDetainLicense.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAswHcAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T19:29:26.597Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "frmManageDetainedLicenses.cs",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\Detain Release License App\\frmManageDetainedLicenses.cs",
-              "RelativeDocumentMoniker": "Applications\\Detain Release License App\\frmManageDetainedLicenses.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\Detain Release License App\\frmManageDetainedLicenses.cs",
-              "RelativeToolTip": "Applications\\Detain Release License App\\frmManageDetainedLicenses.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAjwI8AAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T19:43:36.285Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
               "Title": "frmManageDetainedLicenses.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\Detain Release License App\\frmManageDetainedLicenses.cs",
               "RelativeDocumentMoniker": "Applications\\Detain Release License App\\frmManageDetainedLicenses.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\Detain Release License App\\frmManageDetainedLicenses.cs [Design]",
-              "RelativeToolTip": "Applications\\Detain Release License App\\frmManageDetainedLicenses.cs [Design]",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\Detain Release License App\\frmManageDetainedLicenses.cs [Design]*",
+              "RelativeToolTip": "Applications\\Detain Release License App\\frmManageDetainedLicenses.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-18T19:36:52.052Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 1,
               "Title": "frmReleaseDetainedLicense.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\Detain Release License App\\frmReleaseDetainedLicense.cs",
               "RelativeDocumentMoniker": "Applications\\Detain Release License App\\frmReleaseDetainedLicense.cs",
               "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\Detain Release License App\\frmReleaseDetainedLicense.cs [Design]",
               "RelativeToolTip": "Applications\\Detain Release License App\\frmReleaseDetainedLicense.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T19:14:54.737Z"
+              "WhenOpened": "2025-05-18T19:14:54.737Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "clsGlobal.cs",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\clsGlobal.cs",
-              "RelativeDocumentMoniker": "clsGlobal.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\clsGlobal.cs",
-              "RelativeToolTip": "clsGlobal.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBAAAAAZAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "frmAdd_Edit_People.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\People\\Forms\\frmAdd_Edit_People.cs",
+              "RelativeDocumentMoniker": "People\\Forms\\frmAdd_Edit_People.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\People\\Forms\\frmAdd_Edit_People.cs [Design]",
+              "RelativeToolTip": "People\\Forms\\frmAdd_Edit_People.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T14:20:06.472Z"
+              "WhenOpened": "2025-05-22T13:02:39.396Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "MainForm.cs",
-              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\MainForm.cs",
-              "RelativeDocumentMoniker": "MainForm.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\MainForm.cs",
-              "RelativeToolTip": "MainForm.cs",
-              "ViewState": "AgIAAIEAAAAAAAAAAAAewJcAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "frmManagePeople.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\People\\Forms\\frmManagePeople.cs",
+              "RelativeDocumentMoniker": "People\\Forms\\frmManagePeople.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\People\\Forms\\frmManagePeople.cs [Design]",
+              "RelativeToolTip": "People\\Forms\\frmManagePeople.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T16:34:12.896Z",
+              "WhenOpened": "2025-05-22T12:51:58.57Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "frmPersonDetails.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\People\\Forms\\frmPersonDetails.cs",
+              "RelativeDocumentMoniker": "People\\Forms\\frmPersonDetails.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\People\\Forms\\frmPersonDetails.cs [Design]",
+              "RelativeToolTip": "People\\Forms\\frmPersonDetails.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T12:49:43.343Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "frmAdd_EditUser.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\Forms\\frmAdd_EditUser.cs",
+              "RelativeDocumentMoniker": "Users\\Forms\\frmAdd_EditUser.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\Forms\\frmAdd_EditUser.cs [Design]",
+              "RelativeToolTip": "Users\\Forms\\frmAdd_EditUser.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T12:45:35.336Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "frmChangePassword.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\Forms\\frmChangePassword.cs",
+              "RelativeDocumentMoniker": "Users\\Forms\\frmChangePassword.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\Forms\\frmChangePassword.cs [Design]",
+              "RelativeToolTip": "Users\\Forms\\frmChangePassword.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T12:34:44.579Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "frmDisplayUserDetails.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\Forms\\frmDisplayUserDetails.cs",
+              "RelativeDocumentMoniker": "Users\\Forms\\frmDisplayUserDetails.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\Forms\\frmDisplayUserDetails.cs [Design]",
+              "RelativeToolTip": "Users\\Forms\\frmDisplayUserDetails.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T12:33:21.677Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "frmManageUsers.cs",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\Forms\\frmManageUsers.cs",
+              "RelativeDocumentMoniker": "Users\\Forms\\frmManageUsers.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\Forms\\frmManageUsers.cs*",
+              "RelativeToolTip": "Users\\Forms\\frmManageUsers.cs*",
+              "ViewState": "AgIAAJcAAAAAAAAAAAAvwK4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T12:30:05.658Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 2,
+              "Title": "frmManageUsers.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\Forms\\frmManageUsers.cs",
+              "RelativeDocumentMoniker": "Users\\Forms\\frmManageUsers.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Users\\Forms\\frmManageUsers.cs [Design]*",
+              "RelativeToolTip": "Users\\Forms\\frmManageUsers.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T12:22:53.021Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "frmTestAppointment.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\Tests\\frmTestAppointment.cs",
+              "RelativeDocumentMoniker": "Applications\\Tests\\frmTestAppointment.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\Tests\\frmTestAppointment.cs [Design]",
+              "RelativeToolTip": "Applications\\Tests\\frmTestAppointment.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T12:12:17.195Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "frmSchedualeTest.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\Tests\\frmSchedualeTest.cs",
+              "RelativeDocumentMoniker": "Applications\\Tests\\frmSchedualeTest.cs",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\Applications\\Tests\\frmSchedualeTest.cs [Design]",
+              "RelativeToolTip": "Applications\\Tests\\frmSchedualeTest.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T11:34:45.914Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "MainForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\MainForm.cs",
               "RelativeDocumentMoniker": "MainForm.cs",
-              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\MainForm.cs [Design]",
-              "RelativeToolTip": "MainForm.cs [Design]",
+              "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\DVLD\\DVLD_Project\\MainForm.cs [Design]*",
+              "RelativeToolTip": "MainForm.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-15T16:33:23.839Z",
               "EditorCaption": " [Design]"

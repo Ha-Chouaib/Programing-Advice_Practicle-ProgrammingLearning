@@ -35,7 +35,6 @@
             this.showLicenseDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showPersonLicenseHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.releaseDetaindLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnRelease = new System.Windows.Forms.Button();
             this.btnDetain = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
@@ -46,6 +45,7 @@
             this.txtFilterTerm = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbFilterByIsReleased = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListDetainedLicenses)).BeginInit();
             this.cmsDetainedLic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -121,15 +121,6 @@
             this.releaseDetaindLicenseToolStripMenuItem.Size = new System.Drawing.Size(254, 31);
             this.releaseDetaindLicenseToolStripMenuItem.Text = "Release Detaind License";
             this.releaseDetaindLicenseToolStripMenuItem.Click += new System.EventHandler(this.releaseDetaindLicenseToolStripMenuItem_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.pictureBox1.Location = new System.Drawing.Point(521, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(215, 154);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // btnRelease
             // 
@@ -255,6 +246,17 @@
             this.cmbFilterByIsReleased.Size = new System.Drawing.Size(194, 28);
             this.cmbFilterByIsReleased.TabIndex = 11;
             this.cmbFilterByIsReleased.SelectedIndexChanged += new System.EventHandler(this.cmbFilterByIsReleased_SelectedIndexChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.pictureBox1.Image = global::DVLD_Project.Properties.Resources.DetainLicenseImg;
+            this.pictureBox1.Location = new System.Drawing.Point(521, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(215, 154);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // frmManageDetainedLicenses
             // 

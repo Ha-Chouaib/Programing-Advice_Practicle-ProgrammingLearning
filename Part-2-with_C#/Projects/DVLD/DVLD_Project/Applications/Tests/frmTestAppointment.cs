@@ -25,11 +25,13 @@ namespace DVLD_Project.Applications.Tests
 
         public delegate void TriggerFunctionEventHandler(object sender);
         public event TriggerFunctionEventHandler __ReLoadList;
-        public frmTestAppointment(int LocalDrivingLicenseAppID,int TestTypeID)
+        Image TestImg;
+        public frmTestAppointment(int LocalDrivingLicenseAppID,int TestTypeID, Image TestImg)
         {
             InitializeComponent();
             this._LDL_AppID = LocalDrivingLicenseAppID;
             this._TestTypeID = TestTypeID;
+            this.TestImg = TestImg;
         }
 
         private void frmVisionTestAppointment_Load(object sender, EventArgs e)
@@ -96,7 +98,7 @@ namespace DVLD_Project.Applications.Tests
                     }
                 }
             }
-            NewSchedualeTest = new frmSchedualeTest(_LDL_AppID, Trials,true,_TestTypeID);
+            NewSchedualeTest = new frmSchedualeTest(_LDL_AppID, Trials,true,_TestTypeID,TestImg);
             NewSchedualeTest.__ReLoadSchedualeTest_List += _ReLoadList;
             NewSchedualeTest.ShowDialog();
 
@@ -106,7 +108,7 @@ namespace DVLD_Project.Applications.Tests
         {
             int TestAppointmentID = (int)dgvListVisionTests.CurrentRow.Cells[0].Value;
 
-            frmSchedualeTest SchedualeTest_Update = new frmSchedualeTest(TestAppointmentID,(byte)dgvListVisionTests.RowCount,false,_TestTypeID);
+            frmSchedualeTest SchedualeTest_Update = new frmSchedualeTest(TestAppointmentID,(byte)dgvListVisionTests.RowCount,false,_TestTypeID,TestImg);
             SchedualeTest_Update.__ReLoadSchedualeTest_List += _ReLoadList;
             SchedualeTest_Update.Show();
         }
@@ -123,7 +125,7 @@ namespace DVLD_Project.Applications.Tests
                     MessageBox.Show("You can Not Take This Test it's Already Taken", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }else
                 {
-                    frmTakeTest TakeTest = new frmTakeTest(TestAppointmentID,Trials);
+                    frmTakeTest TakeTest = new frmTakeTest(TestAppointmentID,Trials,TestImg);
                     TakeTest.__ReloadList += _ReLoadList;
                     TakeTest.__ReloadList += _ReloadLocalDrivingLicenseList;
                     TakeTest.ShowDialog();

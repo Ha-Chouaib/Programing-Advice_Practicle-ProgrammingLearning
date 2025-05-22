@@ -72,7 +72,7 @@ namespace DVLD_Project.Applications.RenewLocalDrivingLicense_App
             _RenewLicenseApplication.AppTypeID = _OldApplication.AppTypeID;
             _RenewLicenseApplication.AppDate = DateTime.Now;
             _RenewLicenseApplication.CreatedByUserID = clsGlobal.CurrentUserID;
-            _RenewLicenseApplication.AppStatus =(byte) clsGlobal.enApplicationStatus.Complete;
+            _RenewLicenseApplication.AppStatus =(byte) clsGlobal.enApplicationStatus.Completed;
             _RenewLicenseApplication.ApplicantPersonID =_OldApplication.ApplicantPersonID;
             _RenewLicenseApplication.LastStatusDate = DateTime.Now;
             _RenewLicenseApplication.PaidFees = _OldApplication.PaidFees;
@@ -122,7 +122,7 @@ namespace DVLD_Project.Applications.RenewLocalDrivingLicense_App
 
         private void btnRenew_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Sure To Complete The Operation ?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Sure To Completed The Operation ?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 if (_AddNewLicense())
                 {

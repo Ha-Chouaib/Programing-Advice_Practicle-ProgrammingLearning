@@ -52,7 +52,7 @@
             this.lblTestApointmentName.AutoSize = true;
             this.lblTestApointmentName.Font = new System.Drawing.Font("Trebuchet MS", 30.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lblTestApointmentName.ForeColor = System.Drawing.Color.Cyan;
-            this.lblTestApointmentName.Location = new System.Drawing.Point(371, 129);
+            this.lblTestApointmentName.Location = new System.Drawing.Point(308, 195);
             this.lblTestApointmentName.Name = "lblTestApointmentName";
             this.lblTestApointmentName.Size = new System.Drawing.Size(413, 50);
             this.lblTestApointmentName.TabIndex = 2;
@@ -64,7 +64,7 @@
             this.editToolStripMenuItem,
             this.takeTestToolStripMenuItem});
             this.cmsSheduale.Name = "cmsSheduale";
-            this.cmsSheduale.Size = new System.Drawing.Size(181, 96);
+            this.cmsSheduale.Size = new System.Drawing.Size(133, 74);
             // 
             // editToolStripMenuItem
             // 
@@ -74,7 +74,7 @@
             this.editToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(132, 30);
             this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
@@ -86,7 +86,7 @@
             this.takeTestToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.takeTestToolStripMenuItem.Name = "takeTestToolStripMenuItem";
             this.takeTestToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.takeTestToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
+            this.takeTestToolStripMenuItem.Size = new System.Drawing.Size(132, 30);
             this.takeTestToolStripMenuItem.Text = "Take Test";
             this.takeTestToolStripMenuItem.Click += new System.EventHandler(this.takeTestToolStripMenuItem_Click);
             // 
@@ -97,7 +97,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Trebuchet MS", 11.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.btnClose.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnClose.Location = new System.Drawing.Point(1020, 841);
+            this.btnClose.Location = new System.Drawing.Point(1009, 923);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(97, 36);
             this.btnClose.TabIndex = 8;
@@ -114,7 +114,7 @@
             this.dgvListVisionTests.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvListVisionTests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListVisionTests.ContextMenuStrip = this.cmsSheduale;
-            this.dgvListVisionTests.Location = new System.Drawing.Point(37, 631);
+            this.dgvListVisionTests.Location = new System.Drawing.Point(26, 713);
             this.dgvListVisionTests.MultiSelect = false;
             this.dgvListVisionTests.Name = "dgvListVisionTests";
             this.dgvListVisionTests.ReadOnly = true;
@@ -126,7 +126,7 @@
             this.ctrlDisplayApplicationLicenseInfo1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ctrlDisplayApplicationLicenseInfo1.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ctrlDisplayApplicationLicenseInfo1.ForeColor = System.Drawing.SystemColors.Info;
-            this.ctrlDisplayApplicationLicenseInfo1.Location = new System.Drawing.Point(37, 198);
+            this.ctrlDisplayApplicationLicenseInfo1.Location = new System.Drawing.Point(27, 271);
             this.ctrlDisplayApplicationLicenseInfo1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ctrlDisplayApplicationLicenseInfo1.Name = "ctrlDisplayApplicationLicenseInfo1";
             this.ctrlDisplayApplicationLicenseInfo1.Size = new System.Drawing.Size(1080, 135);
@@ -137,7 +137,7 @@
             this.ctrlDisplayApplicationInfo1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ctrlDisplayApplicationInfo1.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ctrlDisplayApplicationInfo1.ForeColor = System.Drawing.SystemColors.Info;
-            this.ctrlDisplayApplicationInfo1.Location = new System.Drawing.Point(37, 343);
+            this.ctrlDisplayApplicationInfo1.Location = new System.Drawing.Point(26, 425);
             this.ctrlDisplayApplicationInfo1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ctrlDisplayApplicationInfo1.Name = "ctrlDisplayApplicationInfo1";
             this.ctrlDisplayApplicationInfo1.Size = new System.Drawing.Size(1081, 230);
@@ -148,7 +148,7 @@
             this.lblRecords.AutoSize = true;
             this.lblRecords.Font = new System.Drawing.Font("Trebuchet MS", 11.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lblRecords.ForeColor = System.Drawing.Color.Cyan;
-            this.lblRecords.Location = new System.Drawing.Point(140, 848);
+            this.lblRecords.Location = new System.Drawing.Point(129, 930);
             this.lblRecords.Name = "lblRecords";
             this.lblRecords.Size = new System.Drawing.Size(54, 22);
             this.lblRecords.TabIndex = 29;
@@ -159,7 +159,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Trebuchet MS", 11.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label3.ForeColor = System.Drawing.SystemColors.Info;
-            this.label3.Location = new System.Drawing.Point(33, 848);
+            this.label3.Location = new System.Drawing.Point(22, 930);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 22);
             this.label3.TabIndex = 28;
@@ -170,7 +170,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Trebuchet MS", 11.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label2.ForeColor = System.Drawing.SystemColors.Info;
-            this.label2.Location = new System.Drawing.Point(36, 603);
+            this.label2.Location = new System.Drawing.Point(25, 685);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(121, 22);
             this.label2.TabIndex = 27;
@@ -182,7 +182,7 @@
             this.btnAddAppointmrnt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddAppointmrnt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddAppointmrnt.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnAddAppointmrnt.Location = new System.Drawing.Point(971, 594);
+            this.btnAddAppointmrnt.Location = new System.Drawing.Point(960, 676);
             this.btnAddAppointmrnt.Name = "btnAddAppointmrnt";
             this.btnAddAppointmrnt.Size = new System.Drawing.Size(147, 31);
             this.btnAddAppointmrnt.TabIndex = 26;
@@ -192,10 +192,11 @@
             // 
             // pbTestAppointment
             // 
-            this.pbTestAppointment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.pbTestAppointment.Location = new System.Drawing.Point(502, 12);
+            this.pbTestAppointment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.pbTestAppointment.Image = global::DVLD_Project.Properties.Resources.Test_AppointmentImg;
+            this.pbTestAppointment.Location = new System.Drawing.Point(451, 12);
             this.pbTestAppointment.Name = "pbTestAppointment";
-            this.pbTestAppointment.Size = new System.Drawing.Size(160, 103);
+            this.pbTestAppointment.Size = new System.Drawing.Size(232, 169);
             this.pbTestAppointment.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbTestAppointment.TabIndex = 3;
             this.pbTestAppointment.TabStop = false;
@@ -205,7 +206,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.ClientSize = new System.Drawing.Size(1138, 895);
+            this.ClientSize = new System.Drawing.Size(1138, 971);
             this.Controls.Add(this.dgvListVisionTests);
             this.Controls.Add(this.ctrlDisplayApplicationLicenseInfo1);
             this.Controls.Add(this.ctrlDisplayApplicationInfo1);

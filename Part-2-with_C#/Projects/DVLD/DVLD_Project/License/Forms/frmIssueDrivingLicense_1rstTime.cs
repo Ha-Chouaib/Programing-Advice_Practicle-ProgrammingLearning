@@ -87,7 +87,7 @@ namespace DVLD_Project.License
             }
             else
             {
-                NewLocalLicense_Application.AppStatus = (byte)clsGlobal.enApplicationStatus.Complete;
+                NewLocalLicense_Application.AppStatus = (byte)clsGlobal.enApplicationStatus.Completed;
                 NewLocalLicense_Application.LastStatusDate = DateTime.Now;    
                 if(!NewLocalLicense_Application.Save())
                 {
