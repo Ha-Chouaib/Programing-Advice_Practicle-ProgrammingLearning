@@ -86,7 +86,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.ctrlAdd_Edit_PersonIfo1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmAdd_Edit_People";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add/Edit_Person";
             this.Load += new System.EventHandler(this.frmAdd_Edit_People_Load);
             this.ResumeLayout(false);

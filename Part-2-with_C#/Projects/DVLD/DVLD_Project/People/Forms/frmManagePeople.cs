@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DVLD_BusinessLayer;
+using DVLD_Project.Users.Forms;
 
 namespace DVLD_Project
 {
@@ -202,6 +203,20 @@ namespace DVLD_Project
             MessageBox.Show("Not Implemented Yet", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-       
+        private void cmsManagePeople_Opening(object sender, CancelEventArgs e)
+        {
+            toUserToolStripMenuItem.Enabled = true;
+
+            int ID = (int)dgvLsitPeople.CurrentRow.Cells[0].Value;
+            if (clsUsers.ExistByPersonID(ID))
+                toUserToolStripMenuItem.Enabled = false;
+        }
+
+        private void toUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int ID = (int)dgvLsitPeople.CurrentRow.Cells[0].Value;
+            frmAdd_EditUser MakeItUser = new frmAdd_EditUser(frmAdd_EditUser.enMode.eAddNewUser, ID);
+            MakeItUser.ShowDialog();
+        }
     }
 }

@@ -30,9 +30,9 @@
         {
             this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.pbHistory = new System.Windows.Forms.PictureBox();
             this.ctrlPersonDetails1 = new DVLD_Project.ctrlPersonDetails();
             this.ctrlDriverLicensesHistory1 = new DVLD_Project.License.UserControls.ctrlDriverLicensesHistory();
+            this.pbHistory = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbHistory)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,16 +61,6 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Driver Licenses History";
             // 
-            // pbHistory
-            // 
-            this.pbHistory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.pbHistory.Location = new System.Drawing.Point(74, 155);
-            this.pbHistory.Name = "pbHistory";
-            this.pbHistory.Size = new System.Drawing.Size(297, 231);
-            this.pbHistory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbHistory.TabIndex = 4;
-            this.pbHistory.TabStop = false;
-            // 
             // ctrlPersonDetails1
             // 
             this.ctrlPersonDetails1.@__PersonID = 0;
@@ -88,6 +78,17 @@
             this.ctrlDriverLicensesHistory1.Size = new System.Drawing.Size(1191, 386);
             this.ctrlDriverLicensesHistory1.TabIndex = 0;
             // 
+            // pbHistory
+            // 
+            this.pbHistory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.pbHistory.Image = global::DVLD_Project.Properties.Resources.PersonLicenseHistory_512;
+            this.pbHistory.Location = new System.Drawing.Point(72, 97);
+            this.pbHistory.Name = "pbHistory";
+            this.pbHistory.Size = new System.Drawing.Size(297, 309);
+            this.pbHistory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbHistory.TabIndex = 4;
+            this.pbHistory.TabStop = false;
+            // 
             // frmShowDriverLicensesHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -99,7 +100,9 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.ctrlPersonDetails1);
             this.Controls.Add(this.ctrlDriverLicensesHistory1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmShowDriverLicensesHistory";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmShowDriverLicensesHistory";
             this.Load += new System.EventHandler(this.frmShowDriverLicensesHistory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbHistory)).EndInit();

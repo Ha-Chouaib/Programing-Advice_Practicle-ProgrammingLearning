@@ -48,7 +48,6 @@
             this.cmbFilterOpts.Name = "cmbFilterOpts";
             this.cmbFilterOpts.Size = new System.Drawing.Size(221, 26);
             this.cmbFilterOpts.TabIndex = 0;
-            this.cmbFilterOpts.SelectedIndexChanged += new System.EventHandler(this.cmbFilterOpts_SelectedIndexChanged);
             // 
             // gbFilterContainer
             // 

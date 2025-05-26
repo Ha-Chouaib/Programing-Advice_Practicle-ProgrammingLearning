@@ -20,80 +20,72 @@ namespace DVLD_Project
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-
+            string Username = "", Password = "";
+            if(clsGlobal.GetUserCredential(ref Username,ref Password))
+            {
+                txtUserName.Text = Username;
+                txtPassword.Text = Password;
+                cbRememberMe.Checked = true;
+                return;
+            }
+            txtUserName.Text = "";
+            txtPassword.Text = "";
+            cbRememberMe.Checked = false;
+    
         }
         clsUsers User;
         ErrorProvider errorProv = new ErrorProvider();
 
-        private bool _LoginValidation()
+
+        private bool _IsValidLoging()
         {
-            string UserName = txtUserName.Text;
-            string PassWord = txtPassword.Text;
-            bool IsValid = false;
+            string UserName = txtUserName.Text.Trim();
+            string PassWord = txtPassword.Text.Trim();
             if (UserName != string.Empty && PassWord != string.Empty)
             {
                 User = clsUsers.Find(UserName);
-                if (User != null)
-                {
-                    if(PassWord == User.Password)
-                    {
-                        IsValid = true;
-                    }else
-                    {
 
-                        MessageBox.Show($"UnValid Password Please Enter The Correct Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
+                if (User == null || PassWord != User.Password)
                 {
-                    MessageBox.Show($"No User Found By User Name << {UserName} >>", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"UnValid Username OR Password ! Please Enter The Correct Login Info", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
                 }
+
+               if(! User.IsActive)
+               {
+
+                    MessageBox.Show("Your Account Is Blocked Please Contact Your Admin", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+               }
+               
             }else
             {
                 txtPassword.Validating += txtPasswordUserName_Validating;
                 txtUserName.Validating += txtPasswordUserName_Validating;
+                return false;
             }
 
-                return IsValid;
+            return true;
         }
-        private void _RememberMe(object sender,string UserName,string UserPass )
-        {
-            if(clsGlobal.IsRememberMe)
-            {
-                txtUserName.Text = UserName;
-                txtPassword.Text = UserPass;
-            }else
-            {
-                txtUserName.Text = "";
-                txtPassword.Text = "";
-            }
-        }
-
+       
         private void btnLogin_Click(object sender, EventArgs e)
-        {   
-            if(_LoginValidation())
+        {  
+            
+            if(_IsValidLoging())
             {
-                if(User.IsActive == true)
-                {   
-
-                    clsGlobal.CurrentUserID = User.UserID;
-                    if(cbRememberMe.Checked == true)
-                    {
-                        clsGlobal.IsRememberMe = true;
-
-                    }else
-                    {
-                        clsGlobal.IsRememberMe = false;
-                    }
-                    MainForm HomePage = new MainForm();
-                    HomePage.TriggerRememberMeFunc += _RememberMe;
-                    txtUserName.Text = "";
-                    txtPassword.Text = "";
-                    HomePage.ShowDialog();
+               if(cbRememberMe.Checked)
+                {
+                    clsGlobal.RememberUsernameAndPasssword(txtUserName.Text.Trim(), txtPassword.Text.Trim());
                 }else
                 {
-                    MessageBox.Show("Your Account Is Blocked Please Contact Your Admin","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    clsGlobal.RememberUsernameAndPasssword("", "");
                 }
+
+                MainForm frmMain = new MainForm(this);
+                clsGlobal.CurrentUserID = User.UserID;
+                this.Hide();
+                frmMain.ShowDialog();
+
             }
         }
 
@@ -108,5 +100,12 @@ namespace DVLD_Project
                 errorProv.SetError(txtB, "");
 
         }
+
+        private void pbClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+       
     }
 }

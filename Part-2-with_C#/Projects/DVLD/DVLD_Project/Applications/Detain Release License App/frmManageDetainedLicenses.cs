@@ -221,6 +221,8 @@ namespace DVLD_Project.Applications.Detain_Release_License_App
             int LicenseID =(int) dgvListDetainedLicenses.CurrentRow.Cells["LicenseID"].Value;
             frmReleaseDetainedLicense ReleaseLicense = new frmReleaseDetainedLicense(LicenseID);
             ReleaseLicense.ShowDialog();
+            frmManageDetainedLicenses_Load(null, null);
+
         }
 
         private void cmsDetainedLic_Opening(object sender, CancelEventArgs e)
@@ -243,6 +245,7 @@ namespace DVLD_Project.Applications.Detain_Release_License_App
         {
             frmDetainLicense DetainLicense = new frmDetainLicense();
             DetainLicense.ShowDialog();
+            frmManageDetainedLicenses_Load(null, null);
         }
 
         private void btnClose_Click(object sender, EventArgs e)

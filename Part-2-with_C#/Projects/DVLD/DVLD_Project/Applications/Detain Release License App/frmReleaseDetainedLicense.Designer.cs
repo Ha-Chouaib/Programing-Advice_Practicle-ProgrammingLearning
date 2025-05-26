@@ -387,7 +387,9 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ctrlFindAndDisplayDriverLicense1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmReleaseDetainedLicense";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Release Detained License";
             this.Load += new System.EventHandler(this.frmReleaseDetainedLicense_Load);
             this.groupBox1.ResumeLayout(false);

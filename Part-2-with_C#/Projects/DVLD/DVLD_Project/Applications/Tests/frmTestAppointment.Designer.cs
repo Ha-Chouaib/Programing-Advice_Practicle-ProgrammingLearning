@@ -49,14 +49,17 @@
             // 
             // lblTestApointmentName
             // 
+            this.lblTestApointmentName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTestApointmentName.AutoSize = true;
+            this.lblTestApointmentName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTestApointmentName.Font = new System.Drawing.Font("Trebuchet MS", 30.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lblTestApointmentName.ForeColor = System.Drawing.Color.Cyan;
-            this.lblTestApointmentName.Location = new System.Drawing.Point(308, 195);
+            this.lblTestApointmentName.Location = new System.Drawing.Point(268, 203);
             this.lblTestApointmentName.Name = "lblTestApointmentName";
-            this.lblTestApointmentName.Size = new System.Drawing.Size(413, 50);
+            this.lblTestApointmentName.Size = new System.Drawing.Size(415, 52);
             this.lblTestApointmentName.TabIndex = 2;
             this.lblTestApointmentName.Text = "???Test Appointment";
+            this.lblTestApointmentName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cmsSheduale
             // 
@@ -207,6 +210,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.ClientSize = new System.Drawing.Size(1138, 971);
+            this.Controls.Add(this.lblTestApointmentName);
             this.Controls.Add(this.dgvListVisionTests);
             this.Controls.Add(this.ctrlDisplayApplicationLicenseInfo1);
             this.Controls.Add(this.ctrlDisplayApplicationInfo1);
@@ -216,11 +220,13 @@
             this.Controls.Add(this.btnAddAppointmrnt);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.pbTestAppointment);
-            this.Controls.Add(this.lblTestApointmentName);
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmTestAppointment";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vision Test Appointment";
             this.Load += new System.EventHandler(this.frmVisionTestAppointment_Load);
             this.cmsSheduale.ResumeLayout(false);

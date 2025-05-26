@@ -100,6 +100,10 @@ namespace DVLD_BusinessLayer
         {
             return clsUsersDataAccess.Exist(UserID);
         }
+        public static bool Exist(string UserName)
+        {
+            return clsUsersDataAccess.Exist(UserName);
+        }
         public static bool ExistByPersonID(int PersonID)
         {
             return clsUsersDataAccess.ExistByPersonID(PersonID);

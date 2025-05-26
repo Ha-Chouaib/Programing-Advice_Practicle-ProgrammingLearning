@@ -263,7 +263,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.ClientSize = new System.Drawing.Size(1257, 732);
+            this.ClientSize = new System.Drawing.Size(1269, 732);
             this.Controls.Add(this.cmbFilterByIsReleased);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtFilterTerm);
@@ -276,7 +276,9 @@
             this.Controls.Add(this.btnRelease);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvListDetainedLicenses);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmManageDetainedLicenses";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmManageDetainedLicenses";
             this.Load += new System.EventHandler(this.frmManageDetainedLicenses_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListDetainedLicenses)).EndInit();

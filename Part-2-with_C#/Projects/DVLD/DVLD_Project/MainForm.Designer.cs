@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.applicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.drivingLicensesServicsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newDrivingLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,14 +54,16 @@
             this.currentUserInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.menuStrip1.BackColor = System.Drawing.Color.White;
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI Black", 11.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.applicationsToolStripMenuItem,
             this.peopleToolStripMenuItem,
@@ -76,17 +77,6 @@
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::DVLD_Project.Properties.Resources.MainBackImg1;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1301, 742);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // applicationsToolStripMenuItem
             // 
             this.applicationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -95,7 +85,7 @@
             this.detainLicensesToolStripMenuItem,
             this.manageApplicationTypesToolStripMenuItem,
             this.manageTestTypesToolStripMenuItem});
-            this.applicationsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.applicationsToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.applicationsToolStripMenuItem.Image = global::DVLD_Project.Properties.Resources.Applications;
             this.applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
             this.applicationsToolStripMenuItem.Size = new System.Drawing.Size(138, 25);
@@ -293,7 +283,7 @@
             // 
             // peopleToolStripMenuItem
             // 
-            this.peopleToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.peopleToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.peopleToolStripMenuItem.Image = global::DVLD_Project.Properties.Resources.Team;
             this.peopleToolStripMenuItem.Name = "peopleToolStripMenuItem";
             this.peopleToolStripMenuItem.Size = new System.Drawing.Size(92, 25);
@@ -302,7 +292,7 @@
             // 
             // driversToolStripMenuItem
             // 
-            this.driversToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.driversToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.driversToolStripMenuItem.Image = global::DVLD_Project.Properties.Resources.driver;
             this.driversToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.driversToolStripMenuItem.Name = "driversToolStripMenuItem";
@@ -312,7 +302,7 @@
             // 
             // usersToolStripMenuItem
             // 
-            this.usersToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.usersToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.usersToolStripMenuItem.Image = global::DVLD_Project.Properties.Resources.Users;
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
             this.usersToolStripMenuItem.Size = new System.Drawing.Size(82, 25);
@@ -325,7 +315,7 @@
             this.currentUserInfoToolStripMenuItem,
             this.changePasswordToolStripMenuItem,
             this.logOutToolStripMenuItem});
-            this.acountSettingsToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.acountSettingsToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.acountSettingsToolStripMenuItem.Image = global::DVLD_Project.Properties.Resources.Settings;
             this.acountSettingsToolStripMenuItem.Name = "acountSettingsToolStripMenuItem";
             this.acountSettingsToolStripMenuItem.Size = new System.Drawing.Size(163, 25);
@@ -364,6 +354,17 @@
             this.logOutToolStripMenuItem.Text = "Log Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::DVLD_Project.Properties.Resources.MainBackImg1;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1301, 742);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -372,9 +373,12 @@
             this.ClientSize = new System.Drawing.Size(1301, 742);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pictureBox1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home Page";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

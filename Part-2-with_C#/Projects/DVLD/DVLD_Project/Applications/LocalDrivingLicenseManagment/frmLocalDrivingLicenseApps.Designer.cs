@@ -433,7 +433,9 @@
             this.Controls.Add(this.cmbFilterOptions);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvLDL_AppsList);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmManageLocalDrivingLicenseApps";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Local Driving License Apps";
             this.Load += new System.EventHandler(this.frmManageMainApplications_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLDL_AppsList)).EndInit();

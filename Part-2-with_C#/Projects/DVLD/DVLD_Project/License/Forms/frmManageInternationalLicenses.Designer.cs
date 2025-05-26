@@ -189,8 +189,10 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dgvListInternationalLicenses);
             this.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmManageInternationalLicenses";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage International Licenses";
             this.Load += new System.EventHandler(this.frmManageInternationalLicenses_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListInternationalLicenses)).EndInit();

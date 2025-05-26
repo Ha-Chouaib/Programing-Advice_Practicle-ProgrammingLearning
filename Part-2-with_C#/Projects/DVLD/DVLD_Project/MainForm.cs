@@ -26,9 +26,11 @@ namespace DVLD_Project
 {
     public partial class MainForm: Form
     {
-        public MainForm()
+        frmLogin _Login;
+        public MainForm(frmLogin LoginForm)
         {
             InitializeComponent();
+            _Login = LoginForm;
         }
 
         private void peopleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -59,13 +61,12 @@ namespace DVLD_Project
             ChangePass.ShowDialog();
         }
 
-        public delegate void TriggerFunctionHandler(object sender, string UserName, string UserPass);
-        public event TriggerFunctionHandler TriggerRememberMeFunc;
+       
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            clsUsers User = clsUsers.Find(clsGlobal.CurrentUserID);
-            TriggerRememberMeFunc?.Invoke(this, User.UserName, User.Password);
+            clsGlobal.CurrentUserID = -1;
+            _Login.Show();
             this.Close();
         }
 
@@ -152,6 +153,11 @@ namespace DVLD_Project
         {
             frmManageInternationalLicenses ManageInterNationalLicense = new frmManageInternationalLicenses();
             ManageInterNationalLicense.ShowDialog();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            logOutToolStripMenuItem_Click(null, null);
         }
     }
 }

@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblClassName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblClassID = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lblClassFees = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtDescription = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.lblValidityLength = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblClassName = new System.Windows.Forms.Label();
-            this.lblClassID = new System.Windows.Forms.Label();
-            this.lblClassFees = new System.Windows.Forms.Label();
-            this.lblValidityLength = new System.Windows.Forms.Label();
             this.lblMinAllowedAge = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -65,6 +65,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(492, 42);
             this.panel1.TabIndex = 0;
+            // 
+            // lblClassName
+            // 
+            this.lblClassName.AutoSize = true;
+            this.lblClassName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.lblClassName.Font = new System.Drawing.Font("Segoe UI Historic", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.lblClassName.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lblClassName.Location = new System.Drawing.Point(125, 11);
+            this.lblClassName.Name = "lblClassName";
+            this.lblClassName.Size = new System.Drawing.Size(30, 19);
+            this.lblClassName.TabIndex = 2;
+            this.lblClassName.Text = "???";
             // 
             // label1
             // 
@@ -87,6 +99,32 @@
             this.panel2.Size = new System.Drawing.Size(304, 200);
             this.panel2.TabIndex = 1;
             // 
+            // txtDescription
+            // 
+            this.txtDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDescription.Font = new System.Drawing.Font("Trebuchet MS", 10.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.txtDescription.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.txtDescription.Location = new System.Drawing.Point(17, 37);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.ReadOnly = true;
+            this.txtDescription.Size = new System.Drawing.Size(268, 153);
+            this.txtDescription.TabIndex = 0;
+            this.txtDescription.TabStop = false;
+            this.txtDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Historic", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label4.ForeColor = System.Drawing.SystemColors.Info;
+            this.label4.Location = new System.Drawing.Point(101, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 20);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Description:";
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
@@ -96,6 +134,18 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(230, 42);
             this.panel3.TabIndex = 2;
+            // 
+            // lblClassID
+            // 
+            this.lblClassID.AutoSize = true;
+            this.lblClassID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.lblClassID.Font = new System.Drawing.Font("Segoe UI Historic", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.lblClassID.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lblClassID.Location = new System.Drawing.Point(152, 12);
+            this.lblClassID.Name = "lblClassID";
+            this.lblClassID.Size = new System.Drawing.Size(30, 19);
+            this.lblClassID.TabIndex = 3;
+            this.lblClassID.Text = "???";
             // 
             // label2
             // 
@@ -118,6 +168,18 @@
             this.panel4.Size = new System.Drawing.Size(230, 42);
             this.panel4.TabIndex = 3;
             // 
+            // lblClassFees
+            // 
+            this.lblClassFees.AutoSize = true;
+            this.lblClassFees.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.lblClassFees.Font = new System.Drawing.Font("Segoe UI Historic", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.lblClassFees.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lblClassFees.Location = new System.Drawing.Point(136, 12);
+            this.lblClassFees.Name = "lblClassFees";
+            this.lblClassFees.Size = new System.Drawing.Size(30, 19);
+            this.lblClassFees.TabIndex = 3;
+            this.lblClassFees.Text = "???";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -129,32 +191,6 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Class Fees:";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Historic", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label4.ForeColor = System.Drawing.SystemColors.Info;
-            this.label4.Location = new System.Drawing.Point(101, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 20);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Description:";
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDescription.Font = new System.Drawing.Font("Trebuchet MS", 10.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.txtDescription.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.txtDescription.Location = new System.Drawing.Point(17, 37);
-            this.txtDescription.Multiline = true;
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.ReadOnly = true;
-            this.txtDescription.Size = new System.Drawing.Size(268, 153);
-            this.txtDescription.TabIndex = 0;
-            this.txtDescription.TabStop = false;
-            this.txtDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
@@ -164,6 +200,18 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(230, 42);
             this.panel5.TabIndex = 5;
+            // 
+            // lblValidityLength
+            // 
+            this.lblValidityLength.AutoSize = true;
+            this.lblValidityLength.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.lblValidityLength.Font = new System.Drawing.Font("Segoe UI Historic", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.lblValidityLength.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lblValidityLength.Location = new System.Drawing.Point(136, 12);
+            this.lblValidityLength.Name = "lblValidityLength";
+            this.lblValidityLength.Size = new System.Drawing.Size(30, 19);
+            this.lblValidityLength.TabIndex = 4;
+            this.lblValidityLength.Text = "???";
             // 
             // label5
             // 
@@ -186,65 +234,6 @@
             this.panel6.Size = new System.Drawing.Size(230, 42);
             this.panel6.TabIndex = 4;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Historic", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label6.ForeColor = System.Drawing.SystemColors.Info;
-            this.label6.Location = new System.Drawing.Point(3, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(143, 20);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Min Allowed Age:";
-            // 
-            // lblClassName
-            // 
-            this.lblClassName.AutoSize = true;
-            this.lblClassName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.lblClassName.Font = new System.Drawing.Font("Segoe UI Historic", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lblClassName.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lblClassName.Location = new System.Drawing.Point(125, 11);
-            this.lblClassName.Name = "lblClassName";
-            this.lblClassName.Size = new System.Drawing.Size(30, 19);
-            this.lblClassName.TabIndex = 2;
-            this.lblClassName.Text = "???";
-            // 
-            // lblClassID
-            // 
-            this.lblClassID.AutoSize = true;
-            this.lblClassID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.lblClassID.Font = new System.Drawing.Font("Segoe UI Historic", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lblClassID.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lblClassID.Location = new System.Drawing.Point(152, 12);
-            this.lblClassID.Name = "lblClassID";
-            this.lblClassID.Size = new System.Drawing.Size(30, 19);
-            this.lblClassID.TabIndex = 3;
-            this.lblClassID.Text = "???";
-            // 
-            // lblClassFees
-            // 
-            this.lblClassFees.AutoSize = true;
-            this.lblClassFees.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.lblClassFees.Font = new System.Drawing.Font("Segoe UI Historic", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lblClassFees.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lblClassFees.Location = new System.Drawing.Point(136, 12);
-            this.lblClassFees.Name = "lblClassFees";
-            this.lblClassFees.Size = new System.Drawing.Size(30, 19);
-            this.lblClassFees.TabIndex = 3;
-            this.lblClassFees.Text = "???";
-            // 
-            // lblValidityLength
-            // 
-            this.lblValidityLength.AutoSize = true;
-            this.lblValidityLength.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.lblValidityLength.Font = new System.Drawing.Font("Segoe UI Historic", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lblValidityLength.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lblValidityLength.Location = new System.Drawing.Point(136, 12);
-            this.lblValidityLength.Name = "lblValidityLength";
-            this.lblValidityLength.Size = new System.Drawing.Size(30, 19);
-            this.lblValidityLength.TabIndex = 4;
-            this.lblValidityLength.Text = "???";
-            // 
             // lblMinAllowedAge
             // 
             this.lblMinAllowedAge.AutoSize = true;
@@ -256,6 +245,17 @@
             this.lblMinAllowedAge.Size = new System.Drawing.Size(30, 19);
             this.lblMinAllowedAge.TabIndex = 4;
             this.lblMinAllowedAge.Text = "???";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Historic", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label6.ForeColor = System.Drawing.SystemColors.Info;
+            this.label6.Location = new System.Drawing.Point(3, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(143, 20);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Min Allowed Age:";
             // 
             // label12
             // 
@@ -297,7 +297,9 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmLicenseClassDetails";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "License Class Details";
             this.Load += new System.EventHandler(this.frmLicenseClassDetails_Load);
             this.panel1.ResumeLayout(false);
