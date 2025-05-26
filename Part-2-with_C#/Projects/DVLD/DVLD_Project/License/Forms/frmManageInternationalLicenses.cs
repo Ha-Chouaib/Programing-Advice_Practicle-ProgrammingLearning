@@ -45,7 +45,7 @@ namespace DVLD_Project.License.Forms
 
             DataGridViewCheckBoxColumn IsActiveCheckBox = new DataGridViewCheckBoxColumn();
 
-            byte IsActiveIndex = (byte)dgvListInternationalLicenses.Columns["IsReleased"].Index;
+            byte IsActiveIndex = (byte)dgvListInternationalLicenses.Columns["IsActive"].Index;
             dgvListInternationalLicenses.Columns.RemoveAt(IsActiveIndex);
 
             IsActiveCheckBox.HeaderText = "Is Active";
@@ -169,6 +169,7 @@ namespace DVLD_Project.License.Forms
         {
             frmAddNewInternationalLicenseApplication AddNewInternationalLicense=new frmAddNewInternationalLicenseApplication();
             AddNewInternationalLicense.ShowDialog();
+            frmManageInternationalLicenses_Load(null, null);
         }
 
         private void btnClose_Click(object sender, EventArgs e)

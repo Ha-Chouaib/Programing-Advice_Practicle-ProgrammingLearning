@@ -90,7 +90,9 @@ namespace DVLD_Project
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ctrlPersonDetails1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmPersonDetails";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Person Details";
             this.Load += new System.EventHandler(this.frmPersonDetails_Load);
             this.ResumeLayout(false);

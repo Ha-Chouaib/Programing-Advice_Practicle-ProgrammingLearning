@@ -301,12 +301,6 @@
     <Compile Include="Users\Forms\frmManageUsers.Designer.cs">
       <DependentUpon>frmManageUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Users\UserControls\ctrlAdd_EditUser.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Users\UserControls\ctrlAdd_EditUser.Designer.cs">
-      <DependentUpon>ctrlAdd_EditUser.cs</DependentUpon>
-    </Compile>
     <Compile Include="People\User_Ctrl\ctrlFilterPeople.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -450,9 +444,6 @@
     <EmbeddedResource Include="Users\Forms\frmManageUsers.resx">
       <DependentUpon>frmManageUsers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Users\UserControls\ctrlAdd_EditUser.resx">
-      <DependentUpon>ctrlAdd_EditUser.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="People\User_Ctrl\ctrlFilterPeople.resx">
       <DependentUpon>ctrlFilterPeople.cs</DependentUpon>
     </EmbeddedResource>
@@ -545,6 +536,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\DetainLicenseImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Users 2 400.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PersonLicenseHistory 512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close 64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DVLD Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

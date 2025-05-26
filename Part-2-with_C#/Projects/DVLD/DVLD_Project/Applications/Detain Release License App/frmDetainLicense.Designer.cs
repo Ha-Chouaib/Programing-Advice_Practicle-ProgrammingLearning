@@ -286,7 +286,9 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.ctrlFindAndDisplayDriverLicense1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmDetainLicense";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detain License";
             this.Load += new System.EventHandler(this.frmDetainLicense_Load);
             this.groupBox2.ResumeLayout(false);

@@ -75,7 +75,9 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.ctrlShowLoginInfo1);
             this.Controls.Add(this.ctrlPersonDetails1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmDisplayUserDetails";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User Details";
             this.Load += new System.EventHandler(this.frmDisplayUserDetails_Load);
             this.ResumeLayout(false);

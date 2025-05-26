@@ -42,7 +42,11 @@ namespace DVLD_Project.Applications.Tests
 
         private void _DisplayLocalAppInfo()
         {
+            pbTestAppointment.Image = TestImg;
+
             lblTestApointmentName.Text = clsTestTypes.Find(_TestTypeID).TestTitle+" Appointment";
+            lblTestApointmentName.Left=(this.ClientSize.Width - lblTestApointmentName.Width )/2;
+
             ctrlDisplayApplicationLicenseInfo1.__DisplayLDL_AppInfo(_LDL_AppID);
             ctrlDisplayApplicationInfo1.__DisplayApplicationInfo(clsLocalDrivingLicense.Find(_LDL_AppID).MainApplicationID);
         }
@@ -93,7 +97,7 @@ namespace DVLD_Project.Applications.Tests
 
                     if (clsTests.Find(CurrentSchedualedTest_ID).TestResult_IsPassed)
                     {
-                        MessageBox.Show("The Vision Test is Already Passed Successfully, You Cannot Retake it Now!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("The Test is Already Passed Successfully, You Cannot Retake it Now!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }

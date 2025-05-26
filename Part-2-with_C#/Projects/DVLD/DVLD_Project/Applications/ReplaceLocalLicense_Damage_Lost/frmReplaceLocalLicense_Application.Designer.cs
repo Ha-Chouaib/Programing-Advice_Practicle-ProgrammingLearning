@@ -403,7 +403,9 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblHeaderTitle);
             this.Controls.Add(this.ctrlFindAndDisplayDriverLicense1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmReplaceLocalLicense_Application";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmReplaceLocalLicense_Application";
             this.Load += new System.EventHandler(this.frmReplaceLocalLicense_Application_Load);
             this.groupBox1.ResumeLayout(false);

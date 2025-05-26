@@ -201,8 +201,10 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ctrlShowLoginInfo1);
             this.Controls.Add(this.ctrlPersonDetails1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmChangePassword";
-            this.Text = "frmChangePassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Change Password";
             this.Load += new System.EventHandler(this.frmChangePassword_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

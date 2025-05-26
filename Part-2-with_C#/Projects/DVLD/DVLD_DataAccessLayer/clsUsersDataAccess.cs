@@ -174,6 +174,33 @@ namespace DVLD_DataAccessLayer
             }
             return Found;
         }
+
+        public static bool Exist(string UserName)
+        {
+            SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
+            string Query = @"SELECT Found=1 From Users WHERE UserName=@UserName";
+
+            SqlCommand command = new SqlCommand(Query, connection);
+            command.Parameters.AddWithValue(@"UserName", UserName);
+
+            bool Found = false;
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows) Found = true;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return Found;
+        }
+
         public static bool ExistByPersonID(int PersonID)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);

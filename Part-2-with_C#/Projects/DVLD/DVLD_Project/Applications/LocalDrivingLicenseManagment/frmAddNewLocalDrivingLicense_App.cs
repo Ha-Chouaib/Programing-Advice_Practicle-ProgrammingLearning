@@ -37,7 +37,8 @@ namespace DVLD_Project.Applications.LDLApps
             _UpLoadNewAppMainInfo();
             if (clsPeople.IsExist(_PersonID))
             {
-                ctrlFindPerson1.__DisplayPersonalInfo(_PersonID,false);
+                ctrlFindPerson1.__EnableFilter = false;
+                ctrlFindPerson1.__DisplayPersonalInfo(_PersonID);
 
             }
         }

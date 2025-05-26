@@ -200,7 +200,7 @@ namespace DVLD_Project.Users
         private void updateUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int UserID =(int) dgvListUsers.CurrentRow.Cells[0].Value;
-            frmAdd_EditUser UpdateUser = new frmAdd_EditUser(UserID);
+            frmAdd_EditUser UpdateUser = new frmAdd_EditUser( frmAdd_EditUser.enMode.eUpdateUser, UserID);
             UpdateUser.RelaodContent += _RelaodUsersList;
             UpdateUser.Show();
 

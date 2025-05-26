@@ -168,7 +168,9 @@
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.txtTestFees);
             this.Controls.Add(this.txtTestTitle);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmEditTestType";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEditTestType";
             this.Load += new System.EventHandler(this.frmEditTestType_Load);
             this.ResumeLayout(false);

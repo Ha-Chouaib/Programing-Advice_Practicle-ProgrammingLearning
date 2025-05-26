@@ -47,6 +47,9 @@
             this.lblRecordsCount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLsitPeople)).BeginInit();
             this.cmsManagePeople.SuspendLayout();
@@ -146,15 +149,19 @@
             this.tsmEdit,
             this.tsmDelete,
             this.tsmSendEmail,
-            this.tsmPhoneCall});
+            this.tsmPhoneCall,
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.toUserToolStripMenuItem});
             this.cmsManagePeople.Name = "cmsManagePeople";
-            this.cmsManagePeople.Size = new System.Drawing.Size(179, 136);
+            this.cmsManagePeople.Size = new System.Drawing.Size(181, 192);
+            this.cmsManagePeople.Opening += new System.ComponentModel.CancelEventHandler(this.cmsManagePeople_Opening);
             // 
             // tsmShowDetails
             // 
             this.tsmShowDetails.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.tsmShowDetails.Name = "tsmShowDetails";
-            this.tsmShowDetails.Size = new System.Drawing.Size(178, 22);
+            this.tsmShowDetails.Size = new System.Drawing.Size(180, 22);
             this.tsmShowDetails.Text = "Show Details";
             this.tsmShowDetails.Click += new System.EventHandler(this.tsmShowDetails_Click);
             // 
@@ -162,7 +169,7 @@
             // 
             this.tsmAddNew.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.tsmAddNew.Name = "tsmAddNew";
-            this.tsmAddNew.Size = new System.Drawing.Size(178, 22);
+            this.tsmAddNew.Size = new System.Drawing.Size(180, 22);
             this.tsmAddNew.Text = "Add New Person";
             this.tsmAddNew.Click += new System.EventHandler(this.tsmAddNew_Click);
             // 
@@ -170,7 +177,7 @@
             // 
             this.tsmEdit.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.tsmEdit.Name = "tsmEdit";
-            this.tsmEdit.Size = new System.Drawing.Size(178, 22);
+            this.tsmEdit.Size = new System.Drawing.Size(180, 22);
             this.tsmEdit.Text = "Edit";
             this.tsmEdit.Click += new System.EventHandler(this.tsmEdit_Click);
             // 
@@ -178,7 +185,7 @@
             // 
             this.tsmDelete.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.tsmDelete.Name = "tsmDelete";
-            this.tsmDelete.Size = new System.Drawing.Size(178, 22);
+            this.tsmDelete.Size = new System.Drawing.Size(180, 22);
             this.tsmDelete.Text = "Delete";
             this.tsmDelete.Click += new System.EventHandler(this.tsmDelete_Click);
             // 
@@ -186,7 +193,7 @@
             // 
             this.tsmSendEmail.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.tsmSendEmail.Name = "tsmSendEmail";
-            this.tsmSendEmail.Size = new System.Drawing.Size(178, 22);
+            this.tsmSendEmail.Size = new System.Drawing.Size(180, 22);
             this.tsmSendEmail.Text = "Send Email";
             this.tsmSendEmail.Click += new System.EventHandler(this.tsmSendEmail_Click);
             // 
@@ -194,7 +201,7 @@
             // 
             this.tsmPhoneCall.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.tsmPhoneCall.Name = "tsmPhoneCall";
-            this.tsmPhoneCall.Size = new System.Drawing.Size(178, 22);
+            this.tsmPhoneCall.Size = new System.Drawing.Size(180, 22);
             this.tsmPhoneCall.Text = "Phone Call";
             this.tsmPhoneCall.Click += new System.EventHandler(this.tsmPhoneCall_Click);
             // 
@@ -257,6 +264,24 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
+            // 
+            // toUserToolStripMenuItem
+            // 
+            this.toUserToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Info;
+            this.toUserToolStripMenuItem.Name = "toUserToolStripMenuItem";
+            this.toUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.toUserToolStripMenuItem.Text = "To User";
+            this.toUserToolStripMenuItem.Click += new System.EventHandler(this.toUserToolStripMenuItem_Click);
+            // 
             // frmManagePeople
             // 
             this.AcceptButton = this.btnClose;
@@ -270,7 +295,9 @@
             this.Controls.Add(this.lblRecordNumber);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmManagePeople";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmManagePeople";
             this.Load += new System.EventHandler(this.frmManagePeople_Load);
             this.panel1.ResumeLayout(false);
@@ -303,5 +330,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAddNew;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toUserToolStripMenuItem;
     }
 }

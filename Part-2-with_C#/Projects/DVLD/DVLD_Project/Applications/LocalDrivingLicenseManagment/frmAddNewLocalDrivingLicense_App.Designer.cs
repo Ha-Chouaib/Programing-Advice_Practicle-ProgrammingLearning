@@ -337,7 +337,9 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmAddNewLocalDrivingLicense_App";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New Local Driving License";
             this.Load += new System.EventHandler(this.frmAddNewLocalDrivingLicense_Load);
             this.tabControl1.ResumeLayout(false);

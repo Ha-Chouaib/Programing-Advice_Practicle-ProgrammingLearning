@@ -24,10 +24,25 @@ namespace DVLD_Project.Users.UserControls
 
         public delegate void SendPersonIDHandler(object sender, int PersonID);
         public event SendPersonIDHandler __GetPersonID;
-        public void __EnabledFilterControl(bool EnabledFilterControl = true)
-        {
-            gbFilterContainer.Enabled = EnabledFilterControl;
+        private int _PersonID = -1;
+        clsPeople _Person;
+      
+        private bool _EnableFilter = true;
+        public bool __EnableFilter 
+        { 
+            get { return _EnableFilter; }
+
+            set {   _EnableFilter= value;
+                    gbFilterContainer.Enabled = _EnableFilter;
+                }
         }
+
+        public int __PersonID { get {  return _PersonID; } set { _PersonID = value; } }
+        public clsPeople __PersonInf 
+        {
+            get { return _Person; }
+        }
+
 
         Dictionary<string,string>FindOpt=new Dictionary<string,string>();
         private void _LoadFindOptions()
@@ -39,12 +54,10 @@ namespace DVLD_Project.Users.UserControls
             cmbFilterOpts.ValueMember = "Key";
             cmbFilterOpts.SelectedIndex = 0;
         }
-        private int _PersonID = -1;
-        
+       
+
         private bool _FindPerson()
        {
-            bool Found = false;
-            clsPeople Person;
 
             string Term = txtSearchTerm.Text;
             string FindBy = cmbFilterOpts.SelectedValue.ToString();
@@ -52,32 +65,30 @@ namespace DVLD_Project.Users.UserControls
             if ( FindBy== "NationalNo")
             {
 
-                Person = clsPeople.Find(Term);
-                if(Person != null)
+                _Person = clsPeople.Find(Term);
+                if(_Person == null)
                 {
-                    _PersonID = Person.PersonID;
-                    Found = true;
+                    MessageBox.Show($"No Person with National No << {Term} >>", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
                 }
-                else
-                {
-                    MessageBox.Show($"No Person with National No << {Term} >>","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                }
-            }else
+                _PersonID = _Person.PersonID;
+               
+            }
+            else
             {
 
                 int Pid = int.Parse(Term);
-                if (clsPeople.IsExist(Pid))
-                {
-                    _PersonID = Pid;
-                    Found = true;
-                }
-                else
+                if(! clsPeople.IsExist(Pid))
                 {
                     MessageBox.Show($"No Person with ID << {Term} >>", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    
+                    return false;
                 }
+                _PersonID = Pid;
             }
-       
-            return Found;
+
+            _Person = clsPeople.Find(_PersonID);
+            return true ;
 
         }
         private void btnFindPerson_Click(object sender, EventArgs e)
@@ -87,24 +98,10 @@ namespace DVLD_Project.Users.UserControls
         }
         private void txtSearchTerm_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            if(cmbFilterOpts.SelectedValue.ToString() == "PersonID")
+                e.Handled = !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar);
         }
-        private void cmbFilterOpts_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            txtSearchTerm.KeyPress -= txtSearchTerm_KeyPress;
-
-            if (cmbFilterOpts.SelectedValue.ToString() == "PersonID")
-            {
-                txtSearchTerm.KeyPress += txtSearchTerm_KeyPress;
-
-            }
-           
-
-        }
-
+       
         private void btnAddNewPerson_Click(object sender, EventArgs e)
         {
             frmAdd_Edit_People NewPerson = new frmAdd_Edit_People();
@@ -114,6 +111,7 @@ namespace DVLD_Project.Users.UserControls
         private void GetNewPersonID(object sender, int PersonID)
         {
             _PersonID = PersonID;
+            _Person=clsPeople.Find(_PersonID);
             __GetPersonID?.Invoke(this, _PersonID);
 
         }

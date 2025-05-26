@@ -78,7 +78,7 @@
             this.pbDriverLicenseInfo.TabIndex = 3;
             this.pbDriverLicenseInfo.TabStop = false;
             // 
-            // frmLicenseInfo
+            // frmDisplayLocalLicenseInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -88,7 +88,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.ctrlDisplayDriverLicenseInfo1);
-            this.Name = "frmLicenseInfo";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "frmDisplayLocalLicenseInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Driver License Info";
             this.Load += new System.EventHandler(this.frmLicenseInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbDriverLicenseInfo)).EndInit();

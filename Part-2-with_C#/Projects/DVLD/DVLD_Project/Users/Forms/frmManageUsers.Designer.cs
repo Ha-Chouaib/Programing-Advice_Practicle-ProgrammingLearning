@@ -308,7 +308,9 @@
             this.Controls.Add(this.dgvListUsers);
             this.Controls.Add(this.cmbIsActiveOptions);
             this.Controls.Add(this.txtFilterTerm);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmManageUsers";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Users";
             this.Load += new System.EventHandler(this.frmManageUsers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListUsers)).EndInit();

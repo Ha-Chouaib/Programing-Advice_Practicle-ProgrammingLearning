@@ -524,7 +524,9 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ctrlFindAndDisplayDriverLicense1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmRenewLocalDrivingLicense";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Renew Local Driving License";
             this.Load += new System.EventHandler(this.frmRenewLocalDrivingLicense_Load);
             this.groupBox1.ResumeLayout(false);

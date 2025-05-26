@@ -420,7 +420,9 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ctrlFindAndDisplayDriverLicense1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmAddNewInternationalLicenseApplication";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddNewInternationalLicenseApplication";
             this.Load += new System.EventHandler(this.frmAddNewInternationalLicenseApplication_Load);
             this.groupBox1.ResumeLayout(false);

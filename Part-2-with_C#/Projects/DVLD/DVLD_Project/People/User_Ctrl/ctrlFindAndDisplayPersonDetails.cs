@@ -18,7 +18,13 @@ namespace DVLD_Project.People.User_Ctrl
             InitializeComponent();
         }
 
-        private int _PersonID { get; set; }
+        private clsPeople _Person;
+        private int _PersonID = -1;
+
+        public int __PersonID { get { return _PersonID; } set { _PersonID = value; } }
+        public clsPeople __PersonRecord { get { return _Person; } }
+        public bool __EnableFilter { get { return ctrlFilterPeople1.__EnableFilter; } set { ctrlFilterPeople1.__EnableFilter = value; } }
+
         public delegate void TriggerFunctionEventHandler(object sender, int PersonID);
         public event TriggerFunctionEventHandler __ReturnPersonID;
         private void ctrlFindPerson_Load(object sender, EventArgs e)
@@ -29,13 +35,13 @@ namespace DVLD_Project.People.User_Ctrl
         private void _GetPersonID(object sender, int PersonID)
         {
             _PersonID=PersonID;
+            _Person = ctrlFilterPeople1.__PersonInf;
             __ReturnPersonID?.Invoke(this, PersonID);
         }
 
-        public void __DisplayPersonalInfo(int PersonID,bool EnabledFilterControl= true)
+        public void __DisplayPersonalInfo(int PersonID)
         {
             ctrlPersonDetails1.__DisplayPersonInfo(PersonID);
-            ctrlFilterPeople1.__EnabledFilterControl(EnabledFilterControl);
         }
 
     }
