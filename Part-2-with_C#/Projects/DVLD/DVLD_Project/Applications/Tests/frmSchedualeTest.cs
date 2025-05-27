@@ -16,50 +16,80 @@ namespace DVLD_Project.Applications.Tests
 {
     public partial class frmSchedualeTest : Form
     {
-        int _LDLApp_OR_Appointment_ID = -1;
-        byte _Trials = 0;
+        int _LocalDrivingLicenseApplicationID = -1;
+        int _TestAppointmentID = -1;
         int _TestTypeID=-1;
         Image TestImg;
+
+        clsLocalDrivingLicense _LocalDrivingLicenseApplication;
+        clsMainApplication _RetakeTest_App = new clsMainApplication();
+        clsTestAppointments _TestAppointment= new clsTestAppointments();
+        clsPeople Person;
+        clsTestTypes TestType;
         enum enMode { eAddNew, eUpdate }
+        enum enNewTestMode { eFirstTime, eRetakeTest}
+
         enMode _Mode;
-        public frmSchedualeTest()
+        enNewTestMode _NewAppointmentMode;
+
+        public delegate void TriggerFunctionEventHandler(object sender);
+        public event TriggerFunctionEventHandler __ReLoadSchedualeTest_List;
+        public frmSchedualeTest(int TestAppointmentID, Image TestImg)
         {
             InitializeComponent();
+            _TestAppointmentID = TestAppointmentID;
+            _Mode = enMode.eUpdate;
         }
-        public frmSchedualeTest( int LDLApp_OR_Appointment_ID, byte Trials, bool isAddNewMode, int TestTypeID,Image TestImg)
+        public frmSchedualeTest( int LocalDrivingLicenseApplicationID ,int TestTypeID,Image TestImg)
         {
             InitializeComponent();
-            this._LDLApp_OR_Appointment_ID = LDLApp_OR_Appointment_ID;
-            this._Trials = Trials;
+            this._LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplicationID;
             this._TestTypeID = TestTypeID;
             this.TestImg = TestImg;
-            if (isAddNewMode)
-            {
-                _Mode = enMode.eAddNew;
-            }
-            else
-                _Mode = enMode.eUpdate;
+            _Mode = enMode.eAddNew;
+           
         }
 
         private void frmSchedulingTest_Load(object sender, EventArgs e)
         {
-            _LoadAppInfo();
-
+            _PerformMode();
+            _DisplayAppointmentInfo();
+            _PerfomSchedualingConstraints();
         }
 
-        clsTestAppointments TestAppointment;
-        clsLocalDrivingLicense LocalDrivingLicenseApp;
-        clsPeople Person;
-        public delegate void TriggerFunctionEventHandler(object sender);
-        public event TriggerFunctionEventHandler __ReLoadSchedualeTest_List;
-        private void _RetakeTestGroupBox_BackColorHandler(bool IsEnable)
+
+        private void _PerformMode()
+        {
+            
+            if(_Mode== enMode.eUpdate)
+            {
+                _TestAppointment = clsTestAppointments.Find(_TestAppointmentID);
+                _TestTypeID = _TestAppointment.TestTypeID;
+                _LocalDrivingLicenseApplicationID = _TestAppointment.LDL_AppID;
+                gbRetakeTestInfo.Enabled = false;
+                return;
+            }else
+            {
+               
+                if (clsTestAppointments._GetTestTrials(_LocalDrivingLicenseApplicationID, _TestTypeID) == 0)
+                {
+                    _NewAppointmentMode = enNewTestMode.eFirstTime;
+                    gbRetakeTestInfo.Enabled = false;
+                    return;
+                }
+                _NewAppointmentMode = enNewTestMode.eRetakeTest;
+                gbRetakeTestInfo.Enabled = true;
+            }
+
+        }
+        private void _HandleRetakeTestGroupBox_BackColor()
         {
 
             foreach (Control ctrl in gbRetakeTestInfo.Controls)
             {
                 if (ctrl is Panel pnl)
                 {
-                    if (IsEnable)
+                    if (gbRetakeTestInfo.Enabled)
                     {
                         gbRetakeTestInfo.BackColor = Color.FromArgb(30, 30, 30);
                         pnl.BackColor = Color.FromArgb(20, 20, 20);
@@ -76,154 +106,191 @@ namespace DVLD_Project.Applications.Tests
             }
 
         }
-        private void _LoadAppInfo()
+
+        private bool _HandleIfRetakeTestApplication()
         {
-            if (_LDLApp_OR_Appointment_ID != -1)
+            if(_NewAppointmentMode == enNewTestMode.eRetakeTest)
             {
-                pbTestIMG.Image = TestImg;
-                gbSchedualeTestContainer.Text = clsTestTypes.Find(_TestTypeID).TestTitle;
-                gbRetakeTestInfo.Enabled = false;
-                _RetakeTestGroupBox_BackColorHandler(false);
-                lblUpdateErrorMSG.Visible = false;
-                lblR_AppFees.Text = "0";
-                if (_Mode == enMode.eUpdate)
-                {
-                    TestAppointment = clsTestAppointments.Find(_LDLApp_OR_Appointment_ID);
-                    LocalDrivingLicenseApp = clsLocalDrivingLicense.Find(TestAppointment.LDL_AppID);
+                _RetakeTest_App.CreatedByUserID = clsGlobal.CurrentUserID;
+                _RetakeTest_App.ApplicantPersonID = Person.PersonID;
+                _RetakeTest_App.AppDate = DateTime.Now;
+                _RetakeTest_App.AppTypeID = (int)clsMainApplication.enApplicationTypes_IDs.RetakeTest;
+                _RetakeTest_App.AppStatus = (byte)clsMainApplication.enApplicationStatus.Completed;
+                _RetakeTest_App.LastStatusDate = DateTime.Now;
+                _RetakeTest_App.PaidFees = clsApplicationTypes.Find(_RetakeTest_App.AppTypeID).AppFees;
 
-                    dtSechedualeDate.Value = TestAppointment.AppointmentDate;
-                    if (TestAppointment.IsLocked)
-                    {
-                        btnSave.Enabled = false;
-                        dtSechedualeDate.Enabled = false;
-                        lblUpdateErrorMSG.Visible = true;
-
-                        btnSave.BackColor = Color.FromArgb(50, 50, 50);
-                        lblUpdateErrorMSG.ForeColor = Color.Red;
-
-                    }
-                }
-                else
-                {
-                    LocalDrivingLicenseApp = clsLocalDrivingLicense.Find(_LDLApp_OR_Appointment_ID);
-
-                    if (this._Trials > 0)
-                    {
-                        gbRetakeTestInfo.Enabled = true;
-                        _RetakeTestGroupBox_BackColorHandler(false);
-
-                        lblR_AppFees.Text = clsApplicationTypes.Find(2).AppFees.ToString();
-                    }
-                }
-
-                lblDL_AppID.Text = _LDLApp_OR_Appointment_ID.ToString();
-
-                lblLicenseClass.Text = clsLicenseClasses.Find(LocalDrivingLicenseApp.LicenseClassID).LicenseClassName;
-
-                Person = clsPeople.Find(clsMainApplication.Find(LocalDrivingLicenseApp.MainApplicationID).ApplicantPersonID);
-                lblFullName.Text = Person.FirstName + " " + Person.SecondName + " " + Person.ThirdName + " " + Person.LastName;
-
-                lbl_Fees.Text = clsTestTypes.Find(1).TestFees.ToString();
-
-                lblTotalFees.Text = (float.Parse(lbl_Fees.Text) + float.Parse(lblR_AppFees.Text)).ToString();
-
-                lblTrial.Text = this._Trials.ToString();
-            }
-        }
-
-        private bool _AddNewScheduale()
-        {
-            clsTestAppointments NewAppointment = new clsTestAppointments();
-            NewAppointment.TestTypeID = _TestTypeID;
-            NewAppointment.LDL_AppID = LocalDrivingLicenseApp.LDL_ID;
-            NewAppointment.AppointmentDate = dtSechedualeDate.Value;
-            NewAppointment.PaidFees = float.Parse(lbl_Fees.Text);
-            NewAppointment.IsLocked = false;
-            NewAppointment.CreatedByUserID = (short)clsGlobal.CurrentUserID;
-            if (_Trials > 0)
-            {
-               
-                clsMainApplication RetakeTest_App = new clsMainApplication();
-                RetakeTest_App.CreatedByUserID = clsGlobal.CurrentUserID;
-                RetakeTest_App.ApplicantPersonID = Person.PersonID;
-                RetakeTest_App.AppDate = DateTime.Now;
-                RetakeTest_App.AppTypeID = (int)clsGlobal.enApplicationTypes_IDs.RetakeTest;
-                RetakeTest_App.AppStatus = (byte)clsGlobal.enApplicationStatus.Completed; 
-                RetakeTest_App.LastStatusDate = DateTime.Now;
-                RetakeTest_App.PaidFees = clsApplicationTypes.Find(RetakeTest_App.AppTypeID).AppFees;
-                if (!RetakeTest_App.Save())
+                if(!_RetakeTest_App.Save())
                 {
                     MessageBox.Show("Error Cannot Save Retake Test Application !!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-                
-                lblR_TestAppID.Text = RetakeTest_App.AppID.ToString();
-                NewAppointment.RetakeTestApplicationID= RetakeTest_App.AppID;
+
+                _TestAppointment.RetakeTestApplicationID = _RetakeTest_App.AppID;
+                lblR_TestAppID.Text = _RetakeTest_App.AppID.ToString();
             }
-            return NewAppointment.Save();
+            return true;
+
+
+
         }
 
-        private bool _UpdateScheduling()
+        private void _FillTestAppointmentRecord()
         {
-            TestAppointment.AppointmentDate = dtSechedualeDate.Value;
-            return TestAppointment.Save();
+            _TestAppointment.TestTypeID = _TestTypeID;
+            _TestAppointment.LDL_AppID = _LocalDrivingLicenseApplicationID;
+            _TestAppointment.AppointmentDate = dtSechedualeDate.Value;
+            _TestAppointment.PaidFees = float.Parse(lbl_Fees.Text);
+            _TestAppointment.IsLocked = false;
+            _TestAppointment.CreatedByUserID = (short)clsGlobal.CurrentUserID;
         }
-        private void _SaveSchedualedTestData()
+
+        private bool _HandleActiveLicenseConstraint()
         {
-            if (MessageBox.Show("Sure to Completed Test Schedualing Operation ?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (_Mode == enMode.eAddNew && clsTestAppointments.HasActiveAppointment(_LocalDrivingLicenseApplicationID, _TestTypeID))
             {
-
-                switch (_Mode)
-                {
-                    case enMode.eUpdate:
-                        if (_UpdateScheduling())
-                        {
-                            MessageBox.Show("Done Successfully");
-                            __ReLoadSchedualeTest_List?.Invoke(this);
-                        }
-                        else
-                            MessageBox.Show("Error Cannot Save Updated Scheduale !!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                        break;
-
-                    case enMode.eAddNew:
-                        if (_AddNewScheduale())
-                        {
-                            MessageBox.Show("Done Successfully");
-
-                            __ReLoadSchedualeTest_List?.Invoke(this);
-                            btnSave.Enabled = false;
-                        }
-                        break;
-
-                }
-
-
+                btnSave.Enabled=false;
+                dtSechedualeDate.Enabled = false;
+                lblErrorMSG.Visible=true;
+                lblErrorMSG.Text = "This Person Already Has an Active Schedualed Tset! You Cannot Have Tow Active Appointments";
+                return false;
             }
+
+            return true;
+        }
+        private bool _HandleLockedAppointmentConstraint()
+        {
+            if ( _TestAppointment.IsLocked )
+            {
+                btnSave.Enabled = false;
+                dtSechedualeDate.Enabled = false;
+                lblErrorMSG.Visible = true;
+                lblErrorMSG.Text = "This Appointment Is Locked Cannot Be Updated, The User Already Sat This Schadualed Test Before !";
+                return false;
+            }
+            return true;
+        }
+        private bool _HandlePasingTestsHierarchy()
+        {
+
+            switch((clsTestTypes.enTestType)_TestTypeID)
+            {
+                case clsTestTypes.enTestType.eVisionTest:
+                    lblErrorMSG.Visible = false;
+                    return true;
+                case clsTestTypes.enTestType.eWrittenTest:
+                    if(!clsTestAppointments.DoesTestTypePassed(_LocalDrivingLicenseApplicationID,(int)clsTestTypes.enTestType.eVisionTest))
+                    {
+                        btnSave.Enabled = false;
+                        dtSechedualeDate.Enabled = false;
+                        lblErrorMSG.Visible = true;
+                        lblErrorMSG.Text = "Should First Pass << Vision Test >> Before Moving To Written Test !";
+                        return false;
+                    }
+                    return true;
+
+                case clsTestTypes.enTestType.eStreetTest:
+
+                    if (!clsTestAppointments.DoesTestTypePassed(_LocalDrivingLicenseApplicationID, (int)clsTestTypes.enTestType.eWrittenTest))
+                    {
+                        btnSave.Enabled = false;
+                        dtSechedualeDate.Enabled = false;
+                        lblErrorMSG.Visible = true;
+                        lblErrorMSG.Text = "Should First Pass << Written Test >> Before Moving To Street Test !";
+                        return false;
+                    }
+                    return true;
+            }
+
+            return true;
+        }
+        private bool _PerfomSchedualingConstraints()
+        {
+            if(!_HandleActiveLicenseConstraint()) return false;
+            if(!_HandleLockedAppointmentConstraint()) return false;
+            if(!_HandlePasingTestsHierarchy()) return false;
+
+            return true;
+        }
+        private void _DisplayAppointmentInfo()
+        {
+            _HandleRetakeTestGroupBox_BackColor();
+
+            _LocalDrivingLicenseApplication = clsLocalDrivingLicense.Find(_LocalDrivingLicenseApplicationID);
+            Person = clsPeople.Find(clsMainApplication.Find(_LocalDrivingLicenseApplication.MainApplicationID).ApplicantPersonID);
+            TestType = clsTestTypes.Find(_TestTypeID);
+
+            pbTestIMG.Image = TestImg;
+            gbSchedualeTestContainer.Text = TestType.TestTitle;
+            lblErrorMSG.Visible = false;
+
+            lblDL_AppID.Text = _LocalDrivingLicenseApplicationID.ToString();
+
+            lblLicenseClass.Text = clsLicenseClasses.Find(_LocalDrivingLicenseApplication.LicenseClassID).LicenseClassName;
+
+            lblFullName.Text = Person.FirstName + " " + Person.SecondName + " " + Person.ThirdName + " " + Person.LastName;
+
+            lbl_Fees.Text = TestType.TestFees.ToString();
+            lblR_AppFees.Text = "0";
+
+            lblTotalFees.Text = (TestType.TestFees + float.Parse(lblR_AppFees.Text)).ToString();
+
+            lblTrial.Text = clsTestAppointments._GetTestTrials(_LocalDrivingLicenseApplicationID,_TestTypeID).ToString();
+             
+            if(_NewAppointmentMode == enNewTestMode.eRetakeTest)
+                lblR_AppFees.Text = clsApplicationTypes.Find((int)clsMainApplication.enApplicationTypes_IDs.RetakeTest).AppFees.ToString();
+
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void dtSechedualeDate_Validating(object sender, CancelEventArgs e)
         {
             ErrorProvider errorP = new ErrorProvider();
             if (dtSechedualeDate.Value < DateTime.Now)
             {
                 errorP.SetError(dtSechedualeDate, "The Current Date Is Under The Valide Scheduling Date Please Enter A Valide One!");
-                return;
             }
             else
             {
                 errorP.SetError(dtSechedualeDate, "");
             }
-            _SaveSchedualedTestData();
+        }
+
+        private bool _SchedualeTest()
+        {
+
+            if(!_HandleIfRetakeTestApplication()) return false;
+
+            _FillTestAppointmentRecord();
+
+            if (!_TestAppointment.Save())
+            {
+                MessageBox.Show("Error Cannot Save Updated Schedualed Appointment !!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (_NewAppointmentMode == enNewTestMode.eRetakeTest) clsMainApplication.DeleteApp(_RetakeTest_App.AppID);
+                return false;
+            }
+
+            return true;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (! this.ValidateChildren()) return;
+
+            if (MessageBox.Show("Sure to Completed Test Schedualing Operation ?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if(_SchedualeTest())
+                {
+                    _Mode = enMode.eUpdate;
+                    MessageBox.Show("Done Successfully");
+                    btnSave.Text = "Update";
+                    __ReLoadSchedualeTest_List?.Invoke(this);
+                }
+            }
+
         }
         private void btnCLose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void gbSchedualeTestContainer_Enter(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

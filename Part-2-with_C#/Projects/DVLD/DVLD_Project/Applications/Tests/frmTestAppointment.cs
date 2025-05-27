@@ -80,9 +80,8 @@ namespace DVLD_Project.Applications.Tests
 
         private void btnAddAppointmrnt_Click(object sender, EventArgs e)
         {
-            byte Trials = (byte)dgvListVisionTests.RowCount;
             frmSchedualeTest NewSchedualeTest;
-            if (Trials > 0)
+            if (clsTestAppointments._GetTestTrials(_LDL_AppID,_TestTypeID) > 0)
             {   
                 int CurrentSchedualedTest_ID =clsTestAppointments.GetCurrentAppointmetID(_LDL_AppID,_TestTypeID);
 
@@ -102,7 +101,7 @@ namespace DVLD_Project.Applications.Tests
                     }
                 }
             }
-            NewSchedualeTest = new frmSchedualeTest(_LDL_AppID, Trials,true,_TestTypeID,TestImg);
+            NewSchedualeTest = new frmSchedualeTest(_LDL_AppID,_TestTypeID,TestImg);
             NewSchedualeTest.__ReLoadSchedualeTest_List += _ReLoadList;
             NewSchedualeTest.ShowDialog();
 
@@ -112,7 +111,7 @@ namespace DVLD_Project.Applications.Tests
         {
             int TestAppointmentID = (int)dgvListVisionTests.CurrentRow.Cells[0].Value;
 
-            frmSchedualeTest SchedualeTest_Update = new frmSchedualeTest(TestAppointmentID,(byte)dgvListVisionTests.RowCount,false,_TestTypeID,TestImg);
+            frmSchedualeTest SchedualeTest_Update = new frmSchedualeTest(TestAppointmentID,TestImg);
             SchedualeTest_Update.__ReLoadSchedualeTest_List += _ReLoadList;
             SchedualeTest_Update.Show();
         }
@@ -120,7 +119,6 @@ namespace DVLD_Project.Applications.Tests
         private void takeTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int TestAppointmentID = (int)dgvListVisionTests.CurrentRow.Cells[0].Value;
-            byte Trials = (byte)dgvListVisionTests.RowCount;
             clsTestAppointments TestAppoint = clsTestAppointments.Find(TestAppointmentID);
             if (TestAppoint != null)
             {
@@ -129,7 +127,7 @@ namespace DVLD_Project.Applications.Tests
                     MessageBox.Show("You can Not Take This Test it's Already Taken", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }else
                 {
-                    frmTakeTest TakeTest = new frmTakeTest(TestAppointmentID,Trials,TestImg);
+                    frmTakeTest TakeTest = new frmTakeTest(TestAppointmentID,TestImg);
                     TakeTest.__ReloadList += _ReLoadList;
                     TakeTest.__ReloadList += _ReloadLocalDrivingLicenseList;
                     TakeTest.ShowDialog();

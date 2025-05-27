@@ -69,16 +69,16 @@ namespace DVLD_Project.License.UserControls
 
                 switch(License.IssueReason)
                 {
-                    case (byte)clsGlobal.enIssueReason.FirstTime:
+                    case (byte)clsLicenses.enIssueReason.FirstTime:
                         lblIssueReason.Text = "FirstTime";
                         break;
-                    case (byte)clsGlobal.enIssueReason.RenewLicense:
+                    case (byte)clsLicenses.enIssueReason.RenewLicense:
                         lblIssueReason.Text = "Renew Expired License";
                         break;
-                    case (byte)clsGlobal.enIssueReason.ReplaceFoDamage:
+                    case (byte)clsLicenses.enIssueReason.ReplaceFoDamage:
                         lblIssueReason.Text = "Replacement for Damage";
                         break;
-                    case (byte)clsGlobal.enIssueReason.ReplaceForLost:
+                    case (byte)clsLicenses.enIssueReason.ReplaceForLost:
                         lblIssueReason.Text = "Replacement for Lost";
                         break;
                     default:

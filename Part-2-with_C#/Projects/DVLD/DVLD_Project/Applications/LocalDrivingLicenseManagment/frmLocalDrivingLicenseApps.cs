@@ -8,8 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DVLD_BusinessLayer;
 using DVLD_BusinessLayer.Applications;
 using DVLD_BusinessLayer.Licenses;
+using DVLD_BusinessLayer.Tests;
 using DVLD_Project.Applications.LDLApps;
 using DVLD_Project.Applications.Tests;
 using DVLD_Project.License;
@@ -178,16 +180,15 @@ namespace DVLD_Project.Applications
             }
             int PersonID = clsMainApplication.Find(LocalLicenseApp.MainApplicationID).ApplicantPersonID;
 
-            if (clsMainApplication.CheckApplicationStatus(PersonID, LocalLicenseApp.LicenseClassID,(int) clsGlobal.enApplicationStatus.Completed))
+            if (clsMainApplication.CheckApplicationStatus(PersonID, LocalLicenseApp.LicenseClassID,(int) clsMainApplication.enApplicationStatus.Completed))
             {
                 tsmCancelApplication.Enabled = false;
                 tsmDeleteApplication.Enabled = false;
-                tsmEditApplication.Enabled = false;
                 tsmIssueDrivingLicenseFirstTime.Enabled = false;
 
                 tsmShowLicense.Enabled = true;
             }
-            if (clsMainApplication.CheckApplicationStatus(PersonID, LocalLicenseApp.LicenseClassID,(int) clsGlobal.enApplicationStatus.Canceled))
+            if (clsMainApplication.CheckApplicationStatus(PersonID, LocalLicenseApp.LicenseClassID,(int) clsMainApplication.enApplicationStatus.Canceled))
             {
                 tsmCancelApplication.Enabled = false;
                
@@ -236,10 +237,6 @@ namespace DVLD_Project.Applications
             DisplayApplicatioonIfo.ShowDialog();
         }
 
-        private void editApplicationToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
        
         private void deleteApplicationToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -267,7 +264,7 @@ namespace DVLD_Project.Applications
             {
                 int LDL_AppID = (int)dgvLDL_AppsList.CurrentRow.Cells[0].Value;
                 clsMainApplication NewLocalLicense_Application = clsMainApplication.Find(clsLocalDrivingLicense.Find(LDL_AppID).MainApplicationID);
-                NewLocalLicense_Application.AppStatus =(int) clsGlobal.enApplicationStatus.Canceled;
+                NewLocalLicense_Application.AppStatus =(int) clsMainApplication.enApplicationStatus.Canceled;
                 NewLocalLicense_Application.LastStatusDate = DateTime.Now;
                 if (NewLocalLicense_Application.Save())
                 {
@@ -284,9 +281,8 @@ namespace DVLD_Project.Applications
         private void schedualToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int LDL_AppID = (int)dgvLDL_AppsList.CurrentRow.Cells[0].Value;
-            int VisionTestID = 1;
-            Image VisionTestImg = Resources.VisionTest;
-            frmTestAppointment VisionTest = new frmTestAppointment(LDL_AppID,VisionTestID,VisionTestImg);
+
+            frmTestAppointment VisionTest = new frmTestAppointment(LDL_AppID,(int)clsTestTypes.enTestType.eVisionTest, Resources.VisionTest);
             VisionTest.__ReLoadList+=_ReLoadLocalAppList;
             VisionTest.ShowDialog();
         }
@@ -294,10 +290,8 @@ namespace DVLD_Project.Applications
         private void schedualWrittenTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int LDL_AppID = (int)dgvLDL_AppsList.CurrentRow.Cells[0].Value;
-            int WrittenTestID = 2;
-            Image WrittenTestImg = Resources.WrittenTestImg;
-
-            frmTestAppointment WrittenTest = new frmTestAppointment(LDL_AppID, WrittenTestID,WrittenTestImg);
+           
+            frmTestAppointment WrittenTest = new frmTestAppointment(LDL_AppID, (int)clsTestTypes.enTestType.eWrittenTest, Resources.WrittenTestImg);
             WrittenTest.__ReLoadList += _ReLoadLocalAppList;
             WrittenTest.ShowDialog();
         }
@@ -305,10 +299,8 @@ namespace DVLD_Project.Applications
         private void schedualStreetTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int LDL_AppID = (int)dgvLDL_AppsList.CurrentRow.Cells[0].Value;
-            int StreetTestID = 3;
-            Image StreetTestImg = Resources.StreetTestImg;
-
-            frmTestAppointment StreetTest = new frmTestAppointment(LDL_AppID, StreetTestID,StreetTestImg);
+           
+            frmTestAppointment StreetTest = new frmTestAppointment(LDL_AppID, (int)clsTestTypes.enTestType.eStreetTest, Resources.StreetTestImg);
             StreetTest.__ReLoadList += _ReLoadLocalAppList;
             StreetTest.ShowDialog();
         }
@@ -340,11 +332,9 @@ namespace DVLD_Project.Applications
         {
             tsmCancelApplication.Enabled = true;
             tsmDeleteApplication.Enabled = true;
-            tsmEditApplication.Enabled = true;
             
             _ManageLocalDrivingLicenseMenu();
         }
 
-       
     }
 }

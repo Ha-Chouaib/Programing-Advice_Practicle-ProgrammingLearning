@@ -89,8 +89,8 @@ namespace DVLD_Project.License
                
                 NewInternationalLic_Application.AppDate = DateTime.Now;
                 NewInternationalLic_Application.ApplicantPersonID = clsMainApplication.Find(_License.ApplicationID).ApplicantPersonID;
-                NewInternationalLic_Application.AppStatus =(byte) clsGlobal.enApplicationStatus.Completed;
-                NewInternationalLic_Application.AppTypeID = (int)clsGlobal.enApplicationTypes_IDs.NewInternationalLicense;
+                NewInternationalLic_Application.AppStatus =(byte) clsMainApplication.enApplicationStatus.Completed;
+                NewInternationalLic_Application.AppTypeID = (int)clsMainApplication.enApplicationTypes_IDs.NewInternationalLicense;
                 NewInternationalLic_Application.LastStatusDate = DateTime.Now;
                 NewInternationalLic_Application.CreatedByUserID = clsGlobal.CurrentUserID;
                 NewInternationalLic_Application.PaidFees = clsApplicationTypes.Find(NewInternationalLic_Application.AppTypeID).AppFees;

@@ -33,7 +33,6 @@
             this.cmsLDL_Apps = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showApplicationDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsmEditApplication = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmDeleteApplication = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmCancelApplication = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,7 +83,6 @@
             this.cmsLDL_Apps.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showApplicationDetailsToolStripMenuItem,
             this.toolStripMenuItem1,
-            this.tsmEditApplication,
             this.tsmDeleteApplication,
             this.toolStripMenuItem2,
             this.tsmCancelApplication,
@@ -98,7 +96,7 @@
             this.toolStripMenuItem7,
             this.tsmShowPersonLicenseHistory});
             this.cmsLDL_Apps.Name = "cmsLDL_Apps";
-            this.cmsLDL_Apps.Size = new System.Drawing.Size(281, 294);
+            this.cmsLDL_Apps.Size = new System.Drawing.Size(281, 263);
             this.cmsLDL_Apps.Opening += new System.ComponentModel.CancelEventHandler(this.cmsLDL_Apps_Opening);
             // 
             // showApplicationDetailsToolStripMenuItem
@@ -119,18 +117,6 @@
             this.toolStripMenuItem1.ForeColor = System.Drawing.Color.Black;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(277, 6);
-            // 
-            // tsmEditApplication
-            // 
-            this.tsmEditApplication.BackColor = System.Drawing.Color.Transparent;
-            this.tsmEditApplication.Font = new System.Drawing.Font("Segoe UI Historic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmEditApplication.ForeColor = System.Drawing.SystemColors.Info;
-            this.tsmEditApplication.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.tsmEditApplication.Name = "tsmEditApplication";
-            this.tsmEditApplication.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.tsmEditApplication.Size = new System.Drawing.Size(280, 26);
-            this.tsmEditApplication.Text = "Edit Application";
-            this.tsmEditApplication.Click += new System.EventHandler(this.editApplicationToolStripMenuItem_Click);
             // 
             // tsmDeleteApplication
             // 

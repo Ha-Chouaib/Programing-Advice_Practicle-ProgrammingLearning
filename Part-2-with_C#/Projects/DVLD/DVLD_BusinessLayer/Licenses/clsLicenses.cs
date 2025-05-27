@@ -25,7 +25,16 @@ namespace DVLD_BusinessLayer.Licenses
         enum enMode { eAddNew,eUpdate}
         enMode _Mode;
 
-       public clsLicenses(int LicenseID,int ApplicationID, int DriverID, int LicenseClassID, DateTime IssueDate,
+        public enum enIssueReason : byte
+        {
+            FirstTime = 1,
+            RenewLicense = 2,
+            ReplaceForLost = 3,
+            ReplaceFoDamage = 4,
+        }
+
+
+        public clsLicenses(int LicenseID,int ApplicationID, int DriverID, int LicenseClassID, DateTime IssueDate,
                                 DateTime ExpirationDate, string Notes, float PaidFees, bool IsActive, byte IssueReason, int CreatedByUserID)
         {
             this.LicenseID         = LicenseID; 

@@ -49,13 +49,13 @@ namespace DVLD_Project.Applications.ReplaceLocalLicense_Damage_Lost
             if(rbLostLicense.Checked ==true)
             {
                 lblHeaderTitle.Text = "Replacement For Lost License";
-                lblApplicationFees.Text = clsApplicationTypes.Find((int)clsGlobal.enApplicationTypes_IDs.ReplacementFor_LostDrivingLicense).AppFees.ToString();
+                lblApplicationFees.Text = clsApplicationTypes.Find((int)clsMainApplication.enApplicationTypes_IDs.ReplacementFor_LostDrivingLicense).AppFees.ToString();
 
             }
             else
             {
                 lblHeaderTitle.Text = "Replacement For Lost License";
-                lblApplicationFees.Text = clsApplicationTypes.Find((int)clsGlobal.enApplicationTypes_IDs.ReplacementFor_DamagedDrivingLicense).AppFees.ToString();
+                lblApplicationFees.Text = clsApplicationTypes.Find((int)clsMainApplication.enApplicationTypes_IDs.ReplacementFor_DamagedDrivingLicense).AppFees.ToString();
             }
         }
         private void _DisplayReplaceLicenseApplicationBasicInfo()
@@ -67,7 +67,7 @@ namespace DVLD_Project.Applications.ReplaceLocalLicense_Damage_Lost
 
             lblOldLicenseID.Text = _OldLicense.LicenseID.ToString();
 
-            lblApplicationFees.Text = clsApplicationTypes.Find((int)clsGlobal.enApplicationTypes_IDs.ReplacementFor_LostDrivingLicense).AppFees.ToString();
+            lblApplicationFees.Text = clsApplicationTypes.Find((int)clsMainApplication.enApplicationTypes_IDs.ReplacementFor_LostDrivingLicense).AppFees.ToString();
 
         }
         private bool _AddNewLicense()
@@ -78,32 +78,24 @@ namespace DVLD_Project.Applications.ReplaceLocalLicense_Damage_Lost
 
             _ReplaceLicenseApplication.AppDate = DateTime.Now;
             _ReplaceLicenseApplication.CreatedByUserID = clsGlobal.CurrentUserID;
-            _ReplaceLicenseApplication.AppStatus =(byte) clsGlobal.enApplicationStatus.Completed;
+            _ReplaceLicenseApplication.AppStatus =(byte) clsMainApplication.enApplicationStatus.Completed;
             _ReplaceLicenseApplication.ApplicantPersonID = _OldApplication.ApplicantPersonID;
             _ReplaceLicenseApplication.LastStatusDate = DateTime.Now;
+            _ReplaceLicenseApplication.AppTypeID = (int)clsMainApplication.enApplicationTypes_IDs.ReplacementFor_LostDrivingLicense;
 
+            _NewLicense.IssueReason = (byte)clsLicenses.enIssueReason.ReplaceForLost;
+            if (rbDamageLicense.Checked)
+            {
+                _ReplaceLicenseApplication.AppTypeID = (int)clsMainApplication.enApplicationTypes_IDs.ReplacementFor_DamagedDrivingLicense;
+                _NewLicense.IssueReason = (byte)clsLicenses.enIssueReason.ReplaceFoDamage;
+            }           
+            _ReplaceLicenseApplication.PaidFees = clsApplicationTypes.Find(_ReplaceLicenseApplication.AppTypeID).AppFees;
 
 
             _NewLicense.CreatedByUserID = clsGlobal.CurrentUserID;
             _NewLicense.DriverID = _OldLicense.DriverID;
             _NewLicense.IsActive = true;
             _NewLicense.LicenseClassID = _OldLicense.LicenseClassID;
-
-            if(rbLostLicense.Checked ==true)
-            {
-
-                _ReplaceLicenseApplication.AppTypeID = (int)clsGlobal.enApplicationTypes_IDs.ReplacementFor_LostDrivingLicense;
-                _ReplaceLicenseApplication.PaidFees = clsApplicationTypes.Find((int)clsGlobal.enApplicationTypes_IDs.ReplacementFor_LostDrivingLicense).AppFees;
-                _NewLicense.IssueReason = (byte)clsGlobal.enIssueReason.ReplaceForLost;
-            }
-            else
-            {
-                _ReplaceLicenseApplication.AppTypeID = (int)clsGlobal.enApplicationTypes_IDs.ReplacementFor_DamagedDrivingLicense;
-                _ReplaceLicenseApplication.PaidFees = clsApplicationTypes.Find((int)clsGlobal.enApplicationTypes_IDs.ReplacementFor_DamagedDrivingLicense).AppFees;
-                _NewLicense.IssueReason = (byte)clsGlobal.enIssueReason.ReplaceFoDamage;
-                
-            }
-
             _NewLicense.IssueDate = _OldLicense.IssueDate;
             _NewLicense.ExpirationDate = _OldLicense.ExpirationDate;
             _NewLicense.PaidFees = _OldLicense.PaidFees;

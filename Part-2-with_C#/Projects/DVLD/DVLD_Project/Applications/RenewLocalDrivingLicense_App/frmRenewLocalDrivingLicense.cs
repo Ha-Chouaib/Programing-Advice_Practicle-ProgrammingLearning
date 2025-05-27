@@ -72,7 +72,7 @@ namespace DVLD_Project.Applications.RenewLocalDrivingLicense_App
             _RenewLicenseApplication.AppTypeID = _OldApplication.AppTypeID;
             _RenewLicenseApplication.AppDate = DateTime.Now;
             _RenewLicenseApplication.CreatedByUserID = clsGlobal.CurrentUserID;
-            _RenewLicenseApplication.AppStatus =(byte) clsGlobal.enApplicationStatus.Completed;
+            _RenewLicenseApplication.AppStatus =(byte) clsMainApplication.enApplicationStatus.Completed;
             _RenewLicenseApplication.ApplicantPersonID =_OldApplication.ApplicantPersonID;
             _RenewLicenseApplication.LastStatusDate = DateTime.Now;
             _RenewLicenseApplication.PaidFees = _OldApplication.PaidFees;
@@ -83,7 +83,7 @@ namespace DVLD_Project.Applications.RenewLocalDrivingLicense_App
             _NewedLicense.DriverID = _OldLicense.DriverID;
             _NewedLicense.IsActive = true;
             _NewedLicense.LicenseClassID = _OldLicense.LicenseClassID;
-            _NewedLicense.IssueReason = _OldLicense.IssueReason = (byte)clsGlobal.enIssueReason.RenewLicense;
+            _NewedLicense.IssueReason = _OldLicense.IssueReason = (byte)clsLicenses.enIssueReason.RenewLicense;
             _NewedLicense.IssueDate = DateTime.Now;
             _NewedLicense.ExpirationDate = DateTime.Now.AddYears(clsLicenseClasses.Find(_OldLicense.LicenseClassID).DefaultValidityLength);
             _NewedLicense.PaidFees = _OldLicense.PaidFees;

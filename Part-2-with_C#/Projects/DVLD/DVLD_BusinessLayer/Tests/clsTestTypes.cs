@@ -15,6 +15,8 @@ namespace DVLD_BusinessLayer
         public string TestDescription { get; set; }
         public string TestTitle { get; set; }
         public float TestFees { get; set; }
+
+        public enum enTestType { eVisionTest=1,eWrittenTest=2,eStreetTest=3}
         public clsTestTypes(int TestID, string TestTitle,string TestDescription, float TestFees)
         {
             this.TestID = TestID;
