@@ -31,7 +31,7 @@
             this.gbSchedualeTestContainer = new System.Windows.Forms.GroupBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.pbTestIMG = new System.Windows.Forms.PictureBox();
-            this.lblUpdateErrorMSG = new System.Windows.Forms.Label();
+            this.lblErrorMSG = new System.Windows.Forms.Label();
             this.gbRetakeTestInfo = new System.Windows.Forms.GroupBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.lblR_TestAppID = new System.Windows.Forms.Label();
@@ -81,7 +81,7 @@
             this.gbSchedualeTestContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.gbSchedualeTestContainer.Controls.Add(this.btnSave);
             this.gbSchedualeTestContainer.Controls.Add(this.pbTestIMG);
-            this.gbSchedualeTestContainer.Controls.Add(this.lblUpdateErrorMSG);
+            this.gbSchedualeTestContainer.Controls.Add(this.lblErrorMSG);
             this.gbSchedualeTestContainer.Controls.Add(this.gbRetakeTestInfo);
             this.gbSchedualeTestContainer.Controls.Add(this.label1);
             this.gbSchedualeTestContainer.Controls.Add(this.panel6);
@@ -97,7 +97,6 @@
             this.gbSchedualeTestContainer.TabIndex = 0;
             this.gbSchedualeTestContainer.TabStop = false;
             this.gbSchedualeTestContainer.Text = "???";
-            this.gbSchedualeTestContainer.Enter += new System.EventHandler(this.gbSchedualeTestContainer_Enter);
             // 
             // btnSave
             // 
@@ -121,16 +120,16 @@
             this.pbTestIMG.TabIndex = 20;
             this.pbTestIMG.TabStop = false;
             // 
-            // lblUpdateErrorMSG
+            // lblErrorMSG
             // 
-            this.lblUpdateErrorMSG.AutoSize = true;
-            this.lblUpdateErrorMSG.Font = new System.Drawing.Font("Trebuchet MS", 13.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lblUpdateErrorMSG.ForeColor = System.Drawing.Color.Red;
-            this.lblUpdateErrorMSG.Location = new System.Drawing.Point(34, 231);
-            this.lblUpdateErrorMSG.Name = "lblUpdateErrorMSG";
-            this.lblUpdateErrorMSG.Size = new System.Drawing.Size(698, 23);
-            this.lblUpdateErrorMSG.TabIndex = 19;
-            this.lblUpdateErrorMSG.Text = "You Cannot Update This Schedualed Test, It\'s Already Used [Locked Scheduale] !";
+            this.lblErrorMSG.AutoSize = true;
+            this.lblErrorMSG.Font = new System.Drawing.Font("Trebuchet MS", 10.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.lblErrorMSG.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorMSG.Location = new System.Drawing.Point(24, 219);
+            this.lblErrorMSG.Name = "lblErrorMSG";
+            this.lblErrorMSG.Size = new System.Drawing.Size(539, 18);
+            this.lblErrorMSG.TabIndex = 19;
+            this.lblErrorMSG.Text = "You Cannot Update This Schedualed Test, It\'s Already Used [Locked Scheduale] !";
             // 
             // gbRetakeTestInfo
             // 
@@ -349,6 +348,7 @@
             this.dtSechedualeDate.Name = "dtSechedualeDate";
             this.dtSechedualeDate.Size = new System.Drawing.Size(297, 25);
             this.dtSechedualeDate.TabIndex = 1;
+            this.dtSechedualeDate.Validating += new System.ComponentModel.CancelEventHandler(this.dtSechedualeDate_Validating);
             // 
             // label8
             // 
@@ -504,7 +504,7 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label lblR_TestAppID;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label lblUpdateErrorMSG;
+        private System.Windows.Forms.Label lblErrorMSG;
         private System.Windows.Forms.PictureBox pbTestIMG;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;

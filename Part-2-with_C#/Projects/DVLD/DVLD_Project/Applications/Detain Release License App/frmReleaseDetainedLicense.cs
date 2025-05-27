@@ -69,10 +69,10 @@ namespace DVLD_Project.Applications.Detain_Release_License_App
         {
             _ReleaseLicense_Application = new clsMainApplication();
 
-            _ReleaseLicense_Application.AppTypeID = (int)clsGlobal.enApplicationTypes_IDs.ReleaseDetainedDrivingLicsense;
+            _ReleaseLicense_Application.AppTypeID = (int)clsMainApplication.enApplicationTypes_IDs.ReleaseDetainedDrivingLicsense;
             _ReleaseLicense_Application.ApplicantPersonID = clsMainApplication.Find(_License_To_Release.ApplicationID).ApplicantPersonID;
             _ReleaseLicense_Application.AppDate = DateTime.Now;
-            _ReleaseLicense_Application.AppStatus = (byte)clsGlobal.enApplicationStatus.Completed;
+            _ReleaseLicense_Application.AppStatus = (byte)clsMainApplication.enApplicationStatus.Completed;
             _ReleaseLicense_Application.CreatedByUserID = clsGlobal.CurrentUserID;
             _ReleaseLicense_Application.LastStatusDate = DateTime.Now;
             _ReleaseLicense_Application.PaidFees = clsApplicationTypes.Find(_ReleaseLicense_Application.AppTypeID).AppFees;

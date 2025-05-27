@@ -104,7 +104,7 @@ namespace DVLD_Project.Applications.LDLApps
                     return;
                 }
 
-                if (clsMainApplication.CheckApplicationStatus(Person.PersonID,LicenseClassID,(byte)clsGlobal.enApplicationStatus.New))
+                if (clsMainApplication.CheckApplicationStatus(Person.PersonID,LicenseClassID,(byte)clsMainApplication.enApplicationStatus.New))
                 {
                     MessageBox.Show($"Not Able To Add A New App of This Class Is Already Exist At New State !!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -116,11 +116,11 @@ namespace DVLD_Project.Applications.LDLApps
                     {
                         clsMainApplication NewLocalLicense_Application = new clsMainApplication();
                         NewLocalLicense_Application.AppDate = DateTime.Now;
-                        NewLocalLicense_Application.AppStatus =(byte) clsGlobal.enApplicationStatus.New;
+                        NewLocalLicense_Application.AppStatus =(byte) clsMainApplication.enApplicationStatus.New;
                         NewLocalLicense_Application.ApplicantPersonID = _PersonID;
                         NewLocalLicense_Application.LastStatusDate = DateTime.Now;
                         NewLocalLicense_Application.CreatedByUserID = clsGlobal.CurrentUserID;
-                        NewLocalLicense_Application.AppTypeID = (int)clsGlobal.enApplicationTypes_IDs.NewLocalDrivingLicenseService;
+                        NewLocalLicense_Application.AppTypeID = (int)clsMainApplication.enApplicationTypes_IDs.NewLocalDrivingLicenseService;
                         NewLocalLicense_Application.PaidFees = clsApplicationTypes.Find(NewLocalLicense_Application.AppTypeID).AppFees;
 
                         if (NewLocalLicense_Application.Save())

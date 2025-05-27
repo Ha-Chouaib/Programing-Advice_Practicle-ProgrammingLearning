@@ -21,19 +21,17 @@ namespace DVLD_Project.Applications.Tests
         }
 
         int _SchedualedTestAppID = -1;
-        byte _Trials=0;
         Image TestImg;
         clsTestAppointments TestAppointment;
 
         public delegate void TriggerFunctionEventHandler(object sender);
         public event TriggerFunctionEventHandler __ReloadList;
 
-        public frmTakeTest(int TestAppointmentID,byte Trials,Image TestImg)
+        public frmTakeTest(int TestAppointmentID,Image TestImg)
         {
             InitializeComponent();
 
             _SchedualedTestAppID = TestAppointmentID;
-            _Trials = Trials;
             this.TestImg = TestImg;
         }
 
@@ -61,7 +59,7 @@ namespace DVLD_Project.Applications.Tests
 
                 lblFees.Text = clsTestTypes.Find(1).TestFees.ToString();
                 lblTestDate.Text=TestAppointment.AppointmentDate.ToShortDateString();
-                lblTrial.Text = _Trials.ToString();
+                lblTrial.Text = clsTestAppointments._GetTestTrials(TestAppointment.LDL_AppID,TestAppointment.TestTypeID).ToString();
 
             }
         }
@@ -89,6 +87,7 @@ namespace DVLD_Project.Applications.Tests
                     MessageBox.Show("Done Successfully");
                     __ReloadList?.Invoke(this);
                     btnSave.Enabled = false;
+                    txtNotes.Enabled = false;
 
                 }
                 else

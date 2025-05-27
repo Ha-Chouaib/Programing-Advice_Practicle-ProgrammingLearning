@@ -65,8 +65,7 @@ namespace DVLD_Project
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            clsGlobal.CurrentUserID = -1;
-            _Login.Show();
+            
             this.Close();
         }
 
@@ -157,7 +156,9 @@ namespace DVLD_Project
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            logOutToolStripMenuItem_Click(null, null);
+            clsGlobal.CurrentUserID = -1;
+            _Login.Show();
+            
         }
     }
 }

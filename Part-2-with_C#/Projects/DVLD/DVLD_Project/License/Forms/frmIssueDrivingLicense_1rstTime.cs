@@ -75,7 +75,7 @@ namespace DVLD_Project.License
             NewLicense.Notes = txtNotes.Text;
             NewLicense.PaidFees = LicenseClass.LicenseFees;
             NewLicense.IsActive = true;
-            NewLicense.IssueReason =(byte) clsGlobal.enIssueReason.FirstTime;
+            NewLicense.IssueReason =(byte) clsLicenses.enIssueReason.FirstTime;
             NewLicense.CreatedByUserID = clsGlobal.CurrentUserID;
 
             if(!NewLicense.Save())
@@ -87,7 +87,7 @@ namespace DVLD_Project.License
             }
             else
             {
-                NewLocalLicense_Application.AppStatus = (byte)clsGlobal.enApplicationStatus.Completed;
+                NewLocalLicense_Application.AppStatus = (byte)clsMainApplication.enApplicationStatus.Completed;
                 NewLocalLicense_Application.LastStatusDate = DateTime.Now;    
                 if(!NewLocalLicense_Application.Save())
                 {

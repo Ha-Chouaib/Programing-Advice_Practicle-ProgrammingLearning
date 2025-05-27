@@ -98,6 +98,9 @@ namespace DVLD_Project.Users.UserControls
         }
         private void txtSearchTerm_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (e.KeyChar == (char)13)
+                btnFindPerson.PerformClick();
+
             if(cmbFilterOpts.SelectedValue.ToString() == "PersonID")
                 e.Handled = !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar);
         }

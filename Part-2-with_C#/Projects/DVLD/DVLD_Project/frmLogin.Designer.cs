@@ -82,12 +82,11 @@
             // 
             this.cbRememberMe.AutoSize = true;
             this.cbRememberMe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.cbRememberMe.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbRememberMe.Font = new System.Drawing.Font("Trebuchet MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.cbRememberMe.ForeColor = System.Drawing.SystemColors.Info;
             this.cbRememberMe.Location = new System.Drawing.Point(32, 467);
             this.cbRememberMe.Name = "cbRememberMe";
-            this.cbRememberMe.Size = new System.Drawing.Size(134, 26);
+            this.cbRememberMe.Size = new System.Drawing.Size(136, 26);
             this.cbRememberMe.TabIndex = 16;
             this.cbRememberMe.Text = "Remember Me";
             this.cbRememberMe.UseVisualStyleBackColor = false;

@@ -42,7 +42,7 @@ namespace DVLD_BusinessLayer.Tests
             this.AppointmentDate = DateTime.Now;
             this.PaidFees = 0;
             this.CreatedByUserID = -1;
-            this.IsLocked = true;
+            this.IsLocked = false;
             this.RetakeTestApplicationID = RetakeTestApplicationID;
             _Mode = enMode.eAddNew;
         }
@@ -54,7 +54,7 @@ namespace DVLD_BusinessLayer.Tests
             DateTime AppointmentDate=DateTime.Now;
             float PaidFees = 0;
             int CreatedByUserID = -1;
-            bool IsLocked = true;
+            bool IsLocked = false;
             int RetakeTestApplicationID = -1;
 
             if (clsTestAppointmentDataAccess.Find(TestAppointmentID,ref TestTypeID,ref LDL_AppID,ref AppointmentDate,ref PaidFees,ref CreatedByUserID,ref IsLocked,ref RetakeTestApplicationID))
@@ -105,7 +105,21 @@ namespace DVLD_BusinessLayer.Tests
         {
             return clsTestAppointmentDataAccess.ListAppointments_SchedualeInfo(LocalDrivingLicenseApp_ID,TestTypeID);
         }
-        public static int GetCurrentAppointmetID(int LocalDrivingLicenseID,int TestTypeID)
+        
+
+        public static bool DoesTestTypePassed(int LocalDrivingLicenseID, int TestTypeID)
+        {
+            return clsTestAppointmentDataAccess.IsTestTypePassed(LocalDrivingLicenseID, TestTypeID);
+        }
+        public static bool HasActiveAppointment(int LocalDrivingLicenseID, int TestTypeID)
+        {
+            return clsTestAppointmentDataAccess.HasActiveTestAppointment(LocalDrivingLicenseID, TestTypeID);
+        }
+        public static byte _GetTestTrials(int LocalDrivingLicenseID, int TestTypeID)
+        {
+            return clsTestAppointmentDataAccess.TestTrials(LocalDrivingLicenseID, TestTypeID);
+        }
+        public static int GetCurrentAppointmetID(int LocalDrivingLicenseID, int TestTypeID)
         {
             return clsTestAppointmentDataAccess.GetCurrentTestAppointmentID(LocalDrivingLicenseID, TestTypeID);
         }
