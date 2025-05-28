@@ -98,7 +98,7 @@ namespace DVLD_Project.Applications.ApplicationTypes
                 }
             }else
             {
-                MessageBox.Show("The Operation Canceled Successfully");
+                MessageBox.Show("The Operation Cancelled Successfully");
             }
         }
 

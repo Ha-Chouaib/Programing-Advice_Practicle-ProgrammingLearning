@@ -48,7 +48,7 @@
             this.groupBox1.Size = new System.Drawing.Size(709, 73);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Find License";
+            this.groupBox1.Text = "FindByPersonID License";
             // 
             // label1
             // 
@@ -69,7 +69,7 @@
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(107, 29);
             this.btnFind.TabIndex = 1;
-            this.btnFind.Text = "Find";
+            this.btnFind.Text = "FindByPersonID";
             this.btnFind.UseVisualStyleBackColor = true;
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 

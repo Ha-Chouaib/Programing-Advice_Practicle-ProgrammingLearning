@@ -87,7 +87,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 20);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Find By->";
+            this.label1.Text = "FindByPersonID By->";
             // 
             // btnAddNewPerson
             // 
@@ -113,7 +113,7 @@
             this.btnFindPerson.Name = "btnFindPerson";
             this.btnFindPerson.Size = new System.Drawing.Size(111, 29);
             this.btnFindPerson.TabIndex = 1;
-            this.btnFindPerson.Text = "Find Person";
+            this.btnFindPerson.Text = "FindByPersonID Person";
             this.btnFindPerson.UseVisualStyleBackColor = false;
             this.btnFindPerson.Click += new System.EventHandler(this.btnFindPerson_Click);
             // 

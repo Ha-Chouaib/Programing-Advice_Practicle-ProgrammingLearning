@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DVLD_BusinessLayer.Applications;
 using DVLD_DataAccessLayer.License;
 
 namespace DVLD_BusinessLayer.Licenses
@@ -12,8 +13,11 @@ namespace DVLD_BusinessLayer.Licenses
     {
         public int InternationalLicenseID { get; set; }
         public int ApplicationID { get; set; }
+        public clsMainApplication MainApplicationInfo;
         public int DriverID { get; set; }
+        public clsDrivers DriverInfo;
         public int IssuedUsingLocalLicenseID { get; set; }
+        public clsLocalDrivingLicenseApplication LocalLicenseApplicationInfo;
         public DateTime IssueDate { get; set; }
         public DateTime ExpirationDate { get; set; }       
         public bool IsActive { get; set; }
@@ -33,6 +37,10 @@ namespace DVLD_BusinessLayer.Licenses
             this.ExpirationDate = ExpirationDate;          
             this.IsActive = IsActive;
             this.CreatedByUserID = CreatedByUserID;
+
+            this.MainApplicationInfo = clsMainApplication.FindMainApplication(this.ApplicationID);
+            this.DriverInfo = clsDrivers.Find(this.DriverID);
+            this.LocalLicenseApplicationInfo = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(this.IssuedUsingLocalLicenseID);
 
             _Mode = enMode.eUpdate;
         }

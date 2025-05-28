@@ -20,6 +20,7 @@ namespace DVLD_BusinessLayer
         public string SecondName { get; set; }
         public string ThirdName { get; set; }
         public string LastName { get; set; }
+        public string FullName;       
         public DateTime DateOfBirth { get; set; }
         public short Gender { get; set; }
         public string Address { get; set; }
@@ -45,7 +46,7 @@ namespace DVLD_BusinessLayer
             this.Phone = Phone;
             this.NationalityCountryID = NationalityCountryID;
             this.ImagePath = ImagePath;
-
+            this.FullName = FirstName + " " + SecondName + " " + ThirdName + " " + LastName;
             _Mode = enMode.eUpdate;
         }
         public clsPeople()

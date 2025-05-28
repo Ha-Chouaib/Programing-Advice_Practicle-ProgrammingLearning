@@ -21,10 +21,9 @@ namespace DVLD_Project.Applications.Tests
         int _TestTypeID=-1;
         Image TestImg;
 
-        clsLocalDrivingLicense _LocalDrivingLicenseApplication;
+        clsLocalDrivingLicenseApplication _LocalDrivingLicenseApplication;
         clsMainApplication _RetakeTest_App = new clsMainApplication();
         clsTestAppointments _TestAppointment= new clsTestAppointments();
-        clsPeople Person;
         clsTestTypes TestType;
         enum enMode { eAddNew, eUpdate }
         enum enNewTestMode { eFirstTime, eRetakeTest}
@@ -66,6 +65,7 @@ namespace DVLD_Project.Applications.Tests
                 _TestAppointment = clsTestAppointments.Find(_TestAppointmentID);
                 _TestTypeID = _TestAppointment.TestTypeID;
                 _LocalDrivingLicenseApplicationID = _TestAppointment.LDL_AppID;
+               
                 gbRetakeTestInfo.Enabled = false;
                 return;
             }else
@@ -112,12 +112,12 @@ namespace DVLD_Project.Applications.Tests
             if(_NewAppointmentMode == enNewTestMode.eRetakeTest)
             {
                 _RetakeTest_App.CreatedByUserID = clsGlobal.CurrentUserID;
-                _RetakeTest_App.ApplicantPersonID = Person.PersonID;
-                _RetakeTest_App.AppDate = DateTime.Now;
-                _RetakeTest_App.AppTypeID = (int)clsMainApplication.enApplicationTypes_IDs.RetakeTest;
-                _RetakeTest_App.AppStatus = (byte)clsMainApplication.enApplicationStatus.Completed;
+                _RetakeTest_App.ApplicantPersonID = _LocalDrivingLicenseApplication.ApplicantPersonID;
+                _RetakeTest_App.ApplicationDate = DateTime.Now;
+                _RetakeTest_App.ApplicationTypeID = (int)clsMainApplication.enApplicationTypes_IDs.RetakeTest;
+                _RetakeTest_App.ApplicationStatus = (byte)clsMainApplication.enApplicationStatus.Completed;
                 _RetakeTest_App.LastStatusDate = DateTime.Now;
-                _RetakeTest_App.PaidFees = clsApplicationTypes.Find(_RetakeTest_App.AppTypeID).AppFees;
+                _RetakeTest_App.PaidFees = clsApplicationTypes.Find(_RetakeTest_App.ApplicationTypeID).AppFees;
 
                 if(!_RetakeTest_App.Save())
                 {
@@ -125,8 +125,8 @@ namespace DVLD_Project.Applications.Tests
                     return false;
                 }
 
-                _TestAppointment.RetakeTestApplicationID = _RetakeTest_App.AppID;
-                lblR_TestAppID.Text = _RetakeTest_App.AppID.ToString();
+                _TestAppointment.RetakeTestApplicationID = _RetakeTest_App.MainApplicationID;
+                lblR_TestAppID.Text = _RetakeTest_App.MainApplicationID.ToString();
             }
             return true;
 
@@ -215,8 +215,8 @@ namespace DVLD_Project.Applications.Tests
         {
             _HandleRetakeTestGroupBox_BackColor();
 
-            _LocalDrivingLicenseApplication = clsLocalDrivingLicense.Find(_LocalDrivingLicenseApplicationID);
-            Person = clsPeople.Find(clsMainApplication.Find(_LocalDrivingLicenseApplication.MainApplicationID).ApplicantPersonID);
+            _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(_LocalDrivingLicenseApplicationID);
+           
             TestType = clsTestTypes.Find(_TestTypeID);
 
             pbTestIMG.Image = TestImg;
@@ -225,9 +225,9 @@ namespace DVLD_Project.Applications.Tests
 
             lblDL_AppID.Text = _LocalDrivingLicenseApplicationID.ToString();
 
-            lblLicenseClass.Text = clsLicenseClasses.Find(_LocalDrivingLicenseApplication.LicenseClassID).LicenseClassName;
+            lblLicenseClass.Text = _LocalDrivingLicenseApplication.LicenseClassInfo.LicenseClassName;
 
-            lblFullName.Text = Person.FirstName + " " + Person.SecondName + " " + Person.ThirdName + " " + Person.LastName;
+            lblFullName.Text = _LocalDrivingLicenseApplication.PersonInfo.FullName;
 
             lbl_Fees.Text = TestType.TestFees.ToString();
             lblR_AppFees.Text = "0";
@@ -264,7 +264,7 @@ namespace DVLD_Project.Applications.Tests
             if (!_TestAppointment.Save())
             {
                 MessageBox.Show("Error Cannot Save Updated Schedualed Appointment !!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                if (_NewAppointmentMode == enNewTestMode.eRetakeTest) clsMainApplication.DeleteApp(_RetakeTest_App.AppID);
+                if (_NewAppointmentMode == enNewTestMode.eRetakeTest) clsMainApplication.DeleteApp(_RetakeTest_App.MainApplicationID);
                 return false;
             }
 

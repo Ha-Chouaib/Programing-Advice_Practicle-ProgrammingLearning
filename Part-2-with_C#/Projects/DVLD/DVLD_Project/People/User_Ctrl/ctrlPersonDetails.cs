@@ -34,7 +34,7 @@ namespace DVLD_Project
                 lnkEditPersonInfo.Text = $"Edit {Person.FirstName}'s Info";
 
                 lblPersonID.Text ="[ "+ __PersonID.ToString()+" ]";
-                string FullName = Person.FirstName + " " + Person.SecondName + " " + Person.ThirdName + " " + Person.LastName;
+                string FullName = Person.FullName;
                 lblName.Text = FullName;
                 lblNationalNo.Text = Person.NationalNo;
                 lblAddress.Text = Person.Address;

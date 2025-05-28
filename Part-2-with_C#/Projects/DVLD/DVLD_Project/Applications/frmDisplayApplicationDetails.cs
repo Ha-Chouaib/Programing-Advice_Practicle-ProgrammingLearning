@@ -33,7 +33,7 @@ namespace DVLD_Project.Applications
         private void _DisplayInfo()
         {
             ctrlDisplayApplicationLicenseInfo1.__DisplayLDL_AppInfo(_LDL_AppID);
-            int MainApplicationID = clsLocalDrivingLicense.Find(_LDL_AppID).MainApplicationID;
+            int MainApplicationID = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(_LDL_AppID).MainApplicationID;
             ctrlDisplayApplicationInfo1.__DisplayApplicationInfo(MainApplicationID);
         }
 

@@ -36,7 +36,7 @@ namespace DVLD_Project.Applications.RenewLocalDrivingLicense_App
         {
             _OldLicense = OldLicense;
             ctrlFindAndDisplayDriverLicense1.__DisplayLicenseRecord(_OldLicense.LicenseID);
-            _OldApplication = clsMainApplication.Find(_OldLicense.ApplicationID);
+            _OldApplication = clsMainApplication.FindMainApplication(_OldLicense.ApplicationID);
             _DisplayRenewApplicationBasicInfo();
             lnkShowLicensesHist.Enabled = true;
 
@@ -69,10 +69,10 @@ namespace DVLD_Project.Applications.RenewLocalDrivingLicense_App
             _RenewLicenseApplication = new clsMainApplication();
 
 
-            _RenewLicenseApplication.AppTypeID = _OldApplication.AppTypeID;
-            _RenewLicenseApplication.AppDate = DateTime.Now;
+            _RenewLicenseApplication.ApplicationTypeID = _OldApplication.ApplicationTypeID;
+            _RenewLicenseApplication.ApplicationDate = DateTime.Now;
             _RenewLicenseApplication.CreatedByUserID = clsGlobal.CurrentUserID;
-            _RenewLicenseApplication.AppStatus =(byte) clsMainApplication.enApplicationStatus.Completed;
+            _RenewLicenseApplication.ApplicationStatus =(byte) clsMainApplication.enApplicationStatus.Completed;
             _RenewLicenseApplication.ApplicantPersonID =_OldApplication.ApplicantPersonID;
             _RenewLicenseApplication.LastStatusDate = DateTime.Now;
             _RenewLicenseApplication.PaidFees = _OldApplication.PaidFees;
@@ -106,11 +106,11 @@ namespace DVLD_Project.Applications.RenewLocalDrivingLicense_App
                 return false;
             }
 
-            _NewedLicense.ApplicationID = _RenewLicenseApplication.AppID;
+            _NewedLicense.ApplicationID = _RenewLicenseApplication.MainApplicationID;
             if(!_NewedLicense.Save())
             {
                 MessageBox.Show("Couldn't Save The New License Record", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                clsMainApplication.DeleteApp(_RenewLicenseApplication.AppID);
+                clsMainApplication.DeleteApp(_RenewLicenseApplication.MainApplicationID);
                 return false;
             }
             _OldLicense.IsActive = false;
@@ -127,7 +127,7 @@ namespace DVLD_Project.Applications.RenewLocalDrivingLicense_App
                 if (_AddNewLicense())
                 {
                     MessageBox.Show("Done Successfully");
-                    lblR_ApplicationID.Text = _RenewLicenseApplication.AppID.ToString();
+                    lblR_ApplicationID.Text = _RenewLicenseApplication.MainApplicationID.ToString();
                     lblRenewedLicenseID.Text = _NewedLicense.LicenseID.ToString();
                     lnkShowNewLicenseInfo.Enabled = true;
                 }

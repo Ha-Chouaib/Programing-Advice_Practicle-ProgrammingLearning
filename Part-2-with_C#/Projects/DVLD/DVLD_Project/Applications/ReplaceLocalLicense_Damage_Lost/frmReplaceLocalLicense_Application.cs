@@ -38,7 +38,7 @@ namespace DVLD_Project.Applications.ReplaceLocalLicense_Damage_Lost
         {
             _OldLicense = OldLicense;
             ctrlFindAndDisplayDriverLicense1.__DisplayLicenseRecord(_OldLicense.LicenseID);
-            _OldApplication = clsMainApplication.Find(_OldLicense.ApplicationID);
+            _OldApplication = clsMainApplication.FindMainApplication(_OldLicense.ApplicationID);
             _DisplayReplaceLicenseApplicationBasicInfo();
             lnkShowLicensesHist.Enabled = true;
 
@@ -76,20 +76,20 @@ namespace DVLD_Project.Applications.ReplaceLocalLicense_Damage_Lost
             _ReplaceLicenseApplication = new clsMainApplication();
 
 
-            _ReplaceLicenseApplication.AppDate = DateTime.Now;
+            _ReplaceLicenseApplication.ApplicationDate = DateTime.Now;
             _ReplaceLicenseApplication.CreatedByUserID = clsGlobal.CurrentUserID;
-            _ReplaceLicenseApplication.AppStatus =(byte) clsMainApplication.enApplicationStatus.Completed;
+            _ReplaceLicenseApplication.ApplicationStatus =(byte) clsMainApplication.enApplicationStatus.Completed;
             _ReplaceLicenseApplication.ApplicantPersonID = _OldApplication.ApplicantPersonID;
             _ReplaceLicenseApplication.LastStatusDate = DateTime.Now;
-            _ReplaceLicenseApplication.AppTypeID = (int)clsMainApplication.enApplicationTypes_IDs.ReplacementFor_LostDrivingLicense;
+            _ReplaceLicenseApplication.ApplicationTypeID = (int)clsMainApplication.enApplicationTypes_IDs.ReplacementFor_LostDrivingLicense;
 
             _NewLicense.IssueReason = (byte)clsLicenses.enIssueReason.ReplaceForLost;
             if (rbDamageLicense.Checked)
             {
-                _ReplaceLicenseApplication.AppTypeID = (int)clsMainApplication.enApplicationTypes_IDs.ReplacementFor_DamagedDrivingLicense;
+                _ReplaceLicenseApplication.ApplicationTypeID = (int)clsMainApplication.enApplicationTypes_IDs.ReplacementFor_DamagedDrivingLicense;
                 _NewLicense.IssueReason = (byte)clsLicenses.enIssueReason.ReplaceFoDamage;
             }           
-            _ReplaceLicenseApplication.PaidFees = clsApplicationTypes.Find(_ReplaceLicenseApplication.AppTypeID).AppFees;
+            _ReplaceLicenseApplication.PaidFees = clsApplicationTypes.Find(_ReplaceLicenseApplication.ApplicationTypeID).AppFees;
 
 
             _NewLicense.CreatedByUserID = clsGlobal.CurrentUserID;
@@ -113,11 +113,11 @@ namespace DVLD_Project.Applications.ReplaceLocalLicense_Damage_Lost
                 return false;
             }
 
-            _NewLicense.ApplicationID = _ReplaceLicenseApplication.AppID;
+            _NewLicense.ApplicationID = _ReplaceLicenseApplication.MainApplicationID;
             if (!_NewLicense.Save())
             {
                 MessageBox.Show("Couldn't Save The New License Record", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                clsMainApplication.DeleteApp(_ReplaceLicenseApplication.AppID);
+                clsMainApplication.DeleteApp(_ReplaceLicenseApplication.MainApplicationID);
                 return false;
             }
             _OldLicense.IsActive = false;
@@ -134,7 +134,7 @@ namespace DVLD_Project.Applications.ReplaceLocalLicense_Damage_Lost
                 if (_AddNewLicense())
                 {
                     MessageBox.Show("Done Successfully");
-                    lblLR_ApplicationID.Text = _ReplaceLicenseApplication.AppID.ToString();
+                    lblLR_ApplicationID.Text = _ReplaceLicenseApplication.MainApplicationID.ToString();
                     lblReplacedLicenseID.Text = _NewLicense.LicenseID.ToString();
                     lnkShowNewLicInfo.Enabled = true;
                 }

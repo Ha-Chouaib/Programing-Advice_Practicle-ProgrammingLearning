@@ -32,7 +32,7 @@ namespace DVLD_Project.License
         private void _DisplayDriverData()
         {
             ctrlPersonDetails1.__DisplayPersonInfo(_PersonID);
-            int DriverID = clsDrivers.Find(_PersonID)._DriverID;
+            int DriverID = clsDrivers.FindByPersonID(_PersonID)._DriverID;
             ctrlDriverLicensesHistory1.__ListDriverLicenses_History(DriverID);
         }
 
