@@ -32,28 +32,27 @@ namespace DVLD_Project.License.UserControls
         }
         private void _ShowInfo()
         {
-            clsInternationalLicenses ILicense = clsInternationalLicenses.Find(_InternationalLicenseID);
-            if (ILicense != null)
+            clsInternationalLicenses InternationalLicense = clsInternationalLicenses.Find(_InternationalLicenseID);
+            if (InternationalLicense != null)
             {
-                lblInterLicenseID.Text = "<< " + ILicense.InternationalLicenseID.ToString() + " >>";
-                lblLicenseID.Text = ILicense.IssuedUsingLocalLicenseID.ToString();
-                lblDriverID.Text = ILicense.DriverID.ToString();
-                lblApplicationID.Text = ILicense.ApplicationID.ToString();
-                lblIssueDate.Text = ILicense.IssueDate.ToShortDateString();
-                lblExpirationDate.Text = ILicense.ExpirationDate.ToShortDateString();
+                lblInterLicenseID.Text = "<< " + InternationalLicense.InternationalLicenseID.ToString() + " >>";
+                lblLicenseID.Text = InternationalLicense.IssuedUsingLocalLicenseID.ToString();
+                lblDriverID.Text = InternationalLicense.DriverID.ToString();
+                lblApplicationID.Text = InternationalLicense.ApplicationID.ToString();
+                lblIssueDate.Text = InternationalLicense.IssueDate.ToShortDateString();
+                lblExpirationDate.Text = InternationalLicense.ExpirationDate.ToShortDateString();
 
-                if (ILicense.IsActive)
+                if (InternationalLicense.IsActive)
                     lblIsActive.Text = "Yes";
                 else
                     lblIsActive.Text = "No";
 
-                clsPeople Person = clsPeople.Find(clsMainApplication.Find(ILicense.ApplicationID).ApplicantPersonID);
 
-                lblNationalNo.Text = Person.NationalNo;
-                lblDateOfBirth.Text = Person.DateOfBirth.ToShortDateString();
+                lblNationalNo.Text = InternationalLicense.DriverInfo.PersonInfo.NationalNo;
+                lblDateOfBirth.Text = InternationalLicense.DriverInfo.PersonInfo.DateOfBirth.ToShortDateString();
 
                 Image DefaultImg;
-                if (Person.Gender == 0)
+                if (InternationalLicense.DriverInfo.PersonInfo.Gender == 0)
                 {
                     DefaultImg = Resources.user_Male;
                     lblGender.Text = "Male";
@@ -64,15 +63,15 @@ namespace DVLD_Project.License.UserControls
                     lblGender.Text = "Female";
                 }
 
-                lblDriverName.Text = Person.FirstName + " " + Person.SecondName + " " + Person.ThirdName + " " + Person.LastName;
+                lblDriverName.Text = InternationalLicense.DriverInfo.PersonInfo.FullName; 
 
-                if (Person.ImagePath == string.Empty || !File.Exists(Person.ImagePath))
+                if (InternationalLicense.DriverInfo.PersonInfo.ImagePath == string.Empty || !File.Exists(InternationalLicense.DriverInfo.PersonInfo.ImagePath))
                 {
                     pbDriverImg.Image = DefaultImg;
                 }
                 else
                 {
-                    pbDriverImg.Image = Image.FromFile(Person.ImagePath);
+                    pbDriverImg.Image = Image.FromFile(InternationalLicense.DriverInfo.PersonInfo.ImagePath);
                 }
             }
 

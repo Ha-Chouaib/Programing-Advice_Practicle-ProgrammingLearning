@@ -34,11 +34,11 @@ namespace DVLD_Project.Applications.User_Controls
         {
             if(_LDL_AppID != -1)
             {
-                clsLocalDrivingLicense LocalApp = clsLocalDrivingLicense.Find(_LDL_AppID);
+                clsLocalDrivingLicenseApplication LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(_LDL_AppID);
                 
                 lblLDL_AppID.Text= _LDL_AppID.ToString();
-                lblPassedTests.Text = $"{clsLocalDrivingLicense.GetPassedTestsCount(_LDL_AppID)}/3";
-                lblLicenseClassName.Text = clsLicenseClasses.Find(LocalApp.LicenseClassID).LicenseClassName;
+                lblPassedTests.Text = $"{clsLocalDrivingLicenseApplication.GetPassedTestsCount(_LDL_AppID)}/3";
+                lblLicenseClassName.Text = LocalDrivingLicenseApplication.LicenseClassInfo.LicenseClassName;
             }
         }
        
@@ -46,7 +46,7 @@ namespace DVLD_Project.Applications.User_Controls
         private void lnkShoeLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
-            frmLicenseClassDetails LicenseClassInfo = new frmLicenseClassDetails(clsLocalDrivingLicense.Find(_LDL_AppID).LicenseClassID);
+            frmLicenseClassDetails LicenseClassInfo = new frmLicenseClassDetails(clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(_LDL_AppID).LicenseClassID);
 
             LicenseClassInfo.ShowDialog();
         }

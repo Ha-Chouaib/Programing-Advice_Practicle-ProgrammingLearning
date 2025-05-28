@@ -13,6 +13,8 @@ namespace DVLD_BusinessLayer
         public int _DriverID { get; set; }
         public int _PersonID { get; set; }
         public int _CreatedByUserID { get; set; }
+        public clsPeople PersonInfo;
+        public clsUsers UserInfo;
         public DateTime _CreatedDate { get; set; }
 
         enum enMode {eAddNew,eUpdate}
@@ -23,6 +25,9 @@ namespace DVLD_BusinessLayer
             this._PersonID = PersonID;
             this._CreatedByUserID = CreatedByUserID;
             this._CreatedDate = CreatedDate;
+
+            this.PersonInfo = clsPeople.Find(_PersonID);
+            this.UserInfo = clsUsers.Find(this._CreatedByUserID);
 
             _Mode = enMode.eUpdate;
         }
@@ -35,14 +40,29 @@ namespace DVLD_BusinessLayer
             _Mode = enMode.eAddNew;
         }
 
-        public static clsDrivers Find(int PersonID)
+        public static clsDrivers Find(int DriverID)
+        {
+
+            int PersonID = -1;
+            int CreatedByUserID = -1;
+            DateTime CreatedDate = DateTime.Now;
+
+            if (clsDriverDataAccess.Find(DriverID, ref PersonID, ref CreatedByUserID, ref CreatedDate))
+            {
+                return new clsDrivers(DriverID, PersonID, CreatedByUserID, CreatedDate);
+            }
+            else
+                return null;
+        }
+
+        public static clsDrivers FindByPersonID(int PersonID)
         {
             
             int DriverID = -1;
             int CreatedByUserID = -1;
             DateTime CreatedDate = DateTime.Now;
 
-            if (clsDriverDataAccess.Find( PersonID,ref DriverID ,ref CreatedByUserID, ref CreatedDate))
+            if (clsDriverDataAccess.FindByPersonID( PersonID,ref DriverID ,ref CreatedByUserID, ref CreatedDate))
             {
                 return new clsDrivers(DriverID, PersonID, CreatedByUserID, CreatedDate);
             }

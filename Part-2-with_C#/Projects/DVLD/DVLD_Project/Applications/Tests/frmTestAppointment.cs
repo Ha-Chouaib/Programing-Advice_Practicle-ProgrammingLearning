@@ -48,7 +48,7 @@ namespace DVLD_Project.Applications.Tests
             lblTestApointmentName.Left=(this.ClientSize.Width - lblTestApointmentName.Width )/2;
 
             ctrlDisplayApplicationLicenseInfo1.__DisplayLDL_AppInfo(_LDL_AppID);
-            ctrlDisplayApplicationInfo1.__DisplayApplicationInfo(clsLocalDrivingLicense.Find(_LDL_AppID).MainApplicationID);
+            ctrlDisplayApplicationInfo1.__DisplayApplicationInfo(clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(_LDL_AppID).MainApplicationID);
         }
 
         private void _LoadSchedualedTestList()

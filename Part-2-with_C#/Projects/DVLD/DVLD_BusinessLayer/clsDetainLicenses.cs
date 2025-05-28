@@ -14,6 +14,8 @@ namespace DVLD_BusinessLayer
 
         public int DetainID { get; set; }
         public int LicenseID { get; set; }
+        private clsLicenses _License;
+        public clsLicenses LicenseInfo { get { return _License; } }
         public DateTime DetainDate { get; set; }
         public float FineFees { get; set; }
         public int CreatedByUserID { get; set; }
@@ -40,6 +42,7 @@ namespace DVLD_BusinessLayer
             this.ReleasedByUserID = ReleasedByUserID;
             this.ReleaseApplicationID = ReleaseApplicationID;
 
+            this._License = clsLicenses.Find(this.LicenseID);
             _Mode = enMode.ReleaseMode;
         }
         public clsDetainLicenses()

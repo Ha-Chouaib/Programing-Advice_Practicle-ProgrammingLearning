@@ -5,27 +5,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DVLD_DataAccessLayer.Applications;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DVLD_BusinessLayer.Applications
 {
     public class clsMainApplication
     {
-        public int AppID { get; set; }
+        public int MainApplicationID { get; set; }
         public int ApplicantPersonID { get; set; }
-        public DateTime AppDate { get; set; }
-        public int AppTypeID { get; set; }
-        public byte AppStatus { get; set; }
+        public clsPeople PersonInfo;
+        public DateTime ApplicationDate { get; set; }
+        public int ApplicationTypeID { get; set; }
+        public clsApplicationTypes ApplicationTypeInfo;
+        public byte ApplicationStatus { get; set; }
         public DateTime LastStatusDate { get; set; }
         public float PaidFees { get; set; }
         public int CreatedByUserID { get; set; }
+        public clsUsers UserInfo;
 
-        enum enMode { eAddNew,eUpdate}
-        enMode _Mode;
+        public enum enMode { eAddNew,eUpdate}
+        public enMode Mode;
 
         public enum enApplicationStatus : byte
         {
             New = 1,
-            Canceled = 2,
+            Cancelled = 2,
             Completed = 3,
         }
 
@@ -43,33 +47,38 @@ namespace DVLD_BusinessLayer.Applications
         public clsMainApplication(int AppID,int ApplicantPersonID,DateTime AppDate,int AppTypeID,byte AppStatus,
                                     DateTime LastStatusDate,float PaidFees,int CreatedByUserID)
         {
-            this.AppID = AppID;
+            this.MainApplicationID = AppID;
             this.ApplicantPersonID = ApplicantPersonID;
-            this.AppDate= AppDate;
-            this.AppTypeID = AppTypeID;
-            this.AppStatus = AppStatus;
+            this.ApplicationDate= AppDate;
+            this.ApplicationTypeID = AppTypeID;
+            this.ApplicationStatus = AppStatus;
             this.LastStatusDate = LastStatusDate;
             this.PaidFees=PaidFees;
             this.CreatedByUserID = CreatedByUserID;
-            _Mode = enMode.eUpdate;
+
+            this.PersonInfo = clsPeople.Find(this.ApplicantPersonID);
+            this.UserInfo=clsUsers.Find(this.CreatedByUserID);
+            this.ApplicationTypeInfo = clsApplicationTypes.Find(this.ApplicationTypeID);
+
+            Mode = enMode.eUpdate;
 
         }
         public clsMainApplication()
         {
-            this.AppID = -1;
+            this.MainApplicationID = -1;
             this.ApplicantPersonID = -1;
-            this.AppDate = DateTime.Now;
-            this.AppTypeID = -1;
-            this.AppStatus = 0;
+            this.ApplicationDate = DateTime.Now;
+            this.ApplicationTypeID = -1;
+            this.ApplicationStatus = 0;
             this.LastStatusDate = DateTime.Now;
             this.PaidFees = 0;
             this.CreatedByUserID = -1;
 
-            _Mode = enMode.eAddNew;
+            Mode = enMode.eAddNew;
 
         }
 
-        public static clsMainApplication Find(int AppID)
+        public static clsMainApplication FindMainApplication(int AppID)
         {
             int ApplicantPersonID = -1;
             int CreatedByUserID=-1;
@@ -86,14 +95,14 @@ namespace DVLD_BusinessLayer.Applications
 
         bool _AddNewApp()
         {
-                this.AppID=clsMainApplicationDataAccess.AddNewApp(this.ApplicantPersonID,this.AppDate,this.AppTypeID,this.AppStatus,
+                this.MainApplicationID=clsMainApplicationDataAccess.AddNewApp(this.ApplicantPersonID,this.ApplicationDate,this.ApplicationTypeID,this.ApplicationStatus,
                                                             this.LastStatusDate,this.PaidFees,this.CreatedByUserID);
-            return (this.AppID > 0);
+            return (this.MainApplicationID > 0);
         }
 
         bool _UpdateApp()
         {
-            return clsMainApplicationDataAccess.UpdateApp(this.AppID, this.AppStatus, this.LastStatusDate);
+            return clsMainApplicationDataAccess.UpdateApp(this.MainApplicationID, this.ApplicationStatus, this.LastStatusDate);
         }
         public static bool DeleteApp(int AppID)
         {
@@ -102,12 +111,12 @@ namespace DVLD_BusinessLayer.Applications
 
         public bool Save()
         {
-            switch(_Mode)
+            switch(Mode)
             {
                 case enMode.eAddNew:
                     if(_AddNewApp())
                     {
-                        _Mode = enMode.eUpdate;
+                        Mode = enMode.eUpdate;
                         return true;
                     }else
                     {
@@ -128,6 +137,11 @@ namespace DVLD_BusinessLayer.Applications
         public static bool CheckApplicationStatus(int ApplicantPersonID,int LicenseClassID,byte IsInStatus)
         {
             return clsMainApplicationDataAccess.CheckApplicationStatus(ApplicantPersonID, LicenseClassID, IsInStatus);
+        }
+
+        public static bool UpdateApplicationStatus(int ApplicationID, clsMainApplication.enApplicationStatus SetStatus)
+        {
+            return clsMainApplicationDataAccess.UpdateStatus(ApplicationID,(short) SetStatus);
         }
     }
 }

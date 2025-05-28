@@ -34,7 +34,6 @@ namespace DVLD_Project.License.UserControls
         private void _ShowInfo()
         {
             clsLicenses License = clsLicenses.Find(_LicenseID);
-            clsPeople Person = clsPeople.Find(clsMainApplication.Find(License.ApplicationID).ApplicantPersonID);
 
             if(License != null)
             {
@@ -42,10 +41,10 @@ namespace DVLD_Project.License.UserControls
 
                 lblLicenseID.Text = _LicenseID.ToString();
 
-                lblNationalNo.Text =Person.NationalNo;
+                lblNationalNo.Text =License.DriverInfo.PersonInfo.NationalNo;
                 lblDriverID.Text =License.DriverID.ToString();
 
-                if(Person.Gender == 0)
+                if(License.DriverInfo.PersonInfo.Gender == 0)
                 {
                     lblGender.Text ="Male";
                     DriverDefaultPicture = Resources.user_Male;
@@ -56,7 +55,7 @@ namespace DVLD_Project.License.UserControls
                     DriverDefaultPicture = Resources.user_female;
                 }
 
-                lblDateOfBirth.Text =Person.DateOfBirth.ToShortDateString();
+                lblDateOfBirth.Text = License.DriverInfo.PersonInfo.DateOfBirth.ToShortDateString();
 
                 if(License.Notes == string.Empty)
                     txtNotes.Text = "No Notes";
@@ -96,12 +95,12 @@ namespace DVLD_Project.License.UserControls
                 else
                     lblIsActive.Text = "No";
 
-                lblLicenseClassName.Text =clsLicenseClasses.Find(License.LicenseClassID).LicenseClassName;
-                lblDriverName.Text = Person.FirstName+" "+ Person.SecondName + " " + Person.ThirdName + " " + Person.LastName ;
+                lblLicenseClassName.Text = License.LicenseClassInfo.LicenseClassName;
+                lblDriverName.Text = License.DriverInfo.PersonInfo.FullName;
 
-                if (Person.ImagePath != string.Empty && File.Exists(Person.ImagePath))
+                if (License.DriverInfo.PersonInfo.ImagePath != string.Empty && File.Exists(License.DriverInfo.PersonInfo.ImagePath))
                 {
-                    pbDriverImg.Image = Image.FromFile(Person.ImagePath);
+                    pbDriverImg.Image = Image.FromFile(License.DriverInfo.PersonInfo.ImagePath);
                 }
                 else
                     pbDriverImg.Image = DriverDefaultPicture;

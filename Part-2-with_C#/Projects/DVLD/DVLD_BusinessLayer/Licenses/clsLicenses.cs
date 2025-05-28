@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DVLD_BusinessLayer.Applications;
 using DVLD_DataAccessLayer.License;
 
 namespace DVLD_BusinessLayer.Licenses
@@ -12,8 +13,11 @@ namespace DVLD_BusinessLayer.Licenses
     {
         public int LicenseID { get; set; }
         public int ApplicationID { get; set; }
+        public clsMainApplication ApplicationInfo;
         public int DriverID { get; set; }
+        public clsDrivers DriverInfo;
         public int LicenseClassID { get; set; }
+        public clsLicenseClasses LicenseClassInfo;
         public DateTime IssueDate { get; set; }
         public DateTime ExpirationDate { get; set; }
         public string Notes { get; set; }
@@ -49,6 +53,9 @@ namespace DVLD_BusinessLayer.Licenses
             this.IssueReason       = IssueReason;
             this.CreatedByUserID   = CreatedByUserID;
 
+            this.ApplicationInfo = clsMainApplication.FindMainApplication(this.ApplicationID);
+            this.DriverInfo = clsDrivers.Find(this.DriverID);
+            this.LicenseClassInfo = clsLicenseClasses.Find(this.LicenseClassID);
             _Mode = enMode.eUpdate;
         }
         public clsLicenses()

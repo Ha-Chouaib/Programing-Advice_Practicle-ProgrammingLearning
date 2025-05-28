@@ -20,7 +20,7 @@ namespace DVLD_Project.Applications.Tests
             InitializeComponent();
         }
 
-        int _SchedualedTestAppID = -1;
+        int _SchedualedTestAppointmentID = -1;
         Image TestImg;
         clsTestAppointments TestAppointment;
 
@@ -31,7 +31,7 @@ namespace DVLD_Project.Applications.Tests
         {
             InitializeComponent();
 
-            _SchedualedTestAppID = TestAppointmentID;
+            _SchedualedTestAppointmentID = TestAppointmentID;
             this.TestImg = TestImg;
         }
 
@@ -43,21 +43,20 @@ namespace DVLD_Project.Applications.Tests
 
         private void _LoadSchedualeTestInfo()
         {
-            if (_SchedualedTestAppID != -1)
+            if (_SchedualedTestAppointmentID != -1)
             {
                 pbSchedualeImg.Image = TestImg;
-                TestAppointment = clsTestAppointments.Find(_SchedualedTestAppID);
+                TestAppointment = clsTestAppointments.Find(_SchedualedTestAppointmentID);
 
-                clsLocalDrivingLicense LocalLicenseApp = clsLocalDrivingLicense.Find(TestAppointment.LDL_AppID);
-                clsMainApplication MainApp = clsMainApplication.Find(LocalLicenseApp.MainApplicationID);
-                clsPeople Person = clsPeople.Find(MainApp.ApplicantPersonID);
+                clsLocalDrivingLicenseApplication LocalLicenseApplication = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(TestAppointment.LDL_AppID);
+               
 
                 lblDL_AppID.Text = TestAppointment.LDL_AppID.ToString();
-                lblLicenseClass.Text = clsLicenseClasses.Find(LocalLicenseApp.LicenseClassID).LicenseClassName;
+                lblLicenseClass.Text = clsLicenseClasses.Find(LocalLicenseApplication.LicenseClassID).LicenseClassName;
 
-                lblFullName.Text = Person.FirstName + " " + Person.SecondName + " " + Person.ThirdName + " " + Person.LastName;
+                lblFullName.Text = LocalLicenseApplication.PersonInfo.FullName;
 
-                lblFees.Text = clsTestTypes.Find(1).TestFees.ToString();
+                lblFees.Text = clsTestTypes.Find(TestAppointment.TestTypeID).TestFees.ToString();
                 lblTestDate.Text=TestAppointment.AppointmentDate.ToShortDateString();
                 lblTrial.Text = clsTestAppointments._GetTestTrials(TestAppointment.LDL_AppID,TestAppointment.TestTypeID).ToString();
 
@@ -75,7 +74,7 @@ namespace DVLD_Project.Applications.Tests
             {
                 MainTest.TestResult_IsPassed = false;
             }
-            MainTest.TestAppointmentID = _SchedualedTestAppID;
+            MainTest.TestAppointmentID = _SchedualedTestAppointmentID;
             MainTest.Notes = txtNotes.Text;
             MainTest.CreatedByUserID = TestAppointment.CreatedByUserID;
             if(MainTest.Save())

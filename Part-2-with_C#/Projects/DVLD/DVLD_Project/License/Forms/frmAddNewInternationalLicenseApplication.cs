@@ -87,13 +87,13 @@ namespace DVLD_Project.License
             if(_AddNewInternationalLicense_Validation())
             {
                
-                NewInternationalLic_Application.AppDate = DateTime.Now;
-                NewInternationalLic_Application.ApplicantPersonID = clsMainApplication.Find(_License.ApplicationID).ApplicantPersonID;
-                NewInternationalLic_Application.AppStatus =(byte) clsMainApplication.enApplicationStatus.Completed;
-                NewInternationalLic_Application.AppTypeID = (int)clsMainApplication.enApplicationTypes_IDs.NewInternationalLicense;
+                NewInternationalLic_Application.ApplicationDate = DateTime.Now;
+                NewInternationalLic_Application.ApplicantPersonID = clsMainApplication.FindMainApplication(_License.ApplicationID).ApplicantPersonID;
+                NewInternationalLic_Application.ApplicationStatus =(byte) clsMainApplication.enApplicationStatus.Completed;
+                NewInternationalLic_Application.ApplicationTypeID = (int)clsMainApplication.enApplicationTypes_IDs.NewInternationalLicense;
                 NewInternationalLic_Application.LastStatusDate = DateTime.Now;
                 NewInternationalLic_Application.CreatedByUserID = clsGlobal.CurrentUserID;
-                NewInternationalLic_Application.PaidFees = clsApplicationTypes.Find(NewInternationalLic_Application.AppTypeID).AppFees;
+                NewInternationalLic_Application.PaidFees = clsApplicationTypes.Find(NewInternationalLic_Application.ApplicationTypeID).AppFees;
 
                 if(!NewInternationalLic_Application.Save())
                 {
@@ -106,14 +106,14 @@ namespace DVLD_Project.License
                     InternationalLicense.ExpirationDate = DateTime.Now.AddYears(1);
                     InternationalLicense.DriverID = _License.DriverID;
                     InternationalLicense.CreatedByUserID = clsGlobal.CurrentUserID;
-                    InternationalLicense.ApplicationID = NewInternationalLic_Application.AppID;
+                    InternationalLicense.ApplicationID = NewInternationalLic_Application.MainApplicationID;
                     InternationalLicense.IsActive = true;
                     
                     if(!InternationalLicense.Save())
                     {
 
                         MessageBox.Show("Cannot Save The New International License Please Try Again Later !!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        clsMainApplication.DeleteApp(NewInternationalLic_Application.AppID);
+                        clsMainApplication.DeleteApp(NewInternationalLic_Application.MainApplicationID);
                         return false;
                     }
                 }
@@ -134,7 +134,7 @@ namespace DVLD_Project.License
                 {
                     MessageBox.Show("Done Successfully");
                     lblInterNationalLicenseID.Text = "[ " + InternationalLicense.InternationalLicenseID.ToString() + " ]";
-                    lblApplicationID.Text = "[ " + NewInternationalLic_Application.AppID.ToString() + " ]";
+                    lblApplicationID.Text = "[ " + NewInternationalLic_Application.MainApplicationID.ToString() + " ]";
                     lnkShowLicenseInfo.Enabled = true;
                 }
 
@@ -147,7 +147,7 @@ namespace DVLD_Project.License
 
         private void lnkShowLicensesHist_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmShowDriverLicensesHistory LicensesHistory = new frmShowDriverLicensesHistory(clsMainApplication.Find(_License.ApplicationID).ApplicantPersonID);
+            frmShowDriverLicensesHistory LicensesHistory = new frmShowDriverLicensesHistory(clsMainApplication.FindMainApplication(_License.ApplicationID).ApplicantPersonID);
 
             LicensesHistory.ShowDialog();
         }

@@ -12,6 +12,7 @@ namespace DVLD_BusinessLayer
     {
         public int UserID { get; set; } 
         public int PersonID { get; set; }
+        public clsPeople PersonInfo;
         public string UserName { get; set; }
         public string Password { get; set; }
         public bool IsActive { get; set; }
@@ -25,6 +26,7 @@ namespace DVLD_BusinessLayer
             this.UserName = UserName;
             this.Password = Password;
             this.IsActive = IsActive;
+            this.PersonInfo = clsPeople.Find(PersonID);
 
             _Mode = enMode.eUpdate;
         }

@@ -35,26 +35,25 @@ namespace DVLD_Project.License
         private void _DisplayLocalAppInfo()
         {
             ctrlDisplayApplicationLicenseInfo1.__DisplayLDL_AppInfo(_LDL_AppID);
-            ctrlDisplayApplicationInfo1.__DisplayApplicationInfo(clsLocalDrivingLicense.Find(_LDL_AppID).MainApplicationID);
+            ctrlDisplayApplicationInfo1.__DisplayApplicationInfo(clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(_LDL_AppID).MainApplicationID);
         }
 
 
         private bool _SaveNewLicense()
         {
-            clsLocalDrivingLicense LocalLicenseApp = clsLocalDrivingLicense.Find(_LDL_AppID);
-            clsMainApplication NewLocalLicense_Application = clsMainApplication.Find(LocalLicenseApp.MainApplicationID);
+            clsLocalDrivingLicenseApplication LocalLicenseApplication = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(_LDL_AppID);
             clsDrivers Driver;
 
             bool IsNewDriver=true;
-            if (clsDrivers.Exist(NewLocalLicense_Application.ApplicantPersonID))
+            if (clsDrivers.Exist(LocalLicenseApplication.ApplicantPersonID))
             {
-                Driver = clsDrivers.Find(NewLocalLicense_Application.ApplicantPersonID);
+                Driver = clsDrivers.FindByPersonID(LocalLicenseApplication.ApplicantPersonID);
                 IsNewDriver = false;
             }
             else
             {
                 Driver = new clsDrivers();
-                Driver._PersonID = NewLocalLicense_Application.ApplicantPersonID;
+                Driver._PersonID = LocalLicenseApplication.ApplicantPersonID;
                 Driver._CreatedByUserID = clsGlobal.CurrentUserID;
                 Driver._CreatedDate = DateTime.Now;
                 if (!Driver.Save())
@@ -64,16 +63,16 @@ namespace DVLD_Project.License
                 } 
             }
 
-            clsLicenseClasses LicenseClass = clsLicenseClasses.Find(LocalLicenseApp.LicenseClassID);
+          
             clsLicenses NewLicense = new clsLicenses();
 
-            NewLicense.ApplicationID = NewLocalLicense_Application.AppID;
+            NewLicense.ApplicationID = LocalLicenseApplication.MainApplicationID;
             NewLicense.DriverID = Driver._DriverID;
-            NewLicense.LicenseClassID = LocalLicenseApp.LicenseClassID;
+            NewLicense.LicenseClassID = LocalLicenseApplication.LicenseClassID;
             NewLicense.IssueDate = DateTime.Now;
-            NewLicense.ExpirationDate = DateTime.Now.AddYears(LicenseClass.DefaultValidityLength);
+            NewLicense.ExpirationDate = DateTime.Now.AddYears(LocalLicenseApplication.LicenseClassInfo.DefaultValidityLength);
             NewLicense.Notes = txtNotes.Text;
-            NewLicense.PaidFees = LicenseClass.LicenseFees;
+            NewLicense.PaidFees = LocalLicenseApplication.LicenseClassInfo.LicenseFees;
             NewLicense.IsActive = true;
             NewLicense.IssueReason =(byte) clsLicenses.enIssueReason.FirstTime;
             NewLicense.CreatedByUserID = clsGlobal.CurrentUserID;
@@ -87,9 +86,8 @@ namespace DVLD_Project.License
             }
             else
             {
-                NewLocalLicense_Application.AppStatus = (byte)clsMainApplication.enApplicationStatus.Completed;
-                NewLocalLicense_Application.LastStatusDate = DateTime.Now;    
-                if(!NewLocalLicense_Application.Save())
+               
+                if(!clsMainApplication.UpdateApplicationStatus(LocalLicenseApplication.MainApplicationID,clsMainApplication.enApplicationStatus.Completed))
                 {
                     MessageBox.Show("Operation Fialds Please Try Again ! [Error]->(Couldn't Update Application Status)", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     clsLicenses.DeleteLicense(NewLicense.LicenseID);

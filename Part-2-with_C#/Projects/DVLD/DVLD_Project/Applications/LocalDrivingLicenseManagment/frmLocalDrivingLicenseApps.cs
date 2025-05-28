@@ -35,7 +35,7 @@ namespace DVLD_Project.Applications
 
         private void _LoadAppsList()
         {
-            DataTable DT = clsLocalDrivingLicense.LocalLicenseList_View();
+            DataTable DT = clsLocalDrivingLicenseApplication.LocalLicenseList_View();
             dgvLDL_AppsList.DataSource = DT;
             dgvLDL_AppsList.Columns["LocalDrivingLicenseApplicationID"].HeaderText = "LDL_AppID";
             dgvLDL_AppsList.Columns["ClassName"].HeaderText = "Driving Class";
@@ -68,7 +68,7 @@ namespace DVLD_Project.Applications
 
             cmbAppStatusFilter.Items.Add("All");
             cmbAppStatusFilter.Items.Add("New");
-            cmbAppStatusFilter.Items.Add("Canceled");
+            cmbAppStatusFilter.Items.Add("Cancelled");
             cmbAppStatusFilter.Items.Add("Completed");
             cmbAppStatusFilter.SelectedIndex = 0;
 
@@ -84,11 +84,11 @@ namespace DVLD_Project.Applications
 
                 if (FilterByColumn == "LocalDrivingLicenseApplicationID" && int.TryParse(FilterTerm, out int LDL_AppID))
                 {
-                    DT = clsLocalDrivingLicense.FilterBy<int>(FilterByColumn, LDL_AppID);
+                    DT = clsLocalDrivingLicenseApplication.FilterBy<int>(FilterByColumn, LDL_AppID);
                 }
                 else
                 {
-                    DT = clsLocalDrivingLicense.FilterBy<string>(FilterByColumn, FilterTerm);
+                    DT = clsLocalDrivingLicenseApplication.FilterBy<string>(FilterByColumn, FilterTerm);
                 }
                 dgvLDL_AppsList.DataSource = DT;
 
@@ -103,7 +103,7 @@ namespace DVLD_Project.Applications
         private void _FilterBy_AppStatus()
         {
             string StatusTerm = cmbAppStatusFilter.SelectedItem.ToString();
-            DataTable DT = clsLocalDrivingLicense.FilterBy<string>("Status", StatusTerm);
+            DataTable DT = clsLocalDrivingLicenseApplication.FilterBy<string>("Status", StatusTerm);
 
             dgvLDL_AppsList.DataSource = DT;
             lblRecords.Text = dgvLDL_AppsList.RowCount.ToString();
@@ -151,8 +151,8 @@ namespace DVLD_Project.Applications
         {
             int LDL_AppID = (int)dgvLDL_AppsList.CurrentRow.Cells[0].Value;
 
-            clsLocalDrivingLicense LocalLicenseApp = clsLocalDrivingLicense.Find(LDL_AppID);
-            byte PassedTests = (byte)clsLocalDrivingLicense.GetPassedTestsCount(LDL_AppID);
+            clsLocalDrivingLicenseApplication LocalLicenseApplication = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(LDL_AppID);
+            byte PassedTests = (byte)clsLocalDrivingLicenseApplication.GetPassedTestsCount(LDL_AppID);
 
             tsmIssueDrivingLicenseFirstTime.Enabled = false;
             tsmShowLicense.Enabled = false;
@@ -178,9 +178,8 @@ namespace DVLD_Project.Applications
                     _Disable_EnableTests(false, false, false);
                     break;
             }
-            int PersonID = clsMainApplication.Find(LocalLicenseApp.MainApplicationID).ApplicantPersonID;
 
-            if (clsMainApplication.CheckApplicationStatus(PersonID, LocalLicenseApp.LicenseClassID,(int) clsMainApplication.enApplicationStatus.Completed))
+            if (clsMainApplication.CheckApplicationStatus(LocalLicenseApplication.ApplicantPersonID, LocalLicenseApplication.LicenseClassID,(int) clsMainApplication.enApplicationStatus.Completed))
             {
                 tsmCancelApplication.Enabled = false;
                 tsmDeleteApplication.Enabled = false;
@@ -188,7 +187,7 @@ namespace DVLD_Project.Applications
 
                 tsmShowLicense.Enabled = true;
             }
-            if (clsMainApplication.CheckApplicationStatus(PersonID, LocalLicenseApp.LicenseClassID,(int) clsMainApplication.enApplicationStatus.Canceled))
+            if (clsMainApplication.CheckApplicationStatus(LocalLicenseApplication.ApplicantPersonID, LocalLicenseApplication.LicenseClassID,(int) clsMainApplication.enApplicationStatus.Cancelled))
             {
                 tsmCancelApplication.Enabled = false;
                
@@ -243,9 +242,9 @@ namespace DVLD_Project.Applications
             if(MessageBox.Show("Sure To Delete This Application ?","Confirm",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 int LDL_AppID = (int)dgvLDL_AppsList.CurrentRow.Cells[0].Value;
-                int MainApplicationID = clsLocalDrivingLicense.Find(LDL_AppID).MainApplicationID;
+                clsLocalDrivingLicenseApplication LocalDrivingApplication = clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(LDL_AppID);
 
-                if (clsLocalDrivingLicense.Delete(LDL_AppID) &&clsMainApplication.DeleteApp(MainApplicationID))
+                if (LocalDrivingApplication.Delete())
                 {
                     MessageBox.Show("Done Successfully");
                     _LoadAppsList();
@@ -263,10 +262,9 @@ namespace DVLD_Project.Applications
             if (MessageBox.Show("Sure To Cancele the application ?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 int LDL_AppID = (int)dgvLDL_AppsList.CurrentRow.Cells[0].Value;
-                clsMainApplication NewLocalLicense_Application = clsMainApplication.Find(clsLocalDrivingLicense.Find(LDL_AppID).MainApplicationID);
-                NewLocalLicense_Application.AppStatus =(int) clsMainApplication.enApplicationStatus.Canceled;
-                NewLocalLicense_Application.LastStatusDate = DateTime.Now;
-                if (NewLocalLicense_Application.Save())
+               
+                if (clsMainApplication.UpdateApplicationStatus(clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(LDL_AppID).MainApplicationID ,
+                                                                clsMainApplication.enApplicationStatus.Cancelled))
                 {
                     MessageBox.Show("Done Successfully");
                     _LoadAppsList();
@@ -315,7 +313,7 @@ namespace DVLD_Project.Applications
         private void tsmShowLicense_Click(object sender, EventArgs e)
         {
             int LDL_AppID = (int)dgvLDL_AppsList.CurrentRow.Cells[0].Value;
-            int LicenseID = clsLicenses.Find_ByApplicationID(clsLocalDrivingLicense.Find(LDL_AppID).MainApplicationID).LicenseID;
+            int LicenseID = clsLicenses.Find_ByApplicationID(clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(LDL_AppID).MainApplicationID).LicenseID;
 
             frmDisplayLocalLicenseInfo DisplayDruverLicenseInfo = new frmDisplayLocalLicenseInfo(LicenseID);
             DisplayDruverLicenseInfo.ShowDialog();
@@ -323,8 +321,7 @@ namespace DVLD_Project.Applications
         private void tsmShowPersonLicenseHistory_Click(object sender, EventArgs e)
         {
             int LDL_AppID = (int)dgvLDL_AppsList.CurrentRow.Cells[0].Value;
-            int PersonID = clsMainApplication.Find(clsLocalDrivingLicense.Find(LDL_AppID).MainApplicationID).ApplicantPersonID;
-            frmShowDriverLicensesHistory DriverLicensesHist = new frmShowDriverLicensesHistory(PersonID);
+            frmShowDriverLicensesHistory DriverLicensesHist = new frmShowDriverLicensesHistory(clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(LDL_AppID).ApplicantPersonID);
             DriverLicensesHist.ShowDialog();
         }
 

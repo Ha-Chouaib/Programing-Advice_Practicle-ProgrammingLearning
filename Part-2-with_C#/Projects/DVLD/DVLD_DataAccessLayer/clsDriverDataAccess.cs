@@ -9,7 +9,42 @@ namespace DVLD_DataAccessLayer
 {
     public class clsDriverDataAccess
     {
-        public static bool Find(int PersonID,ref int DriverID, ref int CreatedByUserID,ref DateTime CreatedDate)
+
+        public static bool Find(int DriverID, ref int PersonID, ref int CreatedByUserID, ref DateTime CreatedDate)
+        {
+            SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
+            string Query = @"SELECT * From Drivers WHERE DriverID = @DriverID";
+
+            SqlCommand cmd = new SqlCommand(Query, connection);
+            cmd.Parameters.AddWithValue("@DriverID", DriverID);
+            bool IsFound = false;
+            try
+            {
+                connection.Open();
+                SqlDataReader Reader = cmd.ExecuteReader();
+                if (Reader.Read())
+                {
+                    IsFound = true;
+
+                    PersonID = (int)Reader["PersonID"];
+                    CreatedByUserID = (int)Reader["CreatedByUserID"];
+                    CreatedDate = (DateTime)Reader["CreatedDate"];
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("------------------ DB Error " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return IsFound;
+
+        }
+
+
+        public static bool FindByPersonID(int PersonID,ref int DriverID, ref int CreatedByUserID,ref DateTime CreatedDate)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
             string Query = @"SELECT * From Drivers WHERE PersonID = @PersonID";
@@ -26,7 +61,6 @@ namespace DVLD_DataAccessLayer
                     IsFound = true;
 
                     DriverID = (int)Reader["DriverID"];
-                    PersonID = (int)Reader["PersonID"];
                     CreatedByUserID = (int)Reader["CreatedByUserID"];
                     CreatedDate = (DateTime)Reader["CreatedDate"];
                 }

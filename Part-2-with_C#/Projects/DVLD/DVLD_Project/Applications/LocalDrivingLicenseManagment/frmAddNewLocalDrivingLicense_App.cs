@@ -83,83 +83,61 @@ namespace DVLD_Project.Applications.LDLApps
         }
 
       
-        private void _AddNewApp()
+        private void _AddNewLocalDrivingLicenseApplication()
         {   
-            if(_PersonID == -1)
-            {
-                return;
-            }
             clsPeople Person = clsPeople.Find(_PersonID);
-            if(Person != null)
-            {
-                
-                short LicenseClassID =(short) cmbLicenseClasses.SelectedValue;
-                short PersonAge =(short)(DateTime.Now.Year - Person.DateOfBirth.Year);
-
-                clsLicenseClasses LicenseClass = clsLicenseClasses.Find(LicenseClassID);
-
-                if(PersonAge < LicenseClass.MinAllowedAge)
-                {
-                    MessageBox.Show("The Current Person Is Under The Allowed Age For This License Class", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                if (clsMainApplication.CheckApplicationStatus(Person.PersonID,LicenseClassID,(byte)clsMainApplication.enApplicationStatus.New))
-                {
-                    MessageBox.Show($"Not Able To Add A New App of This Class Is Already Exist At New State !!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                else
-                {
-
-                    if (MessageBox.Show("Sure To Add This App", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        clsMainApplication NewLocalLicense_Application = new clsMainApplication();
-                        NewLocalLicense_Application.AppDate = DateTime.Now;
-                        NewLocalLicense_Application.AppStatus =(byte) clsMainApplication.enApplicationStatus.New;
-                        NewLocalLicense_Application.ApplicantPersonID = _PersonID;
-                        NewLocalLicense_Application.LastStatusDate = DateTime.Now;
-                        NewLocalLicense_Application.CreatedByUserID = clsGlobal.CurrentUserID;
-                        NewLocalLicense_Application.AppTypeID = (int)clsMainApplication.enApplicationTypes_IDs.NewLocalDrivingLicenseService;
-                        NewLocalLicense_Application.PaidFees = clsApplicationTypes.Find(NewLocalLicense_Application.AppTypeID).AppFees;
-
-                        if (NewLocalLicense_Application.Save())
-                        {
-
-                            clsLocalDrivingLicense NewLocal_PreLicense = new clsLocalDrivingLicense();
-                            NewLocal_PreLicense.MainApplicationID = NewLocalLicense_Application.AppID;
-                            NewLocal_PreLicense.LicenseClassID =(byte) LicenseClassID;
-                            if (NewLocal_PreLicense.Save())
-                            {
-                                MessageBox.Show("Done Successfully", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                lblAppID.Text = NewLocalLicense_Application.AppID.ToString();
-                                __ReloadContent?.Invoke(this);
-                            }
-                            else
-                            {
-                                MessageBox.Show("The Operation Failed! Couldn't Save The New License | This Will Lead To Remove The New Saved Application", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                clsMainApplication.DeleteApp(NewLocalLicense_Application.AppID);
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Couldn't Save The Current Local Driving App !!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("The Operation Ignored Successfully", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-
-                }
-                
-            }else
+            if (Person == null)
             {
                 MessageBox.Show($"No Person With ID << {_PersonID} >> is Exist !!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-        }
+            short LicenseClassID =(short) cmbLicenseClasses.SelectedValue;
+            short PersonAge =(short)(DateTime.Now.Year - Person.DateOfBirth.Year);
 
+            clsLicenseClasses LicenseClass = clsLicenseClasses.Find(LicenseClassID);
+
+            if(PersonAge < LicenseClass.MinAllowedAge)
+            {
+                MessageBox.Show("The Current Person Is Under The Allowed Age For This License Class", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (clsMainApplication.CheckApplicationStatus(Person.PersonID,LicenseClassID,(byte)clsMainApplication.enApplicationStatus.New))
+            {
+                MessageBox.Show($"Not Able To Add A New App of This Class Is Already Exist At New State !!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (MessageBox.Show("Sure To Add This App", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                MessageBox.Show("The Operation Ignored Successfully", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            clsLocalDrivingLicenseApplication NewLocalLicense_Application = new clsLocalDrivingLicenseApplication();
+            NewLocalLicense_Application.ApplicationDate = DateTime.Now;
+            NewLocalLicense_Application.ApplicationStatus =(byte) clsMainApplication.enApplicationStatus.New;
+            NewLocalLicense_Application.ApplicantPersonID = _PersonID;
+            NewLocalLicense_Application.LastStatusDate = DateTime.Now;
+            NewLocalLicense_Application.CreatedByUserID = clsGlobal.CurrentUserID;
+            NewLocalLicense_Application.ApplicationTypeID = (int)clsMainApplication.enApplicationTypes_IDs.NewLocalDrivingLicenseService;
+            NewLocalLicense_Application.PaidFees = clsApplicationTypes.Find(NewLocalLicense_Application.ApplicationTypeID).AppFees;
+            NewLocalLicense_Application.MainApplicationID = NewLocalLicense_Application.MainApplicationID;
+            NewLocalLicense_Application.LicenseClassID = (byte)LicenseClassID;
+
+            if (!NewLocalLicense_Application.Save())
+            {                            
+                MessageBox.Show("Couldn't Save The Current Local Driving App !!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+           
+            MessageBox.Show("Done Successfully", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            lblAppID.Text = NewLocalLicense_Application.MainApplicationID.ToString();
+            __ReloadContent?.Invoke(this);
+
+
+        }
+        
         private void cmbLicenseClasses_SelectedIndexChanged(object sender, EventArgs e)
         {
             lblAppFees.Text = clsLicenseClasses.Find((short)cmbLicenseClasses.SelectedValue).LicenseFees.ToString();
@@ -177,7 +155,7 @@ namespace DVLD_Project.Applications.LDLApps
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            _AddNewApp();
+            _AddNewLocalDrivingLicenseApplication();
         }
 
         private void btnClose_Click(object sender, EventArgs e)

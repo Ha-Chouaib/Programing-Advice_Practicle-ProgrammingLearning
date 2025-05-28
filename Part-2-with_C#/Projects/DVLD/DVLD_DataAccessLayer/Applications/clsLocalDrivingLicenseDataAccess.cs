@@ -4,18 +4,19 @@ using System.Linq;
 using System.Data;
 using System.Data.SqlClient;
 using System.Data.Common;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DVLD_DataAccessLayer.Applications
 {
     public class clsLocalDrivingLicenseDataAccess
     {
-        public static bool Find(int LDL_ID, ref int AppID,ref byte LicenseClassID)
+        public static bool Find(int LocalDrivingLicenseApplicationID, ref int ApplicationID,ref int LicenseClassID)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
-            string Query = @"Select * from LocalDrivingLicenseApplications Where LocalDrivingLicenseApplicationID= @LDLid";
+            string Query = @"Select * from LocalDrivingLicenseApplications Where LocalDrivingLicenseApplicationID= @LocalDrivingLicenseApplicationID";
 
             SqlCommand cmd =new SqlCommand(Query, connection);
-            cmd.Parameters.AddWithValue("@LDLid", LDL_ID);
+            cmd.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
 
             bool Found = false;
             try
@@ -25,8 +26,8 @@ namespace DVLD_DataAccessLayer.Applications
                 if (Reader.Read())
                 {
                     Found = true;
-                    AppID = (int)Reader["ApplicationID"];
-                    LicenseClassID = Convert.ToByte( Reader["LicenseClassID"] );
+                    ApplicationID = (int)Reader["ApplicationID"];
+                    LicenseClassID = (int) Reader["LicenseClassID"];
                 }
 
 
@@ -41,8 +42,41 @@ namespace DVLD_DataAccessLayer.Applications
 
             return Found;
         }
+        public static bool FindByMainApplicationID(int ApplicationID, ref int LocalDrivingLicenseApplicationID, ref int LicenseClassID)
+        {
+            SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
+            string Query = @"Select * from LocalDrivingLicenseApplications Where ApplicationID= @ApplicationID";
 
-        public static bool AddNewLicense( int AppID,short LicenseClassID)
+            SqlCommand cmd = new SqlCommand(Query, connection);
+            cmd.Parameters.AddWithValue("@ApplicationID", ApplicationID);
+
+            bool Found = false;
+            try
+            {
+                connection.Open();
+                SqlDataReader Reader = cmd.ExecuteReader();
+                if (Reader.Read())
+                {
+                    Found = true;
+                    LocalDrivingLicenseApplicationID = (int)Reader["LocalDrivingLicenseApplicationID"];
+                    LicenseClassID = (int)Reader["LicenseClassID"];
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return Found;
+        }
+
+        public static int AddNewLocalLicenseApplication( int AppID,int LicenseClassID)
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
             string Query = @" INSERT INTO LocalDrivingLicenseApplications 
@@ -71,10 +105,41 @@ namespace DVLD_DataAccessLayer.Applications
                 connection.Close();
             }
 
-            return (ldlID > 0);
+            return ldlID ;
         }
 
+        public static bool UpdateLocalLicenseApplication(int LocalDrivingLicenseApplicationID, int MainApplicationID, int LicenseClassID)
+        {
 
+            SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
+            string Query = @"Update LocalDrivingLicenseApplications 
+                                    Set
+                                        MainApplicationID = @MainApplicationID,
+                                        LicenseClassID = @LicenseClassID
+                                    WHERE LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID ;";
+
+            SqlCommand command = new SqlCommand(Query, connection);
+            command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
+            command.Parameters.AddWithValue("@MainApplicationID", MainApplicationID);
+            command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+
+            int RowsAffected = 0;
+            try
+            {
+                connection.Open();
+                RowsAffected = command.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return (RowsAffected > 0);
+        }
 
         public static DataTable ListAll_View()
         {
@@ -136,14 +201,14 @@ namespace DVLD_DataAccessLayer.Applications
 
        
 
-        public static byte GetPassedTestCount(int LDL_AppID)
+        public static byte GetPassedTestCount(int LocalDrivingLicenseApplicationID)
         {
 
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
-            string Query = $"Select PassedTestCount From LocalDrivingLicenseApplications_View  Where LocalDrivingLicenseApplicationID = @LDL_AppID";
+            string Query = $"Select PassedTestCount From LocalDrivingLicenseApplications_View  Where LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID";
 
             SqlCommand cmd = new SqlCommand(Query, connection);
-            cmd.Parameters.AddWithValue("@LDL_AppID", LDL_AppID );
+            cmd.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID );
 
             byte TestsCount = 40;
             try

@@ -69,13 +69,13 @@ namespace DVLD_Project.Applications.Detain_Release_License_App
         {
             _ReleaseLicense_Application = new clsMainApplication();
 
-            _ReleaseLicense_Application.AppTypeID = (int)clsMainApplication.enApplicationTypes_IDs.ReleaseDetainedDrivingLicsense;
-            _ReleaseLicense_Application.ApplicantPersonID = clsMainApplication.Find(_License_To_Release.ApplicationID).ApplicantPersonID;
-            _ReleaseLicense_Application.AppDate = DateTime.Now;
-            _ReleaseLicense_Application.AppStatus = (byte)clsMainApplication.enApplicationStatus.Completed;
+            _ReleaseLicense_Application.ApplicationTypeID = (int)clsMainApplication.enApplicationTypes_IDs.ReleaseDetainedDrivingLicsense;
+            _ReleaseLicense_Application.ApplicantPersonID = clsMainApplication.FindMainApplication(_License_To_Release.ApplicationID).ApplicantPersonID;
+            _ReleaseLicense_Application.ApplicationDate = DateTime.Now;
+            _ReleaseLicense_Application.ApplicationStatus = (byte)clsMainApplication.enApplicationStatus.Completed;
             _ReleaseLicense_Application.CreatedByUserID = clsGlobal.CurrentUserID;
             _ReleaseLicense_Application.LastStatusDate = DateTime.Now;
-            _ReleaseLicense_Application.PaidFees = clsApplicationTypes.Find(_ReleaseLicense_Application.AppTypeID).AppFees;
+            _ReleaseLicense_Application.PaidFees = clsApplicationTypes.Find(_ReleaseLicense_Application.ApplicationTypeID).AppFees;
         }
         private void _Fill_ReleaseLicenseOperationRecord()
         {
@@ -83,7 +83,7 @@ namespace DVLD_Project.Applications.Detain_Release_License_App
             _ReleaseDetainedLicense.IsReleased = true;
             _ReleaseDetainedLicense.ReleaseDate = DateTime.Now;
             _ReleaseDetainedLicense.ReleasedByUserID = clsGlobal.CurrentUserID;
-            _ReleaseDetainedLicense.ReleaseApplicationID = _ReleaseLicense_Application.AppID;
+            _ReleaseDetainedLicense.ReleaseApplicationID = _ReleaseLicense_Application.MainApplicationID;
         }
         private void _ShowReleaseApplicationBasicInfo()
         {
@@ -91,7 +91,7 @@ namespace DVLD_Project.Applications.Detain_Release_License_App
             _Fill_ReleaseLicenseOperationRecord();
 
 
-            lblApplicationDate.Text = _ReleaseLicense_Application.AppDate.ToShortDateString(); 
+            lblApplicationDate.Text = _ReleaseLicense_Application.ApplicationDate.ToShortDateString(); 
             lblApplicationFees.Text = _ReleaseLicense_Application.PaidFees.ToString();
             lblCurrentUserName.Text = clsUsers.Find(clsGlobal.CurrentUserID).UserName;
             lblTotalFees.Text = (_ReleaseLicense_Application.PaidFees + _ReleaseDetainedLicense.FineFees).ToString();
@@ -124,11 +124,11 @@ namespace DVLD_Project.Applications.Detain_Release_License_App
                 return false;
             }
 
-            _ReleaseDetainedLicense.ReleaseApplicationID = _ReleaseLicense_Application.AppID;
+            _ReleaseDetainedLicense.ReleaseApplicationID = _ReleaseLicense_Application.MainApplicationID;
             if(!_ReleaseDetainedLicense.Save())
             {
                 MessageBox.Show("Cannot Release The Current License. < Couldn't Save Release Operation Data >-DB Error!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                clsMainApplication.DeleteApp(_ReleaseLicense_Application.AppID);
+                clsMainApplication.DeleteApp(_ReleaseLicense_Application.MainApplicationID);
                 return false;
             }
 
@@ -143,7 +143,7 @@ namespace DVLD_Project.Applications.Detain_Release_License_App
                 if (_ReleaseLicense())
                 {
                     MessageBox.Show("The License Released Successfully");
-                   lblR_ApplicationID.Text = "[ " + _ReleaseLicense_Application.AppID.ToString() + " ]";
+                   lblR_ApplicationID.Text = "[ " + _ReleaseLicense_Application.MainApplicationID.ToString() + " ]";
                     __ReLoadContent?.Invoke(this);
                 }
 

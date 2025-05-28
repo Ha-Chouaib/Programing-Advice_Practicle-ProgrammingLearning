@@ -30,17 +30,17 @@ namespace DVLD_Project.Applications.User_Controls
         {
             if (_AppID != -1)
             {
-                App = clsMainApplication.Find(_AppID);
+                App = clsMainApplication.FindMainApplication(_AppID);
                 
                 lblAppID.Text = _AppID.ToString();
                 
-                switch(App.AppStatus)
+                switch(App.ApplicationStatus)
                 {
                     case 1:
                         lblStatus.Text = "New";
                         break;
                     case 2:
-                        lblStatus.Text = "Canceled";
+                        lblStatus.Text = "Cancelled";
                         break;
                     case 3:
                         lblStatus.Text = "Completed";
@@ -50,12 +50,12 @@ namespace DVLD_Project.Applications.User_Controls
                         break;
                 }
                 lblFees.Text=App.PaidFees.ToString();
-                lblDate.Text = App.AppDate.ToShortDateString();
+                lblDate.Text = App.ApplicationDate.ToShortDateString();
                 lblStatusDate.Text=App.LastStatusDate.ToShortDateString();
 
                 lblCreatedByUser.Text = clsUsers.Find(App.CreatedByUserID).UserName;
 
-                lblAppType.Text = clsApplicationTypes.Find(App.AppTypeID).AppTitle;
+                lblAppType.Text = clsApplicationTypes.Find(App.ApplicationTypeID).AppTitle;
 
                 clsPeople Person = clsPeople.Find(App.ApplicantPersonID);
                 _PersonID = Person.PersonID;
