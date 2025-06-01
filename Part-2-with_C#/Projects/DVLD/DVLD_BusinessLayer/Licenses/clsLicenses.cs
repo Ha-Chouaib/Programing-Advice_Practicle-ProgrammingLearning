@@ -177,7 +177,11 @@ namespace DVLD_BusinessLayer.Licenses
         {
             return clsLicensesDataAccess.ListLocalLicenses_DriverHistory(DriverID);
         }
-       
+
+        public static bool HasAnActiveLicenseClass(int DriverID, int LicenseClassID)
+        {
+            return clsLicensesDataAccess.HasActiveLicenseClass(DriverID, LicenseClassID);
+        }
 
     }
 }

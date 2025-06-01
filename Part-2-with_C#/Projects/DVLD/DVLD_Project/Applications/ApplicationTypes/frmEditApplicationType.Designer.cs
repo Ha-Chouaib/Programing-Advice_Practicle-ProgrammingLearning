@@ -168,7 +168,7 @@
             this.Controls.Add(this.txtAppTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmEditApplicationType";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Application Type";
             this.Load += new System.EventHandler(this.frmEditApplicationType_Load);
             this.ResumeLayout(false);

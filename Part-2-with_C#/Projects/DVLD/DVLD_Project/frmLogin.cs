@@ -20,18 +20,17 @@ namespace DVLD_Project
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
+
             string Username = "", Password = "";
-            if(clsGlobal.GetUserCredential(ref Username,ref Password))
+            if (clsGlobal.GetUserCredential(ref Username, ref Password))
             {
                 txtUserName.Text = Username;
                 txtPassword.Text = Password;
                 cbRememberMe.Checked = true;
                 return;
             }
-            txtUserName.Text = "";
-            txtPassword.Text = "";
+           
             cbRememberMe.Checked = false;
-    
         }
         clsUsers User;
         ErrorProvider errorProv = new ErrorProvider();
@@ -83,6 +82,7 @@ namespace DVLD_Project
 
                 MainForm frmMain = new MainForm(this);
                 clsGlobal.CurrentUserID = User.UserID;
+               
                 this.Hide();
                 frmMain.ShowDialog();
 
@@ -106,6 +106,5 @@ namespace DVLD_Project
             this.Close();
         }
 
-       
     }
 }

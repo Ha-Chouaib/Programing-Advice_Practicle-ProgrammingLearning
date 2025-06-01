@@ -119,6 +119,8 @@
             // 
             // ctrlFindPerson1
             // 
+            this.ctrlFindPerson1.@__EnableFilter = true;
+            this.ctrlFindPerson1.@__PersonID = -1;
             this.ctrlFindPerson1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ctrlFindPerson1.Location = new System.Drawing.Point(46, 6);
             this.ctrlFindPerson1.Name = "ctrlFindPerson1";
@@ -167,6 +169,7 @@
             this.btnBack.TabIndex = 7;
             this.btnBack.Text = "<-- Back";
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // lblUserID
             // 

@@ -81,26 +81,25 @@ namespace DVLD_Project.Applications.Tests
         private void btnAddAppointmrnt_Click(object sender, EventArgs e)
         {
             frmSchedualeTest NewSchedualeTest;
-            if (clsTestAppointments._GetTestTrials(_LDL_AppID,_TestTypeID) > 0)
-            {   
-                int CurrentSchedualedTest_ID =clsTestAppointments.GetCurrentAppointmetID(_LDL_AppID,_TestTypeID);
+             
+            int CurrentSchedualedTest_ID =clsTestAppointments.GetCurrentAppointmetID(_LDL_AppID,_TestTypeID);
 
-                clsTestAppointments TestAppointment = clsTestAppointments.Find(CurrentSchedualedTest_ID);
-                if (TestAppointment != null)
+            if (clsTestAppointments.HasActiveAppointment(_LDL_AppID, _TestTypeID))
+            {
+                MessageBox.Show("There's Already An Active Schedualed Test, You Cannot Add a New One !","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return;
+            }
+
+            if(CurrentSchedualedTest_ID != -1)
+            {
+                if (clsTests.Find(CurrentSchedualedTest_ID).TestResult_IsPassed)
                 {
-                    if(! TestAppointment.IsLocked)
-                    {
-                        MessageBox.Show("There's Already An Active Schedualed Test, You Cannot Add New One !","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                        return;
-                    }
-
-                    if (clsTests.Find(CurrentSchedualedTest_ID).TestResult_IsPassed)
-                    {
-                        MessageBox.Show("The Test is Already Passed Successfully, You Cannot Retake it Now!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
+                    MessageBox.Show("The Test is Already Passed Successfully, You Cannot Retake it Now!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
             }
+                
+          
             NewSchedualeTest = new frmSchedualeTest(_LDL_AppID,_TestTypeID,TestImg);
             NewSchedualeTest.__ReLoadSchedualeTest_List += _ReLoadList;
             NewSchedualeTest.ShowDialog();

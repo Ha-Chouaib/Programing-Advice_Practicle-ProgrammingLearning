@@ -21,6 +21,8 @@ namespace DVLD_Project.Applications.Tests
         int _TestTypeID=-1;
         Image TestImg;
 
+        bool _IsValide = true;
+
         clsLocalDrivingLicenseApplication _LocalDrivingLicenseApplication;
         clsMainApplication _RetakeTest_App = new clsMainApplication();
         clsTestAppointments _TestAppointment= new clsTestAppointments();
@@ -223,6 +225,7 @@ namespace DVLD_Project.Applications.Tests
             gbSchedualeTestContainer.Text = TestType.TestTitle;
             lblErrorMSG.Visible = false;
 
+
             lblDL_AppID.Text = _LocalDrivingLicenseApplicationID.ToString();
 
             lblLicenseClass.Text = _LocalDrivingLicenseApplication.LicenseClassInfo.LicenseClassName;
@@ -247,6 +250,7 @@ namespace DVLD_Project.Applications.Tests
             if (dtSechedualeDate.Value < DateTime.Now)
             {
                 errorP.SetError(dtSechedualeDate, "The Current Date Is Under The Valide Scheduling Date Please Enter A Valide One!");
+                _IsValide = false;
             }
             else
             {
@@ -271,9 +275,20 @@ namespace DVLD_Project.Applications.Tests
             return true;
         }
 
+       
+
+        private bool _TriggerValidations()
+        {
+            clsGlobal.ActivateContainerControlsOneByOne(DateContainer, typeof(DateTimePicker));
+            return _IsValide;
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (! this.ValidateChildren()) return;
+            if (!_TriggerValidations())
+            {
+                _IsValide = true;
+                return;
+            }
 
             if (MessageBox.Show("Sure to Completed Test Schedualing Operation ?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {

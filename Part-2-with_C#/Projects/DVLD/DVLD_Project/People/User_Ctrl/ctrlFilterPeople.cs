@@ -25,7 +25,7 @@ namespace DVLD_Project.Users.UserControls
         public delegate void SendPersonIDHandler(object sender, int PersonID);
         public event SendPersonIDHandler __GetPersonID;
         private int _PersonID = -1;
-        clsPeople _Person;
+       
       
         private bool _EnableFilter = true;
         public bool __EnableFilter 
@@ -38,10 +38,8 @@ namespace DVLD_Project.Users.UserControls
         }
 
         public int __PersonID { get {  return _PersonID; } set { _PersonID = value; } }
-        public clsPeople __PersonInf 
-        {
-            get { return _Person; }
-        }
+        public clsPeople __PersonInf;
+        
 
 
         Dictionary<string,string>FindOpt=new Dictionary<string,string>();
@@ -65,13 +63,13 @@ namespace DVLD_Project.Users.UserControls
             if ( FindBy== "NationalNo")
             {
 
-                _Person = clsPeople.Find(Term);
-                if(_Person == null)
+                __PersonInf = clsPeople.Find(Term);
+                if(__PersonInf == null)
                 {
                     MessageBox.Show($"No Person with National No << {Term} >>", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-                _PersonID = _Person.PersonID;
+                _PersonID = __PersonInf.PersonID;
                
             }
             else
@@ -85,9 +83,9 @@ namespace DVLD_Project.Users.UserControls
                     return false;
                 }
                 _PersonID = Pid;
+                __PersonInf = clsPeople.Find(_PersonID);
             }
 
-            _Person = clsPeople.Find(_PersonID);
             return true ;
 
         }
@@ -114,7 +112,7 @@ namespace DVLD_Project.Users.UserControls
         private void GetNewPersonID(object sender, int PersonID)
         {
             _PersonID = PersonID;
-            _Person=clsPeople.Find(_PersonID);
+            __PersonInf =clsPeople.Find(_PersonID);
             __GetPersonID?.Invoke(this, _PersonID);
 
         }

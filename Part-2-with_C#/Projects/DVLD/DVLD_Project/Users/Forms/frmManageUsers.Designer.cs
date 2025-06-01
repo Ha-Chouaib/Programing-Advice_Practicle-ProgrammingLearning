@@ -88,7 +88,8 @@
             this.sendSMSToolStripMenuItem,
             this.sendEmailToolStripMenuItem});
             this.cmsAddEditUserMenu.Name = "cmsAddEditUserMenu";
-            this.cmsAddEditUserMenu.Size = new System.Drawing.Size(187, 192);
+            this.cmsAddEditUserMenu.Size = new System.Drawing.Size(187, 214);
+            this.cmsAddEditUserMenu.Opening += new System.ComponentModel.CancelEventHandler(this.cmsAddEditUserMenu_Opening);
             // 
             // showUserDetailsToolStripMenuItem
             // 

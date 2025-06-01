@@ -248,6 +248,9 @@ namespace DVLD_Project.Users
             ChangePass.ShowDialog();
         }
 
-       
+        private void cmsAddEditUserMenu_Opening(object sender, CancelEventArgs e)
+        {
+            deleteUserToolStripMenuItem.Enabled = ! (bool)dgvListUsers.CurrentRow.Cells["IsActive"].Value;
+        }
     }
 }

@@ -106,10 +106,10 @@ namespace DVLD_Project.License.Forms
                     DT = clsInternationalLicenses.ListInternationalLicenses();
                     break;
                 case "Active":
-                    DT = clsInternationalLicenses.FilterBy<bool>("IsActive", true);
+                    DT = clsInternationalLicenses.FilterBy<byte>("IsActive", 1);
                     break;
                 case "Inactive":
-                    DT = clsInternationalLicenses.FilterBy<bool>("IsActive", false);
+                    DT = clsInternationalLicenses.FilterBy<byte>("IsActive", 0);
                     break;
                 default:
                     DT = clsInternationalLicenses.ListInternationalLicenses();
@@ -143,13 +143,12 @@ namespace DVLD_Project.License.Forms
         {
             string FilterOpt = cmbFilterOptions.SelectedValue.ToString();
 
-            if(!dicFilterOptions.ContainsKey(FilterOpt))
-            {
-                return;
-            }
-
+            if(!dicFilterOptions.ContainsKey(FilterOpt)) return;
+           
             if(FilterOpt == "None")
             {
+                txtFilterTerm.Visible = false;
+                cmbIsActive.Visible = false;
                 dgvListInternationalLicenses.DataSource = clsInternationalLicenses.ListInternationalLicenses();
                 lblRecords.Text = "[ " + dgvListInternationalLicenses.RowCount.ToString() + " ]";
             } else
@@ -160,8 +159,9 @@ namespace DVLD_Project.License.Forms
                     cmbIsActive.Visible = true;
                     return;
                 }
-                txtFilterTerm.Visible = true;
                 cmbIsActive.Visible = false;
+                txtFilterTerm.Visible = true;
+                txtFilterTerm.Focus();
             }
         }
 

@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DVLD_BusinessLayer.Licenses;
 using DVLD_DataAccessLayer.Applications;
 using static System.Net.Mime.MediaTypeNames;
 
@@ -139,6 +140,7 @@ namespace DVLD_BusinessLayer.Applications
             return clsMainApplicationDataAccess.CheckApplicationStatus(ApplicantPersonID, LicenseClassID, IsInStatus);
         }
 
+       
         public static bool UpdateApplicationStatus(int ApplicationID, clsMainApplication.enApplicationStatus SetStatus)
         {
             return clsMainApplicationDataAccess.UpdateStatus(ApplicationID,(short) SetStatus);

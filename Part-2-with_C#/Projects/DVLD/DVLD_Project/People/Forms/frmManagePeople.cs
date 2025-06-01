@@ -127,7 +127,11 @@ namespace DVLD_Project
 
             }
             else
+            {
+
                 txtFilterPeople.Visible = true;
+                txtFilterPeople.Focus();
+            }
         }
 
         private void dgvLsitPeople_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

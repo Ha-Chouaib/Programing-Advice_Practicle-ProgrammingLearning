@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DVLD_DataAccessLayer;
+using DVLD_DataAccessLayer.License;
 
 namespace DVLD_BusinessLayer
 {
@@ -101,7 +102,7 @@ namespace DVLD_BusinessLayer
         {
             return clsDriverDataAccess.DeleteDriver(DriverID);
         }
-        public static bool Exist(int PersonID)
+        public static bool ExistByPersonID(int PersonID)
         {
             return clsDriverDataAccess.Exist(PersonID);
         }
@@ -113,6 +114,11 @@ namespace DVLD_BusinessLayer
         public static DataTable FilterBy<T>(string FilterByColumn, T FilterTerm)
         {
             return clsDriverDataAccess.FilterBy<T>(FilterByColumn,FilterTerm);
+        }
+
+        public bool HasActiveLicenseClass(int LicenseClassID)
+        {
+            return clsLicensesDataAccess.HasActiveLicenseClass(this._DriverID, LicenseClassID);
         }
 
     }

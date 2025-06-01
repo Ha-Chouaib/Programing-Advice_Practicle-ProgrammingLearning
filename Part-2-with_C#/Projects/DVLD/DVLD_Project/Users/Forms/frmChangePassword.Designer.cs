@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.txtCurrentPassword = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlUpdatePasswordContainer = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,7 +40,7 @@
             this.ctrlShowLoginInfo1 = new DVLD_Project.Users.UserControls.ctrlShowLoginInfo();
             this.ctrlPersonDetails1 = new DVLD_Project.ctrlPersonDetails();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.pnlUpdatePasswordContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtCurrentPassword
@@ -57,19 +57,19 @@
             this.txtCurrentPassword.TabIndex = 2;
             this.txtCurrentPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtCurrentPassword_Validating);
             // 
-            // panel1
+            // pnlUpdatePasswordContainer
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.txtConfirmPassword);
-            this.panel1.Controls.Add(this.txtNewPassword);
-            this.panel1.Controls.Add(this.txtCurrentPassword);
-            this.panel1.Location = new System.Drawing.Point(29, 627);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(866, 90);
-            this.panel1.TabIndex = 3;
+            this.pnlUpdatePasswordContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pnlUpdatePasswordContainer.Controls.Add(this.label3);
+            this.pnlUpdatePasswordContainer.Controls.Add(this.label2);
+            this.pnlUpdatePasswordContainer.Controls.Add(this.label1);
+            this.pnlUpdatePasswordContainer.Controls.Add(this.txtConfirmPassword);
+            this.pnlUpdatePasswordContainer.Controls.Add(this.txtNewPassword);
+            this.pnlUpdatePasswordContainer.Controls.Add(this.txtCurrentPassword);
+            this.pnlUpdatePasswordContainer.Location = new System.Drawing.Point(29, 627);
+            this.pnlUpdatePasswordContainer.Name = "pnlUpdatePasswordContainer";
+            this.pnlUpdatePasswordContainer.Size = new System.Drawing.Size(866, 90);
+            this.pnlUpdatePasswordContainer.TabIndex = 3;
             // 
             // label3
             // 
@@ -198,7 +198,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlUpdatePasswordContainer);
             this.Controls.Add(this.ctrlShowLoginInfo1);
             this.Controls.Add(this.ctrlPersonDetails1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -206,8 +206,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Change Password";
             this.Load += new System.EventHandler(this.frmChangePassword_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlUpdatePasswordContainer.ResumeLayout(false);
+            this.pnlUpdatePasswordContainer.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,7 +218,7 @@
         private ctrlPersonDetails ctrlPersonDetails1;
         private UserControls.ctrlShowLoginInfo ctrlShowLoginInfo1;
         private System.Windows.Forms.TextBox txtCurrentPassword;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlUpdatePasswordContainer;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
