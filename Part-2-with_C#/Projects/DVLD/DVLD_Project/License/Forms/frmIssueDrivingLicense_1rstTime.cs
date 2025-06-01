@@ -45,7 +45,7 @@ namespace DVLD_Project.License
             clsDrivers Driver;
 
             bool IsNewDriver=true;
-            if (clsDrivers.Exist(LocalLicenseApplication.ApplicantPersonID))
+            if (clsDrivers.ExistByPersonID(LocalLicenseApplication.ApplicantPersonID))
             {
                 Driver = clsDrivers.FindByPersonID(LocalLicenseApplication.ApplicantPersonID);
                 IsNewDriver = false;

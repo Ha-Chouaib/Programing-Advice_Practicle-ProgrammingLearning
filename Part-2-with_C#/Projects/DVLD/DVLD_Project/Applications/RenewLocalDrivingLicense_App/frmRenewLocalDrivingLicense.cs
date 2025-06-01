@@ -61,6 +61,7 @@ namespace DVLD_Project.Applications.RenewLocalDrivingLicense_App
 
             lblTotalFees.Text = (_OldLicense.PaidFees + _OldApplication.PaidFees).ToString();
 
+            txtNotes.Focus();
             
         }
         private bool _AddNewLicense()

@@ -4,6 +4,7 @@ using System.Linq;
 using System.IO;
 using System.Windows.Forms;
 using System.Threading.Tasks;
+using DVLD_BusinessLayer;
 
 namespace DVLD_Project
 {
@@ -25,7 +26,7 @@ namespace DVLD_Project
                         return true;
                     }
 
-                    string UserCredential = UserName + "#//#" + Password;
+                    string UserCredential = UserName + "#//#" + clsMyLib.EncryptString( Password);
 
                     using(StreamWriter Write = new StreamWriter(FilePath))
                     {
@@ -56,8 +57,8 @@ namespace DVLD_Project
                         while ((Line = reader.ReadLine()) != null)
                         {
                             string[] result = Line.Split(new string[] { "#//#" }, StringSplitOptions.None);
-                            Username = result[0];
-                            Password = result[1];
+                            Username = result[0] ;
+                            Password = clsMyLib.DecryptString( result[1] );
                         }
                          return true;
                     }
@@ -75,8 +76,19 @@ namespace DVLD_Project
            
 
         }
-        
-         
-        
+
+
+        public static  void ActivateContainerControlsOneByOne(Control Container, Type ControlType )
+        {
+            foreach (Control ctrl in Container.Controls)
+            {
+                if (ctrl.GetType() ==  ControlType) ctrl.Focus();
+               
+                if (ctrl.HasChildren) ActivateContainerControlsOneByOne(ctrl,ControlType);
+            }
+        }
+
+
+
     }
 }

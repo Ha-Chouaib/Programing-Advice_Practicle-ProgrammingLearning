@@ -46,7 +46,7 @@ namespace DVLD_BusinessLayer.Applications
         this.ApplicationStatus = ApplicationStatus;
         this.LastStatusDate = LastStatusDate;
         this.PaidFees = PaidFees;
-        this.CreatedByUserID = CreatedByUserID;
+        this.CreatedByUserID = CreatedByUserID; 
         this.LicenseClassID = LicenseClassID;
         this.LicenseClassInfo = clsLicenseClasses.Find(LicenseClassID);
         this.PersonInfo = clsPeople.Find(this.ApplicantPersonID);

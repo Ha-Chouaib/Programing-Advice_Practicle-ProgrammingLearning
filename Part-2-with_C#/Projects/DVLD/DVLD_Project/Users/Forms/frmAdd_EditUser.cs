@@ -16,21 +16,24 @@ namespace DVLD_Project.Users.Forms
         public enum enMode { eAddNewUser,eUpdateUser}
         enMode _Mode;
 
-        int _ID;
+        bool _IsValide = true;
+        int _PersonID =-1;
+        int _UserID;
         clsUsers User;
         ErrorProvider errorProv = new ErrorProvider();
 
         public frmAdd_EditUser()
         {
             InitializeComponent();
-            _ID = -1;
+            _UserID = -1;
             _Mode = enMode.eAddNewUser;
+            ctrlFindPerson1.__EnableFilter = true;
         }
 
         public frmAdd_EditUser(enMode Add_OR_Update,int User_PersonID)
         {
             InitializeComponent();
-            this._ID = User_PersonID;
+            this._UserID = User_PersonID;
             _Mode = Add_OR_Update;
 
             ctrlFindPerson1.__EnableFilter = false;
@@ -40,7 +43,16 @@ namespace DVLD_Project.Users.Forms
 
         private void _GetPersonID(object sender,int PersonID)
         {
-            _ID = PersonID;
+            _PersonID = PersonID;
+            ctrlFindPerson1.__DisplayPersonalInfo(_PersonID);
+
+            if (clsUsers.ExistByPersonID(_PersonID))
+            {
+                MessageBox.Show($"The Person With ID << {_PersonID} >> Is Already a User! You Cannot Add It Twice!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                btnNext.Enabled = false;
+                return ;
+            }
+            btnNext.Enabled=true;
         }
 
         private void txtUserName_Validating(object sender, CancelEventArgs e)
@@ -48,6 +60,7 @@ namespace DVLD_Project.Users.Forms
             if (txtUserName.Text == string.Empty)
             {
                 errorProv.SetError(txtUserName, "Required Field!");
+                _IsValide = false;
             }
             else
             {
@@ -59,9 +72,10 @@ namespace DVLD_Project.Users.Forms
         {
 
             TextBox txtPass = (TextBox)sender;
-            if (txtPass.Text == string.Empty || txtPass.Text.Trim() != txtConfirmPass.Text.Trim())
+            if (txtPass.Text == string.Empty || txtPass.Text.Trim() != txtPassword.Text.Trim())
             {
                 errorProv.SetError(txtPass, "Required Field! || Invalid Confirmation!!");
+                _IsValide = false;
             }
             else
             {
@@ -75,19 +89,14 @@ namespace DVLD_Project.Users.Forms
 
             User.UserName = txtUserName.Text.Trim();
             User.Password = txtPassword.Text.Trim();
-            User.PersonID = _ID;
-            if (cbIsActive.Checked == true)
-            {
-                User.IsActive = true;
-            }
-            else
-                User.IsActive = false;
+            User.PersonID = _PersonID;
+            User.IsActive = cbIsActive.Checked;
         }
 
         private void _NextBtnValidation()
         {
 
-            if(_ID == -1)
+            if(_PersonID == -1)
             {
                 MessageBox.Show($"It Seems Like You Miss To Select a Person !", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 ctrlFindPerson1.__EnableFilter = true;
@@ -102,9 +111,9 @@ namespace DVLD_Project.Users.Forms
 
         private bool _AddNew()
         {
-            if(clsUsers.ExistByPersonID(_ID))
+            if(clsUsers.ExistByPersonID(_PersonID))
             {
-                MessageBox.Show($"The Person With ID << {_ID} >> Is Already a User! You Cannot Add It Twice!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"The Person With ID << {_PersonID} >> Is Already a User! You Cannot Add It Twice!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -148,19 +157,23 @@ namespace DVLD_Project.Users.Forms
             btnSave.Enabled = false;
             pnlUserData.Enabled = false;
             if(_Mode == enMode.eAddNewUser)
-            {   
-                if(ctrlFindPerson1.__EnableFilter)
+            {
+                if (ctrlFindPerson1.__EnableFilter)
+                {
                     ctrlFindPerson1.__ReturnPersonID += _GetPersonID;
-                else
-                    ctrlFindPerson1.__DisplayPersonalInfo(_ID);
+                }
+                else                   
+                    ctrlFindPerson1.__DisplayPersonalInfo((_PersonID = _UserID));
 
                 lblAddEdit_Header.Text = "Add New User";
                 return;
             }
 
             lblAddEdit_Header.Text = "Update User";
-            User = clsUsers.Find(_ID);
-            ctrlFindPerson1.__DisplayPersonalInfo(User.PersonID);
+            User = clsUsers.Find(_UserID);
+            ctrlFindPerson1.__DisplayPersonalInfo((_PersonID=User.PersonID));
+            txtUserName.Text = User.UserName;
+            lblUserID.Text = User.UserID.ToString();
         }
 
         private void frmAddNewUser_Load(object sender, EventArgs e)
@@ -172,10 +185,18 @@ namespace DVLD_Project.Users.Forms
         {
             _NextBtnValidation();
         }
+
+        private bool TriggerValidations()
+        {
+            clsGlobal.ActivateContainerControlsOneByOne(pnlUserData, typeof(TextBox));
+            return _IsValide;
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!this.ValidateChildren())
+            if (!TriggerValidations())
             {
+                MessageBox.Show("You must Fill All Required Fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _IsValide = true;
                 return;
             }
 
@@ -209,6 +230,10 @@ namespace DVLD_Project.Users.Forms
                 this.Close();
         }
 
-        
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            tabAddEditUser.SelectedTab = tabPersonInf;
+
+        }
     }
 }

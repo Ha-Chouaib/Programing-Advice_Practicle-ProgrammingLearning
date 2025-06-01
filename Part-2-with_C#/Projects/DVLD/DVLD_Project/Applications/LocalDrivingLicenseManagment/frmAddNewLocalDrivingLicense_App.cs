@@ -108,6 +108,12 @@ namespace DVLD_Project.Applications.LDLApps
                 return;
             }
 
+            if (clsDrivers.ExistByPersonID(Person.PersonID) && clsDrivers.FindByPersonID(Person.PersonID).HasActiveLicenseClass(LicenseClassID))
+            {
+                MessageBox.Show($"This Driver Already Has An Active License With This LicenseClass !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (MessageBox.Show("Sure To Add This App", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 MessageBox.Show("The Operation Ignored Successfully", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -145,11 +151,13 @@ namespace DVLD_Project.Applications.LDLApps
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            btnNext.Enabled = clsPeople.IsExist(_PersonID);
             tabControl1.SelectedTab = tabApplicationInfo;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+           
             tabControl1.SelectedTab = tabPersonalInfo;
         }
 

@@ -23,6 +23,7 @@ namespace DVLD_Project
 
         enum enMode { eAddNew,eUpdate}
         enMode _Mode;
+        bool _IsValide = true;
         private void ctrlAdd_Edit_PersonIfo_Load(object sender, EventArgs e)
         {
             _LoadCountriesToComboBox();
@@ -52,6 +53,8 @@ namespace DVLD_Project
         }
         public void __ApplyMode(bool IsAddNewMode ,int PersonID= -1)
         {
+             rbGender_M.Checked = true;
+            pbPersonImg.Image = Resources.user_Male;
             if (!IsAddNewMode&& clsPeople.IsExist(PersonID))
             {
                 _Mode = enMode.eUpdate;
@@ -79,22 +82,16 @@ namespace DVLD_Project
             Person.DateOfBirth = dtDateOfBirth.Value;
             Person.Phone = txtPhone.Text;
             Person.Email = txtEmail.Text;
-
-            if (rbGender_M.Checked)
-                Person.Gender = 0;
-            else
-                Person.Gender = 1;
-
+            Person.Gender = (byte)(rbGender_M.Checked ? 0 : 1);
             Person.NationalityCountryID = clsCountries.Find(cmbCountry.SelectedItem.ToString()).CountryID;
-            if (pbPersonImg.Tag != null)
-            {
-                Person.ImagePath = pbPersonImg.Tag as string;
-            }
+
+          
         }
         
         private void _UploadOldDataToFields()
         {
-            if(Person != null)
+           
+            if (Person != null)
             {
                 txtFirstName.Text = Person.FirstName;
                 txtSecondName.Text = Person.SecondName;
@@ -121,24 +118,7 @@ namespace DVLD_Project
                 MessageBox.Show($"No Record With Person ID << {_PersonID} >>!","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
-        private bool _FinalValidation()
-        {
-            txtEmail.Tag = "Email";
-            byte isEmpty = 0;
-            foreach(Control txtB in pnlContainer.Controls.OfType<TextBox>())
-            {
-                if(txtB.Text == string.Empty && string.IsNullOrWhiteSpace(txtB.Tag?.ToString()))
-                {
-                    errProv.SetError(txtB, "This Field is Required");
-                    isEmpty++;
-                }else
-                {
-                    errProv.SetError(txtB, "");
-                }
-            }
-            txtEmail.Tag = string.Empty;
-            return (isEmpty == 0);
-        }
+      
         private bool _AddNewPerson()
         {
             if (clsPeople.IsExist(Person.PersonID))
@@ -200,11 +180,21 @@ namespace DVLD_Project
             }
            
         }
+
+        
+        private bool _TriggerValidations()
+        {
+            clsGlobal.ActivateContainerControlsOneByOne(this,typeof(TextBox));
+           
+            return _IsValide;
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(!_FinalValidation())
+           
+            if (!_TriggerValidations())
             {
                 MessageBox.Show("You must Fill All Required Fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _IsValide = true;
                 return;
             }
            
@@ -241,12 +231,11 @@ namespace DVLD_Project
 
             if (txtB.Text == string.Empty)
             {
-                e.Cancel = true;
                 errProv.SetError(txtB, "This Field Is required!");
+                _IsValide = false;
             }
             else
             {
-                e.Cancel = false;
                 errProv.SetError(txtB, "");
 
             }
@@ -255,14 +244,13 @@ namespace DVLD_Project
 
         private void txtNationalNo_Validating(object sender, CancelEventArgs e)
         {
-            if ((txtNationalNo.Text == string.Empty) || clsPeople.IsExist(txtNationalNo.Text))
+            if ((txtNationalNo.Text == string.Empty) || ( clsPeople.IsExist(txtNationalNo.Text.Trim()) && txtNationalNo.Text.Trim() != Person.NationalNo))
             {
-                e.Cancel = true;
                 errProv.SetError(txtNationalNo, "The Filed Should Not Be Empty// The Current National No May Already Exist !");
+                _IsValide = false;
             }
             else
             {
-                e.Cancel = false;
                 errProv.SetError(txtNationalNo, "");
             }
         }
@@ -273,12 +261,11 @@ namespace DVLD_Project
             {
                 if (!txtEmail.Text.EndsWith(".com") || !txtEmail.Text.Contains("@") || txtEmail.Text.EndsWith("@.com"))
                 {
-                    e.Cancel = true;
                     errProv.SetError(txtEmail, "Email Format Must be Like: example@example.com");
+                _IsValide = false;
                 }
                 else
                 {
-                    e.Cancel = false;
                     errProv.SetError(txtEmail, "");
                 }
             }
@@ -288,18 +275,8 @@ namespace DVLD_Project
         private void rbGender_M_CheckedChanged(object sender, EventArgs e)
         {
             if(Person != null &&(Person.ImagePath  == string.Empty || !File.Exists(Person.ImagePath)))
-            {
-                if (rbGender_M.Checked == true)
-                {
-                    pbPersonImg.Image = Resources.user_Male;
-                }else
-                {
-                    pbPersonImg.Image = Resources.user_female;
-
-                }
-
-            }
-            
+                pbPersonImg.Image = rbGender_M.Checked ? Resources.user_Male : Resources.user_female;
+               
         }
 
         private void lnkImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -312,20 +289,14 @@ namespace DVLD_Project
             if(ofdGetImgPath.ShowDialog()== DialogResult.OK)
             {
                 pbPersonImg.Image = Image.FromFile(ofdGetImgPath.FileName);
-                pbPersonImg.Tag = ofdGetImgPath.FileName;
+                Person.ImagePath = ofdGetImgPath.FileName;
                 lnkRemoveImg.Visible = true;
             }
         }
         private void lnkRemoveImg_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {   
-            if(rbGender_M.Checked ==true)
-            {
-                pbPersonImg.Image = Resources.user_Male;
-            }else
-            {
-                pbPersonImg.Image = Resources.user_female;
-            }
-            pbPersonImg.Tag = null;
+        {               
+                pbPersonImg.Image = rbGender_M.Checked ? Resources.user_Male : Resources.user_female;           
+                Person.ImagePath = "";
         }
         public struct stPersonGuid
         {
@@ -386,6 +357,5 @@ namespace DVLD_Project
 
         }
 
-       
     }
 }

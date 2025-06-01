@@ -19,6 +19,7 @@ namespace DVLD_Project.Users.Forms
             InitializeComponent();
         }
 
+        bool _IsValide = true;
         private int _UserID;
         clsUsers User;
         ErrorProvider errorProv = new ErrorProvider();
@@ -49,20 +50,25 @@ namespace DVLD_Project.Users.Forms
 
         private bool _ChangePassword()
         {
-            User = clsUsers.Find(_UserID);
-            bool isChanged = false;
+            
 
             if (User != null && txtCurrentPassword.Text == User.Password)
             {
                 txtCurrentPassword.Validating -= txtCurrentPassword_Validating;
                 User.Password=txtNewPassword.Text;
-                isChanged=User.Save();
-            }else
+                if( ! User.Save())
+                {
+                    MessageBox.Show("Couldn't Save Changes Properly!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+            else
             {
                 MessageBox.Show("Could Not Change The Password. Unfound User/Unvalid Password !","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return false;
             }
 
-                return isChanged;
+            return true ;
         }
 
         private void txtCurrentPassword_Validating(object sender, CancelEventArgs e)
@@ -70,6 +76,7 @@ namespace DVLD_Project.Users.Forms
             if(txtCurrentPassword.Text == string.Empty || txtCurrentPassword.Text != User.Password)
             {
                 errorProv.SetError(txtCurrentPassword, "Required Field/The Current Password Doesn't Match The Original One!");
+                _IsValide = false;
             }else
             {
                 errorProv.SetError(txtCurrentPassword, "");
@@ -81,7 +88,7 @@ namespace DVLD_Project.Users.Forms
             if (txtB.Text == string.Empty || txtB.Text != txtNewPassword.Text)
             {
                 errorProv.SetError(txtB, "Required Field/The Current Password Doesn't Match The Original One!");
-                e.Cancel = true;
+                _IsValide = false;
             }
             else
             {
@@ -89,16 +96,25 @@ namespace DVLD_Project.Users.Forms
             }
         }
 
+        private bool TriggerValidations()
+        {
+            clsGlobal.ActivateContainerControlsOneByOne(pnlUpdatePasswordContainer, typeof(TextBox));
+            return _IsValide;
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Sure To Change The Password ?","Confirmation",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+            if (!TriggerValidations())
+            {
+                MessageBox.Show("You must Fill All Required Fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _IsValide = true;
+                return;
+            }
+
+            if (MessageBox.Show("Sure To Change The Password ?","Confirmation",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
             {
                 if(_ChangePassword())
                 {
                     MessageBox.Show("Done Successfully");
-                }else
-                {
-                    MessageBox.Show("Error Cant Save The Current Changes Please Try Again","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }else
             {

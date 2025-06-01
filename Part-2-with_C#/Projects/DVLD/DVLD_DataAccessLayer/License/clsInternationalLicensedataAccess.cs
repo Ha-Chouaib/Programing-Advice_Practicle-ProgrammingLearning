@@ -242,7 +242,7 @@ namespace DVLD_DataAccessLayer.License
                     throw new ArgumentException($"Not Allowed Column {Column} < Error -> Invalide Column Name >!");
                 }
 
-                string Query = $"SELECT * From InternationalLicenses WHERE {Column} LIKE @Trem ;";
+                string Query = $"SELECT * From InternationalLicenses WHERE {Column} LIKE @Term ;";
 
                 SqlCommand cmd = new SqlCommand(Query, connection);
                 cmd.Parameters.AddWithValue("@Term", "%" + Term + "%");

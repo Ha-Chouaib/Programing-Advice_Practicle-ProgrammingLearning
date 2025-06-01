@@ -127,10 +127,10 @@ namespace DVLD_Project.Applications.Detain_Release_License_App
                     DT = clsDetainLicenses.ListAll();
                     break;
                 case "Released":
-                    DT = clsDetainLicenses.FilterBy<bool>("IsReleased", true);
+                    DT = clsDetainLicenses.FilterBy<byte>("IsReleased", 1);
                     break;
                 case "Detained":
-                    DT = clsDetainLicenses.FilterBy<bool>("IsReleased", false);
+                    DT = clsDetainLicenses.FilterBy<byte>("IsReleased", 0);
                     break;
                 default:
                     DT = clsDetainLicenses.ListAll();
@@ -163,11 +163,8 @@ namespace DVLD_Project.Applications.Detain_Release_License_App
         private void cmbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
         {
             string FilterOption = cmbFilterBy.SelectedValue.ToString();
-            if(! dicFilterOptions.ContainsKey(FilterOption))
-            {
-                return;
-            }
-
+            if(! dicFilterOptions.ContainsKey(FilterOption)) return;
+          
             if(FilterOption == " None")
             {
                 dgvListDetainedLicenses.DataSource = clsDetainLicenses.ListAll();

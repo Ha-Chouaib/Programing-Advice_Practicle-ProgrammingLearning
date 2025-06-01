@@ -48,7 +48,7 @@
             this.groupBox1.Size = new System.Drawing.Size(709, 73);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "FindByPersonID License";
+            this.groupBox1.Text = "Find License";
             // 
             // label1
             // 
@@ -64,12 +64,13 @@
             // 
             this.btnFind.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFind.Font = new System.Drawing.Font("Trebuchet MS", 12.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.btnFind.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnFind.Location = new System.Drawing.Point(567, 24);
+            this.btnFind.Location = new System.Drawing.Point(577, 24);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(107, 29);
+            this.btnFind.Size = new System.Drawing.Size(97, 29);
             this.btnFind.TabIndex = 1;
-            this.btnFind.Text = "FindByPersonID";
+            this.btnFind.Text = "Find";
             this.btnFind.UseVisualStyleBackColor = true;
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 

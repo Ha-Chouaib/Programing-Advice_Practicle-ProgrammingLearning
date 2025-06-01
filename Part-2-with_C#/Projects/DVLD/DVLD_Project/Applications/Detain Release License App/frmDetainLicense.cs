@@ -103,7 +103,8 @@ namespace DVLD_Project.Applications.Detain_License_App
         {
             if(txtFineFees.Text == string.Empty)
             {
-                txtFineFees.KeyPress += txtFineFees_KeyPress;
+                MessageBox.Show( "Please Add Detain Fine Fees For This License !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtFineFees.Focus();
                 return;
             }
 

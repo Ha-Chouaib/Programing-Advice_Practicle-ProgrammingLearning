@@ -52,7 +52,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblTrial = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.DateContainer = new System.Windows.Forms.Panel();
             this.dtSechedualeDate = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -71,7 +71,7 @@
             this.panel6.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.DateContainer.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -87,7 +87,7 @@
             this.gbSchedualeTestContainer.Controls.Add(this.panel6);
             this.gbSchedualeTestContainer.Controls.Add(this.panel1);
             this.gbSchedualeTestContainer.Controls.Add(this.panel2);
-            this.gbSchedualeTestContainer.Controls.Add(this.panel3);
+            this.gbSchedualeTestContainer.Controls.Add(this.DateContainer);
             this.gbSchedualeTestContainer.Controls.Add(this.panel5);
             this.gbSchedualeTestContainer.Controls.Add(this.panel4);
             this.gbSchedualeTestContainer.ForeColor = System.Drawing.SystemColors.Info;
@@ -332,15 +332,15 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Trial:";
             // 
-            // panel3
+            // DateContainer
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.panel3.Controls.Add(this.dtSechedualeDate);
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Location = new System.Drawing.Point(80, 492);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(614, 43);
-            this.panel3.TabIndex = 14;
+            this.DateContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.DateContainer.Controls.Add(this.dtSechedualeDate);
+            this.DateContainer.Controls.Add(this.label8);
+            this.DateContainer.Location = new System.Drawing.Point(80, 492);
+            this.DateContainer.Name = "DateContainer";
+            this.DateContainer.Size = new System.Drawing.Size(614, 43);
+            this.DateContainer.TabIndex = 14;
             // 
             // dtSechedualeDate
             // 
@@ -462,8 +462,8 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.DateContainer.ResumeLayout(false);
+            this.DateContainer.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -484,7 +484,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblTrial;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel DateContainer;
         private System.Windows.Forms.DateTimePicker dtSechedualeDate;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel5;

@@ -225,6 +225,35 @@ namespace DVLD_DataAccessLayer.License
             return Found;
         }
 
+        public static bool HasActiveLicenseClass(int DriverID, int LicenseClassID)
+        {
+            SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);
+            string Query = @"SELECT Top 1 Found = 1 From Licenses Where DriverID = @DriverID AND LicenseClass = @LicenseClassID AND IsActive = 1; ;";
+
+            SqlCommand cmd = new SqlCommand(Query, connection);
+
+            cmd.Parameters.AddWithValue("@DriverID", DriverID);
+            cmd.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+
+            bool Found = false;
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows) Found = true;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return Found;
+        }
+
         public static DataTable ListLicenses()
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);

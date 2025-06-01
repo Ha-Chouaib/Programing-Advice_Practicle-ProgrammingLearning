@@ -309,8 +309,7 @@ namespace DVLD_DataAccessLayer.Tests
 
             string query = @" SELECT top 1 Found=1
                             FROM LocalDrivingLicenseApplications INNER JOIN
-                                 TestAppointments ON LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID = TestAppointments.LocalDrivingLicenseApplicationID INNER JOIN
-                                 Tests ON TestAppointments.TestAppointmentID = Tests.TestAppointmentID
+                                 TestAppointments ON LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID = TestAppointments.LocalDrivingLicenseApplicationID 
                             WHERE
                             (LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID)  
                             AND(TestAppointments.TestTypeID = @TestTypeID) and isLocked=0
