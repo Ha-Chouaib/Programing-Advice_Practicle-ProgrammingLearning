@@ -1,0 +1,7 @@
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Csharp_Level2\Events\04_NewOrderEvent\NewOrderEvent\bin\Debug\NewOrderEvent.exe.config
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Csharp_Level2\Events\04_NewOrderEvent\NewOrderEvent\bin\Debug\NewOrderEvent.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Csharp_Level2\Events\04_NewOrderEvent\NewOrderEvent\bin\Debug\NewOrderEvent.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Csharp_Level2\Events\04_NewOrderEvent\NewOrderEvent\obj\Debug\NewOrderEvent.csproj.AssemblyReference.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Csharp_Level2\Events\04_NewOrderEvent\NewOrderEvent\obj\Debug\NewOrderEvent.csproj.CoreCompileInputs.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Csharp_Level2\Events\04_NewOrderEvent\NewOrderEvent\obj\Debug\NewOrderEvent.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Csharp_Level2\Events\04_NewOrderEvent\NewOrderEvent\obj\Debug\NewOrderEvent.pdb
