@@ -1,0 +1,14 @@
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Csharp_Level2\Events\TemperatoreChangeEvent\bin\Debug\TemperatoreChangeEvent.exe.config
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Csharp_Level2\Events\TemperatoreChangeEvent\bin\Debug\TemperatoreChangeEvent.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Csharp_Level2\Events\TemperatoreChangeEvent\bin\Debug\TemperatoreChangeEvent.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Csharp_Level2\Events\TemperatoreChangeEvent\obj\Debug\TemperatoreChangeEvent.csproj.AssemblyReference.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Csharp_Level2\Events\TemperatoreChangeEvent\obj\Debug\TemperatoreChangeEvent.csproj.CoreCompileInputs.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Csharp_Level2\Events\TemperatoreChangeEvent\obj\Debug\TemperatoreChangeEvent.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Csharp_Level2\Events\TemperatoreChangeEvent\obj\Debug\TemperatoreChangeEvent.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Csharp_Level2\Events\02_TemperatoreChangeEvent\bin\Debug\TemperatoreChangeEvent.exe.config
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Csharp_Level2\Events\02_TemperatoreChangeEvent\bin\Debug\TemperatoreChangeEvent.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Csharp_Level2\Events\02_TemperatoreChangeEvent\bin\Debug\TemperatoreChangeEvent.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Csharp_Level2\Events\02_TemperatoreChangeEvent\obj\Debug\TemperatoreChangeEvent.csproj.AssemblyReference.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Csharp_Level2\Events\02_TemperatoreChangeEvent\obj\Debug\TemperatoreChangeEvent.csproj.CoreCompileInputs.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Csharp_Level2\Events\02_TemperatoreChangeEvent\obj\Debug\TemperatoreChangeEvent.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Csharp_Level2\Events\02_TemperatoreChangeEvent\obj\Debug\TemperatoreChangeEvent.pdb
