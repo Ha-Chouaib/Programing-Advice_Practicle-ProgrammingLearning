@@ -25,7 +25,7 @@ namespace DVLD_BusinessLayer.Applications
         public clsUsers UserInfo;
 
         public enum enMode { eAddNew,eUpdate}
-        public enMode Mode;
+        public  enMode Mode;
 
         public enum enApplicationStatus : byte
         {

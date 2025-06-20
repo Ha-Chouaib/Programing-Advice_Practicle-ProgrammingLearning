@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Data;
 using System.Data.SqlClient;
-using System.Data.Common;
+using System.Diagnostics;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace DVLD_DataAccessLayer.Applications
@@ -33,6 +33,7 @@ namespace DVLD_DataAccessLayer.Applications
 
             }catch(Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"LocalDrivingLicensesApplication DataAccess: [ Find() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -66,6 +67,7 @@ namespace DVLD_DataAccessLayer.Applications
             }
             catch (Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"LocalDrivingLicensesApplication DataAccess: [ FindByMainApplicationID() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -99,6 +101,7 @@ namespace DVLD_DataAccessLayer.Applications
             }
             catch (Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"LocalDrivingLicensesApplication DataAccess: [ AddNewLocalLicenseApplication() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -132,6 +135,7 @@ namespace DVLD_DataAccessLayer.Applications
             }
             catch (Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"LocalDrivingLicensesApplication DataAccess: [ UpdateLocalLicenseApplication() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -157,6 +161,7 @@ namespace DVLD_DataAccessLayer.Applications
 
             }catch(Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"LocalDrivingLicensesApplication DataAccess: [ ListAll_View() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -190,6 +195,7 @@ namespace DVLD_DataAccessLayer.Applications
             } catch (Exception ex)
             {
 
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"LocalDrivingLicensesApplication DataAccess: [ FilterBy() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally 
@@ -220,6 +226,7 @@ namespace DVLD_DataAccessLayer.Applications
             catch (Exception ex)
             {
 
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"LocalDrivingLicensesApplication DataAccess: [ GetPassedTestCount() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -246,7 +253,7 @@ namespace DVLD_DataAccessLayer.Applications
             }
             catch (Exception ex)
             {
-                Console.WriteLine("----------------------------DB Error: " + ex.Message);
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"LocalDrivingLicensesApplication DataAccess: [ Delete() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {

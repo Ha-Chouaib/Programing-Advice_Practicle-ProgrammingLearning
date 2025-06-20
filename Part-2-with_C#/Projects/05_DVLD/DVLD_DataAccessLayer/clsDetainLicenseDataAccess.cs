@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Data;
 using System.Data.SqlClient;
-
+using System.Diagnostics;
 namespace DVLD_DataAccessLayer
 {
     public class clsDetainLicenseDataAccess
@@ -51,7 +51,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine("------------------ DB Error " + ex.Message);
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"DetainLicense DataAccess: [ Find() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -103,7 +103,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine("------------------ DB Error " + ex.Message);
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"DetainLicense DataAccess: [ FindByLicenseID() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -138,7 +138,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine("-------------------------DB Error: " + ex.Message);
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"DetainLicense DataAccess: [ DetainLicense() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -174,7 +174,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"DetainLicense DataAccess: [ ReleaseLicense() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -199,7 +199,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"DetainLicense DataAccess: [ Delete() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -226,7 +226,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"DetainLicense DataAccess: [ IsDetained() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -252,7 +252,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"DetainLicense DataAccess: [ IsDetained_ByLicenseID() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -278,7 +278,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"DetainLicense DataAccess: [ ListAll() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -314,7 +314,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"DetainLicense DataAccess: [ FilterBy() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Data;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices;
+using System.Diagnostics;
 
 namespace DVLD_DataAccessLayer
 {
@@ -36,6 +37,7 @@ namespace DVLD_DataAccessLayer
                 
             }catch(Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"LicenseClasses DataAccess: [ Find() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -73,6 +75,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"LicenseClasses DataAccess: [ Find() By ClassName ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -98,6 +101,7 @@ namespace DVLD_DataAccessLayer
                 DT.Load(Reader);
             }catch(Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"LicenseClasses DataAccess: [ LicenseClassesList() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally

@@ -1,0 +1,7 @@
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Delegation Concept\Func\Func_Delegate\bin\Debug\Func_Delegate.exe.config
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Delegation Concept\Func\Func_Delegate\bin\Debug\Func_Delegate.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Delegation Concept\Func\Func_Delegate\bin\Debug\Func_Delegate.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Delegation Concept\Func\Func_Delegate\obj\Debug\Func_Delegate.csproj.AssemblyReference.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Delegation Concept\Func\Func_Delegate\obj\Debug\Func_Delegate.csproj.CoreCompileInputs.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Delegation Concept\Func\Func_Delegate\obj\Debug\Func_Delegate.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Delegation Concept\Func\Func_Delegate\obj\Debug\Func_Delegate.pdb

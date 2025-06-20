@@ -5,37 +5,31 @@ using System.IO;
 using System.Windows.Forms;
 using System.Threading.Tasks;
 using DVLD_BusinessLayer;
-
+using Microsoft.Win32;
+using System.Diagnostics;
 namespace DVLD_Project
 {
     public class clsGlobal
     {
         public static int CurrentUserID { get; set; }
+        public static string EventLog_SourceName = "DVLD_App";
 
+        private static string KeyPath = @"HKEY_CURRENT_USER\SOFTWARE\DVLD";
+       
         public static bool RememberUsernameAndPasssword(string UserName, string Password)
         {
             try
             {
-                string FolderPath = System.IO.Directory.GetCurrentDirectory();
+                string ValueName_UserName = "UserName";
+                string ValueName_Password = "Password";
 
-                string FilePath = FolderPath + "\\data.txt";
-           
-                    if (UserName == "" && File.Exists(FilePath))
-                    {
-                        File.Delete(FilePath);
-                        return true;
-                    }
-
-                    string UserCredential = UserName + "#//#" + clsMyLib.EncryptString( Password);
-
-                    using(StreamWriter Write = new StreamWriter(FilePath))
-                    {
-                        Write.WriteLine(UserCredential);
-                        return true;
-                    }
-
-            }catch(IOException ex)
+                Registry.SetValue(KeyPath, ValueName_UserName,UserName ,RegistryValueKind.String);
+                Registry.SetValue(KeyPath, ValueName_Password,clsMyLib.Encrypt(Password,clsMyLib.Key), RegistryValueKind.String);
+                return true;
+            }
+            catch(IOException ex)
             {
+                EventLog.WriteEntry(EventLog_SourceName, $"From remember user CredentialInfo: {ex.Message}", EventLogEntryType.Error);
                 MessageBox.Show("Error Occured !! "+ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
@@ -46,30 +40,24 @@ namespace DVLD_Project
         {
             try
             {
-                string FolderPath = System.IO.Directory.GetCurrentDirectory();
-                string FilePath = FolderPath + "\\data.txt";
 
-                if(File.Exists(FilePath))
+                string ValueName_UserName = "UserName";
+                string ValueName_Password = "Password";
+                
+                Username=Registry.GetValue(KeyPath, ValueName_UserName, null) as string;
+                Password=clsMyLib.Decrypt(Registry.GetValue(KeyPath, ValueName_Password, null) as string,clsMyLib.Key);
+
+                if(Username == null || Password == null)
                 {
-                    string Line;
-                    using(StreamReader reader= new StreamReader(FilePath))
-                    {
-                        while ((Line = reader.ReadLine()) != null)
-                        {
-                            string[] result = Line.Split(new string[] { "#//#" }, StringSplitOptions.None);
-                            Username = result[0] ;
-                            Password = clsMyLib.DecryptString( result[1] );
-                        }
-                         return true;
-                    }
-                }else
-                {
-                    return false;
+                    Username = "";
+                    Password = "";
                 }
+                return true;
             }
             catch(IOException ex)
             {
 
+                EventLog.WriteEntry(EventLog_SourceName, $"From remember user CredentialInfo: {ex.Message}", EventLogEntryType.Error);
                 MessageBox.Show("Error Occured !! "+ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Data;
 using System.Data.SqlClient;
 using System.ComponentModel;
-
+using System.Diagnostics;
 namespace DVLD_DataAccessLayer
 {
     public class clsDriverDataAccess
@@ -33,7 +33,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine("------------------ DB Error " + ex.Message);
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Driver DataAccess: [ Find() By DriverID ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -67,7 +67,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine("------------------ DB Error " + ex.Message);
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Driver DataAccess: [ FindPersonID() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -102,7 +102,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex) 
             {
-                Console.WriteLine("----------------DB Error " + ex.Message);
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Driver DataAccess: [ AddNewDriver() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -128,7 +128,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine("----------------------------DB Error: " + ex.Message);
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Driver DataAccess: [ DeleteDriver() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -154,7 +154,7 @@ namespace DVLD_DataAccessLayer
 
             }catch(Exception ex)
             {
-                Console.WriteLine("----------------------------DB Error: " + ex.Message);
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Driver DataAccess: [ Exist() ByPersonID ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -180,7 +180,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Driver DataAccess: [ ListDrivers() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -216,7 +216,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Driver DataAccess: [ FilterBy() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {

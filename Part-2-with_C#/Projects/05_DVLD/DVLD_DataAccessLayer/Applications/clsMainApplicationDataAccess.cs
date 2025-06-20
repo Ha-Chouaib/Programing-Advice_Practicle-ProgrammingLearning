@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Data.SqlClient;
 using System.Data;
+using System.Diagnostics;
 
 namespace DVLD_DataAccessLayer.Applications
 {
@@ -38,6 +39,7 @@ namespace DVLD_DataAccessLayer.Applications
             }
             catch (Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"MainApplication DataAccess: [ Find() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -77,6 +79,7 @@ namespace DVLD_DataAccessLayer.Applications
 
             }catch(Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"MainApplication DataAccess: [ AddNewApp() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -110,6 +113,7 @@ namespace DVLD_DataAccessLayer.Applications
             }
             catch (Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"MainApplication DataAccess: [ UpdateApp() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -137,7 +141,7 @@ namespace DVLD_DataAccessLayer.Applications
             }
             catch (Exception ex)
             {
-                Console.WriteLine("-------------------------DB Error: "+ex.Message);
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"MainApplication DataAccess: [ DeleteApplication() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -162,6 +166,7 @@ namespace DVLD_DataAccessLayer.Applications
 
             }catch(Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"MainApplication DataAccess: [ ListAll() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -198,7 +203,7 @@ namespace DVLD_DataAccessLayer.Applications
             }
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"MainApplication DataAccess: [ UpdateStatus() ]: {ex.Message}", EventLogEntryType.Error);
                 return false;
             }
 
@@ -238,6 +243,7 @@ namespace DVLD_DataAccessLayer.Applications
             }
             catch (Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"MainApplication DataAccess: [ CheckApplicationStatus() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally

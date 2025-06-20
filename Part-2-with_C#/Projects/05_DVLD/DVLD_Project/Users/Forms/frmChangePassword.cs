@@ -73,7 +73,7 @@ namespace DVLD_Project.Users.Forms
 
         private void txtCurrentPassword_Validating(object sender, CancelEventArgs e)
         {
-            if(txtCurrentPassword.Text == string.Empty || txtCurrentPassword.Text != User.Password)
+            if(txtCurrentPassword.Text == string.Empty || clsMyLib.EncryptString_Hashing(txtCurrentPassword.Text) != User.Password)
             {
                 errorProv.SetError(txtCurrentPassword, "Required Field/The Current Password Doesn't Match The Original One!");
                 _IsValide = false;

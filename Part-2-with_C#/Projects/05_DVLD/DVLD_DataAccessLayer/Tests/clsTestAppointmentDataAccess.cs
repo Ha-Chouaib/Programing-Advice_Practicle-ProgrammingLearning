@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace DVLD_DataAccessLayer.Tests
 {
@@ -41,7 +42,11 @@ namespace DVLD_DataAccessLayer.Tests
                 }
 
             }
-            catch (Exception ex) { }
+            catch (Exception ex) 
+            {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"TestAppointments DataAccess: [ Find() ]: {ex.Message}", EventLogEntryType.Error);
+
+            }
             finally
             {
                 connection.Close();
@@ -79,7 +84,11 @@ namespace DVLD_DataAccessLayer.Tests
                 object result = cmd.ExecuteScalar();
                 if (result != null && int.TryParse(result.ToString(), out int ID)) TestAppointmentID = ID;
 
-            }catch(Exception ex) { }
+            }catch(Exception ex) 
+            {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"TestAppointments DataAccess: [ AddNewappointmnet() ]: {ex.Message}", EventLogEntryType.Error);
+
+            }
             finally
             {
                 connection.Close();
@@ -110,7 +119,7 @@ namespace DVLD_DataAccessLayer.Tests
             }
             catch (Exception ex) 
             {
-                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"TestAppointments DataAccess: [ UpdateAppointmnet() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -134,8 +143,8 @@ namespace DVLD_DataAccessLayer.Tests
 
             }
             catch (Exception ex) 
-            { 
-                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+            {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"TestAppointments DataAccess: [ Delete() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -161,7 +170,7 @@ namespace DVLD_DataAccessLayer.Tests
             }
             catch (Exception ex) 
             {
-                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"TestAppointments DataAccess: [ ListAppointments() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -189,8 +198,8 @@ namespace DVLD_DataAccessLayer.Tests
                 DT.Load(reader);
             }
             catch (Exception ex) 
-            { 
-                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+            {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"TestAppointments DataAccess: [ ListAppointment_SchedualedInfo() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -236,7 +245,7 @@ namespace DVLD_DataAccessLayer.Tests
 
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"TestAppointments DataAccess: [ IsTestTypePassed() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
 
@@ -286,7 +295,7 @@ namespace DVLD_DataAccessLayer.Tests
 
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"TestAppointments DataAccess: [ TestTrials() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
 
@@ -336,7 +345,7 @@ namespace DVLD_DataAccessLayer.Tests
 
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"TestAppointments DataAccess: [ HasActiveAppointment() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
 
@@ -375,7 +384,7 @@ namespace DVLD_DataAccessLayer.Tests
             }
             catch (Exception ex) 
             {
-                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"TestAppointments DataAccess: [ GetCurrentAppointmentID() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {

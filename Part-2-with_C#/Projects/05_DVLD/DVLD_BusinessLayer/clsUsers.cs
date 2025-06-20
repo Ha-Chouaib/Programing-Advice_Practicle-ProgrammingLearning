@@ -47,7 +47,7 @@ namespace DVLD_BusinessLayer
             bool IsActive=false;
             if(clsUsersDataAccess.Find(UserID,ref PersonID,ref UserName,ref Password,ref IsActive))
             {
-                return new clsUsers(UserID,PersonID,UserName, clsMyLib.DecryptString(Password), IsActive);
+                return new clsUsers(UserID,PersonID,UserName,Password, IsActive);
             }else
             {
                 return null;
@@ -61,7 +61,7 @@ namespace DVLD_BusinessLayer
             bool IsActive = false;
             if (clsUsersDataAccess.Find(UserName,ref UserID,ref  PersonID,ref Password, ref IsActive))
             {
-                return new clsUsers(UserID, PersonID, UserName, clsMyLib.DecryptString(Password), IsActive);
+                return new clsUsers(UserID, PersonID, UserName, Password, IsActive);
             }
             else
             {
@@ -71,13 +71,13 @@ namespace DVLD_BusinessLayer
        
         private bool _AddNew()
         {
-            this.UserID= clsUsersDataAccess.AddNew(this.PersonID, this.UserName,clsMyLib.EncryptString( this.Password), this.IsActive);
+            this.UserID= clsUsersDataAccess.AddNew(this.PersonID, this.UserName,clsMyLib.EncryptString_Hashing( this.Password), this.IsActive);
             return (UserID != -1);
         
         }
         private bool _Update()
         {
-            return clsUsersDataAccess.Update(this.UserID, this.UserName, clsMyLib.EncryptString(this.Password), this.IsActive);
+            return clsUsersDataAccess.Update(this.UserID, this.UserName, clsMyLib.EncryptString_Hashing(this.Password), this.IsActive);
         }
 
         public bool Save()
