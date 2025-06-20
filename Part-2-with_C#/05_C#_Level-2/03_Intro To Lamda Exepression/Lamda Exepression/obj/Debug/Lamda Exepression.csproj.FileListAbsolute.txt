@@ -1,0 +1,7 @@
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Intro To Lamda Exepression\Lamda Exepression\bin\Debug\Lamda Exepression.exe.config
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Intro To Lamda Exepression\Lamda Exepression\bin\Debug\Lamda Exepression.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Intro To Lamda Exepression\Lamda Exepression\bin\Debug\Lamda Exepression.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Intro To Lamda Exepression\Lamda Exepression\obj\Debug\Lamda Exepression.csproj.AssemblyReference.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Intro To Lamda Exepression\Lamda Exepression\obj\Debug\Lamda Exepression.csproj.CoreCompileInputs.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Intro To Lamda Exepression\Lamda Exepression\obj\Debug\Lamda Exepression.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Intro To Lamda Exepression\Lamda Exepression\obj\Debug\Lamda Exepression.pdb

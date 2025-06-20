@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Data;
 using System.Data.SqlClient;
-
+using System.Diagnostics;
 
 namespace DVLD_DataAccessLayer
 {
@@ -60,6 +60,7 @@ namespace DVLD_DataAccessLayer
 
             }catch(Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"People DataAccess: [ Find() By PersonID ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -119,7 +120,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine("----------------------DB Error: " + ex.Message);
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"People DataAccess: [ Find() By National No ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -146,6 +147,7 @@ namespace DVLD_DataAccessLayer
 
             }catch(Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"People DataAccess: [ IsExist() By PersonID ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -172,6 +174,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"People DataAccess: [ IsExist() By National No ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -223,7 +226,7 @@ namespace DVLD_DataAccessLayer
 
             }catch(Exception ex)
             {
-                Console.WriteLine($"ADD Errot {ex.Message}");
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"People DataAccess: [ AddNew() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -291,6 +294,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"People DataAccess: [ Update() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -317,6 +321,7 @@ namespace DVLD_DataAccessLayer
                 
             }catch(Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"People DataAccess: [ DeletePerson() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -342,6 +347,7 @@ namespace DVLD_DataAccessLayer
 
             }catch(Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"People DataAccess: [ ListAll() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally 
@@ -376,6 +382,7 @@ namespace DVLD_DataAccessLayer
 
             }catch(Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"People DataAccess: [ FilterPeople() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -407,6 +414,7 @@ namespace DVLD_DataAccessLayer
 
             }catch(Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"People DataAccess: [ FilterByFullName() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally

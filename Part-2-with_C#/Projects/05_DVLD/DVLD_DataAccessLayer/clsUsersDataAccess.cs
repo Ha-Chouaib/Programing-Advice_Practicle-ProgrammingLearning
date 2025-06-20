@@ -5,7 +5,7 @@ using System.Net;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq.Expressions;
-
+using System.Diagnostics;
 namespace DVLD_DataAccessLayer
 {
     public class clsUsersDataAccess
@@ -36,6 +36,7 @@ namespace DVLD_DataAccessLayer
 
             }catch(Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Users DataAccess: [ Find() by UserID ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -72,6 +73,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Users DataAccess: [ Find() by UserName ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -106,6 +108,7 @@ namespace DVLD_DataAccessLayer
             }
             catch(Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Users DataAccess: [ AddNew() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -141,6 +144,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Users DataAccess: [ Update() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -166,6 +170,7 @@ namespace DVLD_DataAccessLayer
                 if (reader.HasRows) Found = true;
             }catch(Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Users DataAccess: [ Exist() by UserID ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -193,6 +198,7 @@ namespace DVLD_DataAccessLayer
             catch (Exception ex)
             {
 
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Users DataAccess: [ Exist() by UserName ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -218,6 +224,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Users DataAccess: [ ExistByPersonID() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -243,6 +250,7 @@ namespace DVLD_DataAccessLayer
 
             }catch(Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Users DataAccess: [ Delete() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -269,6 +277,7 @@ namespace DVLD_DataAccessLayer
 
             }catch(Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Users DataAccess: [ ListAll_RootInfo() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -295,6 +304,7 @@ namespace DVLD_DataAccessLayer
 
             }catch(Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Users DataAccess: [ UserList() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -326,6 +336,7 @@ namespace DVLD_DataAccessLayer
 
             }catch(Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Users DataAccess: [ FilterBy() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally

@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Data;
 using System.Data.SqlClient;
-using System.Net;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace DVLD_DataAccessLayer
@@ -31,6 +31,7 @@ namespace DVLD_DataAccessLayer
 
             }catch(Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"ApplicationTypes DataAccess: [ Find() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -63,6 +64,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"ApplicationTypes DataAccess: [ Find() ByAppTitle ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -93,6 +95,7 @@ namespace DVLD_DataAccessLayer
                 
             }catch(Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"ApplicationTypes DataAccess: [ Update() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -116,6 +119,7 @@ namespace DVLD_DataAccessLayer
 
             }catch(Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"ApplicationTypes DataAccess: [ ListAll() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally

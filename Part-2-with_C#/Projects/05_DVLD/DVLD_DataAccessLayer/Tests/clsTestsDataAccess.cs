@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Data;
 using System.Data.SqlClient;
-
+using System.Diagnostics;
 namespace DVLD_DataAccessLayer.Tests
 {
     public class clsTestsDataAccess
@@ -38,7 +38,7 @@ namespace DVLD_DataAccessLayer.Tests
 
             } catch (Exception ex)
             {
-                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Tests DataAccess: [ Find() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -75,7 +75,7 @@ namespace DVLD_DataAccessLayer.Tests
 
             } catch (Exception ex) 
             {
-                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Tests DataAccess: [ AddNewTest() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -99,7 +99,11 @@ namespace DVLD_DataAccessLayer.Tests
                 RowsAffected = cmd.ExecuteNonQuery();
 
             }
-            catch (Exception ex) { }
+            catch (Exception ex) 
+            {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Tests DataAccess: [ DeleteTest() ]: {ex.Message}", EventLogEntryType.Error);
+
+            }
             finally
             {
                 connection.Close();
@@ -122,7 +126,11 @@ namespace DVLD_DataAccessLayer.Tests
                 SqlDataReader reader = cmd.ExecuteReader();
                 DT.Load(reader);
             }
-            catch (Exception ex) { }
+            catch (Exception ex) 
+            {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Tests DataAccess: [ ListTests() ]: {ex.Message}", EventLogEntryType.Error);
+
+            }
             finally
             {
                 connection.Close();

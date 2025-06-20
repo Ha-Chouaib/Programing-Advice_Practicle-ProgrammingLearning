@@ -1,0 +1,7 @@
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Delegation Concept\DelegateConcept\bin\Debug\DelegateConcept.exe.config
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Delegation Concept\DelegateConcept\bin\Debug\DelegateConcept.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Delegation Concept\DelegateConcept\bin\Debug\DelegateConcept.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Delegation Concept\DelegateConcept\obj\Debug\DelegateConcept.csproj.AssemblyReference.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Delegation Concept\DelegateConcept\obj\Debug\DelegateConcept.csproj.CoreCompileInputs.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Delegation Concept\DelegateConcept\obj\Debug\DelegateConcept.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\Delegation Concept\DelegateConcept\obj\Debug\DelegateConcept.pdb

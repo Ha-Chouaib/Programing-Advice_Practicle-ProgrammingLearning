@@ -1,0 +1,7 @@
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\11_Intro To WindowssRegistry\bin\Debug\11_Intro To WindowssRegistry.exe.config
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\11_Intro To WindowssRegistry\bin\Debug\11_Intro To WindowssRegistry.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\11_Intro To WindowssRegistry\bin\Debug\11_Intro To WindowssRegistry.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\11_Intro To WindowssRegistry\obj\Debug\11_Intro To WindowssRegistry.csproj.AssemblyReference.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\11_Intro To WindowssRegistry\obj\Debug\11_Intro To WindowssRegistry.csproj.CoreCompileInputs.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\11_Intro To WindowssRegistry\obj\Debug\11_Intro To WindowssRegistry.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\11_Intro To WindowssRegistry\obj\Debug\11_Intro To WindowssRegistry.pdb

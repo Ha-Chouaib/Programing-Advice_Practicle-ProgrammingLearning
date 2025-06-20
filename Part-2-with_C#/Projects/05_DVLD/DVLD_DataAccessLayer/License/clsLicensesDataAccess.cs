@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using System.Diagnostics;
 
 namespace DVLD_DataAccessLayer.License
 {
@@ -46,7 +47,7 @@ namespace DVLD_DataAccessLayer.License
                 }
             }catch(Exception ex)
             {
-                Console.WriteLine("------------------ DB Error " + ex.Message);
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Licenses DataAccess: [ Find() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -91,7 +92,7 @@ namespace DVLD_DataAccessLayer.License
             }
             catch (Exception ex)
             {
-                Console.WriteLine("------------------ DB Error " + ex.Message);
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Licenses DataAccess: [ FindBy_ApplicationID() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -136,7 +137,7 @@ namespace DVLD_DataAccessLayer.License
             }
             catch (Exception ex) 
             {
-                Console.WriteLine("-------------------------DB Error: " + ex.Message);
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Licenses DataAccess: [ AddNewLicense() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -164,7 +165,7 @@ namespace DVLD_DataAccessLayer.License
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Licenses DataAccess: [ UpdateLicense() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -189,7 +190,7 @@ namespace DVLD_DataAccessLayer.License
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Licenses DataAccess: [ DeleteLicense() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -216,7 +217,7 @@ namespace DVLD_DataAccessLayer.License
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Licenses DataAccess: [ Exist() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -245,7 +246,7 @@ namespace DVLD_DataAccessLayer.License
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Licenses DataAccess: [ HasActiveLicenseClass() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -271,7 +272,7 @@ namespace DVLD_DataAccessLayer.License
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Licenses DataAccess: [ ListLicenses() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -303,7 +304,7 @@ namespace DVLD_DataAccessLayer.License
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"-------------------------DataBase Error: {ex.Message}");
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Licenses DataAccess: [ ListLocalLicnese_DriverHistory() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {

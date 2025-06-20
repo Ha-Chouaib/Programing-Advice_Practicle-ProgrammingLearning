@@ -14,8 +14,8 @@ namespace DVLD_BusinessLayer.Applications
     {
 
        
-        public enum enMode { AddNew = 0, Update = 1 };
-        public enMode Mode = enMode.AddNew;
+        public new enum enMode { AddNew = 0, Update = 1 };
+        public new enMode Mode = enMode.AddNew;
 
         public int LocalDrivingLicenseApplicationID { set; get; }
         public int LicenseClassID { set; get; }
@@ -103,7 +103,7 @@ namespace DVLD_BusinessLayer.Applications
 
                 if (IsFound)
                 {
-                    clsMainApplication Application = clsMainApplication.FindMainApplication(MainApplicationID);
+                    clsMainApplication Application = FindMainApplication(MainApplicationID);
 
                     return new clsLocalDrivingLicenseApplication( LocalDrivingLicenseApplicationID, Application.MainApplicationID, Application.ApplicantPersonID,
                                                                     Application.ApplicationDate, Application.ApplicationTypeID,Application.ApplicationStatus, Application.LastStatusDate,
@@ -115,7 +115,7 @@ namespace DVLD_BusinessLayer.Applications
 
             }
 
-        public bool Save()
+        public new bool Save()
             {
 
                 base.Mode = (clsMainApplication.enMode)this.Mode;

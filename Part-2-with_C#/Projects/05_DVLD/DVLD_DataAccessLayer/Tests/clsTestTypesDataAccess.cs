@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace DVLD_DataAccessLayer
 {
@@ -32,7 +33,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine("-----------------------------DB Error: " + ex.Message);
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"TestTypes DataAccess: [ Find() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -65,7 +66,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine("-----------------------------DB Error: " + ex.Message);
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"TestTypes DataAccess: [ Find() By TestTitle]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -99,7 +100,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine("-----------------------------DB Error: " + ex.Message);
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"TestTypes DataAccess: [ Update() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {
@@ -123,7 +124,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
-                Console.WriteLine("-----------------------------DB Error: " + ex.Message);
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"TestTypes DataAccess: [ ListAllTests() ]: {ex.Message}", EventLogEntryType.Error);
             }
             finally
             {

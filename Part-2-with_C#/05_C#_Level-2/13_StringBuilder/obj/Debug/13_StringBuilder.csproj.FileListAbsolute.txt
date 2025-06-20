@@ -1,0 +1,7 @@
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\13_StringBuilder\bin\Debug\13_StringBuilder.exe.config
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\13_StringBuilder\bin\Debug\13_StringBuilder.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\13_StringBuilder\bin\Debug\13_StringBuilder.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\13_StringBuilder\obj\Debug\13_StringBuilder.csproj.AssemblyReference.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\13_StringBuilder\obj\Debug\13_StringBuilder.csproj.CoreCompileInputs.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\13_StringBuilder\obj\Debug\13_StringBuilder.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\13_StringBuilder\obj\Debug\13_StringBuilder.pdb

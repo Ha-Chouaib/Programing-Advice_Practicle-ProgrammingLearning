@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Net;
+using System.Diagnostics;
 
 
 namespace DVLD_DataAccessLayer
@@ -31,6 +31,7 @@ namespace DVLD_DataAccessLayer
             }
             catch(Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Countries DataAccess: [ Find() By CountryID]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -62,6 +63,7 @@ namespace DVLD_DataAccessLayer
             }
             catch (Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Countries DataAccess: [ Find() By CountryName ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally
@@ -88,6 +90,7 @@ namespace DVLD_DataAccessLayer
 
             }catch(Exception ex)
             {
+                EventLog.WriteEntry(DataAccessSettings.EventLog_SourceName, $"Countries DataAccess: [ ListAll() ]: {ex.Message}", EventLogEntryType.Error);
 
             }
             finally

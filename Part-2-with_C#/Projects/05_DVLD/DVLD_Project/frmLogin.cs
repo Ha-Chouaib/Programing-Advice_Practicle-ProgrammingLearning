@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DVLD_BusinessLayer;
-
+using System.Diagnostics;
 namespace DVLD_Project
 {
     public partial class frmLogin : Form
@@ -44,7 +44,7 @@ namespace DVLD_Project
             {
                 User = clsUsers.Find(UserName);
 
-                if (User == null || PassWord != User.Password)
+                if (User == null || clsMyLib.EncryptString_Hashing(PassWord) != User.Password)
                 {
                     MessageBox.Show($"UnValid Username OR Password ! Please Enter The Correct Login Info", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
@@ -74,7 +74,7 @@ namespace DVLD_Project
             {
                if(cbRememberMe.Checked)
                 {
-                    clsGlobal.RememberUsernameAndPasssword(txtUserName.Text.Trim(), txtPassword.Text.Trim());
+                    clsGlobal.RememberUsernameAndPasssword(txtUserName.Text.Trim(),txtPassword.Text.Trim());
                 }else
                 {
                     clsGlobal.RememberUsernameAndPasssword("", "");
@@ -82,7 +82,12 @@ namespace DVLD_Project
 
                 MainForm frmMain = new MainForm(this);
                 clsGlobal.CurrentUserID = User.UserID;
-               
+                
+                if(!EventLog.SourceExists(clsGlobal.EventLog_SourceName))
+                {
+                    EventLog.CreateEventSource(clsGlobal.EventLog_SourceName, "Application");
+                }
+
                 this.Hide();
                 frmMain.ShowDialog();
 
