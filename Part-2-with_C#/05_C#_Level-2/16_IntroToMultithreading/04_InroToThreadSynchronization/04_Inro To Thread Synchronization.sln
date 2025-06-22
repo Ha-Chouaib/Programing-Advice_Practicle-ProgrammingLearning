@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_Inro To Thread Synchronization", "04_Inro To Thread Synchronization.csproj", "{D1289E50-3B01-42A2-939F-B699EA7FAB4E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1289E50-3B01-42A2-939F-B699EA7FAB4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1289E50-3B01-42A2-939F-B699EA7FAB4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1289E50-3B01-42A2-939F-B699EA7FAB4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1289E50-3B01-42A2-939F-B699EA7FAB4E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52E79442-3348-4A15-AA07-FDB58DE1DB9B}
+	EndGlobalSection
+EndGlobal
