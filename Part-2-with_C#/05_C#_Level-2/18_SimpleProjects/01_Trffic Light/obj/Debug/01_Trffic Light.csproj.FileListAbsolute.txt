@@ -1,0 +1,11 @@
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\18_SimpleProjects\01_Trffic Light\bin\Debug\01_Trffic Light.exe.config
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\18_SimpleProjects\01_Trffic Light\bin\Debug\01_Trffic Light.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\18_SimpleProjects\01_Trffic Light\bin\Debug\01_Trffic Light.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\18_SimpleProjects\01_Trffic Light\obj\Debug\01_Trffic Light.csproj.AssemblyReference.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\18_SimpleProjects\01_Trffic Light\obj\Debug\_01_Trffic_Light.ctrlTrafficLight.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\18_SimpleProjects\01_Trffic Light\obj\Debug\_01_Trffic_Light.Properties.Resources.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\18_SimpleProjects\01_Trffic Light\obj\Debug\01_Trffic Light.csproj.GenerateResource.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\18_SimpleProjects\01_Trffic Light\obj\Debug\01_Trffic Light.csproj.CoreCompileInputs.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\18_SimpleProjects\01_Trffic Light\obj\Debug\01_Trffic Light.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\18_SimpleProjects\01_Trffic Light\obj\Debug\01_Trffic Light.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\18_SimpleProjects\01_Trffic Light\obj\Debug\_01_Trffic_Light.Form1.resources

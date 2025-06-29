@@ -1,0 +1,11 @@
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\18_SimpleProjects\02_Pool Club\bin\Debug\02_Pool Club.exe.config
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\18_SimpleProjects\02_Pool Club\bin\Debug\02_Pool Club.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\18_SimpleProjects\02_Pool Club\bin\Debug\02_Pool Club.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\18_SimpleProjects\02_Pool Club\obj\Debug\02_Pool Club.csproj.AssemblyReference.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\18_SimpleProjects\02_Pool Club\obj\Debug\_02_Pool_Club.ctrlPoolClub.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\18_SimpleProjects\02_Pool Club\obj\Debug\_02_Pool_Club.Properties.Resources.resources
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\18_SimpleProjects\02_Pool Club\obj\Debug\02_Pool Club.csproj.GenerateResource.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\18_SimpleProjects\02_Pool Club\obj\Debug\02_Pool Club.csproj.CoreCompileInputs.cache
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\18_SimpleProjects\02_Pool Club\obj\Debug\02_Pool Club.exe
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\18_SimpleProjects\02_Pool Club\obj\Debug\02_Pool Club.pdb
+C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\05_C#_Level-2\18_SimpleProjects\02_Pool Club\obj\Debug\_02_Pool_Club.Form1.resources
