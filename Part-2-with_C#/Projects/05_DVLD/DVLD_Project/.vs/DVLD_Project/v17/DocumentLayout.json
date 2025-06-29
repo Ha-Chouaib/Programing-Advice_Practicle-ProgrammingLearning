@@ -18,15 +18,15 @@
       "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\05_dvld\\dvld_project\\users\\forms\\frmadd_edituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\users\\forms\\frmadd_edituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:users\\forms\\frmadd_edituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\05_dvld\\dvld_project\\users\\forms\\frmchangepassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\users\\forms\\frmchangepassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:users\\forms\\frmchangepassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\choua\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\05_dvld\\dvld_project\\users\\forms\\frmchangepassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\users\\forms\\frmchangepassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:users\\forms\\frmchangepassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -102,8 +102,7 @@
               "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Users\\Forms\\frmAdd_EditUser.cs [Design]",
               "RelativeToolTip": "Users\\Forms\\frmAdd_EditUser.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T21:38:55.459Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-19T21:38:55.459Z"
             },
             {
               "$type": "Document",
@@ -115,8 +114,7 @@
               "RelativeToolTip": "Users\\Forms\\frmChangePassword.cs",
               "ViewState": "AgIAAEsAAAAAAAAAAAAmwE4AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T20:16:17.531Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T20:16:17.531Z"
             },
             {
               "$type": "Document",
@@ -128,8 +126,7 @@
               "RelativeToolTip": "..\\DVLD_BusinessLayer\\clsUsers.cs",
               "ViewState": "AgIAADgAAAAAAAAAAAAAwD8AAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T19:09:18.715Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T19:09:18.715Z"
             },
             {
               "$type": "Document",
@@ -139,7 +136,7 @@
               "RelativeDocumentMoniker": "..\\DVLD_BusinessLayer\\clsMyLib.cs",
               "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_BusinessLayer\\clsMyLib.cs",
               "RelativeToolTip": "..\\DVLD_BusinessLayer\\clsMyLib.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAwBMAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-19T19:01:34.177Z",
               "EditorCaption": ""
@@ -165,8 +162,7 @@
               "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\frmLogin.cs [Design]",
               "RelativeToolTip": "frmLogin.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T02:35:13.364Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-19T02:35:13.364Z"
             },
             {
               "$type": "Document",
@@ -178,8 +174,7 @@
               "RelativeToolTip": "frmLogin.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAC4AAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T02:36:08.624Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T02:36:08.624Z"
             },
             {
               "$type": "Document",
@@ -191,8 +186,7 @@
               "RelativeToolTip": "clsGlobal.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAowC8AAAB1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T02:36:29.833Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T02:36:29.833Z"
             },
             {
               "$type": "Document",
@@ -204,8 +198,7 @@
               "RelativeToolTip": "..\\DVLD_BusinessLayer\\Applications\\clsLocalDrivingLicenseApplication.cs",
               "ViewState": "AgIAAF4AAAAAAAAAAAAIwGkAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T19:13:26.419Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T19:13:26.419Z"
             },
             {
               "$type": "Document",
@@ -217,8 +210,7 @@
               "RelativeToolTip": "..\\DVLD_BusinessLayer\\Applications\\clsMainApplication.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T19:14:42.939Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T19:14:42.939Z"
             },
             {
               "$type": "Document",
@@ -241,8 +233,7 @@
               "ToolTip": "C:\\Users\\Choua\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Users\\Forms\\frmChangePassword.cs [Design]",
               "RelativeToolTip": "Users\\Forms\\frmChangePassword.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T19:22:24.033Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-19T19:22:24.033Z"
             },
             {
               "$type": "Document",
@@ -386,8 +377,7 @@
               "RelativeToolTip": "..\\DVLD_DataAccessLayer\\DataAccessSettings.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T14:06:07.223Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T14:06:07.223Z"
             },
             {
               "$type": "Document",
