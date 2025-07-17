@@ -10,3 +10,9 @@ C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part
 C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\05_DVLD\DVLD_DataAccessLayer\obj\Debug\DVLD_DataAccessLayer.csproj.CoreCompileInputs.cache
 C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\05_DVLD\DVLD_DataAccessLayer\obj\Debug\DVLD_DataAccessLayer.dll
 C:\Users\Choua\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\05_DVLD\DVLD_DataAccessLayer\obj\Debug\DVLD_DataAccessLayer.pdb
+C:\Users\jook\source\repos\Ha-Chouaib\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\05_DVLD\DVLD_DataAccessLayer\bin\Debug\DVLD_DataAccessLayer.dll
+C:\Users\jook\source\repos\Ha-Chouaib\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\05_DVLD\DVLD_DataAccessLayer\bin\Debug\DVLD_DataAccessLayer.pdb
+C:\Users\jook\source\repos\Ha-Chouaib\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\05_DVLD\DVLD_DataAccessLayer\obj\Debug\DVLD_DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Ha-Chouaib\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\05_DVLD\DVLD_DataAccessLayer\obj\Debug\DVLD_DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Ha-Chouaib\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\05_DVLD\DVLD_DataAccessLayer\obj\Debug\DVLD_DataAccessLayer.dll
+C:\Users\jook\source\repos\Ha-Chouaib\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\05_DVLD\DVLD_DataAccessLayer\obj\Debug\DVLD_DataAccessLayer.pdb
