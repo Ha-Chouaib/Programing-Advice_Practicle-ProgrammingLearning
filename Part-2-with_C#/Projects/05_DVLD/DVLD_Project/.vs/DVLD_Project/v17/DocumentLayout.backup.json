@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\jook\\source\\repos\\ha-chouaib\\programing-advice_practicle-programminglearning\\part-2-with_c#\\projects\\05_dvld\\dvld_project\\users\\forms\\frmadd_edituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\jook\\source\\repos\\Ha-Chouaib\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\users\\forms\\frmadd_edituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:users\\forms\\frmadd_edituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -100,8 +100,8 @@
               "Title": "App.config",
               "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Ha-Chouaib\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\App.config",
               "RelativeDocumentMoniker": "App.config",
-              "ToolTip": "C:\\Users\\jook\\source\\repos\\Ha-Chouaib\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\App.config*",
-              "RelativeToolTip": "App.config*",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Ha-Chouaib\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\App.config",
+              "RelativeToolTip": "App.config",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
               "WhenOpened": "2025-07-17T20:27:17.102Z",
@@ -116,8 +116,7 @@
               "ToolTip": "C:\\Users\\jook\\source\\repos\\Ha-Chouaib\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Users\\Forms\\frmAdd_EditUser.cs [Design]",
               "RelativeToolTip": "Users\\Forms\\frmAdd_EditUser.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T21:38:55.459Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-19T21:38:55.459Z"
             },
             {
               "$type": "Document",
