@@ -1,0 +1,8 @@
+USE [C21_DB1]
+GO
+
+
+DROP PROCEDURE [dbo].[SP_GetPersonByID2]
+GO
+
+
