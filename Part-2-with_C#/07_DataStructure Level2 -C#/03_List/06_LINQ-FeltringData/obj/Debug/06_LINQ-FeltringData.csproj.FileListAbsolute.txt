@@ -1,0 +1,7 @@
+C:\Users\jook\source\repos\Ha-Chouaib\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\03_List\06_LINQ-FeltringData\bin\Debug\06_LINQ-FeltringData.exe.config
+C:\Users\jook\source\repos\Ha-Chouaib\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\03_List\06_LINQ-FeltringData\bin\Debug\06_LINQ-FeltringData.exe
+C:\Users\jook\source\repos\Ha-Chouaib\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\03_List\06_LINQ-FeltringData\bin\Debug\06_LINQ-FeltringData.pdb
+C:\Users\jook\source\repos\Ha-Chouaib\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\03_List\06_LINQ-FeltringData\obj\Debug\06_LINQ-FeltringData.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Ha-Chouaib\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\03_List\06_LINQ-FeltringData\obj\Debug\06_LINQ-FeltringData.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Ha-Chouaib\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\03_List\06_LINQ-FeltringData\obj\Debug\06_LINQ-FeltringData.exe
+C:\Users\jook\source\repos\Ha-Chouaib\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\03_List\06_LINQ-FeltringData\obj\Debug\06_LINQ-FeltringData.pdb

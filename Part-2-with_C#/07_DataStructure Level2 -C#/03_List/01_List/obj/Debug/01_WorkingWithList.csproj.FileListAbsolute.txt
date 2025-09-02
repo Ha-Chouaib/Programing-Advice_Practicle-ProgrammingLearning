@@ -1,0 +1,8 @@
+C:\Users\jook\source\repos\01_List\01_List\bin\Debug\01_List.exe.config
+C:\Users\jook\source\repos\01_List\01_List\bin\Debug\01_List.exe
+C:\Users\jook\source\repos\01_List\01_List\bin\Debug\01_List.pdb
+C:\Users\jook\source\repos\01_List\01_List\obj\Debug\01_WorkingWithList.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\01_List\01_List\obj\Debug\01_List.exe.config
+C:\Users\jook\source\repos\01_List\01_List\obj\Debug\01_WorkingWithList.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\01_List\01_List\obj\Debug\01_List.exe
+C:\Users\jook\source\repos\01_List\01_List\obj\Debug\01_List.pdb
