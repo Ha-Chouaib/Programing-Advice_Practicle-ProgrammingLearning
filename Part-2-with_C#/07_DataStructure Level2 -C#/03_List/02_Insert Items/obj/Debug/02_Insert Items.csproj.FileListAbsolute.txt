@@ -1,0 +1,8 @@
+C:\Users\jook\source\repos\01_List\02_Insert Items\bin\Debug\02_Insert Items.exe.config
+C:\Users\jook\source\repos\01_List\02_Insert Items\bin\Debug\02_Insert Items.exe
+C:\Users\jook\source\repos\01_List\02_Insert Items\bin\Debug\02_Insert Items.pdb
+C:\Users\jook\source\repos\01_List\02_Insert Items\obj\Debug\02_Insert Items.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\01_List\02_Insert Items\obj\Debug\02_Insert Items.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\01_List\02_Insert Items\obj\Debug\02_Insert Items.exe
+C:\Users\jook\source\repos\01_List\02_Insert Items\obj\Debug\02_Insert Items.pdb
+C:\Users\jook\source\repos\01_List\02_Insert Items\obj\Debug\02_Insert Items.exe.config

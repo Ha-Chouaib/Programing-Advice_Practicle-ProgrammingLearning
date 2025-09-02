@@ -1,0 +1,7 @@
+C:\Users\jook\source\repos\Ha-Chouaib\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\03_List\05_LINQ-AggregatingData\05_LINQ-AggregatingData\bin\Debug\05_LINQ-AggregatingData.exe.config
+C:\Users\jook\source\repos\Ha-Chouaib\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\03_List\05_LINQ-AggregatingData\05_LINQ-AggregatingData\bin\Debug\05_LINQ-AggregatingData.exe
+C:\Users\jook\source\repos\Ha-Chouaib\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\03_List\05_LINQ-AggregatingData\05_LINQ-AggregatingData\bin\Debug\05_LINQ-AggregatingData.pdb
+C:\Users\jook\source\repos\Ha-Chouaib\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\03_List\05_LINQ-AggregatingData\05_LINQ-AggregatingData\obj\Debug\05_LINQ-AggregatingData.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Ha-Chouaib\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\03_List\05_LINQ-AggregatingData\05_LINQ-AggregatingData\obj\Debug\05_LINQ-AggregatingData.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Ha-Chouaib\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\03_List\05_LINQ-AggregatingData\05_LINQ-AggregatingData\obj\Debug\05_LINQ-AggregatingData.exe
+C:\Users\jook\source\repos\Ha-Chouaib\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\03_List\05_LINQ-AggregatingData\05_LINQ-AggregatingData\obj\Debug\05_LINQ-AggregatingData.pdb

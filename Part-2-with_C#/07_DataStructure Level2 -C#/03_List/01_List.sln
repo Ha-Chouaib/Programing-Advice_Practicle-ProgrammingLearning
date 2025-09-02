@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36408.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_WorkingWithList", "01_List\01_WorkingWithList.csproj", "{470107EC-0479-4293-A120-1B5CA9BAFEE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_Insert Items", "02_Insert Items\02_Insert Items.csproj", "{B7C40362-3182-4F7F-B760-B4BEE61CB853}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_RemoveElements", "03_RemoveElements\03_RemoveElements.csproj", "{1927865E-C80E-4EB6-A62B-69255579CFC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_Looping Through List", "04_Looping Through List\04_Looping Through List.csproj", "{359A2D99-71B0-43F3-84F3-BDA3932D95D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_LINQ-AggregatingData", "05_LINQ-AggregatingData\05_LINQ-AggregatingData\05_LINQ-AggregatingData.csproj", "{1669DAE2-765B-489C-8543-FF2C3A59A423}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_LINQ-FeltringData", "06_LINQ-FeltringData\06_LINQ-FeltringData.csproj", "{8F4B3262-2AD5-4431-846C-46F084356506}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{470107EC-0479-4293-A120-1B5CA9BAFEE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{470107EC-0479-4293-A120-1B5CA9BAFEE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{470107EC-0479-4293-A120-1B5CA9BAFEE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{470107EC-0479-4293-A120-1B5CA9BAFEE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7C40362-3182-4F7F-B760-B4BEE61CB853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7C40362-3182-4F7F-B760-B4BEE61CB853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7C40362-3182-4F7F-B760-B4BEE61CB853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7C40362-3182-4F7F-B760-B4BEE61CB853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1927865E-C80E-4EB6-A62B-69255579CFC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1927865E-C80E-4EB6-A62B-69255579CFC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1927865E-C80E-4EB6-A62B-69255579CFC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1927865E-C80E-4EB6-A62B-69255579CFC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{359A2D99-71B0-43F3-84F3-BDA3932D95D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{359A2D99-71B0-43F3-84F3-BDA3932D95D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{359A2D99-71B0-43F3-84F3-BDA3932D95D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{359A2D99-71B0-43F3-84F3-BDA3932D95D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1669DAE2-765B-489C-8543-FF2C3A59A423}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1669DAE2-765B-489C-8543-FF2C3A59A423}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1669DAE2-765B-489C-8543-FF2C3A59A423}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1669DAE2-765B-489C-8543-FF2C3A59A423}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F4B3262-2AD5-4431-846C-46F084356506}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F4B3262-2AD5-4431-846C-46F084356506}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F4B3262-2AD5-4431-846C-46F084356506}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F4B3262-2AD5-4431-846C-46F084356506}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {89105232-1ECC-452B-907A-08A6BD72C870}
+	EndGlobalSection
+EndGlobal
