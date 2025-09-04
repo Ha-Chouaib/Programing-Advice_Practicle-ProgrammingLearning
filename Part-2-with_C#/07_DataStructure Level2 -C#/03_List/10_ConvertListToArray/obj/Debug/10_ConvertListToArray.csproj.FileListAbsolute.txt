@@ -1,0 +1,8 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\03_List\10_ConvertListToArray\bin\Debug\10_ConvertListToArray.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\03_List\10_ConvertListToArray\bin\Debug\10_ConvertListToArray.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\03_List\10_ConvertListToArray\bin\Debug\10_ConvertListToArray.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\03_List\10_ConvertListToArray\obj\Debug\10_ConvertListToArray.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\03_List\10_ConvertListToArray\obj\Debug\10_ConvertListToArray.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\03_List\10_ConvertListToArray\obj\Debug\10_ConvertListToArray.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\03_List\10_ConvertListToArray\obj\Debug\10_ConvertListToArray.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\03_List\10_ConvertListToArray\obj\Debug\10_ConvertListToArray.exe.config

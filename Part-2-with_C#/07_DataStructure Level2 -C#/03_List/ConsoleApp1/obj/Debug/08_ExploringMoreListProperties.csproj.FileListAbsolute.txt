@@ -1,0 +1,8 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\03_List\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\03_List\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\03_List\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\03_List\ConsoleApp1\obj\Debug\08_ExploringMoreListProperties.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\03_List\ConsoleApp1\obj\Debug\08_ExploringMoreListProperties.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\03_List\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\03_List\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\03_List\ConsoleApp1\obj\Debug\ConsoleApp1.exe.config
