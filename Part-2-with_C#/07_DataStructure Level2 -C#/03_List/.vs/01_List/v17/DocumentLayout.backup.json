@@ -1,25 +1,41 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\jook\\source\\repos\\Ha-Chouaib\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\03_List\\",
+  "WorkspaceRootPath": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\03_List\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8F4B3262-2AD5-4431-846C-46F084356506}|06_LINQ-FeltringData\\06_LINQ-FeltringData.csproj|c:\\users\\jook\\source\\repos\\ha-chouaib\\programing-advice_practicle-programminglearning\\part-2-with_c#\\03_list\\06_linq-feltringdata\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{68302E61-22CB-40FB-8AED-03D8081DC89D}|10_ConvertListToArray\\10_ConvertListToArray.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\03_list\\10_convertlisttoarray\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68302E61-22CB-40FB-8AED-03D8081DC89D}|10_ConvertListToArray\\10_ConvertListToArray.csproj|solutionrelative:10_convertlisttoarray\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B91AAD9A-FC93-472E-B9EB-46CD72768AA0}|09_ListOfCustomObjects\\09_ListOfCustomObjects.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\03_list\\09_listofcustomobjects\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B91AAD9A-FC93-472E-B9EB-46CD72768AA0}|09_ListOfCustomObjects\\09_ListOfCustomObjects.csproj|solutionrelative:09_listofcustomobjects\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{897E2720-4FE8-48B9-BEA7-683F0E4A6E2F}|ConsoleApp1\\ConsoleApp1.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\03_list\\consoleapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{897E2720-4FE8-48B9-BEA7-683F0E4A6E2F}|ConsoleApp1\\ConsoleApp1.csproj|solutionrelative:consoleapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAED1DFE-8738-4173-9B42-FCE01952E725}|07_SortingList\\07_SortingList.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\03_list\\07_sortinglist\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAED1DFE-8738-4173-9B42-FCE01952E725}|07_SortingList\\07_SortingList.csproj|solutionrelative:07_sortinglist\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F4B3262-2AD5-4431-846C-46F084356506}|06_LINQ-FeltringData\\06_LINQ-FeltringData.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\03_list\\06_linq-feltringdata\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8F4B3262-2AD5-4431-846C-46F084356506}|06_LINQ-FeltringData\\06_LINQ-FeltringData.csproj|solutionrelative:06_linq-feltringdata\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{359A2D99-71B0-43F3-84F3-BDA3932D95D8}|04_Looping Through List\\04_Looping Through List.csproj|c:\\users\\jook\\source\\repos\\ha-chouaib\\programing-advice_practicle-programminglearning\\part-2-with_c#\\03_list\\04_looping through list\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{359A2D99-71B0-43F3-84F3-BDA3932D95D8}|04_Looping Through List\\04_Looping Through List.csproj|C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\03_List\\04_looping through list\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{359A2D99-71B0-43F3-84F3-BDA3932D95D8}|04_Looping Through List\\04_Looping Through List.csproj|solutionrelative:04_looping through list\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1927865E-C80E-4EB6-A62B-69255579CFC6}|03_RemoveElements\\03_RemoveElements.csproj|C:\\Users\\jook\\source\\repos\\Ha-Chouaib\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\03_List\\03_removeelements\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1927865E-C80E-4EB6-A62B-69255579CFC6}|03_RemoveElements\\03_RemoveElements.csproj|C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\03_List\\03_removeelements\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1927865E-C80E-4EB6-A62B-69255579CFC6}|03_RemoveElements\\03_RemoveElements.csproj|solutionrelative:03_removeelements\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7C40362-3182-4F7F-B760-B4BEE61CB853}|02_Insert Items\\02_Insert Items.csproj|C:\\Users\\jook\\source\\repos\\Ha-Chouaib\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\03_List\\02_insert items\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B7C40362-3182-4F7F-B760-B4BEE61CB853}|02_Insert Items\\02_Insert Items.csproj|C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\03_List\\02_insert items\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B7C40362-3182-4F7F-B760-B4BEE61CB853}|02_Insert Items\\02_Insert Items.csproj|solutionrelative:02_insert items\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{470107EC-0479-4293-A120-1B5CA9BAFEE0}|01_List\\01_List.csproj|C:\\Users\\jook\\source\\repos\\Ha-Chouaib\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\03_List\\01_list\\01_workingwithlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{470107EC-0479-4293-A120-1B5CA9BAFEE0}|01_List\\01_List.csproj|C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\03_List\\01_list\\01_workingwithlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{470107EC-0479-4293-A120-1B5CA9BAFEE0}|01_List\\01_List.csproj|solutionrelative:01_list\\01_workingwithlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -36,9 +52,61 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Ha-Chouaib\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\03_List\\06_LINQ-FeltringData\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\03_List\\10_ConvertListToArray\\Program.cs",
+              "RelativeDocumentMoniker": "10_ConvertListToArray\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\03_List\\10_ConvertListToArray\\Program.cs*",
+              "RelativeToolTip": "10_ConvertListToArray\\Program.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T19:11:14.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\03_List\\09_ListOfCustomObjects\\Program.cs",
+              "RelativeDocumentMoniker": "09_ListOfCustomObjects\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\03_List\\09_ListOfCustomObjects\\Program.cs",
+              "RelativeToolTip": "09_ListOfCustomObjects\\Program.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAgwDAAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T18:12:52.124Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\03_List\\ConsoleApp1\\Program.cs",
+              "RelativeDocumentMoniker": "ConsoleApp1\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\03_List\\ConsoleApp1\\Program.cs",
+              "RelativeToolTip": "ConsoleApp1\\Program.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwCUAAABkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-03T20:17:49.817Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\03_List\\07_SortingList\\Program.cs",
+              "RelativeDocumentMoniker": "07_SortingList\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\03_List\\07_SortingList\\Program.cs",
+              "RelativeToolTip": "07_SortingList\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-03T20:09:54.775Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\03_List\\06_LINQ-FeltringData\\Program.cs",
               "RelativeDocumentMoniker": "06_LINQ-FeltringData\\Program.cs",
-              "ToolTip": "C:\\Users\\jook\\source\\repos\\Ha-Chouaib\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\03_List\\06_LINQ-FeltringData\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\03_List\\06_LINQ-FeltringData\\Program.cs",
               "RelativeToolTip": "06_LINQ-FeltringData\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -47,11 +115,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Ha-Chouaib\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\03_List\\04_Looping Through List\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\03_List\\04_Looping Through List\\Program.cs",
               "RelativeDocumentMoniker": "04_Looping Through List\\Program.cs",
-              "ToolTip": "C:\\Users\\jook\\source\\repos\\Ha-Chouaib\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\03_List\\04_Looping Through List\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\03_List\\04_Looping Through List\\Program.cs",
               "RelativeToolTip": "04_Looping Through List\\Program.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAACAAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -60,35 +128,37 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Ha-Chouaib\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\03_List\\03_RemoveElements\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\03_List\\03_RemoveElements\\Program.cs",
               "RelativeDocumentMoniker": "03_RemoveElements\\Program.cs",
-              "ToolTip": "C:\\Users\\jook\\source\\repos\\01_List\\03_RemoveElements\\Program.cs*",
-              "RelativeToolTip": "..\\..\\..\\..\\01_List\\03_RemoveElements\\Program.cs*",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\03_List\\03_RemoveElements\\Program.cs",
+              "RelativeToolTip": "03_RemoveElements\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T06:33:20.458Z"
+              "WhenOpened": "2025-09-01T06:33:20.458Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Ha-Chouaib\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\03_List\\02_Insert Items\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\03_List\\02_Insert Items\\Program.cs",
               "RelativeDocumentMoniker": "02_Insert Items\\Program.cs",
-              "ToolTip": "C:\\Users\\jook\\source\\repos\\Ha-Chouaib\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\03_List\\02_Insert Items\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\03_List\\02_Insert Items\\Program.cs",
               "RelativeToolTip": "02_Insert Items\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-31T07:25:02.742Z"
+              "WhenOpened": "2025-08-31T07:25:02.742Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "01_WorkingwithList.cs",
-              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Ha-Chouaib\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\03_List\\01_List\\01_WorkingwithList.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\03_List\\01_List\\01_WorkingwithList.cs",
               "RelativeDocumentMoniker": "01_List\\01_WorkingwithList.cs",
-              "ToolTip": "C:\\Users\\jook\\source\\repos\\Ha-Chouaib\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\03_List\\01_List\\01_WorkingwithList.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\03_List\\01_List\\01_WorkingwithList.cs",
               "RelativeToolTip": "01_List\\01_WorkingwithList.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
