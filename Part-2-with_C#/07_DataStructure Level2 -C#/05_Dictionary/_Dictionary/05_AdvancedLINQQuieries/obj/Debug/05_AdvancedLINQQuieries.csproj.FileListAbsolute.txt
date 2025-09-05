@@ -1,0 +1,7 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\05_Dictionary\_Dictionary\05_AdvancedLINQQuieries\bin\Debug\05_AdvancedLINQQuieries.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\05_Dictionary\_Dictionary\05_AdvancedLINQQuieries\bin\Debug\05_AdvancedLINQQuieries.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\05_Dictionary\_Dictionary\05_AdvancedLINQQuieries\bin\Debug\05_AdvancedLINQQuieries.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\05_Dictionary\_Dictionary\05_AdvancedLINQQuieries\obj\Debug\05_AdvancedLINQQuieries.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\05_Dictionary\_Dictionary\05_AdvancedLINQQuieries\obj\Debug\05_AdvancedLINQQuieries.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\05_Dictionary\_Dictionary\05_AdvancedLINQQuieries\obj\Debug\05_AdvancedLINQQuieries.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\05_Dictionary\_Dictionary\05_AdvancedLINQQuieries\obj\Debug\05_AdvancedLINQQuieries.pdb
