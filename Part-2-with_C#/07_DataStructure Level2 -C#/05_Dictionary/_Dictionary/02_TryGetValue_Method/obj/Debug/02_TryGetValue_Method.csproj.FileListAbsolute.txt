@@ -1,0 +1,7 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\05_Dictionary\_Dictionary\02_TryGetValue_Method\bin\Debug\02_TryGetValue_Method.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\05_Dictionary\_Dictionary\02_TryGetValue_Method\bin\Debug\02_TryGetValue_Method.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\05_Dictionary\_Dictionary\02_TryGetValue_Method\bin\Debug\02_TryGetValue_Method.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\05_Dictionary\_Dictionary\02_TryGetValue_Method\obj\Debug\02_TryGetValue_Method.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\05_Dictionary\_Dictionary\02_TryGetValue_Method\obj\Debug\02_TryGetValue_Method.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\05_Dictionary\_Dictionary\02_TryGetValue_Method\obj\Debug\02_TryGetValue_Method.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\05_Dictionary\_Dictionary\02_TryGetValue_Method\obj\Debug\02_TryGetValue_Method.pdb

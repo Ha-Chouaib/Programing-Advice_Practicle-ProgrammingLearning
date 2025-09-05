@@ -1,0 +1,7 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\05_Dictionary\_Dictionary\03_LINQ_With-Dictionary\bin\Debug\03_LINQ_With-Dictionary.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\05_Dictionary\_Dictionary\03_LINQ_With-Dictionary\bin\Debug\03_LINQ_With-Dictionary.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\05_Dictionary\_Dictionary\03_LINQ_With-Dictionary\bin\Debug\03_LINQ_With-Dictionary.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\05_Dictionary\_Dictionary\03_LINQ_With-Dictionary\obj\Debug\03_LINQ_With-Dictionary.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\05_Dictionary\_Dictionary\03_LINQ_With-Dictionary\obj\Debug\03_LINQ_With-Dictionary.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\05_Dictionary\_Dictionary\03_LINQ_With-Dictionary\obj\Debug\03_LINQ_With-Dictionary.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\05_Dictionary\_Dictionary\03_LINQ_With-Dictionary\obj\Debug\03_LINQ_With-Dictionary.pdb
