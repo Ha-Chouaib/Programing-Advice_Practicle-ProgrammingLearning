@@ -1,0 +1,8 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\01_Inserting_Exercises\bin\Debug\01_Inserting_Exercises.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\01_Inserting_Exercises\bin\Debug\01_Inserting_Exercises.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\01_Inserting_Exercises\bin\Debug\01_Inserting_Exercises.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\01_Inserting_Exercises\obj\Debug\01_Inserting_Exercises.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\01_Inserting_Exercises\obj\Debug\01_Inserting_Exercises.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\01_Inserting_Exercises\obj\Debug\01_Inserting_Exercises.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\01_Inserting_Exercises\obj\Debug\01_Inserting_Exercises.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\01_Inserting_Exercises\obj\Debug\01_Inserting_Exercises.exe.config
