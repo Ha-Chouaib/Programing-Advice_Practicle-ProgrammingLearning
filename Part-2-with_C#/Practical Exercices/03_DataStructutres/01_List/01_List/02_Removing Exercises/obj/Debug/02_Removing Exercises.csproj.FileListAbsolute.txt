@@ -1,0 +1,7 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\02_Removing Exercises\bin\Debug\02_Removing Exercises.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\02_Removing Exercises\bin\Debug\02_Removing Exercises.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\02_Removing Exercises\bin\Debug\02_Removing Exercises.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\02_Removing Exercises\obj\Debug\02_Removing Exercises.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\02_Removing Exercises\obj\Debug\02_Removing Exercises.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\02_Removing Exercises\obj\Debug\02_Removing Exercises.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\02_Removing Exercises\obj\Debug\02_Removing Exercises.pdb
