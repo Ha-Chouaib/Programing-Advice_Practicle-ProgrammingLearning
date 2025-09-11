@@ -3,11 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\01_List\\01_List\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6B89CDCA-DFB8-49D2-84DB-52659E2C094F}|02_Removing Exercises\\02_Removing Exercises.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\practical exercices\\03_datastructutres\\01_list\\01_list\\02_removing exercises\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B3362D55-0DAE-44E7-AF69-B7055596E0BE}|04_Aggregating Data-LINQ\\04_Aggregating Data-LINQ.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\practical exercices\\03_datastructutres\\01_list\\01_list\\04_aggregating data-linq\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3362D55-0DAE-44E7-AF69-B7055596E0BE}|04_Aggregating Data-LINQ\\04_Aggregating Data-LINQ.csproj|solutionrelative:04_aggregating data-linq\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56696038-2778-4E52-8742-4B072BBD23DF}|List.ForEach\\03_List.ForEach.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\practical exercices\\03_datastructutres\\01_list\\01_list\\list.foreach\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56696038-2778-4E52-8742-4B072BBD23DF}|List.ForEach\\03_List.ForEach.csproj|solutionrelative:list.foreach\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B89CDCA-DFB8-49D2-84DB-52659E2C094F}|02_Removing Exercises\\02_Removing Exercises.csproj|C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\01_List\\01_List\\02_removing exercises\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6B89CDCA-DFB8-49D2-84DB-52659E2C094F}|02_Removing Exercises\\02_Removing Exercises.csproj|solutionrelative:02_removing exercises\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A98FB0D5-658A-4D63-8114-88F99C00E3D8}|01_Inserting_Exercises\\01_Inserting_Exercises.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\practical exercices\\03_datastructutres\\01_list\\01_list\\01_inserting_exercises\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A98FB0D5-658A-4D63-8114-88F99C00E3D8}|01_Inserting_Exercises\\01_Inserting_Exercises.csproj|C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\01_List\\01_List\\01_inserting_exercises\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A98FB0D5-658A-4D63-8114-88F99C00E3D8}|01_Inserting_Exercises\\01_Inserting_Exercises.csproj|solutionrelative:01_inserting_exercises\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -24,24 +32,50 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\01_List\\01_List\\02_Removing Exercises\\Program.cs",
-              "RelativeDocumentMoniker": "02_Removing Exercises\\Program.cs",
-              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\01_List\\01_List\\02_Removing Exercises\\Program.cs",
-              "RelativeToolTip": "02_Removing Exercises\\Program.cs",
-              "ViewState": "AgIAAFkAAAAAAAAAAAAgwHAAAABpAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\01_List\\01_List\\04_Aggregating Data-LINQ\\Program.cs",
+              "RelativeDocumentMoniker": "04_Aggregating Data-LINQ\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\01_List\\01_List\\04_Aggregating Data-LINQ\\Program.cs*",
+              "RelativeToolTip": "04_Aggregating Data-LINQ\\Program.cs*",
+              "ViewState": "AgIAAJoAAAAAAAAAAAAgwLoAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T06:35:01.172Z",
+              "WhenOpened": "2025-09-11T07:19:04.267Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\01_List\\01_List\\List.ForEach\\Program.cs",
+              "RelativeDocumentMoniker": "List.ForEach\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\01_List\\01_List\\List.ForEach\\Program.cs",
+              "RelativeToolTip": "List.ForEach\\Program.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAgwD8AAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-08T19:46:40.353Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\01_List\\01_List\\02_Removing Exercises\\Program.cs",
+              "RelativeDocumentMoniker": "02_Removing Exercises\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\01_List\\01_List\\02_Removing Exercises\\Program.cs",
+              "RelativeToolTip": "02_Removing Exercises\\Program.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAgwHAAAABpAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-08T06:35:01.172Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\01_List\\01_List\\01_Inserting_Exercises\\Program.cs",
               "RelativeDocumentMoniker": "01_Inserting_Exercises\\Program.cs",
               "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\01_List\\01_List\\01_Inserting_Exercises\\Program.cs",
               "RelativeToolTip": "01_Inserting_Exercises\\Program.cs",
-              "ViewState": "AgIAAGcAAAAAAAAAAAAgwJQAAABvAAAAAAAAAA==",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAgwJQAAABvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-07T06:15:00.098Z",
               "EditorCaption": ""

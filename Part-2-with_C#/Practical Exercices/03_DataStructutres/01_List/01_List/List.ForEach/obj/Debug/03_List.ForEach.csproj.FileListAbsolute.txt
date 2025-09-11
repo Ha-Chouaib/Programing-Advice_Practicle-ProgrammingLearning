@@ -1,0 +1,8 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\List.ForEach\bin\Debug\List.ForEach.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\List.ForEach\bin\Debug\List.ForEach.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\List.ForEach\bin\Debug\List.ForEach.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\List.ForEach\obj\Debug\03_List.ForEach.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\List.ForEach\obj\Debug\03_List.ForEach.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\List.ForEach\obj\Debug\List.ForEach.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\List.ForEach\obj\Debug\List.ForEach.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\List.ForEach\obj\Debug\List.ForEach.exe.config
