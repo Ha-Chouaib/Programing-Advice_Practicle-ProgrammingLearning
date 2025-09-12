@@ -178,7 +178,7 @@ namespace _04_Aggregating_Data_LINQ
             }
 
             /*
-             6. Group words by length
+             16. Group words by length
                 # Create a list ["Pen", "Book", "Notebook", "Phone", "PC"].
                 # Use GroupBy() to group by word length.
                 # Print each length and its words.

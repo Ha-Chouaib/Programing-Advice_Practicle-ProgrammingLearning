@@ -1,0 +1,8 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\05_FilteringData-Where()\bin\Debug\05_FilteringData-Where().exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\05_FilteringData-Where()\bin\Debug\05_FilteringData-Where().exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\05_FilteringData-Where()\bin\Debug\05_FilteringData-Where().pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\05_FilteringData-Where()\obj\Debug\05_FilteringData-Where().csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\05_FilteringData-Where()\obj\Debug\05_FilteringData-Where().csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\05_FilteringData-Where()\obj\Debug\05_FilteringData-Where().exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\05_FilteringData-Where()\obj\Debug\05_FilteringData-Where().pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\01_List\01_List\05_FilteringData-Where()\obj\Debug\05_FilteringData-Where().exe.config
