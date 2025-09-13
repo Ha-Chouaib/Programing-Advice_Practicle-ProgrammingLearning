@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_Aggregating Data-LINQ", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_FilteringData-Where()", "05_FilteringData-Where()\05_FilteringData-Where().csproj", "{EBB77866-A89C-449F-8538-AE30C7F9BAC2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_Searching Functions", "06_Searching Functions\06_Searching Functions.csproj", "{21CC1EF3-273B-44D1-BB4E-5586F4BCAAB2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{EBB77866-A89C-449F-8538-AE30C7F9BAC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBB77866-A89C-449F-8538-AE30C7F9BAC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBB77866-A89C-449F-8538-AE30C7F9BAC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21CC1EF3-273B-44D1-BB4E-5586F4BCAAB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21CC1EF3-273B-44D1-BB4E-5586F4BCAAB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21CC1EF3-273B-44D1-BB4E-5586F4BCAAB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21CC1EF3-273B-44D1-BB4E-5586F4BCAAB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
