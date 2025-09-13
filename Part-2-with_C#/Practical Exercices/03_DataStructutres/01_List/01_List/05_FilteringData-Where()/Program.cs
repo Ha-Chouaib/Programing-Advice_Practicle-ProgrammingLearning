@@ -150,7 +150,7 @@ namespace _05_FilteringData_Where__
              */
             Nums = new List<int> { 3, 6, 9, 12, 15, 18, 5, 10, 21, 25, 30, 33, 7, 40, 45 };
             Console.WriteLine($"\n[10] Initial List Items -({string.Join(" , ", Nums)})" +
-                $"\nonly those that are divisible by 3 and greater than 10: [{string.Join(" , ", Nums.Where(n => (n % 3 == 0 && n > 10)))}]");
+                $"\nOnly those that are divisible by 3 and greater than 10: [{string.Join(" , ", Nums.Where(n => (n % 3 == 0 && n > 10)))}]");
 
         }
     }
