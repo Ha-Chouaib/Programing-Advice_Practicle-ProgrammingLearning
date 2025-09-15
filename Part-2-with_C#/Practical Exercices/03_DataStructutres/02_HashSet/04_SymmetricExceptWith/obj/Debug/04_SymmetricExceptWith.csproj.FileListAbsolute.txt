@@ -1,0 +1,8 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\04_SymmetricExceptWith\bin\Debug\04_SymmetricExceptWith.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\04_SymmetricExceptWith\bin\Debug\04_SymmetricExceptWith.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\04_SymmetricExceptWith\bin\Debug\04_SymmetricExceptWith.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\04_SymmetricExceptWith\obj\Debug\04_SymmetricExceptWith.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\04_SymmetricExceptWith\obj\Debug\04_SymmetricExceptWith.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\04_SymmetricExceptWith\obj\Debug\04_SymmetricExceptWith.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\04_SymmetricExceptWith\obj\Debug\04_SymmetricExceptWith.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\04_SymmetricExceptWith\obj\Debug\04_SymmetricExceptWith.exe.config

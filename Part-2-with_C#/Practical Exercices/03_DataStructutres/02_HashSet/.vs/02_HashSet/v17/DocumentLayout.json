@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\02_HashSet\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{70FB22A8-FFBE-44F6-B5A3-439A8E8AE177}|07_Overlaps\\07_Overlaps.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\practical exercices\\03_datastructutres\\02_hashset\\07_overlaps\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70FB22A8-FFBE-44F6-B5A3-439A8E8AE177}|07_Overlaps\\07_Overlaps.csproj|solutionrelative:07_overlaps\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E86D1631-B5F5-4C38-ACAA-454F76988961}|06_IsSubsetOf_IsSupersetOf\\06_IsSubsetOf_IsSupersetOf.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\practical exercices\\03_datastructutres\\02_hashset\\06_issubsetof_issupersetof\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E86D1631-B5F5-4C38-ACAA-454F76988961}|06_IsSubsetOf_IsSupersetOf\\06_IsSubsetOf_IsSupersetOf.csproj|solutionrelative:06_issubsetof_issupersetof\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA6018F2-AD68-456C-84E0-FC49996D97B6}|05_SetEquals\\05_SetEquals.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\practical exercices\\03_datastructutres\\02_hashset\\05_setequals\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA6018F2-AD68-456C-84E0-FC49996D97B6}|05_SetEquals\\05_SetEquals.csproj|solutionrelative:05_setequals\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{094469E9-53F6-4EF0-8DC1-BC926EAA5A51}|04_SymmetricExceptWith\\04_SymmetricExceptWith.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\practical exercices\\03_datastructutres\\02_hashset\\04_symmetricexceptwith\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{094469E9-53F6-4EF0-8DC1-BC926EAA5A51}|04_SymmetricExceptWith\\04_SymmetricExceptWith.csproj|solutionrelative:04_symmetricexceptwith\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F18F234-89CF-41B7-A64E-5F8FE0B44F3B}|03_ExceptWith\\03_ExceptWith.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\practical exercices\\03_datastructutres\\02_hashset\\03_exceptwith\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F18F234-89CF-41B7-A64E-5F8FE0B44F3B}|03_ExceptWith\\03_ExceptWith.csproj|solutionrelative:03_exceptwith\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7E86950-2C57-467A-A17B-1CE5F31A5456}|01_UnionWith\\01_UnionWith.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\practical exercices\\03_datastructutres\\02_hashset\\01_unionwith\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7E86950-2C57-467A-A17B-1CE5F31A5456}|01_UnionWith\\01_UnionWith.csproj|solutionrelative:01_unionwith\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4EA34C2-DFD9-4954-A7E7-5FA89AC2DCCB}|02_IntersectWith\\02_IntersectWith.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\practical exercices\\03_datastructutres\\02_hashset\\02_intersectwith\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4EA34C2-DFD9-4954-A7E7-5FA89AC2DCCB}|02_IntersectWith\\02_IntersectWith.csproj|solutionrelative:02_intersectwith\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\02_HashSet\\07_Overlaps\\Program.cs",
+              "RelativeDocumentMoniker": "07_Overlaps\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\02_HashSet\\07_Overlaps\\Program.cs",
+              "RelativeToolTip": "07_Overlaps\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T20:18:18.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\02_HashSet\\06_IsSubsetOf_IsSupersetOf\\Program.cs",
+              "RelativeDocumentMoniker": "06_IsSubsetOf_IsSupersetOf\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\02_HashSet\\06_IsSubsetOf_IsSupersetOf\\Program.cs",
+              "RelativeToolTip": "06_IsSubsetOf_IsSupersetOf\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T20:12:21.352Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\02_HashSet\\05_SetEquals\\Program.cs",
+              "RelativeDocumentMoniker": "05_SetEquals\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\02_HashSet\\05_SetEquals\\Program.cs",
+              "RelativeToolTip": "05_SetEquals\\Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T20:05:05.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\02_HashSet\\04_SymmetricExceptWith\\Program.cs",
+              "RelativeDocumentMoniker": "04_SymmetricExceptWith\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\02_HashSet\\04_SymmetricExceptWith\\Program.cs",
+              "RelativeToolTip": "04_SymmetricExceptWith\\Program.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwCMAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T19:51:50.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\02_HashSet\\03_ExceptWith\\Program.cs",
+              "RelativeDocumentMoniker": "03_ExceptWith\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\02_HashSet\\03_ExceptWith\\Program.cs",
+              "RelativeToolTip": "03_ExceptWith\\Program.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAQwCEAAAB5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T19:33:39.875Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\02_HashSet\\02_IntersectWith\\Program.cs",
+              "RelativeDocumentMoniker": "02_IntersectWith\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\02_HashSet\\02_IntersectWith\\Program.cs",
+              "RelativeToolTip": "02_IntersectWith\\Program.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAgwCgAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T19:01:12.857Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\02_HashSet\\01_UnionWith\\Program.cs",
+              "RelativeDocumentMoniker": "01_UnionWith\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\02_HashSet\\01_UnionWith\\Program.cs",
+              "RelativeToolTip": "01_UnionWith\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T18:39:27.841Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\06_IsSubsetOf_IsSupersetOf\bin\Debug\06_IsSubsetOf_IsSupersetOf.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\06_IsSubsetOf_IsSupersetOf\bin\Debug\06_IsSubsetOf_IsSupersetOf.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\06_IsSubsetOf_IsSupersetOf\bin\Debug\06_IsSubsetOf_IsSupersetOf.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\06_IsSubsetOf_IsSupersetOf\obj\Debug\06_IsSubsetOf_IsSupersetOf.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\06_IsSubsetOf_IsSupersetOf\obj\Debug\06_IsSubsetOf_IsSupersetOf.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\06_IsSubsetOf_IsSupersetOf\obj\Debug\06_IsSubsetOf_IsSupersetOf.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\06_IsSubsetOf_IsSupersetOf\obj\Debug\06_IsSubsetOf_IsSupersetOf.pdb

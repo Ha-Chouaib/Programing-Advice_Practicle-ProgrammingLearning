@@ -1,0 +1,8 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\02_IntersectWith\bin\Debug\02_IntersectWith.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\02_IntersectWith\bin\Debug\02_IntersectWith.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\02_IntersectWith\bin\Debug\02_IntersectWith.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\02_IntersectWith\obj\Debug\02_IntersectWith.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\02_IntersectWith\obj\Debug\02_IntersectWith.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\02_IntersectWith\obj\Debug\02_IntersectWith.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\02_IntersectWith\obj\Debug\02_IntersectWith.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\02_IntersectWith\obj\Debug\02_IntersectWith.exe.config

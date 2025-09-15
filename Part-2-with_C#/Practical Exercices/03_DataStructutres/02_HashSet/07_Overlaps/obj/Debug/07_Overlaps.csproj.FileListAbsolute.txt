@@ -1,0 +1,7 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\07_Overlaps\bin\Debug\07_Overlaps.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\07_Overlaps\bin\Debug\07_Overlaps.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\07_Overlaps\bin\Debug\07_Overlaps.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\07_Overlaps\obj\Debug\07_Overlaps.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\07_Overlaps\obj\Debug\07_Overlaps.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\07_Overlaps\obj\Debug\07_Overlaps.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Practical Exercices\03_DataStructutres\02_HashSet\07_Overlaps\obj\Debug\07_Overlaps.pdb
