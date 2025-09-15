@@ -1,0 +1,7 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\06_HashSet\HashSet\08_Intersection\bin\Debug\08_Intersection.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\06_HashSet\HashSet\08_Intersection\bin\Debug\08_Intersection.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\06_HashSet\HashSet\08_Intersection\bin\Debug\08_Intersection.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\06_HashSet\HashSet\08_Intersection\obj\Debug\08_Intersection.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\06_HashSet\HashSet\08_Intersection\obj\Debug\08_Intersection.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\06_HashSet\HashSet\08_Intersection\obj\Debug\08_Intersection.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\06_HashSet\HashSet\08_Intersection\obj\Debug\08_Intersection.pdb

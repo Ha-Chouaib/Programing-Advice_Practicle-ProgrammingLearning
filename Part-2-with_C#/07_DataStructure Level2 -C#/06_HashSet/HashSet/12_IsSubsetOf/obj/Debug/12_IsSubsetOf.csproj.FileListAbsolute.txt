@@ -1,0 +1,8 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\06_HashSet\HashSet\12_IsSubsetOf\bin\Debug\12_IsSubsetOf.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\06_HashSet\HashSet\12_IsSubsetOf\bin\Debug\12_IsSubsetOf.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\06_HashSet\HashSet\12_IsSubsetOf\bin\Debug\12_IsSubsetOf.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\06_HashSet\HashSet\12_IsSubsetOf\obj\Debug\12_IsSubsetOf.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\06_HashSet\HashSet\12_IsSubsetOf\obj\Debug\12_IsSubsetOf.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\06_HashSet\HashSet\12_IsSubsetOf\obj\Debug\12_IsSubsetOf.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\06_HashSet\HashSet\12_IsSubsetOf\obj\Debug\12_IsSubsetOf.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\06_HashSet\HashSet\12_IsSubsetOf\obj\Debug\12_IsSubsetOf.exe.config

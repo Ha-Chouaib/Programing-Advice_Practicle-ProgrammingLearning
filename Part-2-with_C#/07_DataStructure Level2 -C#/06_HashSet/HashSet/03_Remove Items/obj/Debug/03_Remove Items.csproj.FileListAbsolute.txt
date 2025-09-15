@@ -1,0 +1,7 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\06_HashSet\HashSet\03_Remove Items\bin\Debug\03_Remove Items.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\06_HashSet\HashSet\03_Remove Items\bin\Debug\03_Remove Items.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\06_HashSet\HashSet\03_Remove Items\bin\Debug\03_Remove Items.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\06_HashSet\HashSet\03_Remove Items\obj\Debug\03_Remove Items.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\06_HashSet\HashSet\03_Remove Items\obj\Debug\03_Remove Items.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\06_HashSet\HashSet\03_Remove Items\obj\Debug\03_Remove Items.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\06_HashSet\HashSet\03_Remove Items\obj\Debug\03_Remove Items.pdb

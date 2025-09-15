@@ -1,0 +1,258 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\06_HashSet\\HashSet\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1D6C3BC8-DF81-4BFB-851B-796BDD478294}|14_Overlaps\\14_Overlaps.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\06_hashset\\hashset\\14_overlaps\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D6C3BC8-DF81-4BFB-851B-796BDD478294}|14_Overlaps\\14_Overlaps.csproj|solutionrelative:14_overlaps\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1D6FB7A-E561-485D-9BE8-AF75AF357B46}|13_IsSuperSet\\13_IsSuperSet.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\06_hashset\\hashset\\13_issuperset\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1D6FB7A-E561-485D-9BE8-AF75AF357B46}|13_IsSuperSet\\13_IsSuperSet.csproj|solutionrelative:13_issuperset\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{222B2586-FE11-4A30-AABC-78649A43F886}|12_IsSubsetOf\\12_IsSubsetOf.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\06_hashset\\hashset\\12_issubsetof\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{222B2586-FE11-4A30-AABC-78649A43F886}|12_IsSubsetOf\\12_IsSubsetOf.csproj|solutionrelative:12_issubsetof\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7ACFCFD4-FF19-4A96-BD04-2DEA4AC2EDCB}|11_SetEquals\\11_SetEquals.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\06_hashset\\hashset\\11_setequals\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7ACFCFD4-FF19-4A96-BD04-2DEA4AC2EDCB}|11_SetEquals\\11_SetEquals.csproj|solutionrelative:11_setequals\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3A570DC-68AC-4A5C-AB5D-C6324A556DD1}|10_Symmetric Difference\\10_Symmetric Difference.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\06_hashset\\hashset\\10_symmetric difference\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3A570DC-68AC-4A5C-AB5D-C6324A556DD1}|10_Symmetric Difference\\10_Symmetric Difference.csproj|solutionrelative:10_symmetric difference\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A657CC5-1648-49AD-A8AC-1BE7FD817902}|09_Difference Operation\\09_Difference Operation.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\06_hashset\\hashset\\09_difference operation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A657CC5-1648-49AD-A8AC-1BE7FD817902}|09_Difference Operation\\09_Difference Operation.csproj|solutionrelative:09_difference operation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0789163-5A0A-4A0A-BF2B-F47FBB149501}|08_Intersection\\08_Intersection.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\06_hashset\\hashset\\08_intersection\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0789163-5A0A-4A0A-BF2B-F47FBB149501}|08_Intersection\\08_Intersection.csproj|solutionrelative:08_intersection\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9DAC9C7-73BB-4F43-A478-DB50A1D500A9}|07_Uinion_Sets\\07_Uinion_Sets.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\06_hashset\\hashset\\07_uinion_sets\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9DAC9C7-73BB-4F43-A478-DB50A1D500A9}|07_Uinion_Sets\\07_Uinion_Sets.csproj|solutionrelative:07_uinion_sets\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED28D8AC-A138-44FD-B9C3-1E7526693810}|06_LINQ \u0026 HashSet\\06_LINQ \u0026 HashSet.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\06_hashset\\hashset\\06_linq \u0026 hashset\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED28D8AC-A138-44FD-B9C3-1E7526693810}|06_LINQ \u0026 HashSet\\06_LINQ \u0026 HashSet.csproj|solutionrelative:06_linq \u0026 hashset\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CA40743-057E-4617-9FD7-90488F95380A}|05_LINQ \u0026 HashSet\\05_LINQ \u0026 HashSet.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\06_hashset\\hashset\\05_linq \u0026 hashset\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CA40743-057E-4617-9FD7-90488F95380A}|05_LINQ \u0026 HashSet\\05_LINQ \u0026 HashSet.csproj|solutionrelative:05_linq \u0026 hashset\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EE1890C-9ED4-4787-A4DB-C248FADC039C}|04_Remove Dupicated Values\\04_Remove Dupicated Values.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\06_hashset\\hashset\\04_remove dupicated values\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EE1890C-9ED4-4787-A4DB-C248FADC039C}|04_Remove Dupicated Values\\04_Remove Dupicated Values.csproj|solutionrelative:04_remove dupicated values\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36DFB2B-79D0-42FE-9B87-30E92E29101B}|03_Remove Items\\03_Remove Items.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\06_hashset\\hashset\\03_remove items\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A36DFB2B-79D0-42FE-9B87-30E92E29101B}|03_Remove Items\\03_Remove Items.csproj|solutionrelative:03_remove items\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69073E0B-71B0-4833-8D8B-AC6ED0CBFDF8}|02_Checking for Existence\\02_Checking for Existence.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\06_hashset\\hashset\\02_checking for existence\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69073E0B-71B0-4833-8D8B-AC6ED0CBFDF8}|02_Checking for Existence\\02_Checking for Existence.csproj|solutionrelative:02_checking for existence\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A9E3119-B4DF-489A-A000-17A8A4198DE9}|HashSet\\HashSet.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\06_hashset\\hashset\\hashset\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A9E3119-B4DF-489A-A000-17A8A4198DE9}|HashSet\\HashSet.csproj|solutionrelative:hashset\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\06_HashSet\\HashSet\\14_Overlaps\\Program.cs",
+              "RelativeDocumentMoniker": "14_Overlaps\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\06_HashSet\\HashSet\\14_Overlaps\\Program.cs",
+              "RelativeToolTip": "14_Overlaps\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T07:20:57.689Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\06_HashSet\\HashSet\\13_IsSuperSet\\Program.cs",
+              "RelativeDocumentMoniker": "13_IsSuperSet\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\06_HashSet\\HashSet\\13_IsSuperSet\\Program.cs",
+              "RelativeToolTip": "13_IsSuperSet\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T07:18:29.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\06_HashSet\\HashSet\\12_IsSubsetOf\\Program.cs",
+              "RelativeDocumentMoniker": "12_IsSubsetOf\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\06_HashSet\\HashSet\\12_IsSubsetOf\\Program.cs",
+              "RelativeToolTip": "12_IsSubsetOf\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T07:12:44.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\06_HashSet\\HashSet\\11_SetEquals\\Program.cs",
+              "RelativeDocumentMoniker": "11_SetEquals\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\06_HashSet\\HashSet\\11_SetEquals\\Program.cs",
+              "RelativeToolTip": "11_SetEquals\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T07:09:45.34Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\06_HashSet\\HashSet\\10_Symmetric Difference\\Program.cs",
+              "RelativeDocumentMoniker": "10_Symmetric Difference\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\06_HashSet\\HashSet\\10_Symmetric Difference\\Program.cs",
+              "RelativeToolTip": "10_Symmetric Difference\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T07:03:08.746Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\06_HashSet\\HashSet\\09_Difference Operation\\Program.cs",
+              "RelativeDocumentMoniker": "09_Difference Operation\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\06_HashSet\\HashSet\\09_Difference Operation\\Program.cs",
+              "RelativeToolTip": "09_Difference Operation\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T06:56:49.311Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\06_HashSet\\HashSet\\08_Intersection\\Program.cs",
+              "RelativeDocumentMoniker": "08_Intersection\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\06_HashSet\\HashSet\\08_Intersection\\Program.cs",
+              "RelativeToolTip": "08_Intersection\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T06:53:37.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\06_HashSet\\HashSet\\07_Uinion_Sets\\Program.cs",
+              "RelativeDocumentMoniker": "07_Uinion_Sets\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\06_HashSet\\HashSet\\07_Uinion_Sets\\Program.cs",
+              "RelativeToolTip": "07_Uinion_Sets\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T06:49:40.637Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\06_HashSet\\HashSet\\06_LINQ \u0026 HashSet\\Program.cs",
+              "RelativeDocumentMoniker": "06_LINQ \u0026 HashSet\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\06_HashSet\\HashSet\\06_LINQ \u0026 HashSet\\Program.cs",
+              "RelativeToolTip": "06_LINQ \u0026 HashSet\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T06:46:38.732Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\06_HashSet\\HashSet\\05_LINQ \u0026 HashSet\\Program.cs",
+              "RelativeDocumentMoniker": "05_LINQ \u0026 HashSet\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\06_HashSet\\HashSet\\05_LINQ \u0026 HashSet\\Program.cs",
+              "RelativeToolTip": "05_LINQ \u0026 HashSet\\Program.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAYwCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T06:43:14.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\06_HashSet\\HashSet\\04_Remove Dupicated Values\\Program.cs",
+              "RelativeDocumentMoniker": "04_Remove Dupicated Values\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\06_HashSet\\HashSet\\04_Remove Dupicated Values\\Program.cs",
+              "RelativeToolTip": "04_Remove Dupicated Values\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T06:37:05.284Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\06_HashSet\\HashSet\\03_Remove Items\\Program.cs",
+              "RelativeDocumentMoniker": "03_Remove Items\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\06_HashSet\\HashSet\\03_Remove Items\\Program.cs",
+              "RelativeToolTip": "03_Remove Items\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T06:30:48.701Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\06_HashSet\\HashSet\\02_Checking for Existence\\Program.cs",
+              "RelativeDocumentMoniker": "02_Checking for Existence\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\06_HashSet\\HashSet\\02_Checking for Existence\\Program.cs",
+              "RelativeToolTip": "02_Checking for Existence\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T06:24:08.899Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\06_HashSet\\HashSet\\HashSet\\Program.cs",
+              "RelativeDocumentMoniker": "HashSet\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\06_HashSet\\HashSet\\HashSet\\Program.cs",
+              "RelativeToolTip": "HashSet\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T06:16:01.767Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

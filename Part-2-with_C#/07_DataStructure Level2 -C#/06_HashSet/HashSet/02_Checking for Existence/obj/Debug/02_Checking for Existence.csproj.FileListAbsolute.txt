@@ -1,0 +1,7 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\06_HashSet\HashSet\02_Checking for Existence\bin\Debug\02_Checking for Existence.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\06_HashSet\HashSet\02_Checking for Existence\bin\Debug\02_Checking for Existence.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\06_HashSet\HashSet\02_Checking for Existence\bin\Debug\02_Checking for Existence.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\06_HashSet\HashSet\02_Checking for Existence\obj\Debug\02_Checking for Existence.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\06_HashSet\HashSet\02_Checking for Existence\obj\Debug\02_Checking for Existence.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\06_HashSet\HashSet\02_Checking for Existence\obj\Debug\02_Checking for Existence.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\06_HashSet\HashSet\02_Checking for Existence\obj\Debug\02_Checking for Existence.pdb
