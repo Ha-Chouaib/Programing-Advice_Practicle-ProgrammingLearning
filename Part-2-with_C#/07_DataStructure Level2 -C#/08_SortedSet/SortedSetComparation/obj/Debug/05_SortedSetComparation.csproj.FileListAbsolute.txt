@@ -1,0 +1,7 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\08_SortedSet\SortedSetComparation\bin\Debug\SortedSetComparation.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\08_SortedSet\SortedSetComparation\bin\Debug\SortedSetComparation.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\08_SortedSet\SortedSetComparation\bin\Debug\SortedSetComparation.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\08_SortedSet\SortedSetComparation\obj\Debug\05_SortedSetComparation.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\08_SortedSet\SortedSetComparation\obj\Debug\05_SortedSetComparation.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\08_SortedSet\SortedSetComparation\obj\Debug\SortedSetComparation.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\08_SortedSet\SortedSetComparation\obj\Debug\SortedSetComparation.pdb

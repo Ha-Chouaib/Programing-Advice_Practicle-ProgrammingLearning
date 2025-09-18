@@ -1,0 +1,7 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\07_SortedList\04_ComplexObjectOperations\bin\Debug\04_ComplexObjectOperations.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\07_SortedList\04_ComplexObjectOperations\bin\Debug\04_ComplexObjectOperations.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\07_SortedList\04_ComplexObjectOperations\bin\Debug\04_ComplexObjectOperations.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\07_SortedList\04_ComplexObjectOperations\obj\Debug\04_ComplexObjectOperations.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\07_SortedList\04_ComplexObjectOperations\obj\Debug\04_ComplexObjectOperations.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\07_SortedList\04_ComplexObjectOperations\obj\Debug\04_ComplexObjectOperations.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\07_SortedList\04_ComplexObjectOperations\obj\Debug\04_ComplexObjectOperations.pdb

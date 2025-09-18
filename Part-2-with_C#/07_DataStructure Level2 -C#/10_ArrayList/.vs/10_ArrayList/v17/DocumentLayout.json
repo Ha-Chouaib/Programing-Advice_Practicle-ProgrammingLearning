@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\10_ArrayList\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4EAA4032-AC78-406F-BAF9-9AA2836E28F9}|04_Counting occurrences\\04_Counting occurrences.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\10_arraylist\\04_counting occurrences\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EAA4032-AC78-406F-BAF9-9AA2836E28F9}|04_Counting occurrences\\04_Counting occurrences.csproj|solutionrelative:04_counting occurrences\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{256745A9-577C-46E2-B02B-4BBFA16CE677}|03_Aggregate Functions\\03_Aggregate Functions.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\10_arraylist\\03_aggregate functions\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{256745A9-577C-46E2-B02B-4BBFA16CE677}|03_Aggregate Functions\\03_Aggregate Functions.csproj|solutionrelative:03_aggregate functions\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{684BC951-FC96-45F7-99B6-A9512A55F323}|02_FeltringArrayListWithLINQ\\02_FeltringArrayListWithLINQ.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\10_arraylist\\02_feltringarraylistwithlinq\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{684BC951-FC96-45F7-99B6-A9512A55F323}|02_FeltringArrayListWithLINQ\\02_FeltringArrayListWithLINQ.csproj|solutionrelative:02_feltringarraylistwithlinq\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F54B603-833A-4C33-B17A-EAC5B474BFB1}|01_WorkingWithArrayList\\01_WorkingWithArrayList.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\10_arraylist\\01_workingwitharraylist\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F54B603-833A-4C33-B17A-EAC5B474BFB1}|01_WorkingWithArrayList\\01_WorkingWithArrayList.csproj|solutionrelative:01_workingwitharraylist\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\10_ArrayList\\04_Counting occurrences\\Program.cs",
+              "RelativeDocumentMoniker": "04_Counting occurrences\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\10_ArrayList\\04_Counting occurrences\\Program.cs",
+              "RelativeToolTip": "04_Counting occurrences\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T06:19:37.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\10_ArrayList\\03_Aggregate Functions\\Program.cs",
+              "RelativeDocumentMoniker": "03_Aggregate Functions\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\10_ArrayList\\03_Aggregate Functions\\Program.cs",
+              "RelativeToolTip": "03_Aggregate Functions\\Program.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAA3wBUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T06:16:02.819Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\10_ArrayList\\02_FeltringArrayListWithLINQ\\Program.cs",
+              "RelativeDocumentMoniker": "02_FeltringArrayListWithLINQ\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\10_ArrayList\\02_FeltringArrayListWithLINQ\\Program.cs",
+              "RelativeToolTip": "02_FeltringArrayListWithLINQ\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T06:13:29.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\10_ArrayList\\01_WorkingWithArrayList\\Program.cs",
+              "RelativeDocumentMoniker": "01_WorkingWithArrayList\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\10_ArrayList\\01_WorkingWithArrayList\\Program.cs",
+              "RelativeToolTip": "01_WorkingWithArrayList\\Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-16T19:47:48.086Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

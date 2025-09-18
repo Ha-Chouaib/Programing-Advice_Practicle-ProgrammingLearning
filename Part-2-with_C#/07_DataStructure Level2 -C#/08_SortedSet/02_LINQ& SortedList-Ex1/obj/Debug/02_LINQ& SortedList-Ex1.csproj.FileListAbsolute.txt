@@ -1,0 +1,7 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\08_SortedSet\02_LINQ& SortedList-Ex1\bin\Debug\02_LINQ& SortedList-Ex1.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\08_SortedSet\02_LINQ& SortedList-Ex1\bin\Debug\02_LINQ& SortedList-Ex1.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\08_SortedSet\02_LINQ& SortedList-Ex1\bin\Debug\02_LINQ& SortedList-Ex1.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\08_SortedSet\02_LINQ& SortedList-Ex1\obj\Debug\02_LINQ& SortedList-Ex1.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\08_SortedSet\02_LINQ& SortedList-Ex1\obj\Debug\02_LINQ& SortedList-Ex1.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\08_SortedSet\02_LINQ& SortedList-Ex1\obj\Debug\02_LINQ& SortedList-Ex1.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\08_SortedSet\02_LINQ& SortedList-Ex1\obj\Debug\02_LINQ& SortedList-Ex1.pdb

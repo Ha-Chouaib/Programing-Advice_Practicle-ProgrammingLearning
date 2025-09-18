@@ -1,0 +1,7 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\array\05_LINQ with Arrays\bin\Debug\05_LINQ with Arrays.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\array\05_LINQ with Arrays\bin\Debug\05_LINQ with Arrays.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\array\05_LINQ with Arrays\bin\Debug\05_LINQ with Arrays.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\array\05_LINQ with Arrays\obj\Debug\05_LINQ with Arrays.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\array\05_LINQ with Arrays\obj\Debug\05_LINQ with Arrays.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\array\05_LINQ with Arrays\obj\Debug\05_LINQ with Arrays.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\array\05_LINQ with Arrays\obj\Debug\05_LINQ with Arrays.pdb

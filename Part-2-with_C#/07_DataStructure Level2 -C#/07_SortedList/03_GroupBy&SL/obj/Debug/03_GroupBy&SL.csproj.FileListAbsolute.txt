@@ -1,0 +1,7 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\07_SortedList\03_GroupBy&SL\bin\Debug\03_GroupBy&SL.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\07_SortedList\03_GroupBy&SL\bin\Debug\03_GroupBy&SL.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\07_SortedList\03_GroupBy&SL\bin\Debug\03_GroupBy&SL.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\07_SortedList\03_GroupBy&SL\obj\Debug\03_GroupBy&SL.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\07_SortedList\03_GroupBy&SL\obj\Debug\03_GroupBy&SL.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\07_SortedList\03_GroupBy&SL\obj\Debug\03_GroupBy&SL.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\07_SortedList\03_GroupBy&SL\obj\Debug\03_GroupBy&SL.pdb

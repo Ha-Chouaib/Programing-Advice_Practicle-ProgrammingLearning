@@ -1,0 +1,7 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\10_ArrayList\03_Aggregate Functions\bin\Debug\03_Aggregate Functions.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\10_ArrayList\03_Aggregate Functions\bin\Debug\03_Aggregate Functions.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\10_ArrayList\03_Aggregate Functions\bin\Debug\03_Aggregate Functions.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\10_ArrayList\03_Aggregate Functions\obj\Debug\03_Aggregate Functions.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\10_ArrayList\03_Aggregate Functions\obj\Debug\03_Aggregate Functions.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\10_ArrayList\03_Aggregate Functions\obj\Debug\03_Aggregate Functions.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\10_ArrayList\03_Aggregate Functions\obj\Debug\03_Aggregate Functions.pdb
