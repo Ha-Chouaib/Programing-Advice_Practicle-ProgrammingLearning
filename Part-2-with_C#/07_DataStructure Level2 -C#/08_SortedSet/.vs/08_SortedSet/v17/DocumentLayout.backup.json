@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\08_SortedSet\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{036268DD-7121-4DEA-B6E6-FDF7AE7966C1}|SortedSetComparation\\SortedSetComparation.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\08_sortedset\\sortedsetcomparation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{036268DD-7121-4DEA-B6E6-FDF7AE7966C1}|SortedSetComparation\\SortedSetComparation.csproj|solutionrelative:sortedsetcomparation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9875FA9D-DCCF-4441-8EAB-2A0C573D0F6C}|04_SortedSetOperations\\04_SortedSetOperations.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\08_sortedset\\04_sortedsetoperations\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9875FA9D-DCCF-4441-8EAB-2A0C573D0F6C}|04_SortedSetOperations\\04_SortedSetOperations.csproj|solutionrelative:04_sortedsetoperations\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B0B9D17-58AB-43A7-BD7D-1FCF39285796}|03_LINQ\u0026SortedList-Ex2\\03_LINQ\u0026SortedList-Ex2.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\08_sortedset\\03_linq\u0026sortedlist-ex2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B0B9D17-58AB-43A7-BD7D-1FCF39285796}|03_LINQ\u0026SortedList-Ex2\\03_LINQ\u0026SortedList-Ex2.csproj|solutionrelative:03_linq\u0026sortedlist-ex2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{246D2CCC-060B-4D30-AAB7-3BCD53A7409F}|02_LINQ\u0026 SortedList-Ex1\\02_LINQ\u0026 SortedList-Ex1.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\08_sortedset\\02_linq\u0026 sortedlist-ex1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{246D2CCC-060B-4D30-AAB7-3BCD53A7409F}|02_LINQ\u0026 SortedList-Ex1\\02_LINQ\u0026 SortedList-Ex1.csproj|solutionrelative:02_linq\u0026 sortedlist-ex1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FC8F2DE-AE2E-4178-8C63-2E3E4AEF342C}|01_WorkingWithSortedSet\\01_WorkingWithSortedSet.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\08_sortedset\\01_workingwithsortedset\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FC8F2DE-AE2E-4178-8C63-2E3E4AEF342C}|01_WorkingWithSortedSet\\01_WorkingWithSortedSet.csproj|solutionrelative:01_workingwithsortedset\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\08_SortedSet\\SortedSetComparation\\Program.cs",
+              "RelativeDocumentMoniker": "SortedSetComparation\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\08_SortedSet\\SortedSetComparation\\Program.cs",
+              "RelativeToolTip": "SortedSetComparation\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB0AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-16T08:51:56.155Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\08_SortedSet\\04_SortedSetOperations\\Program.cs",
+              "RelativeDocumentMoniker": "04_SortedSetOperations\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\08_SortedSet\\04_SortedSetOperations\\Program.cs",
+              "RelativeToolTip": "04_SortedSetOperations\\Program.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAgwCcAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-16T08:49:23.541Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\08_SortedSet\\03_LINQ\u0026SortedList-Ex2\\Program.cs",
+              "RelativeDocumentMoniker": "03_LINQ\u0026SortedList-Ex2\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\08_SortedSet\\03_LINQ\u0026SortedList-Ex2\\Program.cs",
+              "RelativeToolTip": "03_LINQ\u0026SortedList-Ex2\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-16T08:46:53.347Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\08_SortedSet\\02_LINQ\u0026 SortedList-Ex1\\Program.cs",
+              "RelativeDocumentMoniker": "02_LINQ\u0026 SortedList-Ex1\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\08_SortedSet\\02_LINQ\u0026 SortedList-Ex1\\Program.cs",
+              "RelativeToolTip": "02_LINQ\u0026 SortedList-Ex1\\Program.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwCsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-16T08:44:36.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\08_SortedSet\\01_WorkingWithSortedSet\\Program.cs",
+              "RelativeDocumentMoniker": "01_WorkingWithSortedSet\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\08_SortedSet\\01_WorkingWithSortedSet\\Program.cs",
+              "RelativeToolTip": "01_WorkingWithSortedSet\\Program.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAgwDAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-16T08:39:15.094Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

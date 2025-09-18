@@ -1,0 +1,7 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\10_ArrayList\02_FeltringArrayListWithLINQ\bin\Debug\02_FeltringArrayListWithLINQ.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\10_ArrayList\02_FeltringArrayListWithLINQ\bin\Debug\02_FeltringArrayListWithLINQ.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\10_ArrayList\02_FeltringArrayListWithLINQ\bin\Debug\02_FeltringArrayListWithLINQ.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\10_ArrayList\02_FeltringArrayListWithLINQ\obj\Debug\02_FeltringArrayListWithLINQ.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\10_ArrayList\02_FeltringArrayListWithLINQ\obj\Debug\02_FeltringArrayListWithLINQ.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\10_ArrayList\02_FeltringArrayListWithLINQ\obj\Debug\02_FeltringArrayListWithLINQ.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\10_ArrayList\02_FeltringArrayListWithLINQ\obj\Debug\02_FeltringArrayListWithLINQ.pdb

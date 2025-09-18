@@ -1,0 +1,7 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\08_SortedSet\01_WorkingWithSortedSet\bin\Debug\01_WorkingWithSortedSet.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\08_SortedSet\01_WorkingWithSortedSet\bin\Debug\01_WorkingWithSortedSet.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\08_SortedSet\01_WorkingWithSortedSet\bin\Debug\01_WorkingWithSortedSet.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\08_SortedSet\01_WorkingWithSortedSet\obj\Debug\01_WorkingWithSortedSet.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\08_SortedSet\01_WorkingWithSortedSet\obj\Debug\01_WorkingWithSortedSet.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\08_SortedSet\01_WorkingWithSortedSet\obj\Debug\01_WorkingWithSortedSet.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\08_SortedSet\01_WorkingWithSortedSet\obj\Debug\01_WorkingWithSortedSet.pdb

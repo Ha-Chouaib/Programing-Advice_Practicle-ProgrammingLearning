@@ -1,0 +1,7 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\07_SortedList\02_LINQ&SortedList\bin\Debug\02_LINQ&SortedList.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\07_SortedList\02_LINQ&SortedList\bin\Debug\02_LINQ&SortedList.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\07_SortedList\02_LINQ&SortedList\bin\Debug\02_LINQ&SortedList.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\07_SortedList\02_LINQ&SortedList\obj\Debug\02_LINQ&SortedList.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\07_SortedList\02_LINQ&SortedList\obj\Debug\02_LINQ&SortedList.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\07_SortedList\02_LINQ&SortedList\obj\Debug\02_LINQ&SortedList.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\07_SortedList\02_LINQ&SortedList\obj\Debug\02_LINQ&SortedList.pdb

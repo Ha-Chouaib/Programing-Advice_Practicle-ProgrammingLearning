@@ -1,0 +1,8 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\array\06_AdvancedLINQOperations\bin\Debug\06_AdvancedLINQOperations.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\array\06_AdvancedLINQOperations\bin\Debug\06_AdvancedLINQOperations.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\array\06_AdvancedLINQOperations\bin\Debug\06_AdvancedLINQOperations.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\array\06_AdvancedLINQOperations\obj\Debug\06_AdvancedLINQOperations.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\array\06_AdvancedLINQOperations\obj\Debug\06_AdvancedLINQOperations.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\array\06_AdvancedLINQOperations\obj\Debug\06_AdvancedLINQOperations.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\array\06_AdvancedLINQOperations\obj\Debug\06_AdvancedLINQOperations.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\array\06_AdvancedLINQOperations\obj\Debug\06_AdvancedLINQOperations.exe.config

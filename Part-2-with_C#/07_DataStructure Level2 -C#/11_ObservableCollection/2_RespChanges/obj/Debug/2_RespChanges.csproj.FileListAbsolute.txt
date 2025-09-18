@@ -1,0 +1,8 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\11_ObservableCollection\2_RespChanges\bin\Debug\2_RespChanges.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\11_ObservableCollection\2_RespChanges\bin\Debug\2_RespChanges.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\11_ObservableCollection\2_RespChanges\bin\Debug\2_RespChanges.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\11_ObservableCollection\2_RespChanges\obj\Debug\2_RespChanges.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\11_ObservableCollection\2_RespChanges\obj\Debug\2_RespChanges.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\11_ObservableCollection\2_RespChanges\obj\Debug\2_RespChanges.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\11_ObservableCollection\2_RespChanges\obj\Debug\2_RespChanges.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\11_ObservableCollection\2_RespChanges\obj\Debug\2_RespChanges.exe.config
