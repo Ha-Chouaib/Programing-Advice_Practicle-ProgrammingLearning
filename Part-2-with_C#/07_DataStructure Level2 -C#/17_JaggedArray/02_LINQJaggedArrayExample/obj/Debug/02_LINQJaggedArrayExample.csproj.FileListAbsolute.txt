@@ -1,0 +1,7 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\17_JaggedArray\02_LINQJaggedArrayExample\bin\Debug\02_LINQJaggedArrayExample.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\17_JaggedArray\02_LINQJaggedArrayExample\bin\Debug\02_LINQJaggedArrayExample.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\17_JaggedArray\02_LINQJaggedArrayExample\bin\Debug\02_LINQJaggedArrayExample.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\17_JaggedArray\02_LINQJaggedArrayExample\obj\Debug\02_LINQJaggedArrayExample.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\17_JaggedArray\02_LINQJaggedArrayExample\obj\Debug\02_LINQJaggedArrayExample.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\17_JaggedArray\02_LINQJaggedArrayExample\obj\Debug\02_LINQJaggedArrayExample.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\17_JaggedArray\02_LINQJaggedArrayExample\obj\Debug\02_LINQJaggedArrayExample.pdb

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36511.14 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_JaggedArray", "01_JaggedArray\01_JaggedArray.csproj", "{142CB206-7CDF-4943-8A5F-F99C558239F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_LINQJaggedArrayExample", "02_LINQJaggedArrayExample\02_LINQJaggedArrayExample.csproj", "{8870A352-D7E1-4C7A-B479-13AA45F98957}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{142CB206-7CDF-4943-8A5F-F99C558239F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{142CB206-7CDF-4943-8A5F-F99C558239F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{142CB206-7CDF-4943-8A5F-F99C558239F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{142CB206-7CDF-4943-8A5F-F99C558239F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8870A352-D7E1-4C7A-B479-13AA45F98957}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8870A352-D7E1-4C7A-B479-13AA45F98957}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8870A352-D7E1-4C7A-B479-13AA45F98957}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8870A352-D7E1-4C7A-B479-13AA45F98957}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {56F8863A-3FA9-4C53-86DD-84D5B7596DA5}
+	EndGlobalSection
+EndGlobal
