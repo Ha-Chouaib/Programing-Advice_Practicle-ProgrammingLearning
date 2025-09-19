@@ -1,0 +1,7 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\16_BitArray\02_BitwiseOperations\bin\Debug\02_BitwiseOperations.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\16_BitArray\02_BitwiseOperations\bin\Debug\02_BitwiseOperations.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\16_BitArray\02_BitwiseOperations\bin\Debug\02_BitwiseOperations.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\16_BitArray\02_BitwiseOperations\obj\Debug\02_BitwiseOperations.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\16_BitArray\02_BitwiseOperations\obj\Debug\02_BitwiseOperations.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\16_BitArray\02_BitwiseOperations\obj\Debug\02_BitwiseOperations.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\16_BitArray\02_BitwiseOperations\obj\Debug\02_BitwiseOperations.pdb

@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\16_BitArray\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EA1C8547-D594-4359-90EB-4E99EED65EC6}|02_BitwiseOperations\\02_BitwiseOperations.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\16_bitarray\\02_bitwiseoperations\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA1C8547-D594-4359-90EB-4E99EED65EC6}|02_BitwiseOperations\\02_BitwiseOperations.csproj|solutionrelative:02_bitwiseoperations\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D5D55A8-D64D-408A-874F-9344A3ADCA5B}|01_BitArray\\01_BitArray.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\16_bitarray\\01_bitarray\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D5D55A8-D64D-408A-874F-9344A3ADCA5B}|01_BitArray\\01_BitArray.csproj|solutionrelative:01_bitarray\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\16_BitArray\\02_BitwiseOperations\\Program.cs",
+              "RelativeDocumentMoniker": "02_BitwiseOperations\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\16_BitArray\\02_BitwiseOperations\\Program.cs",
+              "RelativeToolTip": "02_BitwiseOperations\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T19:22:48.597Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\16_BitArray\\01_BitArray\\Program.cs",
+              "RelativeDocumentMoniker": "01_BitArray\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\16_BitArray\\01_BitArray\\Program.cs",
+              "RelativeToolTip": "01_BitArray\\Program.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAwBQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T05:52:04.495Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
