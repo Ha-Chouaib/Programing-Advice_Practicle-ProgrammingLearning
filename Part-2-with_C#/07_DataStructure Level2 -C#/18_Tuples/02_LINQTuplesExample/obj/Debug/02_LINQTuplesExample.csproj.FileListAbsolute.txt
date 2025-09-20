@@ -1,0 +1,7 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\18_Tuples\02_LINQTuplesExample\bin\Debug\02_LINQTuplesExample.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\18_Tuples\02_LINQTuplesExample\bin\Debug\02_LINQTuplesExample.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\18_Tuples\02_LINQTuplesExample\bin\Debug\02_LINQTuplesExample.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\18_Tuples\02_LINQTuplesExample\obj\Debug\02_LINQTuplesExample.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\18_Tuples\02_LINQTuplesExample\obj\Debug\02_LINQTuplesExample.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\18_Tuples\02_LINQTuplesExample\obj\Debug\02_LINQTuplesExample.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\18_Tuples\02_LINQTuplesExample\obj\Debug\02_LINQTuplesExample.pdb
