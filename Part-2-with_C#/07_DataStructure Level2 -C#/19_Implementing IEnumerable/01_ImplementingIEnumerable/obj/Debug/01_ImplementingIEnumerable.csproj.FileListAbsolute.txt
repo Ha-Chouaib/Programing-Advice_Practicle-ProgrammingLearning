@@ -1,0 +1,7 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\19_Implementing IEnumerable\01_ImplementingIEnumerable\bin\Debug\01_ImplementingIEnumerable.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\19_Implementing IEnumerable\01_ImplementingIEnumerable\bin\Debug\01_ImplementingIEnumerable.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\19_Implementing IEnumerable\01_ImplementingIEnumerable\bin\Debug\01_ImplementingIEnumerable.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\19_Implementing IEnumerable\01_ImplementingIEnumerable\obj\Debug\01_ImplementingIEnumerable.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\19_Implementing IEnumerable\01_ImplementingIEnumerable\obj\Debug\01_ImplementingIEnumerable.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\19_Implementing IEnumerable\01_ImplementingIEnumerable\obj\Debug\01_ImplementingIEnumerable.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\19_Implementing IEnumerable\01_ImplementingIEnumerable\obj\Debug\01_ImplementingIEnumerable.pdb

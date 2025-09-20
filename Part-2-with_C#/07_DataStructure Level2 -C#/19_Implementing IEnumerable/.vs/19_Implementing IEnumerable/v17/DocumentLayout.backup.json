@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\19_Implementing IEnumerable\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{01BDC748-281B-4FB7-91EA-EC0B54D7CAE5}|01_ImplementingIEnumerable\\01_ImplementingIEnumerable.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\19_implementing ienumerable\\01_implementingienumerable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01BDC748-281B-4FB7-91EA-EC0B54D7CAE5}|01_ImplementingIEnumerable\\01_ImplementingIEnumerable.csproj|solutionrelative:01_implementingienumerable\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\19_Implementing IEnumerable\\01_ImplementingIEnumerable\\Program.cs",
+              "RelativeDocumentMoniker": "01_ImplementingIEnumerable\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\19_Implementing IEnumerable\\01_ImplementingIEnumerable\\Program.cs*",
+              "RelativeToolTip": "01_ImplementingIEnumerable\\Program.cs*",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAACsAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-20T08:31:31.674Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

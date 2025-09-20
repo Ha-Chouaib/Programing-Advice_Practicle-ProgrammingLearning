@@ -1,0 +1,7 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\20_ICollection\01_ImplementingICollection\bin\Debug\01_ImplementingICollection.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\20_ICollection\01_ImplementingICollection\bin\Debug\01_ImplementingICollection.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\20_ICollection\01_ImplementingICollection\bin\Debug\01_ImplementingICollection.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\20_ICollection\01_ImplementingICollection\obj\Debug\01_ImplementingICollection.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\20_ICollection\01_ImplementingICollection\obj\Debug\01_ImplementingICollection.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\20_ICollection\01_ImplementingICollection\obj\Debug\01_ImplementingICollection.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\20_ICollection\01_ImplementingICollection\obj\Debug\01_ImplementingICollection.pdb
