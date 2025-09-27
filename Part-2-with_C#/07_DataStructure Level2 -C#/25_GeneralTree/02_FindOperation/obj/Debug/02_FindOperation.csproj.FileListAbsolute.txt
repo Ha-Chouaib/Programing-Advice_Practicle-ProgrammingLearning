@@ -1,0 +1,8 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\25_GeneralTree\02_FindOperation\bin\Debug\02_FindOperation.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\25_GeneralTree\02_FindOperation\bin\Debug\02_FindOperation.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\25_GeneralTree\02_FindOperation\bin\Debug\02_FindOperation.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\25_GeneralTree\02_FindOperation\obj\Debug\02_FindOperation.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\25_GeneralTree\02_FindOperation\obj\Debug\02_FindOperation.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\25_GeneralTree\02_FindOperation\obj\Debug\02_FindOperation.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\25_GeneralTree\02_FindOperation\obj\Debug\02_FindOperation.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\25_GeneralTree\02_FindOperation\obj\Debug\02_FindOperation.exe.config

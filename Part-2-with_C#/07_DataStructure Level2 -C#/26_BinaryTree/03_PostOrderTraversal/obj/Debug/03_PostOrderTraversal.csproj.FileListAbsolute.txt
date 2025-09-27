@@ -1,0 +1,7 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\26_BinaryTree\03_PostOrderTraversal\bin\Debug\03_PostOrderTraversal.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\26_BinaryTree\03_PostOrderTraversal\bin\Debug\03_PostOrderTraversal.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\26_BinaryTree\03_PostOrderTraversal\bin\Debug\03_PostOrderTraversal.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\26_BinaryTree\03_PostOrderTraversal\obj\Debug\03_PostOrderTraversal.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\26_BinaryTree\03_PostOrderTraversal\obj\Debug\03_PostOrderTraversal.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\26_BinaryTree\03_PostOrderTraversal\obj\Debug\03_PostOrderTraversal.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\26_BinaryTree\03_PostOrderTraversal\obj\Debug\03_PostOrderTraversal.pdb

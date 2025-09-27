@@ -1,0 +1,8 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\26_BinaryTree\02_PreOrderTraversal\bin\Debug\02_PreOrderTraversal.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\26_BinaryTree\02_PreOrderTraversal\bin\Debug\02_PreOrderTraversal.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\26_BinaryTree\02_PreOrderTraversal\bin\Debug\02_PreOrderTraversal.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\26_BinaryTree\02_PreOrderTraversal\obj\Debug\02_PreOrderTraversal.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\26_BinaryTree\02_PreOrderTraversal\obj\Debug\02_PreOrderTraversal.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\26_BinaryTree\02_PreOrderTraversal\obj\Debug\02_PreOrderTraversal.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\26_BinaryTree\02_PreOrderTraversal\obj\Debug\02_PreOrderTraversal.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\26_BinaryTree\02_PreOrderTraversal\obj\Debug\02_PreOrderTraversal.exe.config
