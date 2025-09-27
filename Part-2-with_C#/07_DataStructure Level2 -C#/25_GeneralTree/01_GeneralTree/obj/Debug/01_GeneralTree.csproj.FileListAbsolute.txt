@@ -1,0 +1,8 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\25_GeneralTree\25_GeneralTree\bin\Debug\25_GeneralTree.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\25_GeneralTree\25_GeneralTree\bin\Debug\25_GeneralTree.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\25_GeneralTree\25_GeneralTree\bin\Debug\25_GeneralTree.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\25_GeneralTree\25_GeneralTree\obj\Debug\01_GeneralTree.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\25_GeneralTree\25_GeneralTree\obj\Debug\01_GeneralTree.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\25_GeneralTree\25_GeneralTree\obj\Debug\25_GeneralTree.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\25_GeneralTree\25_GeneralTree\obj\Debug\25_GeneralTree.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\25_GeneralTree\25_GeneralTree\obj\Debug\25_GeneralTree.exe.config

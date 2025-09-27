@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\25_GeneralTree\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1BDA9B92-CF5A-434B-B9D0-D4D887F15874}|02_FamilyTree\\02_FamilyTree.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\25_generaltree\\02_familytree\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BDA9B92-CF5A-434B-B9D0-D4D887F15874}|02_FamilyTree\\02_FamilyTree.csproj|solutionrelative:02_familytree\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F8989-1ECF-4EDE-B391-37CCA4009CE7}|25_GeneralTree\\25_GeneralTree.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\07_datastructure level2 -c#\\25_generaltree\\25_generaltree\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F8989-1ECF-4EDE-B391-37CCA4009CE7}|25_GeneralTree\\25_GeneralTree.csproj|solutionrelative:25_generaltree\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\25_GeneralTree\\02_FamilyTree\\Program.cs",
+              "RelativeDocumentMoniker": "02_FamilyTree\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\25_GeneralTree\\02_FamilyTree\\Program.cs*",
+              "RelativeToolTip": "02_FamilyTree\\Program.cs*",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAqwCEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T19:47:27.007Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\25_GeneralTree\\25_GeneralTree\\Program.cs",
+              "RelativeDocumentMoniker": "25_GeneralTree\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\07_DataStructure Level2 -C#\\25_GeneralTree\\25_GeneralTree\\Program.cs*",
+              "RelativeToolTip": "25_GeneralTree\\Program.cs*",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAswEAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T06:45:23.176Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

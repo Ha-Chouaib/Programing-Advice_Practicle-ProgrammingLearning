@@ -1,0 +1,8 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\26_BinaryTree\01_BinaryTree\bin\Debug\01_BinaryTree.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\26_BinaryTree\01_BinaryTree\bin\Debug\01_BinaryTree.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\26_BinaryTree\01_BinaryTree\bin\Debug\01_BinaryTree.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\26_BinaryTree\01_BinaryTree\obj\Debug\01_BinaryTree.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\26_BinaryTree\01_BinaryTree\obj\Debug\01_BinaryTree.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\26_BinaryTree\01_BinaryTree\obj\Debug\01_BinaryTree.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\26_BinaryTree\01_BinaryTree\obj\Debug\01_BinaryTree.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\07_DataStructure Level2 -C#\26_BinaryTree\01_BinaryTree\obj\Debug\01_BinaryTree.exe.config
