@@ -66,5 +66,121 @@ namespace Bank_DataAccess.People
 
 
         }
+    
+    
+        
+        public static int AddNewPerson(string NationalNo,  string FirstName,  string LastName,  DateTime DateOfBirth,  byte Gender,
+                                     string Email,  string Phone,  short CountryID,  string Address,  string ImgPath)
+        {
+
+            string Query = @"Sp_AddNewPerson";
+            int NewPersonID = -1;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
+                using (SqlCommand cmd = new SqlCommand(Query, connection))
+                {
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@FirstName", FirstName);
+                    cmd.Parameters.AddWithValue("@LastName", LastName);
+                    cmd.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
+                    cmd.Parameters.AddWithValue("@NationalNo", NationalNo);
+                    cmd.Parameters.AddWithValue("@Email", Email);
+                    cmd.Parameters.AddWithValue("@Phone", Phone);
+                    cmd.Parameters.AddWithValue("@CountryID", CountryID);
+                    cmd.Parameters.AddWithValue("@Address", Address);
+                    cmd.Parameters.AddWithValue("@ImagePath", string.IsNullOrEmpty(ImgPath) ? DBNull.Value : (object)ImgPath);
+
+
+                    SqlParameter outputParam = new SqlParameter("@PersonID", System.Data.SqlDbType.Int) { Direction = System.Data.ParameterDirection.Output };
+                    cmd.Parameters.Add(outputParam);
+
+                    string ErrorMSG = "";
+                    bool Success = false;
+
+                    connection.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            Success = Convert.ToBoolean(reader["Success"]);
+                            if (!Success)
+                            {
+                                ErrorMSG = reader["ErrorMSG"].ToString();
+                                throw new InvalidOperationException(ErrorMSG);
+                            }
+
+                        }
+                    }
+                    NewPersonID = (int)(cmd.Parameters["@PersonID"].Value ?? -1);
+                }
+            }
+            catch(SqlException ex)
+            {
+                clsEventLogger.LogError($"[DAL: Person.AddNewPerson() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                clsEventLogger.LogError($"[DAL: Person.AddNewPerson() ] -> {ex.Message}");
+
+            }
+            return NewPersonID;
+
+
+        }
+    
+    
+        public static bool UpdatePersonInf(int PersonID,string NationalNo, string FirstName, string LastName, DateTime DateOfBirth, byte Gender,
+                                     string Email, string Phone, short CountryID, string Address, string ImgPath)
+        {
+            string Query = "Sp_UpdatePersonInf";
+            bool Success = false;
+          
+            try
+            {
+                using(SqlConnection conn = new SqlConnection(DataAccessSettings.connectionString))
+                using (SqlCommand cmd = new SqlCommand(Query, conn))
+                {
+
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@PersonID", PersonID);
+                    cmd.Parameters.AddWithValue("@FirstName", FirstName);
+                    cmd.Parameters.AddWithValue("@LastName", LastName);
+                    cmd.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
+                    cmd.Parameters.AddWithValue("@NationalNo", NationalNo);
+                    cmd.Parameters.AddWithValue("@Email", Email);
+                    cmd.Parameters.AddWithValue("@Phone", Phone);
+                    cmd.Parameters.AddWithValue("@CountryID", CountryID);
+                    cmd.Parameters.AddWithValue("@Address", Address);
+                    cmd.Parameters.AddWithValue("@ImagePath", string.IsNullOrEmpty(ImgPath) ? DBNull.Value : (object)ImgPath);
+
+                    conn.Open();
+
+                    using (SqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        if (rdr.Read())
+                        {
+                            Success = Convert.ToBoolean(rdr["Success"]);
+                            if(!Success)
+                            {
+                                throw new InvalidOperationException( rdr["ErrorMSG"].ToString()); 
+                            }
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                clsEventLogger.LogError($"[DAL: Person.AddNewPerson() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                clsEventLogger.LogError($"[DAL: Person.AddNewPerson() ] -> {ex.Message}");
+
+            }
+            return Success;
+        }
     }
 }

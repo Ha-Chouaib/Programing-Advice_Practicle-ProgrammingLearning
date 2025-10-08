@@ -23,7 +23,7 @@ namespace Bank_BusinessLayer
         public string Address { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
-        public int CountryID { get; set; }
+        public short CountryID { get; set; }
         public string ImagePath { get; set; }
 
         public clsPerson(int PersonID, string NationalNo, string FirstName,  string LastName, DateTime DateOfBirth, byte Gender,
@@ -86,5 +86,40 @@ namespace Bank_BusinessLayer
             }
 
         }
+    
+    
+        private bool _AddNewPerson()
+        {
+            this.PersonID = clsPersonDataAccess.AddNewPerson(this.NationalNo,this.FirstName,this.LastName,this.DateOfBirth,this.Gender,this.Email,
+                this.Phone,this.CountryID,this.Address,this.ImagePath);
+            return this.PersonID != -1;
+        }
+
+        private bool _UpdatePerson()
+        {
+            return clsPersonDataAccess.UpdatePersonInf(this.PersonID,this.NationalNo, this.FirstName, this.LastName, this.DateOfBirth, this.Gender, this.Email,
+                this.Phone, this.CountryID, this.Address, this.ImagePath);
+        }
+    
+        public bool Save()
+        {
+            switch(_Mode)
+            {
+                case enMode.eAddNew:
+                    if(_AddNewPerson())
+                    {
+                        _Mode = enMode.eUpdate;
+                        return true;
+                    }else return false;
+
+                case enMode.eUpdate:
+                    return _UpdatePerson();
+
+                default:
+                    return false;
+            }
+        }
+    
+    
     }
 }
