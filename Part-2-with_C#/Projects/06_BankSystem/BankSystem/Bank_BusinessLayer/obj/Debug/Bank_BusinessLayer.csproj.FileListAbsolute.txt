@@ -9,3 +9,4 @@ C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-
 C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\06_BankSystem\BankSystem\Bank_BusinessLayer\obj\Debug\Bank_Bus.7A804047.Up2Date
 C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\06_BankSystem\BankSystem\Bank_BusinessLayer\obj\Debug\Bank_BusinessLayer.exe
 C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\06_BankSystem\BankSystem\Bank_BusinessLayer\obj\Debug\Bank_BusinessLayer.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\06_BankSystem\BankSystem\Bank_BusinessLayer\obj\Debug\Bank_BusinessLayer.exe.config

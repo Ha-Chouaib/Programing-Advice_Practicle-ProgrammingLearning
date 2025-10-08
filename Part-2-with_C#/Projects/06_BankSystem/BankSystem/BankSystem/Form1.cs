@@ -34,8 +34,12 @@ namespace BankSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            clsPerson p = clsPerson.FindByPersonID(1);
-            MessageBox.Show($"{p.NationalNo}, {p.FullName}");
+            clsPerson person =  clsPerson.FindByPersonID(3);
+
+            person.FirstName = "Ahmed";
+            if (person.Save())
+                MessageBox.Show($"PersonID: {person.PersonID} | Full Name: {person.FirstName}");
+            else MessageBox.Show("Something is Going Wrong");
         }
     }
 }
