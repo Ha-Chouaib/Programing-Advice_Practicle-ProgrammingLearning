@@ -43,12 +43,13 @@ BEGIN
            ,@CreatedAt
            ,@CreatedByUserID 
            );
-        SET @PersonID = SCOPE_IDENTITY();
 
+        SET @PersonID = SCOPE_IDENTITY();
+        SELECT 1 AS Success
     END TRY
 
     BEGIN CATCH
-        SELECT -1 AS Failed , ERROR_MESSAGE() AS ErrorMSG;
+        SELECT 0 AS Success , ERROR_MESSAGE() AS ErrorMSG;
     END CATCH;
 
 END;

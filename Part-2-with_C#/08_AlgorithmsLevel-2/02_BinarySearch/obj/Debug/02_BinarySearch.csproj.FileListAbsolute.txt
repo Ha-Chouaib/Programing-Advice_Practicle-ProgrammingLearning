@@ -1,0 +1,7 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\02_BinarySearch\bin\Debug\02_BinarySearch.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\02_BinarySearch\bin\Debug\02_BinarySearch.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\02_BinarySearch\bin\Debug\02_BinarySearch.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\02_BinarySearch\obj\Debug\02_BinarySearch.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\02_BinarySearch\obj\Debug\02_BinarySearch.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\02_BinarySearch\obj\Debug\02_BinarySearch.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\02_BinarySearch\obj\Debug\02_BinarySearch.pdb
