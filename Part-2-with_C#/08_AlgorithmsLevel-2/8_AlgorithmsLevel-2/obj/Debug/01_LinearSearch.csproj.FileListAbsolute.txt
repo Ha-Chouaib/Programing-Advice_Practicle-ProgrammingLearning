@@ -1,0 +1,7 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\8_AlgorithmsLevel-2\bin\Debug\8_AlgorithmsLevel-2.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\8_AlgorithmsLevel-2\bin\Debug\8_AlgorithmsLevel-2.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\8_AlgorithmsLevel-2\bin\Debug\8_AlgorithmsLevel-2.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\8_AlgorithmsLevel-2\obj\Debug\01_LinearSearch.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\8_AlgorithmsLevel-2\obj\Debug\01_LinearSearch.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\8_AlgorithmsLevel-2\obj\Debug\8_AlgorithmsLevel-2.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\8_AlgorithmsLevel-2\obj\Debug\8_AlgorithmsLevel-2.pdb
