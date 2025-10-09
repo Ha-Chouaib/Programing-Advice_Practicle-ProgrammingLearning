@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Text;
@@ -67,8 +68,6 @@ namespace Bank_DataAccess.People
 
         }
     
-    
-        
         public static int AddNewPerson(string NationalNo,  string FirstName,  string LastName,  DateTime DateOfBirth,  byte Gender,
                                      string Email,  string Phone,  short CountryID,  string Address,  string ImgPath)
         {
@@ -129,8 +128,7 @@ namespace Bank_DataAccess.People
 
 
         }
-    
-    
+   
         public static bool UpdatePersonInf(int PersonID,string NationalNo, string FirstName, string LastName, DateTime DateOfBirth, byte Gender,
                                      string Email, string Phone, short CountryID, string Address, string ImgPath)
         {
@@ -182,5 +180,140 @@ namespace Bank_DataAccess.People
             }
             return Success;
         }
+        public static bool Exist(int PersonID)
+        {
+            string Query = "SELECT dbo.Fn_IsPersonExistsByID(@PersonID)";
+            bool exist = false;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
+                using (SqlCommand cmd = new SqlCommand(Query, connection))
+                {
+                    cmd.CommandType = System.Data.CommandType.Text;
+
+                    cmd.Parameters.AddWithValue("@PersonID", PersonID);
+                    connection.Open();
+
+                    object result = cmd.ExecuteScalar();
+                    if (result != DBNull.Value && bool.TryParse(result.ToString(), out bool success)) exist = success;
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                clsEventLogger.LogError($"[DAL: Person.Exists() < By PersonID >] -> SqlServer Error({ex.Number}): {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                clsEventLogger.LogError($"[DAL: Person.Exists() < By PersonID > ] -> {ex.Message}");
+
+            }
+            return exist;
+        }
+
+        public static bool Exist(string NationalNo)
+        {
+            string Query = "SELECT dbo.Fn_IsPersonExistsByNationalNo(@NationalNo)";
+            bool exist = false;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
+                using (SqlCommand cmd = new SqlCommand(Query, connection))
+                {
+                    cmd.CommandType = System.Data.CommandType.Text;
+
+                    cmd.Parameters.AddWithValue("@NationalNo", NationalNo);
+                    connection.Open();
+
+                    object result = cmd.ExecuteScalar();
+                    if (result != DBNull.Value && bool.TryParse(result.ToString(), out bool success)) exist = success;
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                clsEventLogger.LogError($"[DAL: Person.Exists() < By NationalNo >] -> SqlServer Error({ex.Number}): {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                clsEventLogger.LogError($"[DAL: Person.Exists() < By NationalNo > ] -> {ex.Message}");
+
+            }
+            return exist;
+        }
+
+        public static bool Delete(int PersonID)
+        {
+            string Query = "Sp_DeletePerson";
+            bool Deleted=false;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
+                using (SqlCommand cmd = new SqlCommand(Query, connection))
+                {
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@PersonID", PersonID);
+
+                    connection.Open();
+
+                    using(SqlDataReader rdr= cmd.ExecuteReader())
+                    {
+                        Deleted = Convert.ToBoolean(rdr["Success"]);
+                        if(!Deleted)
+                        {
+                            throw new InvalidOperationException(rdr["ErrorMSG"].ToString());
+                        }
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                clsEventLogger.LogError($"[DAL: Person.Delete() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                clsEventLogger.LogError($"[DAL: Person.Delete() ] -> {ex.Message}");
+
+            }
+
+            return Deleted;
+            
+        }
+        
+        public static DataTable ListAllPeople()
+        {
+            string Query = "Sp_GetAllPeople";
+            DataTable dt = new DataTable();
+            try
+            {
+                using(SqlConnection connection = new SqlConnection( DataAccessSettings.connectionString))
+                using (SqlCommand cmd = new SqlCommand( Query, connection))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    using(SqlDataReader rdr= cmd.ExecuteReader())
+                    {
+                        if (rdr.Read())
+                        {
+                            dt.Load(rdr);
+                        }
+
+                        
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                clsEventLogger.LogError($"[DAL: Person.GetAllPeople() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                clsEventLogger.LogError($"[DAL: Person.GetAllPeople() ] -> {ex.Message}");
+
+            }
+            return dt;
+        }
+    
     }
 }

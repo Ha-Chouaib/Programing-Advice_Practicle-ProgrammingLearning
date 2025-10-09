@@ -1,0 +1,7 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\03_InsertionSort\bin\Debug\03_InsertionSort.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\03_InsertionSort\bin\Debug\03_InsertionSort.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\03_InsertionSort\bin\Debug\03_InsertionSort.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\03_InsertionSort\obj\Debug\03_InsertionSort.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\03_InsertionSort\obj\Debug\03_InsertionSort.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\03_InsertionSort\obj\Debug\03_InsertionSort.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\03_InsertionSort\obj\Debug\03_InsertionSort.pdb

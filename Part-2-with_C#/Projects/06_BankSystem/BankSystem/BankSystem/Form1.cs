@@ -34,12 +34,13 @@ namespace BankSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            clsPerson person =  clsPerson.FindByPersonID(3);
+            
+            if (clsPerson.Exists("N"))
+            {
+            MessageBox.Show(" Exist");
+            }
 
-            person.FirstName = "Ahmed";
-            if (person.Save())
-                MessageBox.Show($"PersonID: {person.PersonID} | Full Name: {person.FirstName}");
-            else MessageBox.Show("Something is Going Wrong");
+            else MessageBox.Show("Not Exist");
         }
     }
 }

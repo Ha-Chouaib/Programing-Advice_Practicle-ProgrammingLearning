@@ -72,7 +72,7 @@
               "RelativeDocumentMoniker": "Bank_BusinessLayer\\clsPerson.cs",
               "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_BusinessLayer\\clsPerson.cs",
               "RelativeToolTip": "Bank_BusinessLayer\\clsPerson.cs",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAowHQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAowIQAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-07T19:18:24.342Z",
               "EditorCaption": ""
@@ -85,7 +85,7 @@
               "RelativeDocumentMoniker": "Bank_DataAccess\\People\\clsPersonDataAccess.cs",
               "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_DataAccess\\People\\clsPersonDataAccess.cs",
               "RelativeToolTip": "Bank_DataAccess\\People\\clsPersonDataAccess.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAIYAAABxAAAAAAAAAA==",
+              "ViewState": "AgIAAM4AAAAAAAAAAAAkwNcAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-06T19:15:41.249Z",
               "EditorCaption": ""
@@ -122,7 +122,7 @@
               "RelativeDocumentMoniker": "BankSystem\\Form1.cs",
               "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\Form1.cs",
               "RelativeToolTip": "BankSystem\\Form1.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAASwCYAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAEwBUAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-07T07:13:08.944Z",
               "EditorCaption": ""
@@ -137,8 +137,7 @@
               "RelativeToolTip": "Bank_DataAccess\\Global\\DataAccessSettings.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-06T20:08:01.43Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-06T20:08:01.43Z"
             },
             {
               "$type": "Document",

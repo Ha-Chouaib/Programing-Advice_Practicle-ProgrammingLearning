@@ -1,0 +1,8 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\01_BubbleSort\bin\Debug\01_BubbleSort.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\01_BubbleSort\bin\Debug\01_BubbleSort.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\01_BubbleSort\bin\Debug\01_BubbleSort.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\01_BubbleSort\obj\Debug\01_BubbleSort.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\01_BubbleSort\obj\Debug\01_BubbleSort.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\01_BubbleSort\obj\Debug\01_BubbleSort.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\01_BubbleSort\obj\Debug\01_BubbleSort.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\01_BubbleSort\obj\Debug\01_BubbleSort.exe.config
