@@ -120,6 +120,18 @@ namespace Bank_BusinessLayer
             }
         }
     
-    
+        public static bool Exists(int PersonID)
+        {
+            return clsPersonDataAccess.Exist(PersonID);
+        }
+        public static bool Exists(string NationalNo)
+        {
+            return clsPersonDataAccess.Exist(NationalNo);
+        }
+        public static bool Delete(int PersonID)
+        {
+            return clsPersonDataAccess.Delete(PersonID);
+        }
+
     }
 }
