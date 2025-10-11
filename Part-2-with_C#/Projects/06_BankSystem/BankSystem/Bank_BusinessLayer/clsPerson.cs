@@ -13,7 +13,7 @@ namespace Bank_BusinessLayer
     {
         enum enMode { eAddNew, eUpdate }
         enMode _Mode;
-        public int PersonID { get; set; }
+        public int PersonID { get; private set; }
         public string NationalNo { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -26,7 +26,7 @@ namespace Bank_BusinessLayer
         public short CountryID { get; set; }
         public string ImagePath { get; set; }
 
-        public clsPerson(int PersonID, string NationalNo, string FirstName,  string LastName, DateTime DateOfBirth, byte Gender,
+        private clsPerson(int PersonID, string NationalNo, string FirstName,  string LastName, DateTime DateOfBirth, byte Gender,
                                     string Email, string Phone, short CountryID, string Address,  string ImgPath)
         {
             this.PersonID = PersonID;
@@ -62,7 +62,7 @@ namespace Bank_BusinessLayer
 
         }
 
-        public static clsPerson FindByPersonID(int PersonID)
+        public static clsPerson Find(int PersonID)
         {
             string NationalNo = "",
                     FirstName = "",
@@ -86,8 +86,31 @@ namespace Bank_BusinessLayer
             }
 
         }
-    
-    
+        public static clsPerson Find(string NationalNo)
+        {
+            int PersonID = -1;
+             string FirstName = "",
+                    LastName = "",
+                    Address = "",
+                    Email = "",
+                    Phone = "",
+                    ImagePath = "";
+            DateTime DateOfBirth = DateTime.Now;
+            byte Gender = 3;
+            short CountryID = -1;
+            if (clsPersonDataAccess.FindPersonByNationalNo(NationalNo, ref PersonID, ref FirstName, ref LastName, ref DateOfBirth, ref Gender,
+                                    ref Email, ref Phone, ref CountryID, ref Address, ref ImagePath))
+            {
+                return new clsPerson(PersonID, NationalNo, FirstName, LastName, DateOfBirth, Gender,
+                                     Email, Phone, CountryID, Address, ImagePath);
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
         private bool _AddNewPerson()
         {
             this.PersonID = clsPersonDataAccess.AddNewPerson(this.NationalNo,this.FirstName,this.LastName,this.DateOfBirth,this.Gender,this.Email,
@@ -132,6 +155,7 @@ namespace Bank_BusinessLayer
         {
             return clsPersonDataAccess.Delete(PersonID);
         }
+
 
     }
 }

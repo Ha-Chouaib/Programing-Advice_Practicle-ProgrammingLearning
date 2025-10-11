@@ -67,7 +67,65 @@ namespace Bank_DataAccess.People
 
 
         }
-    
+
+        public static bool FindPersonByNationalNo(string NationalNo, ref int PersonID, ref string FirstName, ref string LastName, ref DateTime DateOfBirth, ref byte Gender,
+                                  ref string Email, ref string Phone, ref short CountryID, ref string Address, ref string ImgPath
+                                  )
+        {
+            string Query = "Sp_GetPersonByNationalNo";
+            bool found = false;
+            using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(Query, connection))
+                {
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@NationalNo", NationalNo);
+                    try
+                    {
+
+                        connection.Open();
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                PersonID =  reader["PersonID"] != DBNull.Value ? Convert.ToInt32( reader["PersonID"] ) : -1;
+                                FirstName = reader["FirstName"] as string ?? string.Empty;
+                                LastName = reader["LastName"] as string ?? string.Empty;
+                                DateOfBirth = (DateTime)reader["DateOfBirth"];
+                                Email = reader["Email"] as string ?? string.Empty;
+                                Phone = reader["Phone"] as string ?? string.Empty;
+                                Gender = reader["Gender"] != DBNull.Value ? Convert.ToByte(reader["Gender"]) : (byte)3;
+                                CountryID = reader["CountryID"] != DBNull.Value ? Convert.ToInt16(reader["CountryID"]) : (short)0;
+                                Address = reader["Address"] as string ?? string.Empty;
+                                ImgPath = (reader["ImagePath"] != DBNull.Value) ? (string)reader["ImagePath"] : string.Empty;
+
+
+                                found = true;
+                            }
+                            else
+                            {
+                                FirstName = LastName = NationalNo = Email = Phone = Address = ImgPath = string.Empty;
+                                CountryID = 0;
+                                DateOfBirth = DateTime.MinValue;
+                            }
+                        }
+                    }
+                    catch (SqlException ex)
+                    {
+                        clsEventLogger.LogError($"[DAL: PeopleDataAccess.FindPersonByNationalNo()] (SQL Error: {ex.Number} )-> {ex.Message}");
+                    }
+                    catch (Exception ex)
+                    {
+                        clsEventLogger.LogError($"[DAL: PeopleDataAccess.FindPersonByNationalNo()] ->  {ex.Message}");
+                    }
+                    return found;
+                }
+            }
+
+
+        }
+
         public static int AddNewPerson(string NationalNo,  string FirstName,  string LastName,  DateTime DateOfBirth,  byte Gender,
                                      string Email,  string Phone,  short CountryID,  string Address,  string ImgPath)
         {
