@@ -7,11 +7,11 @@
       "RelativeMoniker": "D:0:0:{9E30E7F6-40CC-4232-8BAF-487496B002B9}|04_2_AlgorithmToSearchInBST\\04_2_AlgorithmToSearchInBST.csproj|solutionrelative:04_2_algorithmtosearchinbst\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{622161FA-8460-4652-9FFC-DCA3251FBC7A}|04_1_BDT-Implentation\\04_1_BDT-Implentation.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\08_algorithmslevel-2\\04_1_bdt-implentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{622161FA-8460-4652-9FFC-DCA3251FBC7A}|04_1_BDT-Implentation\\04_1_BDT-Implentation.csproj|C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\08_AlgorithmsLevel-2\\04_1_bdt-implentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{622161FA-8460-4652-9FFC-DCA3251FBC7A}|04_1_BDT-Implentation\\04_1_BDT-Implentation.csproj|solutionrelative:04_1_bdt-implentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{206456F3-9D9F-4A52-97CC-7A813816A36C}|01_LevelOrder-BFS-Traversal\\03_1_LevelOrder-BFS-Traversal.csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\08_algorithmslevel-2\\01_levelorder-bfs-traversal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{206456F3-9D9F-4A52-97CC-7A813816A36C}|01_LevelOrder-BFS-Traversal\\03_1_LevelOrder-BFS-Traversal.csproj|C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\08_AlgorithmsLevel-2\\01_levelorder-bfs-traversal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{206456F3-9D9F-4A52-97CC-7A813816A36C}|01_LevelOrder-BFS-Traversal\\03_1_LevelOrder-BFS-Traversal.csproj|solutionrelative:01_levelorder-bfs-traversal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -52,7 +52,7 @@
               "RelativeDocumentMoniker": "04_2_AlgorithmToSearchInBST\\Program.cs",
               "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\08_AlgorithmsLevel-2\\04_2_AlgorithmToSearchInBST\\Program.cs",
               "RelativeToolTip": "04_2_AlgorithmToSearchInBST\\Program.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAIAwwD0AAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAawD0AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-11T07:09:49.649Z",
               "EditorCaption": ""
@@ -67,8 +67,7 @@
               "RelativeToolTip": "04_1_BDT-Implentation\\Program.cs",
               "ViewState": "AgIAAHYAAAAAAAAAAAAQwJUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-11T06:57:26.609Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-11T06:57:26.609Z"
             },
             {
               "$type": "Document",
@@ -80,8 +79,7 @@
               "RelativeToolTip": "01_LevelOrder-BFS-Traversal\\Program.cs",
               "ViewState": "AgIAAKEAAAAAAAAAAAAuwKkAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-10T06:55:25.014Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-10T06:55:25.014Z"
             },
             {
               "$type": "Document",
