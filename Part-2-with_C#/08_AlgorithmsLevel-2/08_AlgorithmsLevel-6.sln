@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_1_BST-Implementation", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_2_AlgorithmToSearchInBST", "04_2_AlgorithmToSearchInBST\04_2_AlgorithmToSearchInBST.csproj", "{9E30E7F6-40CC-4232-8BAF-487496B002B9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05_BalancedTree_AVL", "05_BalancedTree_AVL", "{4CAA30B4-AE63-4D15-BBED-F05F7B9F75EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

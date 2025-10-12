@@ -21,9 +21,20 @@ namespace Bank_BusinessLayer
         public bool IsActive { get; set; }
         public int CreatedByUserID { get; set; }
         public clsUser CreatedByUser { get; set; }
+        public short Permissions { get; set; }
 
         enum enMode { enAddNew, enUpdate}
         enMode _Mode = enMode.enAddNew;
+        public enum enPermissions
+        {
+            eNone = 0,
+            eCanManageUsers = 1,
+            eCanManageCustomers = 2,
+            eCanViewTransactions = 4,
+            eCanApproveLoans = 8,
+            eCanManageAccounts = 16,
+            eCanAccessReports = 32
+        }
         public clsUser()
         {
             this.UserID = -1;
@@ -34,10 +45,11 @@ namespace Bank_BusinessLayer
             this.Password = string.Empty;
             this.IsActive = false;
             this.CreatedByUserID = -1;
+            this.Permissions = 0;
             _Mode = enMode.enAddNew;
         }
 
-        private clsUser(int UserID,int PersonID,string UserName,DateTime CreatedDate, string Role, string Password,bool IsActive,int CreatedByUserID)
+        private clsUser(int UserID,int PersonID,string UserName,DateTime CreatedDate, string Role, string Password,bool IsActive,int CreatedByUserID,short permissions)
         {
             this.UserID = UserID;
             this.PersonID = PersonID;
@@ -49,17 +61,42 @@ namespace Bank_BusinessLayer
             this.CreatedByUserID = CreatedByUserID;
 
             this.PersonalInfo = clsPerson.Find(PersonID);
-            //this.CreatedByUser = clsUser.Find(UserID);
+            this.CreatedByUser = FindUserByID(UserID);
 
+            this.Permissions = permissions;
             _Mode = enMode.enUpdate;
         }
 
-        public bool AddNewUser()
+        private bool _AddNewUser()
         {
-            this.UserID = clsUserDataAccess.AddNewUser(this.PersonID, this.UserName, this.CreatedDate, this.Role, this.Password, this.IsActive, this.CreatedByUserID);
+            this.UserID = clsUserDataAccess.AddNewUser(this.PersonID, this.UserName, this.CreatedDate, this.Role, this.Password, this.IsActive, this.CreatedByUserID, this.Permissions);
 
             return this.UserID != -1;
         }
+        private bool _Update()
+        {
+            return clsUserDataAccess.Update(this.UserID, this.UserName, this.Password,this.Role, this.IsActive,this.Permissions);
+        }
+        public bool Save()
+        {
+            switch (_Mode)
+            {
+                case enMode.enAddNew:
+                    if (_AddNewUser())
+                    {
+                        _Mode = enMode.enUpdate;
+                        return true;
+                    }
+                    else return false;
+
+                case enMode.enUpdate:
+                    return _Update();
+
+                default:
+                    return false;
+            }
+        }
+
         public static clsUser FindUserByID(int UserID)
         {
             
@@ -70,9 +107,10 @@ namespace Bank_BusinessLayer
             string Password = "";
             bool IsActive = false ;
             int CreatedByUserID = -1;
-            if(clsUserDataAccess.FindUserByID(UserID,ref PersonID,ref UserName,ref CreatedDate,ref Role,ref Password,ref IsActive,ref CreatedByUserID))
+            short Permissions = -1;
+            if(clsUserDataAccess.FindUserByID(UserID,ref PersonID,ref UserName,ref CreatedDate,ref Role,ref Password,ref IsActive,ref CreatedByUserID,ref Permissions ))
             {
-                return new clsUser(UserID,PersonID,UserName,CreatedDate,Role,Password,IsActive,CreatedByUserID);
+                return new clsUser(UserID,PersonID,UserName,CreatedDate,Role,Password,IsActive,CreatedByUserID,Permissions);
             }else
                 return null;
         }
@@ -86,9 +124,10 @@ namespace Bank_BusinessLayer
             string Password = "";
             bool IsActive = false;
             int CreatedByUserID = -1;
-            if (clsUserDataAccess.FindUserByPersonID(PersonID, ref UserID, ref UserName, ref CreatedDate, ref Role, ref Password, ref IsActive, ref CreatedByUserID))
+            short Permissions = -1;
+            if (clsUserDataAccess.FindUserByPersonID(PersonID, ref UserID, ref UserName, ref CreatedDate, ref Role, ref Password, ref IsActive, ref CreatedByUserID,ref Permissions))
             {
-                return new clsUser(UserID, PersonID, UserName, CreatedDate, Role, Password, IsActive, CreatedByUserID);
+                return new clsUser(UserID, PersonID, UserName, CreatedDate, Role, Password, IsActive, CreatedByUserID,Permissions);
             }
             else
                 return null;
@@ -103,9 +142,10 @@ namespace Bank_BusinessLayer
             string Password = "";
             bool IsActive = false;
             int CreatedByUserID = -1;
-            if (clsUserDataAccess.FindUserByName(UserName,ref  UserID,ref PersonID, ref CreatedDate, ref Role, ref Password, ref IsActive, ref CreatedByUserID))
+            short Permissions = -1;
+            if (clsUserDataAccess.FindUserByName(UserName,ref  UserID,ref PersonID, ref CreatedDate, ref Role, ref Password, ref IsActive, ref CreatedByUserID,ref Permissions))
             {
-                return new clsUser(UserID, PersonID, UserName, CreatedDate, Role, Password, IsActive, CreatedByUserID);
+                return new clsUser(UserID, PersonID, UserName, CreatedDate, Role, Password, IsActive, CreatedByUserID,Permissions);
             }
             else
                 return null;
@@ -123,9 +163,13 @@ namespace Bank_BusinessLayer
         {
             return clsUserDataAccess.UpdateUserRole(UserID, Role);
         }
-        public static bool UpdateUserState(int UserID, bool IsActive)
+        public static bool UpdateUserStatus(int UserID, bool IsActive)
         {
-            return clsUserDataAccess.UpdateUserState(UserID, IsActive);
+            return clsUserDataAccess.UpdateUserStatus(UserID, IsActive);
+        }
+        public static bool UpdateUserPermissions(int UserID, short Permissions)
+        {
+            return clsUserDataAccess.UpdateUserPermissions(UserID, Permissions);
         }
 
         public static bool ExistByID(int UserID)
@@ -139,6 +183,10 @@ namespace Bank_BusinessLayer
         public static bool ExistByUserName(string UserName)
         {
             return clsUserDataAccess.ExistsByUserName(UserName);
+        }        
+        public bool HasPermission( enPermissions permission)
+        {
+            return (this.Permissions & (short)permission) == (short)permission;
         }
         
         public static bool Delete(int UserID)
