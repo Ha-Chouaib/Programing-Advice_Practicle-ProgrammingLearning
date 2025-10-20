@@ -48,11 +48,11 @@ namespace Bank_DataAccess
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: User.AddNewUser() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.AddNewUser() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: User.AddNewUser() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.AddNewUser() ] -> {ex.Message}");
 
             }
             return UserID;
@@ -95,11 +95,11 @@ namespace Bank_DataAccess
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: User.FindUserByID() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.FindUserByID() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: User.FindUserByID() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.FindUserByID() ] -> {ex.Message}");
 
             }
             return found;
@@ -144,11 +144,11 @@ namespace Bank_DataAccess
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: User.FindUserByPersonID() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.FindUserByPersonID() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: User.FindUserByPersonID() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.FindUserByPersonID() ] -> {ex.Message}");
 
             }
             return found;
@@ -193,11 +193,11 @@ namespace Bank_DataAccess
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: User.FindUserByName() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.FindUserByName() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: User.FindUserByName() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.FindUserByName() ] -> {ex.Message}");
 
             }
             return found;
@@ -241,11 +241,11 @@ namespace Bank_DataAccess
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: User.Update() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.Update() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: User.Update() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.Update() ] -> {ex.Message}");
 
             }
             return Success;
@@ -280,11 +280,11 @@ namespace Bank_DataAccess
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: User.UpdateUserName() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.UpdateUserName() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: User.UpdateUserName() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.UpdateUserName() ] -> {ex.Message}");
 
             }
             
@@ -319,11 +319,11 @@ namespace Bank_DataAccess
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: User.UpdateUsePassword() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.UpdateUsePassword() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: User.UpdateUsePassword() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.UpdateUsePassword() ] -> {ex.Message}");
 
             }
 
@@ -358,11 +358,11 @@ namespace Bank_DataAccess
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: User.UpdateUserRole() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.UpdateUserRole() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: User.UpdateUserRole() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.UpdateUserRole() ] -> {ex.Message}");
 
             }
 
@@ -397,11 +397,11 @@ namespace Bank_DataAccess
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: User.UpdateUserState() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.UpdateUserState() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: User.UpdateUserState() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.UpdateUserState() ] -> {ex.Message}");
 
             }
 
@@ -436,11 +436,11 @@ namespace Bank_DataAccess
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: User.UpdateUserPermissions() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.UpdateUserPermissions() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: User.UpdateUserPermissions() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.UpdateUserPermissions() ] -> {ex.Message}");
 
             }
 
@@ -466,11 +466,11 @@ namespace Bank_DataAccess
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: User.ExistsByID() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.ExistsByID() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: User.ExistsByID() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.ExistsByID() ] -> {ex.Message}");
             }
             return Exists;
         }
@@ -493,11 +493,11 @@ namespace Bank_DataAccess
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: User.ExistsByPersonID() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.ExistsByPersonID() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: User.ExistsByPersonID() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.ExistsByPersonID() ] -> {ex.Message}");
             }
             return Exists;
         }
@@ -520,11 +520,11 @@ namespace Bank_DataAccess
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: User.ExistsByUserName() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.ExistsByUserName() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: User.ExistsByUserName() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.ExistsByUserName() ] -> {ex.Message}");
             }
             return Exists;
         }
@@ -548,11 +548,11 @@ namespace Bank_DataAccess
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: User.IsActive() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.IsActive() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: User.IsActive() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.IsActive() ] -> {ex.Message}");
             }
             return Active;
         }
@@ -584,11 +584,11 @@ namespace Bank_DataAccess
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: User.Delete() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.Delete() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: User.Delete() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.Delete() ] -> {ex.Message}");
 
             }
 
@@ -606,24 +606,20 @@ namespace Bank_DataAccess
                 using (SqlCommand cmd = new SqlCommand(Query, connection))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
+                    connection.Open();
                     using (SqlDataReader rdr = cmd.ExecuteReader())
                     {
-                        if (rdr.Read())
-                        {
-                            dt.Load(rdr);
-                        }
-
-
+                        dt.Load(rdr);
                     }
                 }
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: User.GetAllUsers() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.GetAllUsers() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: User.GetAllUsers() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: User.GetAllUsers() ] -> {ex.Message}");
 
             }
             return dt;

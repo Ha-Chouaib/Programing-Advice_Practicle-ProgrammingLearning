@@ -1,0 +1,8 @@
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\RedBlackTree-Delete\RedBlackTree-Delete\bin\Debug\RedBlackTree-Delete.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\RedBlackTree-Delete\RedBlackTree-Delete\bin\Debug\RedBlackTree-Delete.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\RedBlackTree-Delete\RedBlackTree-Delete\bin\Debug\RedBlackTree-Delete.pdb
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\RedBlackTree-Delete\RedBlackTree-Delete\obj\Debug\06_1_RedBlackTree-Impl.csproj.AssemblyReference.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\RedBlackTree-Delete\RedBlackTree-Delete\obj\Debug\RedBlackTree-Delete.exe.config
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\RedBlackTree-Delete\RedBlackTree-Delete\obj\Debug\06_1_RedBlackTree-Impl.csproj.CoreCompileInputs.cache
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\RedBlackTree-Delete\RedBlackTree-Delete\obj\Debug\RedBlackTree-Delete.exe
+C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\RedBlackTree-Delete\RedBlackTree-Delete\obj\Debug\RedBlackTree-Delete.pdb

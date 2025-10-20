@@ -44,9 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsAccountsDataAccess.cs" />
+    <Compile Include="clsCountriesDataAccess.cs" />
     <Compile Include="clsCustomerDataAccess.cs" />
     <Compile Include="clsUserDataAccess.cs" />
-    <Compile Include="Global\clsEventLogger.cs" />
+    <Compile Include="Global\clsGlobal.cs" />
     <Compile Include="Global\DataAccessSettings.cs" />
     <Compile Include="People\clsPersonDataAccess.cs" />
     <Compile Include="Program.cs" />
