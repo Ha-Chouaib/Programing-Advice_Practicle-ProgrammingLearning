@@ -55,12 +55,12 @@ namespace Bank_DataAccess.People
                     }
                     catch(SqlException ex)
                     {
-                        clsEventLogger.LogError($"[DAL: PeopleDataAccess.FindPersonByID()] (SQL Error: {ex.Number} )-> {ex.Message}");
+                        clsGlobal.LogError($"[DAL: PeopleDataAccess.FindPersonByID()] (SQL Error: {ex.Number} )-> {ex.Message}");
                     }
                     catch (Exception ex)
                     {
-                        clsEventLogger.LogError($"[DAL: PeopleDataAccess.FindPersonByID()] ->  {ex.Message}");
-                    }
+                        clsGlobal.LogError($"[DAL: PeopleDataAccess.FindPersonByID()] ->  {ex.Message}");
+                    }   
                     return found;
                 }
             }
@@ -113,11 +113,11 @@ namespace Bank_DataAccess.People
                     }
                     catch (SqlException ex)
                     {
-                        clsEventLogger.LogError($"[DAL: PeopleDataAccess.FindPersonByNationalNo()] (SQL Error: {ex.Number} )-> {ex.Message}");
+                        clsGlobal.LogError($"[DAL: PeopleDataAccess.FindPersonByNationalNo()] (SQL Error: {ex.Number} )-> {ex.Message}");
                     }
                     catch (Exception ex)
-                    {
-                        clsEventLogger.LogError($"[DAL: PeopleDataAccess.FindPersonByNationalNo()] ->  {ex.Message}");
+                    {   
+                        clsGlobal.LogError($"[DAL: PeopleDataAccess.FindPersonByNationalNo()] ->  {ex.Message}");
                     }
                     return found;
                 }
@@ -175,11 +175,11 @@ namespace Bank_DataAccess.People
             }
             catch(SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: Person.AddNewPerson() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: Person.AddNewPerson() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: Person.AddNewPerson() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: Person.AddNewPerson() ] -> {ex.Message}");
 
             }
             return NewPersonID;
@@ -229,11 +229,11 @@ namespace Bank_DataAccess.People
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: Person.AddNewPerson() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: Person.AddNewPerson() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: Person.AddNewPerson() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: Person.AddNewPerson() ] -> {ex.Message}");
 
             }
             return Success;
@@ -259,11 +259,11 @@ namespace Bank_DataAccess.People
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: Person.Exists() < By PersonID >] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: Person.Exists() < By PersonID >] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: Person.Exists() < By PersonID > ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: Person.Exists() < By PersonID > ] -> {ex.Message}");
 
             }
             return exist;
@@ -290,11 +290,11 @@ namespace Bank_DataAccess.People
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: Person.Exists() < By NationalNo >] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: Person.Exists() < By NationalNo >] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: Person.Exists() < By NationalNo > ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: Person.Exists() < By NationalNo > ] -> {ex.Message}");
 
             }
             return exist;
@@ -328,11 +328,11 @@ namespace Bank_DataAccess.People
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: Person.Delete() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: Person.Delete() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: Person.Delete() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: Person.Delete() ] -> {ex.Message}");
 
             }
 
@@ -350,24 +350,21 @@ namespace Bank_DataAccess.People
                 using (SqlCommand cmd = new SqlCommand( Query, connection))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
+                    connection.Open();
                     using(SqlDataReader rdr= cmd.ExecuteReader())
                     {
-                        if (rdr.Read())
-                        {
-                            dt.Load(rdr);
-                        }
-
                         
+                            dt.Load(rdr);      
                     }
                 }
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: Person.GetAllPeople() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: Person.GetAllPeople() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: Person.GetAllPeople() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: Person.GetAllPeople() ] -> {ex.Message}");
 
             }
             return dt;

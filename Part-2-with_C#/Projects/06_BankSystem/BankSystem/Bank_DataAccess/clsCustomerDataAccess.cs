@@ -43,11 +43,11 @@ namespace Bank_DataAccess
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: Customer.AddNewCustomer() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: Customer.AddNewCustomer() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: Customer.AddNewCustomer() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: Customer.AddNewCustomer() ] -> {ex.Message}");
             }
             return CustomerID;
         }
@@ -86,11 +86,11 @@ namespace Bank_DataAccess
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: Customer.FindCustomerByID() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: Customer.FindCustomerByID() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: Customer.FindCustomerByID() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: Customer.FindCustomerByID() ] -> {ex.Message}");
             }
             return Found;
 
@@ -131,11 +131,11 @@ namespace Bank_DataAccess
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: Customer.FindCustomerByPersonID() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: Customer.FindCustomerByPersonID() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: Customer.FindCustomerByPersonID() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: Customer.FindCustomerByPersonID() ] -> {ex.Message}");
             }
             return Found;
 
@@ -174,11 +174,11 @@ namespace Bank_DataAccess
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: Customer.Update() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: Customer.Update() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: Customer.Update() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: Customer.Update() ] -> {ex.Message}");
 
             }
 
@@ -213,11 +213,11 @@ namespace Bank_DataAccess
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: Customer.UpdateCustomerStatus() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: Customer.UpdateCustomerStatus() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: Customer.UpdateCustomerStatus() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: Customer.UpdateCustomerStatus() ] -> {ex.Message}");
 
             }
 
@@ -243,11 +243,11 @@ namespace Bank_DataAccess
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: Customer.IsCustomerExistsByID() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: Customer.IsCustomerExistsByID() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: Customer.IsCustomerExistsByID() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: Customer.IsCustomerExistsByID() ] -> {ex.Message}");
             }
             return Exists;
         }
@@ -270,17 +270,17 @@ namespace Bank_DataAccess
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: Customer.IsCustomerExistsByPersonID() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: Customer.IsCustomerExistsByPersonID() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: Customer.IsCustomerExistsByPersonID() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: Customer.IsCustomerExistsByPersonID() ] -> {ex.Message}");
             }
             return Exists;
         }
         public static bool IsActive(int CustomerID)
         {
-            string Query = @" SELECT dbo.Fn_CustomerActive(@CustomerID)";
+            string Query = @" SELECT dbo.Fn_IsCustomerActive(@CustomerID)";
             bool Active = false;
             try
             {
@@ -297,11 +297,11 @@ namespace Bank_DataAccess
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: Customer.IsActive() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: Customer.IsActive() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: Customer.IsActive() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: Customer.IsActive() ] -> {ex.Message}");
             }
             return Active;
         }        
@@ -334,11 +334,11 @@ namespace Bank_DataAccess
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: Customer.Delete() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: Customer.Delete() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
-            {
-                clsEventLogger.LogError($"[DAL: Customer.Delete() ] -> {ex.Message}");
+            {   
+                clsGlobal.LogError($"[DAL: Customer.Delete() ] -> {ex.Message}");
 
             }
 
@@ -354,24 +354,20 @@ namespace Bank_DataAccess
                 using (SqlCommand cmd = new SqlCommand(Query, connection))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
+                    connection.Open();
                     using (SqlDataReader rdr = cmd.ExecuteReader())
                     {
-                        if (rdr.Read())
-                        {
-                            dt.Load(rdr);
-                        }
-
-
+                        dt.Load(rdr);
                     }
                 }
             }
             catch (SqlException ex)
             {
-                clsEventLogger.LogError($"[DAL: Customer.GetAllCustomers() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: Customer.GetAllCustomers() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsEventLogger.LogError($"[DAL: Customer.GetAllCustomers() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: Customer.GetAllCustomers() ] -> {ex.Message}");
 
             }
             return dt;
