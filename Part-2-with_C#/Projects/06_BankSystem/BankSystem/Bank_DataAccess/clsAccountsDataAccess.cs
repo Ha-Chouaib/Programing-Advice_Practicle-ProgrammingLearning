@@ -449,6 +449,33 @@ namespace Bank_DataAccess
             return success;
         }
 
+        public static int GetAccountIDByCustomerID(int CustomerID)
+        {
+            string Query = @" SELECT dbo.Fn_GetAccountIDByCustomerID(@CustomerID)";
+            int AccountID = -1;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
+                using (SqlCommand cmd = new SqlCommand(Query, connection))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@CustomerID", CustomerID);
+
+                    connection.Open();
+                    object result = cmd.ExecuteScalar();
+                    if (result != null && int.TryParse(result.ToString(), out int accountID)) AccountID = accountID;
+                }
+            }
+            catch (SqlException ex)
+            {
+                clsGlobal.LogError($"[DAL: Account.GetAccountIDByCustomerID() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                clsGlobal.LogError($"[DAL: Account.GetAccountIDByCustomerID() ] -> {ex.Message}");
+            }
+            return AccountID;
+        }
         public static bool IsActive(int AccountID)
         {
 

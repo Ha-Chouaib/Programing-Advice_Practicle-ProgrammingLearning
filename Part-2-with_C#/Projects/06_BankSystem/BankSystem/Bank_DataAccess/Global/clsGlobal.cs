@@ -21,12 +21,12 @@ namespace Bank_DataAccess
         {
             EventLog.WriteEntry(DataAccessSettings.EventLogSourceName, message, EventLogEntryType.Information);
         }
-        public static T SafeGet<T>(SqlDataReader rdr, string column, T defaultValue)
+        public static T SafeGet<T>(SqlDataReader reader, string column, T defaultValue)
         {
-            if (rdr[column] == DBNull.Value)
+            if (reader[column] == DBNull.Value)
                 return defaultValue;
 
-            return (T)Convert.ChangeType(rdr[column], typeof(T));
+            return (T)Convert.ChangeType(reader[column], typeof(T));
         }
     }
 }

@@ -158,6 +158,10 @@ namespace Bank_BusinessLayer
             return clsAccountsDataAccess.ExistsByCustomerID(CustomerID);
         }
 
+        public static int GetAccountIDByCustomerID(int CustomerID)
+        {
+            return clsAccountsDataAccess.GetAccountIDByCustomerID(CustomerID);
+        }
 
         public static bool Delete(int AccountID)
         {
