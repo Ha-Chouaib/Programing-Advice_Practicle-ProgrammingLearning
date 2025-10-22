@@ -35,6 +35,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06_redBlackTree", "06_redBl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_1_RedBlackTree-Impl", "RedBlackTree-Delete\RedBlackTree-Delete\06_1_RedBlackTree-Impl.csproj", "{7D1F8A8B-3A24-4BD8-BB9C-16C75D4B71B4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07_Graph_BFS-DFS", "07_Graph_BFS-DFS", "{8D86C775-1D59-4D52-A0E6-DA5BC360D8F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

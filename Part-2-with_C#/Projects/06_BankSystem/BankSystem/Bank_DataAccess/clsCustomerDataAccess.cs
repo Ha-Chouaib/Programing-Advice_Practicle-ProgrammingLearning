@@ -373,6 +373,86 @@ namespace Bank_DataAccess
             return dt;
         }
 
+        public static bool DepositWithdraw(int AccountID , double Amount )
+        {
+            string Query = "Sp_Trans_DepositWithdraw";
+            bool Success = false;
+            try
+            {
+
+
+                using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
+                using (SqlCommand cmd = new SqlCommand(Query, connection))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@AccountID", AccountID);
+                    cmd.Parameters.AddWithValue("@Amount", Amount);
+
+                    connection.Open();
+                    using (SqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        Success = clsGlobal.SafeGet<bool>(rdr, "Success", false);
+
+                        if (!Success)
+                            throw new InvalidOperationException(clsGlobal.SafeGet<string>(rdr, "ErrorMSG", ""));
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                clsGlobal.LogError($"[DAL: Customer.DepositWithdraw() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                clsGlobal.LogError($"[DAL: Customer.DepositWithdraw() ] -> {ex.Message}");
+
+            }
+            return Success;
+
+        }
+    
+        public static bool TransferMoney(int AccountFromID, int  AccountToID, double Amount)
+        {
+            string Query = "Sp_TransferMoney";
+            bool Success = false;
+            try
+            {
+
+
+                using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
+                using (SqlCommand cmd = new SqlCommand(Query, connection))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@AccountFromID", AccountFromID);
+                    cmd.Parameters.AddWithValue("@AccountToID", AccountToID);
+                    cmd.Parameters.AddWithValue("@Amount", Amount);
+
+                    connection.Open();
+                    using (SqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        Success = clsGlobal.SafeGet<bool>(rdr, "Success", false);
+
+                        if (!Success)
+                            throw new InvalidOperationException(clsGlobal.SafeGet<string>(rdr, "Message", ""));
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                clsGlobal.LogError($"[DAL: Customer.TransferMoney() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                clsGlobal.LogError($"[DAL: Customer.TransferMoney() ] -> {ex.Message}");
+
+            }
+            return Success;
+        }
+    
 
     }
 }
