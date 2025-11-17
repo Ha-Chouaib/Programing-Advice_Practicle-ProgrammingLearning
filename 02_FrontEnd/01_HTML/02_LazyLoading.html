@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazy Loading</title>
+</head>
+<body>
+    <h1> Lazy Loading</h1>
+<!-- Always you should not Use Loading ="Lazy" for imgs that are critical and appear above the fold -->
+        <!-- The Critical imgs and who are above the fold must set loading = Eager -> measn that the pic must be loaded now -->
+        <img src="00_Imgs/87405967.jpg" alt="pic description, important for accessablity and data readers" loading="eager" title="a litle hover msg">
+        <br>
+        <img src="00_Imgs/abstract-modern-tech-of-programming-code-screen-developer-free-photo.jpg" alt="programming code" loading="eager" title ="a litle hover msg" width="50%" height="auto">
+    
+<!-- there is Also ==========[Loading = "auto"]=========== 
+    The browser uses its default loading strategy.
+    This could involve immediate loading as soon as the element is parsed (similar to the traditional behavior without lazy loading),
+    or it might incorporate some optimizations based on the user's connection speed, browser settings, and other fac 
+-->
+
+ <!-- You should Use Lazy Loading for imgs that are:
+    # Appear at the bottom of the webpage
+    # Rarely viewed By Users
+    # in a Hidden tab
+ -->
+    <div style="margin-top: 20px; width: 90%; height: 600px;">
+        <br>
+        <img src="00_Imgs/crafting-hackerthemed-collage-mastering-html-css_1160979-3235.jpg" alt="" loading="lazy" width="40%" height= "auto">
+        <br>
+        <img src="00_Imgs/hacking.jpg" alt="" loading="lazy" width="40%" height= "auto">
+        <br>
+        <img src="00_Imgs/lxzP8iL.jpg" alt="" loading="lazy" width="40%" height= "auto">
+        <br>
+        <img src="00_Imgs/OIP (1).webp" alt="" loading="lazy" width="40%" height= "auto">
+        <br>
+        <img src="00_Imgs/OIP.webp" alt="" loading="lazy" width="40%" height= "auto">
+        <br>
+    </div>
+
+</body>
+
+</html>
