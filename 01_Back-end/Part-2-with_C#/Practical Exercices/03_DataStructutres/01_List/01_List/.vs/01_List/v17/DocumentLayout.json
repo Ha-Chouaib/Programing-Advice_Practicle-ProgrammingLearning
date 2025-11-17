@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{21CC1EF3-273B-44D1-BB4E-5586F4BCAAB2}|06_Searching Functions\\06_Searching Functions.csproj|solutionrelative:06_searching functions\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBB77866-A89C-449F-8538-AE30C7F9BAC2}|05_FilteringData-Where()\\05_FilteringData-Where().csproj|c:\\users\\jook\\source\\repos\\programing-advice_practicle-programminglearning\\part-2-with_c#\\practical exercices\\03_datastructutres\\01_list\\01_list\\05_filteringdata-where()\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EBB77866-A89C-449F-8538-AE30C7F9BAC2}|05_FilteringData-Where()\\05_FilteringData-Where().csproj|C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\01_List\\01_List\\05_filteringdata-where()\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EBB77866-A89C-449F-8538-AE30C7F9BAC2}|05_FilteringData-Where()\\05_FilteringData-Where().csproj|solutionrelative:05_filteringdata-where()\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -40,7 +40,7 @@
               "RelativeDocumentMoniker": "06_Searching Functions\\Program.cs",
               "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\01_List\\01_List\\06_Searching Functions\\Program.cs",
               "RelativeToolTip": "06_Searching Functions\\Program.cs",
-              "ViewState": "AgIAAIMAAAAAAAAAAAAUwJ8AAAB7AAAAAAAAAA==",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAUwJ8AAAB7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-13T14:01:38.197Z",
               "EditorCaption": ""
@@ -53,7 +53,7 @@
               "RelativeDocumentMoniker": "05_FilteringData-Where()\\Program.cs",
               "ToolTip": "C:\\Users\\jook\\source\\repos\\Programing-Advice_Practicle-ProgrammingLearning\\Part-2-with_C#\\Practical Exercices\\03_DataStructutres\\01_List\\01_List\\05_FilteringData-Where()\\Program.cs",
               "RelativeToolTip": "05_FilteringData-Where()\\Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAAAUwBIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-12T06:56:29.801Z",
               "EditorCaption": ""
@@ -68,8 +68,7 @@
               "RelativeToolTip": "List.ForEach\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T19:46:40.353Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-08T19:46:40.353Z"
             },
             {
               "$type": "Document",

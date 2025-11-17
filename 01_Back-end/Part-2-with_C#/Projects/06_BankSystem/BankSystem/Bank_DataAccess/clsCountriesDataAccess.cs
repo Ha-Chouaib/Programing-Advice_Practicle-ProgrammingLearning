@@ -73,6 +73,7 @@ namespace DVLD_DataAccessLayer
             return IsFound;
         }
 
+
         public static DataTable ListAll()
         {
             SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString);

@@ -50,26 +50,118 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsGlobal.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="ctrlFind.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlFind.Designer.cs">
+      <DependentUpon>ctrlFind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmBaseForm.Designer.cs">
+      <DependentUpon>frmBaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHomePage.Designer.cs">
+      <DependentUpon>frmHomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Person\ctrlAddEditPerson.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Person\ctrlAddEditPerson.Designer.cs">
+      <DependentUpon>ctrlAddEditPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Person\frmAddNewPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Person\frmAddNewPerson.Designer.cs">
+      <DependentUpon>frmAddNewPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Person\frmEditPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Person\frmEditPerson.Designer.cs">
+      <DependentUpon>frmEditPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Person\frmManagePeople.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Person\frmManagePeople.Designer.cs">
+      <DependentUpon>frmManagePeople.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarMenu\clsMenuBtnModel.cs" />
+    <Compile Include="SideBarMenu\ctrlMenuBtn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarMenu\ctrlMenuBtn.Designer.cs">
+      <DependentUpon>ctrlMenuBtn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarMenu\ctrlSideBarMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarMenu\ctrlSideBarMenu.Designer.cs">
+      <DependentUpon>ctrlSideBarMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarMenu\ctrlSubMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SideBarMenu\ctrlSubMenu.Designer.cs">
+      <DependentUpon>ctrlSubMenu.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ctrlFind.resx">
+      <DependentUpon>ctrlFind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBaseForm.resx">
+      <DependentUpon>frmBaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHomePage.resx">
+      <DependentUpon>frmHomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Person\ctrlAddEditPerson.resx">
+      <DependentUpon>ctrlAddEditPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Person\frmAddNewPerson.resx">
+      <DependentUpon>frmAddNewPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Person\frmEditPerson.resx">
+      <DependentUpon>frmEditPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Person\frmManagePeople.resx">
+      <DependentUpon>frmManagePeople.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="SideBarMenu\ctrlMenuBtn.resx">
+      <DependentUpon>ctrlMenuBtn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarMenu\ctrlSideBarMenu.resx">
+      <DependentUpon>ctrlSideBarMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SideBarMenu\ctrlSubMenu.resx">
+      <DependentUpon>ctrlSubMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -89,6 +181,90 @@
       <Project>{2e92ae6c-e6d8-491f-a22f-ea3bfb1ae6e3}</Project>
       <Name>Bank_BusinessLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clients.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\general_reports.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bank_transaction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reporter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign_out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\People_manager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\activity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bank_transaction %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\history.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TransferMoney.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\withdrawal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deposit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find_in_file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_woman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_man.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

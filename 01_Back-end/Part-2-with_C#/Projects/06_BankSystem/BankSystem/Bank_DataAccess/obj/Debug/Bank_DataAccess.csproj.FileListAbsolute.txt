@@ -5,4 +5,3 @@ C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-
 C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\06_BankSystem\BankSystem\Bank_DataAccess\obj\Debug\Bank_DataAccess.csproj.CoreCompileInputs.cache
 C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\06_BankSystem\BankSystem\Bank_DataAccess\obj\Debug\Bank_DataAccess.exe
 C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\06_BankSystem\BankSystem\Bank_DataAccess\obj\Debug\Bank_DataAccess.pdb
-C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\06_BankSystem\BankSystem\Bank_DataAccess\obj\Debug\Bank_DataAccess.exe.config
