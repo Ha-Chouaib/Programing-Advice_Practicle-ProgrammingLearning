@@ -50,7 +50,7 @@ namespace Bank_BusinessLayer
             this.NationalNo = "";
             this.FirstName = "";            
             this.LastName = "";
-            this.DateOfBirth = DateTime.Now;
+            this.DateOfBirth = DateTime.MinValue;
             this.Gender = 3;
             this.Address = "";
             this.Email = "";
@@ -71,7 +71,7 @@ namespace Bank_BusinessLayer
                     Email = "",
                     Phone = "",
                     ImagePath = "";
-            DateTime DateOfBirth = DateTime.Now;
+            DateTime DateOfBirth = DateTime.MinValue;
             byte Gender = 3;
             short CountryID = -1;
             if (clsPersonDataAccess.FindPersonByID(PersonID, ref  NationalNo, ref  FirstName, ref  LastName, ref  DateOfBirth, ref  Gender,
@@ -95,7 +95,7 @@ namespace Bank_BusinessLayer
                     Email = "",
                     Phone = "",
                     ImagePath = "";
-            DateTime DateOfBirth = DateTime.Now;
+            DateTime DateOfBirth = DateTime.MinValue;
             byte Gender = 3;
             short CountryID = -1;
             if (clsPersonDataAccess.FindPersonByNationalNo(NationalNo, ref PersonID, ref FirstName, ref LastName, ref DateOfBirth, ref Gender,
@@ -111,6 +111,32 @@ namespace Bank_BusinessLayer
 
         }
 
+        public static clsPerson FindBy(string Column, string searchValue)
+        {
+            if(Column == "PersonID")
+            {
+                if(int.TryParse(searchValue, out int ID))
+                {
+                    return Find(ID);
+                }
+            }
+            switch(Column)
+            {
+                case "PersonID":
+                    if (int.TryParse(searchValue, out int ID))
+                    {
+                        return Find(ID);
+                    }
+                    else
+                        return null;
+
+                case "NationalNo":
+                    return Find(searchValue);
+
+                default:
+                    return null;
+            }
+        }
         private bool _AddNewPerson()
         {
             this.PersonID = clsPersonDataAccess.AddNewPerson(this.NationalNo,this.FirstName,this.LastName,this.DateOfBirth,this.Gender,this.Email,
