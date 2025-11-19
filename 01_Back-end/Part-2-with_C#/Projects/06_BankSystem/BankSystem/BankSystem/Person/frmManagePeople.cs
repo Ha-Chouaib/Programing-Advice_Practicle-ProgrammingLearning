@@ -16,5 +16,7 @@ namespace BankSystem.Person
         {
             InitializeComponent();
         }
+
+
     }
 }

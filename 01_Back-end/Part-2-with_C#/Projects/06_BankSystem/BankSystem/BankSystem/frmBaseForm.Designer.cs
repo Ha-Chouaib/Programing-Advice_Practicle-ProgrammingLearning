@@ -52,7 +52,7 @@
             this.pnlHeader.Controls.Add(this.lblHeaderTitle);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
-            this.pnlHeader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlHeader.Margin = new System.Windows.Forms.Padding(4);
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(1292, 89);
             this.pnlHeader.TabIndex = 0;
@@ -65,7 +65,7 @@
             this.label2.Location = new System.Drawing.Point(916, 26);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(291, 35);
+            this.label2.Size = new System.Drawing.Size(233, 28);
             this.label2.TabIndex = 1;
             this.label2.Text = " Welcome, [ User Name ]";
             // 
@@ -87,7 +87,7 @@
             this.panel2.Controls.Add(this.lblClok);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 566);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1292, 42);
             this.panel2.TabIndex = 1;
@@ -136,7 +136,7 @@
             this.ClientSize = new System.Drawing.Size(1292, 608);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlHeader);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmBaseForm";
             this.Text = "frmBaseForm";
             this.pnlHeader.ResumeLayout(false);

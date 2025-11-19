@@ -56,6 +56,12 @@
     <Compile Include="ctrlFind.Designer.cs">
       <DependentUpon>ctrlFind.cs</DependentUpon>
     </Compile>
+    <Compile Include="ctrlManageRecords.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlManageRecords.Designer.cs">
+      <DependentUpon>ctrlManageRecords.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </Compile>
     <EmbeddedResource Include="ctrlFind.resx">
       <DependentUpon>ctrlFind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlManageRecords.resx">
+      <DependentUpon>ctrlManageRecords.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBaseForm.resx">
       <DependentUpon>frmBaseForm.cs</DependentUpon>
@@ -265,6 +274,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\up.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
