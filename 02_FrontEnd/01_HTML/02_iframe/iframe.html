@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iframe example</title>
+</head>
+<body>
+    <h1>iFrame Tag</h1>
+
+    <iframe src="ex1.html" title="example 1" ></iframe>
+    <iframe src="ex2.html" title="example 2" frameborder="0"></iframe>
+
+    <br>
+    <br>
+    <p>Changing border styling</p>
+    <iframe src="ex1.html" title="example 1 Custome border" style="border: 2px,rgb(6, 189, 235), solid; border-radius: 20px;"></iframe>
+    <br>
+    <br><br><br><br>
+    <iframe loading="lazy" src="ex2.html" width="500px" height="500px" style="border: 2px,rgb(6, 189, 235), solid; border-radius: 20px;"></iframe>
+    <br>
+
+    <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/PfyXTujX-ww?si=_qdv-d24_AXLmpEU" 
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen  style="border-radius: 20px;"></iframe>
+    <br>
+
+    <iframe loading="lazy" style="background-color: aqua; border-radius: 10px; box-shadow: 10px 7px 3px ;" 
+    srcdoc="<p>The <strong>srcdoc</strong> attribute allows you to specify HTML content directly inside an - iframe -, making it an ideal tool for embedding small, self-contained snippets of HTML without creating separate HTML files. </p>" frameborder="0"></iframe>
+</body>
+</html>
