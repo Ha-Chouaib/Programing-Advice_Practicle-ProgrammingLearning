@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlSubMenu));
             this.btnMain = new System.Windows.Forms.Button();
             this.pnlMainBtn = new System.Windows.Forms.Panel();
-            this.pbArrow = new System.Windows.Forms.PictureBox();
-            this.pbIcon = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlSubContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.pbArrow = new System.Windows.Forms.PictureBox();
+            this.pbIcon = new System.Windows.Forms.PictureBox();
             this.pnlMainBtn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIcon)).BeginInit();
@@ -70,27 +69,6 @@
             this.pnlMainBtn.Size = new System.Drawing.Size(303, 64);
             this.pnlMainBtn.TabIndex = 3;
             // 
-            // pbArrow
-            // 
-            this.pbArrow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbArrow.Image = ((System.Drawing.Image)(resources.GetObject("pbArrow.Image")));
-            this.pbArrow.Location = new System.Drawing.Point(246, 5);
-            this.pbArrow.Name = "pbArrow";
-            this.pbArrow.Size = new System.Drawing.Size(54, 54);
-            this.pbArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbArrow.TabIndex = 2;
-            this.pbArrow.TabStop = false;
-            this.pbArrow.Click += new System.EventHandler(this.pbArrow_Click);
-            // 
-            // pbIcon
-            // 
-            this.pbIcon.Location = new System.Drawing.Point(3, 3);
-            this.pbIcon.Name = "pbIcon";
-            this.pbIcon.Size = new System.Drawing.Size(45, 54);
-            this.pbIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbIcon.TabIndex = 1;
-            this.pbIcon.TabStop = false;
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Location = new System.Drawing.Point(400, 143);
@@ -110,6 +88,26 @@
             this.pnlSubContainer.TabIndex = 5;
             this.pnlSubContainer.Visible = false;
             this.pnlSubContainer.WrapContents = false;
+            // 
+            // pbArrow
+            // 
+            this.pbArrow.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbArrow.Location = new System.Drawing.Point(246, 5);
+            this.pbArrow.Name = "pbArrow";
+            this.pbArrow.Size = new System.Drawing.Size(54, 54);
+            this.pbArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbArrow.TabIndex = 2;
+            this.pbArrow.TabStop = false;
+            this.pbArrow.Click += new System.EventHandler(this.pbArrow_Click);
+            // 
+            // pbIcon
+            // 
+            this.pbIcon.Location = new System.Drawing.Point(3, 3);
+            this.pbIcon.Name = "pbIcon";
+            this.pbIcon.Size = new System.Drawing.Size(45, 54);
+            this.pbIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbIcon.TabIndex = 1;
+            this.pbIcon.TabStop = false;
             // 
             // ctrlSubMenu
             // 
