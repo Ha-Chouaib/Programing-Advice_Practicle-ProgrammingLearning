@@ -1,0 +1,8 @@
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\01_LevelOrder-BFS-Traversal\bin\Debug\01_LevelOrder-BFS-Traversal.exe.config
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\01_LevelOrder-BFS-Traversal\bin\Debug\01_LevelOrder-BFS-Traversal.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\01_LevelOrder-BFS-Traversal\bin\Debug\01_LevelOrder-BFS-Traversal.pdb
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\01_LevelOrder-BFS-Traversal\obj\Debug\03_1_LevelOrder-BFS-Traversal.csproj.AssemblyReference.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\01_LevelOrder-BFS-Traversal\obj\Debug\01_LevelOrder-BFS-Traversal.exe.config
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\01_LevelOrder-BFS-Traversal\obj\Debug\03_1_LevelOrder-BFS-Traversal.csproj.CoreCompileInputs.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\01_LevelOrder-BFS-Traversal\obj\Debug\01_LevelOrder-BFS-Traversal.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\01_LevelOrder-BFS-Traversal\obj\Debug\01_LevelOrder-BFS-Traversal.pdb

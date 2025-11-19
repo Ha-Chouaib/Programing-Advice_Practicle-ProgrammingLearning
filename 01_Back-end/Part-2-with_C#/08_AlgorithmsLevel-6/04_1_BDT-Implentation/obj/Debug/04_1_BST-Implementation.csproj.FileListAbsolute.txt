@@ -5,3 +5,11 @@ C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-
 C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\04_1_BDT-Implentation\obj\Debug\04_1_BST-Implementation.csproj.CoreCompileInputs.cache
 C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\04_1_BDT-Implentation\obj\Debug\04_1_BDT-Implentation.exe
 C:\Users\jook\source\repos\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\08_AlgorithmsLevel-2\04_1_BDT-Implentation\obj\Debug\04_1_BDT-Implentation.pdb
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\04_1_BDT-Implentation\bin\Debug\04_1_BDT-Implentation.exe.config
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\04_1_BDT-Implentation\bin\Debug\04_1_BDT-Implentation.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\04_1_BDT-Implentation\bin\Debug\04_1_BDT-Implentation.pdb
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\04_1_BDT-Implentation\obj\Debug\04_1_BST-Implementation.csproj.AssemblyReference.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\04_1_BDT-Implentation\obj\Debug\04_1_BDT-Implentation.exe.config
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\04_1_BDT-Implentation\obj\Debug\04_1_BST-Implementation.csproj.CoreCompileInputs.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\04_1_BDT-Implentation\obj\Debug\04_1_BDT-Implentation.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\04_1_BDT-Implentation\obj\Debug\04_1_BDT-Implentation.pdb
