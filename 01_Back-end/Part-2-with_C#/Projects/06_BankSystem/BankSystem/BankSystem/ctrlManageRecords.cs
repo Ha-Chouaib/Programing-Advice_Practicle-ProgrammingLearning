@@ -17,16 +17,17 @@ namespace BankSystem
             InitializeComponent();
         }
 
-        public Action __AddNewRecordDeleg;
-        public Action __UpdateRecordDeleg;
-        public Action __CloseFormDeleg;
-        private Func<string,string,DataTable> _SearchRecordsDeleg;
+        public Action __AddNewRecordDelegate;
+        public Action __UpdateRecordDelegate;
+        public Action __CloseFormDelegate;
+        private Func<string,string,DataTable> _FilterRecordsDelegate;
 
         public Image __HeaderImg => pbRecordsProfile.Image;
         public Label __HeaderTitle => lblTitle;
 
-        public void Initialize(DataTable RecordsList,Dictionary<string,string> FilterByOptions,Func<string,string,DataTable> FilterDelegate,
-            List<(string ContextMenuKey,Action<int> ContextMenuAction)> ContextMenuPackage)
+        private Dictionary<string, Dictionary<string, string>> _FilterByGroups { get; set; }
+        public void __Initialize(DataTable RecordsList,Dictionary<string,string> FilterByOptions,Func<string,string,DataTable> FilterDelegate,
+            List<(string ContextMenuKey,Action<int> ContextMenuAction)> ContextMenuPackage,Dictionary<string,Dictionary<string,string>> FilterByGroups = null )
         {
             __RefreshRecordsList(RecordsList);
 
@@ -35,7 +36,9 @@ namespace BankSystem
             cmbFilterOptions.DisplayMember = "key";
             cmbFilterOptions.SelectedIndex = 0;
 
-            _SearchRecordsDeleg = FilterDelegate;
+            _FilterByGroups = FilterByGroups;
+            _FilterRecordsDelegate = FilterDelegate;
+
             _LoadContextMenu(ContextMenuPackage);
         }
         private void _LoadContextMenu(List<(string ContextMenuKey, Action<int> ContextMenuAction)> ContextMenuPackage)
@@ -60,7 +63,7 @@ namespace BankSystem
 
             string FilterColumn = cmbFilterOptions.SelectedValue.ToString();
             string FilterTerm = txtSearchTerm.Text.Trim();
-            var result = _SearchRecordsDeleg?.Invoke(FilterColumn,FilterTerm);
+            var result = _FilterRecordsDelegate?.Invoke(FilterColumn,FilterTerm);
             __RefreshRecordsList(result);
 
         }
@@ -72,23 +75,49 @@ namespace BankSystem
 
         private void btnAddNew_Click(object sender, EventArgs e)
         {
-            __AddNewRecordDeleg?.Invoke();
+            __AddNewRecordDelegate?.Invoke();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            __UpdateRecordDeleg?.Invoke();
+            __UpdateRecordDelegate?.Invoke();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            __CloseFormDeleg?.Invoke();
+            __CloseFormDelegate?.Invoke();
         }
 
         private void cmbFilterOptions_SelectedIndexChanged(object sender, EventArgs e)
         {
+           
+            if (_FilterByGroups != null && _FilterByGroups.ContainsKey(cmbFilterOptions.SelectedValue.ToString()))
+            {
+                txtSearchTerm.Visible = false;
+                pbSearchClick.Visible = false;
+
+                cmbFilterByGroups.DataSource = new BindingSource(_FilterByGroups[cmbFilterOptions.SelectedValue.ToString()], null);
+                cmbFilterByGroups.ValueMember = "value";
+                cmbFilterByGroups.DisplayMember = "key";
+
+                cmbFilterByGroups.SelectedIndex = 0;
+                cmbFilterByGroups.Visible = true;
+                __RefreshRecordsList(_FilterRecordsDelegate?.Invoke("All", "All"));
+                return;
+            }
+
+            cmbFilterByGroups.Visible = false;
+            txtSearchTerm.Visible = true;
+            pbSearchClick.Visible = true;
+
             txtSearchTerm.Text = string.Empty;
             txtSearchTerm.Focus();
+        }
+
+        private void cmbFilterByGroups_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var FilteredList = _FilterRecordsDelegate?.Invoke(cmbFilterOptions.SelectedValue.ToString(), cmbFilterByGroups.SelectedValue.ToString());
+            __RefreshRecordsList(FilteredList);
         }
     }
 }

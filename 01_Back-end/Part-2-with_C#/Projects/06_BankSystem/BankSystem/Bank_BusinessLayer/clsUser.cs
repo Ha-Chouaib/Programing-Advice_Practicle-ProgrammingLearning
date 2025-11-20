@@ -201,6 +201,10 @@ namespace Bank_BusinessLayer
         {
             return clsUserDataAccess.ListAllUsers();
         }
+        public static DataTable FilterUsers(string Column, string Term)
+        {
+            return clsUserDataAccess.FilterUsers(Column, Term);
+        }
 
     }
 }

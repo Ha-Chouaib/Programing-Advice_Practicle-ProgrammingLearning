@@ -25,3 +25,12 @@ C:\Users\jook\source\repos\Ha-Chouaib\Programing-Advice_Practicle-ProgrammingLea
 C:\Users\jook\source\repos\Ha-Chouaib\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\05_DVLD\DVLD_BusinessLayer\obj\Debug\DVLD_Bus.693E2707.Up2Date
 C:\Users\jook\source\repos\Ha-Chouaib\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\05_DVLD\DVLD_BusinessLayer\obj\Debug\DVLD_BusinessLayer.dll
 C:\Users\jook\source\repos\Ha-Chouaib\Programing-Advice_Practicle-ProgrammingLearning\Part-2-with_C#\Projects\05_DVLD\DVLD_BusinessLayer\obj\Debug\DVLD_BusinessLayer.pdb
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\05_DVLD\DVLD_BusinessLayer\bin\Debug\DVLD_BusinessLayer.dll
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\05_DVLD\DVLD_BusinessLayer\bin\Debug\DVLD_BusinessLayer.pdb
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\05_DVLD\DVLD_BusinessLayer\bin\Debug\DVLD_DataAccessLayer.dll
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\05_DVLD\DVLD_BusinessLayer\bin\Debug\DVLD_DataAccessLayer.pdb
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\05_DVLD\DVLD_BusinessLayer\obj\Debug\DVLD_BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\05_DVLD\DVLD_BusinessLayer\obj\Debug\DVLD_BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\05_DVLD\DVLD_BusinessLayer\obj\Debug\DVLD_Bus.693E2707.Up2Date
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\05_DVLD\DVLD_BusinessLayer\obj\Debug\DVLD_BusinessLayer.dll
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\05_DVLD\DVLD_BusinessLayer\obj\Debug\DVLD_BusinessLayer.pdb

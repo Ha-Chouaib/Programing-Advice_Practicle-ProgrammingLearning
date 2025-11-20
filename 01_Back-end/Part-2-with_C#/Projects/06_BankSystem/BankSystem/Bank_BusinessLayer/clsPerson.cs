@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -180,6 +181,14 @@ namespace Bank_BusinessLayer
         public static bool Delete(int PersonID)
         {
             return clsPersonDataAccess.Delete(PersonID);
+        }
+        public static DataTable ListPeopleRecords()
+        {
+            return clsPersonDataAccess.ListAllPeople();
+        }
+        public static DataTable FilterPeople(string Column, string Term)
+        {
+            return clsPersonDataAccess.FilterPeople(Column,Term);
         }
 
 

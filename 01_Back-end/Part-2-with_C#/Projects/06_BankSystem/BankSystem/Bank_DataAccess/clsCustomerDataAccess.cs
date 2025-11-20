@@ -452,7 +452,47 @@ namespace Bank_DataAccess
             }
             return Success;
         }
-    
+
+        public static DataTable FilterCustomers(string Column, string Term)
+        {
+            string Query = "Sp_FilterCustomersList";
+            DataTable FilteredList = new DataTable();
+            string[] AllowedColumn = new string[] { "All", "PersonID", "CustomerID", "IsActive", "CustomerType" };
+            try
+            {
+                if (!AllowedColumn.Contains(Column))
+                {
+                    throw new ArgumentException($"Invalid Column Name: {Column}");
+                }
+                using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
+                using (SqlCommand cmd = new SqlCommand(Query, connection))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@Column", Column);
+                    cmd.Parameters.AddWithValue("@FilterBy", Term);
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        FilteredList.Load(reader);
+                    }
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                clsGlobal.LogError($"[DAL: Customers.FilterCustomers() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                clsGlobal.LogError($"[DAL: Customers.FilterCustomers() ] -> {ex.Message}");
+
+            }
+            return FilteredList;
+        }
+
 
     }
 }

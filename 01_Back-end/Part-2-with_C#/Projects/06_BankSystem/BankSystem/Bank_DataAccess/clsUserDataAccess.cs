@@ -625,5 +625,45 @@ namespace Bank_DataAccess
             return dt;
         }
 
+        public static DataTable FilterUsers(string Column, string Term)
+        {
+            string Query = "Sp_FilterUsersList";
+            DataTable FilteredList = new DataTable();
+            string[] AllowedColumn = new string[] { "All", "PersonID", "UserID", "IsActive", "UserName" };
+            try
+            {
+                if (!AllowedColumn.Contains(Column))
+                {
+                    throw new ArgumentException($"Invalid Column Name: {Column}");
+                }
+                using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
+                using (SqlCommand cmd = new SqlCommand(Query, connection))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@Column", Column);
+                    cmd.Parameters.AddWithValue("@FilterBy", Term);
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        FilteredList.Load(reader);
+                    }
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                clsGlobal.LogError($"[DAL: Users.FilterUsers() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                clsGlobal.LogError($"[DAL: Users.FilterUsers() ] -> {ex.Message}");
+
+            }
+            return FilteredList;
+        }
+
     }
 }

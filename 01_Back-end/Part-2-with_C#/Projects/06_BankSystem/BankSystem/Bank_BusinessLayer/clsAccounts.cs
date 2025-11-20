@@ -178,6 +178,9 @@ namespace Bank_BusinessLayer
             return clsAccountsDataAccess.ListAccounts();
         }
 
-        
+        public static DataTable FilterAccounts(string Column,string Term)
+        {
+            return clsAccountsDataAccess.FilterAccounts(Column, Term);
+        }
     }
 }

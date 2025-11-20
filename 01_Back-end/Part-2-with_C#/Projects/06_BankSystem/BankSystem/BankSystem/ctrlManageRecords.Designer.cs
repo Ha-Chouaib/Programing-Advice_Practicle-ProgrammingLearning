@@ -41,6 +41,7 @@
             this.txtSearchTerm = new System.Windows.Forms.TextBox();
             this.pbSearchClick = new System.Windows.Forms.PictureBox();
             this.pbRecordsProfile = new System.Windows.Forms.PictureBox();
+            this.cmbFilterByGroups = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListRecords)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSearchClick)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRecordsProfile)).BeginInit();
@@ -194,11 +195,27 @@
             this.pbRecordsProfile.TabIndex = 19;
             this.pbRecordsProfile.TabStop = false;
             // 
+            // cmbFilterByGroups
+            // 
+            this.cmbFilterByGroups.BackColor = System.Drawing.Color.Black;
+            this.cmbFilterByGroups.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFilterByGroups.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbFilterByGroups.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbFilterByGroups.ForeColor = System.Drawing.Color.White;
+            this.cmbFilterByGroups.FormattingEnabled = true;
+            this.cmbFilterByGroups.Location = new System.Drawing.Point(456, 187);
+            this.cmbFilterByGroups.Name = "cmbFilterByGroups";
+            this.cmbFilterByGroups.Size = new System.Drawing.Size(389, 33);
+            this.cmbFilterByGroups.TabIndex = 20;
+            this.cmbFilterByGroups.Visible = false;
+            this.cmbFilterByGroups.SelectedIndexChanged += new System.EventHandler(this.cmbFilterByGroups_SelectedIndexChanged);
+            // 
             // ctrlManageRecords
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(61)))), ((int)(((byte)(66)))));
+            this.Controls.Add(this.cmbFilterByGroups);
             this.Controls.Add(this.pbRecordsProfile);
             this.Controls.Add(this.pbSearchClick);
             this.Controls.Add(this.txtSearchTerm);
@@ -234,5 +251,6 @@
         private System.Windows.Forms.PictureBox pbSearchClick;
         private System.Windows.Forms.PictureBox pbRecordsProfile;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ComboBox cmbFilterByGroups;
     }
 }
