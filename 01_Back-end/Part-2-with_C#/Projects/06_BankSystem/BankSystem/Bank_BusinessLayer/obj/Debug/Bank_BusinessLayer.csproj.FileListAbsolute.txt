@@ -20,3 +20,4 @@ C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-en
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\Bank_BusinessLayer\obj\Debug\Bank_Bus.7A804047.Up2Date
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\Bank_BusinessLayer\obj\Debug\Bank_BusinessLayer.exe
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\Bank_BusinessLayer\obj\Debug\Bank_BusinessLayer.pdb
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\Bank_BusinessLayer\obj\Debug\Bank_BusinessLayer.exe.config

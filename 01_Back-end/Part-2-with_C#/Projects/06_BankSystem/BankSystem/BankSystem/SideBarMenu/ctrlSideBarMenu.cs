@@ -127,7 +127,7 @@ namespace BankSystem.SideBarMenu
                 }
                 else
                 {
-                    ClickedSubMenu.ArrowIcon = Resources.down__1_;
+                    ClickedSubMenu.ArrowIcon = Resources.down;
                     CurrentSubMenu.Height = CurrentSubMenu.MainBtnContainer.Height;
                 }
             }
@@ -135,7 +135,9 @@ namespace BankSystem.SideBarMenu
             {
                 ClickedSubMenu.Height = ClickedSubMenu.MainBtnContainer.Height;
                 ClickedSubMenu.SubContainer.Visible = false;
+
                 CurrentSubMenu.SubContainer.Visible = true;
+                CurrentSubMenu.ArrowIcon = Resources.up;
                 CurrentSubMenu.Height = CurrentSubMenu.MainBtnContainer.Height + CurrentSubMenu.SubContainer.PreferredSize.Height;
 
                 ClickedSubMenu = CurrentSubMenu;

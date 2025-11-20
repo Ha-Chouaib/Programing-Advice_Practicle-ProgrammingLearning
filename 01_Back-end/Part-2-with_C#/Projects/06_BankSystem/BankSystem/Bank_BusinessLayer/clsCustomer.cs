@@ -167,6 +167,10 @@ namespace Bank_BusinessLayer
                 return TransferMoney(AccountFromID,AccountToID, Amount);
             return false;
         }
+        public static DataTable FilterCustomers(string Column, string Term)
+        {
+            return clsCustomerDataAccess.FilterCustomers(Column, Term);
+        }
     
     }
 }

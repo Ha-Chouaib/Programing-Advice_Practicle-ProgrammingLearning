@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -369,7 +370,46 @@ namespace Bank_DataAccess.People
             }
             return dt;
         }
-        
+
+        public static DataTable FilterPeople(string Column, string Term)
+        {
+            string Query = "Sp_FilterPeopleList";
+            DataTable FilteredList = new DataTable();
+            string[] AllowedColumn = new string[] {"All","PersonID", "Gender", "FullName","Email","Phone"}; 
+            try
+            {
+                if(!AllowedColumn.Contains(Column))
+                {
+                    throw new ArgumentException($"Invalid Column Name: {Column}");
+                }
+                using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
+                using (SqlCommand cmd = new SqlCommand(Query, connection))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@Column", Column);
+                    cmd.Parameters.AddWithValue("@FilterBy", Term);
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        FilteredList.Load(reader);
+                    }
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                clsGlobal.LogError($"[DAL: Person.FilterPeople() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                clsGlobal.LogError($"[DAL: Person.FilterPeople() ] -> {ex.Message}");
+
+            }
+            return FilteredList;
+        }
         
     }
 }
