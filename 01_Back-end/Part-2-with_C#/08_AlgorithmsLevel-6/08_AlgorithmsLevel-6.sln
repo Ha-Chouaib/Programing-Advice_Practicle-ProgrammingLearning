@@ -51,6 +51,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_02_DecimalToBinary", "09
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_03_UndoInCalculator", "09_03_UndoInCalculator\09_03_UndoInCalculator.csproj", "{FBBC08E2-0EB2-4CCE-B787-D1FAAF3533D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_04_PrinterJobScheduling", "09_04_PrinterJobScheduling\09_04_PrinterJobScheduling.csproj", "{11C67CD8-8835-425A-89A9-8BD373430171}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{FBBC08E2-0EB2-4CCE-B787-D1FAAF3533D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBBC08E2-0EB2-4CCE-B787-D1FAAF3533D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBBC08E2-0EB2-4CCE-B787-D1FAAF3533D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11C67CD8-8835-425A-89A9-8BD373430171}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11C67CD8-8835-425A-89A9-8BD373430171}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11C67CD8-8835-425A-89A9-8BD373430171}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11C67CD8-8835-425A-89A9-8BD373430171}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -137,6 +143,7 @@ Global
 		{DD02993B-C8EE-4021-B9F2-869F8180E91A} = {2AEB58D9-7CCE-4260-AAC3-1AB296CDEE3C}
 		{357B7467-F815-499E-91DE-6B60717E05A8} = {2AEB58D9-7CCE-4260-AAC3-1AB296CDEE3C}
 		{FBBC08E2-0EB2-4CCE-B787-D1FAAF3533D9} = {2AEB58D9-7CCE-4260-AAC3-1AB296CDEE3C}
+		{11C67CD8-8835-425A-89A9-8BD373430171} = {2AEB58D9-7CCE-4260-AAC3-1AB296CDEE3C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9C33A5C4-4CC2-49D6-8B08-E3DD981DB651}

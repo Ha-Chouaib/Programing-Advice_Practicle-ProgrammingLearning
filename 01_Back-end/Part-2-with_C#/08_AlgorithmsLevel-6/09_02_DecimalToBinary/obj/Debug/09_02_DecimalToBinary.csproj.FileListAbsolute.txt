@@ -5,4 +5,3 @@ C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-en
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_02_DecimalToBinary\obj\Debug\09_02_DecimalToBinary.csproj.CoreCompileInputs.cache
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_02_DecimalToBinary\obj\Debug\09_02_DecimalToBinary.exe
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_02_DecimalToBinary\obj\Debug\09_02_DecimalToBinary.pdb
-C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_02_DecimalToBinary\obj\Debug\09_02_DecimalToBinary.exe.config
