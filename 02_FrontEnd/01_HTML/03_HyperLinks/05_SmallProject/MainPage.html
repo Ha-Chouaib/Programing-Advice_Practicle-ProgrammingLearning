@@ -1,0 +1,48 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navidator with iFrame</title>
+    <!-- Add a readable, story-friendly font -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body style="padding: 0px; margin: 0px;">
+   
+    <div style="width: 100%; text-align: center; border-bottom: 2px solid black; border-bottom-left-radius:10px ; border-bottom-right-radius: 10px;
+    background-color: rgb(241, 157, 1); margin: 0; ">
+        <H1 style="margin: 0;">Stories</H1>
+    </div  >
+ 
+ <div style="display: flex; margin: 0; height: 100vh;">
+           <div id="navigator" style="width: 20%; margin-top: 5px; display: flex; flex-direction: column; gap: 20px; border-right: 1px solid black; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">
+        <a href="page1.html" target="contentFrame">
+            <button style="width:auto ; height: 40px; border-radius: 20px; border: 5px black solid ; background-color: rgb(9, 233, 233);
+            color: rgb(7, 7, 7);  font-family:'Playfair Display', Georgia, serif; font-weight:700; font-size:14px;
+            box-shadow: 5px 6px 10px rgba(4, 167, 189, 0.932);"><em>The Grateful Traveler</em></button>
+            </a>
+        <a href="page2.html" target="contentFrame">
+            <button style="width:auto ; height: 40px; border-radius: 20px; border: 5px black solid ; background-color: rgb(9, 233, 233);
+            color: rgb(7, 7, 7); font-family:'Playfair Display', Georgia, serif; font-weight:700; font-size:14px;
+            box-shadow: 5px 6px 10px rgba(4, 167, 189, 0.932);"><em>The Wise Owl and the Rabbit</em></button>
+            </a>
+        <a href="page3.html" target="contentFrame">
+            <button style="width: auto; height: 40px; border-radius: 20px; border: 5px black solid ; background-color: rgb(9, 233, 233);
+            color: rgb(7, 7, 7);  font-family:'Playfair Display', Georgia, serif; font-weight:700; font-size:14px;
+            box-shadow: 5px 6px 10px rgba(4, 167, 189, 0.932); "><em>The Brave Little Squirrel</em></button></a>
+    </div>
+
+    <div id="content" style="width: 80%;height: 600px; border: none; margin-left: 20px;">
+        
+        <h2 align="center" style="color:red">Short Story Section</h2>
+         
+        <!-- this iframe will show the pages content -->
+        <iframe name="contentFrame" src="page1.html" style="width: 100%; height: 100%; border: none;"></iframe>
+
+    </div>
+    </div>
+</body>
+</html>
