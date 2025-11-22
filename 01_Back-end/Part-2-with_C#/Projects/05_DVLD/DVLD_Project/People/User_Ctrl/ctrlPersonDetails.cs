@@ -34,30 +34,16 @@ namespace DVLD_Project
                 lnkEditPersonInfo.Text = $"Edit {Person.FirstName}'s Info";
 
                 lblPersonID.Text ="[ "+ __PersonID.ToString()+" ]";
-                string FullName = Person.FullName;
-                lblName.Text = FullName;
+                
+                lblName.Text = Person.FullName;
                 lblNationalNo.Text = Person.NationalNo;
                 lblAddress.Text = Person.Address;
                 lblEmail.Text = Person.Email;
-
-                if (Person.Gender == 0)
-                    lblGender.Text = "Male";
-                else
-                    lblGender.Text = "Female";
+                lblGender.Text = (Person.Gender == 0) ? "Male" : "Female";
                 lblDateOfBirth.Text = Person.DateOfBirth.ToShortDateString();
                 lblPhone.Text = Person.Phone;
                 lblCountry.Text = clsCountries.Find(Person.NationalityCountryID).CountryName;
-
-                if(Person.ImagePath != string.Empty && File.Exists(Person.ImagePath))
-                {
-                    pbProfileImg.Image = Image.FromFile( Person.ImagePath);
-                }else
-                {
-                    if (Person.Gender == 0)
-                        pbProfileImg.Image=Resources.user_Male;
-                    else
-                        pbProfileImg.Image=Resources.user_female;
-                }
+                pbProfileImg.Image = (Person.ImagePath != string.Empty && File.Exists(Person.ImagePath)) ? Image.FromFile(Person.ImagePath) : (Person.Gender == 0) ? Resources.user_Male : Resources.user_female;
 
             }
            

@@ -20,21 +20,26 @@ namespace BankSystem.Person
         {
             InitializeComponent();
             lblAddEdit.Text =  "Add New Person";
-                 
+            
         }
         private void ctrlAddEditPerson_Load(object sender, EventArgs e)
         {   if(!DesignMode)
             _UploadCountries();
         }
 
-        clsPerson _person = new clsPerson();
+        clsPerson _person { get; set; }
         ErrorProvider errorProvider = new ErrorProvider();
 
         public event EventHandler<clsPerson> OnPersonAdded_Updated;
         public event EventHandler OnOperationCanceled;
+
+        enum enMode { enAdd,enEdit}
+        enMode _Mode = enMode.enAdd;
         public Label __HeadingTitle => lblAddEdit;
         private void _GetPersonInfo()
         {
+            if(_Mode == enMode.enAdd) _person = new clsPerson();
+
             _person.FirstName = txtFirstName.Text;
             _person.LastName = txtLastName.Text;
             _person.Email = txtEmail.Text;
@@ -43,18 +48,19 @@ namespace BankSystem.Person
             _person.Gender =(byte) ( rbMail.Checked ? 0 : 1);
             _person.NationalNo = txtNationalNo.Text;
             _person.CountryID =(short) clsCountries.Find(cbCountry.SelectedItem.ToString()).CountryID;
-            _person.ImagePath = (pbProfileImg.Image != Resources.person_man) || (pbProfileImg.Image != Resources.person_woman) ? pbProfileImg.ImageLocation : string.Empty;
             _person.DateOfBirth = dtDateOfBirth.Value;
 
         }
-
         public void UpdatePerson(clsPerson person)
         {
 
             _person = person;
-            if (_person != null)
-                _DisplayPersonInfo();
             lblAddEdit.Text = "Edit Person Info";
+            if (_person != null)
+            {
+                _DisplayPersonInfo();
+                _Mode = enMode.enEdit;
+            }
 
 
         }
@@ -75,11 +81,23 @@ namespace BankSystem.Person
             clsCountries country = clsCountries.Find(_person.CountryID);
             if (country != null)
                 cbCountry.SelectedItem = country.CountryName;
+          
 
-            if (!string.IsNullOrEmpty(_person.ImagePath) && File.Exists(_person.ImagePath))
-                pbProfileImg.ImageLocation = _person.ImagePath;
+            if (!string.IsNullOrWhiteSpace(_person.ImagePath) && File.Exists(_person.ImagePath))
+            {
+                using (var img = Image.FromFile(_person.ImagePath))
+                {
+                    pbProfileImg.Image = new Bitmap(img);
+                    // prevents file locking
+                }
+            }
             else
-                pbProfileImg.Image = (_person.Gender == 0)? Resources.person_man : Resources.person_woman;
+            {
+                _person.ImagePath = string.Empty;
+                pbProfileImg.Image = (_person.Gender == 0)
+                    ? Resources.person_man
+                    : Resources.person_woman;
+            }
 
             dtDateOfBirth.Value = _person.DateOfBirth;
 
@@ -99,6 +117,7 @@ namespace BankSystem.Person
             _GetPersonInfo();
             if (_person.Save())
             {
+                _Mode = enMode.enEdit;
                 lblPersonID.Text = $"Person ID: [{_person.PersonID}]";
                 OnPersonAdded_Updated?.Invoke(this, _person);
                 btnCancel.Text = "Close";
@@ -147,7 +166,7 @@ namespace BankSystem.Person
 
         private void rbMail_CheckedChanged(object sender, EventArgs e)
         {
-            if (_person != null && (_person.ImagePath == string.Empty || !File.Exists(_person.ImagePath)))
+            if (!pbRemoveImg.Visible && _person != null && (_person.ImagePath == string.Empty || !File.Exists(_person.ImagePath)))
                 pbProfileImg.Image = rbMail.Checked ? Resources.person_man : Resources.person_woman;
         }
 
@@ -162,6 +181,7 @@ namespace BankSystem.Person
             if (ofdGetProfileImg.ShowDialog() == DialogResult.OK)
             {
                 pbProfileImg.Image = Image.FromFile(ofdGetProfileImg.FileName);
+                _person.ImagePath = ofdGetProfileImg.FileName;
                 pbRemoveImg.Visible = true;
             }
         }
@@ -169,6 +189,7 @@ namespace BankSystem.Person
         private void pbRemoveImg_Click(object sender, EventArgs e)
         {
             pbProfileImg.Image = rbMail.Checked ? Resources.person_man : Resources.person_woman;
+            _person.ImagePath = string.Empty;
             pbRemoveImg.Visible = false;
 
         }

@@ -80,29 +80,41 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Person\ctrlAddEditPerson.cs">
+    <Compile Include="Person\Forms\frmShowPersonDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Person\Forms\frmShowPersonDetails.Designer.cs">
+      <DependentUpon>frmShowPersonDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Person\UserControls\ctrlAddEditPerson.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Person\ctrlAddEditPerson.Designer.cs">
+    <Compile Include="Person\UserControls\ctrlAddEditPerson.Designer.cs">
       <DependentUpon>ctrlAddEditPerson.cs</DependentUpon>
     </Compile>
-    <Compile Include="Person\frmAddNewPerson.cs">
+    <Compile Include="Person\Forms\frmAddNewPerson.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Person\frmAddNewPerson.Designer.cs">
+    <Compile Include="Person\Forms\frmAddNewPerson.Designer.cs">
       <DependentUpon>frmAddNewPerson.cs</DependentUpon>
     </Compile>
-    <Compile Include="Person\frmEditPerson.cs">
+    <Compile Include="Person\Forms\frmEditPerson.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Person\frmEditPerson.Designer.cs">
+    <Compile Include="Person\Forms\frmEditPerson.Designer.cs">
       <DependentUpon>frmEditPerson.cs</DependentUpon>
     </Compile>
-    <Compile Include="Person\frmManagePeople.cs">
+    <Compile Include="Person\Forms\frmManagePeople.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Person\frmManagePeople.Designer.cs">
+    <Compile Include="Person\Forms\frmManagePeople.Designer.cs">
       <DependentUpon>frmManagePeople.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Person\UserControls\ctrlDisplayPersonDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Person\UserControls\ctrlDisplayPersonDetails.Designer.cs">
+      <DependentUpon>ctrlDisplayPersonDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -145,17 +157,23 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Person\ctrlAddEditPerson.resx">
+    <EmbeddedResource Include="Person\Forms\frmShowPersonDetails.resx">
+      <DependentUpon>frmShowPersonDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Person\UserControls\ctrlAddEditPerson.resx">
       <DependentUpon>ctrlAddEditPerson.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Person\frmAddNewPerson.resx">
+    <EmbeddedResource Include="Person\Forms\frmAddNewPerson.resx">
       <DependentUpon>frmAddNewPerson.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Person\frmEditPerson.resx">
+    <EmbeddedResource Include="Person\Forms\frmEditPerson.resx">
       <DependentUpon>frmEditPerson.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Person\frmManagePeople.resx">
+    <EmbeddedResource Include="Person\Forms\frmManagePeople.resx">
       <DependentUpon>frmManagePeople.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Person\UserControls\ctrlDisplayPersonDetails.resx">
+      <DependentUpon>ctrlDisplayPersonDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

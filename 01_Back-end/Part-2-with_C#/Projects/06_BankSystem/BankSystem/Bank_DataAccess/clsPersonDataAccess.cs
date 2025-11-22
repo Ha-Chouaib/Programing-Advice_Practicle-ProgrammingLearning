@@ -41,8 +41,7 @@ namespace Bank_DataAccess.People
                                 Gender = reader["Gender"] != DBNull.Value ? Convert.ToByte(reader["Gender"]) : (byte) 3 ;
                                 CountryID = reader["CountryID"] != DBNull.Value ?  Convert.ToInt16(reader["CountryID"]) : (short)0 ;
                                 Address = reader["Address"] as string ?? string.Empty;
-                                ImgPath = (reader["ImagePath"] != DBNull.Value) ? (string)reader["ImagePath"] : string.Empty;
-                               
+                                ImgPath = reader["ImagePath"] as string ?? string.Empty;
 
                                 found = true;
                             }
@@ -99,7 +98,7 @@ namespace Bank_DataAccess.People
                                 Gender = reader["Gender"] != DBNull.Value ? Convert.ToByte(reader["Gender"]) : (byte)3;
                                 CountryID = reader["CountryID"] != DBNull.Value ? Convert.ToInt16(reader["CountryID"]) : (short)0;
                                 Address = reader["Address"] as string ?? string.Empty;
-                                ImgPath = (reader["ImagePath"] != DBNull.Value) ? (string)reader["ImagePath"] : string.Empty;
+                                ImgPath = reader["ImagePath"] as string ?? string.Empty;
 
 
                                 found = true;
@@ -144,6 +143,7 @@ namespace Bank_DataAccess.People
                     cmd.Parameters.AddWithValue("@LastName", LastName);
                     cmd.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
                     cmd.Parameters.AddWithValue("@NationalNo", NationalNo);
+                    cmd.Parameters.AddWithValue("@Gender", Gender);
                     cmd.Parameters.AddWithValue("@Email", Email);
                     cmd.Parameters.AddWithValue("@Phone", Phone);
                     cmd.Parameters.AddWithValue("@CountryID", CountryID);
@@ -200,18 +200,19 @@ namespace Bank_DataAccess.People
                 using (SqlCommand cmd = new SqlCommand(Query, conn))
                 {
 
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@PersonID", PersonID);
                     cmd.Parameters.AddWithValue("@FirstName", FirstName);
                     cmd.Parameters.AddWithValue("@LastName", LastName);
                     cmd.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
                     cmd.Parameters.AddWithValue("@NationalNo", NationalNo);
+                    cmd.Parameters.AddWithValue("@Gender", Gender);
                     cmd.Parameters.AddWithValue("@Email", Email);
                     cmd.Parameters.AddWithValue("@Phone", Phone);
                     cmd.Parameters.AddWithValue("@CountryID", CountryID);
                     cmd.Parameters.AddWithValue("@Address", Address);
-                    cmd.Parameters.AddWithValue("@ImagePath", string.IsNullOrEmpty(ImgPath) ? DBNull.Value : (object)ImgPath);
+                    cmd.Parameters.AddWithValue("@ImagePath", ImgPath == string.Empty ? DBNull.Value : (object)ImgPath );
 
                     conn.Open();
 
@@ -230,11 +231,11 @@ namespace Bank_DataAccess.People
             }
             catch (SqlException ex)
             {
-                clsGlobal.LogError($"[DAL: Person.AddNewPerson() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: Person.UpdatePersonInf() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsGlobal.LogError($"[DAL: Person.AddNewPerson() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: Person.UpdatePersonInf() ] -> {ex.Message}");
 
             }
             return Success;
@@ -375,7 +376,7 @@ namespace Bank_DataAccess.People
         {
             string Query = "Sp_FilterPeopleList";
             DataTable FilteredList = new DataTable();
-            string[] AllowedColumn = new string[] {"All","PersonID", "Gender", "FullName","Email","Phone"}; 
+            string[] AllowedColumn = new string[] {"All","PersonID", "NationalNo","Gender", "FullName","Email","Phone"}; 
             try
             {
                 if(!AllowedColumn.Contains(Column))
