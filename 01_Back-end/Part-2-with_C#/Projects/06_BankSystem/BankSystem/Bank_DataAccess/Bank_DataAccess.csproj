@@ -51,7 +51,7 @@
     <Compile Include="clsUserDataAccess.cs" />
     <Compile Include="Global\clsGlobal.cs" />
     <Compile Include="Global\DataAccessSettings.cs" />
-    <Compile Include="People\clsPersonDataAccess.cs" />
+    <Compile Include="clsPersonDataAccess.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

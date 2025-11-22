@@ -40,6 +40,7 @@ namespace BankSystem
             _FilterRecordsDelegate = FilterDelegate;
 
             _LoadContextMenu(ContextMenuPackage);
+            pbSearchClick.Enabled = false;
         }
         private void _LoadContextMenu(List<(string ContextMenuKey, Action<int> ContextMenuAction)> ContextMenuPackage)
         {
@@ -59,11 +60,10 @@ namespace BankSystem
 
         private void pbSearchClick_Click(object sender, EventArgs e)
         {
-            if(txtSearchTerm.Text == string.Empty) return;
+            
+            if (txtSearchTerm.Text == string.Empty) return;
 
-            string FilterColumn = cmbFilterOptions.SelectedValue.ToString();
-            string FilterTerm = txtSearchTerm.Text.Trim();
-            var result = _FilterRecordsDelegate?.Invoke(FilterColumn,FilterTerm);
+            var result = _FilterRecordsDelegate?.Invoke(cmbFilterOptions.SelectedValue.ToString(), txtSearchTerm.Text.Trim());
             __RefreshRecordsList(result);
 
         }
@@ -105,11 +105,17 @@ namespace BankSystem
                 __RefreshRecordsList(_FilterRecordsDelegate?.Invoke("All", "All"));
                 return;
             }
-
+            
             cmbFilterByGroups.Visible = false;
             txtSearchTerm.Visible = true;
             pbSearchClick.Visible = true;
-
+            if(cmbFilterOptions.SelectedValue.ToString() == "All")
+            {
+                pbSearchClick.Enabled = false;
+                __RefreshRecordsList(_FilterRecordsDelegate?.Invoke("All", "All"));
+                return;
+            }
+            pbSearchClick.Enabled = true;
             txtSearchTerm.Text = string.Empty;
             txtSearchTerm.Focus();
         }

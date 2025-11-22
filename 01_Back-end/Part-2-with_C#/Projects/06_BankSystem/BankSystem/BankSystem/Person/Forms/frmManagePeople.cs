@@ -1,4 +1,5 @@
 ﻿using Bank_BusinessLayer;
+using BankSystem.Person.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,7 @@ namespace BankSystem.Person
 
         public void LoadManageRecordsControl()
         {
+            ctrlManageRecords1.__CloseFormDelegate += _EndSession;
             ctrlManageRecords1.__Initialize(clsPerson.ListPeopleRecords(), _FilterBy_Options(),clsPerson.FilterPeople ,_ContextMenuPackage(), _FilterByGroups());
         }
         private Dictionary<string,string> _FilterBy_Options()
@@ -29,6 +31,7 @@ namespace BankSystem.Person
             {
                 {"All","All"},
                 {"Person ID","PersonID" },
+                {"National No","NationalNo"},
                 {"Gender","Gender" },
                 {"Full Name","FullName"},
                 {"Email","Email" },
@@ -46,7 +49,7 @@ namespace BankSystem.Person
                 ("Delete Person", DeletePerson),                
                 ("Send Email", SendPersonEmail),
                 ("Call Person", CallPerson),
-                ("-", null),
+                ("--------------", null),
                 ("Convert To User", ConvertToUser),
                 ("Convert To Customer", ConvertToCustomer)
 
@@ -73,35 +76,55 @@ namespace BankSystem.Person
         
         void ViewPersonDetails(int personId)
         {
-            // TODO: Implement viewing full person details
+            frmShowPersonDetails DisplayPersonalInfo = new frmShowPersonDetails(personId);
+            DisplayPersonalInfo.ShowDialog();
         }
 
         void EditPerson(int personId)
         {
-            // TODO: Implement edit person form opening
+            clsPerson person = clsPerson.Find(personId);
+            if(person != null)
+            {
+                frmEditPerson editPerson = new frmEditPerson( person);
+                editPerson.ShowDialog();
+                return;
+            }
+           MessageBox.Show($"No record founded by id [{personId}] ","warning",MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         void DeletePerson(int personId)
         {
-            // TODO: Implement delete logic + confirmation
+            if(MessageBox.Show("Sure To delete this record?!","Validation",MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                if (clsPerson.Delete(personId))
+                {
+                    MessageBox.Show($"The Person's record With id [{personId}] was deleted successfully");
+                    ctrlManageRecords1.__RefreshRecordsList(clsPerson.ListPeopleRecords());
+                }
+                else MessageBox.Show($"Can't Delete This Record!","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         void SendPersonEmail(int personId)
         {
-            // TODO: Implement email sending dialog
+            MessageBox.Show($"Send Email To Person with id [{personId}] -> Not Implemented yet");
         }
         void CallPerson(int personId)
         {
-            
+            MessageBox.Show($"call the  Person with id [{personId}] -> Not Implemented yet");
         }
         void ConvertToUser(int personId)
         {
-
+            MessageBox.Show($"Convert Person with id [{personId}] To User -> Not Implemented yet");
         }
         void ConvertToCustomer(int personId)
         {
-
+            MessageBox.Show($"Convert Person with id [{personId}] To Customer -> Not Implemented yet");
         }
 
+        private void _EndSession()
+        {
+            this.Close();
+        }
 
     }
 }

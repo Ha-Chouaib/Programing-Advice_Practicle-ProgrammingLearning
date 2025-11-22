@@ -41,7 +41,7 @@ namespace Bank_BusinessLayer
             this.Email = Email;
             this.Phone = Phone;
             this.CountryID = CountryID;
-            this.ImagePath = ImagePath;
+            this.ImagePath = ImgPath;
             this.FullName = FirstName + " " + LastName;
             _Mode = enMode.eUpdate;
         }
