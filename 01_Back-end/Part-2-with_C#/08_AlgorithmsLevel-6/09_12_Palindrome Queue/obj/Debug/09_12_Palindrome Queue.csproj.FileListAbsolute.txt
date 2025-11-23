@@ -1,0 +1,8 @@
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_12_Palindrome Queue\bin\Debug\09_12_Palindrome Queue.exe.config
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_12_Palindrome Queue\bin\Debug\09_12_Palindrome Queue.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_12_Palindrome Queue\bin\Debug\09_12_Palindrome Queue.pdb
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_12_Palindrome Queue\obj\Debug\09_12_Palindrome Queue.csproj.AssemblyReference.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_12_Palindrome Queue\obj\Debug\09_12_Palindrome Queue.csproj.CoreCompileInputs.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_12_Palindrome Queue\obj\Debug\09_12_Palindrome Queue.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_12_Palindrome Queue\obj\Debug\09_12_Palindrome Queue.pdb
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_12_Palindrome Queue\obj\Debug\09_12_Palindrome Queue.exe.config

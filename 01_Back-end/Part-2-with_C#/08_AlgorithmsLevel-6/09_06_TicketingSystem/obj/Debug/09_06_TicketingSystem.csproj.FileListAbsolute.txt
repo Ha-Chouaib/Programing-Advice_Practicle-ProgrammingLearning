@@ -1,0 +1,8 @@
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_06_TicketingSystem\bin\Debug\09_06_TicketingSystem.exe.config
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_06_TicketingSystem\bin\Debug\09_06_TicketingSystem.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_06_TicketingSystem\bin\Debug\09_06_TicketingSystem.pdb
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_06_TicketingSystem\obj\Debug\09_06_TicketingSystem.csproj.AssemblyReference.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_06_TicketingSystem\obj\Debug\09_06_TicketingSystem.csproj.CoreCompileInputs.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_06_TicketingSystem\obj\Debug\09_06_TicketingSystem.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_06_TicketingSystem\obj\Debug\09_06_TicketingSystem.pdb
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_06_TicketingSystem\obj\Debug\09_06_TicketingSystem.exe.config

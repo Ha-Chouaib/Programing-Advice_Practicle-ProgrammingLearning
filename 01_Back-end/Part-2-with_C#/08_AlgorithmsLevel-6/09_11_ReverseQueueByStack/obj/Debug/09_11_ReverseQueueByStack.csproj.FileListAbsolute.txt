@@ -1,0 +1,8 @@
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_11_ReverseQueueByStack\bin\Debug\09_11_ReverseQueueByStack.exe.config
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_11_ReverseQueueByStack\bin\Debug\09_11_ReverseQueueByStack.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_11_ReverseQueueByStack\bin\Debug\09_11_ReverseQueueByStack.pdb
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_11_ReverseQueueByStack\obj\Debug\09_11_ReverseQueueByStack.csproj.AssemblyReference.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_11_ReverseQueueByStack\obj\Debug\09_11_ReverseQueueByStack.csproj.CoreCompileInputs.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_11_ReverseQueueByStack\obj\Debug\09_11_ReverseQueueByStack.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_11_ReverseQueueByStack\obj\Debug\09_11_ReverseQueueByStack.pdb
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_11_ReverseQueueByStack\obj\Debug\09_11_ReverseQueueByStack.exe.config
