@@ -64,11 +64,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(642, 834);
+            this.ClientSize = new System.Drawing.Size(643, 846);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ctrlFind1);
             this.Controls.Add(this.ctrlAddEditPerson1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmEditPerson";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Person";
             this.ResumeLayout(false);
             this.PerformLayout();

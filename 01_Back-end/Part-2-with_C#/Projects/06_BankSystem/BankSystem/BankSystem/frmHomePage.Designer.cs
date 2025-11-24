@@ -58,6 +58,7 @@
             this.ClientSize = new System.Drawing.Size(1276, 717);
             this.Controls.Add(this.pnlMainContainer);
             this.Name = "frmHomePage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmHomePage";
             this.Load += new System.EventHandler(this.frmHomePage_Load);
             this.Controls.SetChildIndex(this.pnlMainContainer, 0);

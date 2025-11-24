@@ -19,6 +19,7 @@ namespace BankSystem.Person
             _LoadFindControl();
         }
         public Action<clsPerson> __GetUpdatedPersonRecord;
+        public Action __RefreshContent;
         public frmEditPerson(clsPerson person)
         {
             InitializeComponent();
@@ -44,6 +45,7 @@ namespace BankSystem.Person
             {
                 _Person = person;
                 __GetUpdatedPersonRecord?.Invoke( _Person );
+                __RefreshContent?.Invoke();
                 MessageBox.Show("Operation done Successfully");
                 return;
             }

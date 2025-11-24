@@ -20,11 +20,13 @@ namespace BankSystem.Person
             ctrlAddEditPerson1.OnOperationCanceled += _LeaveForm;
         }
         clsPerson _Person= new clsPerson();
+        public Action __RefreshContent;
         private void _GetNewPersonAdded(object sender, clsPerson person)
         {
             if (person != null)
             {
                 _Person = person;
+                __RefreshContent?.Invoke();
                 MessageBox.Show("Operation done Successfully");
                 return;
             }

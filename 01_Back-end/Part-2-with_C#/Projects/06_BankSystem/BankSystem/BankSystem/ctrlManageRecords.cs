@@ -22,8 +22,11 @@ namespace BankSystem
         public Action __CloseFormDelegate;
         private Func<string,string,DataTable> _FilterRecordsDelegate;
 
-        public Image __HeaderImg => pbRecordsProfile.Image;
+        public DataGridView __RecordsContainer => dgvListRecords;
+        public PictureBox __HeaderImg => pbRecordsProfile;
         public Label __HeaderTitle => lblTitle;
+        public Button __AddNewBtn => btnAddNew;
+        public Button __UpdateBtn => btnUpdate;
 
         private Dictionary<string, Dictionary<string, string>> _FilterByGroups { get; set; }
         public void __Initialize(DataTable RecordsList,Dictionary<string,string> FilterByOptions,Func<string,string,DataTable> FilterDelegate,
@@ -72,7 +75,10 @@ namespace BankSystem
             dgvListRecords.DataSource = NewList;
             lblRecordsCount.Text = $"Records: [ {dgvListRecords.RowCount} ]";
         }
-
+        public void __RefreshRecordsList()
+        {
+            __RefreshRecordsList(_FilterRecordsDelegate?.Invoke("All", "All"));
+        }
         private void btnAddNew_Click(object sender, EventArgs e)
         {
             __AddNewRecordDelegate?.Invoke();
@@ -125,5 +131,7 @@ namespace BankSystem
             var FilteredList = _FilterRecordsDelegate?.Invoke(cmbFilterOptions.SelectedValue.ToString(), cmbFilterByGroups.SelectedValue.ToString());
             __RefreshRecordsList(FilteredList);
         }
+
+       
     }
 }

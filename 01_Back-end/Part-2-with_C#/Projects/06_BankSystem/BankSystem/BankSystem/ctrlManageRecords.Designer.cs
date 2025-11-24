@@ -39,12 +39,12 @@
             this.dgvListRecords = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtSearchTerm = new System.Windows.Forms.TextBox();
-            this.pbSearchClick = new System.Windows.Forms.PictureBox();
-            this.pbRecordsProfile = new System.Windows.Forms.PictureBox();
             this.cmbFilterByGroups = new System.Windows.Forms.ComboBox();
+            this.pbRecordsProfile = new System.Windows.Forms.PictureBox();
+            this.pbSearchClick = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListRecords)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSearchClick)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRecordsProfile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSearchClick)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbFilterOptions
@@ -55,9 +55,9 @@
             this.cmbFilterOptions.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFilterOptions.ForeColor = System.Drawing.Color.White;
             this.cmbFilterOptions.FormattingEnabled = true;
-            this.cmbFilterOptions.Location = new System.Drawing.Point(129, 187);
+            this.cmbFilterOptions.Location = new System.Drawing.Point(150, 192);
             this.cmbFilterOptions.Name = "cmbFilterOptions";
-            this.cmbFilterOptions.Size = new System.Drawing.Size(211, 33);
+            this.cmbFilterOptions.Size = new System.Drawing.Size(274, 33);
             this.cmbFilterOptions.TabIndex = 0;
             this.cmbFilterOptions.SelectedIndexChanged += new System.EventHandler(this.cmbFilterOptions_SelectedIndexChanged);
             // 
@@ -92,7 +92,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.Black;
-            this.btnClose.Location = new System.Drawing.Point(1220, 643);
+            this.btnClose.Location = new System.Drawing.Point(1471, 640);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(91, 32);
             this.btnClose.TabIndex = 7;
@@ -107,7 +107,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(166)))), ((int)(((byte)(86)))));
-            this.btnUpdate.Location = new System.Drawing.Point(995, 177);
+            this.btnUpdate.Location = new System.Drawing.Point(1258, 187);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(123, 42);
             this.btnUpdate.TabIndex = 3;
@@ -122,7 +122,7 @@
             this.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddNew.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddNew.ForeColor = System.Drawing.Color.Cyan;
-            this.btnAddNew.Location = new System.Drawing.Point(1136, 178);
+            this.btnAddNew.Location = new System.Drawing.Point(1387, 187);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(175, 42);
             this.btnAddNew.TabIndex = 4;
@@ -135,7 +135,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.Red;
-            this.lblTitle.Location = new System.Drawing.Point(452, 14);
+            this.lblTitle.Location = new System.Drawing.Point(623, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(393, 62);
             this.lblTitle.TabIndex = 10;
@@ -151,9 +151,9 @@
             this.dgvListRecords.Location = new System.Drawing.Point(34, 241);
             this.dgvListRecords.Name = "dgvListRecords";
             this.dgvListRecords.ReadOnly = true;
-            this.dgvListRecords.RowHeadersWidth = 51;
+            this.dgvListRecords.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvListRecords.RowTemplate.Height = 24;
-            this.dgvListRecords.Size = new System.Drawing.Size(1277, 396);
+            this.dgvListRecords.Size = new System.Drawing.Size(1528, 396);
             this.dgvListRecords.TabIndex = 6;
             // 
             // contextMenuStrip1
@@ -168,32 +168,11 @@
             this.txtSearchTerm.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSearchTerm.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchTerm.ForeColor = System.Drawing.Color.White;
-            this.txtSearchTerm.Location = new System.Drawing.Point(358, 187);
+            this.txtSearchTerm.Location = new System.Drawing.Point(536, 187);
             this.txtSearchTerm.Multiline = true;
             this.txtSearchTerm.Name = "txtSearchTerm";
-            this.txtSearchTerm.Size = new System.Drawing.Size(506, 32);
+            this.txtSearchTerm.Size = new System.Drawing.Size(574, 38);
             this.txtSearchTerm.TabIndex = 1;
-            // 
-            // pbSearchClick
-            // 
-            this.pbSearchClick.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbSearchClick.Image = global::BankSystem.Properties.Resources.search;
-            this.pbSearchClick.Location = new System.Drawing.Point(870, 187);
-            this.pbSearchClick.Name = "pbSearchClick";
-            this.pbSearchClick.Size = new System.Drawing.Size(45, 38);
-            this.pbSearchClick.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSearchClick.TabIndex = 18;
-            this.pbSearchClick.TabStop = false;
-            this.pbSearchClick.Click += new System.EventHandler(this.pbSearchClick_Click);
-            // 
-            // pbRecordsProfile
-            // 
-            this.pbRecordsProfile.Location = new System.Drawing.Point(536, 79);
-            this.pbRecordsProfile.Name = "pbRecordsProfile";
-            this.pbRecordsProfile.Size = new System.Drawing.Size(198, 99);
-            this.pbRecordsProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbRecordsProfile.TabIndex = 19;
-            this.pbRecordsProfile.TabStop = false;
             // 
             // cmbFilterByGroups
             // 
@@ -203,12 +182,33 @@
             this.cmbFilterByGroups.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFilterByGroups.ForeColor = System.Drawing.Color.White;
             this.cmbFilterByGroups.FormattingEnabled = true;
-            this.cmbFilterByGroups.Location = new System.Drawing.Point(456, 187);
+            this.cmbFilterByGroups.Location = new System.Drawing.Point(577, 187);
             this.cmbFilterByGroups.Name = "cmbFilterByGroups";
             this.cmbFilterByGroups.Size = new System.Drawing.Size(389, 33);
             this.cmbFilterByGroups.TabIndex = 20;
             this.cmbFilterByGroups.Visible = false;
             this.cmbFilterByGroups.SelectedIndexChanged += new System.EventHandler(this.cmbFilterByGroups_SelectedIndexChanged);
+            // 
+            // pbRecordsProfile
+            // 
+            this.pbRecordsProfile.Location = new System.Drawing.Point(696, 82);
+            this.pbRecordsProfile.Name = "pbRecordsProfile";
+            this.pbRecordsProfile.Size = new System.Drawing.Size(198, 99);
+            this.pbRecordsProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbRecordsProfile.TabIndex = 19;
+            this.pbRecordsProfile.TabStop = false;
+            // 
+            // pbSearchClick
+            // 
+            this.pbSearchClick.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbSearchClick.Image = global::BankSystem.Properties.Resources.search;
+            this.pbSearchClick.Location = new System.Drawing.Point(1116, 187);
+            this.pbSearchClick.Name = "pbSearchClick";
+            this.pbSearchClick.Size = new System.Drawing.Size(45, 38);
+            this.pbSearchClick.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSearchClick.TabIndex = 18;
+            this.pbSearchClick.TabStop = false;
+            this.pbSearchClick.Click += new System.EventHandler(this.pbSearchClick_Click);
             // 
             // ctrlManageRecords
             // 
@@ -228,10 +228,10 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.dgvListRecords);
             this.Name = "ctrlManageRecords";
-            this.Size = new System.Drawing.Size(1336, 682);
+            this.Size = new System.Drawing.Size(1574, 682);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListRecords)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSearchClick)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRecordsProfile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSearchClick)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
