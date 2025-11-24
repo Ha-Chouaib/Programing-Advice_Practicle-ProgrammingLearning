@@ -1,5 +1,7 @@
 ﻿using Bank_BusinessLayer;
 using BankSystem.Person.Forms;
+using BankSystem.Properties;
+using DVLD_BusinessLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,8 +24,18 @@ namespace BankSystem.Person
 
         public void LoadManageRecordsControl()
         {
+            ctrlManageRecords1.__AddNewRecordDelegate += _AddNewPerson;
+            ctrlManageRecords1.__UpdateRecordDelegate += _EditPerson;
             ctrlManageRecords1.__CloseFormDelegate += _EndSession;
+
+            ctrlManageRecords1.__HeaderImg.Image = Resources.Team;
+
+            ctrlManageRecords1.__HeaderTitle.Text = "Manage People";
+            ctrlManageRecords1.__AddNewBtn.Text = "Add New Person";
+            ctrlManageRecords1.__UpdateBtn.Text = "Edit Person";
+
             ctrlManageRecords1.__Initialize(clsPerson.ListPeopleRecords(), _FilterBy_Options(),clsPerson.FilterPeople ,_ContextMenuPackage(), _FilterByGroups());
+            _ConfigureDataRecordsContainer();
         }
         private Dictionary<string,string> _FilterBy_Options()
         {
@@ -44,14 +56,14 @@ namespace BankSystem.Person
         {
             List<(string ContextMenuKey, Action<int> ContextMenuAction)> ContextMenuItems = new List<(string ContextMenuKey, Action<int> ContextMenuAction)>
             {
-                ("View Details", ViewPersonDetails),
-                ("Edit Person", EditPerson),
-                ("Delete Person", DeletePerson),                
-                ("Send Email", SendPersonEmail),
-                ("Call Person", CallPerson),
+                ("View Details", _ContextMenuViewPersonDetails),
+                ("Edit Person", _ContextMenuEditPerson),
+                ("Delete Person", _ContextMenuDeletePerson),                
+                ("Send Email", _ContextMenuSendPersonEmail),
+                ("Call Person", _ContextMenuCallPerson),
                 ("--------------", null),
-                ("Convert To User", ConvertToUser),
-                ("Convert To Customer", ConvertToCustomer)
+                ("Convert To User", _ContextMenuConvertToUser),
+                ("Convert To Customer", _ContextMenuConvertToCustomer)
 
             };
 
@@ -74,25 +86,24 @@ namespace BankSystem.Person
             return FilterOptions;
         }
         
-        void ViewPersonDetails(int personId)
+        void _ContextMenuViewPersonDetails(int personId)
         {
             frmShowPersonDetails DisplayPersonalInfo = new frmShowPersonDetails(personId);
             DisplayPersonalInfo.ShowDialog();
         }
-
-        void EditPerson(int personId)
+        void _ContextMenuEditPerson(int personId)
         {
             clsPerson person = clsPerson.Find(personId);
             if(person != null)
             {
                 frmEditPerson editPerson = new frmEditPerson( person);
+                editPerson.__RefreshContent += ctrlManageRecords1.__RefreshRecordsList;
                 editPerson.ShowDialog();
                 return;
             }
            MessageBox.Show($"No record founded by id [{personId}] ","warning",MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
-
-        void DeletePerson(int personId)
+        void _ContextMenuDeletePerson(int personId)
         {
             if(MessageBox.Show("Sure To delete this record?!","Validation",MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.OK)
             {
@@ -104,19 +115,19 @@ namespace BankSystem.Person
                 else MessageBox.Show($"Can't Delete This Record!","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        void SendPersonEmail(int personId)
+        void _ContextMenuSendPersonEmail(int personId)
         {
             MessageBox.Show($"Send Email To Person with id [{personId}] -> Not Implemented yet");
         }
-        void CallPerson(int personId)
+        void _ContextMenuCallPerson(int personId)
         {
             MessageBox.Show($"call the  Person with id [{personId}] -> Not Implemented yet");
         }
-        void ConvertToUser(int personId)
+        void _ContextMenuConvertToUser(int personId)
         {
             MessageBox.Show($"Convert Person with id [{personId}] To User -> Not Implemented yet");
         }
-        void ConvertToCustomer(int personId)
+        void _ContextMenuConvertToCustomer(int personId)
         {
             MessageBox.Show($"Convert Person with id [{personId}] To Customer -> Not Implemented yet");
         }
@@ -125,6 +136,42 @@ namespace BankSystem.Person
         {
             this.Close();
         }
+        private void _AddNewPerson()
+        {
+            frmAddNewPerson addNewPerson = new frmAddNewPerson();
+            addNewPerson.__RefreshContent+= ctrlManageRecords1.__RefreshRecordsList;
+            addNewPerson.ShowDialog();
+        }
+        private void _EditPerson()
+        {
+            frmEditPerson editPerson = new frmEditPerson();
+            editPerson.__RefreshContent += ctrlManageRecords1.__RefreshRecordsList;
+            editPerson.ShowDialog();
+        }
+        private void _ConfigureDataRecordsContainer()
+        {
+            ctrlManageRecords1.__RecordsContainer.Columns["PersonID"].HeaderText = "ID";
+            ctrlManageRecords1.__RecordsContainer.Columns["NationalNo"].HeaderText = "National_No";
+            ctrlManageRecords1.__RecordsContainer.Columns["FirstName"].HeaderText = "First Name";
+            ctrlManageRecords1.__RecordsContainer.Columns["LastName"].HeaderText = "Last Name";
+            ctrlManageRecords1.__RecordsContainer.Columns["DateOfBirth"].HeaderText = "Date Of Birth";
+            ctrlManageRecords1.__RecordsContainer.Columns["CountryID"].HeaderText = "Country";
+            ctrlManageRecords1.__RecordsContainer.Columns["ImagePath"].HeaderText = "Profile Image";
 
+
+            ctrlManageRecords1.__RecordsContainer.CellFormatting += (s, e) =>
+            {
+                if (ctrlManageRecords1.__RecordsContainer.Columns[e.ColumnIndex].Name == "Gender" && e.Value is byte Gdr)
+                {
+                    e.Value = Gdr == 0 ? "Male" : "Female";
+                    e.FormattingApplied = true;
+                }
+                if (ctrlManageRecords1.__RecordsContainer.Columns[e.ColumnIndex].Name == "CountryID" && e.Value is int id)
+                {
+                    e.Value = clsCountries.Find(id).CountryName;
+                    e.FormattingApplied = true;
+                }
+            };
+        }
     }
 }

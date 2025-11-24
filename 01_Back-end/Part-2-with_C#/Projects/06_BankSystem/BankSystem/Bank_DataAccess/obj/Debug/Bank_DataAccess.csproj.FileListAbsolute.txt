@@ -12,4 +12,3 @@ C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-en
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\Bank_DataAccess\obj\Debug\Bank_DataAccess.csproj.CoreCompileInputs.cache
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\Bank_DataAccess\obj\Debug\Bank_DataAccess.exe
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\Bank_DataAccess\obj\Debug\Bank_DataAccess.pdb
-C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\Bank_DataAccess\obj\Debug\Bank_DataAccess.exe.config
