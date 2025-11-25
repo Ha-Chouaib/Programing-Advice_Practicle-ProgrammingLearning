@@ -1,0 +1,8 @@
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_17_MegeTowSortedQueues\bin\Debug\09_17_MegeTowSortedQueues.exe.config
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_17_MegeTowSortedQueues\bin\Debug\09_17_MegeTowSortedQueues.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_17_MegeTowSortedQueues\bin\Debug\09_17_MegeTowSortedQueues.pdb
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_17_MegeTowSortedQueues\obj\Debug\09_17_MergeTowSortedQueues.csproj.AssemblyReference.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_17_MegeTowSortedQueues\obj\Debug\09_17_MergeTowSortedQueues.csproj.CoreCompileInputs.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_17_MegeTowSortedQueues\obj\Debug\09_17_MegeTowSortedQueues.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_17_MegeTowSortedQueues\obj\Debug\09_17_MegeTowSortedQueues.pdb
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_17_MegeTowSortedQueues\obj\Debug\09_17_MegeTowSortedQueues.exe.config

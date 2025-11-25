@@ -1,0 +1,7 @@
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_19_QueueUsingTowStacks\bin\Debug\09_19_QueueUsingTowStacks.exe.config
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_19_QueueUsingTowStacks\bin\Debug\09_19_QueueUsingTowStacks.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_19_QueueUsingTowStacks\bin\Debug\09_19_QueueUsingTowStacks.pdb
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_19_QueueUsingTowStacks\obj\Debug\09_19_QueueUsingTowStacks.csproj.AssemblyReference.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_19_QueueUsingTowStacks\obj\Debug\09_19_QueueUsingTowStacks.csproj.CoreCompileInputs.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_19_QueueUsingTowStacks\obj\Debug\09_19_QueueUsingTowStacks.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_19_QueueUsingTowStacks\obj\Debug\09_19_QueueUsingTowStacks.pdb
