@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <H1>Contact Info</H1>
+    </header>
+    <main>
+        <form action="/02_FrontEnd/01_HTML/09_Forms/01_TargetPage.html" method="post">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+
+                <label for="birthdate">Birthdate:</label>
+                <input type="date" id="birthdate" name="birthdate">
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="0">
+            </fieldset>
+            <fieldset>
+                <legend>Preferences</legend>
+                <p>Subscription Type</p>
+                <label for="basic">Basic</label>
+                <input type="radio" id="basic" name="subscription" value="basic" checked>
+                <label for="premium">Premium</label>
+                <input type="radio" id="premium" name="subscription" value="premium">
+
+                <p>Newsletter</p>
+                <label for="newsletter">Subscribe to Newsletter?</label>
+                <input type="checkbox" id="Subscribe" name="Subscribe" checked>
+
+                <label for="country">Country</label>
+                <select id="country" name="country">
+                    <option value="usa">USA</option>
+                    <option value="canada">Canada</option>
+                    <option value="uk">UK</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Your message</legend>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+            </fieldset>
+            <button type="submit" value="Submit">Submit</button>
+        </form>
+
+    </main>
+</body>
+</html>
