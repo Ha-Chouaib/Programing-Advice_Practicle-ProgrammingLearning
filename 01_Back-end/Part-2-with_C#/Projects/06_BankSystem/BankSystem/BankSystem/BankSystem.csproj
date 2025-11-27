@@ -62,6 +62,12 @@
     <Compile Include="ctrlManageRecords.Designer.cs">
       <DependentUpon>ctrlManageRecords.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\UserControls\ctrlAddEditCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Customer\UserControls\ctrlAddEditCustomer.Designer.cs">
+      <DependentUpon>ctrlAddEditCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ctrlManageRecords.resx">
       <DependentUpon>ctrlManageRecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\UserControls\ctrlAddEditCustomer.resx">
+      <DependentUpon>ctrlAddEditCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBaseForm.resx">
       <DependentUpon>frmBaseForm.cs</DependentUpon>
@@ -316,6 +325,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Team.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Customer\Forms\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
