@@ -2,10 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\Part-2-with_C#",
-    "\\Part-2-with_C#\\08_AlgorithmsLevel-6",
-    "\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project",
-    "\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\People\\Forms"
+    "\\Part-2-with_C#\\Projects",
+    "\\Part-2-with_C#\\Projects\\06_BankSystem",
+    "\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem",
+    "\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem",
+    "\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\Customer",
+    "\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\Customer\\UserControls"
   ],
-  "SelectedNode": "\\Part-2-with_C#\\08_AlgorithmsLevel-6\\08_AlgorithmsLevel-6.sln",
+  "SelectedNode": "\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\Customer\\UserControls\\ctrlAddEditCustomer.cs",
   "PreviewInSolutionExplorer": false
 }
