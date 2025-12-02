@@ -125,8 +125,17 @@ namespace BankSystem
 
         private void LoadForm(object sender, clsMenuBtnModel Item)
         {
-            //MessageBox.Show($"Load The Form ( {Item.Key} )");
-            clsGlobal.FormHelper.CreateFormInstance(Item.Key).ShowDialog();
+            var frm = clsGlobal.FormHelper.CreateFormInstance(Item.Key);
+
+            if (frm == null)
+            {
+                MessageBox.Show($"Cannot open form: '{Item.Key}'.\nForm not found.",
+                                "Form Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            frm.ShowDialog();
+
         }
     }
 }

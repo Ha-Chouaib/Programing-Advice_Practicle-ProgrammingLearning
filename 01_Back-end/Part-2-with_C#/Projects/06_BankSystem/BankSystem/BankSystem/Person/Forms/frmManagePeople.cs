@@ -1,4 +1,5 @@
 ﻿using Bank_BusinessLayer;
+using BankSystem.Customer.Forms;
 using BankSystem.Person.Forms;
 using BankSystem.Properties;
 using DVLD_BusinessLayer;
@@ -52,9 +53,9 @@ namespace BankSystem.Person
 
             return Options;
         }
-        private List<(string ContextMenuKey, Action<int> ContextMenuAction)> _ContextMenuPackage()
+        private List<(string ContextMenuKey, Action<int,ToolStripMenuItem> ContextMenuAction)> _ContextMenuPackage()
         {
-            List<(string ContextMenuKey, Action<int> ContextMenuAction)> ContextMenuItems = new List<(string ContextMenuKey, Action<int> ContextMenuAction)>
+            List<(string ContextMenuKey, Action<int, ToolStripMenuItem> ContextMenuAction)> ContextMenuItems = new List<(string ContextMenuKey, Action<int, ToolStripMenuItem> ContextMenuAction)>
             {
                 ("View Details", _ContextMenuViewPersonDetails),
                 ("Edit Person", _ContextMenuEditPerson),
@@ -86,12 +87,12 @@ namespace BankSystem.Person
             return FilterOptions;
         }
         
-        void _ContextMenuViewPersonDetails(int personId)
+        void _ContextMenuViewPersonDetails(int personId, ToolStripMenuItem menuItem)
         {
             frmShowPersonDetails DisplayPersonalInfo = new frmShowPersonDetails(personId);
             DisplayPersonalInfo.ShowDialog();
         }
-        void _ContextMenuEditPerson(int personId)
+        void _ContextMenuEditPerson(int personId, ToolStripMenuItem menuItem)
         {
             clsPerson person = clsPerson.Find(personId);
             if(person != null)
@@ -103,7 +104,7 @@ namespace BankSystem.Person
             }
            MessageBox.Show($"No record founded by id [{personId}] ","warning",MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
-        void _ContextMenuDeletePerson(int personId)
+        void _ContextMenuDeletePerson(int personId, ToolStripMenuItem menuItem)
         {
             if(MessageBox.Show("Sure To delete this record?!","Validation",MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.OK)
             {
@@ -115,21 +116,34 @@ namespace BankSystem.Person
                 else MessageBox.Show($"Can't Delete This Record!","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        void _ContextMenuSendPersonEmail(int personId)
+        void _ContextMenuSendPersonEmail(int personId, ToolStripMenuItem menuItem)
         {
             MessageBox.Show($"Send Email To Person with id [{personId}] -> Not Implemented yet");
         }
-        void _ContextMenuCallPerson(int personId)
+        void _ContextMenuCallPerson(int personId, ToolStripMenuItem menuItem)
         {
             MessageBox.Show($"call the  Person with id [{personId}] -> Not Implemented yet");
         }
-        void _ContextMenuConvertToUser(int personId)
+        void _ContextMenuConvertToUser(int personId, ToolStripMenuItem menuItem)
         {
             MessageBox.Show($"Convert Person with id [{personId}] To User -> Not Implemented yet");
         }
-        void _ContextMenuConvertToCustomer(int personId)
+        void _ContextMenuConvertToCustomer(int personId, ToolStripMenuItem menuItem)
         {
-            MessageBox.Show($"Convert Person with id [{personId}] To Customer -> Not Implemented yet");
+            if(clsCustomer.IsCustomerExistsByPersonID(personId))
+            {
+               menuItem.Enabled = false;
+                return;
+            }
+            menuItem.Enabled = true;
+
+            frmAddNewCustomer convertToCustomer = new frmAddNewCustomer(personId);
+            convertToCustomer.__OperatinDoneSuccessfully += () =>
+            {
+                MessageBox.Show("Person Converted To Customer Successfully");
+            };
+            convertToCustomer.ShowDialog();
+
         }
 
         private void _EndSession()

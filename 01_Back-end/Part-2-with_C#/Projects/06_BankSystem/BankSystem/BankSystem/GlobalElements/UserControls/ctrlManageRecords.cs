@@ -30,7 +30,7 @@ namespace BankSystem
 
         private Dictionary<string, Dictionary<string, string>> _FilterByGroups { get; set; }
         public void __Initialize(DataTable RecordsList,Dictionary<string,string> FilterByOptions,Func<string,string,DataTable> FilterDelegate,
-            List<(string ContextMenuKey,Action<int> ContextMenuAction)> ContextMenuPackage,Dictionary<string,Dictionary<string,string>> FilterByGroups = null )
+            List<(string ContextMenuKey,Action<int, ToolStripMenuItem> ContextMenuAction)> ContextMenuPackage,Dictionary<string,Dictionary<string,string>> FilterByGroups = null )
         {
             __RefreshRecordsList(RecordsList);
 
@@ -45,7 +45,7 @@ namespace BankSystem
             _LoadContextMenu(ContextMenuPackage);
             pbSearchClick.Enabled = false;
         }
-        private void _LoadContextMenu(List<(string ContextMenuKey, Action<int> ContextMenuAction)> ContextMenuPackage)
+        private void _LoadContextMenu(List<(string ContextMenuKey, Action<int,ToolStripMenuItem> ContextMenuAction)> ContextMenuPackage)
         {
             contextMenuStrip1.Items.Clear();
             foreach (var action in ContextMenuPackage)
@@ -54,7 +54,7 @@ namespace BankSystem
                 item.Click += (s, e) =>
                 {
                     if(int.TryParse(dgvListRecords.CurrentRow.Cells[0].Value.ToString(), out int SelectedRecordID))
-                        action.ContextMenuAction?.Invoke(SelectedRecordID);
+                        action.ContextMenuAction?.Invoke(SelectedRecordID,item);
                 };
 
                 contextMenuStrip1.Items.Add(item);

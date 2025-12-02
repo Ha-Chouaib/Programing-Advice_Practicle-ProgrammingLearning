@@ -114,13 +114,6 @@ namespace Bank_BusinessLayer
 
         public static clsPerson FindBy(string Column, string searchValue)
         {
-            if(Column == "PersonID")
-            {
-                if(int.TryParse(searchValue, out int ID))
-                {
-                    return Find(ID);
-                }
-            }
             switch(Column)
             {
                 case "PersonID":

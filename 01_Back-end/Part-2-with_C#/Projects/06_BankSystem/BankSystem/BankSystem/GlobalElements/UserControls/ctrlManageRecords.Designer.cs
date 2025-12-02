@@ -145,10 +145,13 @@
             // 
             this.dgvListRecords.AllowUserToAddRows = false;
             this.dgvListRecords.AllowUserToDeleteRows = false;
+            this.dgvListRecords.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvListRecords.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvListRecords.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(230)))));
             this.dgvListRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListRecords.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvListRecords.Location = new System.Drawing.Point(34, 241);
+            this.dgvListRecords.MultiSelect = false;
             this.dgvListRecords.Name = "dgvListRecords";
             this.dgvListRecords.ReadOnly = true;
             this.dgvListRecords.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;

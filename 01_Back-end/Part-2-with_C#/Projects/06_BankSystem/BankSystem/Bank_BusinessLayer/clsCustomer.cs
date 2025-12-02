@@ -79,7 +79,31 @@ namespace Bank_BusinessLayer
             else
                 return null;
         }
-    
+        
+        public static clsCustomer FindBy(string findBy, string Term)
+        {
+            switch(findBy)
+            {
+                case "CustomerID":
+                    {
+                        
+                        if (int.TryParse(Term, out int CustomerID))
+                            return FindCustomerByID(CustomerID);
+                        else
+                            return null;
+                    }
+                case "PersonID":
+                    {
+                     
+                        if (int.TryParse(Term, out int PersonID))
+                            return FindCustomerByPersonID(PersonID);
+                        else
+                            return null;
+                    }
+                default:
+                    return null;
+            }
+        }
         private bool _AddNewCustomer()
         {
             this.CustomerID= clsCustomerDataAccess.AddNewCustomer(this.PersonID,this.Occupation,Convert.ToByte(this.CustomerType),this.CreatedDate,this.CreatedByUserID,this.IsActive);

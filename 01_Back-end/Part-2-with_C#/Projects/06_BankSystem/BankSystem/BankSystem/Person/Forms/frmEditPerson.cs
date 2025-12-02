@@ -33,9 +33,9 @@ namespace BankSystem.Person
 
         private void _Initializing()
         {
-            ctrlFind1.SearchBarContainer.Enabled = false;
-            ctrlFind1.txtSearchTerm.Text = _Person.PersonID.ToString();
-            ctrlFind1.FindOptions.Text = "Person ID";
+            ctrlFind1.__SearchBarContainer.Enabled = false;
+            ctrlFind1.__txtSearchTerm.Text = _Person.PersonID.ToString();
+            ctrlFind1.__FindOptionsCombo.Text = "Person ID";
             ctrlAddEditPerson1.OnOperationCanceled += _LeaveForm;
             _EditPerson( _Person );
         }

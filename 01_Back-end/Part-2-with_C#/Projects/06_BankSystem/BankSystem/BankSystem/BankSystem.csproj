@@ -51,17 +51,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsGlobal.cs" />
-    <Compile Include="ctrlFind.cs">
+    <Compile Include="Customer\Forms\frmAddNewCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Forms\frmAddNewCustomer.Designer.cs">
+      <DependentUpon>frmAddNewCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Forms\frmCustomerCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Forms\frmCustomerCard.Designer.cs">
+      <DependentUpon>frmCustomerCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Forms\frmEditCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Forms\frmEditCustomer.Designer.cs">
+      <DependentUpon>frmEditCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Forms\frmFindCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Forms\frmFindCustomer.Designer.cs">
+      <DependentUpon>frmFindCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Forms\frmManageCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Forms\frmManageCustomers.Designer.cs">
+      <DependentUpon>frmManageCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\UserControls\ctrlCustomerCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrlFind.Designer.cs">
+    <Compile Include="Customer\UserControls\ctrlCustomerCard.Designer.cs">
+      <DependentUpon>ctrlCustomerCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalElements\Classes\clsGlobal.cs" />
+    <Compile Include="GlobalElements\UserControls\ctrlFind.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GlobalElements\UserControls\ctrlFind.Designer.cs">
       <DependentUpon>ctrlFind.cs</DependentUpon>
     </Compile>
-    <Compile Include="ctrlManageRecords.cs">
+    <Compile Include="GlobalElements\UserControls\ctrlManageRecords.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrlManageRecords.Designer.cs">
+    <Compile Include="GlobalElements\UserControls\ctrlManageRecords.Designer.cs">
       <DependentUpon>ctrlManageRecords.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer\UserControls\ctrlAddEditCustomer.cs">
@@ -70,22 +106,22 @@
     <Compile Include="Customer\UserControls\ctrlAddEditCustomer.Designer.cs">
       <DependentUpon>ctrlAddEditCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBaseForm.cs">
+    <Compile Include="GlobalElements\Forms\frmBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBaseForm.Designer.cs">
+    <Compile Include="GlobalElements\Forms\frmBaseForm.Designer.cs">
       <DependentUpon>frmBaseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHomePage.cs">
+    <Compile Include="GlobalElements\Forms\frmHomePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHomePage.Designer.cs">
+    <Compile Include="GlobalElements\Forms\frmHomePage.Designer.cs">
       <DependentUpon>frmHomePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLogin.cs">
+    <Compile Include="GlobalElements\Forms\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
+    <Compile Include="GlobalElements\Forms\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Person\Forms\frmFindPerson.cs">
@@ -130,7 +166,7 @@
     <Compile Include="Person\UserControls\ctrlDisplayPersonDetails.Designer.cs">
       <DependentUpon>ctrlDisplayPersonDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="GlobalElements\Classes\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -156,22 +192,40 @@
     <Compile Include="SideBarMenu\ctrlSubMenu.Designer.cs">
       <DependentUpon>ctrlSubMenu.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ctrlFind.resx">
+    <EmbeddedResource Include="Customer\Forms\frmAddNewCustomer.resx">
+      <DependentUpon>frmAddNewCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Forms\frmCustomerCard.resx">
+      <DependentUpon>frmCustomerCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Forms\frmEditCustomer.resx">
+      <DependentUpon>frmEditCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Forms\frmFindCustomer.resx">
+      <DependentUpon>frmFindCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Forms\frmManageCustomers.resx">
+      <DependentUpon>frmManageCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\UserControls\ctrlCustomerCard.resx">
+      <DependentUpon>ctrlCustomerCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalElements\UserControls\ctrlFind.resx">
       <DependentUpon>ctrlFind.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrlManageRecords.resx">
+    <EmbeddedResource Include="GlobalElements\UserControls\ctrlManageRecords.resx">
       <DependentUpon>ctrlManageRecords.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\UserControls\ctrlAddEditCustomer.resx">
       <DependentUpon>ctrlAddEditCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBaseForm.resx">
+    <EmbeddedResource Include="GlobalElements\Forms\frmBaseForm.resx">
       <DependentUpon>frmBaseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHomePage.resx">
+    <EmbeddedResource Include="GlobalElements\Forms\frmHomePage.resx">
       <DependentUpon>frmHomePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin.resx">
+    <EmbeddedResource Include="GlobalElements\Forms\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Person\Forms\frmFindPerson.resx">
@@ -210,7 +264,6 @@
       <DependentUpon>ctrlSubMenu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -329,8 +382,6 @@
   <ItemGroup>
     <None Include="Resources\Team.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Customer\Forms\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

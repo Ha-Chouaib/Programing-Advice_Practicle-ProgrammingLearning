@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bank_BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace BankSystem
     public class clsGlobal
     {
         public static string EventLogSourceName = "BankSystem_App";
-
+        public static clsUser LoggedInUser => clsUser.FindUserByID(1);
         public static class LogHelper
         {
             public static void LogError(string message)
@@ -61,20 +62,27 @@ namespace BankSystem
         }
         public static class FormHelper
         {
+           
             public static Form CreateFormInstance(string formName)
             {
                 if (string.IsNullOrWhiteSpace(formName))
-                    LogHelper.LogError("CreateFormInstance() -> Msg:( Form name cannot be empty ).");
+                    return null;
 
                 var assembly = Assembly.GetExecutingAssembly();
 
-                var formType = assembly.GetTypes().FirstOrDefault(t => t.Name.Equals(formName, StringComparison.OrdinalIgnoreCase) && t.IsSubclassOf(typeof(Form)));
+                var formType = assembly.GetTypes()
+                    .FirstOrDefault(t => t.Name.Equals(formName, StringComparison.OrdinalIgnoreCase)
+                                         && t.IsSubclassOf(typeof(Form)));
 
                 if (formType == null)
+                {
                     LogHelper.LogError($"Form '{formName}' not found in assembly.");
+                    return null;
+                }
 
                 return (Form)Activator.CreateInstance(formType);
             }
+
         }
 
     }

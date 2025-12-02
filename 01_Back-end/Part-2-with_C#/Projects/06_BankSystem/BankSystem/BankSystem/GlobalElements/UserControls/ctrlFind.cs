@@ -17,9 +17,9 @@ namespace BankSystem
             InitializeComponent();
         }
 
-        public TextBox txtSearchTerm => txtSearch;
-        public Panel SearchBarContainer => panel1;
-        public ComboBox FindOptions => cmbFindOptions;
+        public TextBox __txtSearchTerm => txtSearch;
+        public Panel __SearchBarContainer => panel1;
+        public ComboBox __FindOptionsCombo => cmbFindOptions;
 
         public void __Initializing(Dictionary<string, string> Options, FindDelegate FindHandler)
         {
