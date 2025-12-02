@@ -20,7 +20,6 @@ namespace Bank_BusinessLayer
         public string Password { get; set; }
         public bool IsActive { get; set; }
         public int CreatedByUserID { get; set; }
-        public clsUser CreatedByUser { get; set; }
         public short Permissions { get; set; }
 
         enum enMode { enAddNew, enUpdate}
@@ -48,7 +47,6 @@ namespace Bank_BusinessLayer
             this.Permissions = 0;
             _Mode = enMode.enAddNew;
         }
-
         private clsUser(int UserID,int PersonID,string UserName,DateTime CreatedDate, string Role, string Password,bool IsActive,int CreatedByUserID,short permissions)
         {
             this.UserID = UserID;
@@ -59,10 +57,7 @@ namespace Bank_BusinessLayer
             this.Password = Password;
             this.IsActive = IsActive;
             this.CreatedByUserID = CreatedByUserID;
-
             this.PersonalInfo = clsPerson.Find(PersonID);
-            this.CreatedByUser = FindUserByID(UserID);
-
             this.Permissions = permissions;
             _Mode = enMode.enUpdate;
         }

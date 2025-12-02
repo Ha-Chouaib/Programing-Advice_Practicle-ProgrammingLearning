@@ -3,12 +3,13 @@
     "",
     "\\Part-2-with_C#",
     "\\Part-2-with_C#\\Projects",
-    "\\Part-2-with_C#\\Projects\\06_BankSystem",
+    "\\Part-2-with_C#\\Projects\\01_PizzaOrder",
+    "\\Part-2-with_C#\\Projects\\01_PizzaOrder\\PizzaOrderProject",
     "\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem",
     "\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem",
     "\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\Customer",
     "\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\Customer\\UserControls"
   ],
-  "SelectedNode": "\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\Customer\\UserControls\\ctrlAddEditCustomer.cs",
+  "SelectedNode": "\\Part-2-with_C#\\Projects\\01_PizzaOrder\\PizzaOrderProject\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }

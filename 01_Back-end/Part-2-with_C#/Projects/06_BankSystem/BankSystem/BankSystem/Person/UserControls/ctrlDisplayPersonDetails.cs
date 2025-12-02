@@ -21,6 +21,7 @@ namespace BankSystem.Person.UserControls
             InitializeComponent();
         }
         private clsPerson _Person { get; set; }
+        public Action<clsPerson> __UpdatedPersonRecord;
         public void __ShowPersonalInfo(clsPerson  person)
         {
             _Person = person;
@@ -69,6 +70,7 @@ namespace BankSystem.Person.UserControls
         private void RefreshPersonRecord(clsPerson person)
         {
             __ShowPersonalInfo(person);
+            __UpdatedPersonRecord?.Invoke(person);
         }
     }
 }

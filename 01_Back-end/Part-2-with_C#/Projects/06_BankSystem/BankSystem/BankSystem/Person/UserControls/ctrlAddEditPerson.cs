@@ -158,7 +158,7 @@ namespace BankSystem.Person
         private void txtNationalNo_Validating(object sender, CancelEventArgs e)
         {
             TextBox txtBox = (TextBox)sender;
-            if((txtBox.Text == string.Empty) || (clsPerson.Exists(txtNationalNo.Text.Trim()) && _person.NationalNo != txtNationalNo.Text.Trim()) ) 
+            if((txtBox.Text == string.Empty) || (clsPerson.Exists(txtNationalNo.Text.Trim()) && (_Mode == enMode.enEdit? _person.NationalNo != txtNationalNo.Text.Trim(): true) ))
                 errorProvider.SetError(txtBox, "This Field is required !| The NationalNo Should not be Duplicated Please Choose another one.");
             else
                 errorProvider.SetError(txtBox, "");

@@ -66,6 +66,7 @@ namespace Bank_DataAccess
 
                     cmd.Parameters.AddWithValue("@CustomerID", CustomerID);
 
+                    connection.Open();
                     using (SqlDataReader rdr = cmd.ExecuteReader())
                     {
                         if (rdr.Read())
@@ -110,7 +111,7 @@ namespace Bank_DataAccess
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@PersonID", PersonID);
-
+                    connection.Open();
                     using (SqlDataReader rdr = cmd.ExecuteReader())
                     {
                         if (rdr.Read())

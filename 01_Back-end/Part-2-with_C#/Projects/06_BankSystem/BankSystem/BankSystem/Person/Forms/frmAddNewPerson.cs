@@ -21,12 +21,14 @@ namespace BankSystem.Person
         }
         clsPerson _Person= new clsPerson();
         public Action __RefreshContent;
+        public Action<clsPerson> __PersonAdded;
         private void _GetNewPersonAdded(object sender, clsPerson person)
         {
             if (person != null)
             {
                 _Person = person;
                 __RefreshContent?.Invoke();
+                __PersonAdded?.Invoke(_Person);
                 MessageBox.Show("Operation done Successfully");
                 return;
             }

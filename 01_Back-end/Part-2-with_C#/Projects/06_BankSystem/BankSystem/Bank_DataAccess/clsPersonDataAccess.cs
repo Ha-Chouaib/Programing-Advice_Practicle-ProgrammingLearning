@@ -17,15 +17,16 @@ namespace Bank_DataAccess.People
         {
             string Query = "Sp_GetPersonByID";
             bool found = false;
-            using(SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
+            try
             {
-                using(SqlCommand cmd = new SqlCommand(Query,connection))
+                using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
                 {
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
-                    cmd.Parameters.AddWithValue("@PersonID", PersonID);
-                    try
+                    using (SqlCommand cmd = new SqlCommand(Query, connection))
                     {
+                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@PersonID", PersonID);
+
 
                         connection.Open();
                         using (SqlDataReader reader = cmd.ExecuteReader())
@@ -38,8 +39,8 @@ namespace Bank_DataAccess.People
                                 DateOfBirth = (DateTime)reader["DateOfBirth"];
                                 Email = reader["Email"] as string ?? string.Empty;
                                 Phone = reader["Phone"] as string ?? string.Empty;
-                                Gender = reader["Gender"] != DBNull.Value ? Convert.ToByte(reader["Gender"]) : (byte) 3 ;
-                                CountryID = reader["CountryID"] != DBNull.Value ?  Convert.ToInt16(reader["CountryID"]) : (short)0 ;
+                                Gender = reader["Gender"] != DBNull.Value ? Convert.ToByte(reader["Gender"]) : (byte)3;
+                                CountryID = reader["CountryID"] != DBNull.Value ? Convert.ToInt16(reader["CountryID"]) : (short)0;
                                 Address = reader["Address"] as string ?? string.Empty;
                                 ImgPath = reader["ImagePath"] as string ?? string.Empty;
 
@@ -48,23 +49,25 @@ namespace Bank_DataAccess.People
                             else
                             {
                                 FirstName = LastName = NationalNo = Email = Phone = Address = ImgPath = string.Empty;
-                                CountryID = 0; 
-                                DateOfBirth =  DateTime.MinValue;
+                                CountryID = 0;
+                                DateOfBirth = DateTime.MinValue;
                             }
+
                         }
                     }
-                    catch(SqlException ex)
-                    {
-                        clsGlobal.LogError($"[DAL: PeopleDataAccess.FindPersonByID()] (SQL Error: {ex.Number} )-> {ex.Message}");
-                    }
-                    catch (Exception ex)
-                    {
-                        clsGlobal.LogError($"[DAL: PeopleDataAccess.FindPersonByID()] ->  {ex.Message}");
-                    }   
-                    return found;
+
+
                 }
             }
-
+            catch (SqlException ex)
+            {
+                clsGlobal.LogError($"[DAL: PeopleDataAccess.FindPersonByID()] (SQL Error: {ex.Number} )-> {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                clsGlobal.LogError($"[DAL: PeopleDataAccess.FindPersonByID()] ->  {ex.Message}");
+            }
+                        return found;
 
         }
 

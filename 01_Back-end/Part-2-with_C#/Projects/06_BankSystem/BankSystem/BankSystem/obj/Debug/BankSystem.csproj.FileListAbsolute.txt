@@ -57,3 +57,9 @@ C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-en
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Person.UserControls.ctrlDisplayPersonDetails.resources
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Person.Forms.frmFindPerson.resources
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Customer.UserControls.ctrlAddEditCustomer.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Customer.Forms.frmAddNewCustomer.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Customer.Forms.frmEditCustomer.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Customer.Forms.frmFindCustomer.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Customer.UserControls.ctrlCustomerCard.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Customer.Forms.frmCustomerCard.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Customer.Forms.frmManageCustomers.resources
