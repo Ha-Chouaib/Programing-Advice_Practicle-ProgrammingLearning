@@ -24,16 +24,66 @@ namespace Bank_BusinessLayer
 
         enum enMode { enAddNew, enUpdate}
         enMode _Mode = enMode.enAddNew;
-        public enum enPermissions
+       
+        enum enUserRoles
         {
-            eNone = 0,
-            eCanManageUsers = 1,
-            eCanManageCustomers = 2,
-            eCanViewTransactions = 4,
-            eCanApproveLoans = 8,
-            eCanManageAccounts = 16,
-            eCanAccessReports = 32
+            Admin= 0,
+            Manager= 1,
+            Teller=2,
+            Auditor=3,
+            Viewer = 4,
         }
+
+        [Flags]
+        public enum enPermissions : ulong
+        {
+            None = 0,
+            All = ulong.MaxValue,
+
+            // ===== People =====
+            People_View = 1UL << 0,
+            People_Manage = 1UL << 1,
+            People_Add = 1UL << 2,
+            People_Edit = 1UL << 3,
+            People_Find = 1UL << 4,
+
+            // ===== Customers =====
+            Customers_View = 1UL << 5,
+            Customers_Manage = 1UL << 6,
+            Customers_Add = 1UL << 7,
+            Customers_Edit = 1UL << 8,
+            Customers_Find = 1UL << 9,
+            Customers_Accounts = 1UL << 10,
+
+            // ===== Accounts =====
+            Accounts_View = 1UL << 11,
+            Accounts_Manage = 1UL << 12,
+            Accounts_Add = 1UL << 13,
+            Accounts_Find = 1UL << 14,
+
+            // ===== Users =====
+            Users_View = 1UL << 15,
+            Users_Manage = 1UL << 16,
+            Users_AddEdit = 1UL << 17,
+            Users_ChangePassword = 1UL << 18,
+            Users_Find = 1UL << 19,
+
+            // ===== Transactions =====
+            Transactions_View = 1UL << 20,
+            Transactions_Deposit = 1UL << 21,
+            Transactions_Withdraw = 1UL << 22,
+            Transactions_Transfer = 1UL << 23,
+            Transactions_History = 1UL << 24,
+
+            // ===== Reports =====
+            Reports_View = 1UL << 25,
+            Reports_Customer = 1UL << 26,
+            Reports_Transaction = 1UL << 27,
+            Reports_UserActivity = 1UL << 28,
+            Reports_SystemLogs = 1UL << 29,
+
+        }
+
         public clsUser()
         {
             this.UserID = -1;

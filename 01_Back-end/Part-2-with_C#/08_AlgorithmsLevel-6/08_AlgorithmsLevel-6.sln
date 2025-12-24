@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36518.9
+# Visual Studio Version 18
+VisualStudioVersion = 18.0.11222.15 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_1_LinearSearch", "8_AlgorithmsLevel-2\01_1_LinearSearch.csproj", "{88197153-1F5F-452E-B02D-A94EC2EA8A15}"
 EndProject
@@ -82,6 +82,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_18_FirstNon-RepeatingCharacter", "09_18_FirstNon-RepeatingCharacter\09_18_FirstNon-RepeatingCharacter.csproj", "{1F374AAA-B32D-43C9-896E-F5B52CCFDE82}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_19_QueueUsingTowStacks", "09_19_QueueUsingTowStacks\09_19_QueueUsingTowStacks.csproj", "{C653DB94-257C-4379-A4CD-A83AF2420F3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_20_RearrangeQueueAlternately", "09_20_RearrangeQueueAlternately\09_20_RearrangeQueueAlternately.csproj", "{FED55FDE-EC27-44BD-8EC3-EE166A36322C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_21_ImplementPriorityQueue", "09_21_ImplementPriorityQueue\09_21_ImplementPriorityQueue.csproj", "{15E9B66F-9CD7-4396-A884-89D71431FDA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -213,6 +217,14 @@ Global
 		{C653DB94-257C-4379-A4CD-A83AF2420F3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C653DB94-257C-4379-A4CD-A83AF2420F3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C653DB94-257C-4379-A4CD-A83AF2420F3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FED55FDE-EC27-44BD-8EC3-EE166A36322C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FED55FDE-EC27-44BD-8EC3-EE166A36322C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FED55FDE-EC27-44BD-8EC3-EE166A36322C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FED55FDE-EC27-44BD-8EC3-EE166A36322C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15E9B66F-9CD7-4396-A884-89D71431FDA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15E9B66F-9CD7-4396-A884-89D71431FDA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15E9B66F-9CD7-4396-A884-89D71431FDA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15E9B66F-9CD7-4396-A884-89D71431FDA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -249,6 +261,8 @@ Global
 		{801CF6F8-BA42-4118-B8DB-A171FFDE7074} = {2AEB58D9-7CCE-4260-AAC3-1AB296CDEE3C}
 		{1F374AAA-B32D-43C9-896E-F5B52CCFDE82} = {2AEB58D9-7CCE-4260-AAC3-1AB296CDEE3C}
 		{C653DB94-257C-4379-A4CD-A83AF2420F3E} = {2AEB58D9-7CCE-4260-AAC3-1AB296CDEE3C}
+		{FED55FDE-EC27-44BD-8EC3-EE166A36322C} = {2AEB58D9-7CCE-4260-AAC3-1AB296CDEE3C}
+		{15E9B66F-9CD7-4396-A884-89D71431FDA1} = {2AEB58D9-7CCE-4260-AAC3-1AB296CDEE3C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9C33A5C4-4CC2-49D6-8B08-E3DD981DB651}

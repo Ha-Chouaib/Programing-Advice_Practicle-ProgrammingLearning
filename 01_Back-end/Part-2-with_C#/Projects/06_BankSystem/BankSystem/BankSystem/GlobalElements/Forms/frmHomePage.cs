@@ -53,13 +53,26 @@ namespace BankSystem
                     SubItems = new List<clsMenuBtnModel>
                     {
                         new clsMenuBtnModel { Key = "frmManageCustomers", Title = "Manage Customers",Icon = Resources.People_manager },
-                        new clsMenuBtnModel { Key = "frmAddNewCustomer", Title = "Add Customer",Icon = Resources.add },
+                        new clsMenuBtnModel { Key = "frmAddNewCustomer", Title = "Add New Customer",Icon = Resources.add },
                         new clsMenuBtnModel { Key = "frmEditCustomer", Title = "Edit Customer",Icon = Resources.update },
                         new clsMenuBtnModel { Key = "frmFindCustomer", Title = "Find Customer", Icon = Resources.find_in_file },
                         new clsMenuBtnModel { Key = "frmCustomerAccounts", Title = "Customer Accounts",Icon = Resources.account }
                     }
                 },
-            
+                // 🔹 Accounts
+
+                new clsMenuBtnModel
+                   {
+                       Key = "frmAccounts",
+                       Title = "Accounts",
+                       Icon = Resources.customers,
+                       SubItems = new List<clsMenuBtnModel>
+                       {
+                           new clsMenuBtnModel { Key = "frmManageAccounts", Title = "Manage Accountss",Icon = Resources.People_manager },
+                           new clsMenuBtnModel { Key = "frmAddNewAccount", Title = "Add New Account",Icon = Resources.add },
+                           new clsMenuBtnModel { Key = "frmFindAccount", Title = "Find Account", Icon = Resources.find_in_file },
+                       }
+                   },
                 // 🔹 Users
                 new clsMenuBtnModel
                 {
@@ -69,7 +82,7 @@ namespace BankSystem
                     SubItems = new List<clsMenuBtnModel>
                     {
                         new clsMenuBtnModel { Key = "frmManageUsers", Title = "Manage Users",Icon = Resources.People_manager  },
-                        new clsMenuBtnModel { Key = "frmAddEditUser", Title = "Add / Edit User",Icon = Resources.update },
+                        new clsMenuBtnModel { Key = "frmAddNewUser", Title = "Add New User",Icon = Resources.update },
                         new clsMenuBtnModel { Key = "frmChangePassword", Title = "Change Password",Icon = Resources.password },
                         new clsMenuBtnModel { Key = "frmFindUser", Title = "Find User",Icon= Resources.find_in_file }
                     }
