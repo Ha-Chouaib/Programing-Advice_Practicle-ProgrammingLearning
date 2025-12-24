@@ -63,3 +63,10 @@ C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-en
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Customer.UserControls.ctrlCustomerCard.resources
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Customer.Forms.frmCustomerCard.resources
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Customer.Forms.frmManageCustomers.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.User.UserControls.ctrlAddEditUser.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.User.UserControls.ctrlUserPermissions.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.User.Forms.frmAddNewUser.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.User.UserControls.CheckedComboBox.ctrlCheckedComboBox.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.User.UserControls.DropDownForm.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Accounts.Forms.frmAddNewAccount.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Accounts.UserControls.ctrlAddNewAccount.resources

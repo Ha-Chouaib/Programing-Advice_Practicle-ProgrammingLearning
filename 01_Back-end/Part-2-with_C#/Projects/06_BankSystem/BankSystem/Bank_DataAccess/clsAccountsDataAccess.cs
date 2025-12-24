@@ -10,10 +10,11 @@ namespace Bank_DataAccess
     public class clsAccountsDataAccess
     {
        
-        public static int AddNewAccount(int CustomerID, string AccountNumber, byte AccountType, double Balance, bool IsActive, DateTime CreatedDate, int CreatedByUserID)
+        public static (int AccountID,string AccountNumber) AddNewAccount(int CustomerID, byte AccountType, double Balance, bool IsActive, DateTime CreatedDate, int CreatedByUserID)
         {
             string Query = "dbo.Sp_AddNewAccount";
             int AccountID = -1;
+            string AccountNumber = "";
             try
             {
                 using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
@@ -22,7 +23,6 @@ namespace Bank_DataAccess
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@CustomerID", CustomerID);
-                    cmd.Parameters.AddWithValue("@AccountNumber", AccountNumber);
                     cmd.Parameters.AddWithValue("@AccountType", AccountType);
                     cmd.Parameters.AddWithValue("@Balance", Balance);
                     cmd.Parameters.AddWithValue("@IsActive", IsActive);
@@ -36,6 +36,7 @@ namespace Bank_DataAccess
                         if (rdr.Read())
                         {
                             AccountID = clsGlobal.SafeGet<int>(rdr, "AccountID",-1);
+                            AccountNumber = clsGlobal.SafeGet<string>(rdr, "AccountNumber", "");
                             if (AccountID == -1)
                                 throw new InvalidOperationException(rdr["ErrorMSG"].ToString());
                         }
@@ -51,7 +52,7 @@ namespace Bank_DataAccess
                 clsGlobal.LogError($"[DAL: Account.AddNewAccount() ] -> {ex.Message}");
             }
 
-            return AccountID;
+            return (AccountID,AccountNumber);
         }
     
         public static bool FindByID(int AccountID,ref int CustomerID,ref string AccountNumber,ref byte AccountType,

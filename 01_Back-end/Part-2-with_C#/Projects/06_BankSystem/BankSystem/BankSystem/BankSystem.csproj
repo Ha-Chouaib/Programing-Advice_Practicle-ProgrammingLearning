@@ -51,6 +51,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accounts\Forms\frmAddNewAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\Forms\frmAddNewAccount.Designer.cs">
+      <DependentUpon>frmAddNewAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\Forms\frmManageAccounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\Forms\frmManageAccounts.Designer.cs">
+      <DependentUpon>frmManageAccounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\UserControls\ctrlAddNewAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Accounts\UserControls\ctrlAddNewAccount.Designer.cs">
+      <DependentUpon>ctrlAddNewAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\Forms\frmAddNewCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +210,45 @@
     <Compile Include="SideBarMenu\ctrlSubMenu.Designer.cs">
       <DependentUpon>ctrlSubMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="User\Forms\frmAddNewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\Forms\frmAddNewUser.Designer.cs">
+      <DependentUpon>frmAddNewUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserControls\CheckedComboBox\ctrlCheckedComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User\UserControls\CheckedComboBox\ctrlCheckedComboBox.Designer.cs">
+      <DependentUpon>ctrlCheckedComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserControls\ctrlAddEditUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User\UserControls\ctrlAddEditUser.Designer.cs">
+      <DependentUpon>ctrlAddEditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserControls\CheckedComboBox\ctrlUserPermissions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User\UserControls\CheckedComboBox\ctrlUserPermissions.Designer.cs">
+      <DependentUpon>ctrlUserPermissions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserControls\CheckedComboBox\DropDownForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\UserControls\CheckedComboBox\DropDownForm.Designer.cs">
+      <DependentUpon>DropDownForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Accounts\Forms\frmAddNewAccount.resx">
+      <DependentUpon>frmAddNewAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\Forms\frmManageAccounts.resx">
+      <DependentUpon>frmManageAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\UserControls\ctrlAddNewAccount.resx">
+      <DependentUpon>ctrlAddNewAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customer\Forms\frmAddNewCustomer.resx">
       <DependentUpon>frmAddNewCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -262,6 +319,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SideBarMenu\ctrlSubMenu.resx">
       <DependentUpon>ctrlSubMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\Forms\frmAddNewUser.resx">
+      <DependentUpon>frmAddNewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\UserControls\CheckedComboBox\ctrlCheckedComboBox.resx">
+      <DependentUpon>ctrlCheckedComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\UserControls\ctrlAddEditUser.resx">
+      <DependentUpon>ctrlAddEditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\UserControls\CheckedComboBox\ctrlUserPermissions.resx">
+      <DependentUpon>ctrlUserPermissions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\UserControls\CheckedComboBox\DropDownForm.resx">
+      <DependentUpon>DropDownForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">

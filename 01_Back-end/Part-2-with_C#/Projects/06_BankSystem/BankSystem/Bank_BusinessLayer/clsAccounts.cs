@@ -101,11 +101,17 @@ namespace Bank_BusinessLayer
                 return null;
         }
 
-
+        public static clsAccounts FindBy(string Column, string Term)
+        {
+            return null;
+        }
         private bool _AddNew()
         {
-           return ( this.AccountID = clsAccountsDataAccess.AddNewAccount(this.CustomerID,this.AccountNumber,Convert.ToByte( this.AccountType),
-                            this.Balance,this.IsActive,this.CreatedDate,this.CreatedByUserID)) != -1;
+            var result = clsAccountsDataAccess.AddNewAccount(this.CustomerID, Convert.ToByte(this.AccountType),
+                            this.Balance, this.IsActive, this.CreatedDate, this.CreatedByUserID);
+            this.AccountID = result.AccountID;
+            this.AccountNumber = result.AccountNumber;
+            return this.AccountID != -1;
         }
         private bool _Update()
         {
