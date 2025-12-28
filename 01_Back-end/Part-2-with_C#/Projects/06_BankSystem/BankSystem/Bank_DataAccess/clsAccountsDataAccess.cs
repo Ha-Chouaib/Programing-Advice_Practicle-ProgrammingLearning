@@ -149,52 +149,7 @@ namespace Bank_DataAccess
 
             return found;
         }
-        public static bool FindByCustomerID(int CustomerID, ref int AccountID, ref string AccountNumber, ref byte AccountType,
-           ref double Balance, ref bool IsActive, ref DateTime CreatedDate, ref int CreatedByUserID)
-        {
-            string Query = "dbo.GetAccountByID";
-            bool found = false;
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
-                using (SqlCommand cmd = new SqlCommand(Query, connection))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.AddWithValue("@CustomerID", CustomerID);
-                    connection.Open();
-                    using (SqlDataReader rdr = cmd.ExecuteReader())
-                    {
-                        if (rdr.Read())
-                        {
-                            AccountID = clsGlobal.SafeGet<int>(rdr, "AccountID", -1);
-                            AccountNumber = clsGlobal.SafeGet<string>(rdr, "AccountNumber",string.Empty);
-                            AccountType = clsGlobal.SafeGet<byte>(rdr, "AccountType",0);
-                            Balance = clsGlobal.SafeGet<double>(rdr, "Balance", 0);
-                            IsActive = clsGlobal.SafeGet<bool>(rdr, "IsActive", false);
-                            CreatedDate = clsGlobal.SafeGet<DateTime>(rdr, "CreatedAt",DateTime.MinValue);
-                            CreatedByUserID = clsGlobal.SafeGet<int>(rdr, "CreatedByUserID",-1);
-
-                            found = clsGlobal.SafeGet<bool>(rdr, "Success", false );
-                            if (!found)
-                                throw new InvalidOperationException(rdr["ErrorMSG"].ToString());
-                        }
-                    }
-                }
-
-            }
-            catch (SqlException ex)
-            {
-                clsGlobal.LogError($"[DAL: Account.FindAccountByCustomerID() ] -> SqlServer Error({ex.Number}): {ex.Message}");
-            }
-            catch (Exception ex)
-            {
-                clsGlobal.LogError($"[DAL: Account.FindAccountByCustomerID() ] -> {ex.Message}");
-            }
-
-            return found;
-        }
-
+       
         public static bool ExistsByAccountNumber(string AccountNumber)
         {
             string Query = @" SELECT dbo.Fn_IsAccountExistsByAccountNumber(@AccountNumber)";

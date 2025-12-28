@@ -287,11 +287,11 @@
             this.label9.TabIndex = 21;
             this.label9.Text = "Account ID";
             // 
-            // ctrlAddEditAccount
+            // ctrlAddNewAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
@@ -312,7 +312,7 @@
             this.Controls.Add(this.txtFullName);
             this.Controls.Add(this.txtCustomerID);
             this.Controls.Add(this.label1);
-            this.Name = "ctrlAddEditAccount";
+            this.Name = "ctrlAddNewAccount";
             this.Size = new System.Drawing.Size(714, 573);
             this.Load += new System.EventHandler(this.ctrlAddEditAccount_Load);
             this.ResumeLayout(false);

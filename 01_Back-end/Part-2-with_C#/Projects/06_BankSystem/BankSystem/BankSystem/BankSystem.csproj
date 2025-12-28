@@ -57,17 +57,41 @@
     <Compile Include="Accounts\Forms\frmAddNewAccount.Designer.cs">
       <DependentUpon>frmAddNewAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Accounts\Forms\frmFindAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\Forms\frmFindAccount.Designer.cs">
+      <DependentUpon>frmFindAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Accounts\Forms\frmManageAccounts.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Accounts\Forms\frmManageAccounts.Designer.cs">
       <DependentUpon>frmManageAccounts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Accounts\UserControls\ctrlAccountCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Accounts\UserControls\ctrlAccountCard.Designer.cs">
+      <DependentUpon>ctrlAccountCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Accounts\UserControls\ctrlAddNewAccount.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Accounts\UserControls\ctrlAddNewAccount.Designer.cs">
       <DependentUpon>ctrlAddNewAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Forms\frmCustomerAccounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Forms\frmCustomerAccounts.Designer.cs">
+      <DependentUpon>frmCustomerAccounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\UserControls\ctrlCustomerAccounts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Customer\UserControls\ctrlCustomerAccounts.Designer.cs">
+      <DependentUpon>ctrlCustomerAccounts.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer\Forms\frmAddNewCustomer.cs">
       <SubType>Form</SubType>
@@ -243,11 +267,23 @@
     <EmbeddedResource Include="Accounts\Forms\frmAddNewAccount.resx">
       <DependentUpon>frmAddNewAccount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\Forms\frmFindAccount.resx">
+      <DependentUpon>frmFindAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Accounts\Forms\frmManageAccounts.resx">
       <DependentUpon>frmManageAccounts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\UserControls\ctrlAccountCard.resx">
+      <DependentUpon>ctrlAccountCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Accounts\UserControls\ctrlAddNewAccount.resx">
       <DependentUpon>ctrlAddNewAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Forms\frmCustomerAccounts.resx">
+      <DependentUpon>frmCustomerAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\UserControls\ctrlCustomerAccounts.resx">
+      <DependentUpon>ctrlCustomerAccounts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\Forms\frmAddNewCustomer.resx">
       <DependentUpon>frmAddNewCustomer.cs</DependentUpon>
