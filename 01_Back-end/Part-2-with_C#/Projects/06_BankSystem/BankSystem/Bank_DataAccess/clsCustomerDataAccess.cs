@@ -493,6 +493,65 @@ namespace Bank_DataAccess
             }
             return FilteredList;
         }
+        public static DataTable GetCustomerAccounts(int CustomerID)
+        {
+
+            string Query = "dbo.GetCustomerAccounts";
+            DataTable accounts = new DataTable();
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
+                using (SqlCommand cmd = new SqlCommand(Query, connection))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@CustomerID", CustomerID);
+                    connection.Open();
+                    using (SqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        accounts.Load(rdr);
+                    }
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                clsGlobal.LogError($"[DAL: Customer.GetCustomerAccounts() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                clsGlobal.LogError($"[DAL: Customer.GetCustomerAccounts() ] -> {ex.Message}");
+            }
+
+            return accounts;
+        }
+        public static bool HasAccountType(int CustomerID, byte AccountType)
+        {
+            string Query = @" SELECT dbo.Fn_HasAccountType(@CustomerID,@AccountType)";
+            bool HasType = false;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
+                using (SqlCommand cmd = new SqlCommand(Query, connection))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@CustomerID", CustomerID);
+                    cmd.Parameters.AddWithValue("@AccountType", AccountType);
+                    connection.Open();
+                    object result = cmd.ExecuteScalar();
+                    if (result != null && bool.TryParse(result.ToString(), out bool hasType)) HasType = hasType;
+                }
+            }
+            catch (SqlException ex)
+            {
+                clsGlobal.LogError($"[DAL: Customer.HasAccountType() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                clsGlobal.LogError($"[DAL: Customer.HasAccountType() ] -> {ex.Message}");
+            }
+            return HasType; 
+        }
 
 
     }

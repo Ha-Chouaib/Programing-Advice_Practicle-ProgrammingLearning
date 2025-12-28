@@ -61,6 +61,7 @@ namespace BankSystem.Accounts.UserControls
             {
                 { "Individual", clsAccounts.enAccountType.enIndividual },
                 { "Business", clsAccounts.enAccountType.enBusiness },
+                { "Save", clsAccounts.enAccountType.enSave },
             };
             cmbAccountType.DataSource = new BindingSource(accountTypes, null);
             cmbAccountType.DisplayMember = "Key";
@@ -83,6 +84,11 @@ namespace BankSystem.Accounts.UserControls
             if(_TargetCustomer == null)
             {
                 MessageBox.Show("Please select a customer first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if(clsCustomer.HasAccountType(_TargetCustomer.CustomerID, (clsAccounts.enAccountType)((KeyValuePair<string, clsAccounts.enAccountType>)cmbAccountType.SelectedItem).Value))
+            {
+                MessageBox.Show("The selected customer already has an account of this type.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

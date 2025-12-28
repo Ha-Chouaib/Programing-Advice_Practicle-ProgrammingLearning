@@ -167,7 +167,15 @@ namespace Bank_BusinessLayer
         {
             return clsCustomerDataAccess.GetAllCustomers();
         }
-    
+        
+        public static DataTable GetCustomerAccounts(int CustomerID)
+        {
+            return clsCustomerDataAccess.GetCustomerAccounts(CustomerID);
+        }
+        public static bool HasAccountType(int CustomerID,clsAccounts.enAccountType AccountType)
+        {
+            return clsCustomerDataAccess.HasAccountType(CustomerID, (byte)AccountType);
+        }
         public static bool DepositWithdraw(int AccountID,double Amount)
         {
             return clsCustomerDataAccess.DepositWithdraw(AccountID, Amount);

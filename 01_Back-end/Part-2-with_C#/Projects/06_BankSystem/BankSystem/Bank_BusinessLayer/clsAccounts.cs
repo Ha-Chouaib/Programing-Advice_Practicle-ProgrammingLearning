@@ -13,7 +13,7 @@ namespace Bank_BusinessLayer
         enum enMode { enAddNew, enUpdate }
         enMode _Mode = enMode.enAddNew;
 
-        public enum enAccountType { enIndividual = 1, enBusiness = 2 }
+        public enum enAccountType { enIndividual = 1, enBusiness = 2,enSave = 3}
         
         public int AccountID { get; private set; }
         public int CustomerID { get;  set; }
@@ -86,23 +86,22 @@ namespace Bank_BusinessLayer
             else
                 return null;
         }
-        public static clsAccounts FindByCustomerID(int CustomerID)
-        {
-            int AccountID = -1;
-            string AccountNumber = string.Empty;
-            byte AccountType = 0;
-            double Balance = 0;
-            bool IsActive = false;
-            int CreatedByUserID = -1;
-            DateTime CreatedDate = DateTime.MinValue;
-            if (clsAccountsDataAccess.FindByCustomerID(CustomerID, ref AccountID, ref AccountNumber, ref AccountType, ref Balance, ref IsActive, ref CreatedDate, ref CreatedByUserID))
-                return new clsAccounts(AccountID, CustomerID, AccountNumber, (enAccountType)AccountType, Balance, IsActive, CreatedDate, CreatedByUserID);
-            else
-                return null;
-        }
-
+        
         public static clsAccounts FindBy(string Column, string Term)
         {
+
+            switch(Column.ToLower())
+            {
+                case "accountid":
+                    int accountID;
+                    if (int.TryParse(Term, out accountID))
+                        return FindByID(accountID);
+                    break;
+                case "accountnumber":
+                    return FindByAccountNumber(Term);
+               default:
+                    return null;
+            }
             return null;
         }
         private bool _AddNew()
@@ -188,5 +187,7 @@ namespace Bank_BusinessLayer
         {
             return clsAccountsDataAccess.FilterAccounts(Column, Term);
         }
+
+        
     }
 }
