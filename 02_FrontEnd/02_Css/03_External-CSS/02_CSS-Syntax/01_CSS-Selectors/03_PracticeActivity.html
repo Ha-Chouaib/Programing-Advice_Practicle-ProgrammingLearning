@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <Style>
+        /* Element Selector */
+        p {
+            color: #7cb3f3;
+            font-size: 14px;
+        }
+
+        /* Class Selector */
+        .highlight {
+            background-color: lightgreen;
+        }
+
+        /* ID Selector */
+        #unique-paragraph {
+            color: orange;
+            font-weight: bold;
+        }
+
+        /* Attribute Selector */
+        [title] {
+            border: 1px solid black;
+            padding: 3px;
+        }
+
+        /* Pseudo-class Selector */
+        a:hover {
+            color: rgb(0, 255, 242);
+            text-decoration: none;
+        }
+
+        /* Pseudo-element Selector */
+        p::first-line {
+            font-style: italic;
+        }
+
+        /* Child Selector */
+        .container > p {
+            border: 2px dashed red;
+            padding: 4px;
+        }
+
+        /* Adjacent Sibling Selector */
+        #adjacent-sibling +p {
+            color: rgb(4, 0, 255);
+        }
+
+        /* General Sibling Selector */
+        #general-sibling ~ p {
+            color: brown;
+        }
+    </Style>
+</head>
+<body>
+    <header>
+        <h1>Practice Activity for CSS Selectors</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Element Selector</h2>
+            <p>This paragraph is styled using an element selector.</p>
+        </section>
+
+        <section>
+            <h2>Class Selector</h2>
+            <p class="highlight">This paragraph is highlighted using a class selector.</p>
+        </section>
+
+        <section>
+            <h2>ID Selector</h2>
+            <p id="unique-paragraph">This paragraph has a unique style using an ID selector.</p>
+        </section>
+
+        <section>
+            <h2>Attribute Selector</h2>
+            <p title="info">This paragraph has a border because it has a title attribute.</p>
+        </section>
+
+        <section>
+            <h2>Pseudo-class Selector</h2>
+            <a href="#">Hover over this link to see the effect.</a>
+        </section>
+
+        <section>
+            <h2>Pseudo-element Selector</h2>
+            <p>This paragraph's first line is styled differently using a pseudo-element.</p>
+        </section>
+
+        <section class="container">
+            <h2>Child Selector</h2>
+            <p>This paragraph is a direct child of a container and has a border.</p>
+        </section>
+  
+        <section >
+            <h2 id="adjacent-sibling">Adjacent Sibling Selector</h2>
+            <!-- <h2>Heading 2</h2> No Element should be in between-->
+            <p>This paragraph follows the heading and is styled as an adjacent sibling.</p>
+        </section>
+
+        <section>
+            <h2 id="general-sibling">General Sibling Selector</h2>
+            <h2>Another Heading 2</h2>
+            <p>This is the first paragraph following the heading.</p>
+            <p>This is the second paragraph following the heading.</p>
+        </section>
+</body>
+</html>
