@@ -7,20 +7,28 @@
       "RelativeMoniker": "D:0:0:{15E9B66F-9CD7-4396-A884-89D71431FDA1}|09_21_ImplementPriorityQueue\\09_21_ImplementPriorityQueue.csproj|solutionrelative:09_21_implementpriorityqueue\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FED55FDE-EC27-44BD-8EC3-EE166A36322C}|09_20_RearrangeQueueAlternately\\09_20_RearrangeQueueAlternately.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\08_algorithmslevel-6\\09_20_rearrangequeuealternately\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FED55FDE-EC27-44BD-8EC3-EE166A36322C}|09_20_RearrangeQueueAlternately\\09_20_RearrangeQueueAlternately.csproj|solutionrelative:09_20_rearrangequeuealternately\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C653DB94-257C-4379-A4CD-A83AF2420F3E}|09_19_QueueUsingTowStacks\\09_19_QueueUsingTowStacks.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_19_queueusingtowstacks\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C653DB94-257C-4379-A4CD-A83AF2420F3E}|09_19_QueueUsingTowStacks\\09_19_QueueUsingTowStacks.csproj|solutionrelative:09_19_queueusingtowstacks\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1F374AAA-B32D-43C9-896E-F5B52CCFDE82}|09_18_FirstNon-RepeatingCharacter\\09_18_FirstNon-RepeatingCharacter.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_18_firstnon-repeatingcharacter\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1F374AAA-B32D-43C9-896E-F5B52CCFDE82}|09_18_FirstNon-RepeatingCharacter\\09_18_FirstNon-RepeatingCharacter.csproj|solutionrelative:09_18_firstnon-repeatingcharacter\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C653DB94-257C-4379-A4CD-A83AF2420F3E}|09_19_QueueUsingTowStacks\\09_19_QueueUsingTowStacks.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\08_algorithmslevel-6\\09_19_queueusingtowstacks\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C653DB94-257C-4379-A4CD-A83AF2420F3E}|09_19_QueueUsingTowStacks\\09_19_QueueUsingTowStacks.csproj|solutionrelative:09_19_queueusingtowstacks\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{801CF6F8-BA42-4118-B8DB-A171FFDE7074}|09_17_MegeTowSortedQueues\\09_17_MergeTowSortedQueues.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\08_algorithmslevel-6\\09_17_megetowsortedqueues\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{801CF6F8-BA42-4118-B8DB-A171FFDE7074}|09_17_MegeTowSortedQueues\\09_17_MergeTowSortedQueues.csproj|solutionrelative:09_17_megetowsortedqueues\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{801CF6F8-BA42-4118-B8DB-A171FFDE7074}|09_17_MegeTowSortedQueues\\09_17_MegeTowSortedQueues.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_17_megetowsortedqueues\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{801CF6F8-BA42-4118-B8DB-A171FFDE7074}|09_17_MegeTowSortedQueues\\09_17_MegeTowSortedQueues.csproj|solutionrelative:09_17_megetowsortedqueues\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EF530A4-A664-4918-B2F5-67DD89A7DD83}|09_11_ReverseQueueByStack\\09_11_ReverseQueueByStack.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_11_reversequeuebystack\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EF530A4-A664-4918-B2F5-67DD89A7DD83}|09_11_ReverseQueueByStack\\09_11_ReverseQueueByStack.csproj|solutionrelative:09_11_reversequeuebystack\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FED55FDE-EC27-44BD-8EC3-EE166A36322C}|09_20_RearrangeQueueAlternately\\09_20_RearrangeQueueAlternately.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_20_rearrangequeuealternately\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FED55FDE-EC27-44BD-8EC3-EE166A36322C}|09_20_RearrangeQueueAlternately\\09_20_RearrangeQueueAlternately.csproj|solutionrelative:09_20_rearrangequeuealternately\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA481373-98F7-4F2A-8173-A749F9F3979D}|09_16_RotateQueue\\09_16_RotateQueue.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_16_rotatequeue\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -41,10 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{DEC95472-ED71-43ED-8297-D75C0574608C}|09_12_Palindrome Queue\\09_12_Palindrome Queue.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_12_palindrome queue\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DEC95472-ED71-43ED-8297-D75C0574608C}|09_12_Palindrome Queue\\09_12_Palindrome Queue.csproj|solutionrelative:09_12_palindrome queue\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7EF530A4-A664-4918-B2F5-67DD89A7DD83}|09_11_ReverseQueueByStack\\09_11_ReverseQueueByStack.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_11_reversequeuebystack\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7EF530A4-A664-4918-B2F5-67DD89A7DD83}|09_11_ReverseQueueByStack\\09_11_ReverseQueueByStack.csproj|solutionrelative:09_11_reversequeuebystack\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{13BD5DE6-4004-4473-B65E-80233AD09CD3}|09_10_WebPageRequestHandling\\09_10_WebPageRequestHandling.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_10_webpagerequesthandling\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -134,8 +138,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_17_MegeTowSortedQueues\\Program.cs",
+              "RelativeDocumentMoniker": "09_17_MegeTowSortedQueues\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_17_MegeTowSortedQueues\\Program.cs",
+              "RelativeToolTip": "09_17_MegeTowSortedQueues\\Program.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwDAAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T20:14:44.677Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -144,33 +161,33 @@
               "RelativeDocumentMoniker": "09_21_ImplementPriorityQueue\\Program.cs",
               "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_21_ImplementPriorityQueue\\Program.cs",
               "RelativeToolTip": "09_21_ImplementPriorityQueue\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAtwBIAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-04T18:26:56.735Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_20_RearrangeQueueAlternately\\Program.cs",
               "RelativeDocumentMoniker": "09_20_RearrangeQueueAlternately\\Program.cs",
               "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_20_RearrangeQueueAlternately\\Program.cs",
               "RelativeToolTip": "09_20_RearrangeQueueAlternately\\Program.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAmwBYAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAqwBYAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-04T17:58:27.972Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_19_QueueUsingTowStacks\\Program.cs",
               "RelativeDocumentMoniker": "09_19_QueueUsingTowStacks\\Program.cs",
               "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_19_QueueUsingTowStacks\\Program.cs",
               "RelativeToolTip": "09_19_QueueUsingTowStacks\\Program.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAlwDEAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAlwCoAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-25T20:53:45.878Z",
               "EditorCaption": ""
@@ -202,7 +219,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_16_RotateQueue\\Program.cs",
               "RelativeDocumentMoniker": "09_16_RotateQueue\\Program.cs",
@@ -214,7 +231,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_15_InterLeaveQueue\\Program.cs",
               "RelativeDocumentMoniker": "09_15_InterLeaveQueue\\Program.cs",
@@ -226,7 +243,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_14_SortQueue\\Program.cs",
               "RelativeDocumentMoniker": "09_14_SortQueue\\Program.cs",
@@ -238,7 +255,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_13_GenerateBinaryNums\\Program.cs",
               "RelativeDocumentMoniker": "09_13_GenerateBinaryNums\\Program.cs",
@@ -250,7 +267,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_12_Palindrome Queue\\Program.cs",
               "RelativeDocumentMoniker": "09_12_Palindrome Queue\\Program.cs",
@@ -262,19 +279,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_11_ReverseQueueByStack\\Program.cs",
               "RelativeDocumentMoniker": "09_11_ReverseQueueByStack\\Program.cs",
               "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_11_ReverseQueueByStack\\Program.cs",
               "RelativeToolTip": "09_11_ReverseQueueByStack\\Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAoAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T20:39:41.506Z"
+              "WhenOpened": "2025-11-23T20:39:41.506Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_10_WebPageRequestHandling\\Program.cs",
               "RelativeDocumentMoniker": "09_10_WebPageRequestHandling\\Program.cs",
@@ -286,7 +304,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_09_CustomerService\\Program.cs",
               "RelativeDocumentMoniker": "09_09_CustomerService\\Program.cs",
@@ -298,7 +316,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_08_TaskScheduling\\Program.cs",
               "RelativeDocumentMoniker": "09_08_TaskScheduling\\Program.cs",
@@ -310,7 +328,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_07_SimpleBacktracking\\Program.cs",
               "RelativeDocumentMoniker": "09_07_SimpleBacktracking\\Program.cs",
@@ -322,7 +340,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_06_TicketingSystem\\Program.cs",
               "RelativeDocumentMoniker": "09_06_TicketingSystem\\Program.cs",
@@ -334,7 +352,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_05_TrafficSignalSystem\\Program.cs",
               "RelativeDocumentMoniker": "09_05_TrafficSignalSystem\\Program.cs",
@@ -346,7 +364,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_04_PrinterJobScheduling\\Program.cs",
               "RelativeDocumentMoniker": "09_04_PrinterJobScheduling\\Program.cs",
@@ -358,7 +376,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_03_UndoInCalculator\\Program.cs",
               "RelativeDocumentMoniker": "09_03_UndoInCalculator\\Program.cs",
@@ -370,7 +388,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_02_DecimalToBinary\\Program.cs",
               "RelativeDocumentMoniker": "09_02_DecimalToBinary\\Program.cs",
@@ -382,7 +400,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_01_BrowserBackBtn\\Program.cs",
               "RelativeDocumentMoniker": "09_01_BrowserBackBtn\\Program.cs",
@@ -394,7 +412,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\08_02_ActivtySelection\\Program.cs",
               "RelativeDocumentMoniker": "08_02_ActivtySelection\\Program.cs",
@@ -406,7 +424,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\08_01_CoinChange\\Program.cs",
               "RelativeDocumentMoniker": "08_01_CoinChange\\Program.cs",
@@ -418,7 +436,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\04_2_AlgorithmToSearchInBST\\Program.cs",
               "RelativeDocumentMoniker": "04_2_AlgorithmToSearchInBST\\Program.cs",
@@ -430,7 +448,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\04_1_BDT-Implentation\\Program.cs",
               "RelativeDocumentMoniker": "04_1_BDT-Implentation\\Program.cs",
@@ -442,7 +460,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\01_LevelOrder-BFS-Traversal\\Program.cs",
               "RelativeDocumentMoniker": "01_LevelOrder-BFS-Traversal\\Program.cs",
@@ -454,7 +472,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\03_InsertionSort\\Program.cs",
               "RelativeDocumentMoniker": "03_InsertionSort\\Program.cs",
@@ -466,7 +484,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\02_SelectionSort\\Program.cs",
               "RelativeDocumentMoniker": "02_SelectionSort\\Program.cs",
@@ -478,7 +496,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\01_BubbleSort\\Program.cs",
               "RelativeDocumentMoniker": "01_BubbleSort\\Program.cs",
@@ -490,7 +508,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\02_BinarySearch\\Program.cs",
               "RelativeDocumentMoniker": "02_BinarySearch\\Program.cs",
@@ -502,7 +520,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\8_AlgorithmsLevel-2\\Program.cs",
               "RelativeDocumentMoniker": "8_AlgorithmsLevel-2\\Program.cs",

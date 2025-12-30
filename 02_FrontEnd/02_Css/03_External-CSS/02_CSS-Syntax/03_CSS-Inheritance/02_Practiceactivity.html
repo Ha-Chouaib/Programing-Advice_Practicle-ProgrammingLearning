@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Inheritance Practice Example</title>
+  <style>
+    /* Define parent element styles */
+    .parent {
+      color: darkblue;               /* Text color to be inherited */
+      font-family: 'Arial', sans-serif; /* Font family to be inherited */
+      margin: 20px;                  /* Margin is NOT inherited by default */
+      border: 2px solid green;
+      /* You could add other inherited properties if desired */
+    }
+    
+    /* Class to override inherited properties for demonstration */
+    .override {
+      color: red;                    /* This will override parent's color */
+    }
+  </style>
+</head>
+<body>
+  <div class="parent">
+    <h2>This is an H2 element inside the parent</h2>
+    <p style="border:inherit;">This paragraph should inherit the dark blue color and Arial font from the parent.
+        and also forced to inherit the border style from the parent as well.
+    </p>
+    <span>This span also inherits the parent's color and font-family.</span>
+    <p class="override">
+      This paragraph overrides the inherited color and displays red text.
+    </p>
+  </div>
+  
+  
+</body>
+</html>
