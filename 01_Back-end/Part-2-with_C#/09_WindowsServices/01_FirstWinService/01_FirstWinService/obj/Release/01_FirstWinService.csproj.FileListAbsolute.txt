@@ -1,0 +1,7 @@
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\09_WindowsServices\01_FirstWinService\01_FirstWinService\bin\Release\01_FirstWinService.exe.config
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\09_WindowsServices\01_FirstWinService\01_FirstWinService\bin\Release\01_FirstWinService.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\09_WindowsServices\01_FirstWinService\01_FirstWinService\bin\Release\01_FirstWinService.pdb
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\09_WindowsServices\01_FirstWinService\01_FirstWinService\obj\Release\01_FirstWinService.csproj.AssemblyReference.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\09_WindowsServices\01_FirstWinService\01_FirstWinService\obj\Release\01_FirstWinService.csproj.CoreCompileInputs.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\09_WindowsServices\01_FirstWinService\01_FirstWinService\obj\Release\01_FirstWinService.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\09_WindowsServices\01_FirstWinService\01_FirstWinService\obj\Release\01_FirstWinService.pdb

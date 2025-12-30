@@ -1,0 +1,86 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\01_FirstWinService\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6F285F27-7A17-4E06-B627-CA56AC4B4014}|01_FirstWinService\\01_FirstWinService.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\09_windowsservices\\01_firstwinservice\\01_firstwinservice\\myfirstwinservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F285F27-7A17-4E06-B627-CA56AC4B4014}|01_FirstWinService\\01_FirstWinService.csproj|solutionrelative:01_firstwinservice\\myfirstwinservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F285F27-7A17-4E06-B627-CA56AC4B4014}|01_FirstWinService\\01_FirstWinService.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\09_windowsservices\\01_firstwinservice\\01_firstwinservice\\projectinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F285F27-7A17-4E06-B627-CA56AC4B4014}|01_FirstWinService\\01_FirstWinService.csproj|solutionrelative:01_firstwinservice\\projectinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F285F27-7A17-4E06-B627-CA56AC4B4014}|01_FirstWinService\\01_FirstWinService.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\09_windowsservices\\01_firstwinservice\\01_firstwinservice\\projectinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6F285F27-7A17-4E06-B627-CA56AC4B4014}|01_FirstWinService\\01_FirstWinService.csproj|solutionrelative:01_firstwinservice\\projectinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F285F27-7A17-4E06-B627-CA56AC4B4014}|01_FirstWinService\\01_FirstWinService.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\09_windowsservices\\01_firstwinservice\\01_firstwinservice\\myfirstwinservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6F285F27-7A17-4E06-B627-CA56AC4B4014}|01_FirstWinService\\01_FirstWinService.csproj|solutionrelative:01_firstwinservice\\myfirstwinservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProjectInstaller.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\01_FirstWinService\\01_FirstWinService\\ProjectInstaller.cs",
+              "RelativeDocumentMoniker": "01_FirstWinService\\ProjectInstaller.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\01_FirstWinService\\01_FirstWinService\\ProjectInstaller.cs",
+              "RelativeToolTip": "01_FirstWinService\\ProjectInstaller.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T20:52:01.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProjectInstaller.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\01_FirstWinService\\01_FirstWinService\\ProjectInstaller.cs",
+              "RelativeDocumentMoniker": "01_FirstWinService\\ProjectInstaller.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\01_FirstWinService\\01_FirstWinService\\ProjectInstaller.cs [Design]",
+              "RelativeToolTip": "01_FirstWinService\\ProjectInstaller.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T20:51:48.302Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MyFirstWinService.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\01_FirstWinService\\01_FirstWinService\\MyFirstWinService.cs",
+              "RelativeDocumentMoniker": "01_FirstWinService\\MyFirstWinService.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\01_FirstWinService\\01_FirstWinService\\MyFirstWinService.cs",
+              "RelativeToolTip": "01_FirstWinService\\MyFirstWinService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T20:43:03.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MyFirstWinService.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\01_FirstWinService\\01_FirstWinService\\MyFirstWinService.cs",
+              "RelativeDocumentMoniker": "01_FirstWinService\\MyFirstWinService.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\01_FirstWinService\\01_FirstWinService\\MyFirstWinService.cs [Design]",
+              "RelativeToolTip": "01_FirstWinService\\MyFirstWinService.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T20:42:41.221Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
