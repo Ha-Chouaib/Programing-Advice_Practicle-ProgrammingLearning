@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Basic Margin Example</title>
+  <style>
+    .box {
+      background-color: #f0f8ff;
+      border: 1px solid #ccc;
+      margin: 20px; /* 20px margin on all sides */
+      padding: 10px;
+    }
+    .container {
+      background-color: #e0f7fa;
+      border: 1px solid #00796b;
+      margin-top: 30px;
+      margin-right: 50px;
+      margin-bottom: 30px;
+      margin-left: 50px;
+      padding: 15px;
+    }
+     .one-value {
+      margin: 20px; /* All sides 20px */
+      background-color: #fce4ec;
+      padding: 10px;
+    }
+    .two-values {
+      margin: 10px 30px; /* 10px top and bottom, 30px left and right */
+      background-color: #e8f5e9;
+      padding: 10px;
+    }
+    .three-values {
+      margin: 5px 15px 25px; /* 5px top, 15px left/right, 25px bottom */
+      background-color: #e3f2fd;
+      padding: 10px;
+    }
+    .four-values {
+      margin: 10px 20px 30px 40px; /* Top, right, bottom, left */
+      background-color: #fff3e0;
+      padding: 10px;
+    }
+     .negative-margin {
+      background-color: #ffeb3b;
+      border: 1px solid #fbc02d;
+      margin: -20px; /* Negative margin pulls the element closer to others or overlaps them */
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+    <div class="box">
+        This div has a 20px margin on all sides.
+    </div>
+    <div class="container">
+        This container has 30px margin on top and bottom, and 50px margin on the sides.
+    </div>
+    <div class="one-value">
+        This div uses one value for margin: 20px on all sides.
+    </div>
+    <div class="two-values">
+        This div uses two values for margin: 10px top/bottom and 30px left/right.
+    </div>
+    <div class="three-values">
+        This div uses three values for margin: 5px top, 15px left/right, and 25px bottom.
+    </div>
+    <div class="four-values">
+        This div uses four values for margin: 10px top, 20px right, 30px bottom, and 40px left.
+    </div>
+    <div class="negative-margin">
+        This div has a negative margin of -20px, pulling it closer to surrounding elements.
+    </div>
+</body>
+</html>

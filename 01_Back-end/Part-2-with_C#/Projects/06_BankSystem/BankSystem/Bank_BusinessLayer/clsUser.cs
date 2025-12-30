@@ -38,7 +38,6 @@ namespace Bank_BusinessLayer
         public enum enPermissions : ulong
         {
             None = 0,
-            All = ulong.MaxValue,
 
             // ===== People =====
             People_View = 1UL << 0,
@@ -81,6 +80,8 @@ namespace Bank_BusinessLayer
             Reports_Transaction = 1UL << 27,
             Reports_UserActivity = 1UL << 28,
             Reports_SystemLogs = 1UL << 29,
+
+            All = (1UL << 30) -1
 
         }
 

@@ -1,0 +1,61 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Uniform Padding Example</title>
+  <style>
+    .uniform-padding {
+      background-color: #e0f7fa; /* Light cyan background */
+      border: 1px solid #00796b; /* Teal border */
+      padding: 20px; /* 20px padding on all sides */
+      margin: 20px;
+    }
+    .different-padding {
+      background-color: #ffecb3; /* Light yellow background */
+      border: 1px solid #fbc02d; /* Orange border */
+      padding-top: 10px;      /* Top padding 10px */
+      padding-right: 20px;    /* Right padding 20px */
+      padding-bottom: 30px;   /* Bottom padding 30px */
+      padding-left: 40px;     /* Left padding 40px */
+      margin: 20px;
+    }
+    .two-values {
+      background-color: #e8f5e9; /* Light green background */
+      border: 1px solid #388e3c; /* Dark green border */
+      padding: 15px 30px; /* 15px top/bottom, 30px left/right */
+      margin: 20px;
+    }
+    .three-values {
+      background-color: #e3f2fd; /* Light blue background */
+      border: 1px solid #1976d2; /* Blue border */
+      padding: 10px 20px 30px; /* 10px top, 20px left/right, 30px bottom */
+      margin: 20px;
+    }
+     .percentage-padding {
+      background-color: #fce4ec; /* Light pink background */
+      border: 1px solid #d81b60; /* Pinkish border */
+      width: 80%; /* 80% width of its container */
+      padding: 5%; /* Padding is 5% of the container's width */
+      margin: 20px auto;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+    <div class="uniform-padding">
+        This div has a uniform 20px padding on all sides.
+    </div>
+    <div class="different-padding">
+        This div has different padding values on each side: 10px top, 20px right, 30px bottom, and 40px left.
+    </div>
+     <div class="two-values">
+        This div uses two values for padding: 15px top/bottom and 30px left/right.
+    </div>
+    <div class="three-values">
+        This div uses three values for padding: 10px top, 20px left/right, and 30px bottom.
+    </div>
+    <div class="percentage-padding">
+        This div has padding set as a percentage (5%) of its container's width.
+    </div>
+</body>
+</html>
