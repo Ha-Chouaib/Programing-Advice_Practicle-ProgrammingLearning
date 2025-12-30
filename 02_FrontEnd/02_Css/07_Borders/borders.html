@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Basic Border Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #0f0f0f;
+      color: white;
+
+      
+    }
+    div{
+        text-align: center;
+    }
+    .basic-border {
+      border: 2px solid red; /* A 2px solid red border */
+      padding: 10px;
+      margin: 20px;
+    }
+    .dashed-border {
+      border: 3px dashed green; /* A 3px dashed green border */
+      padding: 10px;
+      margin: 20px;
+    }
+    .dotted-border {
+      border: 4px dotted blue; /* A 4px dotted blue border */
+      padding: 10px;
+      margin: 20px;
+    }
+    .double-border {
+      border: 5px double purple; /* A 5px double purple border */
+      padding: 10px;
+      margin: 20px;
+    }
+     .custom-border {
+      border-width: 4px;         /* Sets the border thickness */
+      border-style: solid;       /* Sets the border style */
+      border-color: #FF5733;      /* Sets the border color */
+      padding: 15px;
+      margin: 20px;
+    }
+    .rounded-border {
+      border: 3px solid #3498db; /* 3px solid border with a blue color */
+      border-radius: 15px;       /* Rounds the corners with a 15px radius */
+      padding: 20px;
+      margin: 20px;
+      text-align: center;
+    }
+    .complex-border {
+      border-top: 4px solid #2ecc71;    /* Green top border */
+      border-right: 4px dashed #e74c3c;  /* Red dashed right border */
+      border-bottom: 4px double #3498db;  /* Blue double bottom border */
+      border-left: 4px dotted #f1c40f;    /* Yellow dotted left border */
+      border-bottom-left-radius: 10px;
+        border-top-right-radius: 10px;
+      padding: 20px;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+    <div class="basic-border">
+        This div has a basic 2px solid red border.
+    </div>
+
+    <div class="dashed-border">This div has a 3px dashed green border.</div>
+    <div class="dotted-border">This div has a 4px dotted blue border.</div>
+    <div class="double-border">This div has a 5px double purple border.</div>
+    <div class="custom-border">This div uses individual border properties to set a 4px solid border with a custom color.</div>
+    <div class="rounded-border">This div has rounded borders thanks to the border-radius property. </div>
+    <div class="complex-border">This div demonstrates different border styles on each side. Notice how each side has its own unique style and color.</div>
+</body>
+</html>

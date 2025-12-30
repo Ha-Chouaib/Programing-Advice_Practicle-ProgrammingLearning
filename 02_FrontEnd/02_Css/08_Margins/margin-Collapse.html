@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Margin Collapse - Adjacent Siblings</title>
+  <style>
+    p {
+      background-color: #e0f7fa;
+      border: 1px solid #00796b;
+      margin: 30px 20px; /* 30px top and bottom, 20px left/right */
+      padding: 10px;
+    }
+     .no-collapse {
+      background-color: #fff3e0;
+      padding: 20px; /* Padding prevents margin collapse with child elements */
+      border: 1px solid #ff9800;
+    }
+    .no-collapse p {
+      background-color: #ffe0b2;
+      margin: 30px 20px;
+      padding: 10px;
+      border: 1px solid #fb8c00;
+    }
+    .parent {
+      background-color: #f0f4c3;
+      /* No border or padding, so margins may collapse with its children */
+      margin: 40px 20px;
+    }
+    .parent p {
+      background-color: #e6ee9c;
+      margin: 20px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Margin Collapse: Adjacent Siblings</h1>
+  <p>This is the first paragraph with a 30px bottom margin.</p>
+  <p>This is the second paragraph with a 30px top margin.
+    <br>
+    Note: Instead of having 60px between the paragraphs (30px from each), the margins collapse to 30px.
+  </p>
+  <!-- Explanation: Instead of having 60px between the paragraphs (30px from each), the margins collapse to 30px. -->
+
+
+    <h1>Preventing Margin Collapse</h1>
+    <div class="no-collapse">
+    <p>This paragraph is inside a padded container. The container’s padding prevents the child margins from collapsing with the container’s margins.</p>
+    <p>This is another paragraph inside the same container with full margins intact.</p>
+    </div>
+
+    <h1>Parent-Child Margin Collapse</h1>
+  <div class="parent">
+    <p>The top margin of this paragraph may collapse with the parent's top margin, reducing the overall space.</p>
+    <p>Similarly, the bottom margin may collapse with the parent's bottom margin.</p>
+  </div>
+
+</body>
+</html>
