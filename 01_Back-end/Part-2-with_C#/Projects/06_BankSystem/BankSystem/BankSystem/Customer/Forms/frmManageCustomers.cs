@@ -128,7 +128,7 @@ namespace BankSystem.Customer.Forms
             }
             if (MessageBox.Show("Sure To delete this record?!", "Validation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                if (clsPerson.Delete(customerID))
+                if (clsCustomer.Delete(customerID, clsGlobal.LoggedInUser.UserID))
                 {
                     MessageBox.Show($"The Person's record With id [{customerID}] was deleted successfully");
                     ctrlManageRecords1.__RefreshRecordsList(clsCustomer.ListCustomers());
@@ -171,8 +171,9 @@ namespace BankSystem.Customer.Forms
 
             var grid = ctrlManageRecords1.__RecordsContainer;
 
-            grid.Columns["CustomerID"].HeaderText = "ID";
+
             grid.Columns["PersonID"].HeaderText = "Person ID";
+            grid.Columns["FullName"].HeaderText = "Full Name";
             grid.Columns["CustomerType"].HeaderText = "Customer Type";
             grid.Columns["CreatedDate"].HeaderText = "Created Date";
             grid.Columns["CreatedByUserID"].HeaderText = "Added By User";

@@ -171,9 +171,9 @@ namespace Bank_BusinessLayer
         {
             return clsPersonDataAccess.Exist(NationalNo);
         }
-        public static bool Delete(int PersonID)
+        public static bool Delete(int PersonID, int DeletedByUserID)
         {
-            return clsPersonDataAccess.Delete(PersonID);
+            return clsPersonDataAccess.Delete(PersonID, DeletedByUserID);
         }
         public static DataTable ListPeopleRecords()
         {

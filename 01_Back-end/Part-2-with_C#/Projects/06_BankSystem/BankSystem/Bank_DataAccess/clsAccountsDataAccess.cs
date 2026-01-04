@@ -461,7 +461,7 @@ namespace Bank_DataAccess
             return Active;
         }
 
-        public static bool Delete(int AccountID)
+        public static bool Delete(int AccountID,int DeletedByUserID)
         {
             string Query = "Sp_DeleteAccount";
             bool Deleted = false;
@@ -473,9 +473,10 @@ namespace Bank_DataAccess
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@AccountID", AccountID);
+                    cmd.Parameters.AddWithValue("@DeletedByUserID", DeletedByUserID);
 
                     connection.Open();
-
+                  
                     using (SqlDataReader rdr = cmd.ExecuteReader())
                     {
                         Deleted = Convert.ToBoolean(rdr["Success"]);

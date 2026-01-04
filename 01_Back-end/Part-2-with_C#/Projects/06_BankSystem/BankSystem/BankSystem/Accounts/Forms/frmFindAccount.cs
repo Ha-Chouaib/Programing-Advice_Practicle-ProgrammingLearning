@@ -18,6 +18,14 @@ namespace BankSystem.Accounts.Forms
             InitializeComponent();
             ctrlFind1.Enabled = true;
             ctrlFind1.__Initializing(_FilterBy_Options(),clsAccounts.FindBy);
+            ctrlFind1.__FindOptionsCombo.SelectedValueChanged += (s, e) =>
+            {
+                ctrlFind1.__txtSearchTerm.KeyPress -= null;
+                if (((KeyValuePair<int, string>)ctrlFind1.__FindOptionsCombo.SelectedItem).Value == "AccountID")
+                    ctrlFind1.__txtSearchTerm.KeyPress += (s1, e1) => { e1.Handled = !char.IsControl(e1.KeyChar) && !char.IsDigit(e1.KeyChar); };
+                else
+                    ctrlFind1.__txtSearchTerm.KeyPress += (s1, e1) => { e1.Handled = false; };
+            };
             ctrlFind1.__ObjectFound += _GetAccountRecord;
         }
         public frmFindAccount(clsAccounts account)

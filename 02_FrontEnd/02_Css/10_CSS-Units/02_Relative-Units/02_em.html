@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EM Compounding Demonstration</title>
+  <style>
+    body {
+      font-size: 16px;     /* 1em = 16px here */
+      margin: 20px;
+      font-family: Arial, sans-serif;
+    }
+    .parent {
+      font-size: 1.5em;    /* 1.5 × 16px = 24px */
+      background: #e0f7fa;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    .child {
+      font-size: 1.5em;    /* 1.5 × 24px = 36px */
+      background: #b2ebf2;
+      padding: 10px;
+      margin-top: 10px;
+    }
+    .grandchild {
+      font-size: 1.5em;    /* 1.5 × 36px = 54px */
+      background: #80deea;
+      padding: 10px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+    <h1>EM Compounding Problem Demo</h1>
+    <p>Base body text size is <strong>16px</strong> (1em).</p>
+
+    <div class="parent">
+        Parent text is <strong>24px</strong> (1.5em × 16px).
+    <div class="child">
+        Child text is <strong>36px</strong> (1.5em × 24px).
+    <div class="grandchild">
+        Grandchild text is <strong>54px</strong> (1.5em × 36px).
+    </div>
+    </div>
+  </div>
+</body>
+</html>

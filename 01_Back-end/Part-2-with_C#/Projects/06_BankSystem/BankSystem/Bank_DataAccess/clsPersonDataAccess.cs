@@ -305,7 +305,7 @@ namespace Bank_DataAccess.People
             return exist;
         }
 
-        public static bool Delete(int PersonID)
+        public static bool Delete(int PersonID,int DeletedByUserID)
         {
             string Query = "Sp_DeletePerson";
             bool Deleted=false;
@@ -317,6 +317,7 @@ namespace Bank_DataAccess.People
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@PersonID", PersonID);
+                    cmd.Parameters.AddWithValue("@DeletedByUserID", DeletedByUserID);
 
                     connection.Open();
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bank_BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,14 +16,26 @@ namespace BankSystem.User.Forms
         public frmAddNewUser()
         {
             InitializeComponent();
-            ctrlAddEditUser1.__OnPermissionChanged += TestPerm;
-            ctrlAddEditUser1.__LoadPermissions(0);
+            ctrlAddEditUser1.__AddNewUser();
+            ctrlAddEditUser1.__OperationSucceeded += _UserAddedSuccessfully;
+            ctrlAddEditUser1.__OperationFailed += _FaildToAddUser;
+            ctrlAddEditUser1.__OperationCanceld += _OperationCanceld;
         }
-
-        private void TestPerm(ulong per)
+        
+        private void _UserAddedSuccessfully(clsUser user)
         {
-            //MessageBox.Show("Current Permissions Value: " + Convert.ToInt64(per).ToString());
-
+            MessageBox.Show("User Is Added Successfully");
         }
+        private void _FaildToAddUser()
+        {
+            MessageBox.Show("Can't Save User Data [ Operation Fialed ]","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        private void _OperationCanceld()
+        {
+            if (MessageBox.Show("Sure To Leave?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                this.Close();
+        }
+
+
     }
 }

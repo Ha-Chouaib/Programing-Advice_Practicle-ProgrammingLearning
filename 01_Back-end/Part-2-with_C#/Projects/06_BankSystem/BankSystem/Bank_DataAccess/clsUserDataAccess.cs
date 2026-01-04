@@ -14,7 +14,7 @@ namespace Bank_DataAccess
     public class clsUserDataAccess
     {
 
-        public static int AddNewUser(int PersonID,string UserName,DateTime CreatedDate,string Role ,string Password, bool IsActive, int CreatedByUserID, short Permissions)
+        public static int AddNewUser(int PersonID,string UserName,DateTime CreatedDate,int RoleID ,string Password, bool IsActive, int CreatedByUserID, ulong CustomPermissions,ulong RevokedPermissions)
         {
             string Query = "Sp_AddNewUser";
             int UserID = -1;
@@ -28,11 +28,12 @@ namespace Bank_DataAccess
                     cmd.Parameters.AddWithValue("@PersonID",PersonID);
                     cmd.Parameters.AddWithValue("@UserName", UserName);
                     cmd.Parameters.AddWithValue("@CreatedDate",CreatedDate);
-                    cmd.Parameters.AddWithValue("@Role",Role);
+                    cmd.Parameters.AddWithValue("@RoleID",RoleID);
                     cmd.Parameters.AddWithValue("@Password",string.IsNullOrEmpty(Password) ? DBNull.Value : (object) Password);
                     cmd.Parameters.AddWithValue("@IsActive", IsActive);
                     cmd.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID == -1 ? DBNull.Value : (object) CreatedByUserID);
-                    cmd.Parameters.AddWithValue("@Permissions", Permissions);
+                    cmd.Parameters.AddWithValue("@CustomPermissions",(long) CustomPermissions);
+                    cmd.Parameters.AddWithValue("@RevokedPermissions",(long) RevokedPermissions);
 
                     connection.Open();
                     using (SqlDataReader rdr = cmd.ExecuteReader())
@@ -58,7 +59,7 @@ namespace Bank_DataAccess
             return UserID;
         }
         public  static bool FindUserByID(int UserID ,ref int PersonID,ref string UserName,ref DateTime CreatedDate,
-            ref string Role,ref string Password,ref bool IsActive,ref int CreatedByUserID, ref short Permissions)
+            ref int RoleID,ref string Password,ref bool IsActive,ref int CreatedByUserID, ref ulong CustomPermissions,ref ulong RevokedPermissions)
         {
             string Query = "Sp_GetUserByID";
             bool found= false;
@@ -79,12 +80,12 @@ namespace Bank_DataAccess
                             PersonID = Convert.ToInt32(rdr["PersonID"]);
                             UserName = rdr["UserName"].ToString() ?? string.Empty;
                             CreatedDate = (rdr["CreatedDate"] != DBNull.Value) ? (DateTime)rdr["CreatedDate"] : DateTime.MinValue ;
-                            Role = rdr["Role"].ToString() ?? string.Empty;
+                            RoleID = Convert.ToInt32(rdr["RoleID"]);
                             Password = rdr["Password"].ToString() ?? string.Empty;
                             IsActive = (rdr["IsActive"] != DBNull.Value) ? (bool)rdr["IsActive"] : false ;
                             CreatedByUserID = rdr["CreatedByUserID"]!= DBNull.Value ? Convert.ToInt32(rdr["CreatedByUserID"]) : -1;
-                            Permissions = rdr["Permissions"]!= DBNull.Value ? Convert.ToInt16(rdr["Permissions"]) : (short) 0;
-
+                            CustomPermissions = rdr["CustomPermissions"] != DBNull.Value ? Convert.ToUInt64(rdr["CustomPermissions"]) : 0UL;
+                            RevokedPermissions = rdr["RevokedPermissions"] != DBNull.Value? Convert.ToUInt64(rdr["RevokedPermissions"]) : 0UL;
                             found = true;
                         }
                     }
@@ -107,7 +108,7 @@ namespace Bank_DataAccess
         }
 
         public static bool FindUserByPersonID(int PersonID, ref int UserID , ref string UserName, ref DateTime CreatedDate,
-            ref string Role, ref string Password, ref bool IsActive, ref int CreatedByUserID, ref short Permissions)
+            ref int RoleID, ref string Password, ref bool IsActive, ref int CreatedByUserID, ref ulong CustomPermissions,ref ulong RevokedPermissions)
         {
             string Query = "Sp_GetUserByPersonID";
             bool found = false;
@@ -128,11 +129,12 @@ namespace Bank_DataAccess
                             UserID = Convert.ToInt32(rdr["UserID"]);
                             UserName = rdr["UserName"].ToString() ?? string.Empty;
                             CreatedDate = (rdr["CreatedDate"] != DBNull.Value) ? (DateTime)rdr["CreatedDate"] : DateTime.MinValue;
-                            Role = rdr["Role"].ToString() ?? string.Empty;
+                            RoleID = Convert.ToInt32(rdr["RoleID"]);
                             Password = rdr["Password"].ToString() ?? string.Empty;
                             IsActive = (rdr["IsActive"] != DBNull.Value) ? (bool)rdr["IsActive"] : false;
                             CreatedByUserID = rdr["CreatedByUserID"] != DBNull.Value ? Convert.ToInt32(rdr["CreatedByUserID"]) : -1;
-                            Permissions = rdr["Permissions"] != DBNull.Value ? Convert.ToInt16(rdr["Permissions"]) : (short)0;
+                            CustomPermissions = rdr["CustomPermissions"] != DBNull.Value ? (ulong)rdr["CustomPermissions"] : 0;
+                            RevokedPermissions = rdr["RevokedPermissions"] != DBNull.Value ? (ulong)rdr["RevokedPermissions"] : 0;
 
                             found = true;
                         }
@@ -156,7 +158,7 @@ namespace Bank_DataAccess
         }
 
         public static bool FindUserByName(string UserName , ref int UserID, ref int PersonID, ref DateTime CreatedDate,
-            ref string Role, ref string Password, ref bool IsActive, ref int CreatedByUserID, ref short Permissions)
+            ref int RoleID, ref string Password, ref bool IsActive, ref int CreatedByUserID, ref ulong CustomPermissions,ref ulong RevokedPermissions)
         {
             string Query = "Sp_GetUserByName";
             bool found = false;
@@ -177,11 +179,12 @@ namespace Bank_DataAccess
                             PersonID = Convert.ToInt32(rdr["PersonID"]);
                             UserID = Convert.ToInt32(rdr["UserID"]);
                             CreatedDate = (rdr["CreatedDate"] != DBNull.Value) ? (DateTime)rdr["CreatedDate"] : DateTime.MinValue;
-                            Role = rdr["Role"].ToString() ?? string.Empty;
+                            RoleID = Convert.ToInt32(rdr["RoleID"]);
                             Password = rdr["Password"].ToString() ?? string.Empty;
                             IsActive = (rdr["IsActive"] != DBNull.Value) ? (bool)rdr["IsActive"] : false;
                             CreatedByUserID = rdr["CreatedByUserID"] != DBNull.Value ? Convert.ToInt32(rdr["CreatedByUserID"]) : -1;
-                            Permissions = rdr["Permissions"] != DBNull.Value ? Convert.ToInt16(rdr["Permissions"]) : (short)0;
+                            CustomPermissions = rdr["CustomPermissions"] != DBNull.Value ? (ulong)rdr["CustomPermissions"] : 0;
+                            RevokedPermissions = rdr["RevokedPermissions"] != DBNull.Value ? (ulong)rdr["RevokedPermissions"] : 0;
 
                             found = true;
                         }
@@ -204,7 +207,7 @@ namespace Bank_DataAccess
 
         }
 
-        public static bool Update(int UserID,string UserName,string Password, string Role,bool IsActive,short Permissions)
+        public static bool Update(int UserID,string UserName,string Password, int RoleID,bool IsActive,ulong CustomPermissions,ulong RevokedPermissions)
         {
             string Query = "Sp_UpdateUserInf";
             bool Success = false;
@@ -219,10 +222,11 @@ namespace Bank_DataAccess
 
                     cmd.Parameters.AddWithValue("@UserID", UserID);
                     cmd.Parameters.AddWithValue("@UserName", UserName);
-                    cmd.Parameters.AddWithValue("@Role", Role);
+                    cmd.Parameters.AddWithValue("@RoleID", RoleID);
                     cmd.Parameters.AddWithValue("@Password", string.IsNullOrEmpty(Password) ? DBNull.Value : (object)Password);
                     cmd.Parameters.AddWithValue("@IsActive", IsActive);
-                    cmd.Parameters.AddWithValue("@Permissions", Permissions == -1 ? DBNull.Value : (object)Permissions);
+                    cmd.Parameters.AddWithValue("@CustomPermissions", CustomPermissions );
+                    cmd.Parameters.AddWithValue("@RevokedPermissions", RevokedPermissions);
 
                     conn.Open();
 
@@ -329,7 +333,7 @@ namespace Bank_DataAccess
 
             return success;
         }
-        public static bool UpdateUserRole(int UserID, string Role)
+        public static bool UpdateUserRole(int UserID, int RoleID)
         {
             string Query = "Sp_UpdateUserRole";
             bool success = false;
@@ -341,7 +345,7 @@ namespace Bank_DataAccess
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@UserID", UserID);
-                    cmd.Parameters.AddWithValue("@Role", Role);
+                    cmd.Parameters.AddWithValue("@RoleID", RoleID);
 
                     connection.Open();
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -407,7 +411,7 @@ namespace Bank_DataAccess
 
             return success;
         }
-        public static bool UpdateUserPermissions(int UserID, short Permissions)
+        public static bool UpdateUserPermissions(int UserID, ulong CustomPermissions, ulong RevokedPermissions)
         {
             string Query = "Sp_UpdateUserPermissions";
             bool success = false;
@@ -419,7 +423,8 @@ namespace Bank_DataAccess
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@UserID", UserID);
-                    cmd.Parameters.AddWithValue("@Permissions", Permissions);
+                    cmd.Parameters.AddWithValue("@CustomPermissions", CustomPermissions);
+                    cmd.Parameters.AddWithValue("@revokedPermissions", RevokedPermissions);
 
                     connection.Open();
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -556,7 +561,7 @@ namespace Bank_DataAccess
             }
             return Active;
         }
-        public static bool Delete(int UserID)
+        public static bool Delete(int UserID, int DeletedByUserID)
         {
             string Query = "Sp_DeleteUser";
             bool Deleted = false;
@@ -568,6 +573,7 @@ namespace Bank_DataAccess
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@UserID", UserID);
+                    cmd.Parameters.AddWithValue("@DeletedByUserID", DeletedByUserID);
 
                     connection.Open();
 
