@@ -448,12 +448,11 @@
             // 
             // ctrlDisplayPersonDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.Controls.Add(this.gbPersonDetails);
             this.Name = "ctrlDisplayPersonDetails";
-            this.Size = new System.Drawing.Size(1082, 440);
+            this.Size = new System.Drawing.Size(1082, 454);
             this.gbPersonDetails.ResumeLayout(false);
             this.gbPersonDetails.PerformLayout();
             this.panel3.ResumeLayout(false);

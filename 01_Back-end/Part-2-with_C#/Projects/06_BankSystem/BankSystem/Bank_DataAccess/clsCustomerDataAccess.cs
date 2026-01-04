@@ -306,7 +306,7 @@ namespace Bank_DataAccess
             }
             return Active;
         }        
-        public static bool Delete(int CustomerID)
+        public static bool Delete(int CustomerID, int DeletedByUserID)
         {
 
             string Query = "Sp_DeleteUser";
@@ -319,6 +319,7 @@ namespace Bank_DataAccess
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@CustomerID", CustomerID);
+                    cmd.Parameters.AddWithValue("@DeletedByUserID", DeletedByUserID);
 
                     connection.Open();
 

@@ -108,7 +108,7 @@ namespace BankSystem.Person
         {
             if(MessageBox.Show("Sure To delete this record?!","Validation",MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.OK)
             {
-                if (clsPerson.Delete(personId))
+                if (clsPerson.Delete(personId, clsGlobal.LoggedInUser.UserID))
                 {
                     MessageBox.Show($"The Person's record With id [{personId}] was deleted successfully");
                     ctrlManageRecords1.__RefreshRecordsList(clsPerson.ListPeopleRecords());
@@ -164,12 +164,11 @@ namespace BankSystem.Person
         }
         private void _ConfigureDataRecordsContainer()
         {
-            ctrlManageRecords1.__RecordsContainer.Columns["PersonID"].HeaderText = "ID";
             ctrlManageRecords1.__RecordsContainer.Columns["NationalNo"].HeaderText = "National_No";
             ctrlManageRecords1.__RecordsContainer.Columns["FirstName"].HeaderText = "First Name";
             ctrlManageRecords1.__RecordsContainer.Columns["LastName"].HeaderText = "Last Name";
             ctrlManageRecords1.__RecordsContainer.Columns["DateOfBirth"].HeaderText = "Date Of Birth";
-            ctrlManageRecords1.__RecordsContainer.Columns["CountryID"].HeaderText = "Country";
+            ctrlManageRecords1.__RecordsContainer.Columns["CountryName"].HeaderText = "Country Name";
             ctrlManageRecords1.__RecordsContainer.Columns["ImagePath"].HeaderText = "Profile Image";
 
 
@@ -180,11 +179,7 @@ namespace BankSystem.Person
                     e.Value = Gdr == 0 ? "Male" : "Female";
                     e.FormattingApplied = true;
                 }
-                if (ctrlManageRecords1.__RecordsContainer.Columns[e.ColumnIndex].Name == "CountryID" && e.Value is int id)
-                {
-                    e.Value = clsCountries.Find(id).CountryName;
-                    e.FormattingApplied = true;
-                }
+              
             };
         }
     }

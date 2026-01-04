@@ -145,6 +145,10 @@ namespace Bank_BusinessLayer
         {
             return clsAccountsDataAccess.UpdateStatus(AccountID, IsActive);
         }
+        public bool UpdateStatus(bool IsActive)
+        {
+            return UpdateStatus(this.AccountID, IsActive);
+        }
         public static bool UpdateAccountType(int AccountID, enAccountType AccountType)
         {
             return clsAccountsDataAccess.UpdateAccountType(AccountID, (byte)AccountType);
@@ -168,12 +172,13 @@ namespace Bank_BusinessLayer
             return clsAccountsDataAccess.GetAccountIDByCustomerID(CustomerID);
         }
 
-        public static bool Delete(int AccountID)
+        
+        public static bool Delete(int AccountID, int DeletedByUserID)
         {
-            return clsAccountsDataAccess.Delete(AccountID);
+            return clsAccountsDataAccess.Delete(AccountID,DeletedByUserID);
         }
 
-        public static bool GetAccountStatus(int AccountID)
+        public static bool isActive(int AccountID)
         {
             return clsAccountsDataAccess.IsActive(AccountID);
         }

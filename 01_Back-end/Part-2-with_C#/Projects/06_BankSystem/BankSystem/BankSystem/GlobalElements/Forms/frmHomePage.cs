@@ -59,6 +59,21 @@ namespace BankSystem
                         new clsMenuBtnModel { Key = "frmCustomerAccounts", Title = "Customer Accounts",Icon = Resources.account }
                     }
                 },
+                 // 🔹 Users
+                new clsMenuBtnModel
+                {
+                    Key = "frmUsers",
+                    Title = "Users",
+                    Icon = Resources.user__1_,
+                    SubItems = new List<clsMenuBtnModel>
+                    {
+                        new clsMenuBtnModel { Key = "frmManageUsers", Title = "Manage Users",Icon = Resources.People_manager  },
+                        new clsMenuBtnModel { Key = "frmAddNewUser", Title = "Add New User",Icon = Resources.update },
+                        new clsMenuBtnModel { Key = "frmEditUser", Title = "Edit User",Icon = Resources.update },
+                        new clsMenuBtnModel { Key = "frmChangePassword", Title = "Change Password",Icon = Resources.password },
+                        new clsMenuBtnModel { Key = "frmFindUser", Title = "Find User",Icon= Resources.find_in_file }
+                    }
+                },
                 // 🔹 Accounts
 
                 new clsMenuBtnModel
@@ -73,20 +88,7 @@ namespace BankSystem
                            new clsMenuBtnModel { Key = "frmFindAccount", Title = "Find Account", Icon = Resources.find_in_file },
                        }
                    },
-                // 🔹 Users
-                new clsMenuBtnModel
-                {
-                    Key = "frmUsers",
-                    Title = "Users",
-                    Icon = Resources.user__1_,
-                    SubItems = new List<clsMenuBtnModel>
-                    {
-                        new clsMenuBtnModel { Key = "frmManageUsers", Title = "Manage Users",Icon = Resources.People_manager  },
-                        new clsMenuBtnModel { Key = "frmAddNewUser", Title = "Add New User",Icon = Resources.update },
-                        new clsMenuBtnModel { Key = "frmChangePassword", Title = "Change Password",Icon = Resources.password },
-                        new clsMenuBtnModel { Key = "frmFindUser", Title = "Find User",Icon= Resources.find_in_file }
-                    }
-                },
+               
             
                 // 🔹 Transactions
                 new clsMenuBtnModel

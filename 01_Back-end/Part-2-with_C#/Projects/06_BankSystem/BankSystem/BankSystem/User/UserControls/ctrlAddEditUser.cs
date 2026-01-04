@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bank_BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,71 +18,306 @@ namespace BankSystem.User.UserControls
             InitializeComponent();
         }
 
-
-        public Action<ulong> __OnPermissionChanged;
-
-        private Dictionary<string, ulong> _GetPermissionsList()
+        protected override void OnLoad(EventArgs e)
         {
-            Dictionary<string, ulong> PermissionBits = new Dictionary<string, ulong>
+            base.OnLoad(e);
+
+            if (this.DesignMode)
+                return;
+
+            _LoadRoles();
+            tabUserData.Enabled = false;
+            btnNext.Enabled = false;
+        }
+
+        public Action<clsUser> __OperationSucceeded;
+        public Action __OperationFailed;
+        public Action __OperationCanceld;
+
+        private clsUser _User;
+        private int _PersonID = -1;
+        private ulong _CustomPermissions = 0;
+        private ulong _RevokedPermissions = 0;
+
+        private ErrorProvider _ErrorProvider = new ErrorProvider();
+        enum enMode
+        {
+            AddNew,
+            Edit
+        }
+        enMode _Mode;
+        public void __AddNewUser()
+        {
+            _AddingConfiguration();
+        }
+        public void __EditUser()
+        {
+            _EdittingConfiguration();
+            ctrlFind1.Enabled = true;
+            ctrlFind1.__ObjectFound += _GetUser;
+        }
+        public void __EditUser(int UserID)
+        {
+            _EdittingConfiguration();
+            ctrlFind1.__txtSearchTerm.Text = UserID.ToString();
+            ctrlFind1.__FindOptionsCombo.Text = "User ID";
+            ctrlFind1.Enabled = false;
+            _User = clsUser.FindUserByID(UserID);
+            _SetUserData();
+        }
+
+        private void _AddingConfiguration()
+        {
+            _Mode = enMode.AddNew;
+            _User = new clsUser();
+            lblHeaderTitle.Text = "Add New User";
+            lblPickRecord.Text = "Pick a Person";
+            lblConfermUpdatedPass.Visible = false;
+            txtConfirmUpdatedPass.Visible = false;
+
+            
+
+            Dictionary<string, string> FindByoptions = new Dictionary<string, string>
             {
-                // ===== People =====
-                { "People_View",              1UL << 0 },
-                { "People_Manage",            1UL << 1 },
-                { "People_Add",               1UL << 2 },
-                { "People_Edit",              1UL << 3 },
-                { "People_Find",              1UL << 4 },
-            
-                // ===== Customers =====
-                { "Customers_View",           1UL << 5 },
-                { "Customers_Manage",         1UL << 6 },
-                { "Customers_Add",            1UL << 7 },
-                { "Customers_Edit",           1UL << 8 },
-                { "Customers_Find",           1UL << 9 },
-                { "Customers_Accounts",       1UL << 10 },
-            
-                // ===== Accounts =====
-                { "Accounts_View",            1UL << 11 },
-                { "Accounts_Manage",          1UL << 12 },
-                { "Accounts_Add",             1UL << 13 },
-                { "Accounts_Find",            1UL << 14 },
-            
-                // ===== Users =====
-                { "Users_View",              1UL << 15 },
-                { "Users_Manage",            1UL << 16 },
-                { "Users_AddEdit",           1UL << 17 },
-                { "Users_ChangePassword",    1UL << 18 },
-                { "Users_Find",              1UL << 19 },
-            
-                // ===== Transactions =====
-                { "Transactions_View",       1UL << 20 },
-                { "Transactions_Deposit",    1UL << 21 },
-                { "Transactions_Withdraw",   1UL << 22 },
-                { "Transactions_Transfer",   1UL << 23 },
-                { "Transactions_History",    1UL << 24 },
-            
-                // ===== Reports =====
-                { "Reports_View",            1UL << 25 },
-                { "Reports_Customer",        1UL << 26 },
-                { "Reports_Transaction",     1UL << 27 },
-                { "Reports_UserActivity",    1UL << 28 },
-                { "Reports_SystemLogs",      1UL << 29 }
+                {"Person ID","PersonID" },
+                {"National No","NationalNo" }
             };
-            return PermissionBits;
+
+            ctrlFind1.__Initializing(FindByoptions, clsPerson.FindBy);
+            ctrlFind1.__FindOptionsCombo.SelectedValueChanged += (s, e) =>
+            {
+                ctrlFind1.__txtSearchTerm.KeyPress -= null;
+                if (((KeyValuePair<string, string>)ctrlFind1.__FindOptionsCombo.SelectedItem).Value == "PersonID")
+                    ctrlFind1.__txtSearchTerm.KeyPress += (s1, e1) => { e1.Handled = !char.IsControl(e1.KeyChar) && !char.IsDigit(e1.KeyChar); };
+                else
+                    ctrlFind1.__txtSearchTerm.KeyPress += (s1, e1) => { e1.Handled = false; };
+            };
+
+            ctrlFind1.__ObjectFound += _GetPerson;
+
+
+        }
+        private void _EdittingConfiguration()
+        {
+            _Mode = enMode.Edit;
+            lblHeaderTitle.Text = "Update User Info";
+            lblPickRecord.Text = "Pick a User";
+            lblConfirmPass.Text = "Set New Password";
+            lblConfermUpdatedPass.Visible = true;
+            txtConfirmUpdatedPass.Visible = true;
+        }
+        private void _GrapUserData()
+        {
+            _User.PersonID = _PersonID;
+            _User.RoleID = ((KeyValuePair<int, string>)cmbRoles.SelectedItem).Key;
+            _User.UserName = txtUserName.Text;
+            _User.Password = clsSettings.EncryptString_Hashing(txtConfirmPassword.Text);
+            _User.IsActive = rbIsActive.Checked;
+            _User.CustomPermissions = _CustomPermissions;
+            _User.RevokedPermissions = _RevokedPermissions;
+            _User.CreatedDate = DateTime.Now;
+            _User.CreatedByUserID = clsGlobal.LoggedInUser.UserID;
+
+        }
+        private void _SetUserData()
+        {
+            if (_User == null) return;
+
+            ctrlDisplayPersonDetails1.__ShowPersonalInfo(_User.PersonalInfo);
+
+            txtUserID.Text = "[ " + _User.UserID.ToString() + " ]";
+            txtUserName.Text = _User.UserName;
+            cmbRoles.SelectedItem = cmbRoles.Items.Cast<KeyValuePair<int, string>>().FirstOrDefault(r => r.Key == _User.RoleID);
+            rbIsActive.Checked = _User.IsActive;
+            _CustomPermissions = _User.CustomPermissions;
+            _RevokedPermissions = _User.RevokedPermissions;
+            txtCreatedDate.Text = _User.CreatedDate.ToString("yyyy-MM-dd HH:mm:ss");
+            txtCreatedByUser.Text = clsUser.FindUserByID(_User.CreatedByUserID).UserName;
+            btnNext.Enabled = true;
+            tabUserData.Enabled = true;
+        }
+        private void _LoadRoles()
+        {
+            DataTable dtRoles = clsRole.ListRoles();
+            foreach (DataRow dr in dtRoles.Rows)
+            {
+                cmbRoles.Items.Add(new KeyValuePair<int, string>((int)dr["RoleID"], dr["RoleName"].ToString()));
+            }
+            cmbRoles.DisplayMember = "Value";
+            cmbRoles.ValueMember = "Key";
+            cmbRoles.SelectedIndex = 0;
+        }
+        private void _GetPerson(object s, object person)
+        {
+            clsPerson Person = person as clsPerson;
+            if (Person != null)
+            {
+                if(clsUser.ExistByPersonID(Person.PersonID))
+                {
+                    MessageBox.Show("This Person Is Already a User!, Please Select another Person.","Warning",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                ctrlDisplayPersonDetails1.__ShowPersonalInfo(Person);
+
+                _PersonID = Person.PersonID;
+                btnNext.Enabled = true;
+                tabUserData.Enabled = true;
+                txtCreatedDate.Text = DateTime.Now.ToString();
+                txtCreatedByUser.Text = clsGlobal.LoggedInUser.UserName;
+
+            }
+        }
+        private void _GetUser(object s, object user)
+        {
+            clsUser User = user as clsUser;
+            if (User != null)
+            {
+                _User = User;
+                _SetUserData();
+            }
+        }
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabUserData;
+        }
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPersonalInf;
+        }
+        private void _GetCustomRevokedPermissions(ulong customPermissions, ulong revokedPermissions)
+        {
+            _CustomPermissions = customPermissions;
+            _RevokedPermissions = revokedPermissions;
+        }
+        private void lnkCustomPermissions_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ulong RolePermissions =clsRole.Find(((KeyValuePair<int, string>)cmbRoles.SelectedItem).Key).Permissions;
+            if (RolePermissions == 0)
+            {
+                MessageBox.Show("Please select a role first.", "No Role Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            PopupFrm_UserPermissionSettings permissionSettings = new PopupFrm_UserPermissionSettings(RolePermissions, _CustomPermissions, _RevokedPermissions);
+            permissionSettings.__CustomPermissionsDone += _GetCustomRevokedPermissions;
+            permissionSettings.Show();
         }
 
-        public void __LoadPermissions(ulong UserPrmission)
+        private void btnSave_Click(object sender, EventArgs e)
         {
-            ctrlCheckedComboBox1.__LoadPermissions(_GetPermissionsList(), UserPrmission);
-            ctrlCheckedComboBox1.__OnValueChanged += _GetCurrentPermissions;
+            if (!btnNext.Enabled)
+            {
+                MessageBox.Show("Please Select The Needed Record First.", "No Record Added", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            txtUserName.Focus();
+            txtOriginalPassword.Focus();
+            txtConfirmPassword.Focus();
+            if (txtConfirmUpdatedPass.Visible) txtConfirmUpdatedPass.Focus();
+
+            if (pnlUserDataContainer.Controls.OfType<TextBox>().Any(t => !string.IsNullOrEmpty(_ErrorProvider.GetError(t))))
+            {
+                MessageBox.Show("Please Fix The Errors Before Saving The User Data.", "Invalid Data", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if(MessageBox.Show("The Given Data Will Be Saved Once You Press [ok]","Confirmation",MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.Cancel)
+                return;
+
+            _GrapUserData();
+            if (_User.Save())
+            {
+                txtUserID.Text = $"[ {_User.UserID} ]";
+                __OperationSucceeded?.Invoke(_User);
+                btnCancel.Text = "Close";
+                if (_Mode == enMode.AddNew)
+                    __EditUser(_User.UserID);
+                return;
+            }
+            __OperationFailed?.Invoke();
         }
-        private void _GetCurrentPermissions(ulong permissions)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-            __OnPermissionChanged?.Invoke(permissions);
+            __OperationCanceld?.Invoke();
         }
 
-        private void ctrlAddEditUser_Load(object sender, EventArgs e)
+        private void txtUserName_Validating(object sender, CancelEventArgs e)
         {
 
+            if (string.IsNullOrEmpty(txtUserName.Text))
+            {
+                _ErrorProvider.SetError(txtUserName, "Username cannot be empty.");
+                return;
+            }
+            else
+                _ErrorProvider.SetError(txtUserName, "");
+
+            if (clsUser.ExistByUserName(txtUserName.Text.Trim()) && (_User?.UserName != txtUserName.Text.Trim()))
+                _ErrorProvider.SetError(txtUserName, "This Username is Already Taken Please Choose another One.");
+            else
+                _ErrorProvider.SetError(txtUserName, "");
+
+
+        }
+
+        private void txtOriginalPassword_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtOriginalPassword.Text))
+            {
+                _ErrorProvider.SetError(txtOriginalPassword, "Password cannot be empty.");
+                return;
+            }
+            else
+                _ErrorProvider.SetError(txtOriginalPassword, "");
+
+            if (_Mode == enMode.Edit)
+            {
+                if (clsSettings.EncryptString_Hashing(txtOriginalPassword.Text) != _User.Password)
+                    _ErrorProvider.SetError(txtOriginalPassword, "The Original Password is Incorrect.");
+                else
+                    _ErrorProvider.SetError(txtOriginalPassword, "");
+            }
+        }
+
+        private void txtConfirmPassword_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtConfirmPassword.Text))
+            {
+                _ErrorProvider.SetError(txtConfirmPassword, "This Feild cannot be empty.");
+                return;
+            }
+            else
+                _ErrorProvider.SetError(txtConfirmPassword, "");
+
+            if (_Mode == enMode.AddNew)
+            {
+                if (txtConfirmPassword.Text.Trim() != txtOriginalPassword.Text.Trim())
+                    _ErrorProvider.SetError(txtConfirmPassword, "The Passwords do not match.");
+                else
+                    _ErrorProvider.SetError(txtConfirmPassword, "");
+            }
+            
+        }
+
+        private void txtOriginalPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar);
+        }
+
+        private void txtConfirmUpdatedPass_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtConfirmUpdatedPass.Text))
+                _ErrorProvider.SetError(txtConfirmUpdatedPass, "This Feild cannot be empty.");
+            else
+                _ErrorProvider.SetError(txtConfirmUpdatedPass, "");
+            if (_Mode == enMode.Edit)
+            {
+                if (txtConfirmUpdatedPass.Text.Trim() != txtConfirmPassword.Text.Trim())
+                    _ErrorProvider.SetError(txtConfirmUpdatedPass, "The Passwords do not match.");
+                else
+                    _ErrorProvider.SetError(txtConfirmUpdatedPass, "");
+            }
         }
     }
 }

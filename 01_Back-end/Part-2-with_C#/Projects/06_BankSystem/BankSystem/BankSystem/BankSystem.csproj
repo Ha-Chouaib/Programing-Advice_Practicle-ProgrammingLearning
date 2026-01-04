@@ -240,11 +240,11 @@
     <Compile Include="User\Forms\frmAddNewUser.Designer.cs">
       <DependentUpon>frmAddNewUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="User\UserControls\CheckedComboBox\ctrlCheckedComboBox.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="User\Forms\frmEditUser.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="User\UserControls\CheckedComboBox\ctrlCheckedComboBox.Designer.cs">
-      <DependentUpon>ctrlCheckedComboBox.cs</DependentUpon>
+    <Compile Include="User\Forms\frmEditUser.Designer.cs">
+      <DependentUpon>frmEditUser.cs</DependentUpon>
     </Compile>
     <Compile Include="User\UserControls\ctrlAddEditUser.cs">
       <SubType>UserControl</SubType>
@@ -252,17 +252,11 @@
     <Compile Include="User\UserControls\ctrlAddEditUser.Designer.cs">
       <DependentUpon>ctrlAddEditUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="User\UserControls\CheckedComboBox\ctrlUserPermissions.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User\UserControls\CheckedComboBox\ctrlUserPermissions.Designer.cs">
-      <DependentUpon>ctrlUserPermissions.cs</DependentUpon>
-    </Compile>
-    <Compile Include="User\UserControls\CheckedComboBox\DropDownForm.cs">
+    <Compile Include="User\UserControls\PopupFrm_UserPermissionSettings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="User\UserControls\CheckedComboBox\DropDownForm.Designer.cs">
-      <DependentUpon>DropDownForm.cs</DependentUpon>
+    <Compile Include="User\UserControls\PopupFrm_UserPermissionSettings.Designer.cs">
+      <DependentUpon>PopupFrm_UserPermissionSettings.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Accounts\Forms\frmAddNewAccount.resx">
       <DependentUpon>frmAddNewAccount.cs</DependentUpon>
@@ -359,17 +353,14 @@
     <EmbeddedResource Include="User\Forms\frmAddNewUser.resx">
       <DependentUpon>frmAddNewUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User\UserControls\CheckedComboBox\ctrlCheckedComboBox.resx">
-      <DependentUpon>ctrlCheckedComboBox.cs</DependentUpon>
+    <EmbeddedResource Include="User\Forms\frmEditUser.resx">
+      <DependentUpon>frmEditUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\UserControls\ctrlAddEditUser.resx">
       <DependentUpon>ctrlAddEditUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User\UserControls\CheckedComboBox\ctrlUserPermissions.resx">
-      <DependentUpon>ctrlUserPermissions.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="User\UserControls\CheckedComboBox\DropDownForm.resx">
-      <DependentUpon>DropDownForm.cs</DependentUpon>
+    <EmbeddedResource Include="User\UserControls\PopupFrm_UserPermissionSettings.resx">
+      <DependentUpon>PopupFrm_UserPermissionSettings.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">

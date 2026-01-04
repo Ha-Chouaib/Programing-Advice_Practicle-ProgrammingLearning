@@ -1,7 +1,10 @@
 ﻿using Bank_DataAccess;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
@@ -16,112 +19,62 @@ namespace Bank_BusinessLayer
         public clsPerson PersonalInfo { get; set; }
         public string UserName { get; set; }
         public DateTime CreatedDate { get;  set; }
-        public string Role { get; set; }
+        public int RoleID { get; set; }
+        public clsRole Role { get; set; }
         public string Password { get; set; }
         public bool IsActive { get; set; }
         public int CreatedByUserID { get; set; }
-        public short Permissions { get; set; }
-
+        public ulong CustomPermissions { get; set; }
+        public ulong RevokedPermissions { get; set; }
+        public ulong EffectivePermissions { get; set; }
         enum enMode { enAddNew, enUpdate}
         enMode _Mode = enMode.enAddNew;
        
-        enum enUserRoles
-        {
-            Admin= 0,
-            Manager= 1,
-            Teller=2,
-            Auditor=3,
-            Viewer = 4,
-        }
-
-        [Flags]
-        public enum enPermissions : ulong
-        {
-            None = 0,
-
-            // ===== People =====
-            People_View = 1UL << 0,
-            People_Manage = 1UL << 1,
-            People_Add = 1UL << 2,
-            People_Edit = 1UL << 3,
-            People_Find = 1UL << 4,
-
-            // ===== Customers =====
-            Customers_View = 1UL << 5,
-            Customers_Manage = 1UL << 6,
-            Customers_Add = 1UL << 7,
-            Customers_Edit = 1UL << 8,
-            Customers_Find = 1UL << 9,
-            Customers_Accounts = 1UL << 10,
-
-            // ===== Accounts =====
-            Accounts_View = 1UL << 11,
-            Accounts_Manage = 1UL << 12,
-            Accounts_Add = 1UL << 13,
-            Accounts_Find = 1UL << 14,
-
-            // ===== Users =====
-            Users_View = 1UL << 15,
-            Users_Manage = 1UL << 16,
-            Users_AddEdit = 1UL << 17,
-            Users_ChangePassword = 1UL << 18,
-            Users_Find = 1UL << 19,
-
-            // ===== Transactions =====
-            Transactions_View = 1UL << 20,
-            Transactions_Deposit = 1UL << 21,
-            Transactions_Withdraw = 1UL << 22,
-            Transactions_Transfer = 1UL << 23,
-            Transactions_History = 1UL << 24,
-
-            // ===== Reports =====
-            Reports_View = 1UL << 25,
-            Reports_Customer = 1UL << 26,
-            Reports_Transaction = 1UL << 27,
-            Reports_UserActivity = 1UL << 28,
-            Reports_SystemLogs = 1UL << 29,
-
-            All = (1UL << 30) -1
-
-        }
-
         public clsUser()
         {
             this.UserID = -1;
             this.PersonID = -1;
             this.UserName = string.Empty;
             this.CreatedDate = DateTime.MinValue;
-            this.Role = string.Empty;
+            this.RoleID = -1;
+            //set Role class later
             this.Password = string.Empty;
             this.IsActive = false;
             this.CreatedByUserID = -1;
-            this.Permissions = 0;
+            this.EffectivePermissions = 0;
+            this.CustomPermissions = 0;
+            this.RevokedPermissions = 0;
             _Mode = enMode.enAddNew;
         }
-        private clsUser(int UserID,int PersonID,string UserName,DateTime CreatedDate, string Role, string Password,bool IsActive,int CreatedByUserID,short permissions)
+        private clsUser(int UserID, int PersonID, string UserName, DateTime CreatedDate, int RoleID, string Password, bool IsActive,
+            int CreatedByUserID, ulong CustomPermissions,ulong RevokedPermissions)
         {
             this.UserID = UserID;
             this.PersonID = PersonID;
             this.UserName = UserName;
             this.CreatedDate = CreatedDate;
-            this.Role = Role;
+            this.RoleID = RoleID;
+            this.Role = clsRole.Find(RoleID);
             this.Password = Password;
             this.IsActive = IsActive;
             this.CreatedByUserID = CreatedByUserID;
             this.PersonalInfo = clsPerson.Find(PersonID);
-            this.Permissions = permissions;
+            this.CustomPermissions = CustomPermissions;
+            this.RevokedPermissions = RevokedPermissions;
+            this.EffectivePermissions = (((Role != null) ? Role.IsActive ? Role.Permissions : 0 : 0) | (CustomPermissions)) & ~RevokedPermissions;
             _Mode = enMode.enUpdate;
         }
 
+        
         private bool _AddNewUser()
         {
-            this.UserID = clsUserDataAccess.AddNewUser(this.PersonID, this.UserName, this.CreatedDate, this.Role, this.Password, this.IsActive, this.CreatedByUserID, this.Permissions);
+            this.UserID = clsUserDataAccess.AddNewUser(this.PersonID, this.UserName, this.CreatedDate, this.RoleID, this.Password, this.IsActive, this.CreatedByUserID, this.CustomPermissions,this.RevokedPermissions);
 
             return this.UserID != -1;
         }
         private bool _Update()
         {
-            return clsUserDataAccess.Update(this.UserID, this.UserName, this.Password,this.Role, this.IsActive,this.Permissions);
+            return clsUserDataAccess.Update(this.UserID, this.UserName, this.Password,this.RoleID, this.IsActive,this.CustomPermissions,this.RevokedPermissions);
         }
         public bool Save()
         {
@@ -149,14 +102,15 @@ namespace Bank_BusinessLayer
             int PersonID = -1;
             string UserName = "";
             DateTime CreatedDate = DateTime.MinValue;
-            string Role = "";
+            int RoleID = -1;
             string Password = "";
             bool IsActive = false ;
             int CreatedByUserID = -1;
-            short Permissions = -1;
-            if(clsUserDataAccess.FindUserByID(UserID,ref PersonID,ref UserName,ref CreatedDate,ref Role,ref Password,ref IsActive,ref CreatedByUserID,ref Permissions ))
+            ulong CustomPermissions = 0;
+            ulong RevokedPermissions = 0;
+            if(clsUserDataAccess.FindUserByID(UserID,ref PersonID,ref UserName,ref CreatedDate,ref RoleID,ref Password,ref IsActive,ref CreatedByUserID,ref CustomPermissions,ref RevokedPermissions ))
             {
-                return new clsUser(UserID,PersonID,UserName,CreatedDate,Role,Password,IsActive,CreatedByUserID,Permissions);
+                return new clsUser(UserID,PersonID,UserName,CreatedDate,RoleID,Password,IsActive,CreatedByUserID,CustomPermissions,RevokedPermissions);
             }else
                 return null;
         }
@@ -166,14 +120,15 @@ namespace Bank_BusinessLayer
             int UserID = -1;
             string UserName = "";
             DateTime CreatedDate = DateTime.MinValue;
-            string Role = "";
+            int RoleID = -1;
             string Password = "";
             bool IsActive = false;
             int CreatedByUserID = -1;
-            short Permissions = -1;
-            if (clsUserDataAccess.FindUserByPersonID(PersonID, ref UserID, ref UserName, ref CreatedDate, ref Role, ref Password, ref IsActive, ref CreatedByUserID,ref Permissions))
+            ulong CustomPermissions =0;
+            ulong RevokedPermissions =0;
+            if (clsUserDataAccess.FindUserByPersonID(PersonID, ref UserID, ref UserName, ref CreatedDate, ref RoleID, ref Password, ref IsActive, ref CreatedByUserID,ref CustomPermissions,ref RevokedPermissions))
             {
-                return new clsUser(UserID, PersonID, UserName, CreatedDate, Role, Password, IsActive, CreatedByUserID,Permissions);
+                return new clsUser(UserID, PersonID, UserName, CreatedDate, RoleID, Password, IsActive, CreatedByUserID, CustomPermissions, RevokedPermissions);
             }
             else
                 return null;
@@ -184,14 +139,15 @@ namespace Bank_BusinessLayer
             int PersonID = -1;
             int UserID  = -1;
             DateTime CreatedDate = DateTime.MinValue;
-            string Role = "";
+            int RoleID =-1;
             string Password = "";
             bool IsActive = false;
             int CreatedByUserID = -1;
-            short Permissions = -1;
-            if (clsUserDataAccess.FindUserByName(UserName,ref  UserID,ref PersonID, ref CreatedDate, ref Role, ref Password, ref IsActive, ref CreatedByUserID,ref Permissions))
+            ulong CustomPermissions = 0;
+            ulong RevokedPermissions = 0;
+            if (clsUserDataAccess.FindUserByName(UserName,ref  UserID,ref PersonID, ref CreatedDate, ref RoleID, ref Password, ref IsActive, ref CreatedByUserID,ref CustomPermissions,ref RevokedPermissions))
             {
-                return new clsUser(UserID, PersonID, UserName, CreatedDate, Role, Password, IsActive, CreatedByUserID,Permissions);
+                return new clsUser(UserID, PersonID, UserName, CreatedDate, RoleID, Password, IsActive, CreatedByUserID, CustomPermissions, RevokedPermissions);
             }
             else
                 return null;
@@ -205,17 +161,17 @@ namespace Bank_BusinessLayer
         {
             return clsUserDataAccess.UpdateUsePassword(UserID, Password);
         }
-        public static bool UpdateUserRole(int UserID, string Role)
+        public static bool UpdateUserRole(int UserID, int RoleID)
         {
-            return clsUserDataAccess.UpdateUserRole(UserID, Role);
+            return clsUserDataAccess.UpdateUserRole(UserID, RoleID);
         }
         public static bool UpdateUserStatus(int UserID, bool IsActive)
         {
             return clsUserDataAccess.UpdateUserStatus(UserID, IsActive);
         }
-        public static bool UpdateUserPermissions(int UserID, short Permissions)
+        public static bool UpdateUserPermissions(int UserID, ulong CustomPermissions,ulong RevokedPermissions)
         {
-            return clsUserDataAccess.UpdateUserPermissions(UserID, Permissions);
+            return clsUserDataAccess.UpdateUserPermissions(UserID, CustomPermissions, RevokedPermissions);
         }
 
         public static bool ExistByID(int UserID)
@@ -230,14 +186,13 @@ namespace Bank_BusinessLayer
         {
             return clsUserDataAccess.ExistsByUserName(UserName);
         }        
-        public bool HasPermission( enPermissions permission)
+        public bool HasPermission(clsRole.enPermissions permission)
         {
-            return (this.Permissions & (short)permission) == (short)permission;
-        }
-        
-        public static bool Delete(int UserID)
+            return (this.EffectivePermissions & (ulong)permission) == (ulong)permission;
+        }    
+        public static bool Delete(int UserID, int DeletedByUserID)
         {
-            return clsUserDataAccess.Delete(UserID);
+            return clsUserDataAccess.Delete(UserID, DeletedByUserID);
         }
         public static bool IsUserActive(int UserID)
         {

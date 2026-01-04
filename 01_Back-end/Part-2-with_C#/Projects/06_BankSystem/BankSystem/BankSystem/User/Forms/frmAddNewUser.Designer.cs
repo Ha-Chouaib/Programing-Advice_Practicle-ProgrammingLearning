@@ -33,18 +33,25 @@
             // 
             // ctrlAddEditUser1
             // 
-            this.ctrlAddEditUser1.Location = new System.Drawing.Point(153, 89);
+            this.ctrlAddEditUser1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.ctrlAddEditUser1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ctrlAddEditUser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ctrlAddEditUser1.Location = new System.Drawing.Point(0, 0);
             this.ctrlAddEditUser1.Name = "ctrlAddEditUser1";
-            this.ctrlAddEditUser1.Size = new System.Drawing.Size(750, 221);
+            this.ctrlAddEditUser1.Size = new System.Drawing.Size(1188, 799);
             this.ctrlAddEditUser1.TabIndex = 0;
             // 
             // frmAddNewUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1040, 646);
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.ClientSize = new System.Drawing.Size(1188, 799);
             this.Controls.Add(this.ctrlAddEditUser1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmAddNewUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddNewUser";
             this.ResumeLayout(false);
 

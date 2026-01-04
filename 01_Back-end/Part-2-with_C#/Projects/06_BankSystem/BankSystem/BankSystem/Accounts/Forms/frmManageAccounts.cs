@@ -56,12 +56,12 @@ namespace BankSystem.Accounts.Forms
                 ("View Owner", _ContextMenuViewCustomerDetails),
                 ("View Related Accounts", _ContextMenuViewRelatedAccounts),
                 ("----------------------", null),
-                ("Deposit", _ContextMenuSendCustomerEmail),
-                ("Withdrawal", _ContextMenuCallCustomer),
-                ("Transfer", _ContextMenuCallCustomer),
+                ("Deposit", _ContextMenuDeposit),
+                ("Withdrawal", _ContextMenuWithdraw),
+                ("Transfer", _ContextMenuTransfer),
                 ("----------------------", null),
-                ("Change Status", _ContextMenuDeleteCustomer),
-                ("Delete", _ContextMenuConvertToUser),
+                ("Update", _ContextMenuChangeStatus),
+                ("Delete", _ContextMenuDeleteAccount),
 
             };
 
@@ -128,36 +128,53 @@ namespace BankSystem.Accounts.Forms
             }
             MessageBox.Show($"No record founded by id [{customerID}] ", "warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
-        void _ContextMenuDeleteCustomer(int customerID, ToolStripMenuItem menuItem)
+        void _ContextMenuDeleteAccount(int accountID, ToolStripMenuItem menuItem)
         {
-            if (!clsCustomer.IsCustomerExistsByID(customerID))
+            if (!clsAccounts.Exists(accountID))
             {
-                MessageBox.Show($"No record founded by id [{customerID}] ", "warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"No record founded by id [{accountID}] ", "warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (MessageBox.Show("Sure To delete this record?!", "Validation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                if (clsPerson.Delete(customerID))
+                if (clsAccounts.Delete(accountID, clsGlobal.LoggedInUser.UserID))
                 {
-                    MessageBox.Show($"The Person's record With id [{customerID}] was deleted successfully");
-                    ctrlManageRecords1.__RefreshRecordsList(clsCustomer.ListCustomers());
+                    MessageBox.Show($"The Person's record With id [{accountID}] was deleted successfully");
+                    ctrlManageRecords1.__RefreshRecordsList(clsAccounts.ListAccounts());
                 }
                 else MessageBox.Show($"Can't Delete This Record!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        void _ContextMenuSendCustomerEmail(int customerID, ToolStripMenuItem menuItem)
+        void _ContextMenuChangeStatus(int accountID, ToolStripMenuItem menuItem)
         {
-            MessageBox.Show($"Send Email To Customer with id [{customerID}] -> Not Implemented yet");
-        }
-        void _ContextMenuCallCustomer(int customerID, ToolStripMenuItem menuItem)
-        {
-            MessageBox.Show($"call the  Customer with id [{customerID}] -> Not Implemented yet");
-        }
-        void _ContextMenuConvertToUser(int customerID, ToolStripMenuItem menuItem)
-        {
-            MessageBox.Show($"Convert Person with id [{customerID}] To User -> Not Implemented yet");
+            if (clsAccounts.Exists(accountID))
+            {
+                if (MessageBox.Show("Sure To Change Account Status?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
+
+                if (clsAccounts.UpdateStatus(accountID, !clsAccounts.isActive(accountID)))
+                {
+                    MessageBox.Show("Done SucessFully");
+                    ctrlManageRecords1.__RefreshRecordsList(clsAccounts.ListAccounts());
+                    return;
+                }
+
+                MessageBox.Show("Operation Failed, Can't Save Changes!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            MessageBox.Show($"No Account Exists With ID [{accountID}]", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        void _ContextMenuDeposit(int accountID, ToolStripMenuItem menuItem)
+        {
+        }
+        void _ContextMenuWithdraw(int accountID, ToolStripMenuItem menuItem)
+        {
+        }
+        void _ContextMenuTransfer(int accountID, ToolStripMenuItem menuItem)
+        {
+            
+        }
+      
         private void _EndSession()
         {
             this.Close();
@@ -180,10 +197,12 @@ namespace BankSystem.Accounts.Forms
 
             var grid = ctrlManageRecords1.__RecordsContainer;
 
-            grid.Columns["CustomerID"].HeaderText = "ID";
-            grid.Columns["PersonID"].HeaderText = "Person ID";
-            grid.Columns["CustomerType"].HeaderText = "Customer Type";
-            grid.Columns["CreatedDate"].HeaderText = "Created Date";
+            grid.Columns["AccountNumber"].HeaderText = "Account Number";
+            grid.Columns["CustomerID"].HeaderText = "Owner ID";
+            grid.Columns["CustomerName"].HeaderText = "Owner Name";
+            grid.Columns["AccountType"].HeaderText = "Account Type";
+            grid.Columns["IsActive"].HeaderText = "Active";
+            grid.Columns["CreatedAt"].HeaderText = "Created Date";
             grid.Columns["CreatedByUserID"].HeaderText = "Added By User";
 
             // Replace the IsActive column with a checkbox column ONCE
@@ -206,6 +225,10 @@ namespace BankSystem.Accounts.Forms
                 {
                     e.Value = type == 1 ? "Individual" : type == 2 ? "Business" : "(VIP)";
                     e.FormattingApplied = true;
+                }
+                if (ctrlManageRecords1.__RecordsContainer.Columns[e.ColumnIndex].Name == "CreatedByUserID" && e.Value is int usr)
+                {
+                    e.Value = clsUser.FindUserByID(usr)?.UserName ?? "(N/A)";
                 }
 
             };

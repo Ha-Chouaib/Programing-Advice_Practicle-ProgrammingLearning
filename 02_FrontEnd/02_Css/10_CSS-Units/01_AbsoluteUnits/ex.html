@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pixels Example</title>
+  <style>
+    .pixel-box {
+      /* Styles for the element with the class "pixel-box" */
+
+      width: 300px;
+      /* Sets the width of the box to 300 pixels */
+
+      height: 150px;
+      /* Sets the height of the box to 150 pixels */
+
+      background: lightgray;
+      /* Sets the background color of the box to light gray */
+
+      border: 2px solid #333;
+      /* Adds a solid border that is 2 pixels thick with a dark gray color (#333) */
+
+      margin: 20px auto;
+      /* Adds a margin of 20 pixels on the top and bottom.
+         The "auto" horizontally centers the box in its container (body in this case). */
+
+      text-align: center;
+      /* Centers the text horizontally inside the box */
+
+      line-height: 150px;
+      /* Sets the line height equal to the box’s height to vertically center the text */
+
+      font-size: 16px;
+      /* Sets the font size of the text inside the box to 16 pixels */
+    }
+    .inch-box {
+      /* Styles for the element with the class "inch-box" */
+
+      width: 2in;
+      /* Sets the width of the box to 2 inches */
+
+      height: 1in;
+      /* Sets the height of the box to 1 inch */
+
+      background: #ffe0b2;
+      /* Sets a light orange background color */
+
+      border: 1px solid #f57c00;
+      /* Adds a 1-pixel solid border with an orange color */
+
+      margin: 20px;
+      /* Adds a 20-pixel margin on all sides of the box */
+
+      padding: 10px;
+      /* Adds 10 pixels of padding inside the box */
+    }
+
+    .cm-box {
+      /* Styles for the element with the class "cm-box" */
+
+      width: 10cm;
+      /* Sets the width of the box to 10 centimeters */
+
+      height: 2cm;
+      /* Sets the height of the box to 2 centimeters */
+
+      background: #e1bee7;
+      /* Sets a light purple background color */
+
+      border: 1px solid #7b1fa2;
+      /* Adds a 1-pixel solid border with a dark purple color */
+
+      margin: 20px;
+      /* Adds a 20-pixel margin on all sides of the box */
+
+      padding: 10px;
+      /* Adds 10 pixels of padding inside the box */
+    }
+   .body-text {
+      font-size: 12pt;  /* Standard body copy size in print */
+    }
+    .heading {
+      font-size: 18pt;  /* Larger heading for print */
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+    <!-- Starts the body section where the content appears -->
+
+    <div class="pixel-box">300px × 150px</div>
+    <!-- Creates a div (box) with the class "pixel-box".
+       The text inside shows the dimensions of the box. -->
+
+    <div class="inch-box">2in × 1in</div>
+    <!-- Creates a div (box) with the class "inch-box".
+         The text inside shows the dimensions of the box. -->
+
+    <div class="cm-box">10cm × 2cm</div>
+    <!-- Creates a div (box) with the class "cm-box".
+         The text inside shows the dimensions of the box. -->
+
+    <h1 class="heading">18pt Heading</h1>
+  <p class="body-text">
+    This paragraph is set in 12pt, matching common print typography standards.
+  </p>
+</body>
+</html>

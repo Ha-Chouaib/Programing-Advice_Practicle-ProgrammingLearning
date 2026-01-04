@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Viewport Units Demo</title>
+  <style>
+    /* Reset default spacing */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: sans-serif;
+      line-height: 1.4;
+    }
+
+    /* Full-screen main using vw & vh */
+    .main {
+      width: 100vw;    /* 100% of viewport width */
+      height: 100vh;   /* 100% of viewport height */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      text-align: center;
+      font-size: 5vw;  /* Scales with viewport width */
+    }
+
+    /* A content section with responsive padding & typography */
+    .section {
+      padding: 5vh 5vw;  /* 5% of viewport height top/bottom, 5% of width left/right */
+      background: #f4f4f4;
+      min-height: 50vh;  /* At least half the viewport height */
+    }
+    .section h2 {
+      font-size: 4vw;
+      margin-bottom: 2vh;
+    }
+    .section p {
+      font-size: 2vw;
+    }
+    .vw-box {
+      width: 100vw;          /* 100% of viewport width */
+      height: 20vh;          /* 20% of viewport height */
+      background: #c5cae9;
+      border: 2px solid #4527a0;
+      text-align: center;
+      line-height: 20vh;
+      margin-bottom: 20px;
+      
+    }
+ 
+    .vw-box2 {
+      width: 50vw;          /* 100% of viewport width */
+      height: 20vh;          /* 20% of viewport height */
+      background: #c5cae9;
+      border: 2px solid #4527a0;
+      text-align: center;
+      line-height: 20vh;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main">
+    <div>
+      <h1>Viewport Units: vw & vh</h1>
+      <p>Resize your browser to see the text and layout adapt in real time.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Responsive Content Section</h2>
+    <p>
+      This container uses <strong>5vh</strong> vertical padding and <strong>5vw</strong> horizontal padding.
+      The headings and paragraphs scale with the viewport for consistent design across devices.
+    </p>
+  </div>
+  <div class="vw-box">100vw × 20vh</div>
+  <div class="vw-box2">50vw × 20vh</div>
+</body>
+</html>

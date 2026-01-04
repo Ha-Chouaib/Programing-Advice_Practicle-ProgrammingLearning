@@ -154,11 +154,11 @@ namespace Bank_BusinessLayer
         {
             return clsCustomerDataAccess.IsActive(CustomerID);
         }
-        public static bool Delete(int CustomerID)
+        public static bool Delete(int CustomerID, int DeletedByUserID)
         {
-            return clsCustomerDataAccess.Delete(CustomerID);
+            return clsCustomerDataAccess.Delete(CustomerID, DeletedByUserID);
         }
-        public bool Delete()
+        public bool Delete(int DeletedByUserID)
         {
             return Delete(this.CustomerID);
         }
