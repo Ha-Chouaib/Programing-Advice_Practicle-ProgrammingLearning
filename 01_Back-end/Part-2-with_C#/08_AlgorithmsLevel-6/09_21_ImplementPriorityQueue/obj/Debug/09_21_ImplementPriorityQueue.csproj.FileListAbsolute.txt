@@ -1,0 +1,7 @@
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_21_ImplementPriorityQueue\bin\Debug\09_21_ImplementPriorityQueue.exe.config
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_21_ImplementPriorityQueue\bin\Debug\09_21_ImplementPriorityQueue.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_21_ImplementPriorityQueue\bin\Debug\09_21_ImplementPriorityQueue.pdb
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_21_ImplementPriorityQueue\obj\Debug\09_21_ImplementPriorityQueue.csproj.AssemblyReference.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_21_ImplementPriorityQueue\obj\Debug\09_21_ImplementPriorityQueue.csproj.CoreCompileInputs.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_21_ImplementPriorityQueue\obj\Debug\09_21_ImplementPriorityQueue.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_21_ImplementPriorityQueue\obj\Debug\09_21_ImplementPriorityQueue.pdb
