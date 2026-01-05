@@ -49,11 +49,61 @@ namespace BankSystem.User.UserControls
         public void __AddNewUser()
         {
             _AddingConfiguration();
+            Dictionary<string, string> FindByoptions = new Dictionary<string, string>
+            {
+                {"Person ID","PersonID" },
+                {"National No","NationalNo" }
+            };
+
+            ctrlFind1.__Initializing(FindByoptions, clsPerson.FindBy);
+            ctrlFind1.__FindOptionsCombo.SelectedValueChanged += (s, e) =>
+            {
+                ctrlFind1.__txtSearchTerm.KeyPress -= null;
+                StringBuilder SelectdColumn = new StringBuilder();
+                SelectdColumn.Append(((KeyValuePair<string, string>)ctrlFind1.__FindOptionsCombo.SelectedItem).Value);
+
+                if (SelectdColumn.ToString() == "PersonID")
+                    ctrlFind1.__txtSearchTerm.KeyPress += (s1, e1) => { e1.Handled = !char.IsControl(e1.KeyChar) && !char.IsDigit(e1.KeyChar); };
+                else
+                    ctrlFind1.__txtSearchTerm.KeyPress += (s1, e1) => { e1.Handled = false; };
+            };
+
+            ctrlFind1.__ObjectFound += _GetPerson;
+        }
+        public void __AddNewUser(int PersonID)
+        {
+            ctrlFind1.__txtSearchTerm.Text = PersonID.ToString();
+            ctrlFind1.__FindOptionsCombo.Text = "User ID";
+            ctrlFind1.Enabled = false;
+            _AddingConfiguration();
+           
+           _GetPerson(this, clsPerson.Find(PersonID));
         }
         public void __EditUser()
         {
             _EdittingConfiguration();
             ctrlFind1.Enabled = true;
+            Dictionary<string, string> FindByoptions = new Dictionary<string, string>
+            {
+                {"User ID","UserID" },
+                {"Person ID","PersonID" },
+                {"User Name","UserName" }
+            };
+
+            ctrlFind1.__Initializing(FindByoptions, clsUser.FindBy);
+            ctrlFind1.__FindOptionsCombo.SelectedValueChanged += (s, e) =>
+            {
+                ctrlFind1.__txtSearchTerm.KeyPress -= null;
+
+                StringBuilder SelectdColumn = new StringBuilder();
+                SelectdColumn.Append(((KeyValuePair<string, string>)ctrlFind1.__FindOptionsCombo.SelectedItem).Value);
+
+                if (SelectdColumn.ToString() != "UserName")
+                    ctrlFind1.__txtSearchTerm.KeyPress += (s1, e1) => { e1.Handled = !char.IsControl(e1.KeyChar) && !char.IsDigit(e1.KeyChar); };
+                else
+                    ctrlFind1.__txtSearchTerm.KeyPress += (s1, e1) => { e1.Handled = false; };
+            };
+
             ctrlFind1.__ObjectFound += _GetUser;
         }
         public void __EditUser(int UserID)
@@ -74,28 +124,6 @@ namespace BankSystem.User.UserControls
             lblPickRecord.Text = "Pick a Person";
             lblConfermUpdatedPass.Visible = false;
             txtConfirmUpdatedPass.Visible = false;
-
-            
-
-            Dictionary<string, string> FindByoptions = new Dictionary<string, string>
-            {
-                {"Person ID","PersonID" },
-                {"National No","NationalNo" }
-            };
-
-            ctrlFind1.__Initializing(FindByoptions, clsPerson.FindBy);
-            ctrlFind1.__FindOptionsCombo.SelectedValueChanged += (s, e) =>
-            {
-                ctrlFind1.__txtSearchTerm.KeyPress -= null;
-                if (((KeyValuePair<string, string>)ctrlFind1.__FindOptionsCombo.SelectedItem).Value == "PersonID")
-                    ctrlFind1.__txtSearchTerm.KeyPress += (s1, e1) => { e1.Handled = !char.IsControl(e1.KeyChar) && !char.IsDigit(e1.KeyChar); };
-                else
-                    ctrlFind1.__txtSearchTerm.KeyPress += (s1, e1) => { e1.Handled = false; };
-            };
-
-            ctrlFind1.__ObjectFound += _GetPerson;
-
-
         }
         private void _EdittingConfiguration()
         {
@@ -164,8 +192,10 @@ namespace BankSystem.User.UserControls
                 tabUserData.Enabled = true;
                 txtCreatedDate.Text = DateTime.Now.ToString();
                 txtCreatedByUser.Text = clsGlobal.LoggedInUser.UserName;
-
+                return;
             }
+            MessageBox.Show($"No User Founded By Id [{Person.PersonID}]! Please Select A Valid ID", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
         }
         private void _GetUser(object s, object user)
         {
@@ -263,41 +293,52 @@ namespace BankSystem.User.UserControls
 
         private void txtOriginalPassword_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtOriginalPassword.Text))
+            if (string.IsNullOrEmpty(txtOriginalPassword.Text) && _Mode == enMode.AddNew)
             {
                 _ErrorProvider.SetError(txtOriginalPassword, "Password cannot be empty.");
                 return;
             }
-            else
-                _ErrorProvider.SetError(txtOriginalPassword, "");
-
+            if (txtOriginalPassword.Text.Trim().Length < 4)
+            {
+                _ErrorProvider.SetError(txtOriginalPassword, "The Password must be 4 digits.");
+                return;
+            }
             if (_Mode == enMode.Edit)
             {
-                if (clsSettings.EncryptString_Hashing(txtOriginalPassword.Text) != _User.Password)
+                if (clsSettings.EncryptString_Hashing(txtOriginalPassword.Text.Trim()) != _User.Password)
                     _ErrorProvider.SetError(txtOriginalPassword, "The Original Password is Incorrect.");
-                else
-                    _ErrorProvider.SetError(txtOriginalPassword, "");
+                return;
             }
+
+            _ErrorProvider.SetError(txtOriginalPassword, "");
+
         }
 
         private void txtConfirmPassword_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtConfirmPassword.Text))
+            if (string.IsNullOrEmpty(txtConfirmPassword.Text) && (_Mode == enMode.AddNew || (_Mode == enMode.Edit && !string.IsNullOrEmpty(txtOriginalPassword.Text))))
             {
                 _ErrorProvider.SetError(txtConfirmPassword, "This Feild cannot be empty.");
                 return;
             }
-            else
-                _ErrorProvider.SetError(txtConfirmPassword, "");
 
             if (_Mode == enMode.AddNew)
             {
                 if (txtConfirmPassword.Text.Trim() != txtOriginalPassword.Text.Trim())
+                {
                     _ErrorProvider.SetError(txtConfirmPassword, "The Passwords do not match.");
-                else
-                    _ErrorProvider.SetError(txtConfirmPassword, "");
+                    return;
+                }
+                
             }
-            
+            if (txtConfirmPassword.Text.Trim().Length < 4)
+            {
+                _ErrorProvider.SetError(txtConfirmPassword, "The Password must be 4 digits.");
+                return;
+            }
+
+            _ErrorProvider.SetError(txtConfirmPassword, "");
+
         }
 
         private void txtOriginalPassword_KeyPress(object sender, KeyPressEventArgs e)
@@ -307,17 +348,21 @@ namespace BankSystem.User.UserControls
 
         private void txtConfirmUpdatedPass_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtConfirmUpdatedPass.Text))
+            if (string.IsNullOrEmpty(txtConfirmUpdatedPass.Text) && !string.IsNullOrEmpty(txtConfirmPassword.Text))
+            {
                 _ErrorProvider.SetError(txtConfirmUpdatedPass, "This Feild cannot be empty.");
-            else
-                _ErrorProvider.SetError(txtConfirmUpdatedPass, "");
+                return;
+            }
+
             if (_Mode == enMode.Edit)
             {
                 if (txtConfirmUpdatedPass.Text.Trim() != txtConfirmPassword.Text.Trim())
                     _ErrorProvider.SetError(txtConfirmUpdatedPass, "The Passwords do not match.");
-                else
-                    _ErrorProvider.SetError(txtConfirmUpdatedPass, "");
-            }
+                return;
+           }
+            _ErrorProvider.SetError(txtConfirmUpdatedPass, "");
+
         }
+    
     }
 }

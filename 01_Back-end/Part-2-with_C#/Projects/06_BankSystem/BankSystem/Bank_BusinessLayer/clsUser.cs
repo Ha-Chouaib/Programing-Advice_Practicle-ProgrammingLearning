@@ -153,6 +153,35 @@ namespace Bank_BusinessLayer
                 return null;
         }
 
+        public static clsUser FindBy(string Column, string Trem)
+        {
+            switch (Column)
+            { 
+                case "UserID":                  
+                    if (int.TryParse(Trem, out int UserID))
+                    {
+                        return FindUserByID(UserID);
+                    }
+                    else
+                        return null;
+                    
+                case "PersonID":
+                    
+                    if (int.TryParse(Trem, out int PersonID))
+                    {
+                        return FindUserByPersonID(PersonID);
+                    }
+                    else
+                        return null;
+                    
+                case "UserName":
+                    return FindUserByName(Trem);
+                default:
+                    return null;
+
+            }
+        }
+
         public static bool UpdateUserName(int UserID, string UserName) 
         {
             return clsUserDataAccess.UpdateUserName(UserID, UserName);

@@ -32,8 +32,8 @@ namespace Bank_DataAccess
                     cmd.Parameters.AddWithValue("@Password",string.IsNullOrEmpty(Password) ? DBNull.Value : (object) Password);
                     cmd.Parameters.AddWithValue("@IsActive", IsActive);
                     cmd.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID == -1 ? DBNull.Value : (object) CreatedByUserID);
-                    cmd.Parameters.AddWithValue("@CustomPermissions",(long) CustomPermissions);
-                    cmd.Parameters.AddWithValue("@RevokedPermissions",(long) RevokedPermissions);
+                    cmd.Parameters.AddWithValue("@CustomPermissions", Convert.ToDecimal(CustomPermissions));
+                    cmd.Parameters.AddWithValue("@RevokedPermissions", Convert.ToDecimal(RevokedPermissions));
 
                     connection.Open();
                     using (SqlDataReader rdr = cmd.ExecuteReader())
@@ -225,8 +225,8 @@ namespace Bank_DataAccess
                     cmd.Parameters.AddWithValue("@RoleID", RoleID);
                     cmd.Parameters.AddWithValue("@Password", string.IsNullOrEmpty(Password) ? DBNull.Value : (object)Password);
                     cmd.Parameters.AddWithValue("@IsActive", IsActive);
-                    cmd.Parameters.AddWithValue("@CustomPermissions", CustomPermissions );
-                    cmd.Parameters.AddWithValue("@RevokedPermissions", RevokedPermissions);
+                    cmd.Parameters.AddWithValue("@CustomPermissions",Convert.ToDecimal(CustomPermissions));
+                    cmd.Parameters.AddWithValue("@RevokedPermissions",Convert.ToDecimal( RevokedPermissions));
 
                     conn.Open();
 
@@ -423,8 +423,8 @@ namespace Bank_DataAccess
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@UserID", UserID);
-                    cmd.Parameters.AddWithValue("@CustomPermissions", CustomPermissions);
-                    cmd.Parameters.AddWithValue("@revokedPermissions", RevokedPermissions);
+                    cmd.Parameters.AddWithValue("@CustomPermissions", Convert.ToDecimal(CustomPermissions));
+                    cmd.Parameters.AddWithValue("@RevokedPermissions", Convert.ToDecimal(RevokedPermissions));
 
                     connection.Open();
                     using (SqlDataReader reader = cmd.ExecuteReader())

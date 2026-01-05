@@ -1,15 +1,12 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Part-1-with_Cpp",
+    "\\Part-1-with_Cpp\\07_Algorithms_ProblemSolving_level_3",
+    "\\Part-1-with_Cpp\\07_Algorithms_ProblemSolving_level_3\\ProblemSolving",
     "\\Part-2-with_C#",
-    "\\Part-2-with_C#\\Projects",
-    "\\Part-2-with_C#\\Projects\\01_PizzaOrder",
-    "\\Part-2-with_C#\\Projects\\01_PizzaOrder\\PizzaOrderProject",
-    "\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem",
-    "\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem",
-    "\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\Customer",
-    "\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\Customer\\UserControls"
+    "\\Part-2-with_C#\\Projects"
   ],
-  "SelectedNode": "\\Part-2-with_C#\\Projects\\01_PizzaOrder\\PizzaOrderProject\\Form1.cs",
+  "SelectedNode": "\\Part-1-with_Cpp\\07_Algorithms_ProblemSolving_level_3\\ProblemSolving\\#7_TrasposeMatrix.cpp",
   "PreviewInSolutionExplorer": false
 }
