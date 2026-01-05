@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vmin and vmax</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+          
+        }
+        header {
+            background-color: black;
+            width: 100vw;
+            margin:  auto;
+            padding: 2vh 0;
+            margin-bottom: 5vh;
+        }
+        h1 {
+            font-size: 4vh;
+        }
+        section {
+           display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 3vh;
+        }
+        .vminBox {
+            width: 30vmin;
+            height: 30vmin;
+            background-color: lightcoral;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 5vh;
+        }
+        .vmaxBox {
+            width: 30vmax;
+            height: 30vmax;
+            border-radius: 50%;
+            background-color: lightseagreen;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        p {
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <Header>
+        <H1>vmin and vmax Responsive Scaling</H1>
+    </Header>
+    <Section>
+        <div class="vminBox">
+            <p>30vmin x 30vmin</p>
+        </div>
+        <div class="vmaxBox">
+            <p>30vmax x 30vmax</p>
+        </div>
+    </Section>
+</body>
+</html>

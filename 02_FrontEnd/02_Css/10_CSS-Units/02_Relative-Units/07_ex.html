@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS ex Unit Demonstration</title>
+  <style>
+    body {
+      margin: 20px;
+      font-family: Arial, sans-serif;
+      line-height: 1.4;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2em;
+    }
+    section {
+      margin-bottom: 2em;
+    }
+
+    /* Example 1: Line-height using ex */
+    .line-ex {
+      font-size: 16px;        /* Base font size */
+      line-height: 2ex;       /* Twice the x-height of the font */
+      background: #f0f4c3;
+      padding: 1em;
+      border: 1px solid #c0ca33;
+    }
+
+    /* Example 2: Height and width using ex */
+    .box-ex {
+      font-family: 'Courier New', monospace;
+      font-size: 20px;        /* Larger font for clarity */
+      width: 20ex;            /* Width equal to 20 × the x-height */
+      height: 10ex;           /* Height equal to 10 × the x-height */
+      background: #ffecb3;
+      border: 2px dashed #fbc02d;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    /* Example 3: Padding using ex */
+    .pad-ex {
+      font-size: 18px;
+      padding: 3ex;           /* Padding equal to 3 × the x-height */
+      background: #e1bee7;
+      border: 2px solid #8e24aa;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2em;
+      font-size: 0.9em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Demonstrating the <code>ex</code> Unit</h1>
+    <p>1ex ≈ the x-height (lowercase “x”) of the current font.</p>
+  </header>
+
+  <section>
+    <h2>Line-Height Example</h2>
+    <div class="line-ex">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut arcu vitae 
+      purus interdum sollicitudin. Donec nec sapien non risus tincidunt accumsan sit 
+      amet a mauris. Curabitur at ex nec mauris vehicula tincidunt.
+    </div>
+  </section>
+
+  <section>
+    <h2>Box Dimensions Example</h2>
+    <div class="box-ex">
+      .box-ex<br>
+      width: 20ex;<br>
+      height: 10ex;
+    </div>
+  </section>
+
+  <section>
+    <h2>Padding Example</h2>
+    <div class="pad-ex">
+      This container has <strong>3ex</strong> of padding on all sides.
+    </div>
+  </section>
+
+  <footer>
+    Resize your browser or change the font-size in DevTools to see how <code>ex</code> adapts to the x-height.
+  </footer>
+</body>
+</html>
