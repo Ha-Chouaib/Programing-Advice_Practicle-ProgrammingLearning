@@ -240,17 +240,41 @@
     <Compile Include="User\Forms\frmAddNewUser.Designer.cs">
       <DependentUpon>frmAddNewUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="User\Forms\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\Forms\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="User\Forms\frmEditUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="User\Forms\frmEditUser.Designer.cs">
       <DependentUpon>frmEditUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="User\Forms\frmFindUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\Forms\frmFindUser.Designer.cs">
+      <DependentUpon>frmFindUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="User\UserControls\ctrlAddEditUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="User\UserControls\ctrlAddEditUser.Designer.cs">
       <DependentUpon>ctrlAddEditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserControls\ctrlFindUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User\UserControls\ctrlFindUser.Designer.cs">
+      <DependentUpon>ctrlFindUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserControls\ctrlUserCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User\UserControls\ctrlUserCard.Designer.cs">
+      <DependentUpon>ctrlUserCard.cs</DependentUpon>
     </Compile>
     <Compile Include="User\UserControls\PopupFrm_UserPermissionSettings.cs">
       <SubType>Form</SubType>
@@ -353,11 +377,23 @@
     <EmbeddedResource Include="User\Forms\frmAddNewUser.resx">
       <DependentUpon>frmAddNewUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User\Forms\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User\Forms\frmEditUser.resx">
       <DependentUpon>frmEditUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User\Forms\frmFindUser.resx">
+      <DependentUpon>frmFindUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User\UserControls\ctrlAddEditUser.resx">
       <DependentUpon>ctrlAddEditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\UserControls\ctrlFindUser.resx">
+      <DependentUpon>ctrlFindUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\UserControls\ctrlUserCard.resx">
+      <DependentUpon>ctrlUserCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\UserControls\PopupFrm_UserPermissionSettings.resx">
       <DependentUpon>PopupFrm_UserPermissionSettings.cs</DependentUpon>
@@ -481,6 +517,8 @@
   <ItemGroup>
     <None Include="Resources\Team.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\search_11349253.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

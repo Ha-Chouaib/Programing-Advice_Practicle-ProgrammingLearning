@@ -23,10 +23,19 @@ namespace BankSystem.Person.Forms
 
             person = clsPerson.Find(PersonID);
           if ( person != null)
+            {
                 ctrlDisplayPersonDetails1.__ShowPersonalInfo(person);
+                ctrlDisplayPersonDetails1.__UpdatedPersonRecord += _GetUpdatedPersonRecord;
+            }
         }
         clsPerson person {  get; set; }
-
+        public Action<clsPerson> __PersonRecordChanged;
+        
+        private void _GetUpdatedPersonRecord(clsPerson updatedPerson)
+        {
+            person = updatedPerson;
+            __PersonRecordChanged?.Invoke(updatedPerson);
+        }
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();

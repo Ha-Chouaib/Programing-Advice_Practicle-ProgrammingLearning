@@ -68,7 +68,7 @@ namespace BankSystem
                     SubItems = new List<clsMenuBtnModel>
                     {
                         new clsMenuBtnModel { Key = "frmManageUsers", Title = "Manage Users",Icon = Resources.People_manager  },
-                        new clsMenuBtnModel { Key = "frmAddNewUser", Title = "Add New User",Icon = Resources.update },
+                        new clsMenuBtnModel { Key = "frmAddNewUser", Title = "Add New User",Icon = Resources.add },
                         new clsMenuBtnModel { Key = "frmEditUser", Title = "Edit User",Icon = Resources.update },
                         new clsMenuBtnModel { Key = "frmChangePassword", Title = "Change Password",Icon = Resources.password },
                         new clsMenuBtnModel { Key = "frmFindUser", Title = "Find User",Icon= Resources.find_in_file }

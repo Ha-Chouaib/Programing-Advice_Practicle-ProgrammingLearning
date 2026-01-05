@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GraphImplementation-Matrix")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9761064d4136d84454d76c11d111c62054384b44")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f23143a59ee73c466914de3f4fcfedb98859cade")]
 [assembly: System.Reflection.AssemblyProductAttribute("GraphImplementation-Matrix")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GraphImplementation-Matrix")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
