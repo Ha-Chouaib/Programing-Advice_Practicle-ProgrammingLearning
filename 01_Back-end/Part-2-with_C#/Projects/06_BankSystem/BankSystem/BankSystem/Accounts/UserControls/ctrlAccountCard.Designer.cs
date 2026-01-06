@@ -74,6 +74,7 @@
             this.txtCustomerName.ReadOnly = true;
             this.txtCustomerName.Size = new System.Drawing.Size(331, 40);
             this.txtCustomerName.TabIndex = 1;
+            this.txtCustomerName.TabStop = false;
             // 
             // txtCreatedDate
             // 
@@ -87,6 +88,7 @@
             this.txtCreatedDate.ReadOnly = true;
             this.txtCreatedDate.Size = new System.Drawing.Size(331, 40);
             this.txtCreatedDate.TabIndex = 2;
+            this.txtCreatedDate.TabStop = false;
             // 
             // txtStatus
             // 
@@ -100,6 +102,7 @@
             this.txtStatus.ReadOnly = true;
             this.txtStatus.Size = new System.Drawing.Size(316, 40);
             this.txtStatus.TabIndex = 3;
+            this.txtStatus.TabStop = false;
             // 
             // txtAccountNumber
             // 
@@ -113,6 +116,7 @@
             this.txtAccountNumber.ReadOnly = true;
             this.txtAccountNumber.Size = new System.Drawing.Size(315, 40);
             this.txtAccountNumber.TabIndex = 4;
+            this.txtAccountNumber.TabStop = false;
             // 
             // txtCustomerID
             // 
@@ -126,6 +130,7 @@
             this.txtCustomerID.ReadOnly = true;
             this.txtCustomerID.Size = new System.Drawing.Size(315, 40);
             this.txtCustomerID.TabIndex = 5;
+            this.txtCustomerID.TabStop = false;
             // 
             // txtAccountID
             // 
@@ -139,6 +144,7 @@
             this.txtAccountID.ReadOnly = true;
             this.txtAccountID.Size = new System.Drawing.Size(331, 40);
             this.txtAccountID.TabIndex = 6;
+            this.txtAccountID.TabStop = false;
             // 
             // txtAccountType
             // 
@@ -152,6 +158,7 @@
             this.txtAccountType.ReadOnly = true;
             this.txtAccountType.Size = new System.Drawing.Size(331, 40);
             this.txtAccountType.TabIndex = 7;
+            this.txtAccountType.TabStop = false;
             // 
             // label2
             // 
@@ -231,6 +238,7 @@
             this.txtCreatedByUser.ReadOnly = true;
             this.txtCreatedByUser.Size = new System.Drawing.Size(315, 40);
             this.txtCreatedByUser.TabIndex = 14;
+            this.txtCreatedByUser.TabStop = false;
             // 
             // label8
             // 
@@ -266,6 +274,7 @@
             this.txtBalance.ReadOnly = true;
             this.txtBalance.Size = new System.Drawing.Size(331, 32);
             this.txtBalance.TabIndex = 17;
+            this.txtBalance.TabStop = false;
             this.txtBalance.Text = "[ ??? ]";
             this.txtBalance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 

@@ -66,6 +66,7 @@
             this.txtCustomerID.BackColor = System.Drawing.Color.Black;
             this.txtCustomerID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCustomerID.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomerID.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtCustomerID.Location = new System.Drawing.Point(24, 268);
             this.txtCustomerID.Multiline = true;
             this.txtCustomerID.Name = "txtCustomerID";
@@ -78,6 +79,7 @@
             this.txtFullName.BackColor = System.Drawing.Color.Black;
             this.txtFullName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFullName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFullName.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtFullName.Location = new System.Drawing.Point(358, 268);
             this.txtFullName.Multiline = true;
             this.txtFullName.Name = "txtFullName";
@@ -90,6 +92,7 @@
             this.txtCreatedDate.BackColor = System.Drawing.Color.Black;
             this.txtCreatedDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCreatedDate.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCreatedDate.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtCreatedDate.Location = new System.Drawing.Point(358, 343);
             this.txtCreatedDate.Multiline = true;
             this.txtCreatedDate.Name = "txtCreatedDate";
@@ -102,6 +105,7 @@
             this.txtCreatedByUser.BackColor = System.Drawing.Color.Black;
             this.txtCreatedByUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCreatedByUser.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCreatedByUser.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtCreatedByUser.Location = new System.Drawing.Point(358, 422);
             this.txtCreatedByUser.Multiline = true;
             this.txtCreatedByUser.Name = "txtCreatedByUser";
@@ -114,7 +118,7 @@
             this.txtAcountNum.BackColor = System.Drawing.Color.Black;
             this.txtAcountNum.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAcountNum.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAcountNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtAcountNum.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtAcountNum.Location = new System.Drawing.Point(24, 343);
             this.txtAcountNum.Multiline = true;
             this.txtAcountNum.Name = "txtAcountNum";
@@ -128,7 +132,7 @@
             this.txtAccountID.BackColor = System.Drawing.Color.Black;
             this.txtAccountID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAccountID.Font = new System.Drawing.Font("Segoe UI Black", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAccountID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtAccountID.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.txtAccountID.Location = new System.Drawing.Point(223, 189);
             this.txtAccountID.Multiline = true;
             this.txtAccountID.Name = "txtAccountID";
@@ -289,8 +293,7 @@
             // 
             // ctrlAddNewAccount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnCancel);

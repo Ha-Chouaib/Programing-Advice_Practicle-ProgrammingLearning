@@ -18,8 +18,14 @@ namespace BankSystem.User.Forms
             InitializeComponent();
             _EditPassword();
         }
+        public frmChangePassword(int userID)
+        {
+            InitializeComponent();
+            _EditPassword(userID);
+        }
         clsUser _SelectedUser;
         ErrorProvider _errorProvider = new ErrorProvider();
+        public Action __OperationDoneSuccessfully;
         private void _EditPassword()
         {
 
@@ -29,7 +35,17 @@ namespace BankSystem.User.Forms
                 _SelectedUser = user;
             };
         }
-
+        private void _EditPassword(int UserID)
+        {
+            clsUser user = clsUser.FindUserByID(UserID);
+            if (user != null)
+            {
+                ctrlFindUser1.__ShowUserCard(user);
+                _SelectedUser = user;
+                return;
+            }
+            MessageBox.Show($"No User Found By ID [{UserID}]","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar);
@@ -53,6 +69,7 @@ namespace BankSystem.User.Forms
             if (clsUser.UpdateUsePassword(_SelectedUser.UserID, clsSettings.EncryptString_Hashing(txtNewPass.Text.Trim())))
             {
                 MessageBox.Show("Password updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                __OperationDoneSuccessfully?.Invoke();
                 this.Close();
             }
             else

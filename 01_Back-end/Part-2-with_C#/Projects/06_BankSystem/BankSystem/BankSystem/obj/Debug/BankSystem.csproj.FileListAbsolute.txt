@@ -78,3 +78,4 @@ C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-en
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.User.Forms.frmFindUser.resources
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.User.UserControls.ctrlFindUser.resources
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.User.Forms.frmChangePassword.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.User.Forms.frmManageUsers.resources

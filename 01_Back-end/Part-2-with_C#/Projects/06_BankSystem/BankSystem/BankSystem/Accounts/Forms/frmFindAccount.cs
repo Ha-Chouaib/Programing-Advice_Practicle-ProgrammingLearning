@@ -30,6 +30,8 @@ namespace BankSystem.Accounts.Forms
         }
         public frmFindAccount(clsAccounts account)
         {
+
+            InitializeComponent();
             _DisplayAccountInfo(account);
         }
         private void _DisplayAccountInfo(clsAccounts account)
@@ -37,11 +39,7 @@ namespace BankSystem.Accounts.Forms
             ctrlFind1.__txtSearchTerm.Text = account.AccountID.ToString();
             ctrlFind1.__FindOptionsCombo.Text = "Account ID";
             ctrlFind1.Enabled = false;
-            ctrlAccountCard1.__DisplayAccountInfo(account);
-            ctrlAccountCard1.__OnClose = () =>
-            {
-                this.Close();
-            };
+           _GetAccountRecord(this, account);
         }
         private void _GetAccountRecord(object s, object account)
         {

@@ -1,7 +1,9 @@
 ﻿using Bank_BusinessLayer;
+using BankSystem.Accounts.Forms;
 using BankSystem.Person;
 using BankSystem.Person.Forms;
 using BankSystem.Properties;
+using BankSystem.User.Forms;
 using DVLD_BusinessLayer;
 using System;
 using System.Collections.Generic;
@@ -29,7 +31,7 @@ namespace BankSystem.Customer.Forms
             ctrlManageRecords1.__UpdateRecordDelegate += _EditCustomer;
             ctrlManageRecords1.__CloseFormDelegate += _EndSession;
 
-            ctrlManageRecords1.__HeaderImg.Image = Resources.Team;
+            ctrlManageRecords1.__HeaderImg.Image = Resources.social_responsibility_18024872;
 
             ctrlManageRecords1.__HeaderTitle.Text = "Manage Customers";
             ctrlManageRecords1.__AddNewBtn.Text = "Add New Customer";
@@ -43,7 +45,7 @@ namespace BankSystem.Customer.Forms
             Dictionary<string, string> Options = new Dictionary<string, string>
             {
                 {"All","All"},
-                {"Customer ID","CustomerID" },
+                {"Customer ID","ID" },
                 {"Person ID","PersonID" },
                 {"Status","IsActive"},
                 {"Customer Type","CustomerType" },
@@ -63,6 +65,7 @@ namespace BankSystem.Customer.Forms
                 ("Call Customer", _ContextMenuCallCustomer),
                 ("-----------------", null),
                 ("Convert To User", _ContextMenuConvertToUser),
+                ("Add Account", _ContextMenuAddNewAccount),
 
             };
 
@@ -123,15 +126,15 @@ namespace BankSystem.Customer.Forms
         {
             if(!clsCustomer.IsCustomerExistsByID(customerID))
             {
-                MessageBox.Show($"No record founded by id [{customerID}] ", "warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"No record found by id [{customerID}] ", "warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (MessageBox.Show("Sure To delete this record?!", "Validation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 if (clsCustomer.Delete(customerID, clsGlobal.LoggedInUser.UserID))
                 {
-                    MessageBox.Show($"The Person's record With id [{customerID}] was deleted successfully");
-                    ctrlManageRecords1.__RefreshRecordsList(clsCustomer.ListCustomers());
+                    MessageBox.Show($"The customer's record With id [{customerID}] was deleted successfully");
+                    ctrlManageRecords1.__RefreshRecordsList();
                 }
                 else MessageBox.Show($"Can't Delete This Record!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -146,7 +149,24 @@ namespace BankSystem.Customer.Forms
         }
         void _ContextMenuConvertToUser(int customerID, ToolStripMenuItem menuItem)
         {
-            MessageBox.Show($"Convert Person with id [{customerID}] To User -> Not Implemented yet");
+             clsCustomer cust = clsCustomer.FindCustomerByID(customerID); 
+            if(cust != null)
+            {
+                frmAddNewUser ToUser = new frmAddNewUser(cust.PersonID);
+                ToUser.ShowDialog();
+                return;
+            }
+            MessageBox.Show($"No Customer Exists With id [{customerID}]","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        void _ContextMenuAddNewAccount(int customerID, ToolStripMenuItem menuItem)
+        {
+            if(clsCustomer.IsCustomerExistsByID(customerID))
+            {
+                frmAddNewAccount addAccount = new frmAddNewAccount(customerID);
+                addAccount.ShowDialog();
+                return;
+            }
+            MessageBox.Show($"No Customer Exists With id [{customerID}]","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void _EndSession()

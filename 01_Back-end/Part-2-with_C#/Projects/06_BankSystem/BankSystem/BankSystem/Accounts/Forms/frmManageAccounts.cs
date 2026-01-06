@@ -18,20 +18,20 @@ namespace BankSystem.Accounts.Forms
         public frmManageAccounts()
         {
             InitializeComponent();
+            LoadManageRecordsControl();
         }
         public void LoadManageRecordsControl()
         {
-            ctrlManageRecords1.__AddNewRecordDelegate += _AddNewCustomer;
-            ctrlManageRecords1.__UpdateRecordDelegate += _EditCustomer;
+            ctrlManageRecords1.__AddNewRecordDelegate += _AddNewAccount;
             ctrlManageRecords1.__CloseFormDelegate += _EndSession;
 
-            ctrlManageRecords1.__HeaderImg.Image = Resources.Team;
+            ctrlManageRecords1.__HeaderImg.Image = Resources.process_8257890;
 
             ctrlManageRecords1.__HeaderTitle.Text = "Manage Accountss";
             ctrlManageRecords1.__AddNewBtn.Text = "Add New Account";
-            ctrlManageRecords1.__UpdateBtn.Text = "Edit Account";
+            ctrlManageRecords1.__UpdateBtn.Visible = false;
 
-            ctrlManageRecords1.__Initialize(clsAccounts.ListAccounts(), _FilterBy_Options(), clsCustomer.FilterCustomers, _ContextMenuPackage(), _FilterByGroups());
+            ctrlManageRecords1.__Initialize(clsAccounts.ListAccounts(), _FilterBy_Options(), clsAccounts.FilterAccounts, _ContextMenuPackage(), _FilterByGroups());
             _ConfigureDataRecordsContainer();
         }
         private Dictionary<string, string> _FilterBy_Options()
@@ -39,7 +39,7 @@ namespace BankSystem.Accounts.Forms
             Dictionary<string, string> Options = new Dictionary<string, string>
             {
                 {"All","All"},
-                {"Account ID","AccountID" },
+                {"Account ID","ID" },
                 {"Customer ID","CustomerID" },
                 {"Status","IsActive"},
                 {"Account Type","AccountType" },
@@ -103,6 +103,7 @@ namespace BankSystem.Accounts.Forms
             if (account != null)
             {
                 frmFindAccount DisplayAccountInfo = new frmFindAccount(account);
+                DisplayAccountInfo.ShowDialog();
             }
             else
                 MessageBox.Show($"Can't Find Any Account with id [{accountID}]!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -139,8 +140,8 @@ namespace BankSystem.Accounts.Forms
             {
                 if (clsAccounts.Delete(accountID, clsGlobal.LoggedInUser.UserID))
                 {
-                    MessageBox.Show($"The Person's record With id [{accountID}] was deleted successfully");
-                    ctrlManageRecords1.__RefreshRecordsList(clsAccounts.ListAccounts());
+                    MessageBox.Show($"The acount's record With id [{accountID}] was deleted successfully");
+                    ctrlManageRecords1.__RefreshRecordsList();
                 }
                 else MessageBox.Show($"Can't Delete This Record!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -154,7 +155,7 @@ namespace BankSystem.Accounts.Forms
                 if (clsAccounts.UpdateStatus(accountID, !clsAccounts.isActive(accountID)))
                 {
                     MessageBox.Show("Done SucessFully");
-                    ctrlManageRecords1.__RefreshRecordsList(clsAccounts.ListAccounts());
+                    ctrlManageRecords1.__RefreshRecordsList();
                     return;
                 }
 
@@ -179,18 +180,13 @@ namespace BankSystem.Accounts.Forms
         {
             this.Close();
         }
-        private void _AddNewCustomer()
+        private void _AddNewAccount()
         {
-            frmAddNewCustomer addNewCustomer = new frmAddNewCustomer();
-            addNewCustomer.__OperatinDoneSuccessfully += ctrlManageRecords1.__RefreshRecordsList;
-            addNewCustomer.ShowDialog();
+            frmAddNewAccount addNewAccount = new frmAddNewAccount();
+            addNewAccount.__OperationDoneSuccessfully += ctrlManageRecords1.__RefreshRecordsList;
+            addNewAccount.ShowDialog();
         }
-        private void _EditCustomer()
-        {
-            frmEditCustomer editCustomer = new frmEditCustomer();
-            editCustomer.__OperatinDoneSuccessfully += ctrlManageRecords1.__RefreshRecordsList;
-            editCustomer.ShowDialog();
-        }
+       
         private void _ConfigureDataRecordsContainer()
         {
 
@@ -221,9 +217,9 @@ namespace BankSystem.Accounts.Forms
 
             grid.CellFormatting += (s, e) =>
             {
-                if (ctrlManageRecords1.__RecordsContainer.Columns[e.ColumnIndex].Name == "CustomerType" && e.Value is byte type)
+                if (ctrlManageRecords1.__RecordsContainer.Columns[e.ColumnIndex].Name == "AccountType" && e.Value is byte type)
                 {
-                    e.Value = type == 1 ? "Individual" : type == 2 ? "Business" : "(VIP)";
+                    e.Value = type == 1 ? "Individual" : type == 2 ? "Business" : "Save";
                     e.FormattingApplied = true;
                 }
                 if (ctrlManageRecords1.__RecordsContainer.Columns[e.ColumnIndex].Name == "CreatedByUserID" && e.Value is int usr)

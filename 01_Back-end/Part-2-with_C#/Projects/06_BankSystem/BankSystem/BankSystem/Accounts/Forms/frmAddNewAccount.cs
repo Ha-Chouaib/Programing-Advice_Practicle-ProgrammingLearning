@@ -19,9 +19,18 @@ namespace BankSystem.Accounts.Forms
             ctrlAddNewAccount1.__OnOperationDone += NewAccountAddedSucessfully;
             ctrlAddNewAccount1.__OnOperationaCanceled += Close_Cancel;
         }
+        public frmAddNewAccount(int customerID)
+        {
+            InitializeComponent();
+            ctrlAddNewAccount1.__AddNewAccount(customerID);
+            ctrlAddNewAccount1.__OnOperationDone += NewAccountAddedSucessfully;
+            ctrlAddNewAccount1.__OnOperationaCanceled += Close_Cancel;
+        }
+        public Action __OperationDoneSuccessfully;
         private void NewAccountAddedSucessfully(clsAccounts account)
         {
             MessageBox.Show("New account added sucessfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            __OperationDoneSuccessfully?.Invoke();
         }
         private void Close_Cancel()
         {

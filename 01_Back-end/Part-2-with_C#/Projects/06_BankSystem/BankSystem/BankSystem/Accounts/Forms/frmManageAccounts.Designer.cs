@@ -33,20 +33,22 @@
             // 
             // ctrlManageRecords1
             // 
-            this.ctrlManageRecords1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(61)))), ((int)(((byte)(66)))));
-            this.ctrlManageRecords1.Location = new System.Drawing.Point(33, 3);
+            this.ctrlManageRecords1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.ctrlManageRecords1.Location = new System.Drawing.Point(12, 12);
             this.ctrlManageRecords1.Name = "ctrlManageRecords1";
-            this.ctrlManageRecords1.Size = new System.Drawing.Size(1574, 682);
+            this.ctrlManageRecords1.Size = new System.Drawing.Size(1574, 756);
             this.ctrlManageRecords1.TabIndex = 0;
             // 
             // frmManageAccounts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(61)))), ((int)(((byte)(66)))));
-            this.ClientSize = new System.Drawing.Size(1627, 687);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.ClientSize = new System.Drawing.Size(1627, 771);
             this.Controls.Add(this.ctrlManageRecords1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmManageAccounts";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmManageAccounts";
             this.ResumeLayout(false);
 

@@ -380,7 +380,7 @@ namespace Bank_DataAccess.People
         {
             string Query = "Sp_FilterPeopleList";
             DataTable FilteredList = new DataTable();
-            string[] AllowedColumn = new string[] {"All","PersonID", "NationalNo","Gender", "FullName","Email","Phone"}; 
+            string[] AllowedColumn = new string[] {"All","ID", "NationalNo","Gender", "FullName","Email","Phone"}; 
             try
             {
                 if(!AllowedColumn.Contains(Column))

@@ -77,7 +77,16 @@ namespace BankSystem
         }
         public void __RefreshRecordsList()
         {
-            __RefreshRecordsList(_FilterRecordsDelegate?.Invoke("All", "All"));
+            StringBuilder Column = new StringBuilder();
+            StringBuilder Term = new StringBuilder();
+
+            Column.Append(cmbFilterOptions.SelectedValue);
+            if (cmbFilterByGroups.Visible)
+                Term.Append(cmbFilterByGroups.SelectedValue);
+            else
+                Term.Append(txtSearchTerm.Text.Trim());
+
+                __RefreshRecordsList(_FilterRecordsDelegate?.Invoke(Column.ToString(), Term.ToString()));
         }
         private void btnAddNew_Click(object sender, EventArgs e)
         {

@@ -2,6 +2,7 @@
 using BankSystem.Customer.Forms;
 using BankSystem.Person.Forms;
 using BankSystem.Properties;
+using BankSystem.User.Forms;
 using DVLD_BusinessLayer;
 using System;
 using System.Collections.Generic;
@@ -43,7 +44,7 @@ namespace BankSystem.Person
             Dictionary<string,string> Options = new Dictionary<string, string> 
             {
                 {"All","All"},
-                {"Person ID","PersonID" },
+                {"Person ID","ID" },
                 {"National No","NationalNo"},
                 {"Gender","Gender" },
                 {"Full Name","FullName"},
@@ -111,7 +112,7 @@ namespace BankSystem.Person
                 if (clsPerson.Delete(personId, clsGlobal.LoggedInUser.UserID))
                 {
                     MessageBox.Show($"The Person's record With id [{personId}] was deleted successfully");
-                    ctrlManageRecords1.__RefreshRecordsList(clsPerson.ListPeopleRecords());
+                    ctrlManageRecords1.__RefreshRecordsList();
                 }
                 else MessageBox.Show($"Can't Delete This Record!","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -126,22 +127,28 @@ namespace BankSystem.Person
         }
         void _ContextMenuConvertToUser(int personId, ToolStripMenuItem menuItem)
         {
-            MessageBox.Show($"Convert Person with id [{personId}] To User -> Not Implemented yet");
+            if(clsUser.ExistByPersonID(personId))
+            {
+                MessageBox.Show("This Person Is Already Declared as a User!","warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                menuItem.Enabled = false;
+                return;
+            }
+            menuItem.Enabled = true;
+            frmAddNewUser toUser = new frmAddNewUser(personId);
+            toUser.ShowDialog();
         }
         void _ContextMenuConvertToCustomer(int personId, ToolStripMenuItem menuItem)
         {
             if(clsCustomer.IsCustomerExistsByPersonID(personId))
             {
-               menuItem.Enabled = false;
+                MessageBox.Show("This Person Is Already Declared as a customer!", "warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                menuItem.Enabled = false;
                 return;
             }
             menuItem.Enabled = true;
 
             frmAddNewCustomer convertToCustomer = new frmAddNewCustomer(personId);
-            convertToCustomer.__OperatinDoneSuccessfully += () =>
-            {
-                MessageBox.Show("Person Converted To Customer Successfully");
-            };
             convertToCustomer.ShowDialog();
 
         }
