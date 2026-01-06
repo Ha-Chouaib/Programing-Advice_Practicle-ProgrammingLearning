@@ -32,7 +32,7 @@ namespace BankSystem.Accounts.UserControls
         {
             Dictionary<string, string> Options = new Dictionary<string, string>
             { 
-                { "Customer ID", "CustomerID"},
+                { "Customer ID", "ID"},
                 { "Person ID", "PersonID" }
             };
             ctrlFind1.__Initializing(Options, clsCustomer.FindBy);
@@ -42,7 +42,15 @@ namespace BankSystem.Accounts.UserControls
             };
             ctrlFind1.__ObjectFound += GetTargetCustomer;
         }
-
+        public void __AddNewAccount(int customerID)
+        {
+            ctrlFind1.__txtSearchTerm.Text = customerID.ToString();
+            ctrlFind1.__FindOptionsCombo.Text = "Customer ID";
+            ctrlFind1.Enabled = false;
+           _TargetCustomer = clsCustomer.FindCustomerByID(customerID);
+            _FillCustomerInfo();
+            
+        }
         private void GetTargetCustomer(object s, object customer)
         {
             _TargetCustomer = customer as clsCustomer;

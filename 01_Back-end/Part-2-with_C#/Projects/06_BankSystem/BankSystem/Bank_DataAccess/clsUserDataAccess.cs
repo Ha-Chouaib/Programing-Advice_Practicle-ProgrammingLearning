@@ -635,7 +635,7 @@ namespace Bank_DataAccess
         {
             string Query = "Sp_FilterUsersList";
             DataTable FilteredList = new DataTable();
-            string[] AllowedColumn = new string[] { "All", "PersonID", "UserID", "IsActive", "UserName" };
+            string[] AllowedColumn = new string[] { "All", "PersonID", "ID", "IsActive", "UserName","RoleName" };
             try
             {
                 if (!AllowedColumn.Contains(Column))

@@ -21,10 +21,20 @@ namespace BankSystem.User.Forms
             ctrlAddEditUser1.__OperationFailed += _FaildToAddUser;
             ctrlAddEditUser1.__OperationCanceld += _OperationCanceld;
         }
+        public frmAddNewUser(int PersonID)
+        {
+            InitializeComponent();
+            ctrlAddEditUser1.__AddNewUser(PersonID);
+            ctrlAddEditUser1.__OperationSucceeded += _UserAddedSuccessfully;
+            ctrlAddEditUser1.__OperationFailed += _FaildToAddUser;
+            ctrlAddEditUser1.__OperationCanceld += _OperationCanceld;
+        }
+        public Action __OperationDoneSuccessfully;
         
         private void _UserAddedSuccessfully(clsUser user)
         {
             MessageBox.Show("User Is Added Successfully");
+            __OperationDoneSuccessfully?.Invoke();
         }
         private void _FaildToAddUser()
         {

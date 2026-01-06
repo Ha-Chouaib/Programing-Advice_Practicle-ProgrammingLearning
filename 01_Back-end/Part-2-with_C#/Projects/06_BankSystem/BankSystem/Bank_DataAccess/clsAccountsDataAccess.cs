@@ -58,7 +58,7 @@ namespace Bank_DataAccess
         public static bool FindByID(int AccountID,ref int CustomerID,ref string AccountNumber,ref byte AccountType,
             ref double Balance,ref bool IsActive,ref DateTime CreatedDate,ref int CreatedByUserID)
         {
-            string Query = "dbo.GetAccountByID";
+            string Query = "dbo.Sp_GetAccountByID";
             bool found=false;
             try
             {
@@ -83,9 +83,7 @@ namespace Bank_DataAccess
                             CreatedDate = clsGlobal.SafeGet<DateTime>(rdr, "CreatedAt",DateTime.MinValue);
                             CreatedByUserID = clsGlobal.SafeGet<int>(rdr, "CreatedByUserID", -1);
 
-                            found = clsGlobal.SafeGet<bool>(rdr, "Success",false);
-                            if (!found)
-                                throw new InvalidOperationException(rdr["ErrorMSG"].ToString());
+                            found = true;
                         }
                     }
                 }
@@ -405,33 +403,86 @@ namespace Bank_DataAccess
             return success;
         }
 
-        public static int GetAccountIDByCustomerID(int CustomerID)
+        public static bool DepositWithdraw(int AccountID, double Amount)
         {
-            string Query = @" SELECT dbo.Fn_GetAccountIDByCustomerID(@CustomerID)";
-            int AccountID = -1;
+            string Query = "Sp_Trans_DepositWithdraw";
+            bool Success = false;
             try
             {
+
+
                 using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
                 using (SqlCommand cmd = new SqlCommand(Query, connection))
                 {
-                    cmd.CommandType = CommandType.Text;
-                    cmd.Parameters.AddWithValue("@CustomerID", CustomerID);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@AccountID", AccountID);
+                    cmd.Parameters.AddWithValue("@Amount", Amount);
 
                     connection.Open();
-                    object result = cmd.ExecuteScalar();
-                    if (result != null && int.TryParse(result.ToString(), out int accountID)) AccountID = accountID;
+                    using (SqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        Success = clsGlobal.SafeGet<bool>(rdr, "Success", false);
+
+                        if (!Success)
+                            throw new InvalidOperationException(clsGlobal.SafeGet<string>(rdr, "ErrorMSG", ""));
+
+                    }
                 }
             }
             catch (SqlException ex)
             {
-                clsGlobal.LogError($"[DAL: Account.GetAccountIDByCustomerID() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: Customer.DepositWithdraw() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsGlobal.LogError($"[DAL: Account.GetAccountIDByCustomerID() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: Customer.DepositWithdraw() ] -> {ex.Message}");
+
             }
-            return AccountID;
+            return Success;
+
         }
+
+        public static bool TransferMoney(int AccountFromID, int AccountToID, double Amount)
+        {
+            string Query = "Sp_TransferMoney";
+            bool Success = false;
+            try
+            {
+
+
+                using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
+                using (SqlCommand cmd = new SqlCommand(Query, connection))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@AccountFromID", AccountFromID);
+                    cmd.Parameters.AddWithValue("@AccountToID", AccountToID);
+                    cmd.Parameters.AddWithValue("@Amount", Amount);
+
+                    connection.Open();
+                    using (SqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        Success = clsGlobal.SafeGet<bool>(rdr, "Success", false);
+
+                        if (!Success)
+                            throw new InvalidOperationException(clsGlobal.SafeGet<string>(rdr, "Message", ""));
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                clsGlobal.LogError($"[DAL: Customer.TransferMoney() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                clsGlobal.LogError($"[DAL: Customer.TransferMoney() ] -> {ex.Message}");
+
+            }
+            return Success;
+        }
+
         public static bool IsActive(int AccountID)
         {
 
@@ -535,7 +586,7 @@ namespace Bank_DataAccess
         {
             string Query = "Sp_FilterAccountsList";
             DataTable FilteredList = new DataTable();
-            string[] AllowedColumn = new string[] { "All", "AccountID", "CustomerID", "IsActive", "AccountType","AccountNumber" };
+            string[] AllowedColumn = new string[] { "All", "ID", "CustomerID", "IsActive", "AccountType","AccountNumber" };
             try
             {
                 if (!AllowedColumn.Contains(Column))

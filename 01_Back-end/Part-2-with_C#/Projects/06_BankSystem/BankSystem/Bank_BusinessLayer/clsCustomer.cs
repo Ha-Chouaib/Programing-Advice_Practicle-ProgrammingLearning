@@ -176,29 +176,7 @@ namespace Bank_BusinessLayer
         {
             return clsCustomerDataAccess.HasAccountType(CustomerID, (byte)AccountType);
         }
-        public static bool DepositWithdraw(int AccountID,double Amount)
-        {
-            return clsCustomerDataAccess.DepositWithdraw(AccountID, Amount);
-        }
-        public bool DepositWithdraw(double Amount)
-        {
-            int AccountID = clsAccounts.GetAccountIDByCustomerID(this.CustomerID);
-            if(AccountID != -1)
-               return DepositWithdraw(AccountID, Amount);
-            return false;
-        }
-
-        public static bool TransferMoney(int AccountFromID, int AccountToID, double Amount)
-        {
-            return clsCustomerDataAccess.TransferMoney(AccountFromID, AccountToID, Amount);
-        }
-        public bool TransferMoney(int AccountToID, double Amount)
-        {
-            int AccountFromID = clsAccounts.GetAccountIDByCustomerID(this.CustomerID);
-            if (AccountFromID != -1)
-                return TransferMoney(AccountFromID,AccountToID, Amount);
-            return false;
-        }
+        
         public static DataTable FilterCustomers(string Column, string Term)
         {
             return clsCustomerDataAccess.FilterCustomers(Column, Term);

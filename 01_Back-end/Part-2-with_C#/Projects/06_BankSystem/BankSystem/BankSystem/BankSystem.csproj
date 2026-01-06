@@ -258,6 +258,12 @@
     <Compile Include="User\Forms\frmFindUser.Designer.cs">
       <DependentUpon>frmFindUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="User\Forms\frmManageUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\Forms\frmManageUsers.Designer.cs">
+      <DependentUpon>frmManageUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="User\UserControls\ctrlAddEditUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -385,6 +391,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User\Forms\frmFindUser.resx">
       <DependentUpon>frmFindUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\Forms\frmManageUsers.resx">
+      <DependentUpon>frmManageUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\UserControls\ctrlAddEditUser.resx">
       <DependentUpon>ctrlAddEditUser.cs</DependentUpon>
@@ -519,6 +528,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\search_11349253.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ManagePeopleImg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ManageUsersImg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\web-administrator_9390831.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\process_8257890.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-responsibility_18024872.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -30,10 +30,11 @@ namespace BankSystem.User.Forms
             ctrlAddEditUser1.__OperationCanceld += _OperationCanceld;
 
         }
-
+        public Action __OperationDoneSuccessfully;
         private void _RecordEditedSuccessfully(clsUser user)
         {
             MessageBox.Show(" Done Successfully");
+            __OperationDoneSuccessfully?.Invoke();
         }
         private void _FaildToEditUser()
         {

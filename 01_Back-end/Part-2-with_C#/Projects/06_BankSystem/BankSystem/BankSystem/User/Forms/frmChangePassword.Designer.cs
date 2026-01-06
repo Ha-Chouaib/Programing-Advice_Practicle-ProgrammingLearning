@@ -197,7 +197,9 @@
             this.Controls.Add(this.pnlEditPass);
             this.Controls.Add(this.ctrlFindUser1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmChangePassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Update User Password";
             this.pnlEditPass.ResumeLayout(false);
             this.pnlEditPass.PerformLayout();
