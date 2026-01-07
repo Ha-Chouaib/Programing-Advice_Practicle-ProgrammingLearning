@@ -42,8 +42,7 @@
             this.inactiveItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.lblAccountsCount = new System.Windows.Forms.Label();
-            this.ctrlCustomerCard1 = new BankSystem.Customer.UserControls.ctrlCustomerCard();
-            this.ctrlFind1 = new BankSystem.ctrlFind();
+            this.ctrlFindCustomer1 = new BankSystem.Customer.UserControls.ctrlFindCustomer();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerAccounts)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +58,7 @@
             this.dgvCustomerAccounts.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCustomerAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCustomerAccounts.ContextMenuStrip = this.contextMenuStrip1;
-            this.dgvCustomerAccounts.Location = new System.Drawing.Point(13, 566);
+            this.dgvCustomerAccounts.Location = new System.Drawing.Point(3, 538);
             this.dgvCustomerAccounts.Name = "dgvCustomerAccounts";
             this.dgvCustomerAccounts.ReadOnly = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -75,6 +74,7 @@
             this.dgvCustomerAccounts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCustomerAccounts.Size = new System.Drawing.Size(1025, 186);
             this.dgvCustomerAccounts.TabIndex = 2;
+            this.dgvCustomerAccounts.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCustomerAccounts_CellFormatting);
             // 
             // contextMenuStrip1
             // 
@@ -153,7 +153,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.Info;
-            this.label2.Location = new System.Drawing.Point(418, 538);
+            this.label2.Location = new System.Drawing.Point(407, 515);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(149, 20);
             this.label2.TabIndex = 3;
@@ -164,39 +164,33 @@
             this.lblAccountsCount.AutoSize = true;
             this.lblAccountsCount.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
             this.lblAccountsCount.ForeColor = System.Drawing.SystemColors.Info;
-            this.lblAccountsCount.Location = new System.Drawing.Point(573, 538);
+            this.lblAccountsCount.Location = new System.Drawing.Point(573, 515);
             this.lblAccountsCount.Name = "lblAccountsCount";
             this.lblAccountsCount.Size = new System.Drawing.Size(49, 20);
             this.lblAccountsCount.TabIndex = 4;
             this.lblAccountsCount.Text = "[N/3]";
             // 
-            // ctrlCustomerCard1
+            // ctrlFindCustomer1
             // 
-            this.ctrlCustomerCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.ctrlCustomerCard1.Location = new System.Drawing.Point(190, 49);
-            this.ctrlCustomerCard1.Name = "ctrlCustomerCard1";
-            this.ctrlCustomerCard1.Size = new System.Drawing.Size(664, 442);
-            this.ctrlCustomerCard1.TabIndex = 0;
-            // 
-            // ctrlFind1
-            // 
-            this.ctrlFind1.Location = new System.Drawing.Point(209, 3);
-            this.ctrlFind1.Name = "ctrlFind1";
-            this.ctrlFind1.Size = new System.Drawing.Size(625, 40);
-            this.ctrlFind1.TabIndex = 5;
+            this.ctrlFindCustomer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.ctrlFindCustomer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ctrlFindCustomer1.Location = new System.Drawing.Point(173, 3);
+            this.ctrlFindCustomer1.Name = "ctrlFindCustomer1";
+            this.ctrlFindCustomer1.Size = new System.Drawing.Size(676, 514);
+            this.ctrlFindCustomer1.TabIndex = 5;
             // 
             // ctrlCustomerAccounts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.Controls.Add(this.ctrlFind1);
+            this.Controls.Add(this.ctrlFindCustomer1);
             this.Controls.Add(this.lblAccountsCount);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvCustomerAccounts);
-            this.Controls.Add(this.ctrlCustomerCard1);
             this.Name = "ctrlCustomerAccounts";
-            this.Size = new System.Drawing.Size(1031, 759);
+            this.Size = new System.Drawing.Size(1031, 740);
+            this.Load += new System.EventHandler(this.ctrlCustomerAccounts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerAccounts)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -205,8 +199,6 @@
         }
 
         #endregion
-
-        private Customer.UserControls.ctrlCustomerCard ctrlCustomerCard1;
         private System.Windows.Forms.DataGridView dgvCustomerAccounts;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem viewDetailsToolStripMenuItem;
@@ -219,6 +211,6 @@
         private System.Windows.Forms.ToolStripMenuItem inactiveItem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblAccountsCount;
-        private ctrlFind ctrlFind1;
+        private Customer.UserControls.ctrlFindCustomer ctrlFindCustomer1;
     }
 }

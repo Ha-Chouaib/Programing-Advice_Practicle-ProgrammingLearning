@@ -33,8 +33,8 @@
             // 
             // ctrlAddNewAccount1
             // 
-            this.ctrlAddNewAccount1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.ctrlAddNewAccount1.Location = new System.Drawing.Point(12, 12);
+            this.ctrlAddNewAccount1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.ctrlAddNewAccount1.Location = new System.Drawing.Point(15, 12);
             this.ctrlAddNewAccount1.Name = "ctrlAddNewAccount1";
             this.ctrlAddNewAccount1.Size = new System.Drawing.Size(714, 573);
             this.ctrlAddNewAccount1.TabIndex = 0;
@@ -43,7 +43,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.ClientSize = new System.Drawing.Size(741, 597);
             this.Controls.Add(this.ctrlAddNewAccount1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;

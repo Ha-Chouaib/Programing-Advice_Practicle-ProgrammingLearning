@@ -17,6 +17,7 @@ namespace BankSystem
         public frmHomePage()
         {
             InitializeComponent();
+
         }
 
         private void frmHomePage_Load(object sender, EventArgs e)

@@ -17,11 +17,7 @@ namespace BankSystem.Accounts.UserControls
         {
             InitializeComponent();
             _InitializeFindControl();
-        }
-
-        private void ctrlAddEditAccount_Load(object sender, EventArgs e)
-        {
-
+            _LoadAccountTypes();
         }
         clsCustomer _TargetCustomer = null;
         clsAccounts _account = new clsAccounts();
@@ -32,7 +28,7 @@ namespace BankSystem.Accounts.UserControls
         {
             Dictionary<string, string> Options = new Dictionary<string, string>
             { 
-                { "Customer ID", "ID"},
+                { "Customer ID", "CustomerID"},
                 { "Person ID", "PersonID" }
             };
             ctrlFind1.__Initializing(Options, clsCustomer.FindBy);
@@ -44,16 +40,16 @@ namespace BankSystem.Accounts.UserControls
         }
         public void __AddNewAccount(int customerID)
         {
+
             ctrlFind1.__txtSearchTerm.Text = customerID.ToString();
             ctrlFind1.__FindOptionsCombo.Text = "Customer ID";
             ctrlFind1.Enabled = false;
-           _TargetCustomer = clsCustomer.FindCustomerByID(customerID);
-            _FillCustomerInfo();
-            
+            GetTargetCustomer(this,clsCustomer.FindCustomerByID(customerID));         
         }
         private void GetTargetCustomer(object s, object customer)
         {
             _TargetCustomer = customer as clsCustomer;
+            btnCancel.Text = "Cancel";
 
             _FillCustomerInfo();
         }
@@ -65,7 +61,11 @@ namespace BankSystem.Accounts.UserControls
             txtCreatedDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
             txtCreatedByUser.Text = clsGlobal.LoggedInUser.UserName;
             
-            Dictionary<string,clsAccounts.enAccountType> accountTypes = new Dictionary<string, clsAccounts.enAccountType>
+           
+        }
+        private void _LoadAccountTypes()
+        {
+            Dictionary<string, clsAccounts.enAccountType> accountTypes = new Dictionary<string, clsAccounts.enAccountType>
             {
                 { "Individual", clsAccounts.enAccountType.enIndividual },
                 { "Business", clsAccounts.enAccountType.enBusiness },
@@ -80,7 +80,7 @@ namespace BankSystem.Accounts.UserControls
         private void _GrapAccountInfo()
         {
             _account.CustomerID = _TargetCustomer.CustomerID;
-            _account.AccountType = (clsAccounts.enAccountType)((KeyValuePair<string, clsAccounts.enAccountType>)cmbAccountType.SelectedItem).Value;
+            _account.AccountType = (clsAccounts.enAccountType)cmbAccountType.SelectedValue;
             _account.Balance = 0;
             _account.IsActive = rbIsActive.Checked;
             _account.CreatedByUserID = clsGlobal.LoggedInUser.UserID;
@@ -94,13 +94,14 @@ namespace BankSystem.Accounts.UserControls
                 MessageBox.Show("Please select a customer first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if(clsCustomer.HasAccountType(_TargetCustomer.CustomerID, (clsAccounts.enAccountType)((KeyValuePair<string, clsAccounts.enAccountType>)cmbAccountType.SelectedItem).Value))
+            _GrapAccountInfo();
+            if(clsCustomer.HasAccountType(_TargetCustomer.CustomerID,_account.AccountType))
             {
                 MessageBox.Show("The selected customer already has an account of this type.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (MessageBox.Show($"The Data Will be Saved Permenently Once You Click [OK]", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel) return;
 
-            _GrapAccountInfo();
             if(_account.Save())
             {
                 txtAccountID.Text =$"[ {_account.AccountID} ]";
@@ -108,6 +109,7 @@ namespace BankSystem.Accounts.UserControls
                 txtAcountNum.Text = $"[ {_account.AccountNumber} ]";
                 txtAcountNum.ForeColor = Color.Cyan;
                 __OnOperationDone?.Invoke(_account);
+                btnCancel.Text = "Close";
                 return;
             }
             __OnOperationDone?.Invoke(null);
@@ -117,5 +119,6 @@ namespace BankSystem.Accounts.UserControls
         {
             __OnOperationaCanceled?.Invoke();
         }
+        
     }
 }

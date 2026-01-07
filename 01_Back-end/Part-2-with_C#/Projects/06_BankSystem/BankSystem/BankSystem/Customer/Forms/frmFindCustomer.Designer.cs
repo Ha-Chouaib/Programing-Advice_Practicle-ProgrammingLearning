@@ -28,26 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctrlCustomerCard1 = new BankSystem.Customer.UserControls.ctrlCustomerCard();
-            this.ctrlFind1 = new BankSystem.ctrlFind();
             this.lblFormTitle = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.ctrlFindCustomer1 = new BankSystem.Customer.UserControls.ctrlFindCustomer();
             this.SuspendLayout();
-            // 
-            // ctrlCustomerCard1
-            // 
-            this.ctrlCustomerCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.ctrlCustomerCard1.Location = new System.Drawing.Point(52, 141);
-            this.ctrlCustomerCard1.Name = "ctrlCustomerCard1";
-            this.ctrlCustomerCard1.Size = new System.Drawing.Size(664, 442);
-            this.ctrlCustomerCard1.TabIndex = 0;
-            // 
-            // ctrlFind1
-            // 
-            this.ctrlFind1.Location = new System.Drawing.Point(68, 95);
-            this.ctrlFind1.Name = "ctrlFind1";
-            this.ctrlFind1.Size = new System.Drawing.Size(625, 40);
-            this.ctrlFind1.TabIndex = 1;
             // 
             // lblFormTitle
             // 
@@ -75,16 +59,23 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // ctrlFindCustomer1
+            // 
+            this.ctrlFindCustomer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.ctrlFindCustomer1.Location = new System.Drawing.Point(34, 69);
+            this.ctrlFindCustomer1.Name = "ctrlFindCustomer1";
+            this.ctrlFindCustomer1.Size = new System.Drawing.Size(676, 514);
+            this.ctrlFindCustomer1.TabIndex = 4;
+            // 
             // frmFindCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.ClientSize = new System.Drawing.Size(759, 642);
+            this.Controls.Add(this.ctrlFindCustomer1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblFormTitle);
-            this.Controls.Add(this.ctrlFind1);
-            this.Controls.Add(this.ctrlCustomerCard1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmFindCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -95,10 +86,8 @@
         }
 
         #endregion
-
-        private UserControls.ctrlCustomerCard ctrlCustomerCard1;
-        private ctrlFind ctrlFind1;
         private System.Windows.Forms.Label lblFormTitle;
         private System.Windows.Forms.Button btnClose;
+        private UserControls.ctrlFindCustomer ctrlFindCustomer1;
     }
 }

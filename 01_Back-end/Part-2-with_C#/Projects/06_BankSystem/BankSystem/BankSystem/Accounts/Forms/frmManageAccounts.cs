@@ -220,7 +220,6 @@ namespace BankSystem.Accounts.Forms
                 if (ctrlManageRecords1.__RecordsContainer.Columns[e.ColumnIndex].Name == "AccountType" && e.Value is byte type)
                 {
                     e.Value = type == 1 ? "Individual" : type == 2 ? "Business" : "Save";
-                    e.FormattingApplied = true;
                 }
                 if (ctrlManageRecords1.__RecordsContainer.Columns[e.ColumnIndex].Name == "CreatedByUserID" && e.Value is int usr)
                 {

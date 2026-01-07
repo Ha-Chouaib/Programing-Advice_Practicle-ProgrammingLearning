@@ -33,7 +33,7 @@ namespace Bank_BusinessLayer
             AccountID = -1;
             CustomerID = -1;
             AccountNumber = string.Empty;
-            AccountType = enAccountType.enIndividual;
+            AccountType = 0;
             Balance = 0;
             IsActive = false;
             CreatedByUserID = -1;
@@ -124,7 +124,7 @@ namespace Bank_BusinessLayer
                 case enMode.enAddNew:
                     if (_AddNew())
                     {
-                        _Mode = enMode.enUpdate;
+                        //_Mode = enMode.enUpdate;
                         return true;
                     }
                     else return false;

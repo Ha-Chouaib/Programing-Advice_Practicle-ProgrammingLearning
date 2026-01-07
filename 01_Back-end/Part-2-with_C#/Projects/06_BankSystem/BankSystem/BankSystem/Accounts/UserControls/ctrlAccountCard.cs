@@ -45,7 +45,6 @@ namespace BankSystem.Accounts.UserControls
                     txtAccountType.Text = "Unknown";
                     break;
             }
-            txtAccountType.Text = _account.AccountType.ToString();
             txtBalance.Text = _account.Balance.ToString("C2");
             txtStatus.Text = _account.IsActive ? "Active" : "Inactive";
             txtCreatedDate.Text = _account.CreatedDate.ToString("yyyy-MM-dd HH:mm:ss");
