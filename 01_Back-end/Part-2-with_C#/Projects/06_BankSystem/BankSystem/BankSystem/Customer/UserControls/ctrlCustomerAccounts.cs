@@ -17,16 +17,21 @@ namespace BankSystem.Accounts.UserControls
         public ctrlCustomerAccounts()
         {
             InitializeComponent();
+           
+        }
+        public void __InitializControl()
+        {
+            ctrlFindCustomer1.__initializeFindControl();
+            ctrlFindCustomer1.__GetCustomerID += _GetCustomerID;
         }
         public void __LoadCustomerAccounts(int CustomerID)
         {
-            InitializeComponent();
+           
             if(clsCustomer.IsCustomerExistsByID(CustomerID))
             {
-                ctrlCustomerCard1.__DisplayCustomerData(clsCustomer.FindCustomerByID(CustomerID));
-                dgvCustomerAccounts.DataSource = new BindingSource(clsCustomer.GetCustomerAccounts(CustomerID), null);
-
+                ctrlFindCustomer1.__DisplayCustomerData(clsCustomer.FindCustomerByID(CustomerID));
             }
+            _GetCustomerID(CustomerID);
         }
         
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
@@ -39,12 +44,19 @@ namespace BankSystem.Accounts.UserControls
             if(selectedAccount != null)
             {
 
-                contextMenuStrip1.Items["activeItem"].Enabled = !selectedAccount.IsActive;
-                contextMenuStrip1.Items["inactiveItem"].Enabled = selectedAccount.IsActive;
+                activeItem.Enabled = !selectedAccount.IsActive;
+                inactiveItem.Enabled = selectedAccount.IsActive;
 
-                contextMenuStrip1.Items["transactionsMainItem"].Enabled = (selectedAccount.Balance > 0);
+                transferItem.Enabled = withdrawalItem.Enabled = (selectedAccount.Balance > 0);
 
-
+            }
+        }
+        private void _GetCustomerID(int CustomerID)
+        {
+           
+            if (clsCustomer.IsCustomerExistsByID(CustomerID))
+            {
+                dgvCustomerAccounts.DataSource = new BindingSource(clsCustomer.GetCustomerAccounts(CustomerID), null);
             }
         }
 
@@ -82,6 +94,26 @@ namespace BankSystem.Accounts.UserControls
         {
             if (MessageBox.Show("Are You Sure To disactivate this Accounts?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 clsAccounts.UpdateStatus((int)dgvCustomerAccounts.CurrentRow.Cells[0].Value, false);
+
+        }
+
+        private void ctrlCustomerAccounts_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvCustomerAccounts_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+          
+            if (dgvCustomerAccounts.Columns[e.ColumnIndex].Name == "AccountType" && e.Value is byte type)
+            {
+                e.Value = type == 1 ? "Individual" : type == 2 ? "Business" : "Save";
+                e.FormattingApplied = true;
+            }
+            if (dgvCustomerAccounts.Columns[e.ColumnIndex].Name == "CreatedByUserID" && e.Value is int usr)
+            {
+                e.Value = clsUser.FindUserByID(usr)?.UserName ?? "(N/A)";
+            }
 
         }
     }

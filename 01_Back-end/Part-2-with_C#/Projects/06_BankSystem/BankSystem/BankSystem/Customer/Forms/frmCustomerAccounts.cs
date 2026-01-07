@@ -15,6 +15,7 @@ namespace BankSystem.Customer.Forms
         public frmCustomerAccounts()
         {
             InitializeComponent();
+            ctrlCustomerAccounts1.__InitializControl();
         }
         public frmCustomerAccounts(int customerID)
         {

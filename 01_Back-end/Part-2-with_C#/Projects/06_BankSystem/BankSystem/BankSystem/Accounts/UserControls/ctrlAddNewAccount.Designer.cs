@@ -219,9 +219,10 @@
             // rbIsActive
             // 
             this.rbIsActive.AutoSize = true;
+            this.rbIsActive.Checked = true;
             this.rbIsActive.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbIsActive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.rbIsActive.Location = new System.Drawing.Point(598, 484);
+            this.rbIsActive.Location = new System.Drawing.Point(598, 482);
             this.rbIsActive.Name = "rbIsActive";
             this.rbIsActive.Size = new System.Drawing.Size(83, 27);
             this.rbIsActive.TabIndex = 16;
@@ -258,9 +259,9 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Cyan;
-            this.btnSave.Location = new System.Drawing.Point(378, 516);
+            this.btnSave.Location = new System.Drawing.Point(358, 516);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(78, 33);
+            this.btnSave.Size = new System.Drawing.Size(98, 33);
             this.btnSave.TabIndex = 19;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -274,7 +275,7 @@
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(235, 516);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(78, 33);
+            this.btnCancel.Size = new System.Drawing.Size(96, 33);
             this.btnCancel.TabIndex = 20;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -317,7 +318,6 @@
             this.Controls.Add(this.label1);
             this.Name = "ctrlAddNewAccount";
             this.Size = new System.Drawing.Size(714, 573);
-            this.Load += new System.EventHandler(this.ctrlAddEditAccount_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

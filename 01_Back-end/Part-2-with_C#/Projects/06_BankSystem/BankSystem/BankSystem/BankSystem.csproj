@@ -129,6 +129,12 @@
     <Compile Include="Customer\UserControls\ctrlCustomerCard.Designer.cs">
       <DependentUpon>ctrlCustomerCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer\UserControls\ctrlFindCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Customer\UserControls\ctrlFindCustomer.Designer.cs">
+      <DependentUpon>ctrlFindCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="GlobalElements\Classes\clsGlobal.cs" />
     <Compile Include="GlobalElements\UserControls\ctrlFind.cs">
       <SubType>UserControl</SubType>
@@ -215,23 +221,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SideBarMenu\clsMenuBtnModel.cs" />
-    <Compile Include="SideBarMenu\ctrlMenuBtn.cs">
+    <Compile Include="GlobalElements\UserControls\SideBarMenu\clsMenuBtnModel.cs" />
+    <Compile Include="GlobalElements\UserControls\SideBarMenu\ctrlMenuBtn.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SideBarMenu\ctrlMenuBtn.Designer.cs">
+    <Compile Include="GlobalElements\UserControls\SideBarMenu\ctrlMenuBtn.Designer.cs">
       <DependentUpon>ctrlMenuBtn.cs</DependentUpon>
     </Compile>
-    <Compile Include="SideBarMenu\ctrlSideBarMenu.cs">
+    <Compile Include="GlobalElements\UserControls\SideBarMenu\ctrlSideBarMenu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SideBarMenu\ctrlSideBarMenu.Designer.cs">
+    <Compile Include="GlobalElements\UserControls\SideBarMenu\ctrlSideBarMenu.Designer.cs">
       <DependentUpon>ctrlSideBarMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="SideBarMenu\ctrlSubMenu.cs">
+    <Compile Include="GlobalElements\UserControls\SideBarMenu\ctrlSubMenu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SideBarMenu\ctrlSubMenu.Designer.cs">
+    <Compile Include="GlobalElements\UserControls\SideBarMenu\ctrlSubMenu.Designer.cs">
       <DependentUpon>ctrlSubMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="User\Forms\frmAddNewUser.cs">
@@ -327,6 +333,9 @@
     <EmbeddedResource Include="Customer\UserControls\ctrlCustomerCard.resx">
       <DependentUpon>ctrlCustomerCard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Customer\UserControls\ctrlFindCustomer.resx">
+      <DependentUpon>ctrlFindCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GlobalElements\UserControls\ctrlFind.resx">
       <DependentUpon>ctrlFind.cs</DependentUpon>
     </EmbeddedResource>
@@ -371,13 +380,13 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="SideBarMenu\ctrlMenuBtn.resx">
+    <EmbeddedResource Include="GlobalElements\UserControls\SideBarMenu\ctrlMenuBtn.resx">
       <DependentUpon>ctrlMenuBtn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SideBarMenu\ctrlSideBarMenu.resx">
+    <EmbeddedResource Include="GlobalElements\UserControls\SideBarMenu\ctrlSideBarMenu.resx">
       <DependentUpon>ctrlSideBarMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SideBarMenu\ctrlSubMenu.resx">
+    <EmbeddedResource Include="GlobalElements\UserControls\SideBarMenu\ctrlSubMenu.resx">
       <DependentUpon>ctrlSubMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\Forms\frmAddNewUser.resx">

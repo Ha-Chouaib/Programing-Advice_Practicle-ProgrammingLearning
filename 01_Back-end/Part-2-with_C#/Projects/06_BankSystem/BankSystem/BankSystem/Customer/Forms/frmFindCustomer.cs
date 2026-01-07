@@ -16,17 +16,14 @@ namespace BankSystem.Customer.Forms
         public frmFindCustomer()
         {
             InitializeComponent();
-            ctrlFind1.__Initializing(new Dictionary<string, string>
-            { { "Customer ID", "CustomerID" }, { "Person ID", "PersonID" } },clsCustomer.FindBy);
-            ctrlFind1.__txtSearchTerm.KeyPress+=(s, e) =>{ e.Handled = (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar));};
-            ctrlFind1.__ObjectFound += _ShowData;
+            ctrlFindCustomer1.__initializeFindControl();
         }
-        private void _ShowData(object s,object obj)
+        public frmFindCustomer(int customerID)
         {
-            if (obj != null)
-                ctrlCustomerCard1.__DisplayCustomerData((clsCustomer)obj);
+            InitializeComponent();
+            ctrlFindCustomer1.__DisplayCustomerData(clsCustomer.FindCustomerByID(customerID));
         }
-
+       
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
