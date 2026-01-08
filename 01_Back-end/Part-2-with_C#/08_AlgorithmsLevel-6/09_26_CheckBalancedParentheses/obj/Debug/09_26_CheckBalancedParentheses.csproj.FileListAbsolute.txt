@@ -1,0 +1,7 @@
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_26_CheckBalancedParentheses\bin\Debug\09_26_CheckBalancedParentheses.exe.config
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_26_CheckBalancedParentheses\bin\Debug\09_26_CheckBalancedParentheses.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_26_CheckBalancedParentheses\bin\Debug\09_26_CheckBalancedParentheses.pdb
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_26_CheckBalancedParentheses\obj\Debug\09_26_CheckBalancedParentheses.csproj.AssemblyReference.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_26_CheckBalancedParentheses\obj\Debug\09_26_CheckBalancedParentheses.csproj.CoreCompileInputs.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_26_CheckBalancedParentheses\obj\Debug\09_26_CheckBalancedParentheses.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_26_CheckBalancedParentheses\obj\Debug\09_26_CheckBalancedParentheses.pdb

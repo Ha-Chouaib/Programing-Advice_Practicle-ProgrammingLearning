@@ -1,0 +1,7 @@
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_27_CheckPalindrome\bin\Debug\09_27_CheckPalindrome.exe.config
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_27_CheckPalindrome\bin\Debug\09_27_CheckPalindrome.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_27_CheckPalindrome\bin\Debug\09_27_CheckPalindrome.pdb
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_27_CheckPalindrome\obj\Debug\09_27_CheckPalindrome.csproj.AssemblyReference.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_27_CheckPalindrome\obj\Debug\09_27_CheckPalindrome.csproj.CoreCompileInputs.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_27_CheckPalindrome\obj\Debug\09_27_CheckPalindrome.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\08_AlgorithmsLevel-6\09_27_CheckPalindrome\obj\Debug\09_27_CheckPalindrome.pdb

@@ -1,0 +1,14 @@
+D:\Dropbox\Personal\Advices\2021\24 Windows Services\10 Understanding Service State Life Cycle\FullServiceState Implementation\MyFullServiceStateImplementation\obj\Debug\MyFullServiceStateImplementation.csproj.AssemblyReference.cache
+D:\Dropbox\Personal\Advices\2021\24 Windows Services\10 Understanding Service State Life Cycle\FullServiceState Implementation\MyFullServiceStateImplementation\obj\Debug\MyFullServiceStateImplementation.csproj.CoreCompileInputs.cache
+D:\Dropbox\Personal\Advices\2021\24 Windows Services\10 Understanding Service State Life Cycle\FullServiceState Implementation\MyFullServiceStateImplementation\bin\Debug\MyFullServiceStateImplementation.exe.config
+D:\Dropbox\Personal\Advices\2021\24 Windows Services\10 Understanding Service State Life Cycle\FullServiceState Implementation\MyFullServiceStateImplementation\bin\Debug\MyFullServiceStateImplementation.exe
+D:\Dropbox\Personal\Advices\2021\24 Windows Services\10 Understanding Service State Life Cycle\FullServiceState Implementation\MyFullServiceStateImplementation\bin\Debug\MyFullServiceStateImplementation.pdb
+D:\Dropbox\Personal\Advices\2021\24 Windows Services\10 Understanding Service State Life Cycle\FullServiceState Implementation\MyFullServiceStateImplementation\obj\Debug\MyFullServiceStateImplementation.exe
+D:\Dropbox\Personal\Advices\2021\24 Windows Services\10 Understanding Service State Life Cycle\FullServiceState Implementation\MyFullServiceStateImplementation\obj\Debug\MyFullServiceStateImplementation.pdb
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\09_WindowsServices\02_MyFullServiceStateImplementation\bin\Debug\MyFullServiceStateImplementation.exe.config
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\09_WindowsServices\02_MyFullServiceStateImplementation\bin\Debug\MyFullServiceStateImplementation.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\09_WindowsServices\02_MyFullServiceStateImplementation\bin\Debug\MyFullServiceStateImplementation.pdb
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\09_WindowsServices\02_MyFullServiceStateImplementation\obj\Debug\MyFullServiceStateImplementation.csproj.AssemblyReference.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\09_WindowsServices\02_MyFullServiceStateImplementation\obj\Debug\MyFullServiceStateImplementation.csproj.CoreCompileInputs.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\09_WindowsServices\02_MyFullServiceStateImplementation\obj\Debug\MyFullServiceStateImplementation.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\09_WindowsServices\02_MyFullServiceStateImplementation\obj\Debug\MyFullServiceStateImplementation.pdb
