@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BE90CDE2-65BD-42C0-A307-187852116EC7}|BankSystem_Console\\BankSystem_Console.vcxproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\BankSystem_Console.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BE90CDE2-65BD-42C0-A307-187852116EC7}|BankSystem_Console\\BankSystem_Console.vcxproj|solutionrelative:BankSystem_Console\\BankSystem_Console.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE90CDE2-65BD-42C0-A307-187852116EC7}|BankSystem_Console\\BankSystem_Console.vcxproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\UsersData.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{BE90CDE2-65BD-42C0-A307-187852116EC7}|BankSystem_Console\\BankSystem_Console.vcxproj|solutionrelative:BankSystem_Console\\UsersData.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE90CDE2-65BD-42C0-A307-187852116EC7}|BankSystem_Console\\BankSystem_Console.vcxproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsCurrencyCalculatorScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BE90CDE2-65BD-42C0-A307-187852116EC7}|BankSystem_Console\\BankSystem_Console.vcxproj|solutionrelative:BankSystem_Console\\clsCurrencyCalculatorScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BE90CDE2-65BD-42C0-A307-187852116EC7}|BankSystem_Console\\BankSystem_Console.vcxproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsCurrency.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BE90CDE2-65BD-42C0-A307-187852116EC7}|BankSystem_Console\\BankSystem_Console.vcxproj|solutionrelative:BankSystem_Console\\clsCurrency.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -13,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BE90CDE2-65BD-42C0-A307-187852116EC7}|BankSystem_Console\\BankSystem_Console.vcxproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsBankUser.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BE90CDE2-65BD-42C0-A307-187852116EC7}|BankSystem_Console\\BankSystem_Console.vcxproj|solutionrelative:BankSystem_Console\\clsBankUser.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BE90CDE2-65BD-42C0-A307-187852116EC7}|BankSystem_Console\\BankSystem_Console.vcxproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\UsersData.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{BE90CDE2-65BD-42C0-A307-187852116EC7}|BankSystem_Console\\BankSystem_Console.vcxproj|solutionrelative:BankSystem_Console\\UsersData.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BE90CDE2-65BD-42C0-A307-187852116EC7}|BankSystem_Console\\BankSystem_Console.vcxproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\ClientsData.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -45,10 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BE90CDE2-65BD-42C0-A307-187852116EC7}|BankSystem_Console\\BankSystem_Console.vcxproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsUpdateClientScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BE90CDE2-65BD-42C0-A307-187852116EC7}|BankSystem_Console\\BankSystem_Console.vcxproj|solutionrelative:BankSystem_Console\\clsUpdateClientScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BE90CDE2-65BD-42C0-A307-187852116EC7}|BankSystem_Console\\BankSystem_Console.vcxproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\BankSystem_Console.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BE90CDE2-65BD-42C0-A307-187852116EC7}|BankSystem_Console\\BankSystem_Console.vcxproj|solutionrelative:BankSystem_Console\\BankSystem_Console.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BE90CDE2-65BD-42C0-A307-187852116EC7}|BankSystem_Console\\BankSystem_Console.vcxproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsTransfersLogHistoryScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -155,10 +159,6 @@
       "RelativeMoniker": "D:0:0:{BE90CDE2-65BD-42C0-A307-187852116EC7}|BankSystem_Console\\BankSystem_Console.vcxproj|solutionrelative:BankSystem_Console\\clsCurrencyExchangeMenuScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BE90CDE2-65BD-42C0-A307-187852116EC7}|BankSystem_Console\\BankSystem_Console.vcxproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsCurrencyCalculatorScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BE90CDE2-65BD-42C0-A307-187852116EC7}|BankSystem_Console\\BankSystem_Console.vcxproj|solutionrelative:BankSystem_Console\\clsCurrencyCalculatorScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BE90CDE2-65BD-42C0-A307-187852116EC7}|BankSystem_Console\\BankSystem_Console.vcxproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsAddNewUserScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BE90CDE2-65BD-42C0-A307-187852116EC7}|BankSystem_Console\\BankSystem_Console.vcxproj|solutionrelative:BankSystem_Console\\clsAddNewUserScreen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -178,76 +178,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "clsBankUser.h",
-              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsBankUser.h",
-              "RelativeDocumentMoniker": "BankSystem_Console\\clsBankUser.h",
-              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsBankUser.h",
-              "RelativeToolTip": "BankSystem_Console\\clsBankUser.h",
-              "ViewState": "AgIAAKoBAAAAAAAAAAAAAN0AAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T15:33:06.825Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "clsPerson.h",
-              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsPerson.h",
-              "RelativeDocumentMoniker": "BankSystem_Console\\clsPerson.h",
-              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsPerson.h",
-              "RelativeToolTip": "BankSystem_Console\\clsPerson.h",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T15:34:02.313Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ClientsData.txt",
-              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\ClientsData.txt",
-              "RelativeDocumentMoniker": "BankSystem_Console\\ClientsData.txt",
-              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\ClientsData.txt",
-              "RelativeToolTip": "BankSystem_Console\\ClientsData.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2026-01-10T20:30:07.015Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "clsBankClient.h",
-              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsBankClient.h",
-              "RelativeDocumentMoniker": "BankSystem_Console\\clsBankClient.h",
-              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsBankClient.h",
-              "RelativeToolTip": "BankSystem_Console\\clsBankClient.h",
-              "ViewState": "AgIAABkAAAAAAAAAAIAwwDwAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T15:32:41.942Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "clsAddNewClientScreen.h",
-              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsAddNewClientScreen.h",
-              "RelativeDocumentMoniker": "BankSystem_Console\\clsAddNewClientScreen.h",
-              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsAddNewClientScreen.h",
-              "RelativeToolTip": "BankSystem_Console\\clsAddNewClientScreen.h",
-              "ViewState": "AgIAAAQAAAAAAAAAAIAwwCAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T15:45:00.488Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 0,
               "Title": "BankSystem_Console.cpp",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\BankSystem_Console.cpp",
               "RelativeDocumentMoniker": "BankSystem_Console\\BankSystem_Console.cpp",
@@ -260,7 +195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "clsCurrency.h",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsCurrency.h",
               "RelativeDocumentMoniker": "BankSystem_Console\\clsCurrency.h",
@@ -273,7 +208,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
+              "Title": "clsBankUser.h",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsBankUser.h",
+              "RelativeDocumentMoniker": "BankSystem_Console\\clsBankUser.h",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsBankUser.h",
+              "RelativeToolTip": "BankSystem_Console\\clsBankUser.h",
+              "ViewState": "AgIAAKoBAAAAAAAAAAAAAN0AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-10T15:33:06.825Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "UsersData.txt",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\UsersData.txt",
               "RelativeDocumentMoniker": "BankSystem_Console\\UsersData.txt",
@@ -286,7 +233,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Currencies.txt",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\Currencies.txt",
               "RelativeDocumentMoniker": "BankSystem_Console\\Currencies.txt",
@@ -294,12 +241,48 @@
               "RelativeToolTip": "BankSystem_Console\\Currencies.txt",
               "ViewState": "AgIAALYAAAAAAAAAAAAiwN0AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2026-01-10T17:39:27.817Z",
+              "WhenOpened": "2026-01-10T17:39:27.817Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "clsCurrencyCalculatorScreen.h",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsCurrencyCalculatorScreen.h",
+              "RelativeDocumentMoniker": "BankSystem_Console\\clsCurrencyCalculatorScreen.h",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsCurrencyCalculatorScreen.h",
+              "RelativeToolTip": "BankSystem_Console\\clsCurrencyCalculatorScreen.h",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAD4AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-10T16:31:15.069Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
+              "Title": "clsAddNewClientScreen.h",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsAddNewClientScreen.h",
+              "RelativeDocumentMoniker": "BankSystem_Console\\clsAddNewClientScreen.h",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsAddNewClientScreen.h",
+              "RelativeToolTip": "BankSystem_Console\\clsAddNewClientScreen.h",
+              "ViewState": "AgIAAAQAAAAAAAAAAIAwwCAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-10T15:45:00.488Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "clsBankClient.h",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsBankClient.h",
+              "RelativeDocumentMoniker": "BankSystem_Console\\clsBankClient.h",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsBankClient.h",
+              "RelativeToolTip": "BankSystem_Console\\clsBankClient.h",
+              "ViewState": "AgIAABkAAAAAAAAAAIAwwDwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-10T15:32:41.942Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "clsUtil.h",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsUtil.h",
               "RelativeDocumentMoniker": "BankSystem_Console\\clsUtil.h",
@@ -307,12 +290,35 @@
               "RelativeToolTip": "BankSystem_Console\\clsUtil.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T15:27:52.395Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T15:27:52.395Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "ClientsData.txt",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\ClientsData.txt",
+              "RelativeDocumentMoniker": "BankSystem_Console\\ClientsData.txt",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\ClientsData.txt",
+              "RelativeToolTip": "BankSystem_Console\\ClientsData.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-01-10T20:30:07.015Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "clsPerson.h",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsPerson.h",
+              "RelativeDocumentMoniker": "BankSystem_Console\\clsPerson.h",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsPerson.h",
+              "RelativeToolTip": "BankSystem_Console\\clsPerson.h",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-10T15:34:02.313Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "clsClientListScreen.h",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsClientListScreen.h",
               "RelativeDocumentMoniker": "BankSystem_Console\\clsClientListScreen.h",
@@ -320,12 +326,11 @@
               "RelativeToolTip": "BankSystem_Console\\clsClientListScreen.h",
               "ViewState": "AgIAABsAAAAAAAAAAAAAACEAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T15:45:37.235Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T15:45:37.235Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "clsUpdateClientScreen.h",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsUpdateClientScreen.h",
               "RelativeDocumentMoniker": "BankSystem_Console\\clsUpdateClientScreen.h",
@@ -333,12 +338,11 @@
               "RelativeToolTip": "BankSystem_Console\\clsUpdateClientScreen.h",
               "ViewState": "AgIAAH0AAAAAAAAAAAAgwJEAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T15:47:25.342Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T15:47:25.342Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "clsLoginHistoryScreen.h",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsLoginHistoryScreen.h",
               "RelativeDocumentMoniker": "BankSystem_Console\\clsLoginHistoryScreen.h",
@@ -346,12 +350,11 @@
               "RelativeToolTip": "BankSystem_Console\\clsLoginHistoryScreen.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T15:39:48.272Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T15:39:48.272Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "clsTransferScreen.h",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsTransferScreen.h",
               "RelativeDocumentMoniker": "BankSystem_Console\\clsTransferScreen.h",
@@ -359,12 +362,11 @@
               "RelativeToolTip": "BankSystem_Console\\clsTransferScreen.h",
               "ViewState": "AgIAAEsAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T15:42:43.633Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T15:42:43.633Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "clsLoginScreen.h",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsLoginScreen.h",
               "RelativeDocumentMoniker": "BankSystem_Console\\clsLoginScreen.h",
@@ -372,12 +374,11 @@
               "RelativeToolTip": "BankSystem_Console\\clsLoginScreen.h",
               "ViewState": "AgIAAAQAAAAAAAAAAIAwwCYAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T15:40:36.786Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T15:40:36.786Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "clsMainMenuScreen.h",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsMainMenuScreen.h",
               "RelativeDocumentMoniker": "BankSystem_Console\\clsMainMenuScreen.h",
@@ -385,12 +386,11 @@
               "RelativeToolTip": "BankSystem_Console\\clsMainMenuScreen.h",
               "ViewState": "AgIAAHMAAAAAAAAAAIAwwKIAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T15:41:02.883Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T15:41:02.883Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "clsTransfersLogHistoryScreen.h",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsTransfersLogHistoryScreen.h",
               "RelativeDocumentMoniker": "BankSystem_Console\\clsTransfersLogHistoryScreen.h",
@@ -398,12 +398,11 @@
               "RelativeToolTip": "BankSystem_Console\\clsTransfersLogHistoryScreen.h",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABoAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T15:43:45.901Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T15:43:45.901Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "clsScreen.h",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsScreen.h",
               "RelativeDocumentMoniker": "BankSystem_Console\\clsScreen.h",
@@ -411,12 +410,11 @@
               "RelativeToolTip": "BankSystem_Console\\clsScreen.h",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAAIAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T15:41:32.771Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T15:41:32.771Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "clsTransactionScreen.h",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsTransactionScreen.h",
               "RelativeDocumentMoniker": "BankSystem_Console\\clsTransactionScreen.h",
@@ -424,12 +422,11 @@
               "RelativeToolTip": "BankSystem_Console\\clsTransactionScreen.h",
               "ViewState": "AgIAAE4AAAAAAAAAAAAAAHEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T15:42:16.892Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T15:42:16.892Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Global.h",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\Global.h",
               "RelativeDocumentMoniker": "BankSystem_Console\\Global.h",
@@ -437,12 +434,11 @@
               "RelativeToolTip": "BankSystem_Console\\Global.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T15:35:00.293Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T15:35:00.293Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "TransfersLogHistory.txt",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\TransfersLogHistory.txt",
               "RelativeDocumentMoniker": "BankSystem_Console\\TransfersLogHistory.txt",
@@ -450,12 +446,11 @@
               "RelativeToolTip": "BankSystem_Console\\TransfersLogHistory.txt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2026-01-10T17:41:19.513Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T17:41:19.513Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "LoginRegister.txt",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\LoginRegister.txt",
               "RelativeDocumentMoniker": "BankSystem_Console\\LoginRegister.txt",
@@ -463,12 +458,11 @@
               "RelativeToolTip": "BankSystem_Console\\LoginRegister.txt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2026-01-10T17:39:55.636Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T17:39:55.636Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "clsString.h",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsString.h",
               "RelativeDocumentMoniker": "BankSystem_Console\\clsString.h",
@@ -476,12 +470,11 @@
               "RelativeToolTip": "BankSystem_Console\\clsString.h",
               "ViewState": "AgIAALAAAAAAAAAAAAAgwMQAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T15:27:25.296Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T15:27:25.296Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "clsDate.h",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsDate.h",
               "RelativeDocumentMoniker": "BankSystem_Console\\clsDate.h",
@@ -489,12 +482,11 @@
               "RelativeToolTip": "BankSystem_Console\\clsDate.h",
               "ViewState": "AgIAAF8AAAAAAAAAAAAgwHIAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T15:26:00.704Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T15:26:00.704Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "clsWithdrawScreen.h",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsWithdrawScreen.h",
               "RelativeDocumentMoniker": "BankSystem_Console\\clsWithdrawScreen.h",
@@ -502,12 +494,11 @@
               "RelativeToolTip": "BankSystem_Console\\clsWithdrawScreen.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T16:57:46.874Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T16:57:46.874Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "clsDepositScreen.h",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsDepositScreen.h",
               "RelativeDocumentMoniker": "BankSystem_Console\\clsDepositScreen.h",
@@ -515,12 +506,11 @@
               "RelativeToolTip": "BankSystem_Console\\clsDepositScreen.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T15:46:22.735Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T15:46:22.735Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "clsListUserScreen.h",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsListUserScreen.h",
               "RelativeDocumentMoniker": "BankSystem_Console\\clsListUserScreen.h",
@@ -528,12 +518,11 @@
               "RelativeToolTip": "BankSystem_Console\\clsListUserScreen.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T16:36:41.2Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T16:36:41.2Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "clsDeleteClientScreen.h",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsDeleteClientScreen.h",
               "RelativeDocumentMoniker": "BankSystem_Console\\clsDeleteClientScreen.h",
@@ -541,12 +530,11 @@
               "RelativeToolTip": "BankSystem_Console\\clsDeleteClientScreen.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T15:46:01.156Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T15:46:01.156Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "clsListCurrenciesScreen.h",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsListCurrenciesScreen.h",
               "RelativeDocumentMoniker": "BankSystem_Console\\clsListCurrenciesScreen.h",
@@ -554,12 +542,11 @@
               "RelativeToolTip": "BankSystem_Console\\clsListCurrenciesScreen.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T16:32:20.645Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T16:32:20.645Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "clsTotalBalanceScreen.h",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsTotalBalanceScreen.h",
               "RelativeDocumentMoniker": "BankSystem_Console\\clsTotalBalanceScreen.h",
@@ -567,12 +554,11 @@
               "RelativeToolTip": "BankSystem_Console\\clsTotalBalanceScreen.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T15:47:01.894Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T15:47:01.894Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "clsUpdateUserScreen.h",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsUpdateUserScreen.h",
               "RelativeDocumentMoniker": "BankSystem_Console\\clsUpdateUserScreen.h",
@@ -580,12 +566,11 @@
               "RelativeToolTip": "BankSystem_Console\\clsUpdateUserScreen.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T16:37:18.524Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T16:37:18.524Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "clsUpdateCurrencyScreen.h",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsUpdateCurrencyScreen.h",
               "RelativeDocumentMoniker": "BankSystem_Console\\clsUpdateCurrencyScreen.h",
@@ -593,12 +578,11 @@
               "RelativeToolTip": "BankSystem_Console\\clsUpdateCurrencyScreen.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T16:32:37.531Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T16:32:37.531Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "clsManageUsersScreen.h",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsManageUsersScreen.h",
               "RelativeDocumentMoniker": "BankSystem_Console\\clsManageUsersScreen.h",
@@ -606,12 +590,11 @@
               "RelativeToolTip": "BankSystem_Console\\clsManageUsersScreen.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T16:37:03.643Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T16:37:03.643Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "clsFindUserScreen.h",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsFindUserScreen.h",
               "RelativeDocumentMoniker": "BankSystem_Console\\clsFindUserScreen.h",
@@ -619,12 +602,11 @@
               "RelativeToolTip": "BankSystem_Console\\clsFindUserScreen.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T16:36:25.968Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T16:36:25.968Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "clsFindCurrencyScreen.h",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsFindCurrencyScreen.h",
               "RelativeDocumentMoniker": "BankSystem_Console\\clsFindCurrencyScreen.h",
@@ -632,12 +614,11 @@
               "RelativeToolTip": "BankSystem_Console\\clsFindCurrencyScreen.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T16:32:01.337Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T16:32:01.337Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "clsFindClientScreen.h",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsFindClientScreen.h",
               "RelativeDocumentMoniker": "BankSystem_Console\\clsFindClientScreen.h",
@@ -645,12 +626,11 @@
               "RelativeToolTip": "BankSystem_Console\\clsFindClientScreen.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T15:46:44.386Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T15:46:44.386Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "clsDeleteUserScreen.h",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsDeleteUserScreen.h",
               "RelativeDocumentMoniker": "BankSystem_Console\\clsDeleteUserScreen.h",
@@ -658,12 +638,11 @@
               "RelativeToolTip": "BankSystem_Console\\clsDeleteUserScreen.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T16:36:07.515Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T16:36:07.515Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "clsCurrencyExchangeMenuScreen.h",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsCurrencyExchangeMenuScreen.h",
               "RelativeDocumentMoniker": "BankSystem_Console\\clsCurrencyExchangeMenuScreen.h",
@@ -671,21 +650,7 @@
               "RelativeToolTip": "BankSystem_Console\\clsCurrencyExchangeMenuScreen.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T16:31:36.931Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "clsCurrencyCalculatorScreen.h",
-              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsCurrencyCalculatorScreen.h",
-              "RelativeDocumentMoniker": "BankSystem_Console\\clsCurrencyCalculatorScreen.h",
-              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-1-with_Cpp\\Projects\\04_OOP_Projects\\BankSystem_Console\\BankSystem_Console\\clsCurrencyCalculatorScreen.h",
-              "RelativeToolTip": "BankSystem_Console\\clsCurrencyCalculatorScreen.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T16:31:15.069Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T16:31:36.931Z"
             },
             {
               "$type": "Document",
@@ -697,8 +662,7 @@
               "RelativeToolTip": "BankSystem_Console\\clsAddNewUserScreen.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T16:35:49.962Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T16:35:49.962Z"
             },
             {
               "$type": "Document",
@@ -710,8 +674,7 @@
               "RelativeToolTip": "BankSystem_Console\\clsPeriod.h",
               "ViewState": "AgIAADAAAAAAAAAAAAAwwFkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T15:27:01.713Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T15:27:01.713Z"
             },
             {
               "$type": "Document",
@@ -723,8 +686,7 @@
               "RelativeToolTip": "BankSystem_Console\\clsInputValidate.h",
               "ViewState": "AgIAADIAAAAAAAAAAAAwwGIAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-10T15:26:40.295Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-10T15:26:40.295Z"
             }
           ]
         }

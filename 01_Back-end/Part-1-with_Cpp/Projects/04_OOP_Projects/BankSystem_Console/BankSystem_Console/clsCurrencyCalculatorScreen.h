@@ -58,11 +58,11 @@ public:
             cout << "\n\t\t....................\n";
 
             float Amount = 0;
-            do
-            {
-                Amount = clsInputValidate<float>::ReadPositiveNumber("Enter Amount To Exchange?");
+            /*do
+            {*/
+             Amount = clsInputValidate<float>::ReadPositiveNumber("Enter Amount To Exchange?");
 
-            } while (clsUtil::AreYouSure("Do You Change This Amount? (Y/N)"));
+            //} while (clsUtil::AreYouSure("Do You Change This Amount? (Y/N)"));
 
             cout << "\n\t.........Convert [TO].........\n";
             clsCurrency ToCurrency = _GetCureny();
