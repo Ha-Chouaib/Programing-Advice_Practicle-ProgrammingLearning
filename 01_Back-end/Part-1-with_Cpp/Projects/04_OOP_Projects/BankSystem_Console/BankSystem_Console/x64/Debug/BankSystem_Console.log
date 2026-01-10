@@ -1,0 +1,26 @@
+﻿  BankSystem_Console.cpp
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-1-with_Cpp\Projects\04_OOP_Projects\BankSystem_Console\BankSystem_Console\clsString.h(42,30): warning C4267: 'return': conversion from 'size_t' to 'unsigned short', possible loss of data
+  (compiling source file 'BankSystem_Console.cpp')
+  
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-1-with_Cpp\Projects\04_OOP_Projects\BankSystem_Console\BankSystem_Console\clsString.h(232,35): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
+  (compiling source file 'BankSystem_Console.cpp')
+  
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-1-with_Cpp\Projects\04_OOP_Projects\BankSystem_Console\BankSystem_Console\clsString.h(257,35): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
+  (compiling source file 'BankSystem_Console.cpp')
+  
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-1-with_Cpp\Projects\04_OOP_Projects\BankSystem_Console\BankSystem_Console\clsString.h(386,24): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'BankSystem_Console.cpp')
+  
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-1-with_Cpp\Projects\04_OOP_Projects\BankSystem_Console\BankSystem_Console\clsUtil.h(282,21): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  (compiling source file 'BankSystem_Console.cpp')
+  
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-1-with_Cpp\Projects\04_OOP_Projects\BankSystem_Console\BankSystem_Console\clsUtil.h(428,13): warning C4101: 'temp': unreferenced local variable
+  (compiling source file 'BankSystem_Console.cpp')
+  
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-1-with_Cpp\Projects\04_OOP_Projects\BankSystem_Console\BankSystem_Console\clsBankUser.h(49,168): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  (compiling source file 'BankSystem_Console.cpp')
+  
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-1-with_Cpp\Projects\04_OOP_Projects\BankSystem_Console\BankSystem_Console\clsTotalBalanceScreen.h(46,72): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  (compiling source file 'BankSystem_Console.cpp')
+  
+  BankSystem_Console.vcxproj -> C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-1-with_Cpp\Projects\04_OOP_Projects\BankSystem_Console\x64\Debug\BankSystem_Console.exe
