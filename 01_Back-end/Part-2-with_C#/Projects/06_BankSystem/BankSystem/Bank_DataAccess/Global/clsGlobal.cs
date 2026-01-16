@@ -21,7 +21,7 @@ namespace Bank_DataAccess
         {
             EventLog.WriteEntry(DataAccessSettings.EventLogSourceName, message, EventLogEntryType.Information);
         }
-        public static T SafeGet<T>(SqlDataReader reader, string column, T defaultValue)
+        public static T DB_SafeGet<T>(SqlDataReader reader, string column, T defaultValue)
         {
             if (reader[column] == DBNull.Value)
                 return defaultValue;

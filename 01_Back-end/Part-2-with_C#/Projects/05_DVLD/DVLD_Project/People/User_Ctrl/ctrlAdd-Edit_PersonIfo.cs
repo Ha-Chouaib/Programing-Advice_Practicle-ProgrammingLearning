@@ -23,7 +23,6 @@ namespace DVLD_Project
 
         enum enMode { eAddNew,eUpdate}
         enMode _Mode;
-        bool _IsValide = true;
         private void ctrlAdd_Edit_PersonIfo_Load(object sender, EventArgs e)
         {
             _LoadCountriesToComboBox();
@@ -182,19 +181,15 @@ namespace DVLD_Project
         }
 
         
-        private bool _TriggerValidations()
-        {
-            clsGlobal.ActivateContainerControlsOneByOne(this,typeof(TextBox));
-           
-            return _IsValide;
-        }
+       
         private void btnSave_Click(object sender, EventArgs e)
         {
-           
-            if (!_TriggerValidations())
+
+            clsGlobal.ActivateContainerControlsOneByOne(pnlContainer, typeof(TextBox));
+            if (pnlContainer.Controls.OfType<Panel>().Any(P => P.Controls.OfType<TextBox>().Any(t => !string.IsNullOrEmpty(errProv.GetError(t)))))
             {
                 MessageBox.Show("You must Fill All Required Fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                _IsValide = true;
+
                 return;
             }
            
@@ -232,7 +227,6 @@ namespace DVLD_Project
             if (txtB.Text == string.Empty)
             {
                 errProv.SetError(txtB, "This Field Is required!");
-                _IsValide = false;
             }
             else
             {
@@ -247,7 +241,6 @@ namespace DVLD_Project
             if ((txtNationalNo.Text == string.Empty) || ( clsPeople.IsExist(txtNationalNo.Text.Trim()) && txtNationalNo.Text.Trim() != Person.NationalNo))
             {
                 errProv.SetError(txtNationalNo, "The Filed Should Not Be Empty// The Current National No May Already Exist !");
-                _IsValide = false;
             }
             else
             {
@@ -262,7 +255,6 @@ namespace DVLD_Project
                 if (!txtEmail.Text.EndsWith(".com") || !txtEmail.Text.Contains("@") || txtEmail.Text.EndsWith("@.com"))
                 {
                     errProv.SetError(txtEmail, "Email Format Must be Like: example@example.com");
-                _IsValide = false;
                 }
                 else
                 {

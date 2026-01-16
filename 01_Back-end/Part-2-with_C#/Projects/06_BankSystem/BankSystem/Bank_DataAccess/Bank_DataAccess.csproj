@@ -47,7 +47,7 @@
     <Compile Include="clsAccountsDataAccess.cs" />
     <Compile Include="clsCountriesDataAccess.cs" />
     <Compile Include="clsCustomerDataAccess.cs" />
-    <Compile Include="clsReportsDataAccess.cs" />
+    <Compile Include="Reports_DAL\clsTransactionsReport_DAL.cs" />
     <Compile Include="clsRolesDataAccess.cs" />
     <Compile Include="clsUserDataAccess.cs" />
     <Compile Include="Global\clsGlobal.cs" />
@@ -55,6 +55,14 @@
     <Compile Include="clsPersonDataAccess.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports_DAL\CustomerReports_DAL\clsAccountActivityReports_DAL.cs" />
+    <Compile Include="Reports_DAL\CustomerReports_DAL\clsBalanceStatementReports_DAL.cs" />
+    <Compile Include="Reports_DAL\CustomerReports_DAL\clsCustomerReportsType_DAL.cs" />
+    <Compile Include="Reports_DAL\clsSystemLogs_DAL.cs" />
+    <Compile Include="Reports_DAL\clsUserActivityReports_DAL.cs" />
+    <Compile Include="Reports_DAL\CustomerReports_DAL\clsCustomerReports_Main_DAL.cs" />
+    <Compile Include="Reports_DAL\CustomerReports_DAL\clsCustomerSummaryReportsDAL.cs" />
+    <Compile Include="Reports_DAL\CustomerReports_DAL\clsDormantAccountsReports_DAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

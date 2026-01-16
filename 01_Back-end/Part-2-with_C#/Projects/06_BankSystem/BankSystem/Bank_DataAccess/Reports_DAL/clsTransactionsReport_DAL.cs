@@ -36,9 +36,9 @@ namespace Bank_DataAccess
 
                     using (SqlDataReader rdr = cmd.ExecuteReader())
                     {
-                        ID = clsGlobal.SafeGet<int>(rdr, "TransactionID", -1);
+                        ID = clsGlobal.DB_SafeGet<int>(rdr, "TransactionID", -1);
                         if (ID == -1)
-                            throw new InvalidOperationException(clsGlobal.SafeGet(rdr, "ErrorMSG", ""));
+                            throw new InvalidOperationException(clsGlobal.DB_SafeGet(rdr, "ErrorMSG", ""));
                     }
 
                 }

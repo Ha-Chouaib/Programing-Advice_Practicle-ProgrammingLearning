@@ -99,6 +99,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_26_CheckBalancedParenthe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_27_CheckPalindrome", "09_27_CheckPalindrome\09_27_CheckPalindrome.csproj", "{8958930B-6667-4880-BDF2-B311A58D3802}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_28_EvaluatePostfixExpression", "09_28_EvaluatePostfixExpression\09_28_EvaluatePostfixExpression.csproj", "{6F9F69B2-32AE-4997-B40D-1ED0B9F2274B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -261,6 +263,10 @@ Global
 		{8958930B-6667-4880-BDF2-B311A58D3802}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8958930B-6667-4880-BDF2-B311A58D3802}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8958930B-6667-4880-BDF2-B311A58D3802}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F9F69B2-32AE-4997-B40D-1ED0B9F2274B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F9F69B2-32AE-4997-B40D-1ED0B9F2274B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F9F69B2-32AE-4997-B40D-1ED0B9F2274B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F9F69B2-32AE-4997-B40D-1ED0B9F2274B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -305,6 +311,7 @@ Global
 		{751AFAD9-E678-4C93-A7F7-FC0395B374D4} = {2AEB58D9-7CCE-4260-AAC3-1AB296CDEE3C}
 		{156D6938-8A7D-44C5-A55F-634F691A7E1B} = {2AEB58D9-7CCE-4260-AAC3-1AB296CDEE3C}
 		{8958930B-6667-4880-BDF2-B311A58D3802} = {2AEB58D9-7CCE-4260-AAC3-1AB296CDEE3C}
+		{6F9F69B2-32AE-4997-B40D-1ED0B9F2274B} = {2AEB58D9-7CCE-4260-AAC3-1AB296CDEE3C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9C33A5C4-4CC2-49D6-8B08-E3DD981DB651}
