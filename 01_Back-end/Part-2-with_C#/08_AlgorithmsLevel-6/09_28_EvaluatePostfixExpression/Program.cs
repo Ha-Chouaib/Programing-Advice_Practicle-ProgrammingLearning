@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,43 +10,69 @@ namespace _09_28_EvaluatePostfixExpression
 {
     internal class Program
     {   
-        static bool isDigit(char c)
-        {
-            return c >= '0' && c <= '9';
-        }
-        static int PostFixValue(string input)
+       
+        static int GetPostFixValue(string input)
         {
             Stack<int> stack = new Stack<int>();
-            int resutl = 0;
+
             foreach (char c in input)
             {
-                if (isDigit(c)) stack.Push(c);
-                if (stack.Count > 0)
+                if (char.IsDigit(c))
                 {
-                    switch(c)
+                    stack.Push(c - '0');
+                }
+                else
+                {
+
+
+                    int value2 = stack.Pop();
+                    int value1 = stack.Pop();
+
+                    switch (c)
                     {
                         case '+':
-                            resutl = stack.Pop();
-                            stack.Push(resutl + resutl);
+                            stack.Push((value1 + value2));
                             break;
                         case '-':
-                            resutl = stack.Pop();
+                            stack.Push((value1 - value2));
                             break;
                         case '*':
-                            resutl = stack.Pop();
+                            stack.Push((value1 * value2));
                             break;
                         case '/':
-                            resutl = stack.Pop();
+                            stack.Push((value1 / value2));
                             break;
 
                     }
                 }
-
             }
-            return resutl;
+            //foreach (char c in expression)
+            //{
+            //    if (char.IsDigit(c))
+            //    {
+            //        stack.Push(c - '0');
+            //    }
+            //    else
+            //    {
+            //        int b = stack.Pop();
+            //        int a = stack.Pop();
+            //        switch (c)
+            //        {
+            //            case '+': stack.Push(a + b); break;
+            //            case '-': stack.Push(a - b); break;
+            //            case '*': stack.Push(a * b); break;
+            //            case '/': stack.Push(a / b); break;
+            //        }
+            //    }
+            //}
+
+            return stack.Pop();
         }
         static void Main(string[] args)
         {
+            string input = "231*+9-";
+            Console.WriteLine($"input: {input}");
+            Console.WriteLine($"Postfix result: {GetPostFixValue(input)}");
         }
     }
 }
