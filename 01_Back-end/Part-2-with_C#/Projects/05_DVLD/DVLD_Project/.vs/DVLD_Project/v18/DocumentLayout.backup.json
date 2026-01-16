@@ -3,12 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\projects\\05_dvld\\dvld_project\\license\\forms\\frmmanageinternationallicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\projects\\05_dvld\\dvld_project\\applications\\detain release license app\\frmmanagedetainedlicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\detain release license app\\frmmanagedetainedlicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\license\\forms\\frmmanageinternationallicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:license\\forms\\frmmanageinternationallicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\people\\user_ctrl\\ctrladd-edit_personifo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:people\\user_ctrl\\ctrladd-edit_personifo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\applications\\localdrivinglicensemanagment\\frmaddnewlocaldrivinglicense_app.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\localdrivinglicensemanagment\\frmaddnewlocaldrivinglicense_app.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\applications\\localdrivinglicensemanagment\\frmaddnewlocaldrivinglicense_app.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\localdrivinglicensemanagment\\frmaddnewlocaldrivinglicense_app.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\users\\forms\\frmadd_edituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:users\\forms\\frmadd_edituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\users\\forms\\frmadd_edituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:users\\forms\\frmadd_edituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\people\\user_ctrl\\ctrladd-edit_personifo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:people\\user_ctrl\\ctrladd-edit_personifo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\applications\\localdrivinglicensemanagment\\frmlocaldrivinglicenseapps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\localdrivinglicensemanagment\\frmlocaldrivinglicenseapps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\applications\\localdrivinglicensemanagment\\frmlocaldrivinglicenseapps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\localdrivinglicensemanagment\\frmlocaldrivinglicenseapps.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\license\\forms\\frmmanageinternationallicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:license\\forms\\frmmanageinternationallicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\license\\forms\\frmdisplaylocallicenseinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:license\\forms\\frmdisplaylocallicenseinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\applications\\frmdisplayapplicationdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\frmdisplayapplicationdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\users\\forms\\frmmanageusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,10 +71,6 @@
       "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:people\\forms\\frmmanagepeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\people\\user_ctrl\\ctrladd-edit_personifo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:people\\user_ctrl\\ctrladd-edit_personifo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\people\\user_ctrl\\ctrlpersondetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:people\\user_ctrl\\ctrlpersondetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -41,10 +81,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\people\\forms\\frmpersondetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:people\\forms\\frmpersondetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\people\\user_ctrl\\ctrladd-edit_personifo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:people\\user_ctrl\\ctrladd-edit_personifo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -59,19 +95,89 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "frmManageDetainedLicenses.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Applications\\Detain Release License App\\frmManageDetainedLicenses.cs",
+              "RelativeDocumentMoniker": "Applications\\Detain Release License App\\frmManageDetainedLicenses.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Applications\\Detain Release License App\\frmManageDetainedLicenses.cs",
+              "RelativeToolTip": "Applications\\Detain Release License App\\frmManageDetainedLicenses.cs",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAAAKYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T16:55:24.744Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmAdd_EditUser.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Users\\Forms\\frmAdd_EditUser.cs",
+              "RelativeDocumentMoniker": "Users\\Forms\\frmAdd_EditUser.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Users\\Forms\\frmAdd_EditUser.cs [Design]",
+              "RelativeToolTip": "Users\\Forms\\frmAdd_EditUser.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T16:29:07.89Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmAdd_EditUser.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Users\\Forms\\frmAdd_EditUser.cs",
+              "RelativeDocumentMoniker": "Users\\Forms\\frmAdd_EditUser.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Users\\Forms\\frmAdd_EditUser.cs",
+              "RelativeToolTip": "Users\\Forms\\frmAdd_EditUser.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwBEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T16:27:11.193Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmAddNewLocalDrivingLicense_App.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Applications\\LocalDrivingLicenseManagment\\frmAddNewLocalDrivingLicense_App.cs",
+              "RelativeDocumentMoniker": "Applications\\LocalDrivingLicenseManagment\\frmAddNewLocalDrivingLicense_App.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Applications\\LocalDrivingLicenseManagment\\frmAddNewLocalDrivingLicense_App.cs [Design]",
+              "RelativeToolTip": "Applications\\LocalDrivingLicenseManagment\\frmAddNewLocalDrivingLicense_App.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T07:58:19.5Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "frmManageInternationalLicenses.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\License\\Forms\\frmManageInternationalLicenses.cs",
               "RelativeDocumentMoniker": "License\\Forms\\frmManageInternationalLicenses.cs",
               "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\License\\Forms\\frmManageInternationalLicenses.cs",
               "RelativeToolTip": "License\\Forms\\frmManageInternationalLicenses.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAwBMAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T19:12:56.032Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T19:12:56.032Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "ctrlAdd-Edit_PersonIfo.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\People\\User_Ctrl\\ctrlAdd-Edit_PersonIfo.cs",
+              "RelativeDocumentMoniker": "People\\User_Ctrl\\ctrlAdd-Edit_PersonIfo.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\People\\User_Ctrl\\ctrlAdd-Edit_PersonIfo.cs",
+              "RelativeToolTip": "People\\User_Ctrl\\ctrlAdd-Edit_PersonIfo.cs",
+              "ViewState": "AgIAADIBAAAAAAAAAAAiwAABAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-16T19:00:06.793Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmAddNewLocalDrivingLicense_App.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Applications\\LocalDrivingLicenseManagment\\frmAddNewLocalDrivingLicense_App.cs",
+              "RelativeDocumentMoniker": "Applications\\LocalDrivingLicenseManagment\\frmAddNewLocalDrivingLicense_App.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Applications\\LocalDrivingLicenseManagment\\frmAddNewLocalDrivingLicense_App.cs",
+              "RelativeToolTip": "Applications\\LocalDrivingLicenseManagment\\frmAddNewLocalDrivingLicense_App.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T16:31:39.494Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "frmManageInternationalLicenses.cs [Design]",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\License\\Forms\\frmManageInternationalLicenses.cs",
               "RelativeDocumentMoniker": "License\\Forms\\frmManageInternationalLicenses.cs",
@@ -82,7 +188,63 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
+              "Title": "frmLocalDrivingLicenseApps.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Applications\\LocalDrivingLicenseManagment\\frmLocalDrivingLicenseApps.cs",
+              "RelativeDocumentMoniker": "Applications\\LocalDrivingLicenseManagment\\frmLocalDrivingLicenseApps.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Applications\\LocalDrivingLicenseManagment\\frmLocalDrivingLicenseApps.cs",
+              "RelativeToolTip": "Applications\\LocalDrivingLicenseManagment\\frmLocalDrivingLicenseApps.cs",
+              "ViewState": "AgIAAIkAAAAAAAAAAAApwI8AAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T08:00:05.457Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ctrlAdd-Edit_PersonIfo.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\People\\User_Ctrl\\ctrlAdd-Edit_PersonIfo.cs",
+              "RelativeDocumentMoniker": "People\\User_Ctrl\\ctrlAdd-Edit_PersonIfo.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\People\\User_Ctrl\\ctrlAdd-Edit_PersonIfo.cs [Design]",
+              "RelativeToolTip": "People\\User_Ctrl\\ctrlAdd-Edit_PersonIfo.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-16T19:00:02.452Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "frmDisplayApplicationDetails.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Applications\\frmDisplayApplicationDetails.cs",
+              "RelativeDocumentMoniker": "Applications\\frmDisplayApplicationDetails.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Applications\\frmDisplayApplicationDetails.cs [Design]",
+              "RelativeToolTip": "Applications\\frmDisplayApplicationDetails.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T07:57:48.327Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "frmDisplayLocalLicenseInfo.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\License\\Forms\\frmDisplayLocalLicenseInfo.cs",
+              "RelativeDocumentMoniker": "License\\Forms\\frmDisplayLocalLicenseInfo.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\License\\Forms\\frmDisplayLocalLicenseInfo.cs [Design]",
+              "RelativeToolTip": "License\\Forms\\frmDisplayLocalLicenseInfo.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T07:58:50.866Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "frmLocalDrivingLicenseApps.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Applications\\LocalDrivingLicenseManagment\\frmLocalDrivingLicenseApps.cs",
+              "RelativeDocumentMoniker": "Applications\\LocalDrivingLicenseManagment\\frmLocalDrivingLicenseApps.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Applications\\LocalDrivingLicenseManagment\\frmLocalDrivingLicenseApps.cs [Design]",
+              "RelativeToolTip": "Applications\\LocalDrivingLicenseManagment\\frmLocalDrivingLicenseApps.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T08:00:00.941Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "frmManageUsers.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Users\\Forms\\frmManageUsers.cs",
               "RelativeDocumentMoniker": "Users\\Forms\\frmManageUsers.cs",
@@ -94,7 +256,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 14,
               "Title": "frmManageUsers.cs [Design]",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Users\\Forms\\frmManageUsers.cs",
               "RelativeDocumentMoniker": "Users\\Forms\\frmManageUsers.cs",
@@ -105,7 +267,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 17,
               "Title": "ctrlPersonDetails.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\People\\User_Ctrl\\ctrlPersonDetails.cs",
               "RelativeDocumentMoniker": "People\\User_Ctrl\\ctrlPersonDetails.cs",
@@ -117,7 +279,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 18,
               "Title": "ctrlPersonDetails.cs [Design]",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\People\\User_Ctrl\\ctrlPersonDetails.cs",
               "RelativeDocumentMoniker": "People\\User_Ctrl\\ctrlPersonDetails.cs",
@@ -128,7 +290,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 19,
               "Title": "frmPersonDetails.cs [Design]",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\People\\Forms\\frmPersonDetails.cs",
               "RelativeDocumentMoniker": "People\\Forms\\frmPersonDetails.cs",
@@ -139,7 +301,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 15,
               "Title": "frmManagePeople.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\People\\Forms\\frmManagePeople.cs",
               "RelativeDocumentMoniker": "People\\Forms\\frmManagePeople.cs",
@@ -151,7 +313,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 16,
               "Title": "frmManagePeople.cs [Design]",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\People\\Forms\\frmManagePeople.cs",
               "RelativeDocumentMoniker": "People\\Forms\\frmManagePeople.cs",
@@ -159,29 +321,6 @@
               "RelativeToolTip": "People\\Forms\\frmManagePeople.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-16T19:38:12.994Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ctrlAdd-Edit_PersonIfo.cs",
-              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\People\\User_Ctrl\\ctrlAdd-Edit_PersonIfo.cs",
-              "RelativeDocumentMoniker": "People\\User_Ctrl\\ctrlAdd-Edit_PersonIfo.cs",
-              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\People\\User_Ctrl\\ctrlAdd-Edit_PersonIfo.cs",
-              "RelativeToolTip": "People\\User_Ctrl\\ctrlAdd-Edit_PersonIfo.cs",
-              "ViewState": "AgIAAAcBAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T19:00:06.793Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ctrlAdd-Edit_PersonIfo.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\People\\User_Ctrl\\ctrlAdd-Edit_PersonIfo.cs",
-              "RelativeDocumentMoniker": "People\\User_Ctrl\\ctrlAdd-Edit_PersonIfo.cs",
-              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\People\\User_Ctrl\\ctrlAdd-Edit_PersonIfo.cs [Design]",
-              "RelativeToolTip": "People\\User_Ctrl\\ctrlAdd-Edit_PersonIfo.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T19:00:02.452Z"
             }
           ]
         }

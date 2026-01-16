@@ -3,8 +3,76 @@
   "WorkspaceRootPath": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A0A08617-91A6-4FF9-A1E4-14867027E3FC}|BankSystem\\BankSystem.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\projects\\06_banksystem\\banksystem\\banksystem\\globalelements\\forms\\frmhomepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{50BB233E-6BDC-4BD6-86D4-2184C1DE1690}|Bank_DataAccess\\Bank_DataAccess.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\projects\\06_banksystem\\banksystem\\bank_dataaccess\\reports_dal\\customerreports_dal\\clscustomersummaryreportsdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50BB233E-6BDC-4BD6-86D4-2184C1DE1690}|Bank_DataAccess\\Bank_DataAccess.csproj|solutionrelative:bank_dataaccess\\reports_dal\\customerreports_dal\\clscustomersummaryreportsdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50BB233E-6BDC-4BD6-86D4-2184C1DE1690}|Bank_DataAccess\\Bank_DataAccess.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\bank_dataaccess\\reports_dal\\customerreports_dal\\clscustomerreportstype_dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50BB233E-6BDC-4BD6-86D4-2184C1DE1690}|Bank_DataAccess\\Bank_DataAccess.csproj|solutionrelative:bank_dataaccess\\reports_dal\\customerreports_dal\\clscustomerreportstype_dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50BB233E-6BDC-4BD6-86D4-2184C1DE1690}|Bank_DataAccess\\Bank_DataAccess.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\bank_dataaccess\\reports_dal\\customerreports_dal\\clsdormantaccountsreports_dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50BB233E-6BDC-4BD6-86D4-2184C1DE1690}|Bank_DataAccess\\Bank_DataAccess.csproj|solutionrelative:bank_dataaccess\\reports_dal\\customerreports_dal\\clsdormantaccountsreports_dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50BB233E-6BDC-4BD6-86D4-2184C1DE1690}|Bank_DataAccess\\Bank_DataAccess.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\bank_dataaccess\\reports_dal\\customerreports_dal\\clscustomerreports_main_dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50BB233E-6BDC-4BD6-86D4-2184C1DE1690}|Bank_DataAccess\\Bank_DataAccess.csproj|solutionrelative:bank_dataaccess\\reports_dal\\customerreports_dal\\clscustomerreports_main_dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50BB233E-6BDC-4BD6-86D4-2184C1DE1690}|Bank_DataAccess\\Bank_DataAccess.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\bank_dataaccess\\reports_dal\\customerreports_dal\\clsbalancestatementreports_dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50BB233E-6BDC-4BD6-86D4-2184C1DE1690}|Bank_DataAccess\\Bank_DataAccess.csproj|solutionrelative:bank_dataaccess\\reports_dal\\customerreports_dal\\clsbalancestatementreports_dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50BB233E-6BDC-4BD6-86D4-2184C1DE1690}|Bank_DataAccess\\Bank_DataAccess.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\bank_dataaccess\\reports_dal\\customerreports_dal\\clsaccountactivityreports_dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50BB233E-6BDC-4BD6-86D4-2184C1DE1690}|Bank_DataAccess\\Bank_DataAccess.csproj|solutionrelative:bank_dataaccess\\reports_dal\\customerreports_dal\\clsaccountactivityreports_dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E92AE6C-E6D8-491F-A22F-EA3BFB1AE6E3}|Bank_BusinessLayer\\Bank_BusinessLayer.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\bank_businesslayer\\reports\\customerreports\\clsaccountactivityreports.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E92AE6C-E6D8-491F-A22F-EA3BFB1AE6E3}|Bank_BusinessLayer\\Bank_BusinessLayer.csproj|solutionrelative:bank_businesslayer\\reports\\customerreports\\clsaccountactivityreports.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E92AE6C-E6D8-491F-A22F-EA3BFB1AE6E3}|Bank_BusinessLayer\\Bank_BusinessLayer.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\bank_businesslayer\\reports\\customerreports\\clsdormantaccountsreports.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E92AE6C-E6D8-491F-A22F-EA3BFB1AE6E3}|Bank_BusinessLayer\\Bank_BusinessLayer.csproj|solutionrelative:bank_businesslayer\\reports\\customerreports\\clsdormantaccountsreports.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E92AE6C-E6D8-491F-A22F-EA3BFB1AE6E3}|Bank_BusinessLayer\\Bank_BusinessLayer.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\bank_businesslayer\\reports\\customerreports\\clscustomersummaryreports.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E92AE6C-E6D8-491F-A22F-EA3BFB1AE6E3}|Bank_BusinessLayer\\Bank_BusinessLayer.csproj|solutionrelative:bank_businesslayer\\reports\\customerreports\\clscustomersummaryreports.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E92AE6C-E6D8-491F-A22F-EA3BFB1AE6E3}|Bank_BusinessLayer\\Bank_BusinessLayer.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\bank_businesslayer\\reports\\customerreports\\clscustomerreportstype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E92AE6C-E6D8-491F-A22F-EA3BFB1AE6E3}|Bank_BusinessLayer\\Bank_BusinessLayer.csproj|solutionrelative:bank_businesslayer\\reports\\customerreports\\clscustomerreportstype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E92AE6C-E6D8-491F-A22F-EA3BFB1AE6E3}|Bank_BusinessLayer\\Bank_BusinessLayer.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\bank_businesslayer\\reports\\customerreports\\clsbalancestatementreports.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E92AE6C-E6D8-491F-A22F-EA3BFB1AE6E3}|Bank_BusinessLayer\\Bank_BusinessLayer.csproj|solutionrelative:bank_businesslayer\\reports\\customerreports\\clsbalancestatementreports.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E92AE6C-E6D8-491F-A22F-EA3BFB1AE6E3}|Bank_BusinessLayer\\Bank_BusinessLayer.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\bank_businesslayer\\reports\\customerreports\\clscustomerreports_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E92AE6C-E6D8-491F-A22F-EA3BFB1AE6E3}|Bank_BusinessLayer\\Bank_BusinessLayer.csproj|solutionrelative:bank_businesslayer\\reports\\customerreports\\clscustomerreports_main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E92AE6C-E6D8-491F-A22F-EA3BFB1AE6E3}|Bank_BusinessLayer\\Bank_BusinessLayer.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\bank_businesslayer\\reports\\clstransactionsreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E92AE6C-E6D8-491F-A22F-EA3BFB1AE6E3}|Bank_BusinessLayer\\Bank_BusinessLayer.csproj|solutionrelative:bank_businesslayer\\reports\\clstransactionsreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E92AE6C-E6D8-491F-A22F-EA3BFB1AE6E3}|Bank_BusinessLayer\\Bank_BusinessLayer.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\bank_businesslayer\\reports\\clssystemlogs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E92AE6C-E6D8-491F-A22F-EA3BFB1AE6E3}|Bank_BusinessLayer\\Bank_BusinessLayer.csproj|solutionrelative:bank_businesslayer\\reports\\clssystemlogs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E92AE6C-E6D8-491F-A22F-EA3BFB1AE6E3}|Bank_BusinessLayer\\Bank_BusinessLayer.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\bank_businesslayer\\reports\\clsaudituseractions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E92AE6C-E6D8-491F-A22F-EA3BFB1AE6E3}|Bank_BusinessLayer\\Bank_BusinessLayer.csproj|solutionrelative:bank_businesslayer\\reports\\clsaudituseractions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50BB233E-6BDC-4BD6-86D4-2184C1DE1690}|Bank_DataAccess\\Bank_DataAccess.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\bank_dataaccess\\reports_dal\\clsuseractivityreports_dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50BB233E-6BDC-4BD6-86D4-2184C1DE1690}|Bank_DataAccess\\Bank_DataAccess.csproj|solutionrelative:bank_dataaccess\\reports_dal\\clsuseractivityreports_dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0A08617-91A6-4FF9-A1E4-14867027E3FC}|BankSystem\\BankSystem.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\banksystem\\globalelements\\forms\\frmhomepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A0A08617-91A6-4FF9-A1E4-14867027E3FC}|BankSystem\\BankSystem.csproj|solutionrelative:banksystem\\globalelements\\forms\\frmhomepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50BB233E-6BDC-4BD6-86D4-2184C1DE1690}|Bank_DataAccess\\Bank_DataAccess.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\bank_dataaccess\\reports_dal\\clssystemlogs_dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50BB233E-6BDC-4BD6-86D4-2184C1DE1690}|Bank_DataAccess\\Bank_DataAccess.csproj|solutionrelative:bank_dataaccess\\reports_dal\\clssystemlogs_dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A0A08617-91A6-4FF9-A1E4-14867027E3FC}|BankSystem\\BankSystem.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\banksystem\\globalelements\\forms\\frmhomepage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -18,32 +86,237 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmHomePage.cs",
-              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\GlobalElements\\Forms\\frmHomePage.cs",
-              "RelativeDocumentMoniker": "BankSystem\\GlobalElements\\Forms\\frmHomePage.cs",
-              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\GlobalElements\\Forms\\frmHomePage.cs",
-              "RelativeToolTip": "BankSystem\\GlobalElements\\Forms\\frmHomePage.cs",
-              "ViewState": "AgIAAFkAAAAAAAAAAAAgwGEAAAArAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "clsDormantAccountsReports_DAL.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_DataAccess\\Reports_DAL\\CustomerReports_DAL\\clsDormantAccountsReports_DAL.cs",
+              "RelativeDocumentMoniker": "Bank_DataAccess\\Reports_DAL\\CustomerReports_DAL\\clsDormantAccountsReports_DAL.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_DataAccess\\Reports_DAL\\CustomerReports_DAL\\clsDormantAccountsReports_DAL.cs",
+              "RelativeToolTip": "Bank_DataAccess\\Reports_DAL\\CustomerReports_DAL\\clsDormantAccountsReports_DAL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-08T07:02:39.675Z",
+              "WhenOpened": "2026-01-14T12:02:22.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "clsCustomerSummaryReportsDAL.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_DataAccess\\Reports_DAL\\CustomerReports_DAL\\clsCustomerSummaryReportsDAL.cs",
+              "RelativeDocumentMoniker": "Bank_DataAccess\\Reports_DAL\\CustomerReports_DAL\\clsCustomerSummaryReportsDAL.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_DataAccess\\Reports_DAL\\CustomerReports_DAL\\clsCustomerSummaryReportsDAL.cs",
+              "RelativeToolTip": "Bank_DataAccess\\Reports_DAL\\CustomerReports_DAL\\clsCustomerSummaryReportsDAL.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAgwJwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T12:01:59.929Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "clsCustomerReportsType_DAL.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_DataAccess\\Reports_DAL\\CustomerReports_DAL\\clsCustomerReportsType_DAL.cs",
+              "RelativeDocumentMoniker": "Bank_DataAccess\\Reports_DAL\\CustomerReports_DAL\\clsCustomerReportsType_DAL.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_DataAccess\\Reports_DAL\\CustomerReports_DAL\\clsCustomerReportsType_DAL.cs",
+              "RelativeToolTip": "Bank_DataAccess\\Reports_DAL\\CustomerReports_DAL\\clsCustomerReportsType_DAL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T12:01:37.81Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "clsCustomerReports_Main_DAL.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_DataAccess\\Reports_DAL\\CustomerReports_DAL\\clsCustomerReports_Main_DAL.cs",
+              "RelativeDocumentMoniker": "Bank_DataAccess\\Reports_DAL\\CustomerReports_DAL\\clsCustomerReports_Main_DAL.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_DataAccess\\Reports_DAL\\CustomerReports_DAL\\clsCustomerReports_Main_DAL.cs",
+              "RelativeToolTip": "Bank_DataAccess\\Reports_DAL\\CustomerReports_DAL\\clsCustomerReports_Main_DAL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T12:01:22.669Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "clsBalanceStatementReports_DAL.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_DataAccess\\Reports_DAL\\CustomerReports_DAL\\clsBalanceStatementReports_DAL.cs",
+              "RelativeDocumentMoniker": "Bank_DataAccess\\Reports_DAL\\CustomerReports_DAL\\clsBalanceStatementReports_DAL.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_DataAccess\\Reports_DAL\\CustomerReports_DAL\\clsBalanceStatementReports_DAL.cs",
+              "RelativeToolTip": "Bank_DataAccess\\Reports_DAL\\CustomerReports_DAL\\clsBalanceStatementReports_DAL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T12:01:11.031Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "clsAccountActivityReports_DAL.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_DataAccess\\Reports_DAL\\CustomerReports_DAL\\clsAccountActivityReports_DAL.cs",
+              "RelativeDocumentMoniker": "Bank_DataAccess\\Reports_DAL\\CustomerReports_DAL\\clsAccountActivityReports_DAL.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_DataAccess\\Reports_DAL\\CustomerReports_DAL\\clsAccountActivityReports_DAL.cs",
+              "RelativeToolTip": "Bank_DataAccess\\Reports_DAL\\CustomerReports_DAL\\clsAccountActivityReports_DAL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T12:00:54.035Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "clsDormantAccountsReports.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_BusinessLayer\\Reports\\CustomerReports\\clsDormantAccountsReports.cs",
+              "RelativeDocumentMoniker": "Bank_BusinessLayer\\Reports\\CustomerReports\\clsDormantAccountsReports.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_BusinessLayer\\Reports\\CustomerReports\\clsDormantAccountsReports.cs",
+              "RelativeToolTip": "Bank_BusinessLayer\\Reports\\CustomerReports\\clsDormantAccountsReports.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T11:57:07.838Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "clsCustomerSummaryReports.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_BusinessLayer\\Reports\\CustomerReports\\clsCustomerSummaryReports.cs",
+              "RelativeDocumentMoniker": "Bank_BusinessLayer\\Reports\\CustomerReports\\clsCustomerSummaryReports.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_BusinessLayer\\Reports\\CustomerReports\\clsCustomerSummaryReports.cs",
+              "RelativeToolTip": "Bank_BusinessLayer\\Reports\\CustomerReports\\clsCustomerSummaryReports.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T11:56:15.177Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "clsCustomerReportsType.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_BusinessLayer\\Reports\\CustomerReports\\clsCustomerReportsType.cs",
+              "RelativeDocumentMoniker": "Bank_BusinessLayer\\Reports\\CustomerReports\\clsCustomerReportsType.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_BusinessLayer\\Reports\\CustomerReports\\clsCustomerReportsType.cs",
+              "RelativeToolTip": "Bank_BusinessLayer\\Reports\\CustomerReports\\clsCustomerReportsType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T11:55:28.285Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "clsBalanceStatementReports.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_BusinessLayer\\Reports\\CustomerReports\\clsBalanceStatementReports.cs",
+              "RelativeDocumentMoniker": "Bank_BusinessLayer\\Reports\\CustomerReports\\clsBalanceStatementReports.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_BusinessLayer\\Reports\\CustomerReports\\clsBalanceStatementReports.cs",
+              "RelativeToolTip": "Bank_BusinessLayer\\Reports\\CustomerReports\\clsBalanceStatementReports.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T11:54:36.313Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "clsAccountActivityReports.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_BusinessLayer\\Reports\\CustomerReports\\clsAccountActivityReports.cs",
+              "RelativeDocumentMoniker": "Bank_BusinessLayer\\Reports\\CustomerReports\\clsAccountActivityReports.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_BusinessLayer\\Reports\\CustomerReports\\clsAccountActivityReports.cs",
+              "RelativeToolTip": "Bank_BusinessLayer\\Reports\\CustomerReports\\clsAccountActivityReports.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T11:53:37.331Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "clsCustomerReports_Main.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_BusinessLayer\\Reports\\CustomerReports\\clsCustomerReports_Main.cs",
+              "RelativeDocumentMoniker": "Bank_BusinessLayer\\Reports\\CustomerReports\\clsCustomerReports_Main.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_BusinessLayer\\Reports\\CustomerReports\\clsCustomerReports_Main.cs",
+              "RelativeToolTip": "Bank_BusinessLayer\\Reports\\CustomerReports\\clsCustomerReports_Main.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T11:51:23.454Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "clsTransactionsReport.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_BusinessLayer\\Reports\\clsTransactionsReport.cs",
+              "RelativeDocumentMoniker": "Bank_BusinessLayer\\Reports\\clsTransactionsReport.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_BusinessLayer\\Reports\\clsTransactionsReport.cs",
+              "RelativeToolTip": "Bank_BusinessLayer\\Reports\\clsTransactionsReport.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T11:49:56.725Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "clsSystemLogs.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_BusinessLayer\\Reports\\clsSystemLogs.cs",
+              "RelativeDocumentMoniker": "Bank_BusinessLayer\\Reports\\clsSystemLogs.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_BusinessLayer\\Reports\\clsSystemLogs.cs",
+              "RelativeToolTip": "Bank_BusinessLayer\\Reports\\clsSystemLogs.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T11:49:02.147Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "clsAuditUserActions.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_BusinessLayer\\Reports\\clsAuditUserActions.cs",
+              "RelativeDocumentMoniker": "Bank_BusinessLayer\\Reports\\clsAuditUserActions.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_BusinessLayer\\Reports\\clsAuditUserActions.cs",
+              "RelativeToolTip": "Bank_BusinessLayer\\Reports\\clsAuditUserActions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T11:46:24.166Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "clsSystemLogs_DAL.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_DataAccess\\Reports_DAL\\clsSystemLogs_DAL.cs",
+              "RelativeDocumentMoniker": "Bank_DataAccess\\Reports_DAL\\clsSystemLogs_DAL.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_DataAccess\\Reports_DAL\\clsSystemLogs_DAL.cs",
+              "RelativeToolTip": "Bank_DataAccess\\Reports_DAL\\clsSystemLogs_DAL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T11:03:43.195Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "clsUserActivityReports_DAL.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_DataAccess\\Reports_DAL\\clsUserActivityReports_DAL.cs",
+              "RelativeDocumentMoniker": "Bank_DataAccess\\Reports_DAL\\clsUserActivityReports_DAL.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_DataAccess\\Reports_DAL\\clsUserActivityReports_DAL.cs",
+              "RelativeToolTip": "Bank_DataAccess\\Reports_DAL\\clsUserActivityReports_DAL.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAHYAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T11:03:17.431Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "frmHomePage.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\GlobalElements\\Forms\\frmHomePage.cs",
+              "RelativeDocumentMoniker": "BankSystem\\GlobalElements\\Forms\\frmHomePage.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\GlobalElements\\Forms\\frmHomePage.cs",
+              "RelativeToolTip": "BankSystem\\GlobalElements\\Forms\\frmHomePage.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAAAJEAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-08T07:02:39.675Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "frmHomePage.cs [Design]",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\GlobalElements\\Forms\\frmHomePage.cs",
               "RelativeDocumentMoniker": "BankSystem\\GlobalElements\\Forms\\frmHomePage.cs",
               "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\GlobalElements\\Forms\\frmHomePage.cs [Design]",
               "RelativeToolTip": "BankSystem\\GlobalElements\\Forms\\frmHomePage.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-16T17:27:57.252Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-12-16T17:27:57.252Z"
             }
           ]
         }

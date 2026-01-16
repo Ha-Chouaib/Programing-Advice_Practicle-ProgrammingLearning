@@ -181,7 +181,6 @@ C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-en
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\05_DVLD\DVLD_Project\bin\Debug\DVLD_BusinessLayer.pdb
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\05_DVLD\DVLD_Project\bin\Debug\DVLD_DataAccessLayer.pdb
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\05_DVLD\DVLD_Project\obj\Debug\DVLD_PresentationLayer.csproj.AssemblyReference.cache
-C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\05_DVLD\DVLD_Project\obj\Debug\DVLD_Project.exe.config
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\05_DVLD\DVLD_Project\obj\Debug\DVLD_Project.Applications.ApplicationTypes.frmEditApplicationType.resources
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\05_DVLD\DVLD_Project\obj\Debug\DVLD_Project.Applications.ApplicationTypes.frmManageApplicationTypes.resources
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\05_DVLD\DVLD_Project\obj\Debug\DVLD_Project.Applications.Detain_License_App.frmDetainLicense.resources

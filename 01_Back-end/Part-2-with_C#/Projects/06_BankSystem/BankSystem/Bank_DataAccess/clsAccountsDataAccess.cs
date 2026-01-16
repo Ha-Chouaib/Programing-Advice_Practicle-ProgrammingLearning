@@ -35,8 +35,8 @@ namespace Bank_DataAccess
                     {
                         if (rdr.Read())
                         {
-                            AccountID = clsGlobal.SafeGet<int>(rdr, "AccountID",-1);
-                            AccountNumber = clsGlobal.SafeGet<string>(rdr, "AccountNumber", "");
+                            AccountID = clsGlobal.DB_SafeGet<int>(rdr, "AccountID",-1);
+                            AccountNumber = clsGlobal.DB_SafeGet<string>(rdr, "AccountNumber", "");
                             if (AccountID == -1)
                                 throw new InvalidOperationException(rdr["ErrorMSG"].ToString());
                         }
@@ -75,13 +75,13 @@ namespace Bank_DataAccess
                         {
                            
 
-                            CustomerID = clsGlobal.SafeGet<int>(rdr, "CustomerID", -1);
-                            AccountNumber = clsGlobal.SafeGet<string>(rdr, "AccountNumber",string.Empty);
-                            AccountType = clsGlobal.SafeGet<byte>(rdr, "AccountType",0);
-                            Balance = clsGlobal.SafeGet<double>(rdr, "Balance",0);
-                            IsActive = clsGlobal.SafeGet<bool>(rdr, "IsActive",false);
-                            CreatedDate = clsGlobal.SafeGet<DateTime>(rdr, "CreatedAt",DateTime.MinValue);
-                            CreatedByUserID = clsGlobal.SafeGet<int>(rdr, "CreatedByUserID", -1);
+                            CustomerID = clsGlobal.DB_SafeGet<int>(rdr, "CustomerID", -1);
+                            AccountNumber = clsGlobal.DB_SafeGet<string>(rdr, "AccountNumber",string.Empty);
+                            AccountType = clsGlobal.DB_SafeGet<byte>(rdr, "AccountType",0);
+                            Balance = clsGlobal.DB_SafeGet<double>(rdr, "Balance",0);
+                            IsActive = clsGlobal.DB_SafeGet<bool>(rdr, "IsActive",false);
+                            CreatedDate = clsGlobal.DB_SafeGet<DateTime>(rdr, "CreatedAt",DateTime.MinValue);
+                            CreatedByUserID = clsGlobal.DB_SafeGet<int>(rdr, "CreatedByUserID", -1);
 
                             found = true;
                         }
@@ -120,15 +120,15 @@ namespace Bank_DataAccess
                         {
                            
 
-                            CustomerID = clsGlobal.SafeGet<int>(rdr, "CustomerID", -1);
-                            AccountID = clsGlobal.SafeGet<int>(rdr, "AccountID", -1);
-                            AccountType = clsGlobal.SafeGet<byte>(rdr, "AccountType", 0);
-                            Balance = clsGlobal.SafeGet<double>(rdr, "Balance", 0);
-                            IsActive = clsGlobal.SafeGet<bool>(rdr, "IsActive", false);
-                            CreatedDate = clsGlobal.SafeGet<DateTime>(rdr, "CreatedAt",DateTime.MinValue);
-                            CreatedByUserID = clsGlobal.SafeGet<int>(rdr, "CreatedByUserID", -1);
+                            CustomerID = clsGlobal.DB_SafeGet<int>(rdr, "CustomerID", -1);
+                            AccountID = clsGlobal.DB_SafeGet<int>(rdr, "AccountID", -1);
+                            AccountType = clsGlobal.DB_SafeGet<byte>(rdr, "AccountType", 0);
+                            Balance = clsGlobal.DB_SafeGet<double>(rdr, "Balance", 0);
+                            IsActive = clsGlobal.DB_SafeGet<bool>(rdr, "IsActive", false);
+                            CreatedDate = clsGlobal.DB_SafeGet<DateTime>(rdr, "CreatedAt",DateTime.MinValue);
+                            CreatedByUserID = clsGlobal.DB_SafeGet<int>(rdr, "CreatedByUserID", -1);
 
-                            found = clsGlobal.SafeGet<bool>(rdr, "Success", false);
+                            found = clsGlobal.DB_SafeGet<bool>(rdr, "Success", false);
                             if (!found)
                                 throw new InvalidOperationException(rdr["ErrorMSG"].ToString());
                         }
@@ -256,7 +256,7 @@ namespace Bank_DataAccess
                     {
                         if (reader.Read())
                         {
-                            success = clsGlobal.SafeGet<bool>(reader, "Success",false);
+                            success = clsGlobal.DB_SafeGet<bool>(reader, "Success",false);
 
                             if (!success) throw new InvalidOperationException(reader["ErrorMSG"].ToString());
                         }
@@ -298,7 +298,7 @@ namespace Bank_DataAccess
                     {
                         if (reader.Read())
                         {
-                            success = clsGlobal.SafeGet<bool>(reader, "Success", false);
+                            success = clsGlobal.DB_SafeGet<bool>(reader, "Success", false);
 
                             if (!success) throw new InvalidOperationException(reader["ErrorMSG"].ToString());
                         }
@@ -340,7 +340,7 @@ namespace Bank_DataAccess
                     {
                         if (reader.Read())
                         {
-                            success = clsGlobal.SafeGet<bool>(reader, "Success", false);
+                            success = clsGlobal.DB_SafeGet<bool>(reader, "Success", false);
 
                             if (!success) throw new InvalidOperationException(reader["ErrorMSG"].ToString());
                         }
@@ -382,7 +382,7 @@ namespace Bank_DataAccess
                     {
                         if (reader.Read())
                         {
-                            success =clsGlobal.SafeGet<bool>(reader,"Success", false);
+                            success =clsGlobal.DB_SafeGet<bool>(reader,"Success", false);
 
                             if (!success) throw new InvalidOperationException(reader["ErrorMSG"].ToString());
                         }
@@ -422,10 +422,10 @@ namespace Bank_DataAccess
                     connection.Open();
                     using (SqlDataReader rdr = cmd.ExecuteReader())
                     {
-                        Success = clsGlobal.SafeGet<bool>(rdr, "Success", false);
+                        Success = clsGlobal.DB_SafeGet<bool>(rdr, "Success", false);
 
                         if (!Success)
-                            throw new InvalidOperationException(clsGlobal.SafeGet<string>(rdr, "ErrorMSG", ""));
+                            throw new InvalidOperationException(clsGlobal.DB_SafeGet<string>(rdr, "ErrorMSG", ""));
 
                     }
                 }
@@ -463,10 +463,10 @@ namespace Bank_DataAccess
                     connection.Open();
                     using (SqlDataReader rdr = cmd.ExecuteReader())
                     {
-                        Success = clsGlobal.SafeGet<bool>(rdr, "Success", false);
+                        Success = clsGlobal.DB_SafeGet<bool>(rdr, "Success", false);
 
                         if (!Success)
-                            throw new InvalidOperationException(clsGlobal.SafeGet<string>(rdr, "Message", ""));
+                            throw new InvalidOperationException(clsGlobal.DB_SafeGet<string>(rdr, "Message", ""));
 
                     }
                 }

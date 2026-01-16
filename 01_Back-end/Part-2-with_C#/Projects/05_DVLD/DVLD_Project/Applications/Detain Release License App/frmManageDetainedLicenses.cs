@@ -64,10 +64,11 @@ namespace DVLD_Project.Applications.Detain_Release_License_App
             lblRecords.Text = "<< " + dgvListDetainedLicenses.RowCount.ToString() + " >>";
 
         }
-        Dictionary<string, string> dicFilterOptions = new Dictionary<string, string>();
 
         private void _LoadFilterOptions()
         {
+            Dictionary<string, string> dicFilterOptions = new Dictionary<string, string>();
+
 
             dicFilterOptions.Add("None", "None");
             dicFilterOptions.Add("DetainID", "Detain ID");
@@ -163,8 +164,7 @@ namespace DVLD_Project.Applications.Detain_Release_License_App
         private void cmbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
         {
             string FilterOption = cmbFilterBy.SelectedValue.ToString();
-            if(! dicFilterOptions.ContainsKey(FilterOption)) return;
-          
+           
             if(FilterOption == " None")
             {
                 dgvListDetainedLicenses.DataSource = clsDetainLicenses.ListAll();

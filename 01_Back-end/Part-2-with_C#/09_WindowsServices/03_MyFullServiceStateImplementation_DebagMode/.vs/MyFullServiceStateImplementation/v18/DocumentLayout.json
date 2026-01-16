@@ -1,17 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\03_MyFullServiceStateImplementation - With Debug Mode In Console\\",
+  "WorkspaceRootPath": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\03_MyFullServiceStateImplementation_DebagMode\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{43B35921-3BFA-488F-8436-2C4DCDBF6D22}|MyFullServiceStateImplementation.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\03_MyFullServiceStateImplementation - With Debug Mode In Console\\myfullservicestateimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43B35921-3BFA-488F-8436-2C4DCDBF6D22}|MyFullServiceStateImplementation.csproj|solutionrelative:myfullservicestateimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43B35921-3BFA-488F-8436-2C4DCDBF6D22}|MyFullServiceStateImplementation.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\09_windowsservices\\03_myfullservicestateimplementation - with debug mode in console\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{43B35921-3BFA-488F-8436-2C4DCDBF6D22}|MyFullServiceStateImplementation.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\03_MyFullServiceStateImplementation_DebagMode\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{43B35921-3BFA-488F-8436-2C4DCDBF6D22}|MyFullServiceStateImplementation.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{43B35921-3BFA-488F-8436-2C4DCDBF6D22}|MyFullServiceStateImplementation.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\09_windowsservices\\03_myfullservicestateimplementation - with debug mode in console\\projectinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{43B35921-3BFA-488F-8436-2C4DCDBF6D22}|MyFullServiceStateImplementation.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\09_windowsservices\\03_myfullservicestateimplementation_debagmode\\myfullservicestateimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43B35921-3BFA-488F-8436-2C4DCDBF6D22}|MyFullServiceStateImplementation.csproj|solutionrelative:myfullservicestateimplementation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43B35921-3BFA-488F-8436-2C4DCDBF6D22}|MyFullServiceStateImplementation.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\03_MyFullServiceStateImplementation_DebagMode\\projectinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{43B35921-3BFA-488F-8436-2C4DCDBF6D22}|MyFullServiceStateImplementation.csproj|solutionrelative:projectinstaller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -22,43 +22,42 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "ProjectInstaller.cs",
-              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\03_MyFullServiceStateImplementation - With Debug Mode In Console\\ProjectInstaller.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\03_MyFullServiceStateImplementation_DebagMode\\ProjectInstaller.cs",
               "RelativeDocumentMoniker": "ProjectInstaller.cs",
-              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\03_MyFullServiceStateImplementation - With Debug Mode In Console\\ProjectInstaller.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\03_MyFullServiceStateImplementation_DebagMode\\ProjectInstaller.cs",
               "RelativeToolTip": "ProjectInstaller.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAAwAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-08T10:29:39.053Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-08T10:29:39.053Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\03_MyFullServiceStateImplementation - With Debug Mode In Console\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\03_MyFullServiceStateImplementation_DebagMode\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\03_MyFullServiceStateImplementation - With Debug Mode In Console\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\03_MyFullServiceStateImplementation_DebagMode\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAswB8AAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAswC0AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-08T10:28:54.237Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MyFullServiceStateImplementation.cs",
-              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\03_MyFullServiceStateImplementation - With Debug Mode In Console\\MyFullServiceStateImplementation.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\03_MyFullServiceStateImplementation_DebagMode\\MyFullServiceStateImplementation.cs",
               "RelativeDocumentMoniker": "MyFullServiceStateImplementation.cs",
-              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\03_MyFullServiceStateImplementation - With Debug Mode In Console\\MyFullServiceStateImplementation.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\03_MyFullServiceStateImplementation_DebagMode\\MyFullServiceStateImplementation.cs",
               "RelativeToolTip": "MyFullServiceStateImplementation.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAEwEcAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAswGsAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-08T10:28:54.334Z",
               "EditorCaption": ""

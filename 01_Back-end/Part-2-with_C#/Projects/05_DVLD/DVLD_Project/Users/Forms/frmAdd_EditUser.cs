@@ -16,7 +16,6 @@ namespace DVLD_Project.Users.Forms
         public enum enMode { eAddNewUser,eUpdateUser}
         enMode _Mode;
 
-        bool _IsValide = true;
         int _PersonID =-1;
         int _UserID;
         clsUsers User;
@@ -60,7 +59,6 @@ namespace DVLD_Project.Users.Forms
             if (txtUserName.Text == string.Empty)
             {
                 errorProv.SetError(txtUserName, "Required Field!");
-                _IsValide = false;
             }
             else
             {
@@ -75,7 +73,6 @@ namespace DVLD_Project.Users.Forms
             if (txtPass.Text == string.Empty || txtPass.Text.Trim() != txtPassword.Text.Trim())
             {
                 errorProv.SetError(txtPass, "Required Field! || Invalid Confirmation!!");
-                _IsValide = false;
             }
             else
             {
@@ -186,17 +183,14 @@ namespace DVLD_Project.Users.Forms
             _NextBtnValidation();
         }
 
-        private bool TriggerValidations()
-        {
-            clsGlobal.ActivateContainerControlsOneByOne(pnlUserData, typeof(TextBox));
-            return _IsValide;
-        }
+       
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!TriggerValidations())
+            clsGlobal.ActivateContainerControlsOneByOne(pnlUserData, typeof(TextBox));
+            if (pnlUserData.Controls.OfType<Panel>().Any(t => !string.IsNullOrEmpty(errorProv.GetError(t))))
             {
                 MessageBox.Show("You must Fill All Required Fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                _IsValide = true;
+
                 return;
             }
 

@@ -17,12 +17,13 @@ namespace DVLD_Project.License.Forms
         public frmManageInternationalLicenses()
         {
             InitializeComponent();
+            _LoadFilterOptions();
         }
         
         private void frmManageInternationalLicenses_Load(object sender, EventArgs e)
         {
             _LoadInternationalLicensesList();
-            _LoadFilterOptions();
+
         }
 
         private void _LoadInternationalLicensesList()
