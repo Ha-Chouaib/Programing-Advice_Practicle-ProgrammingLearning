@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Box Model Demo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    .container {
+      display: flex;
+      flex-wrap: nowrap;
+      background: #fff;
+      padding: 10px;
+      border: 2px dashed #ccc;
+    }
+    .box1, .box2, .box3 {
+      width: 100px;               
+      margin: 10px;               
+      padding: 20px;              
+      border: 5px solid;          
+      text-align: center;
+      line-height: 1.2;
+      box-sizing: content-box;    
+    }
+    .box1 {
+      border-color: steelblue;
+      background: #e3f2fd;
+      /* content-box explicit */
+      box-sizing: content-box;
+    }
+    .box2 {
+      border-color: tomato;
+      background: #ffebee;
+      /* include padding & border in width */
+      box-sizing: border-box;
+    }
+    .box3 {
+      border-color: seagreen;
+      background: #e8f5e9;
+      /* demonstrate negative margin overlap */
+      box-sizing: content-box;
+      margin-left: -30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS Box Model Demo</h1>
+  <div class="container">
+    <div class="box1">
+      <strong>Box 1</strong><br>
+      box-sizing: content-box<br>
+      width:100px<br>
+      + padding & border
+    </div>
+    <div class="box2">
+      <strong>Box 2</strong><br>
+      box-sizing: border-box<br>
+      width:100px<br>
+      includes padding & border
+    </div>
+    <div class="box3">
+      <strong>Box 3</strong><br>
+      content-box +<br>
+      negative margin
+    </div>
+  </div>
+
+  <!--
+    Findings:
+    1. Box 1 (content-box) measured 100px content + 40px padding + 10px border = 150px total.
+    2. Box 2 (border-box) stayed exactly 100px wide including padding & border, making layout calculations simpler.
+    3. Box 3 used a negative left margin to overlap its neighbor by 30px, illustrating how margins can pull boxes together.
+    4. Switching box-sizing from content-box to border-box prevents padding/border from increasing an element’s total width,
+       which simplifies responsive designs—no need to subtract padding/border from your width values.
+    5. Inspecting in DevTools Box Model panel clearly shows each layer (content, padding, border, margin) and the total size.
+  -->
+</body>
+</html>

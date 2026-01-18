@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fixed Dimensions Example</title>
+  <style>
+    body
+    {
+        width: 100vw;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .fixed-box {
+      width: 300px;      /* Fixed width of 300 pixels */
+      height: 200px;     /* Fixed height of 200 pixels */
+      background-color: #D1C4E9; /* Light purple background */
+      border: 2px solid #673AB7; /* Purple border */
+      text-align: center;
+      line-height: 200px; /* Vertically center text */
+      margin: 20px auto;
+    }
+    .responsive-box {
+      width: 100%;            /* Fills the parent container */
+      max-width: 800px;       /* Will not exceed 800px */
+      height: auto;           /* Height adjusts automatically */
+      background-color: #B3E5FC; /* Light blue background */
+      border: 2px solid #0288D1; /* Blue border */
+      margin: 20px auto;      /* Center horizontally with auto margins */
+      padding: 20px;
+      box-sizing: border-box; /* Include padding and border in width */
+    }
+    .auto-height {
+      width: 400px;
+      height: auto;           /* Height is determined by the content */
+      background-color: #FFCDD2; /* Light red background */
+      border: 2px solid #C62828; /* Red border */
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .combined-box {
+      width: 90%;             /* 90% of the parent's width */
+      max-width: 500px;       /* But no more than 500px */
+      height: 300px;          /* Fixed height */
+      background-color: #C8E6C9; /* Light green background */
+      border: 2px solid #2E7D32; /* Green border */
+      margin: 20px auto;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div class="fixed-box">Fixed Box</div>
+  <div class="responsive-box">
+    This box has a responsive width that fills the container up to a maximum of 800px. Resize your browser window to see the effect.
+  </div>
+  <div class="auto-height">
+    <h2>Auto Height Example</h2>
+    <p>
+      This element has a fixed width but its height is set to auto, meaning it adjusts based on the content inside.
+    </p>
+    
+    <p>
+      This is useful for dynamic content where the amount of text or other elements may vary.
+    </p>
+  </div>
+   <div class="combined-box">
+    This box combines a responsive width with a fixed height. It adjusts its width based on the container but maintains a consistent height.
+  </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Outline Examples</title>
+  <style>
+    body {
+      margin: 2rem;
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    /* 1) Simple outline using shorthand */
+    .box1 {
+      width: 150px;
+      height: 100px;
+      background: #f0f0f0;
+      outline: 3px solid #007bff;
+    }
+
+    /* 2) Dashed outline with offset */
+    .box2 {
+      width: 150px;
+      height: 100px;
+      background: #f0f0f0;
+      outline-width: 4px;
+      outline-style: dashed;
+      outline-color: #28a745;
+      outline-offset: 6px;
+    }
+
+    /* 3) Focus outline on a button */
+    button {
+      padding: 0.5em 1em;
+      font-size: 1rem;
+      background: #17a2b8;
+      color: white;
+      border: none;
+      border-radius: 4px;
+    }
+    button:focus {
+      outline: 3px dotted Red;
+      outline-offset: 3px;
+    }
+
+    /* 4) Remove default focus and add custom */
+    input {
+      padding: 0.5em;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    input:focus {
+      /* outline: none;
+      box-shadow: 0 0 0 3px rgba(255,0,0,0.5); */
+
+      outline: 3px solid  rgba(255, 0, 0, 0.637);
+      outline-offset: 0px;
+
+    }
+
+    h2 {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS Outline Demonstrations</h1>
+
+  <section>
+    <h2>1) Simple Outline (Shorthand)</h2>
+    <div class="box1"></div>
+  </section>
+
+  <section>
+    <h2>2) Dashed Outline with Offset</h2>
+    <div class="box2"></div>
+  </section>
+
+  <section>
+    <h2>3) Focus Outline on Button</h2>
+    <button>Click or Tab to Focus Me</button>
+  </section>
+
+  <section>
+    <h2>4) Custom Input Focus (Removing Default Outline)</h2>
+    <input type="text" placeholder="Focus me with Tab">
+  </section>
+</body>
+</html>
