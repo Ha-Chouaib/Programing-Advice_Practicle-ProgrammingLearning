@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Property Activity</title>
+    <Style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: black;
+            width: 100vw;
+            height: 100%;
+            color: rgb(250, 235, 215);
+            position: relative;
+        }
+        header{
+            width: 100%;
+            height: 5vmax;
+            background-color: rgba(0, 0, 0, 0.897);
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 5px 6px hsl(266, 100%, 47%);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0px;
+            margin-bottom: 2vmax;
+            z-index: 1000;
+        }
+        .Profile{
+            width: 7vmin;
+            height: 7vmin;
+            border-radius: 50%;
+            outline: 3px solid  rgba(255, 255, 255, 0.685);
+            margin-left: 10px;
+        }
+        nav{
+            width: 80%;
+            height: auto;
+            margin-right: 10px;
+        }
+        nav ul{
+            width: 95%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        li{
+            list-style: none;
+            box-shadow: 1px 3px 5px rgba(255, 255, 255, 0.322);
+            width: 15vmin;
+            text-align: center;
+            font-size: 1vw;
+            padding:0.3rem ;
+            border-radius: 30px;
+            cursor:pointer;
+        }
+        main{
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+        h1{
+            color: rgba(240, 248, 255, 0.849);
+            text-shadow: 1px 2px 3px  rgba(235, 156, 110, 0.849);
+            font-size: 3vw;
+        }
+        .Sec1{
+            width: 80%;
+            height: 75vh;
+            border: 1px solid rgba(88, 7, 218, 0.445);
+            border-radius: 10px;
+            position: relative;
+            background-image: url(Image2.jpg);
+            background-repeat: no-repeat;
+
+        }
+        .btnleft, .btnright{
+            width: 4vmax;
+            height: 4vmax;
+            border-radius: 50%;
+            border: none;
+            box-shadow: 0px 0px 3px rgba(255, 255, 255, 0.918);
+            background-color: rgba(240, 248, 255, 0.048);
+            color: rgba(248, 228, 202, 0.411);
+            position: absolute;
+            cursor: pointer;
+           
+        }
+        .btnleft{
+            top: 50%;
+            left: 10px;
+        }
+        .btnright{
+           
+            top: 50%;
+            right: 10px;
+        }
+        .Sec2{
+            width: 90%;
+            height: 800px;
+            border: 1px solid rgba(7, 158, 218, 0.445);
+            border-radius: 10px;
+            box-shadow: 1px 2px 5px rgb(34, 1, 180);
+        }
+    </Style>
+</head>
+<body>
+    <header>
+        <div class="Profile"></div>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Blogs</li>
+                <li>Contacts</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>CSS Position Property-> Practical Activity</h1>
+        <section class="Sec1">
+            <button class="btnleft"> < </button>
+            <button class="btnright">></button>
+        </section>
+        <section class="Sec2">
+
+        </section>
+    </main>
+</body>
+</html>
