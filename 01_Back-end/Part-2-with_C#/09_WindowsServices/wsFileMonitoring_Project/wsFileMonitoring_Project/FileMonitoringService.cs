@@ -27,6 +27,10 @@ namespace wsFileMonitoring_Project
         private FileSystemWatcher _FileSystemWatcher;
         readonly ConcurrentQueue<string> TargetFiles = new ConcurrentQueue<string>();
         private readonly AutoResetEvent _signal = new AutoResetEvent(false);
+        private CancellationTokenSource _cts;
+
+        private readonly ManualResetEventSlim _pauseEvent = new ManualResetEventSlim(true);
+
         public FileMonitoringService()
         {
             InitializeComponent();
@@ -42,7 +46,7 @@ namespace wsFileMonitoring_Project
 
         private void _ConfigureRequiredDirectories()
         {
-            _MainDirectory = ConfigurationManager.AppSettings["MainDirecory"];
+            _MainDirectory = ConfigurationManager.AppSettings["MainFolder"];
             _SourceDirectory = ConfigurationManager.AppSettings["SourceDirectory"];
             _DestinationDirectory = ConfigurationManager.AppSettings["DestinationDirectory"];
             _LogDirectory = ConfigurationManager.AppSettings["LogDirectory"];
@@ -67,6 +71,7 @@ namespace wsFileMonitoring_Project
         private void _LogAction(string message)
         {
             string logMessage = $"[{DateTime.Now:G}] {message}\n";
+            Console.WriteLine(logMessage);
             File.AppendAllText(_LogFilePath, logMessage);
         }
         private string _RenameFileToGuid(string filePath)
@@ -102,29 +107,35 @@ namespace wsFileMonitoring_Project
             string NewPath = Path.Combine(DestinationDirectory, FileName);
             return NewPath;
         }
-        private void _ChangeFileLocation(string sourcePath, string DestinationPath)
+        private async Task WaitForFileAsync(string path, CancellationToken token)
         {
+            const int maxAttempts = 10;
+            const int delayMs = 500;
 
-            File.Move(sourcePath, DestinationPath);
-            if(File.Exists(sourcePath)) File.Delete(sourcePath); ;
-        }
-        private void _WaitForFile(string path)
-        {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < maxAttempts; i++)
             {
+                token.ThrowIfCancellationRequested();
+
                 try
                 {
-                    using (FileStream stream = File.Open(path, FileMode.Open, FileAccess.Read, FileShare.None))
+                    using (FileStream stream = File.Open(
+                        path,
+                        FileMode.Open,
+                        FileAccess.Read,
+                        FileShare.None))
                     {
-                        return;
+                        return; // File is ready
                     }
                 }
-                catch
+                catch (IOException)
                 {
-                    Task.Delay(500).Wait();
+                    await Task.Delay(delayMs, token);
                 }
             }
+
+            throw new IOException($"File remained locked: {path}");
         }
+
         private void OnFileInserted(object sender, FileSystemEventArgs e)
         {
 
@@ -133,53 +144,50 @@ namespace wsFileMonitoring_Project
         }
         private void StartWorker()
         {
-            Task.Run
-                (
-                    () =>
+            Task.Run(async () =>
+            {
+                while (!_cts.Token.IsCancellationRequested)
+                {
+                    _signal.WaitOne();
+                    _pauseEvent.Wait(_cts.Token);
+
+                    while (TargetFiles.TryDequeue(out var file))
                     {
-                        while (true)
+                        _pauseEvent.Wait(_cts.Token);
+                        try
                         {
-                            _signal.WaitOne();
+                            await WaitForFileAsync(file, _cts.Token);
 
+                            var guidPath = _RenameFileToGuid(file);
+                            var destinationPath = _ChangeFilePath(guidPath, _DestinationDirectory);
 
-                            StringBuilder CurrentFilePath = new StringBuilder();
-                            StringBuilder FilePath_GUID = new StringBuilder();
-                            StringBuilder FileDestinationPath = new StringBuilder();
+                            File.Move(guidPath, destinationPath);
 
-                            while (TargetFiles.TryDequeue(out var currentFilePath))
-                            {
-
-                                try
-                                {
-                                    CurrentFilePath.Append(CurrentFilePath);
-                                    _WaitForFile(CurrentFilePath.ToString());
-
-                                    FilePath_GUID.Append(_RenameFileToGuid(CurrentFilePath.ToString()));
-                                    FileDestinationPath.Append(_ChangeFilePath(FilePath_GUID.ToString(), _DestinationDirectory));
-
-                                    _ChangeFileLocation(FilePath_GUID.ToString(), FileDestinationPath.ToString());
-
-                                    _LogAction($"< Target File Moved > [ {CurrentFilePath} ==> {FileDestinationPath}");
-                                }
-                                catch (Exception ex)
-                                {
-                                    _LogAction($"Error processing file {CurrentFilePath}: {ex.Message}");
-                                }
-                            }
+                            _LogAction($"File moved: {file} → {destinationPath}");
+                        }
+                        catch (OperationCanceledException)
+                        {
+                            return; 
+                        }
+                        catch (Exception ex)
+                        {
+                            _LogAction($"Error processing {file}: {ex.Message}");
                         }
                     }
-                );
+                }
+            }, _cts.Token);
         }
 
         protected override void OnStart(string[] args)
         {
+            _cts = new CancellationTokenSource();
             Process process = Process.GetCurrentProcess();
             process.PriorityClass = ProcessPriorityClass.BelowNormal;
             _LogAction("Service Started");
 
             _FileSystemWatcher = new FileSystemWatcher
             {
-                Path = _MainDirectory,
+                Path = _SourceDirectory,
                 Filter = "*.*",
                 NotifyFilter = NotifyFilters.FileName | NotifyFilters.CreationTime
             };
@@ -192,6 +200,7 @@ namespace wsFileMonitoring_Project
       
         protected override void OnStop()
         {
+            _cts.Cancel();
             _FileSystemWatcher.EnableRaisingEvents = false;
             _FileSystemWatcher.Dispose();
             _LogAction("Service Stopped");
@@ -199,11 +208,16 @@ namespace wsFileMonitoring_Project
 
         protected override void OnPause()
         {
+            _pauseEvent.Reset(); // block worker
+            _FileSystemWatcher.EnableRaisingEvents = false;
             _LogAction("Service Paused");
         }
 
         protected override void OnContinue()
         {
+            _pauseEvent.Set(); // resume worker
+            _FileSystemWatcher.EnableRaisingEvents = true;
+
             _LogAction("Service Resumed");
         }
         public void StartInConsole()
