@@ -1,2 +1,7 @@
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\09_WindowsServices\wsFileMonitoring_Project\wsFileMonitoring_Project\obj\Debug\wsFileMonitoring_Project.csproj.AssemblyReference.cache
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\09_WindowsServices\wsFileMonitoring_Project\wsFileMonitoring_Project\obj\Debug\wsFileMonitoring_Project.csproj.CoreCompileInputs.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\09_WindowsServices\wsFileMonitoring_Project\wsFileMonitoring_Project\bin\Debug\wsFileMonitoring_Project.exe.config
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\09_WindowsServices\wsFileMonitoring_Project\wsFileMonitoring_Project\bin\Debug\wsFileMonitoring_Project.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\09_WindowsServices\wsFileMonitoring_Project\wsFileMonitoring_Project\bin\Debug\wsFileMonitoring_Project.pdb
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\09_WindowsServices\wsFileMonitoring_Project\wsFileMonitoring_Project\obj\Debug\wsFileMonitoring_Project.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\09_WindowsServices\wsFileMonitoring_Project\wsFileMonitoring_Project\obj\Debug\wsFileMonitoring_Project.pdb
