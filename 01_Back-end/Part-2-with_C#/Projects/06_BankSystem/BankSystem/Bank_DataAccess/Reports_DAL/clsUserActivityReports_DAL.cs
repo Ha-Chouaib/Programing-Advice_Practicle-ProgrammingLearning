@@ -97,36 +97,46 @@ namespace Bank_DataAccess.Reports
         {
             totalRows = 0;
             DataTable dt = new DataTable();
-
-            using (SqlConnection conn = new SqlConnection(DataAccessSettings.connectionString))
-            using (SqlCommand cmd = new SqlCommand("sp_UserActivity_FilterPaged", conn))
+            try
             {
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@UserID", userId.HasValue ? (object)userId.Value : DBNull.Value );
-                cmd.Parameters.AddWithValue("@ActionKey", string.IsNullOrEmpty(actionKey) ? DBNull.Value : (object)actionKey);
-                cmd.Parameters.AddWithValue("@Succeeded", succeeded.HasValue ? (object)succeeded.Value : DBNull.Value);
-                cmd.Parameters.AddWithValue("@FromDate", fromDate.HasValue ? (object)fromDate.Value : DBNull.Value);
-                cmd.Parameters.AddWithValue("@ToDate", toDate.HasValue ? (object)toDate.Value : DBNull.Value);
-
-                cmd.Parameters.AddWithValue("@PageNumber", pageNumber);
-                cmd.Parameters.AddWithValue("@PageSize", pageSize);
-
-                SqlParameter totalParam = new SqlParameter("@TotalRows", SqlDbType.Int)
+                using (SqlConnection conn = new SqlConnection(DataAccessSettings.connectionString))
+                using (SqlCommand cmd = new SqlCommand("sp_UserActivity_FilterPaged", conn))
                 {
-                    Direction = ParameterDirection.Output
-                };
-                cmd.Parameters.Add(totalParam);
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-                conn.Open();
-                using (SqlDataReader rdr = cmd.ExecuteReader())
-                {
-                    dt.Load(rdr);
+                    cmd.Parameters.AddWithValue("@UserID", userId.HasValue ? (object)userId.Value : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@ActionKey", string.IsNullOrEmpty(actionKey) ? DBNull.Value : (object)actionKey);
+                    cmd.Parameters.AddWithValue("@Succeeded", succeeded.HasValue ? (object)succeeded.Value : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@FromDate", fromDate.HasValue ? (object)fromDate.Value : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@ToDate", toDate.HasValue ? (object)toDate.Value : DBNull.Value);
+
+                    cmd.Parameters.AddWithValue("@PageNumber", pageNumber);
+                    cmd.Parameters.AddWithValue("@PageSize", pageSize);
+
+                    SqlParameter totalParam = new SqlParameter("@TotalRows", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    cmd.Parameters.Add(totalParam);
+
+                    conn.Open();
+                    using (SqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        dt.Load(rdr);
+                    }
+
+                    totalRows = (int)(totalParam.Value ?? 0);
                 }
-
-                totalRows = (int)(totalParam.Value ?? 0);
             }
+            catch (SqlException ex)
+            {
+                clsGlobal.LogError($"[DAL: UserActivityReports.FilterReports() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                clsGlobal.LogError($"[DAL: UserActivityReports.FilterReports() ] -> {ex.Message}");
 
+            }
             return dt;
         }
 

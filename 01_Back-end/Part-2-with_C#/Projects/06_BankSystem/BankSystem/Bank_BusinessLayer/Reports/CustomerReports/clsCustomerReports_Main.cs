@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bank_BusinessLayer.Reports.CustomerReports
 {
-    internal class clsCustomerReports_Main
+    public class clsCustomerReports_Main
     {
     }
 }

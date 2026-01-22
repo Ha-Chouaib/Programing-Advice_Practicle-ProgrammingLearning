@@ -32,6 +32,8 @@ namespace wsFileMonitoring_Project
             };
 
 
+            Installers.Add(serviceProcessInstaller);
+            Installers.Add(serviceInstaller);
         }
     }
 }

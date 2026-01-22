@@ -12,7 +12,7 @@ namespace Bank_DataAccess.Reports.CustomerReports
         private static int _GenerateCustomerSummaryReport(int CustomerID)
         {
             int CustomerReportID = -1;
-            string Query = @"[dbo].[sp_GenerateCustomerSummaryReport]";
+            string Query = @"[dbo].[Sp_CustomerSummaryReport_Generate]";
             try
             {
                 using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
@@ -94,63 +94,49 @@ namespace Bank_DataAccess.Reports.CustomerReports
             }
             return found;
         }
-        
-        //need update
-        public static DataTable ListReportsByCustomerID(int CustomerID)
+        public static DataTable FilterReports(int? CustomerID, byte? ActiveAccounts, DateTime? LastActivityDate, bool? CustomerStatus, byte pageNumber, byte pageSize, out int totalRows)
         {
+            totalRows = 0;
             DataTable dt = new DataTable();
-            string Query = @"[dbo].[Sp_CustomerSummaryReports_ListByCustomerID]";
             try
             {
-                using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
-                using (SqlCommand cmd = new SqlCommand(Query, connection))
+
+
+                using (SqlConnection conn = new SqlConnection(DataAccessSettings.connectionString))
+                using (SqlCommand cmd = new SqlCommand("[dbo].[Sp_CustomerSummaryReports_FilterPaged]", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@CustomerID", CustomerID);
 
-                    connection.Open();
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    cmd.Parameters.AddWithValue("@CustomerD", CustomerID.HasValue ? (object)CustomerID.Value : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@ActiveAccounts", ActiveAccounts.HasValue ? (object)ActiveAccounts.Value : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@LastActivityDate", LastActivityDate.HasValue ? (object) LastActivityDate.Value : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@CustomerStatus", CustomerStatus.HasValue ? (object)CustomerStatus.Value : DBNull.Value);
+
+                    cmd.Parameters.AddWithValue("@PageNumber", pageNumber);
+                    cmd.Parameters.AddWithValue("@PageSize", pageSize);
+
+                    SqlParameter totalParam = new SqlParameter("@TotalRows", SqlDbType.Int)
                     {
-                        dt.Load(reader);
+                        Direction = ParameterDirection.Output
+                    };
+                    cmd.Parameters.Add(totalParam);
+
+                    conn.Open();
+                    using (SqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        dt.Load(rdr);
                     }
+
+                    totalRows = (int)(totalParam.Value ?? 0);
                 }
             }
             catch (SqlException ex)
             {
-                clsGlobal.LogError($"DAL -> CustomerSummaryReports.ListReportsByCustomerID() ,SQL Error: {ex.Message}");
+                clsGlobal.LogError($"DAL -> clsCustomerSummaryReportsDAL.FilterReports() ,SQL Error: {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsGlobal.LogError($"DAL -> CustomerSummaryReports.ListReportsByCustomerID() {ex.Message}");
-
-            }
-            return dt;
-        }
-        public static DataTable ListReports()
-        {
-            DataTable dt = new DataTable();
-            string Query = @"[dbo].[Sp_CustomerSummaryReports_ListAll]";
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
-                using (SqlCommand cmd = new SqlCommand(Query, connection))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    connection.Open();
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        dt.Load(reader);
-                    }
-                }
-            }
-            catch (SqlException ex)
-            {
-                clsGlobal.LogError($"DAL -> CustomerSummaryReports.ListReports() ,SQL Error: {ex.Message}");
-            }
-            catch (Exception ex)
-            {
-                clsGlobal.LogError($"DAL -> CustomerSummaryReports.ListReports() {ex.Message}");
+                clsGlobal.LogError($"DAL -> clsCustomerSummaryReportsDAL.FilterReports() {ex.Message}");
 
             }
             return dt;
