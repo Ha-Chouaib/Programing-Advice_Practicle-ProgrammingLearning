@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox (`display: flex`) Demo</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      padding: 1rem;
+      line-height: 1.5;
+    }
+    section { margin-bottom: 2rem; }
+    h2 { margin-bottom: 0.5rem; }
+
+    /* Flex Container */
+    .flex-container {
+      display: flex;               /* turn on flexbox */
+      flex-direction: row;         /* default: horizontal */
+      justify-content: space-between; /* spread items evenly */
+      align-items: center;         /* center items vertically */
+      flex-wrap: wrap;             /* allow items to wrap */
+      background: #eef;
+      padding: 1rem;
+      gap: 1rem;                   /* space between items */
+    }
+
+
+
+
+    /* Here’s how it works:
+
+        flex-basis: calc(33% - 1rem)
+
+        You’re telling each item to start out at roughly one-third of the container’s width (that 33%) minus the 1 rem gap you’ve defined between items.
+
+        flex-wrap: wrap on the .gallery container allows items that don’t fit on one line to wrap onto the next.
+
+        Result:
+
+        Three items × ~33% each ≈ 100% of the row, with the 1 rem gaps factored out.
+
+        Any overflow “wraps” to the next line.
+
+        So by setting the flex-basis to one-third of the available space (minus your gap), Flexbox automatically lays out three items per row before wrapping to the next line. */
+
+   
+   
+      
+
+    /* Flex Items */
+    .flex-item {
+      background: #cce5ff;
+      padding: 1rem;
+    
+      flex: 1 1 calc(33% - 1rem);       /* base width minus gap */
+
+      text-align: center;
+      border: 1px solid #99c;
+      border-radius: 4px;
+    }
+
+
+    /* ================================
+        Responsive Adjustments (@media)
+       - Switch to 2-column gallery on narrow screens
+       media query that tells the browser:
+
+        “Apply the enclosed CSS rules only when the viewport’s width is 600 pixels or less.”
+       
+        How It Works
+        @media
+        Begins a conditional block—styles inside only take effect if the condition is true.
+
+        (max-width: 600px)
+        The condition: the maximum width of the viewport.
+
+        If the browser window (or device screen) is 600 px wide or narrower, the block is active.
+
+        If it’s wider than 600 px, those rules are ignored.
+       ================================ */
+    @media (max-width: 800px) {
+      .flex-item {
+        flex: 1 1 calc(50% - 1rem);     /* two columns */
+      }
+     
+    }
+
+      @media (max-width: 500px) {
+      .flex-item {
+        flex: 1 1 calc(100% - 1rem);     /* two columns */
+      }
+     
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>CSS <code>display: flex</code> Demo</h1>
+
+  <section>
+    <h2>Responsive Flex Container</h2>
+    <div class="flex-container">
+      <div class="flex-item">Item 1</div>
+      <div class="flex-item">Item 2</div>
+      <div class="flex-item">Item 3</div>
+      <div class="flex-item">Item 4</div>
+      <div class="flex-item">Item 5</div>
+       <div class="flex-item">Item 6</div>
+    </div>
+    <p class="note">
+      Each item has a base width of 150px, flexibly grows and shrinks,  
+      wraps to new lines on narrow screens.
+    </p>
+  </section>
+
+</body>
+</html>

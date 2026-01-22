@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox Fundamentals: Full Example with Comments</title>
+  <style>
+    /* ================================
+       0) Global Reset & Base Styles
+       - Remove default margins/padding
+       - Use border-box for predictable sizing
+       - Set base font & link styles
+       ================================ */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    /* Add uniform padding to semantic sections */
+    section, footer, nav {
+      padding: 1rem;
+    }
+
+    /* ================================
+       1) Navigation Bar
+       - display: flex to lay out links in a row
+       - justify-content & align-items to center
+       ================================ */
+    .nav-bar {
+      display: flex;
+      justify-content: center;  /* center horizontally */
+      align-items: center;      /* center vertically */
+      background: #004466;
+    }
+    .nav-bar a {
+      color: white;
+      margin: 0 1rem;           /* horizontal spacing between links */
+      padding: 0.5rem;          /* clickable area */
+    }
+    .nav-bar a:hover {
+      background: #006688;
+      border-radius: 4px;       /* rounded hover background */
+    }
+
+    /* ================================
+       2) Responsive Gallery
+       - flex-wrap: wrap allows items to flow onto new lines
+       - gap for consistent spacing
+       - flex: 1 1 calc(33% - 1rem) for 3-column layout
+       ================================ */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;                  /* wrap items */
+      gap: 1rem;                        /* gap between items */
+      justify-content: center;         /* center rows */
+      margin: 1rem 0;                   /* vertical spacing */
+    }
+   
+   /* Here’s how it works:
+
+        flex-basis: calc(33% - 1rem)
+
+        You’re telling each item to start out at roughly one-third of the container’s width (that 33%) minus the 1 rem gap you’ve defined between items.
+
+        flex-wrap: wrap on the .gallery container allows items that don’t fit on one line to wrap onto the next.
+
+        Result:
+
+        Three items × ~33% each ≈ 100% of the row, with the 1 rem gaps factored out.
+
+        Any overflow “wraps” to the next line.
+
+        So by setting the flex-basis to one-third of the available space (minus your gap), Flexbox automatically lays out three items per row before wrapping to the next line. */
+
+   
+    .gallery-item {
+      flex: 1 1 calc(33% - 1rem);       /* base width minus gap */
+     /* the three values map to:
+
+        flex-grow: 1
+
+        When there’s extra space in the container, each item can grow to fill it. A value of 1 means “grow proportionally,” so all items with flex-grow:1 share leftover space equally.
+
+        flex-shrink: 1
+
+        If the items overflow the container, they can shrink to fit. A value of 1 means “shrink proportionally,” so all items with flex-shrink:1 contract equally when necessary.
+
+        flex-basis: calc(33% - 1rem)
+
+        The initial (preferred) size of each item before growing or shrinking—here set to one-third of the container minus the gap.*/
+
+      background: #e0e0e0;
+      height: 150px;                    /* fixed height */
+      display: flex;                    /* center content */
+      justify-content: center;
+      align-items: center;
+      font-size: 1.25rem;
+      color: #555;
+    }
+
+    /* ================================
+       3) Footer with Columns
+       - display: flex to create equal-width columns
+       - justify-content: space-between to spread them out
+       ================================ */
+    .site-footer {
+      display: flex;
+      justify-content: space-between;   /* spread columns */
+      background: #333;
+      color: white;
+    }
+    .footer-col {
+      flex: 1;                           /* each column shares available space */
+      padding: 0 1rem;                  /* horizontal padding */
+    }
+    .footer-col h3 {
+      margin-bottom: 0.5rem;
+    }
+    .footer-col p, .footer-col ul {
+      margin-bottom: 0.5rem;
+    }
+    .footer-col ul {
+      list-style: none;                 /* remove bullets */
+    }
+    .footer-col li {
+      margin-bottom: 0.25rem;
+    }
+
+
+      /* ================================
+        Responsive Adjustments (@media)
+       - Switch to 2-column gallery on narrow screens
+       - Stack footer columns vertically
+       ================================ */
+        @media (max-width: 800px) {
+      .gallery-item {
+        flex: 1 1 calc(50% - 1rem);     /* two columns */
+      }
+      .site-footer {
+        flex-direction: column;         /* vertical stack */
+        text-align: center;             /* center text */
+      }
+      .footer-col {
+        padding: 1rem 0;                /* vertical padding */
+      }
+    }
+
+    /* ================================
+       4) Responsive Adjustments (@media)
+       - Switch to 1-column gallery on narrow screens
+       - Stack footer columns vertically
+       ================================ */
+
+    @media (max-width: 500px) {
+      .gallery-item {
+        flex: 1 1 calc(100% - 1rem);     /* two columns */
+      }
+      .site-footer {
+        flex-direction: column;         /* vertical stack */
+        text-align: center;             /* center text */
+      }
+      .footer-col {
+        padding: 1rem 0;                /* vertical padding */
+      }
+    }
+
+  
+   
+
+
+  </style>
+</head>
+<body>
+
+  <!-- ================================
+       Navigation Bar
+       Using Flexbox to center links
+       ================================ -->
+  <nav class="nav-bar">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Gallery</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <!-- ================================
+       Gallery Section
+       A responsive flex-wrap grid
+       ================================ -->
+  <section>
+    <h2>Responsive Flexbox Gallery</h2>
+    <div class="gallery">
+      <div class="gallery-item">Item 1</div>
+      <div class="gallery-item">Item 2</div>
+      <div class="gallery-item">Item 3</div>
+      <div class="gallery-item">Item 4</div>
+      <div class="gallery-item">Item 5</div>
+      <div class="gallery-item">Item 6</div>
+      <div class="gallery-item">Item 7</div>
+      <div class="gallery-item">Item 8</div>
+      <div class="gallery-item">Item 9</div>
+    </div>
+  </section>
+
+  <!-- ================================
+       Footer Section
+       Three equal-width columns with Flexbox
+       ================================ -->
+  <footer class="site-footer">
+    <div class="footer-col">
+      <h3>About Us</h3>
+      <p>We build responsive layouts using Flexbox.</p>
+    </div>
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Contact</h3>
+      <p>Email: info@example.com</p>
+      <p>Phone: +123 456 7890</p>
+    </div>
+  </footer>
+
+</body>
+</html>

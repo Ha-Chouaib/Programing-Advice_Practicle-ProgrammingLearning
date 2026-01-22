@@ -110,7 +110,7 @@ namespace wsFileMonitoring_Project
         private async Task WaitForFileAsync(string path, CancellationToken token)
         {
             const int maxAttempts = 10;
-            const int delayMs = 500;
+            const short delayMs = 500;
 
             for (int i = 0; i < maxAttempts; i++)
             {
@@ -181,8 +181,10 @@ namespace wsFileMonitoring_Project
         protected override void OnStart(string[] args)
         {
             _cts = new CancellationTokenSource();
+
             Process process = Process.GetCurrentProcess();
             process.PriorityClass = ProcessPriorityClass.BelowNormal;
+
             _LogAction("Service Started");
 
             _FileSystemWatcher = new FileSystemWatcher
