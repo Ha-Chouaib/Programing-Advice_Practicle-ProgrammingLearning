@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace Bank_BusinessLayer.Reports.CustomerReports
 {
-    public class clsCustomerSummaryReports
+    public class clsCustomerSummaryReports : clsCustomerReports_Main
     {
-        int CustomerID { get; set; }
         byte TotalAccounts { get; set; }
         byte ActiveAccounts { get; set; }
         double TotalBalance { get; set; }
@@ -26,25 +25,30 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
             this.LastActivityDate = DateTime.MinValue;
             this.CustomerStatus = false;
         }
-        clsCustomerSummaryReports(int CustomerID, byte TotalAccounts, byte ActiveAccounts, double TotalBalance, DateTime LastActivityDate, bool CustomerStatus)
+        clsCustomerSummaryReports(int customerReportID, int customerID, DateTime reportDate, short reportTypeID, byte TotalAccounts, byte ActiveAccounts, double TotalBalance, DateTime LastActivityDate, bool CustomerStatus)
+            :base(customerReportID, customerID, reportTypeID, reportDate)
         {
-            this.CustomerID = CustomerID;
             this.TotalAccounts = TotalAccounts;
             this.ActiveAccounts = ActiveAccounts;
             this.TotalBalance = TotalBalance;
             this.LastActivityDate = LastActivityDate;
             this.CustomerStatus = CustomerStatus;
         }
-        public static clsCustomerSummaryReports Find(int CustomerID)
+        public new static clsCustomerSummaryReports Find (int CustomerID)
         {
+            int ReportID = -1;
             byte TotalAccounts = 0;
             byte ActiveAccounts = 0;
             double TotalBalance = 0;
             DateTime LastActivityDate = DateTime.MinValue;
             bool CustomerStatus = false;
-            if (clsCustomerSummaryReportsDAL.Find(CustomerID, ref TotalAccounts, ref ActiveAccounts, ref TotalBalance, ref LastActivityDate, ref CustomerStatus))
+            bool found = clsCustomerSummaryReportsDAL.Find(CustomerID, ref ReportID, ref TotalAccounts, ref ActiveAccounts, ref TotalBalance, ref LastActivityDate, ref CustomerStatus); 
+
+
+             var ReportHeader = clsCustomerReports_Main.Find(ReportID);
+            if (found && ReportHeader != null)
             {
-                return new clsCustomerSummaryReports(CustomerID, TotalAccounts, ActiveAccounts, TotalBalance, LastActivityDate, CustomerStatus);
+                return new clsCustomerSummaryReports(ReportHeader.CustomerReportID, ReportHeader.CustomerID, ReportHeader.ReportDate, ReportHeader.ReportTypeID, TotalAccounts, ActiveAccounts, TotalBalance, LastActivityDate, CustomerStatus);
             }
             else
                 return null;
@@ -76,6 +80,38 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
         public static DataTable FilterByCustomerStatus(bool? CustomerStatus, byte pageNumber, byte pageSize, out short AvailablePages)
         {
             return FilterReports(null, null, null, CustomerStatus, pageNumber, pageSize, out AvailablePages);
-        }   
+        }
+
+        public static DataTable FilterCustomerSummaryReports
+            (
+            string column,
+            string term,
+            byte pageNumber,
+            byte pageSize,
+            out short availablePages
+            )
+        {
+            column = column?.Trim().ToLower();
+            term = term?.Trim();
+
+            switch (column)
+            {
+                case "customerid":
+                    return FilterByCustomerID(int.Parse(term), pageNumber, pageSize, out availablePages);
+
+                case "activeaccounts":
+                    return FilterByActiveAccountsStatus(byte.Parse(term), pageNumber, pageSize, out availablePages);
+
+                case "lastactivitydate":
+                    return FilterByLastActivityDate(DateTime.Parse(term), pageNumber, pageSize, out availablePages);
+
+                case "customerstatus":
+                    return FilterByCustomerStatus(bool.Parse(term), pageNumber, pageSize, out availablePages);
+
+                default:
+                    return ListAll(pageNumber, pageSize, out availablePages);
+            }
+        }
+
     }
 }

@@ -16,7 +16,7 @@ namespace Bank_DataAccess
 
         public static int AddNewUser(int PersonID,string UserName,DateTime CreatedDate,int RoleID ,string Password, bool IsActive, int CreatedByUserID, ulong CustomPermissions,ulong RevokedPermissions)
         {
-            string Query = "Sp_AddNewUser";
+            string Query = "Sp_Users_AddNew";
             int UserID = -1;
             try
             {
@@ -61,7 +61,7 @@ namespace Bank_DataAccess
         public  static bool FindUserByID(int UserID ,ref int PersonID,ref string UserName,ref DateTime CreatedDate,
             ref int RoleID,ref string Password,ref bool IsActive,ref int CreatedByUserID, ref ulong CustomPermissions,ref ulong RevokedPermissions)
         {
-            string Query = "Sp_GetUserByID";
+            string Query = "Sp_User_GetByID";
             bool found= false;
             try 
             {
@@ -110,7 +110,7 @@ namespace Bank_DataAccess
         public static bool FindUserByPersonID(int PersonID, ref int UserID , ref string UserName, ref DateTime CreatedDate,
             ref int RoleID, ref string Password, ref bool IsActive, ref int CreatedByUserID, ref ulong CustomPermissions,ref ulong RevokedPermissions)
         {
-            string Query = "Sp_GetUserByPersonID";
+            string Query = "[dbo].[Sp_User_GetByPersonID]";
             bool found = false;
             try
             {
@@ -160,7 +160,7 @@ namespace Bank_DataAccess
         public static bool FindUserByName(string UserName , ref int UserID, ref int PersonID, ref DateTime CreatedDate,
             ref int RoleID, ref string Password, ref bool IsActive, ref int CreatedByUserID, ref ulong CustomPermissions,ref ulong RevokedPermissions)
         {
-            string Query = "Sp_GetUserByName";
+            string Query = "[dbo].[Sp_User_GetByName]";
             bool found = false;
             try
             {
@@ -209,7 +209,7 @@ namespace Bank_DataAccess
 
         public static bool Update(int UserID,string UserName,string Password, int RoleID,bool IsActive,ulong CustomPermissions,ulong RevokedPermissions)
         {
-            string Query = "Sp_UpdateUserInf";
+            string Query = "[dbo].[Sp_User_Update]";
             bool Success = false;
 
             try
@@ -257,7 +257,7 @@ namespace Bank_DataAccess
 
         public static bool UpdateUserName(int UserID, string UserName)
         {
-            string Query = "Sp_UpdateUserName";
+            string Query = "[dbo].[Sp_User_UpdateName]";
             bool success = false;
             try
             {
@@ -296,7 +296,7 @@ namespace Bank_DataAccess
         }
         public static bool UpdateUsePassword(int UserID, string Password)
         {
-            string Query = "Sp_UpdateUserPassword";
+            string Query = "[dbo].[Sp_User_UpdatePassword]";
             bool success = false;
             try
             {
@@ -335,7 +335,7 @@ namespace Bank_DataAccess
         }
         public static bool UpdateUserRole(int UserID, int RoleID)
         {
-            string Query = "Sp_UpdateUserRole";
+            string Query = "[dbo].[Sp_User_UpdateRole]";
             bool success = false;
             try
             {
@@ -374,7 +374,7 @@ namespace Bank_DataAccess
         }
         public static bool UpdateUserStatus(int UserID, bool IsActive)
         {
-            string Query = "Sp_UpdateUserStatus";
+            string Query = "[dbo].[Sp_User_UpdateStatus]";
             bool success = false;
             try
             {
@@ -413,7 +413,7 @@ namespace Bank_DataAccess
         }
         public static bool UpdateUserPermissions(int UserID, ulong CustomPermissions, ulong RevokedPermissions)
         {
-            string Query = "Sp_UpdateUserPermissions";
+            string Query = "[dbo].[Sp_User_UpdatePermissions]";
             bool success = false;
             try
             {
@@ -563,7 +563,7 @@ namespace Bank_DataAccess
         }
         public static bool Delete(int UserID, int DeletedByUserID)
         {
-            string Query = "Sp_DeleteUser";
+            string Query = "[dbo].[Sp_User_Delete]";
             bool Deleted = false;
             try
             {
@@ -601,75 +601,57 @@ namespace Bank_DataAccess
             return Deleted;
 
         }
-
-        public static DataTable ListAllUsers()
+        public static DataTable FilterUsers
+        (int? UserID, int? PersonID, int? CreatedByUserID, bool? IsActive,string UserName,string RoleName, byte pageNumber, byte pageSize, out int totalRows)
         {
-            string Query = "Sp_GetAllUsers";
+            totalRows = 0;
             DataTable dt = new DataTable();
             try
             {
-                using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
-                using (SqlCommand cmd = new SqlCommand(Query, connection))
+
+
+                using (SqlConnection conn = new SqlConnection(DataAccessSettings.connectionString))
+                using (SqlCommand cmd = new SqlCommand("[dbo].[Sp_Users_FilterPaged]", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    connection.Open();
+
+                    cmd.Parameters.AddWithValue("@UserID", UserID.HasValue ? (object)UserID.Value : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@PersonID", PersonID.HasValue ? (object)PersonID.Value : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@IsActive", IsActive.HasValue ? (object)IsActive.Value : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID.HasValue ? (object)CreatedByUserID.Value : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@UserName", !string.IsNullOrEmpty( UserName) ? (object)UserName : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@RoleName", !string.IsNullOrEmpty( RoleName) ? (object)RoleName : DBNull.Value);
+
+                    cmd.Parameters.AddWithValue("@PageNumber", pageNumber);
+                    cmd.Parameters.AddWithValue("@PageSize", pageSize);
+
+                    SqlParameter totalParam = new SqlParameter("@TotalRows", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    cmd.Parameters.Add(totalParam);
+
+                    conn.Open();
                     using (SqlDataReader rdr = cmd.ExecuteReader())
                     {
                         dt.Load(rdr);
                     }
+
+                    totalRows = (int)(totalParam.Value ?? 0);
                 }
             }
             catch (SqlException ex)
             {
-                clsGlobal.LogError($"[DAL: User.GetAllUsers() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"DAL -> Users.FilterUsers() ,SQL Error: {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsGlobal.LogError($"[DAL: User.GetAllUsers() ] -> {ex.Message}");
+                clsGlobal.LogError($"DAL -> Users.FilterUsers() {ex.Message}");
 
             }
             return dt;
         }
 
-        public static DataTable FilterUsers(string Column, string Term)
-        {
-            string Query = "Sp_FilterUsersList";
-            DataTable FilteredList = new DataTable();
-            string[] AllowedColumn = new string[] { "All", "PersonID", "ID", "IsActive", "UserName","RoleName" };
-            try
-            {
-                if (!AllowedColumn.Contains(Column))
-                {
-                    throw new ArgumentException($"Invalid Column Name: {Column}");
-                }
-                using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
-                using (SqlCommand cmd = new SqlCommand(Query, connection))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.AddWithValue("@Column", Column);
-                    cmd.Parameters.AddWithValue("@FilterBy", Term);
-
-                    connection.Open();
-
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        FilteredList.Load(reader);
-                    }
-
-                }
-            }
-            catch (SqlException ex)
-            {
-                clsGlobal.LogError($"[DAL: Users.FilterUsers() ] -> SqlServer Error({ex.Number}): {ex.Message}");
-            }
-            catch (Exception ex)
-            {
-                clsGlobal.LogError($"[DAL: Users.FilterUsers() ] -> {ex.Message}");
-
-            }
-            return FilteredList;
-        }
 
     }
 }

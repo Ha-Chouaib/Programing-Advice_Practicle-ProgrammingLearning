@@ -3,7 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\projects\\05_dvld\\dvld_project\\applications\\detain release license app\\frmmanagedetainedlicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FC20C891-3136-42F1-BDE3-BD963DB57C8B}|..\\DVLD_BusinessLayer\\DVLD_BusinessLayer.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\projects\\05_dvld\\dvld_businesslayer\\applications\\clslocaldrivinglicenseapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\applications\\detain release license app\\frmmanagedetainedlicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6E278B2C-978B-4A4D-A3C9-B321A97B80EF}|DVLD_PresentationLayer.csproj|solutionrelative:applications\\detain release license app\\frmmanagedetainedlicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -95,6 +98,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "clsLocalDrivingLicenseApplication.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_BusinessLayer\\Applications\\clsLocalDrivingLicenseApplication.cs",
+              "RelativeDocumentMoniker": "..\\DVLD_BusinessLayer\\Applications\\clsLocalDrivingLicenseApplication.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_BusinessLayer\\Applications\\clsLocalDrivingLicenseApplication.cs",
+              "RelativeToolTip": "..\\DVLD_BusinessLayer\\Applications\\clsLocalDrivingLicenseApplication.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAFIAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-24T14:02:47.611Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "frmManageDetainedLicenses.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Applications\\Detain Release License App\\frmManageDetainedLicenses.cs",
               "RelativeDocumentMoniker": "Applications\\Detain Release License App\\frmManageDetainedLicenses.cs",
@@ -102,12 +118,11 @@
               "RelativeToolTip": "Applications\\Detain Release License App\\frmManageDetainedLicenses.cs",
               "ViewState": "AgIAAHgAAAAAAAAAAAAAAKYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-11T16:55:24.744Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-11T16:55:24.744Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "frmAdd_EditUser.cs [Design]",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Users\\Forms\\frmAdd_EditUser.cs",
               "RelativeDocumentMoniker": "Users\\Forms\\frmAdd_EditUser.cs",
@@ -118,7 +133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "frmAdd_EditUser.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Users\\Forms\\frmAdd_EditUser.cs",
               "RelativeDocumentMoniker": "Users\\Forms\\frmAdd_EditUser.cs",
@@ -130,7 +145,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "frmAddNewLocalDrivingLicense_App.cs [Design]",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Applications\\LocalDrivingLicenseManagment\\frmAddNewLocalDrivingLicense_App.cs",
               "RelativeDocumentMoniker": "Applications\\LocalDrivingLicenseManagment\\frmAddNewLocalDrivingLicense_App.cs",
@@ -141,7 +156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "frmManageInternationalLicenses.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\License\\Forms\\frmManageInternationalLicenses.cs",
               "RelativeDocumentMoniker": "License\\Forms\\frmManageInternationalLicenses.cs",
@@ -153,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ctrlAdd-Edit_PersonIfo.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\People\\User_Ctrl\\ctrlAdd-Edit_PersonIfo.cs",
               "RelativeDocumentMoniker": "People\\User_Ctrl\\ctrlAdd-Edit_PersonIfo.cs",
@@ -165,7 +180,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "frmAddNewLocalDrivingLicense_App.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Applications\\LocalDrivingLicenseManagment\\frmAddNewLocalDrivingLicense_App.cs",
               "RelativeDocumentMoniker": "Applications\\LocalDrivingLicenseManagment\\frmAddNewLocalDrivingLicense_App.cs",
@@ -177,7 +192,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "frmManageInternationalLicenses.cs [Design]",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\License\\Forms\\frmManageInternationalLicenses.cs",
               "RelativeDocumentMoniker": "License\\Forms\\frmManageInternationalLicenses.cs",
@@ -188,7 +203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "frmLocalDrivingLicenseApps.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Applications\\LocalDrivingLicenseManagment\\frmLocalDrivingLicenseApps.cs",
               "RelativeDocumentMoniker": "Applications\\LocalDrivingLicenseManagment\\frmLocalDrivingLicenseApps.cs",
@@ -200,7 +215,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "ctrlAdd-Edit_PersonIfo.cs [Design]",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\People\\User_Ctrl\\ctrlAdd-Edit_PersonIfo.cs",
               "RelativeDocumentMoniker": "People\\User_Ctrl\\ctrlAdd-Edit_PersonIfo.cs",
@@ -211,7 +226,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "frmDisplayApplicationDetails.cs [Design]",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Applications\\frmDisplayApplicationDetails.cs",
               "RelativeDocumentMoniker": "Applications\\frmDisplayApplicationDetails.cs",
@@ -222,7 +237,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "frmDisplayLocalLicenseInfo.cs [Design]",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\License\\Forms\\frmDisplayLocalLicenseInfo.cs",
               "RelativeDocumentMoniker": "License\\Forms\\frmDisplayLocalLicenseInfo.cs",
@@ -233,7 +248,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "frmLocalDrivingLicenseApps.cs [Design]",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Applications\\LocalDrivingLicenseManagment\\frmLocalDrivingLicenseApps.cs",
               "RelativeDocumentMoniker": "Applications\\LocalDrivingLicenseManagment\\frmLocalDrivingLicenseApps.cs",
@@ -244,7 +259,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "frmManageUsers.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Users\\Forms\\frmManageUsers.cs",
               "RelativeDocumentMoniker": "Users\\Forms\\frmManageUsers.cs",
@@ -256,7 +271,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "frmManageUsers.cs [Design]",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\Users\\Forms\\frmManageUsers.cs",
               "RelativeDocumentMoniker": "Users\\Forms\\frmManageUsers.cs",
@@ -267,7 +282,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "ctrlPersonDetails.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\People\\User_Ctrl\\ctrlPersonDetails.cs",
               "RelativeDocumentMoniker": "People\\User_Ctrl\\ctrlPersonDetails.cs",
@@ -279,7 +294,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "ctrlPersonDetails.cs [Design]",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\People\\User_Ctrl\\ctrlPersonDetails.cs",
               "RelativeDocumentMoniker": "People\\User_Ctrl\\ctrlPersonDetails.cs",
@@ -290,7 +305,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "frmPersonDetails.cs [Design]",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\People\\Forms\\frmPersonDetails.cs",
               "RelativeDocumentMoniker": "People\\Forms\\frmPersonDetails.cs",
@@ -301,7 +316,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "frmManagePeople.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\People\\Forms\\frmManagePeople.cs",
               "RelativeDocumentMoniker": "People\\Forms\\frmManagePeople.cs",
@@ -313,7 +328,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "frmManagePeople.cs [Design]",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\05_DVLD\\DVLD_Project\\People\\Forms\\frmManagePeople.cs",
               "RelativeDocumentMoniker": "People\\Forms\\frmManagePeople.cs",

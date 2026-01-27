@@ -36,7 +36,7 @@ namespace BankSystem.Person
             ctrlManageRecords1.__AddNewBtn.Text = "Add New Person";
             ctrlManageRecords1.__UpdateBtn.Text = "Edit Person";
 
-            ctrlManageRecords1.__Initialize(clsPerson.ListPeopleRecords(), _FilterBy_Options(),clsPerson.FilterPeople ,_ContextMenuPackage(), _FilterByGroups());
+            ctrlManageRecords1.__Initialize(_FilterBy_Options(), clsPerson.FilterPeople, _ContextMenuPackage(), _FilterByGroups());
             _ConfigureDataRecordsContainer();
         }
         private Dictionary<string,string> _FilterBy_Options()
@@ -160,7 +160,7 @@ namespace BankSystem.Person
         private void _AddNewPerson()
         {
             frmAddNewPerson addNewPerson = new frmAddNewPerson();
-            addNewPerson.__RefreshContent+= ctrlManageRecords1.__RefreshRecordsList;
+           addNewPerson.__RefreshContent+= ctrlManageRecords1.__RefreshRecordsList;
             addNewPerson.ShowDialog();
         }
         private void _EditPerson()
@@ -186,7 +186,7 @@ namespace BankSystem.Person
                     e.Value = Gdr == 0 ? "Male" : "Female";
                     e.FormattingApplied = true;
                 }
-              
+
             };
         }
     }

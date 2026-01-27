@@ -31,7 +31,7 @@ namespace BankSystem.Accounts.Forms
             ctrlManageRecords1.__AddNewBtn.Text = "Add New Account";
             ctrlManageRecords1.__UpdateBtn.Visible = false;
 
-            ctrlManageRecords1.__Initialize(clsAccounts.ListAccounts(), _FilterBy_Options(), clsAccounts.FilterAccounts, _ContextMenuPackage(), _FilterByGroups());
+            //ctrlManageRecords1.__Initialize(clsAccounts.ListAccounts(), _FilterBy_Options(), clsAccounts.FilterAccounts, _ContextMenuPackage(), _FilterByGroups());
             _ConfigureDataRecordsContainer();
         }
         private Dictionary<string, string> _FilterBy_Options()

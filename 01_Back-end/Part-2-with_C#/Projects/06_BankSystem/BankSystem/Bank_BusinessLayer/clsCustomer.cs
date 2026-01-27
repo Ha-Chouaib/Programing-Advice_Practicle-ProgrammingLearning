@@ -162,12 +162,7 @@ namespace Bank_BusinessLayer
         {
             return Delete(this.CustomerID);
         }
-       
-        public static DataTable ListCustomers()
-        {
-            return clsCustomerDataAccess.GetAllCustomers();
-        }
-        
+         
         public static DataTable GetCustomerAccounts(int CustomerID)
         {
             return clsCustomerDataAccess.GetCustomerAccounts(CustomerID);
@@ -176,10 +171,107 @@ namespace Bank_BusinessLayer
         {
             return clsCustomerDataAccess.HasAccountType(CustomerID, (byte)AccountType);
         }
-        
-        public static DataTable FilterCustomers(string Column, string Term)
+
+        public static DataTable FilterCustomers
+        (
+            int? customerID,
+            int? personID,
+            int? createdByUserID,
+            bool? isActive,
+            byte? customerType,
+            byte pageNumber,
+            byte pageSize,
+            out short availablePages
+        )
         {
-            return clsCustomerDataAccess.FilterCustomers(Column, Term);
+            int totalRows = 0;
+
+            DataTable dt = clsCustomerDataAccess.FilterCustomers
+            (
+                customerID,
+                personID,
+                createdByUserID,
+                isActive,
+                customerType,
+                pageNumber,
+                pageSize,
+                out totalRows
+            );
+
+            availablePages = (short)Math.Ceiling((double)totalRows / pageSize);
+            return dt;
+        }
+        public static DataTable ListAll(byte pageNumber, byte pageSize, out short pages)
+        {
+            return FilterCustomers(null, null, null, null, null,
+                                   pageNumber, pageSize, out pages);
+        }
+
+        public static DataTable FindByCustomerID(int customerID, byte pageNumber, byte pageSize, out short pages)
+        {
+            return FilterCustomers(customerID, null, null, null, null,
+                                   pageNumber, pageSize, out pages);
+        }
+
+        public static DataTable FindByPersonID(int personID, byte pageNumber, byte pageSize, out short pages)
+        {
+            return FilterCustomers(null, personID, null, null, null,
+                                   pageNumber, pageSize, out pages);
+        }
+
+        public static DataTable FilterByStatus(bool isActive, byte pageNumber, byte pageSize, out short pages)
+        {
+            return FilterCustomers(null, null, null, isActive, null,
+                                   pageNumber, pageSize, out pages);
+        }
+
+        public static DataTable FilterByCustomerType(byte customerType, byte pageNumber, byte pageSize, out short pages)
+        {
+            return FilterCustomers(null, null, null, null, customerType,
+                                   pageNumber, pageSize, out pages);
+        }
+
+        public static DataTable FilterByCreatedByUser(int userID, byte pageNumber, byte pageSize, out short pages)
+        {
+            return FilterCustomers(null, null, userID, null, null,
+                                   pageNumber, pageSize, out pages);
+        }
+
+        public static DataTable FilterCustomers
+        (
+            string column,
+            string term,
+            byte pageNumber,
+            byte pageSize,
+            out short availablePages
+        )
+        {
+            column = column?.Trim().ToLower();
+            term = term?.Trim();
+
+            switch (column)
+            {
+                case "customerid":
+                    return FindByCustomerID(int.Parse(term), pageNumber, pageSize, out availablePages);
+
+                case "personid":
+                    return FindByPersonID(int.Parse(term), pageNumber, pageSize, out availablePages);
+
+                case "status":
+                case "isactive":
+                    return FilterByStatus(bool.Parse(term), pageNumber, pageSize, out availablePages);
+
+                case "customertype":
+                    return FilterByCustomerType(byte.Parse(term), pageNumber, pageSize, out availablePages);
+
+                case "createdby":
+                case "createdbyuserid":
+                    return FilterByCreatedByUser(int.Parse(term), pageNumber, pageSize, out availablePages);
+
+                default:
+                    availablePages = 0;
+                    return ListAll(pageNumber, pageSize, out availablePages);
+            }
         }
     
     }

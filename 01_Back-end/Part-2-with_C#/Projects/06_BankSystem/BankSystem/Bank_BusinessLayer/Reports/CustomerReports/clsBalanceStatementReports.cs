@@ -8,10 +8,9 @@ using System.Threading.Tasks;
 
 namespace Bank_BusinessLayer.Reports.CustomerReports
 {
-    public class clsBalanceStatementReports
+    public class clsBalanceStatementReports : clsCustomerReports_Main
     {
        
-        public int CustomerID { get; set; }
         public int AccountID { get; set; }
         public double OpeningBalance { get; set; }
         public double ClosingBalance { get; set; }
@@ -20,7 +19,6 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
 
         public clsBalanceStatementReports()
         {
-            CustomerID = -1;
             AccountID = -1;
             OpeningBalance = 0;
             ClosingBalance = 0;
@@ -28,9 +26,9 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
             ToDate = DateTime.MinValue;
         }
 
-        public clsBalanceStatementReports(int customerID, int accountID, double openingBalance, double closingBalance, DateTime fromDate, DateTime toDate)
+        public clsBalanceStatementReports(int customerReportID, int customerID, DateTime reportDate, short reportTypeID, int accountID, double openingBalance, double closingBalance, DateTime fromDate, DateTime toDate)
+             : base(customerReportID, customerID, reportTypeID, reportDate)
         {
-            CustomerID = customerID;
             AccountID = accountID;
             OpeningBalance = openingBalance;
             ClosingBalance = closingBalance;
@@ -40,20 +38,22 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
 
         public static clsBalanceStatementReports Find(int customerID, int accountID)
         {
+            int ReportID = -1;
             double openingBalance = 0;
             double closingBalance = 0;
             DateTime fromDate = DateTime.MinValue;
             DateTime toDate = DateTime.MinValue;
 
-            bool found = clsBalanceStatementReports_DAL.Find(customerID, accountID, ref openingBalance, ref closingBalance, ref fromDate, ref toDate);
+            bool found = clsBalanceStatementReports_DAL.Find(customerID, accountID,ref ReportID, ref openingBalance, ref closingBalance, ref fromDate, ref toDate);
 
-            if (found)
+            var ReportHeader = clsCustomerReports_Main.Find(ReportID);
+            if (found && ReportHeader != null)
             {
-                return new clsBalanceStatementReports(customerID, accountID, openingBalance, closingBalance, fromDate, toDate);
+                return new clsBalanceStatementReports(ReportHeader.CustomerReportID, ReportHeader.CustomerID, ReportHeader.ReportDate, ReportHeader.ReportTypeID, accountID, openingBalance, closingBalance, fromDate, toDate);
             }
             else
             {
-                return null; 
+                return null;
             }
         }
 
@@ -87,7 +87,43 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
         {
             return FilterReports(null, null, fromDate, toDate, pageNumber, pageSize, out availablePages);
         }
-    
+
+        public static DataTable FilterBalanceStatementReports
+            (
+            string column,
+            string term,
+            byte pageNumber,
+            byte pageSize,
+            out short availablePages
+            )
+        {
+            column = column?.Trim().ToLower();
+            term = term?.Trim();
+
+            switch (column)
+            {
+                case "customerid":
+                    return FilterByCustomerID(int.Parse(term), pageNumber, pageSize, out availablePages);
+
+                case "accountid":
+                    return FilterByAccountID(int.Parse(term), pageNumber, pageSize, out availablePages);
+
+                case "daterange":
+                case "fromdate-to":
+                    // expecting term format: "yyyy-MM-dd|yyyy-MM-dd"
+                    var dates = term.Split('|');
+                    if (dates.Length == 2 &&
+                        DateTime.TryParse(dates[0], out DateTime fromDate) &&
+                        DateTime.TryParse(dates[1], out DateTime toDate))
+                    {
+                        return FilterByDateRange(fromDate, toDate, pageNumber, pageSize, out availablePages);
+                    }
+                    break;
+            }
+
+            return ListAll(pageNumber, pageSize, out availablePages);
+        }
+
     }
 
 }

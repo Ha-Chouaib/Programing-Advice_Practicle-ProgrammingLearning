@@ -135,5 +135,41 @@ namespace Bank_BusinessLayer.Reports
         {
             return FilterReports(null, null, null, null, toDate, pageNumber, pageSize, out AvailablePages);
         }
+
+        public static DataTable FilterUserActivityReports(
+            string column,
+            string term,
+            byte pageNumber,
+            byte pageSize,
+            out short availablePages
+            )
+        {
+            column = column?.Trim().ToLower();
+            term = term?.Trim();
+
+            switch (column)
+            {
+                case "userid":
+                    return FilterByUserID(int.Parse(term), pageNumber, pageSize, out availablePages);
+
+                case "actionkey":
+                    return FilterByActionKey(term, pageNumber, pageSize, out availablePages);
+
+                case "success":
+                case "succeeded":
+                    return FilterBySuccess(bool.Parse(term), pageNumber, pageSize, out availablePages);
+
+                case "fromdate":
+                    return FilterByFromDate(DateTime.Parse(term), pageNumber, pageSize, out availablePages);
+
+                case "todate":
+                    return FilterByToDate(DateTime.Parse(term), pageNumber, pageSize, out availablePages);
+
+                default:
+                    return ListAll(pageNumber, pageSize, out availablePages);
+            }
+        }
+
+
     }
 }

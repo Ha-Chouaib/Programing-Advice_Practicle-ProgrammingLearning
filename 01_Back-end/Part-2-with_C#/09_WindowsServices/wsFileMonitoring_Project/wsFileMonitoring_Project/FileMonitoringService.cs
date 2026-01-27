@@ -21,6 +21,12 @@ namespace wsFileMonitoring_Project
         private string _DestinationDirectory;
         private string _LogDirectory;
 
+        private string _default_MainDirectory;
+        private string _default_SourceDirectory;
+        private string _default_DestinationDirectory;
+        private string _default_LogDirectory;
+        private string _defaultLogFileName;
+
         private string _LogFileName;
         private string _LogFilePath;
 
@@ -37,11 +43,17 @@ namespace wsFileMonitoring_Project
 
             CanPauseAndContinue = true;
             CanStop = true;
-            
 
+            _default_MainDirectory = @"C:\FileMonitoringService";
+            _default_SourceDirectory = @"c:\FileMonitoringService\SourceFolder";
+            _default_DestinationDirectory = @"c:\FileMonitoringService\DestinationFolder";
+            _default_LogDirectory = @"c:\FileMonitoringService\LogFolder";
+            _defaultLogFileName = "ServiceLog.txt";
 
             InitializeRequiredDirectories();
-            _LogFilePath = Path.Combine(_LogDirectory, _LogFileName);
+            _LogFilePath = Path.Combine(_LogDirectory, _LogFileName??_defaultLogFileName );
+
+
         }
 
         private void _ConfigureRequiredDirectories()
@@ -50,16 +62,32 @@ namespace wsFileMonitoring_Project
             _SourceDirectory = ConfigurationManager.AppSettings["SourceDirectory"];
             _DestinationDirectory = ConfigurationManager.AppSettings["DestinationDirectory"];
             _LogDirectory = ConfigurationManager.AppSettings["LogDirectory"];
+
+           
+
         }
         private void InitializeRequiredDirectories()
         {
             _ConfigureRequiredDirectories();
+
+            _SetDefaultIfNoConfigured(ref _MainDirectory, _default_MainDirectory);
+            _SetDefaultIfNoConfigured(ref _SourceDirectory, _default_SourceDirectory);
+            _SetDefaultIfNoConfigured(ref _DestinationDirectory, _default_DestinationDirectory);
+            _SetDefaultIfNoConfigured(ref _LogDirectory, _default_LogDirectory);
 
             _CreateDirectoryIfNoExists(_MainDirectory);
             _CreateDirectoryIfNoExists(_SourceDirectory);
             _CreateDirectoryIfNoExists(_DestinationDirectory);
             _CreateDirectoryIfNoExists(_LogDirectory);
             _LogFileName = ConfigurationManager.AppSettings["LogFileName"];
+        }
+        private void _SetDefaultIfNoConfigured(ref string directoryPath, string defaultPath)
+        {
+            if (string.IsNullOrEmpty(directoryPath))
+            {
+                directoryPath = defaultPath;
+                _LogAction($"Directory not configured. Using default: {defaultPath}");
+            }
         }
         private void _CreateDirectoryIfNoExists(string TargetDirectory)
         {
@@ -191,7 +219,8 @@ namespace wsFileMonitoring_Project
             {
                 Path = _SourceDirectory,
                 Filter = "*.*",
-                NotifyFilter = NotifyFilters.FileName | NotifyFilters.CreationTime
+                NotifyFilter = NotifyFilters.FileName | NotifyFilters.CreationTime,
+                IncludeSubdirectories = false
             };
 
             _FileSystemWatcher.Created += OnFileInserted;

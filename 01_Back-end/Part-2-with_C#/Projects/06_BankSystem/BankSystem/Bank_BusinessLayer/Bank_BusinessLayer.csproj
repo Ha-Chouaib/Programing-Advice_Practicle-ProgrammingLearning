@@ -57,7 +57,6 @@
     <Compile Include="Reports\clsTransactionsReport.cs" />
     <Compile Include="Reports\CustomerReports\clsAccountActivityReports.cs" />
     <Compile Include="Reports\CustomerReports\clsBalanceStatementReports.cs" />
-    <Compile Include="Reports\CustomerReports\clsCustomerReportsType.cs" />
     <Compile Include="Reports\CustomerReports\clsCustomerReports_Main.cs" />
     <Compile Include="Reports\CustomerReports\clsCustomerSummaryReports.cs" />
     <Compile Include="Reports\CustomerReports\clsDormantAccountsReports.cs" />

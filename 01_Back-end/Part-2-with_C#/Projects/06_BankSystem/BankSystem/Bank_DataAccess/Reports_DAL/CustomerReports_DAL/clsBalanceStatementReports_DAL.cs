@@ -41,11 +41,11 @@ namespace Bank_DataAccess.Reports.CustomerReports
             }
             return customerReportId;
         }
-        public static bool Find(int CustomerID,int AccountID,ref double OpeningBalance,ref double CloseingBalance,ref DateTime FromDate,ref DateTime ToDate)
+        public static bool Find(int CustomerID,int AccountID, ref int CustomerReportId, ref double OpeningBalance,ref double CloseingBalance,ref DateTime FromDate,ref DateTime ToDate)
         {
             string Query = @"[dbo].[Sp_CustomerBalanceStatementReports_GetByID]";
             bool found = false;
-            int CustomerReportId = _GenerateBalanceStatementReport(CustomerID,AccountID);
+            CustomerReportId = _GenerateBalanceStatementReport(CustomerID,AccountID);
             try
             {
                 if (CustomerReportId == -1)
@@ -75,11 +75,11 @@ namespace Bank_DataAccess.Reports.CustomerReports
             }
             catch (SqlException ex)
             {
-                clsGlobal.LogError($"DAL -> clsBalanceStatementReports_DAL.GenerateBalanceStatementReport() ,SQL Error: {ex.Message}");
+                clsGlobal.LogError($"DAL -> clsBalanceStatementReports_DAL.Find() ,SQL Error: {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsGlobal.LogError($"DAL -> clsBalanceStatementReports_DAL.GenerateBalanceStatementReport() {ex.Message}");
+                clsGlobal.LogError($"DAL -> clsBalanceStatementReports_DAL.Find() {ex.Message}");
 
             }
             return found;

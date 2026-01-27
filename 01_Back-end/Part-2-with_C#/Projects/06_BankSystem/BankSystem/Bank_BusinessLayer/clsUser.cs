@@ -227,13 +227,110 @@ namespace Bank_BusinessLayer
         {
             return clsUserDataAccess.IsActive(UserID);
         }
-        public static DataTable GetUsers()
+        public static DataTable FilterUsers
+        (
+            int? userID,
+            int? personID,
+            int? createdByUserID,
+            bool? isActive,
+            string userName,
+            string roleName,
+            byte pageNumber,
+            byte pageSize,
+            out short availablePages
+        )
         {
-            return clsUserDataAccess.ListAllUsers();
+            int totalRows = 0;
+
+            DataTable dt = clsUserDataAccess.FilterUsers
+            (
+                userID,
+                personID,
+                createdByUserID,
+                isActive,
+                userName,
+                roleName,
+                pageNumber,
+                pageSize,
+                out totalRows
+            );
+
+            availablePages = (short)Math.Ceiling((double)totalRows / pageSize);
+            return dt;
         }
-        public static DataTable FilterUsers(string Column, string Term)
+
+        public static DataTable ListAll(byte pageNumber, byte pageSize, out short availablePages)
         {
-            return clsUserDataAccess.FilterUsers(Column, Term);
+            return FilterUsers(null, null, null, null, null, null, pageNumber, pageSize, out availablePages);
+        }
+
+        public static DataTable FilterByUserID(int userID, byte pageNumber, byte pageSize, out short availablePages)
+        {
+            return FilterUsers(userID, null, null, null, null, null, pageNumber, pageSize, out availablePages);
+        }
+
+        public static DataTable FilterByPersonID(int personID, byte pageNumber, byte pageSize, out short availablePages)
+        {
+            return FilterUsers(null, personID, null, null, null, null, pageNumber, pageSize, out availablePages);
+        }
+
+        public static DataTable FilterByStatus(bool isActive, byte pageNumber, byte pageSize, out short availablePages)
+        {
+            return FilterUsers(null, null, null, isActive, null, null, pageNumber, pageSize, out availablePages);
+        }
+
+        public static DataTable FilterByCreatedBy(int createdByUserID, byte pageNumber, byte pageSize, out short availablePages)
+        {
+            return FilterUsers(null, null, createdByUserID, null, null, null, pageNumber, pageSize, out availablePages);
+        }
+
+        public static DataTable FilterByUserName(string userName, byte pageNumber, byte pageSize, out short availablePages)
+        {
+            return FilterUsers(null, null, null, null, userName, null, pageNumber, pageSize, out availablePages);
+        }
+
+        public static DataTable FilterByRoleName(string roleName, byte pageNumber, byte pageSize, out short availablePages)
+        {
+            return FilterUsers(null, null, null, null, null, roleName, pageNumber, pageSize, out availablePages);
+        }
+
+        public static DataTable FilterUsers
+        (
+            string column,
+            string term,
+            byte pageNumber,
+            byte pageSize,
+            out short availablePages
+        )
+        {
+            column = column?.Trim().ToLower();
+            term = term?.Trim();
+
+            switch (column)
+            {
+                case "userid":
+                    return FilterByUserID(int.Parse(term), pageNumber, pageSize, out availablePages);
+
+                case "personid":
+                    return FilterByPersonID(int.Parse(term), pageNumber, pageSize, out availablePages);
+
+                case "status":
+                case "isactive":
+                    return FilterByStatus(bool.Parse(term), pageNumber, pageSize, out availablePages);
+
+                case "createdby":
+                case "createdbyuserid":
+                    return FilterByCreatedBy(int.Parse(term), pageNumber, pageSize, out availablePages);
+
+                case "username":
+                    return FilterByUserName(term, pageNumber, pageSize, out availablePages);
+
+                case "rolename":
+                    return FilterByRoleName(term, pageNumber, pageSize, out availablePages);
+
+                default:
+                    return ListAll(pageNumber, pageSize, out availablePages);
+            }
         }
 
     }
