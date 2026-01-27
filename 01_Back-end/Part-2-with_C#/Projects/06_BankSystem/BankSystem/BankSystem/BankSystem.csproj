@@ -553,5 +553,14 @@
   <ItemGroup>
     <None Include="Resources\social-responsibility_18024872.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find_next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find_previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find_next %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

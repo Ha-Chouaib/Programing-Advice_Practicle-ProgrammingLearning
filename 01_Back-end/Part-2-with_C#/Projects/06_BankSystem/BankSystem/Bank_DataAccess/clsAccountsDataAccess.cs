@@ -12,7 +12,7 @@ namespace Bank_DataAccess
        
         public static (int AccountID,string AccountNumber) AddNewAccount(int CustomerID, byte AccountType, double Balance, bool IsActive, DateTime CreatedDate, int CreatedByUserID)
         {
-            string Query = "dbo.Sp_AddNewAccount";
+            string Query = "[dbo].[Sp_Accounts_AddNew]";
             int AccountID = -1;
             string AccountNumber = "";
             try
@@ -58,7 +58,7 @@ namespace Bank_DataAccess
         public static bool FindByID(int AccountID,ref int CustomerID,ref string AccountNumber,ref byte AccountType,
             ref double Balance,ref bool IsActive,ref DateTime CreatedDate,ref int CreatedByUserID)
         {
-            string Query = "dbo.Sp_GetAccountByID";
+            string Query = "[dbo].[Sp_Account_GetByID]";
             bool found=false;
             try
             {
@@ -103,7 +103,7 @@ namespace Bank_DataAccess
         public static bool FindByAccountNumber(string AccountNumber, ref int AccountID, ref int CustomerID,  ref byte AccountType,
            ref double Balance, ref bool IsActive, ref DateTime CreatedDate, ref int CreatedByUserID)
         {
-            string Query = "dbo.GetAccountByAccountNumber";
+            string Query = "[dbo].[Sp_AccountGet_ByAccountNumber]";
             bool found = false;
             try
             {
@@ -279,7 +279,7 @@ namespace Bank_DataAccess
         public static bool UpdateBalance(int AccountID,  double Balance)
         {
 
-            string Query = "Sp_UpdateBalanceByAccountID";
+            string Query = "[dbo].[Sp_Account_UpdateBalanceByID]";
             bool success = false;
             try
             {
@@ -321,7 +321,7 @@ namespace Bank_DataAccess
         public static bool UpdateStatus(int AccountID, bool IsActive)
         {
 
-            string Query = "Sp_UpdateAccountStatusByID";
+            string Query = "[dbo].[Sp_Account_UpdateStatusByID]";
             bool success = false;
             try
             {
@@ -363,7 +363,7 @@ namespace Bank_DataAccess
         public static bool UpdateAccountType(int AccountID, byte AccountType)
         {
 
-            string Query = "Sp_UpdateAccountType";
+            string Query = "[dbo].[Sp_Account_UpdateType]";
             bool success = false;
             try
             {
@@ -405,7 +405,7 @@ namespace Bank_DataAccess
 
         public static bool DepositWithdraw(int AccountID, double Amount)
         {
-            string Query = "Sp_Trans_DepositWithdraw";
+            string Query = "[dbo].[Sp_Account_DepositWithdraw]";
             bool Success = false;
             try
             {
@@ -445,7 +445,7 @@ namespace Bank_DataAccess
 
         public static bool TransferMoney(int AccountFromID, int AccountToID, double Amount)
         {
-            string Query = "Sp_TransferMoney";
+            string Query = "[dbo].[Sp_Account_TransferMoney]";
             bool Success = false;
             try
             {
@@ -514,7 +514,7 @@ namespace Bank_DataAccess
 
         public static bool Delete(int AccountID,int DeletedByUserID)
         {
-            string Query = "Sp_DeleteAccount";
+            string Query = "[dbo].[Sp_Account_Delete]";
             bool Deleted = false;
             try
             {
@@ -552,74 +552,55 @@ namespace Bank_DataAccess
             return Deleted;
         }
 
-        public static DataTable ListAccounts()
+        public static DataTable FilterAccounts
+        (int? AccountID,string AccountNumber, int? CustomerID, int? CreatedByUserID, bool? IsActive, byte? AccountType, byte pageNumber, byte pageSize, out int totalRows)
         {
-
-            string Query = "Sp_GetAccounts";
+            totalRows = 0;
             DataTable dt = new DataTable();
             try
             {
-                using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
-                using (SqlCommand cmd = new SqlCommand(Query, connection))
+
+
+                using (SqlConnection conn = new SqlConnection(DataAccessSettings.connectionString))
+                using (SqlCommand cmd = new SqlCommand(" [dbo].[Sp_Accounts_FilterPaged]", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    connection.Open();
+
+                    cmd.Parameters.AddWithValue("@CustomerID", CustomerID.HasValue ? (object)CustomerID.Value : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@AccountID", AccountID.HasValue ? (object)AccountID.Value : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@IsActive", IsActive.HasValue ? (object)IsActive.Value : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID.HasValue ? (object)CreatedByUserID.Value : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@AccountType", AccountType.HasValue ? (object)AccountType.Value : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@AccountNumber", !string.IsNullOrEmpty(AccountNumber) ? (object)AccountNumber : DBNull.Value);
+
+                    cmd.Parameters.AddWithValue("@PageNumber", pageNumber);
+                    cmd.Parameters.AddWithValue("@PageSize", pageSize);
+
+                    SqlParameter totalParam = new SqlParameter("@TotalRows", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    cmd.Parameters.Add(totalParam);
+
+                    conn.Open();
                     using (SqlDataReader rdr = cmd.ExecuteReader())
                     {
-                       dt.Load(rdr);
+                        dt.Load(rdr);
                     }
+
+                    totalRows = (int)(totalParam.Value ?? 0);
                 }
             }
             catch (SqlException ex)
             {
-                clsGlobal.LogError($"[DAL: Account.ListAccounts() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"DAL -> Accounts.FilterAccounts() ,SQL Error: {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsGlobal.LogError($"[DAL: Account.ListAccounts() ] -> {ex.Message}");
+                clsGlobal.LogError($"DAL -> Accounts.FilterAccounts() {ex.Message}");
 
             }
             return dt;
-        }
-
-        public static DataTable FilterAccounts(string Column, string Term)
-        {
-            string Query = "Sp_FilterAccountsList";
-            DataTable FilteredList = new DataTable();
-            string[] AllowedColumn = new string[] { "All", "ID", "CustomerID", "IsActive", "AccountType","AccountNumber" };
-            try
-            {
-                if (!AllowedColumn.Contains(Column))
-                {
-                    throw new ArgumentException($"Invalid Column Name: {Column}");
-                }
-                using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
-                using (SqlCommand cmd = new SqlCommand(Query, connection))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.AddWithValue("@Column", Column);
-                    cmd.Parameters.AddWithValue("@FilterBy", Term);
-
-                    connection.Open();
-
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        FilteredList.Load(reader);
-                    }
-
-                }
-            }
-            catch (SqlException ex)
-            {
-                clsGlobal.LogError($"[DAL: Accounts.FilterAccounts() ] -> SqlServer Error({ex.Number}): {ex.Message}");
-            }
-            catch (Exception ex)
-            {
-                clsGlobal.LogError($"[DAL:  Accounts.FilterAccounts() ] -> {ex.Message}");
-
-            }
-            return FilteredList;
         }
 
     }

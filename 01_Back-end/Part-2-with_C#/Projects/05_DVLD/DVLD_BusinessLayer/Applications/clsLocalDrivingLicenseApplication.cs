@@ -39,7 +39,7 @@ namespace DVLD_BusinessLayer.Applications
 
         {
         this.LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplicationID; ;
-        this.MainApplicationID = ApplicationID;
+        base.MainApplicationID = ApplicationID;
         this.ApplicantPersonID = ApplicantPersonID;
         this.ApplicationDate = ApplicationDate;
         this.ApplicationTypeID = (int)ApplicationTypeID;
@@ -80,7 +80,7 @@ namespace DVLD_BusinessLayer.Applications
 
             if (IsFound)
             {
-                clsMainApplication Application = clsMainApplication.FindMainApplication(ApplicationID);
+                clsMainApplication Application = FindMainApplication(ApplicationID);
                 if (Application == null) return null;
 
 

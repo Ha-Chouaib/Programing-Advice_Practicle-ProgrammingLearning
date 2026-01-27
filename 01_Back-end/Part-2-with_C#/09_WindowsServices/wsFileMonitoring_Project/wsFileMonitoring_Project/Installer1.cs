@@ -28,6 +28,8 @@ namespace wsFileMonitoring_Project
                 ServiceName = "FileMonitoringService",
                 DisplayName = "File Monitoring Service",
                 StartType = ServiceStartMode.Automatic,
+                Description = "Monitors file changes in specified directories.",
+                ServicesDependedOn  = new string[] {"RpcSs", "EventLog","LanManWorkstation" }
 
             };
 

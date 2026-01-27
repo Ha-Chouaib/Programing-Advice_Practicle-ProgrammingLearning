@@ -11,7 +11,7 @@ namespace Bank_DataAccess
     {
         public static int AddNewCustomer(int PersonID,string Occupation,byte CustomerType ,DateTime CreatedDate, int CreatedByUserID,bool IsActive)
         {
-            string Query = "dbo.Sp_AddNewCustomer";
+            string Query = "[dbo].[Sp_Customer_AddNew]";
             int CustomerID = -1;
 
             try
@@ -54,7 +54,7 @@ namespace Bank_DataAccess
     
         public static bool FindCustomerByID(int CustomerID, ref int PersonID, ref string Occupation,ref byte CustomerType, ref DateTime CreatedDate, ref int CreatedByUserID, ref bool IsActive)
         {
-            string Query = "Sp_GetCustomerByID";
+            string Query = "[dbo].[Sp_Customer_GetByID]";
             bool Found = false;
             try
             {
@@ -100,7 +100,7 @@ namespace Bank_DataAccess
 
         public static bool FindCustomerByPersonID(int PersonID, ref int CustomerID, ref string Occupation, ref byte CustomerType, ref DateTime CreatedDate, ref int CreatedByUserID,ref bool IsActive)
         {
-            string Query = "Sp_GetCustomerByPersonID";
+            string Query = "[dbo].[Sp_Customer_GetByPersonID]";
             bool Found = false;
             try
             {
@@ -145,7 +145,7 @@ namespace Bank_DataAccess
 
         public static bool Update(int CustomerID, string Occupation, byte CustomerType, bool IsActive)
         {
-            string Query = "Sp_UpdateCustomer";
+            string Query = "[dbo].[Sp_Customer_Update]";
             bool success = false;
             try
             {
@@ -187,7 +187,7 @@ namespace Bank_DataAccess
         }
         public static bool UpdateCustomerStatus(int CustomerID, bool IsActive)
         {
-            string Query = "Sp_UpdateCustomerStatus";
+            string Query = "[dbo].[Sp_Customer_UpdateStatus]";
             bool success = false;
             try
             {
@@ -309,7 +309,7 @@ namespace Bank_DataAccess
         public static bool Delete(int CustomerID, int DeletedByUserID)
         {
 
-            string Query = "Sp_DeleteUser";
+            string Query = "[dbo].[Sp_Customer_Delete]";
             bool Deleted = false;
             try
             {
@@ -346,79 +346,61 @@ namespace Bank_DataAccess
 
             return Deleted;
         }
-        public static DataTable GetAllCustomers()
+      
+        public static DataTable FilterCustomers
+        (int? CustomerID, int? PersonID, int? CreatedByUserID, bool? IsActive, byte? CustomerType, byte pageNumber, byte pageSize, out int totalRows)
         {
-            string Query = "Sp_GetAllCustomers";
+            totalRows = 0;
             DataTable dt = new DataTable();
             try
             {
-                using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
-                using (SqlCommand cmd = new SqlCommand(Query, connection))
+
+
+                using (SqlConnection conn = new SqlConnection(DataAccessSettings.connectionString))
+                using (SqlCommand cmd = new SqlCommand(" [dbo].[Sp_Customers_FilterPaged]", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    connection.Open();
+
+                    cmd.Parameters.AddWithValue("@CustomerID", CustomerID.HasValue ? (object)CustomerID.Value : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@PersonID", PersonID.HasValue ? (object)PersonID.Value : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@IsActive", IsActive.HasValue ? (object)IsActive.Value : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID.HasValue ? (object)CreatedByUserID.Value : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@CustomerType", CustomerType.HasValue? (object)CustomerType.Value : DBNull.Value);
+
+                    cmd.Parameters.AddWithValue("@PageNumber", pageNumber);
+                    cmd.Parameters.AddWithValue("@PageSize", pageSize);
+
+                    SqlParameter totalParam = new SqlParameter("@TotalRows", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    cmd.Parameters.Add(totalParam);
+
+                    conn.Open();
                     using (SqlDataReader rdr = cmd.ExecuteReader())
                     {
                         dt.Load(rdr);
                     }
+
+                    totalRows = (int)(totalParam.Value ?? 0);
                 }
             }
             catch (SqlException ex)
             {
-                clsGlobal.LogError($"[DAL: Customer.GetAllCustomers() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"DAL -> Customers.FilterCustomers() ,SQL Error: {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsGlobal.LogError($"[DAL: Customer.GetAllCustomers() ] -> {ex.Message}");
+                clsGlobal.LogError($"DAL -> Customers.FilterCustomers() {ex.Message}");
 
             }
             return dt;
         }
 
-      
-        public static DataTable FilterCustomers(string Column, string Term)
-        {
-            string Query = "Sp_FilterCustomersList";
-            DataTable FilteredList = new DataTable();
-            string[] AllowedColumn = new string[] { "All", "PersonID", "ID", "IsActive", "CustomerType" };
-            try
-            {
-                if (!AllowedColumn.Contains(Column))
-                {
-                    throw new ArgumentException($"Invalid Column Name: {Column}");
-                }
-                using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
-                using (SqlCommand cmd = new SqlCommand(Query, connection))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.AddWithValue("@Column", Column);
-                    cmd.Parameters.AddWithValue("@FilterBy", Term);
-
-                    connection.Open();
-
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        FilteredList.Load(reader);
-                    }
-
-                }
-            }
-            catch (SqlException ex)
-            {
-                clsGlobal.LogError($"[DAL: Customers.FilterCustomers() ] -> SqlServer Error({ex.Number}): {ex.Message}");
-            }
-            catch (Exception ex)
-            {
-                clsGlobal.LogError($"[DAL: Customers.FilterCustomers() ] -> {ex.Message}");
-
-            }
-            return FilteredList;
-        }
         public static DataTable GetCustomerAccounts(int CustomerID)
         {
 
-            string Query = "dbo.Sp_GetCustomerAccounts";
+            string Query = "[dbo].[Sp_Customer_GetAccounts]";
             DataTable accounts = new DataTable();
             try
             {

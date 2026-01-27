@@ -51,11 +51,11 @@ namespace Bank_DataAccess.Reports.CustomerReports
 
 
         }
-        public static bool Find(int CustomerID, ref byte TotalAccounts ,ref byte ActiveAccounts,ref double TotalBalance,ref DateTime LastActivityDate,ref bool CustomerStatus)
+        public static bool Find(int CustomerID,ref int ReportID,ref byte TotalAccounts ,ref byte ActiveAccounts,ref double TotalBalance,ref DateTime LastActivityDate,ref bool CustomerStatus)
         {
             string Query = @"[dbo].[Sp_CustomerSummaryReports_GetByID]";
             bool found = false;
-            int ReportID = _GenerateCustomerSummaryReport(CustomerID);
+            ReportID = _GenerateCustomerSummaryReport(CustomerID);
             if (ReportID == -1) return false;
             try
             {
@@ -107,7 +107,7 @@ namespace Bank_DataAccess.Reports.CustomerReports
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@CustomerD", CustomerID.HasValue ? (object)CustomerID.Value : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@CustomerID", CustomerID.HasValue ? (object)CustomerID.Value : DBNull.Value);
                     cmd.Parameters.AddWithValue("@ActiveAccounts", ActiveAccounts.HasValue ? (object)ActiveAccounts.Value : DBNull.Value);
                     cmd.Parameters.AddWithValue("@LastActivityDate", LastActivityDate.HasValue ? (object) LastActivityDate.Value : DBNull.Value);
                     cmd.Parameters.AddWithValue("@CustomerStatus", CustomerStatus.HasValue ? (object)CustomerStatus.Value : DBNull.Value);

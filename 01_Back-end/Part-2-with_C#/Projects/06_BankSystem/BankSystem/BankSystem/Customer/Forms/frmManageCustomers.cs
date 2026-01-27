@@ -37,7 +37,7 @@ namespace BankSystem.Customer.Forms
             ctrlManageRecords1.__AddNewBtn.Text = "Add New Customer";
             ctrlManageRecords1.__UpdateBtn.Text = "Edit Customer";
 
-            ctrlManageRecords1.__Initialize(clsCustomer.ListCustomers(), _FilterBy_Options(), clsCustomer.FilterCustomers, _ContextMenuPackage(), _FilterByGroups());
+            //ctrlManageRecords1.__Initialize(clsCustomer.ListCustomers(), _FilterBy_Options(), clsCustomer.FilterCustomers, _ContextMenuPackage(), _FilterByGroups());
             _ConfigureDataRecordsContainer();
         }
         private Dictionary<string, string> _FilterBy_Options()

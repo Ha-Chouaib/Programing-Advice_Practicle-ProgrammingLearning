@@ -20,19 +20,26 @@ namespace BankSystem
         public Action __AddNewRecordDelegate;
         public Action __UpdateRecordDelegate;
         public Action __CloseFormDelegate;
-        private Func<string,string,DataTable> _FilterRecordsDelegate;
-
+        public delegate DataTable FilterRecordsDelegate(string Column,string Term,byte PageNumber,byte PageSize,out short availablePages);
+        private FilterRecordsDelegate _FilterRecordsDelegate;
         public DataGridView __RecordsContainer => dgvListRecords;
         public PictureBox __HeaderImg => pbRecordsProfile;
         public Label __HeaderTitle => lblTitle;
         public Button __AddNewBtn => btnAddNew;
         public Button __UpdateBtn => btnUpdate;
 
+        public byte __PageNumber { get; set; }= 1;
+        public byte __PageSize { get; set; } = 50;
+        public short __AvailablePages { get; set; } = 0;
+
+        StringBuilder _Column = new StringBuilder();
+        StringBuilder _Term = new StringBuilder();
+
         private Dictionary<string, Dictionary<string, string>> _FilterByGroups { get; set; }
-        public void __Initialize(DataTable RecordsList,Dictionary<string,string> FilterByOptions,Func<string,string,DataTable> FilterDelegate,
+        public void __Initialize(Dictionary<string,string> FilterByOptions, FilterRecordsDelegate FilterDelegate,
             List<(string ContextMenuKey,Action<int, ToolStripMenuItem> ContextMenuAction)> ContextMenuPackage,Dictionary<string,Dictionary<string,string>> FilterByGroups = null )
         {
-            __RefreshRecordsList(RecordsList);
+            __RefreshRecordsList();
 
             cmbFilterOptions.DataSource = new BindingSource(FilterByOptions, null);
             cmbFilterOptions.ValueMember = "value";
@@ -63,30 +70,25 @@ namespace BankSystem
 
         private void pbSearchClick_Click(object sender, EventArgs e)
         {
-            
             if (txtSearchTerm.Text == string.Empty) return;
+            _Column.Clear();
+            _Term.Clear();
 
-            var result = _FilterRecordsDelegate?.Invoke(cmbFilterOptions.SelectedValue.ToString(), txtSearchTerm.Text.Trim());
-            __RefreshRecordsList(result);
+            _Column.Append(cmbFilterOptions.SelectedValue.ToString());
+            _Term.Append(txtSearchTerm.Text.Trim());
+            __RefreshRecordsList();
 
-        }
-        public void __RefreshRecordsList(DataTable NewList)
-        {
-            dgvListRecords.DataSource = NewList;
-            lblRecordsCount.Text = $"Records: [ {dgvListRecords.RowCount} ]";
         }
         public void __RefreshRecordsList()
         {
-            StringBuilder Column = new StringBuilder();
-            StringBuilder Term = new StringBuilder();
+           
+            short AvailablePages = 0;
 
-            Column.Append(cmbFilterOptions.SelectedValue);
-            if (cmbFilterByGroups.Visible)
-                Term.Append(cmbFilterByGroups.SelectedValue);
-            else
-                Term.Append(txtSearchTerm.Text.Trim());
-
-                __RefreshRecordsList(_FilterRecordsDelegate?.Invoke(Column.ToString(), Term.ToString()));
+          
+            dgvListRecords.DataSource = _FilterRecordsDelegate?.Invoke(_Column.ToString(), _Term.ToString(), __PageNumber, __PageSize, out AvailablePages);
+            __AvailablePages = AvailablePages;
+            lblAvaibalbePages.Text = $"[ {__PageNumber}/{__AvailablePages} ]";
+            lblRecordsCount.Text = $"Records: [ {dgvListRecords.RowCount} ]";
         }
         private void btnAddNew_Click(object sender, EventArgs e)
         {
@@ -117,7 +119,7 @@ namespace BankSystem
 
                 cmbFilterByGroups.SelectedIndex = 0;
                 cmbFilterByGroups.Visible = true;
-                __RefreshRecordsList(_FilterRecordsDelegate?.Invoke("All", "All"));
+                __RefreshRecordsList();
                 return;
             }
             
@@ -127,7 +129,7 @@ namespace BankSystem
             if(cmbFilterOptions.SelectedValue.ToString() == "All")
             {
                 pbSearchClick.Enabled = false;
-                __RefreshRecordsList(_FilterRecordsDelegate?.Invoke("All", "All"));
+                __RefreshRecordsList();
                 return;
             }
             pbSearchClick.Enabled = true;
@@ -137,10 +139,31 @@ namespace BankSystem
 
         private void cmbFilterByGroups_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var FilteredList = _FilterRecordsDelegate?.Invoke(cmbFilterOptions.SelectedValue.ToString(), cmbFilterByGroups.SelectedValue.ToString());
-            __RefreshRecordsList(FilteredList);
+            _Column.Clear();
+            _Term.Clear();
+
+            _Column.Append(cmbFilterOptions.SelectedValue);
+            _Term.Append(cmbFilterByGroups.SelectedValue);
+
+            __RefreshRecordsList();
         }
 
-       
+        private void pbNext_Click(object sender, EventArgs e)
+        {
+            if(__PageNumber < __AvailablePages)
+            {
+                __PageNumber++;
+                __RefreshRecordsList();
+            }
+        }
+
+        private void pbPrevious_Click(object sender, EventArgs e)
+        {
+            if(__PageNumber > 1)
+            {
+                __PageNumber--;
+                __RefreshRecordsList();
+            }
+        }
     }
 }

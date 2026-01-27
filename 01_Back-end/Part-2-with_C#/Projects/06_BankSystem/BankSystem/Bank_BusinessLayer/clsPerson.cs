@@ -175,13 +175,110 @@ namespace Bank_BusinessLayer
         {
             return clsPersonDataAccess.Delete(PersonID, DeletedByUserID);
         }
-        public static DataTable ListPeopleRecords()
+
+
+        public static DataTable FilterPeople
+                    (
+                        int? personID,
+                        bool? gender,
+                        string nationalNo,
+                        string fullName,
+                        string email,
+                        string phone,
+                        string address,
+                        byte pageNumber,
+                        byte pageSize,
+                        out short availablePages
+                    )
         {
-            return clsPersonDataAccess.ListAllPeople();
+            int totalRows = 0;
+
+            DataTable dt = clsPersonDataAccess.FilterPeople(
+                personID,
+                gender,
+                nationalNo,
+                fullName,
+                email,
+                phone,
+                address,
+                pageNumber,
+                pageSize,
+                out totalRows
+            );
+
+            availablePages = (short)Math.Ceiling((double)totalRows / pageSize);
+            return dt;
         }
-        public static DataTable FilterPeople(string Column, string Term)
+
+        public static DataTable ListPeopleRecords(byte pageNumber, byte pageSize, out short availablePages)
         {
-            return clsPersonDataAccess.FilterPeople(Column,Term);
+            return FilterPeople(null, null, null, null, null, null, null, pageNumber, pageSize, out availablePages);
+        }
+        public static DataTable FindByID(int personID, byte pageNumber, byte pageSize, out short availablePages)
+        {
+            return FilterPeople(personID, null, null, null, null, null, null, pageNumber, pageSize, out availablePages);
+        }
+        public static DataTable FilterByNationalNo(string nationalNo, byte pageNumber, byte pageSize, out short availablePages)
+        {
+            return FilterPeople(null, null, nationalNo, null, null, null, null, pageNumber, pageSize, out availablePages);
+        }
+        public static DataTable SearchByName(string fullName, byte pageNumber, byte pageSize, out short availablePages)
+        {
+            return FilterPeople(null, null, null, fullName, null, null, null, pageNumber, pageSize, out availablePages);
+        }
+        public static DataTable FilterByGender(bool gender, byte pageNumber, byte pageSize, out short availablePages)
+        {
+            return FilterPeople(null, gender, null, null, null, null, null, pageNumber, pageSize, out availablePages);
+        }
+        public static DataTable SearchByEmail(string email, byte pageNumber, byte pageSize, out short availablePages)
+        {
+            return FilterPeople(null, null, null, null, email, null, null, pageNumber, pageSize, out availablePages);
+        }
+        public static DataTable SearchByPhone(string phone, byte pageNumber, byte pageSize, out short availablePages)
+        {
+            return FilterPeople(null, null, null, null, null, phone, null, pageNumber, pageSize, out availablePages);
+        }
+        public static DataTable SearchByAddress(string address, byte pageNumber, byte pageSize, out short availablePages)
+        {
+            return FilterPeople(null, null, null, null, null, null, address, pageNumber, pageSize, out availablePages);
+        }
+        public static DataTable FilterPeople( string column,string term,byte pageNumber, byte pageSize, out short availablePages )
+        {
+            column = column?.Trim().ToLower();
+            term = term?.Trim();
+
+            switch (column)
+            {
+                case "personid":
+                    if (int.TryParse(term, out int personID))
+                        return FindByID(personID, pageNumber, pageSize, out availablePages);
+                    break;
+
+                case "gender":
+                    if (bool.TryParse(term, out bool gender))
+                        return FilterByGender(gender, pageNumber, pageSize, out availablePages);
+                    break;
+
+                case "nationalno":
+                    return FilterByNationalNo(term, pageNumber, pageSize, out availablePages);
+
+                case "fullName":
+                    return SearchByName(term, pageNumber, pageSize, out availablePages);
+
+                case "email":
+                    return SearchByEmail(term, pageNumber, pageSize, out availablePages);
+
+                case "phone":
+                    return SearchByPhone(term, pageNumber, pageSize, out availablePages);
+
+                case "address":
+                    return SearchByAddress(term, pageNumber, pageSize, out availablePages);
+
+                default:
+                    return ListPeopleRecords(pageNumber, pageSize, out availablePages);
+            }
+
+            return ListPeopleRecords(pageNumber, pageSize, out availablePages);
         }
 
 

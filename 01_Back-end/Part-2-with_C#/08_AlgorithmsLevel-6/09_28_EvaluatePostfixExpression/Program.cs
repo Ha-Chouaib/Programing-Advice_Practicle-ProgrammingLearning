@@ -46,26 +46,7 @@ namespace _09_28_EvaluatePostfixExpression
                     }
                 }
             }
-            //foreach (char c in expression)
-            //{
-            //    if (char.IsDigit(c))
-            //    {
-            //        stack.Push(c - '0');
-            //    }
-            //    else
-            //    {
-            //        int b = stack.Pop();
-            //        int a = stack.Pop();
-            //        switch (c)
-            //        {
-            //            case '+': stack.Push(a + b); break;
-            //            case '-': stack.Push(a - b); break;
-            //            case '*': stack.Push(a * b); break;
-            //            case '/': stack.Push(a / b); break;
-            //        }
-            //    }
-            //}
-
+            
             return stack.Pop();
         }
         static void Main(string[] args)

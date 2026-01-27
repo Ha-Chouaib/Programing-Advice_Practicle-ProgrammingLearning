@@ -12,7 +12,7 @@ namespace Bank_DataAccess
     {
         public static int AddNewRole(string RoleName, ulong Permissions, string Description, bool IsActive, DateTime AddedAt, int AddedByUserID)
         {
-            string Query = "Sp_AddNewRole";
+            string Query = "[dbo].[Sp_Role_AddNew]";
             int RoleID = -1;
             try
             {
@@ -54,7 +54,7 @@ namespace Bank_DataAccess
 
         public static bool Find(int RoleID, ref string RoleName, ref ulong Permissions, ref bool IsActive, ref string Description,ref DateTime AddedAt,ref int AddedByUserID)
         {
-            string Query = "Sp_GetRoleByID";
+            string Query = "[dbo].[Sp_Role_GetByID]";
             bool found = false;
             try
             {
@@ -98,7 +98,7 @@ namespace Bank_DataAccess
         }
         public static bool Find(string RoleName, ref int RoleID, ref ulong Permissions, ref bool IsActive, ref string Description,ref DateTime AddedAt,ref int AddedByUserID)
         {
-            string Query = "Sp_GetRoleByName";
+            string Query = "[dbo].[Sp_Role_GetByName]";
             bool found = false;
             try
             {
@@ -144,7 +144,7 @@ namespace Bank_DataAccess
 
         public static bool Update(int RoleID, string RoleName, ulong Permissions, string Description, bool IsActive)
         {
-            string Query = "Sp_UpdateRole";
+            string Query = "[dbo].[Sp_Role_Update]";
             bool Success = false;
 
             try
@@ -190,7 +190,7 @@ namespace Bank_DataAccess
 
         public static DataTable GetRoles()
         {
-            string Query = "Sp_GetRoles";
+            string Query = "[dbo].[Sp_Roles_List]";
             DataTable dtRoles = new DataTable();
             try
             {

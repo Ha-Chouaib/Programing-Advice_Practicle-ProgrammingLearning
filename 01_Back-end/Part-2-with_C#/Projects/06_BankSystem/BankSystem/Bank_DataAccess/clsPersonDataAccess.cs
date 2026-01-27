@@ -15,7 +15,7 @@ namespace Bank_DataAccess.People
                                     ref string Email, ref string Phone,ref short CountryID, ref string Address, ref string ImgPath
                                     )
         {
-            string Query = "Sp_GetPersonByID";
+            string Query = "[dbo].[Sp_Person_GetByID]";
             bool found = false;
             try
             {
@@ -75,7 +75,7 @@ namespace Bank_DataAccess.People
                                   ref string Email, ref string Phone, ref short CountryID, ref string Address, ref string ImgPath
                                   )
         {
-            string Query = "Sp_GetPersonByNationalNo";
+            string Query = "[dbo].[Sp_Person_GetByNationalNo]";
             bool found = false;
             using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
             {
@@ -133,7 +133,7 @@ namespace Bank_DataAccess.People
                                      string Email,  string Phone,  short CountryID,  string Address,  string ImgPath)
         {
 
-            string Query = @"Sp_AddNewPerson";
+            string Query = @"[dbo].[Sp_Person_AddNew]";
             int NewPersonID = -1;
             try
             {
@@ -194,7 +194,7 @@ namespace Bank_DataAccess.People
         public static bool UpdatePersonInf(int PersonID,string NationalNo, string FirstName, string LastName, DateTime DateOfBirth, byte Gender,
                                      string Email, string Phone, short CountryID, string Address, string ImgPath)
         {
-            string Query = "Sp_UpdatePersonInf";
+            string Query = "[dbo].[Sp_Person_Update]";
             bool Success = false;
           
             try
@@ -307,7 +307,7 @@ namespace Bank_DataAccess.People
 
         public static bool Delete(int PersonID,int DeletedByUserID)
         {
-            string Query = "Sp_DeletePerson";
+            string Query = "[dbo].[Sp_Person_Delete]";
             bool Deleted=false;
             try
             {
@@ -345,76 +345,58 @@ namespace Bank_DataAccess.People
             return Deleted;
             
         }
-        
-        public static DataTable ListAllPeople()
+
+        public static DataTable FilterPeople
+         (int? PersonID, bool? Gender,string NationalNo, string FullName, string Email,string Phone,string Address, byte pageNumber, byte pageSize, out int totalRows)
         {
-            string Query = "Sp_GetAllPeople";
+            totalRows = 0;
             DataTable dt = new DataTable();
             try
             {
-                using(SqlConnection connection = new SqlConnection( DataAccessSettings.connectionString))
-                using (SqlCommand cmd = new SqlCommand( Query, connection))
+
+
+                using (SqlConnection conn = new SqlConnection(DataAccessSettings.connectionString))
+                using (SqlCommand cmd = new SqlCommand(" [dbo].[Sp_People_FilterPaged]", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    connection.Open();
-                    using(SqlDataReader rdr= cmd.ExecuteReader())
+
+                    cmd.Parameters.AddWithValue("@PersonID", PersonID.HasValue ? (object)PersonID.Value : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@Gender", Gender.HasValue ? (object)Gender.Value : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@NationalNo", !string.IsNullOrEmpty(NationalNo) ? (object)NationalNo : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@FullName", !string.IsNullOrEmpty(FullName) ? (object)FullName : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@Email", !string.IsNullOrEmpty(Email) ? (object)Email : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@Phone", !string.IsNullOrEmpty(Phone) ? (object)Phone : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@Address", !string.IsNullOrEmpty(Address) ? (object)Address : DBNull.Value);
+
+                    cmd.Parameters.AddWithValue("@PageNumber", pageNumber);
+                    cmd.Parameters.AddWithValue("@PageSize", pageSize);
+
+                    SqlParameter totalParam = new SqlParameter("@TotalRows", SqlDbType.Int)
                     {
-                        
-                            dt.Load(rdr);      
+                        Direction = ParameterDirection.Output
+                    };
+                    cmd.Parameters.Add(totalParam);
+
+                    conn.Open();
+                    using (SqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        dt.Load(rdr);
                     }
+
+                    totalRows = (int)(totalParam.Value ?? 0);
                 }
             }
             catch (SqlException ex)
             {
-                clsGlobal.LogError($"[DAL: Person.GetAllPeople() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"DAL -> Person.FilterPeople() ,SQL Error: {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsGlobal.LogError($"[DAL: Person.GetAllPeople() ] -> {ex.Message}");
+                clsGlobal.LogError($"DAL -> Person.FilterPeople() {ex.Message}");
 
             }
             return dt;
         }
 
-        public static DataTable FilterPeople(string Column, string Term)
-        {
-            string Query = "Sp_FilterPeopleList";
-            DataTable FilteredList = new DataTable();
-            string[] AllowedColumn = new string[] {"All","ID", "NationalNo","Gender", "FullName","Email","Phone"}; 
-            try
-            {
-                if(!AllowedColumn.Contains(Column))
-                {
-                    throw new ArgumentException($"Invalid Column Name: {Column}");
-                }
-                using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
-                using (SqlCommand cmd = new SqlCommand(Query, connection))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.AddWithValue("@Column", Column);
-                    cmd.Parameters.AddWithValue("@FilterBy", Term);
-
-                    connection.Open();
-
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        FilteredList.Load(reader);
-                    }
-
-                }
-            }
-            catch (SqlException ex)
-            {
-                clsGlobal.LogError($"[DAL: Person.FilterPeople() ] -> SqlServer Error({ex.Number}): {ex.Message}");
-            }
-            catch (Exception ex)
-            {
-                clsGlobal.LogError($"[DAL: Person.FilterPeople() ] -> {ex.Message}");
-
-            }
-            return FilteredList;
-        }
-        
     }
 }

@@ -32,7 +32,7 @@ namespace BankSystem.User.Forms
             ctrlManageRecords1.__HeaderTitle.Text = "Manage Users";
             ctrlManageRecords1.__AddNewBtn.Text = "Add New User";
             ctrlManageRecords1.__UpdateBtn.Text = "Edit User";
-            ctrlManageRecords1.__Initialize(clsUser.GetUsers(), _FilterBy_Options(), clsUser.FilterUsers, _ContextMenuPackage(), _FilterByGroups());
+            //ctrlManageRecords1.__Initialize(clsUser.GetUsers(), _FilterBy_Options(), clsUser.FilterUsers, _ContextMenuPackage(), _FilterByGroups());
             _ConfigureDataRecordsContainer();
         }
         private Dictionary<string, string> _FilterBy_Options()
