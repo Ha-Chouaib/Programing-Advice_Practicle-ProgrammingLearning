@@ -272,35 +272,35 @@ namespace Bank_BusinessLayer
             out short availablePages
         )
         {
-            column = column?.Trim();
+            column = column?.Trim().ToLower();
             term = term?.Trim();
 
             switch (column)
             {
-                case "AccountID":
+                case "accountid":
                     if (int.TryParse(term, out int accountID))
                         return FindByAccountID(accountID, pageNumber, pageSize, out availablePages);
                     break;
 
-                case "AccountNumber":
+                case "accountnumber":
                     return FindByAccountNumber(term, pageNumber, pageSize, out availablePages);
 
-                case "CustomerID":
+                case "customerid":
                     if (int.TryParse(term, out int customerID))
                         return FilterByCustomerID(customerID, pageNumber, pageSize, out availablePages);
                     break;
 
-                case "CreatedByUserID":
+                case "createdbyuserid":
                     if (int.TryParse(term, out int createdBy))
                         return FilterByCreatedByUser(createdBy, pageNumber, pageSize, out availablePages);
                     break;
 
-                case "IsActive":
+                case "isactive":
                     if (bool.TryParse(term, out bool isActive))
                         return FilterByStatus(isActive, pageNumber, pageSize, out availablePages);
                     break;
 
-                case "AccountType":
+                case "accounttype":
                     if (byte.TryParse(term, out byte accountType))
                         return FilterByAccountType(accountType, pageNumber, pageSize, out availablePages);
                     break;

@@ -24,12 +24,11 @@ namespace BankSystem
         private FilterRecordsDelegate _FilterRecordsDelegate;
         public DataGridView __RecordsContainer => dgvListRecords;
         public PictureBox __HeaderImg => pbRecordsProfile;
-        public Label __HeaderTitle => lblTitle;
         public Button __AddNewBtn => btnAddNew;
         public Button __UpdateBtn => btnUpdate;
 
         public byte __PageNumber { get; set; }= 1;
-        public byte __PageSize { get; set; } = 50;
+        public byte __PageSize { get; set; } = 3;
         public short __AvailablePages { get; set; } = 0;
 
         StringBuilder _Column = new StringBuilder();
@@ -39,7 +38,6 @@ namespace BankSystem
         public void __Initialize(Dictionary<string,string> FilterByOptions, FilterRecordsDelegate FilterDelegate,
             List<(string ContextMenuKey,Action<int, ToolStripMenuItem> ContextMenuAction)> ContextMenuPackage,Dictionary<string,Dictionary<string,string>> FilterByGroups = null )
         {
-            __RefreshRecordsList();
 
             cmbFilterOptions.DataSource = new BindingSource(FilterByOptions, null);
             cmbFilterOptions.ValueMember = "value";
@@ -51,6 +49,8 @@ namespace BankSystem
 
             _LoadContextMenu(ContextMenuPackage);
             pbSearchClick.Enabled = false;
+            __RefreshRecordsList();
+
         }
         private void _LoadContextMenu(List<(string ContextMenuKey, Action<int,ToolStripMenuItem> ContextMenuAction)> ContextMenuPackage)
         {
@@ -85,7 +85,7 @@ namespace BankSystem
             short AvailablePages = 0;
 
           
-            dgvListRecords.DataSource = _FilterRecordsDelegate?.Invoke(_Column.ToString(), _Term.ToString(), __PageNumber, __PageSize, out AvailablePages);
+             dgvListRecords.DataSource = _FilterRecordsDelegate?.Invoke(_Column.ToString(), _Term.ToString(), __PageNumber, __PageSize, out AvailablePages);
             __AvailablePages = AvailablePages;
             lblAvaibalbePages.Text = $"[ {__PageNumber}/{__AvailablePages} ]";
             lblRecordsCount.Text = $"Records: [ {dgvListRecords.RowCount} ]";
@@ -128,11 +128,19 @@ namespace BankSystem
             pbSearchClick.Visible = true;
             if(cmbFilterOptions.SelectedValue.ToString() == "All")
             {
-                pbSearchClick.Enabled = false;
+                _Column.Clear();
+                _Term.Clear();
+                _Column.Append("All");
+                _Term.Append("All");
                 __RefreshRecordsList();
+
+                pbSearchClick.Enabled = false;
+                txtSearchTerm.Text = string.Empty;
+                txtSearchTerm.Enabled = false;
                 return;
             }
             pbSearchClick.Enabled = true;
+            txtSearchTerm.Enabled = true;
             txtSearchTerm.Text = string.Empty;
             txtSearchTerm.Focus();
         }
@@ -142,8 +150,8 @@ namespace BankSystem
             _Column.Clear();
             _Term.Clear();
 
-            _Column.Append(cmbFilterOptions.SelectedValue);
-            _Term.Append(cmbFilterByGroups.SelectedValue);
+            _Column.Append(cmbFilterOptions.SelectedValue.ToString());
+            _Term.Append(cmbFilterByGroups.SelectedValue.ToString());
 
             __RefreshRecordsList();
         }

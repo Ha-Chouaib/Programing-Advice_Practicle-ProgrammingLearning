@@ -246,10 +246,10 @@ namespace Bank_BusinessLayer
         {
             column = column?.Trim().ToLower();
             term = term?.Trim();
-
+           
             switch (column)
             {
-                case "personid":
+                case "id":
                     if (int.TryParse(term, out int personID))
                         return FindByID(personID, pageNumber, pageSize, out availablePages);
                     break;

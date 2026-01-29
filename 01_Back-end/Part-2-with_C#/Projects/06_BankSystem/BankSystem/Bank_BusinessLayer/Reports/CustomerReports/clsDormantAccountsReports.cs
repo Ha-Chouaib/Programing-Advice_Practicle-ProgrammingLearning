@@ -104,17 +104,19 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
             switch (column)
             {
                 case "accountid":
-                    return FilterByAccountID(int.Parse(term), pageNumber, pageSize, out availablePages);
+                    if(int.TryParse(term, out int accountId))
+                        return FilterByAccountID(accountId, pageNumber, pageSize, out availablePages);
+                    break;
 
                 case "customerid":
-                    return FilterByCustomerID(int.Parse(term), pageNumber, pageSize, out availablePages);
-
-                case "reportdate":
-                    return FilterByReportDate(DateTime.Parse(term), pageNumber, pageSize, out availablePages);
-
+                    if(int.TryParse(term, out int customerId))
+                        return FilterByCustomerID(customerId, pageNumber, pageSize, out availablePages);
+                    break;
                 default:
                     return ListAll(pageNumber, pageSize, out availablePages);
             }
+            return ListAll(pageNumber, pageSize, out availablePages);
+
         }
 
     }

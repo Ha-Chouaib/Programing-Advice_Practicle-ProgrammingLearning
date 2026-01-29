@@ -240,6 +240,15 @@
     <Compile Include="GlobalElements\UserControls\SideBarMenu\ctrlSubMenu.Designer.cs">
       <DependentUpon>ctrlSubMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\clsInitializeBalanceStatementReport.cs" />
+    <Compile Include="Reports\clsInitializeCustomeSummaryrReport.cs" />
+    <Compile Include="Reports\clsInitializeDormantAccountsReport.cs" />
+    <Compile Include="Reports\frmCustomerReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmCustomerReports.Designer.cs">
+      <DependentUpon>frmCustomerReports.cs</DependentUpon>
+    </Compile>
     <Compile Include="User\Forms\frmAddNewUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -388,6 +397,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GlobalElements\UserControls\SideBarMenu\ctrlSubMenu.resx">
       <DependentUpon>ctrlSubMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmCustomerReports.resx">
+      <DependentUpon>frmCustomerReports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\Forms\frmAddNewUser.resx">
       <DependentUpon>frmAddNewUser.cs</DependentUpon>
@@ -562,5 +574,6 @@
   <ItemGroup>
     <None Include="Resources\find_next %281%29.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,3 @@
 <Solution>
-  <Project Path="DataAccessLayer/DataAccessLayer.csproj" />
-  <Project Path="DatabaseBackupService/DatabaseBackupService.csproj" />
+  <Project Path="DatabaseBackupService/DatabaseBackupService.csproj" Id="a1234f69-e750-4314-80b3-3dae390d1cbf" />
 </Solution>

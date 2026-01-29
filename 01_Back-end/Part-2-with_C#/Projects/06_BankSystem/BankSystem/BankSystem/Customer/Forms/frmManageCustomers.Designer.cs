@@ -33,10 +33,13 @@
             // 
             // ctrlManageRecords1
             // 
+            this.ctrlManageRecords1.@__AvailablePages = ((short)(0));
+            this.ctrlManageRecords1.@__PageNumber = ((byte)(1));
+            this.ctrlManageRecords1.@__PageSize = ((byte)(50));
             this.ctrlManageRecords1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.ctrlManageRecords1.Location = new System.Drawing.Point(12, 12);
             this.ctrlManageRecords1.Name = "ctrlManageRecords1";
-            this.ctrlManageRecords1.Size = new System.Drawing.Size(1574, 756);
+            this.ctrlManageRecords1.Size = new System.Drawing.Size(1574, 818);
             this.ctrlManageRecords1.TabIndex = 0;
             // 
             // frmManageCustomers
@@ -45,7 +48,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            this.ClientSize = new System.Drawing.Size(1615, 766);
+            this.ClientSize = new System.Drawing.Size(1615, 842);
             this.Controls.Add(this.ctrlManageRecords1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmManageCustomers";

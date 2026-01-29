@@ -562,7 +562,7 @@ namespace Bank_DataAccess
 
 
                 using (SqlConnection conn = new SqlConnection(DataAccessSettings.connectionString))
-                using (SqlCommand cmd = new SqlCommand(" [dbo].[Sp_Accounts_FilterPaged]", conn))
+                using (SqlCommand cmd = new SqlCommand("[dbo].[Sp_Accounts_FilterPaged]", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 

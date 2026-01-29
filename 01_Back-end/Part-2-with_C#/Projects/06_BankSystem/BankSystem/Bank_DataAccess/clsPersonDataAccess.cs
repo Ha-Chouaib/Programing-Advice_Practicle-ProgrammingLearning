@@ -356,7 +356,7 @@ namespace Bank_DataAccess.People
 
 
                 using (SqlConnection conn = new SqlConnection(DataAccessSettings.connectionString))
-                using (SqlCommand cmd = new SqlCommand(" [dbo].[Sp_People_FilterPaged]", conn))
+                using (SqlCommand cmd = new SqlCommand("dbo.Sp_People_FilterPaged", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
