@@ -53,33 +53,33 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
             else
                 return null;
         }
-        public static DataTable FilterReports(int? CustomerID, byte? ActiveAccounts, DateTime? LastActivityDate, bool? CustomerStatus, byte pageNumber, byte pageSize, out short AvailablePages)
+        public static DataTable FilterReports(int? CustomerID, byte? ActiveAccounts, DateTime? LastActivityFrom,DateTime? LastActivityTo, bool? CustomerStatus, byte pageNumber, byte pageSize, out short AvailablePages)
         {
             DataTable result = new DataTable();
             int TotalRecords = 1;
-            result = clsCustomerSummaryReportsDAL.FilterReports(CustomerID,ActiveAccounts,LastActivityDate,CustomerStatus, pageNumber, pageSize, out TotalRecords);
+            result = clsCustomerSummaryReportsDAL.FilterReports(CustomerID,ActiveAccounts,LastActivityFrom,LastActivityTo,CustomerStatus, pageNumber, pageSize, out TotalRecords);
             AvailablePages = (short)Math.Ceiling((double)TotalRecords / pageSize);
             return result;
         }
         public static DataTable ListAll(byte pageNumber, byte pageSize, out short AvailablePages)
         {
-            return FilterReports(null, null, null, null, pageNumber, pageSize, out AvailablePages);
+            return FilterReports(null, null, null,null, null, pageNumber, pageSize, out AvailablePages);
         }
         public static DataTable FilterByCustomerID(int CustomerID, byte pageNumber, byte pageSize, out short AvailablePages)
         {
-            return FilterReports(CustomerID, null, null, null, pageNumber, pageSize, out AvailablePages);
+            return FilterReports(CustomerID, null, null, null,null, pageNumber, pageSize, out AvailablePages);
         }
         public static DataTable FilterByActiveAccountsStatus(byte? ActiveAccounts, byte pageNumber, byte pageSize, out short AvailablePages)
         {
-            return FilterReports(null, ActiveAccounts, null, null, pageNumber, pageSize, out AvailablePages);
+            return FilterReports(null, ActiveAccounts, null, null,null, pageNumber, pageSize, out AvailablePages);
         }
-        public static DataTable FilterByLastActivityDate(DateTime? LastActivityDate, byte pageNumber, byte pageSize, out short AvailablePages)
+        public static DataTable FilterByLastActivityDate(DateTime? LastActivityfrom, DateTime? LastActivityTo, byte pageNumber, byte pageSize, out short AvailablePages)
         {
-            return FilterReports(null, null, LastActivityDate, null, pageNumber, pageSize, out AvailablePages);
+            return FilterReports(null, null, LastActivityfrom, LastActivityTo, null, pageNumber, pageSize, out AvailablePages);
         }
         public static DataTable FilterByCustomerStatus(bool? CustomerStatus, byte pageNumber, byte pageSize, out short AvailablePages)
         {
-            return FilterReports(null, null, null, CustomerStatus, pageNumber, pageSize, out AvailablePages);
+            return FilterReports(null, null, null, null,CustomerStatus, pageNumber, pageSize, out AvailablePages);
         }
 
         public static DataTable FilterCustomerSummaryReports
@@ -97,20 +97,55 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
             switch (column)
             {
                 case "customerid":
-                    return FilterByCustomerID(int.Parse(term), pageNumber, pageSize, out availablePages);
+                    if(int.TryParse(term, out int customerID))
+                        return FilterByCustomerID(customerID, pageNumber, pageSize, out availablePages);
+                    break;
 
                 case "activeaccounts":
-                    return FilterByActiveAccountsStatus(byte.Parse(term), pageNumber, pageSize, out availablePages);
+                    if(byte.TryParse(term, out byte activeAccounts))
+                        return FilterByActiveAccountsStatus(activeAccounts, pageNumber, pageSize, out availablePages);
+                    break;
 
                 case "lastactivitydate":
-                    return FilterByLastActivityDate(DateTime.Parse(term), pageNumber, pageSize, out availablePages);
+                    {
+                        DateTime? from = null;
+                        DateTime? to = null;
+
+                        if (!string.IsNullOrWhiteSpace(term))
+                        {
+                            if (term.Contains("|"))
+                            {
+                                var dateParts = term.Split('|');
+
+                                if (DateTime.TryParse(dateParts[0], out DateTime fromDate))
+                                    from = fromDate;
+
+                                if (DateTime.TryParse(dateParts[1], out DateTime toDate))
+                                    to = toDate;
+                            }
+                            else
+                            {
+                                // Single date → treat as one day range
+                                if (DateTime.TryParse(term, out DateTime date))
+                                {
+                                    from = date;
+                                    to = date.AddDays(1);
+                                }
+                            }
+                        }
+
+                        return FilterByLastActivityDate(from, to, pageNumber, pageSize, out availablePages);
+                    }
 
                 case "customerstatus":
-                    return FilterByCustomerStatus(bool.Parse(term), pageNumber, pageSize, out availablePages);
+                    if(bool.TryParse(term, out bool status))
+                        return FilterByCustomerStatus(status, pageNumber, pageSize, out availablePages);
+                    break;
 
                 default:
                     return ListAll(pageNumber, pageSize, out availablePages);
             }
+            return ListAll(pageNumber, pageSize, out availablePages);
         }
 
     }

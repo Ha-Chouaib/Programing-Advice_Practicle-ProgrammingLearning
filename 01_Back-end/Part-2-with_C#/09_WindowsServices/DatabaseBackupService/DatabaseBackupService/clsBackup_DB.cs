@@ -4,16 +4,16 @@ using System.Linq;
 using System.Configuration;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using DatabaseBackupService;
 
 namespace DataAccessLayer
 {
     public class clsBackup_DB
     {
-        public static  string ConnectionString = ConfigurationManager.ConnectionStrings["DBConnectionString"].ConnectionString;
-        public static string DataBaseName = ConfigurationManager.AppSettings["DBName"];
-
+        
        
-        public static bool BackupDatabase(string backupPath, string DataBaseName)
+        public static bool
+        public static bool BackupDatabase(string ConnectionString ,string backupPath, string DataBaseName)
         {
             string Query = $"BACKUP DATABASE [{DataBaseName}] TO DISK = N'{backupPath}' WITH NOFORMAT, NOINIT," +
                 $" NAME = N'{DataBaseName}-Full Database Backup', SKIP, STATS = 10";
@@ -32,12 +32,12 @@ namespace DataAccessLayer
             }
             catch (SqlException sqlEx)
             {
-                // Log the SQL exception (implementation depends on your logging framework)
+                clsSettings.LogAction("SQL Error during backup: " + sqlEx.Message);
                 result = false;
             }
             catch (Exception ex)
             {
-                // Log the exception (implementation depends on your logging framework)
+                clsSettings.LogAction("Error during backup: " + ex.Message);
                 result = false;
             }
 

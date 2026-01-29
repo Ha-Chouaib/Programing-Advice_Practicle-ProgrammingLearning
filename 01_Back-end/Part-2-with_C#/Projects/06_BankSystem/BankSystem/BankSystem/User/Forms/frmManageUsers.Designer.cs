@@ -29,33 +29,51 @@
         private void InitializeComponent()
         {
             this.ctrlManageRecords1 = new BankSystem.ctrlManageRecords();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ctrlManageRecords1
             // 
+            this.ctrlManageRecords1.@__AvailablePages = ((short)(0));
+            this.ctrlManageRecords1.@__PageNumber = ((byte)(1));
+            this.ctrlManageRecords1.@__PageSize = ((byte)(50));
             this.ctrlManageRecords1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.ctrlManageRecords1.Location = new System.Drawing.Point(2, 2);
+            this.ctrlManageRecords1.Location = new System.Drawing.Point(-2, 96);
             this.ctrlManageRecords1.Name = "ctrlManageRecords1";
-            this.ctrlManageRecords1.Size = new System.Drawing.Size(1608, 756);
+            this.ctrlManageRecords1.Size = new System.Drawing.Size(1608, 816);
             this.ctrlManageRecords1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Black", 28F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.SystemColors.Info;
+            this.label1.Location = new System.Drawing.Point(665, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(350, 62);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Manage Users";
             // 
             // frmManageUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.ClientSize = new System.Drawing.Size(1609, 761);
+            this.ClientSize = new System.Drawing.Size(1609, 924);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.ctrlManageRecords1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmManageUsers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmManageUsers";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private ctrlManageRecords ctrlManageRecords1;
+        private System.Windows.Forms.Label label1;
     }
 }

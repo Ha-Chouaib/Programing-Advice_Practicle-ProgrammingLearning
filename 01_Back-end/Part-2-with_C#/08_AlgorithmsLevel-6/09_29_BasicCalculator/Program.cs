@@ -22,12 +22,17 @@ namespace _09_29_BasicCalculator
         }
         static int Calculate(string input)
         {
+            List<char> parentheses = new List<char> { '(',')'};
+            List<char> Operators = new List<char> { '+','-'};
+
             Stack<int> numbers = new Stack<int>();
             Queue<int> PriorityNumbers = new Queue<int>();
             Stack<char> operations = new Stack<char>();
             int i = 0;
             bool HasPriority = false;
             char value;
+            char op = new char();
+            
             while (i < input.Length)
             {
                 value = input[i];
@@ -36,23 +41,53 @@ namespace _09_29_BasicCalculator
                     numbers.Push(value - '0');
                     i++;
                 }
-                if (value == '(' || value == ')' || HasPriority)
+                if (parentheses.Contains(value) || (char.IsDigit(value) && HasPriority) || (Operators.Contains(value) && HasPriority))
                 {
                     if (value == '(') HasPriority = true;                  
                     if (value == ')') HasPriority = false;
                     
-                    if (HasPriority && char.IsDigit(value))
+                    if (HasPriority )
                     {
-
-                        PriorityNumbers.Enqueue( value - '0');
-                    }else
+                        if (char.IsDigit(value))
+                        {
+                            PriorityNumbers.Enqueue(value - '0');
+                            i++;
+                        }
+                        else if (Operators.Contains(value))
+                        {
+                            op = value;
+                            i++;
+                        }
+                        if(PriorityNumbers.Count == 2)
+                        {
+                            int a = PriorityNumbers.Dequeue();
+                            int b = PriorityNumbers.Dequeue();
+                            int result = DoCalc(a, b, op);
+                            PriorityNumbers.Enqueue(result);
+                        }
+                    }
+                    else
                     {
-                        numbers.Push();
                         HasPriority = false;
-
+                        numbers.Push(PriorityNumbers.Dequeue());
                     }
                 }
+
+
+                if (!HasPriority)
+                {
+                    if (Operators.Contains(value))
+                    {
+                        op = value;
+                        i++;
+                    }
+                    if(numbers.Count == 2)
+
+
+                }
+                
             }
+            return numbers.Pop();
 
         }
         static void Main(string[] args)

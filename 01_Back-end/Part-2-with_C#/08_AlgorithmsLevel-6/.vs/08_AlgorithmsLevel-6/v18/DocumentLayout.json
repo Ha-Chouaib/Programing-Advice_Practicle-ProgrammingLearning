@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6F9F69B2-32AE-4997-B40D-1ED0B9F2274B}|09_28_EvaluatePostfixExpression\\09_28_EvaluatePostfixExpression.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\08_algorithmslevel-6\\09_28_evaluatepostfixexpression\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6F9F69B2-32AE-4997-B40D-1ED0B9F2274B}|09_28_EvaluatePostfixExpression\\09_28_EvaluatePostfixExpression.csproj|solutionrelative:09_28_evaluatepostfixexpression\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E34D0737-AFEE-4D87-8163-ED066A6EF3E0}|09_29_BasicCalculator\\09_29_BasicCalculator.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\08_algorithmslevel-6\\09_29_basiccalculator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E34D0737-AFEE-4D87-8163-ED066A6EF3E0}|09_29_BasicCalculator\\09_29_BasicCalculator.csproj|solutionrelative:09_29_basiccalculator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F9F69B2-32AE-4997-B40D-1ED0B9F2274B}|09_28_EvaluatePostfixExpression\\09_28_EvaluatePostfixExpression.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_28_evaluatepostfixexpression\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F9F69B2-32AE-4997-B40D-1ED0B9F2274B}|09_28_EvaluatePostfixExpression\\09_28_EvaluatePostfixExpression.csproj|solutionrelative:09_28_evaluatepostfixexpression\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8958930B-6667-4880-BDF2-B311A58D3802}|09_27_CheckPalindrome\\09_27_CheckPalindrome.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_27_checkpalindrome\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -170,30 +170,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_29_BasicCalculator\\Program.cs",
               "RelativeDocumentMoniker": "09_29_BasicCalculator\\Program.cs",
               "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_29_BasicCalculator\\Program.cs",
               "RelativeToolTip": "09_29_BasicCalculator\\Program.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwDEAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAACwAAAAAAAAAAAAQwEoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-26T19:00:51.85Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_28_EvaluatePostfixExpression\\Program.cs",
               "RelativeDocumentMoniker": "09_28_EvaluatePostfixExpression\\Program.cs",
               "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\08_AlgorithmsLevel-6\\09_28_EvaluatePostfixExpression\\Program.cs",
               "RelativeToolTip": "09_28_EvaluatePostfixExpression\\Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAowDAAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAADAAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-12T18:48:27.936Z",
               "EditorCaption": ""
@@ -208,8 +208,7 @@
               "RelativeToolTip": "09_27_CheckPalindrome\\Program.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-08T21:53:26.763Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-08T21:53:26.763Z"
             },
             {
               "$type": "Document",

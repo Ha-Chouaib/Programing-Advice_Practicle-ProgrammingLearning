@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\wsFileMonitoring_Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4E3BAD3D-2FB2-4693-A7FD-1E7026DAB72F}|wsFileMonitoring_Project\\wsFileMonitoring_Project.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\wsFileMonitoring_Project\\wsfilemonitoring_project\\filemonitoringservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E3BAD3D-2FB2-4693-A7FD-1E7026DAB72F}|wsFileMonitoring_Project\\wsFileMonitoring_Project.csproj|solutionrelative:wsfilemonitoring_project\\filemonitoringservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4E3BAD3D-2FB2-4693-A7FD-1E7026DAB72F}|wsFileMonitoring_Project\\FileMonitoringService.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\09_windowsservices\\wsfilemonitoring_project\\wsfilemonitoring_project\\filemonitoringservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E3BAD3D-2FB2-4693-A7FD-1E7026DAB72F}|wsFileMonitoring_Project\\FileMonitoringService.csproj|solutionrelative:wsfilemonitoring_project\\filemonitoringservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4E3BAD3D-2FB2-4693-A7FD-1E7026DAB72F}|wsFileMonitoring_Project\\wsFileMonitoring_Project.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\09_windowsservices\\wsfilemonitoring_project\\wsfilemonitoring_project\\installer1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4E3BAD3D-2FB2-4693-A7FD-1E7026DAB72F}|wsFileMonitoring_Project\\FileMonitoringService.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\09_windowsservices\\wsfilemonitoring_project\\wsfilemonitoring_project\\installer1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E3BAD3D-2FB2-4693-A7FD-1E7026DAB72F}|wsFileMonitoring_Project\\FileMonitoringService.csproj|solutionrelative:wsfilemonitoring_project\\installer1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E3BAD3D-2FB2-4693-A7FD-1E7026DAB72F}|wsFileMonitoring_Project\\wsFileMonitoring_Project.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\wsFileMonitoring_Project\\wsfilemonitoring_project\\installer1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4E3BAD3D-2FB2-4693-A7FD-1E7026DAB72F}|wsFileMonitoring_Project\\wsFileMonitoring_Project.csproj|solutionrelative:wsfilemonitoring_project\\installer1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4E3BAD3D-2FB2-4693-A7FD-1E7026DAB72F}|wsFileMonitoring_Project\\wsFileMonitoring_Project.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\wsFileMonitoring_Project\\wsfilemonitoring_project\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{4E3BAD3D-2FB2-4693-A7FD-1E7026DAB72F}|wsFileMonitoring_Project\\wsFileMonitoring_Project.csproj|solutionrelative:wsfilemonitoring_project\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{4E3BAD3D-2FB2-4693-A7FD-1E7026DAB72F}|wsFileMonitoring_Project\\FileMonitoringService.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\09_windowsservices\\wsfilemonitoring_project\\wsfilemonitoring_project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E3BAD3D-2FB2-4693-A7FD-1E7026DAB72F}|wsFileMonitoring_Project\\FileMonitoringService.csproj|solutionrelative:wsfilemonitoring_project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4E3BAD3D-2FB2-4693-A7FD-1E7026DAB72F}|wsFileMonitoring_Project\\wsFileMonitoring_Project.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\wsFileMonitoring_Project\\wsfilemonitoring_project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4E3BAD3D-2FB2-4693-A7FD-1E7026DAB72F}|wsFileMonitoring_Project\\wsFileMonitoring_Project.csproj|solutionrelative:wsfilemonitoring_project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E3BAD3D-2FB2-4693-A7FD-1E7026DAB72F}|wsFileMonitoring_Project\\wsFileMonitoring_Project.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\wsFileMonitoring_Project\\wsfilemonitoring_project\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{4E3BAD3D-2FB2-4693-A7FD-1E7026DAB72F}|wsFileMonitoring_Project\\wsFileMonitoring_Project.csproj|solutionrelative:wsfilemonitoring_project\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4E3BAD3D-2FB2-4693-A7FD-1E7026DAB72F}|wsFileMonitoring_Project\\wsFileMonitoring_Project.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\wsFileMonitoring_Project\\wsfilemonitoring_project\\installer1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -34,11 +42,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "App.config",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\wsFileMonitoring_Project\\wsFileMonitoring_Project\\App.config",
               "RelativeDocumentMoniker": "wsFileMonitoring_Project\\App.config",
@@ -51,7 +59,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Installer1.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\wsFileMonitoring_Project\\wsFileMonitoring_Project\\Installer1.cs",
+              "RelativeDocumentMoniker": "wsFileMonitoring_Project\\Installer1.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\wsFileMonitoring_Project\\wsFileMonitoring_Project\\Installer1.cs",
+              "RelativeToolTip": "wsFileMonitoring_Project\\Installer1.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-27T20:51:46.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\wsFileMonitoring_Project\\wsFileMonitoring_Project\\Program.cs",
+              "RelativeDocumentMoniker": "wsFileMonitoring_Project\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\wsFileMonitoring_Project\\wsFileMonitoring_Project\\Program.cs",
+              "RelativeToolTip": "wsFileMonitoring_Project\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-27T20:49:11.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\wsFileMonitoring_Project\\wsFileMonitoring_Project\\Program.cs",
               "RelativeDocumentMoniker": "wsFileMonitoring_Project\\Program.cs",
@@ -69,26 +103,25 @@
               "RelativeDocumentMoniker": "wsFileMonitoring_Project\\FileMonitoringService.cs",
               "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\wsFileMonitoring_Project\\wsFileMonitoring_Project\\FileMonitoringService.cs",
               "RelativeToolTip": "wsFileMonitoring_Project\\FileMonitoringService.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAYwCEAAABVAAAAAAAAAA==",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAgwGgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-15T19:13:59.51Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Installer1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\wsFileMonitoring_Project\\wsFileMonitoring_Project\\Installer1.cs",
               "RelativeDocumentMoniker": "wsFileMonitoring_Project\\Installer1.cs",
               "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\wsFileMonitoring_Project\\wsFileMonitoring_Project\\Installer1.cs [Design]",
               "RelativeToolTip": "wsFileMonitoring_Project\\Installer1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-17T16:19:06.773Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-01-17T16:19:06.773Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Installer1.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\wsFileMonitoring_Project\\wsFileMonitoring_Project\\Installer1.cs",
               "RelativeDocumentMoniker": "wsFileMonitoring_Project\\Installer1.cs",
@@ -96,20 +129,18 @@
               "RelativeToolTip": "wsFileMonitoring_Project\\Installer1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-17T16:19:13.662Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-17T16:19:13.662Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "FileMonitoringService.cs [Design]",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\wsFileMonitoring_Project\\wsFileMonitoring_Project\\FileMonitoringService.cs",
               "RelativeDocumentMoniker": "wsFileMonitoring_Project\\FileMonitoringService.cs",
               "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\wsFileMonitoring_Project\\wsFileMonitoring_Project\\FileMonitoringService.cs [Design]",
               "RelativeToolTip": "wsFileMonitoring_Project\\FileMonitoringService.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-15T19:00:03.481Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-01-15T19:00:03.481Z"
             }
           ]
         }

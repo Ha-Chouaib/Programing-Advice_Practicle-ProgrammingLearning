@@ -29,10 +29,9 @@ namespace BankSystem.User.Forms
 
             ctrlManageRecords1.__HeaderImg.Image = Resources.ManageUsersImg;
 
-            ctrlManageRecords1.__HeaderTitle.Text = "Manage Users";
             ctrlManageRecords1.__AddNewBtn.Text = "Add New User";
             ctrlManageRecords1.__UpdateBtn.Text = "Edit User";
-            //ctrlManageRecords1.__Initialize(clsUser.GetUsers(), _FilterBy_Options(), clsUser.FilterUsers, _ContextMenuPackage(), _FilterByGroups());
+            ctrlManageRecords1.__Initialize(_FilterBy_Options(), clsUser.FilterUsers, _ContextMenuPackage(), _FilterByGroups());
             _ConfigureDataRecordsContainer();
         }
         private Dictionary<string, string> _FilterBy_Options()
@@ -165,7 +164,7 @@ namespace BankSystem.User.Forms
             }
             MessageBox.Show($"No User Exists With ID [{userID}]", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-        
+
         void _ContextMenuConvertToCustomer(int userID, ToolStripMenuItem menuItem)
         {
             clsUser user = clsUser.FindUserByID(userID);
@@ -179,7 +178,6 @@ namespace BankSystem.User.Forms
             }
             MessageBox.Show($"No User Exists With ID [{userID}]", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-        
         void _ContextMenuSendUserEmail(int userid, ToolStripMenuItem menuItem)
         {
             MessageBox.Show($"Send Email To user with id [{userid}] -> Not Implemented yet");
@@ -192,8 +190,6 @@ namespace BankSystem.User.Forms
         {
             MessageBox.Show($"call the  user with id [{userid}] -> Not Implemented yet");
         }
-  
-
 
         private void _EndSession()
         {
@@ -225,7 +221,6 @@ namespace BankSystem.User.Forms
             grid.Columns["CreatedDate"].HeaderText = "Created Date";
             grid.Columns["CreatedByUserID"].HeaderText = "Added By User";
 
-            // Replace the IsActive column with a checkbox column ONCE
             int index = grid.Columns["IsActive"].Index;
             grid.Columns.Remove("IsActive");
 
@@ -235,7 +230,7 @@ namespace BankSystem.User.Forms
             chk.DataPropertyName = "IsActive";
             chk.TrueValue = true;
             chk.FalseValue = false;
-            chk.ReadOnly = true; // optional
+            chk.ReadOnly = true;
 
             grid.Columns.Insert(index, chk);
 

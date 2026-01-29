@@ -27,11 +27,10 @@ namespace BankSystem.Accounts.Forms
 
             ctrlManageRecords1.__HeaderImg.Image = Resources.process_8257890;
 
-            ctrlManageRecords1.__HeaderTitle.Text = "Manage Accountss";
             ctrlManageRecords1.__AddNewBtn.Text = "Add New Account";
             ctrlManageRecords1.__UpdateBtn.Visible = false;
 
-            //ctrlManageRecords1.__Initialize(clsAccounts.ListAccounts(), _FilterBy_Options(), clsAccounts.FilterAccounts, _ContextMenuPackage(), _FilterByGroups());
+            ctrlManageRecords1.__Initialize(_FilterBy_Options(), clsAccounts.FilterAccounts, _ContextMenuPackage(), _FilterByGroups());
             _ConfigureDataRecordsContainer();
         }
         private Dictionary<string, string> _FilterBy_Options()
@@ -201,7 +200,6 @@ namespace BankSystem.Accounts.Forms
             grid.Columns["CreatedAt"].HeaderText = "Created Date";
             grid.Columns["CreatedByUserID"].HeaderText = "Added By User";
 
-            // Replace the IsActive column with a checkbox column ONCE
             int index = grid.Columns["IsActive"].Index;
             grid.Columns.Remove("IsActive");
 
@@ -211,7 +209,7 @@ namespace BankSystem.Accounts.Forms
             chk.DataPropertyName = "IsActive";
             chk.TrueValue = true;
             chk.FalseValue = false;
-            chk.ReadOnly = true; // optional
+            chk.ReadOnly = true; 
 
             grid.Columns.Insert(index, chk);
 

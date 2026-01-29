@@ -33,11 +33,10 @@ namespace BankSystem.Customer.Forms
 
             ctrlManageRecords1.__HeaderImg.Image = Resources.social_responsibility_18024872;
 
-            ctrlManageRecords1.__HeaderTitle.Text = "Manage Customers";
             ctrlManageRecords1.__AddNewBtn.Text = "Add New Customer";
             ctrlManageRecords1.__UpdateBtn.Text = "Edit Customer";
 
-            //ctrlManageRecords1.__Initialize(clsCustomer.ListCustomers(), _FilterBy_Options(), clsCustomer.FilterCustomers, _ContextMenuPackage(), _FilterByGroups());
+            ctrlManageRecords1.__Initialize( _FilterBy_Options(), clsCustomer.FilterCustomers, _ContextMenuPackage(), _FilterByGroups());
             _ConfigureDataRecordsContainer();
         }
         private Dictionary<string, string> _FilterBy_Options()
@@ -188,9 +187,10 @@ namespace BankSystem.Customer.Forms
         private void _ConfigureDataRecordsContainer()
         {
 
-
+            
             var grid = ctrlManageRecords1.__RecordsContainer;
 
+            if (grid.RowCount == 0) return;
 
             grid.Columns["PersonID"].HeaderText = "Person ID";
             grid.Columns["FullName"].HeaderText = "Full Name";
@@ -198,7 +198,7 @@ namespace BankSystem.Customer.Forms
             grid.Columns["CreatedDate"].HeaderText = "Created Date";
             grid.Columns["CreatedByUserID"].HeaderText = "Added By User";
 
-            // Replace the IsActive column with a checkbox column ONCE
+            
             int index = grid.Columns["IsActive"].Index;
             grid.Columns.Remove("IsActive");
 
@@ -208,7 +208,7 @@ namespace BankSystem.Customer.Forms
             chk.DataPropertyName = "IsActive";
             chk.TrueValue = true;
             chk.FalseValue = false;
-            chk.ReadOnly = true; // optional
+            chk.ReadOnly = true;
 
             grid.Columns.Insert(index, chk);
 

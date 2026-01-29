@@ -32,7 +32,6 @@ namespace BankSystem.Person
 
             ctrlManageRecords1.__HeaderImg.Image = Resources.Team;
 
-            ctrlManageRecords1.__HeaderTitle.Text = "Manage People";
             ctrlManageRecords1.__AddNewBtn.Text = "Add New Person";
             ctrlManageRecords1.__UpdateBtn.Text = "Edit Person";
 
@@ -79,8 +78,8 @@ namespace BankSystem.Person
                         "Gender", new Dictionary<string, string>
                         {
                             { "All", "All" },
-                            { "Male", "0" },
-                            { "Female", "1" }
+                            { "Male", "false" },
+                            { "Female", "true" }
                         }
                     } 
             };
@@ -171,6 +170,7 @@ namespace BankSystem.Person
         }
         private void _ConfigureDataRecordsContainer()
         {
+            if (ctrlManageRecords1.__RecordsContainer.RowCount == 0) return;
             ctrlManageRecords1.__RecordsContainer.Columns["NationalNo"].HeaderText = "National_No";
             ctrlManageRecords1.__RecordsContainer.Columns["FirstName"].HeaderText = "First Name";
             ctrlManageRecords1.__RecordsContainer.Columns["LastName"].HeaderText = "Last Name";
@@ -189,5 +189,7 @@ namespace BankSystem.Person
 
             };
         }
+
+        
     }
 }

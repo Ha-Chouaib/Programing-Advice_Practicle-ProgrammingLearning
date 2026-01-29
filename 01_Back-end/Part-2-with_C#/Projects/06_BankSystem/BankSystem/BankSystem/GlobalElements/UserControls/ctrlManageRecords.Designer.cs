@@ -36,7 +36,6 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAddNew = new System.Windows.Forms.Button();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.dgvListRecords = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtSearchTerm = new System.Windows.Forms.TextBox();
@@ -137,17 +136,6 @@
             this.btnAddNew.UseVisualStyleBackColor = false;
             this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.SystemColors.Info;
-            this.lblTitle.Location = new System.Drawing.Point(549, 0);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(527, 81);
-            this.lblTitle.TabIndex = 10;
-            this.lblTitle.Text = "Manage Records";
-            // 
             // dgvListRecords
             // 
             this.dgvListRecords.AllowUserToAddRows = false;
@@ -208,6 +196,7 @@
             // 
             // pbNext
             // 
+            this.pbNext.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbNext.Dock = System.Windows.Forms.DockStyle.Right;
             this.pbNext.Image = global::BankSystem.Properties.Resources.find_next__1_;
             this.pbNext.Location = new System.Drawing.Point(386, 0);
@@ -220,6 +209,7 @@
             // 
             // pbPrevious
             // 
+            this.pbPrevious.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbPrevious.Dock = System.Windows.Forms.DockStyle.Left;
             this.pbPrevious.Image = global::BankSystem.Properties.Resources.find_previous;
             this.pbPrevious.Location = new System.Drawing.Point(0, 0);
@@ -233,9 +223,9 @@
             // pbRecordsProfile
             // 
             this.pbRecordsProfile.Image = global::BankSystem.Properties.Resources.social_responsibility_18024872;
-            this.pbRecordsProfile.Location = new System.Drawing.Point(666, 84);
+            this.pbRecordsProfile.Location = new System.Drawing.Point(650, 3);
             this.pbRecordsProfile.Name = "pbRecordsProfile";
-            this.pbRecordsProfile.Size = new System.Drawing.Size(251, 153);
+            this.pbRecordsProfile.Size = new System.Drawing.Size(339, 205);
             this.pbRecordsProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbRecordsProfile.TabIndex = 19;
             this.pbRecordsProfile.TabStop = false;
@@ -289,7 +279,6 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAddNew);
-            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.dgvListRecords);
             this.Name = "ctrlManageRecords";
             this.Size = new System.Drawing.Size(1602, 810);
@@ -313,7 +302,6 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnAddNew;
-        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.DataGridView dgvListRecords;
         private System.Windows.Forms.TextBox txtSearchTerm;
         private System.Windows.Forms.PictureBox pbSearchClick;

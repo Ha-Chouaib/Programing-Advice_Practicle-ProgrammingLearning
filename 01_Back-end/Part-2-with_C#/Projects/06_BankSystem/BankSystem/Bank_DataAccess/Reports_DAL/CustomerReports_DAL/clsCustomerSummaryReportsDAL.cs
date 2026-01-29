@@ -94,7 +94,7 @@ namespace Bank_DataAccess.Reports.CustomerReports
             }
             return found;
         }
-        public static DataTable FilterReports(int? CustomerID, byte? ActiveAccounts, DateTime? LastActivityDate, bool? CustomerStatus, byte pageNumber, byte pageSize, out int totalRows)
+        public static DataTable FilterReports(int? CustomerID, byte? ActiveAccounts, DateTime? LastActivityFrom,DateTime? LastActivityTo, bool? CustomerStatus, byte pageNumber, byte pageSize, out int totalRows)
         {
             totalRows = 0;
             DataTable dt = new DataTable();
@@ -109,7 +109,8 @@ namespace Bank_DataAccess.Reports.CustomerReports
 
                     cmd.Parameters.AddWithValue("@CustomerID", CustomerID.HasValue ? (object)CustomerID.Value : DBNull.Value);
                     cmd.Parameters.AddWithValue("@ActiveAccounts", ActiveAccounts.HasValue ? (object)ActiveAccounts.Value : DBNull.Value);
-                    cmd.Parameters.AddWithValue("@LastActivityDate", LastActivityDate.HasValue ? (object) LastActivityDate.Value : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@LastActivityFrom", LastActivityFrom.HasValue ? (object)LastActivityFrom.Value : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@LastActivityTo", LastActivityTo.HasValue ? (object)LastActivityTo.Value : DBNull.Value);
                     cmd.Parameters.AddWithValue("@CustomerStatus", CustomerStatus.HasValue ? (object)CustomerStatus.Value : DBNull.Value);
 
                     cmd.Parameters.AddWithValue("@PageNumber", pageNumber);
