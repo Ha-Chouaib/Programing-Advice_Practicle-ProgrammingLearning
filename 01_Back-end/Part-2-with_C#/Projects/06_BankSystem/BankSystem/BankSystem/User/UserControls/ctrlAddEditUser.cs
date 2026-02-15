@@ -139,12 +139,12 @@ namespace BankSystem.User.UserControls
             _User.PersonID = _PersonID;
             _User.RoleID = ((KeyValuePair<int, string>)cmbRoles.SelectedItem).Key;
             _User.UserName = txtUserName.Text;
-            _User.Password = clsSettings.EncryptString_Hashing(txtConfirmPassword.Text);
+            _User.Password = clsUtil_BL.EncryptString_Hashing(txtConfirmPassword.Text);
             _User.IsActive = rbIsActive.Checked;
             _User.CustomPermissions = _CustomPermissions;
             _User.RevokedPermissions = _RevokedPermissions;
             _User.CreatedDate = DateTime.Now;
-            _User.CreatedByUserID = clsGlobal.LoggedInUser.UserID;
+            _User.CreatedByUserID = clsUtil_PL.LoggedInUser.UserID;
 
         }
         private void _SetUserData()
@@ -191,7 +191,7 @@ namespace BankSystem.User.UserControls
                 btnNext.Enabled = true;
                 tabUserData.Enabled = true;
                 txtCreatedDate.Text = DateTime.Now.ToString();
-                txtCreatedByUser.Text = clsGlobal.LoggedInUser.UserName;
+                txtCreatedByUser.Text = clsUtil_PL.LoggedInUser.UserName;
                 return;
             }
             MessageBox.Show($"No User Founded By Id [{Person.PersonID}]! Please Select A Valid ID", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -305,7 +305,7 @@ namespace BankSystem.User.UserControls
             }
             if (_Mode == enMode.Edit)
             {
-                if (clsSettings.EncryptString_Hashing(txtOriginalPassword.Text.Trim()) != _User.Password)
+                if (clsUtil_BL.EncryptString_Hashing(txtOriginalPassword.Text.Trim()) != _User.Password)
                     _ErrorProvider.SetError(txtOriginalPassword, "The Original Password is Incorrect.");
                 return;
             }

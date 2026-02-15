@@ -49,7 +49,7 @@ namespace BankSystem.Customer.UserControls
             _CurrentCustomer.CreatedDate = DateTime.Now;
             _CurrentCustomer.IsActive = cbIsActive.Checked;
             _CurrentCustomer.Occupation = txtOccupation.Text.Trim()?? string.Empty;
-            _CurrentCustomer.CreatedByUserID = clsGlobal.LoggedInUser.UserID;
+            _CurrentCustomer.CreatedByUserID = clsUtil_PL.LoggedInUser.UserID;
         }
 
         public void __AddNewCustomer()

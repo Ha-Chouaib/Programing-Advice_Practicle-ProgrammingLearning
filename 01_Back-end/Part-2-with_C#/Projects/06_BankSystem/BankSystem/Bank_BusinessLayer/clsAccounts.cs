@@ -58,6 +58,52 @@ namespace Bank_BusinessLayer
             _Mode = enMode.enUpdate;
         }
 
+        [Serializable]
+        public static class Filter_Mapping
+        {
+            public static (string valueMember, string DisplayMember) All { get; private set; } = ("All", "All");
+            public static (string valueMember, string DisplayMember) AccountID { get; private set; } = ("ID", "Account ID");
+            public static (string valueMember, string DisplayMember) CustomerID { get; private set; } = ("CustomerID", "Customer ID");
+            public static (string valueMember, string DisplayMember) CreatedByUserID { get; private set; } = ("CreatedByUserID", "Created By User ID");
+            public static (string valueMember, string DisplayMember) AccountNumber { get; private set; } = ("AccountNumber", "Account Number");
+            public static (string valueMember, string DisplayMember) Status { get; private set; } = ("IsActive", "Status");
+            public static (string valueMember, string DisplayMember) AccountType { get; private set; } = ("AccountType", "Account Type");
+        }
+        [Serializable]
+        public static class Filter_ByGroupsMapping
+        {
+            // ---- IsActive group
+            public static (string GroupName, Dictionary<string, string> GroupItems) Status
+            {
+                get
+                {
+                    return (Filter_Mapping.Status.valueMember,
+                        new Dictionary<string, string>
+                        {
+                    { "All", "All" },
+                    { "Active", "1" },
+                    { "InActive", "0" }
+                        });
+                }
+            }
+
+            // ---- Account Type group
+            public static (string GroupName, Dictionary<string, string> GroupItems) AccountType
+            {
+                get
+                {
+                    return (Filter_Mapping.AccountType.valueMember,
+                        new Dictionary<string, string>
+                        {
+                    { "All", "All" },
+                    { "Individual", "1" },
+                    { "Business", "2" },
+                    { "Save", "3" }
+                        });
+                }
+            }
+        }
+
         public static clsAccounts FindByID(int AccountID)
         {
             int CustomerID = -1;
@@ -227,13 +273,13 @@ namespace Bank_BusinessLayer
                                   pageNumber, pageSize, out pages);
         }
 
-        public static DataTable FindByAccountID(int accountID, byte pageNumber, byte pageSize, out short pages)
+        public static DataTable FilterByAccountID(int accountID, byte pageNumber, byte pageSize, out short pages)
         {
             return FilterAccounts(accountID, null, null, null, null, null,
                                   pageNumber, pageSize, out pages);
         }
 
-        public static DataTable FindByAccountNumber(string accountNumber, byte pageNumber, byte pageSize, out short pages)
+        public static DataTable FilterByAccountNumber(string accountNumber, byte pageNumber, byte pageSize, out short pages)
         {
             return FilterAccounts(null, accountNumber, null, null, null, null,
                                   pageNumber, pageSize, out pages);
@@ -263,56 +309,97 @@ namespace Bank_BusinessLayer
                                   pageNumber, pageSize, out pages);
         }
 
-        public static DataTable FilterAccounts
-        (
-            string column,
-            string term,
-            byte pageNumber,
-            byte pageSize,
-            out short availablePages
-        )
+        private delegate DataTable FilterDelegate(string term, byte pageNumber, byte pageSize, out short availablePages);
+        private static Dictionary<string, FilterDelegate> _filterActions;
+        private static Dictionary<string, FilterDelegate> _FilterActions
         {
-            column = column?.Trim().ToLower();
+            get
+            {
+                if (_filterActions == null)
+                {
+                    _filterActions = new Dictionary<string, FilterDelegate>
+            {
+                {
+                    Filter_Mapping.AccountID.valueMember,
+                    (string term, byte page, byte size, out short pages) =>
+                    {
+                        if (int.TryParse(term, out int id))
+                            return FilterByAccountID(id, page, size, out pages);
+
+                        return ListAll(page, size, out pages);
+                    }
+                },
+
+                {
+                    Filter_Mapping.AccountNumber.valueMember,
+                    (string term, byte page, byte size, out short pages) =>
+                        FilterByAccountNumber(term, page, size, out pages)
+                },
+
+                {
+                    Filter_Mapping.CustomerID.valueMember,
+                    (string term, byte page, byte size, out short pages) =>
+                    {
+                        if (int.TryParse(term, out int customerID))
+                            return FilterByCustomerID(customerID, page, size, out pages);
+
+                        return ListAll(page, size, out pages);
+                    }
+                },
+
+                {
+                    Filter_Mapping.CreatedByUserID.valueMember,
+                    (string term, byte page, byte size, out short pages) =>
+                    {
+                        if (int.TryParse(term, out int createdBy))
+                            return FilterByCreatedByUser(createdBy, page, size, out pages);
+
+                        return ListAll(page, size, out pages);
+                    }
+                },
+
+                {
+                    Filter_Mapping.Status.valueMember,
+                    (string term, byte page, byte size, out short pages) =>
+                    {
+                        if (bool.TryParse(term, out bool active))
+                            return FilterByStatus(active, page, size, out pages);
+
+                        return ListAll(page, size, out pages);
+                    }
+                },
+
+                {
+                    Filter_Mapping.AccountType.valueMember,
+                    (string term, byte page, byte size, out short pages) =>
+                    {
+                        if (byte.TryParse(term, out byte type))
+                            return FilterByAccountType(type, page, size, out pages);
+
+                        return ListAll(page, size, out pages);
+                    }
+                },
+
+                {
+                    Filter_Mapping.All.valueMember,
+                    (string term, byte page, byte size, out short pages) =>
+                        ListAll(page, size, out pages)
+                }
+            };
+                }
+
+                return _filterActions;
+            }
+        }
+        public static DataTable FilterAccounts(string column, string term, byte pageNumber, byte pageSize, out short availablePages)
+        {
             term = term?.Trim();
 
-            switch (column)
-            {
-                case "accountid":
-                    if (int.TryParse(term, out int accountID))
-                        return FindByAccountID(accountID, pageNumber, pageSize, out availablePages);
-                    break;
-
-                case "accountnumber":
-                    return FindByAccountNumber(term, pageNumber, pageSize, out availablePages);
-
-                case "customerid":
-                    if (int.TryParse(term, out int customerID))
-                        return FilterByCustomerID(customerID, pageNumber, pageSize, out availablePages);
-                    break;
-
-                case "createdbyuserid":
-                    if (int.TryParse(term, out int createdBy))
-                        return FilterByCreatedByUser(createdBy, pageNumber, pageSize, out availablePages);
-                    break;
-
-                case "isactive":
-                    if (bool.TryParse(term, out bool isActive))
-                        return FilterByStatus(isActive, pageNumber, pageSize, out availablePages);
-                    break;
-
-                case "accounttype":
-                    if (byte.TryParse(term, out byte accountType))
-                        return FilterByAccountType(accountType, pageNumber, pageSize, out availablePages);
-                    break;
-
-                default:
-                    return ListAll(pageNumber, pageSize, out availablePages);
-            }
+            if (_FilterActions.TryGetValue(column, out FilterDelegate action))
+                return action(term, pageNumber, pageSize, out availablePages);
 
             return ListAll(pageNumber, pageSize, out availablePages);
         }
-
-
 
     }
 }

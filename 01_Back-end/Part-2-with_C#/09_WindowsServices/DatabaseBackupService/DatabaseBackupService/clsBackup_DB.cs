@@ -12,7 +12,6 @@ namespace DataAccessLayer
     {
         
        
-        public static bool
         public static bool BackupDatabase(string ConnectionString ,string backupPath, string DataBaseName)
         {
             string Query = $"BACKUP DATABASE [{DataBaseName}] TO DISK = N'{backupPath}' WITH NOFORMAT, NOINIT," +

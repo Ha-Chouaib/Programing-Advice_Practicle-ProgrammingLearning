@@ -114,7 +114,7 @@ namespace BankSystem
                     Icon = Resources.general_reports,
                     SubItems = new List<clsMenuBtnModel>
                     {
-                        new clsMenuBtnModel { Key = "frmCustomerReport", Title = "Customer Report",Icon = Resources.reporter },
+                        new clsMenuBtnModel { Key = "frmCustomerReports", Title = "Customer Report",Icon = Resources.reporter },
                         new clsMenuBtnModel { Key = "frmTransactionReport", Title = "Transaction Report" ,Icon = Resources.bank_transaction__1_},
                         new clsMenuBtnModel { Key = "frmUserActivityReport", Title = "User Activity Report",Icon = Resources.activity },
                         new clsMenuBtnModel { Key = "frmSystemLogs", Title = "System Logs" ,Icon = Resources.log}
@@ -141,7 +141,7 @@ namespace BankSystem
 
         private void LoadForm(object sender, clsMenuBtnModel Item)
         {
-            var frm = clsGlobal.FormHelper.CreateFormInstance(Item.Key);
+            var frm = clsUtil_PL.FormHelper.CreateFormInstance(Item.Key);
 
             if (frm == null)
             {

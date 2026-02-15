@@ -36,41 +36,11 @@ namespace BankSystem.User.Forms
         }
         private Dictionary<string, string> _FilterBy_Options()
         {
-            Dictionary<string, string> Options = new Dictionary<string, string>
-            {
-                {"All","All"},
-                {"User ID","ID" },
-                {"Person ID","PersonID" },
-                {"User Name","UserName" },
-                {"Role","RoleName" },
-                {"Status","IsActive"},
-
-            };
-
-            return Options;
+            return clsUtil_BL.ManagerRcordsHelper.FilterBy_Options(typeof(clsUser.Filter_Mapping));
         }
         private Dictionary<string, Dictionary<string, string>> _FilterByGroups()
         {
-            Dictionary<string, string> RolesDic = new Dictionary<string, string>();
-            foreach (DataRow r in clsRole.ListRoles().Rows)
-            {
-                RolesDic.Add(r["RoleName"].ToString(), r["RoleName"].ToString());
-            }
-            Dictionary<string, Dictionary<string, string>> FilterOptions = new Dictionary<string, Dictionary<string, string>>
-            {
-                  {
-                        "IsActive", new Dictionary<string, string>
-                        {
-                            { "All", "All" },
-                            { "Active", "1" },
-                            { "InActive", "0" }
-                        }
-
-                   },
-                 {"RoleName", RolesDic }
-            };
-
-            return FilterOptions;
+            return clsUtil_BL.ManagerRcordsHelper.FilterBy_Groups(typeof(clsUser.Filter_ByGroupsMapping));
         }
 
         private List<(string ContextMenuKey, Action<int, ToolStripMenuItem> ContextMenuAction)> _ContextMenuPackage()
@@ -138,7 +108,7 @@ namespace BankSystem.User.Forms
             }
             if (MessageBox.Show("Sure To delete this record?!", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
-                if (clsUser.Delete(userid, clsGlobal.LoggedInUser.UserID))
+                if (clsUser.Delete(userid, clsUtil_PL.LoggedInUser.UserID))
                 {
                     MessageBox.Show($"The User's record With id [{userid}] was deleted successfully");
                     ctrlManageRecords1.__RefreshRecordsList();

@@ -3,6 +3,7 @@ using BankSystem.Accounts.Forms;
 using BankSystem.Person;
 using BankSystem.Person.Forms;
 using BankSystem.Properties;
+using BankSystem.Reports.Forms;
 using BankSystem.User.Forms;
 using DVLD_BusinessLayer;
 using System;
@@ -41,18 +42,14 @@ namespace BankSystem.Customer.Forms
         }
         private Dictionary<string, string> _FilterBy_Options()
         {
-            Dictionary<string, string> Options = new Dictionary<string, string>
-            {
-                {"All","All"},
-                {"Customer ID","ID" },
-                {"Person ID","PersonID" },
-                {"Status","IsActive"},
-                {"Customer Type","CustomerType" },
-               
-            };
+            return clsUtil_BL.ManagerRcordsHelper.FilterBy_Options(typeof(clsCustomer.Filter_Mapping));
 
-            return Options;
         }
+        private Dictionary<string, Dictionary<string, string>> _FilterByGroups()
+        {
+            return clsUtil_BL.ManagerRcordsHelper.FilterBy_Groups(typeof(clsCustomer.Filter_ByGroupsMapping));
+        }
+
         private List<(string ContextMenuKey, Action<int, ToolStripMenuItem> ContextMenuAction)> _ContextMenuPackage()
         {
             List<(string ContextMenuKey, Action<int, ToolStripMenuItem > ContextMenuAction)> ContextMenuItems = new List<(string ContextMenuKey, Action<int, ToolStripMenuItem > ContextMenuAction)>
@@ -65,40 +62,14 @@ namespace BankSystem.Customer.Forms
                 ("-----------------", null),
                 ("Convert To User", _ContextMenuConvertToUser),
                 ("Add Account", _ContextMenuAddNewAccount),
+                ("-----------------", null),
+                ("Load Customer Summary Report", _ContextMenuLoadCustomerSummaryReport),
 
             };
 
             return ContextMenuItems;
         }
-        private Dictionary<string, Dictionary<string, string>> _FilterByGroups()
-        {
-            Dictionary<string, Dictionary<string, string>> FilterOptions = new Dictionary<string, Dictionary<string, string>>
-            {
-                  {
-                        "IsActive", new Dictionary<string, string>
-                        {
-                            { "All", "All" },
-                            { "Active", "1" },
-                            { "InActive", "0" }
-                        }
-
-                   },
-                 {
-                        "CustomerType", new Dictionary<string, string>
-                        {
-                            { "All", "All" },
-                            { "Individual", "1" },
-                            { "Business", "2" },
-                            { "VIP", "3" }
-                           
-                        }
-
-                   }
-            };
-
-            return FilterOptions;
-        }
-
+       
         void _ContextMenuViewCustomerDetails(int customerID, ToolStripMenuItem menuItem)
         {
             clsCustomer customer = clsCustomer.FindCustomerByID(customerID);
@@ -130,7 +101,7 @@ namespace BankSystem.Customer.Forms
             }
             if (MessageBox.Show("Sure To delete this record?!", "Validation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                if (clsCustomer.Delete(customerID, clsGlobal.LoggedInUser.UserID))
+                if (clsCustomer.Delete(customerID, clsUtil_PL.LoggedInUser.UserID))
                 {
                     MessageBox.Show($"The customer's record With id [{customerID}] was deleted successfully");
                     ctrlManageRecords1.__RefreshRecordsList();
@@ -167,7 +138,15 @@ namespace BankSystem.Customer.Forms
             }
             MessageBox.Show($"No Customer Exists With id [{customerID}]","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-
+        void _ContextMenuLoadCustomerSummaryReport(int customerID, ToolStripMenuItem menuItem)
+        {
+            if (clsCustomer.IsCustomerExistsByID(customerID))
+            {
+                frmCustomerSummaryCard card = new frmCustomerSummaryCard(customerID); card.ShowDialog();
+                return;
+            }
+            MessageBox.Show($"No Customer Exists With id [{customerID}]", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
         private void _EndSession()
         {
             this.Close();
@@ -187,7 +166,6 @@ namespace BankSystem.Customer.Forms
         private void _ConfigureDataRecordsContainer()
         {
 
-            
             var grid = ctrlManageRecords1.__RecordsContainer;
 
             if (grid.RowCount == 0) return;
@@ -198,7 +176,6 @@ namespace BankSystem.Customer.Forms
             grid.Columns["CreatedDate"].HeaderText = "Created Date";
             grid.Columns["CreatedByUserID"].HeaderText = "Added By User";
 
-            
             int index = grid.Columns["IsActive"].Index;
             grid.Columns.Remove("IsActive");
 
@@ -223,6 +200,7 @@ namespace BankSystem.Customer.Forms
             };
 
         }
+    
     }
 }
 

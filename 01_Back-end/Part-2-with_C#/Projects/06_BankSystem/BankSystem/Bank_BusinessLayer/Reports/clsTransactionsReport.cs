@@ -125,7 +125,7 @@ namespace Bank_BusinessLayer.Reports
 
         }
         public static DataTable FilterTransactions
-        (int? transactionID, int? accountFromID, int? accountToID,int? accountOwnerID, bool? isPerformedByCustomer,int? performedByUserID, DateTime? transactionDate, byte pageNumber, byte pageSize, out short availablePages)
+        (int? transactionID, int? accountFromID, int? accountToID,int? accountOwnerID, bool? isPerformedByCustomer, int? performedByUserID, DateTime? transactionDate, byte pageNumber, byte pageSize, out short availablePages)
         {
             int totalRows = 0;
 
@@ -174,47 +174,118 @@ namespace Bank_BusinessLayer.Reports
         {
             return FilterTransactions(null, null, null, null, null, null, transactionDate, pageNumber, pageSize, out availablePages);
         }
-        public static DataTable FilterTransactionsHistory
-            (
-                string column,
-                string term,
-                byte pageNumber,
-                byte pageSize,
-                out short availablePages
-            )
+        
+        [Serializable]
+        public static class Filter_Mapping
         {
-            column = column?.Trim().ToLower();
-            term = term?.Trim();
+            public static (string valueMember, string DisplayMember) All { get; private set; } = ("All", "All");
+            public static (string valueMember, string DisplayMember) TransactionID { get; private set; } = ("TransactionID", "Transaction ID");
+            public static (string valueMember, string DisplayMember) AccountFrom { get; private set; } = ("AccountFrom", "Account From");
+            public static (string valueMember, string DisplayMember) AccountTo { get; private set; } = ("AccountTo", "Account To");
+            public static (string valueMember, string DisplayMember) AccountOwner { get; private set; } = ("AccountOwner", "Account Owner");
+            public static (string valueMember, string DisplayMember) Performer { get; private set; } = ("Performer", "Performed By");
+            public static (string valueMember, string DisplayMember) TransactionDate { get; private set; } = ("TransactionDate", "Transaction Date");
+        }
 
-            switch (column)
+        [Serializable]
+        public static class Filter_ByGroupsMapping
+        {
+            private static DateTime Today => DateTime.Today;
+            private static DateTime ThisMonthStart => new DateTime(Today.Year, Today.Month, 1);
+            private static DateTime LastMonthStart => ThisMonthStart.AddMonths(-1);
+            private static DateTime ThisYearStart => new DateTime(Today.Year, 1, 1);
+            private static DateTime LastYearStart => ThisYearStart.AddYears(-1);
+
+            public static (string GroupName, Dictionary<string, string> GroupItems) TransactionDateRange
             {
-                case "transactionid":
-                    return FilterByTransactionID(int.Parse(term), pageNumber, pageSize, out availablePages);
-
-                case "accountfrom":
-                    return FilterByAccountFrom(int.Parse(term), pageNumber, pageSize, out availablePages);
-
-                case "accountto":
-                    return FilterByAccountTo(int.Parse(term), pageNumber, pageSize, out availablePages);
-
-                case "accountowner":
-                    return FilterByAccountOwner(int.Parse(term), pageNumber, pageSize, out availablePages);
-
-                case "performer":
-                    // expecting term format: "isCustomer|userID"
-                    var parts = term.Split('|');
-                    bool isCustomer = bool.Parse(parts[0]);
-                    int? userID = (parts.Length > 1 && int.TryParse(parts[1], out int uid)) ? (int?)uid : null;
-                    return FilterByPerformer(isCustomer, userID, pageNumber, pageSize, out availablePages);
-
-                case "date":
-                case "transactiondate":
-                    return FilterByDate(DateTime.Parse(term), pageNumber, pageSize, out availablePages);
-
-                default:
-                    return ListAll(pageNumber, pageSize, out availablePages);
+                get
+                {
+                    return ("TransactionDate", new Dictionary<string, string>
+            {
+                { "All", "" },
+                { "Today", Today.ToString("yyyy-MM-dd") },
+                { "Yesterday", Today.AddDays(-1).ToString("yyyy-MM-dd") },
+                { "Last 7 Days", $"{Today.AddDays(-7):yyyy-MM-dd}|{Today:yyyy-MM-dd}" },
+                { "This Month", $"{ThisMonthStart:yyyy-MM-dd}|{ThisMonthStart.AddMonths(1):yyyy-MM-dd}" },
+                { "Last Month", $"{LastMonthStart:yyyy-MM-dd}|{ThisMonthStart:yyyy-MM-dd}" },
+                { "This Year", $"{ThisYearStart:yyyy-MM-dd}|{ThisYearStart.AddYears(1):yyyy-MM-dd}" },
+                { "Last Year", $"{LastYearStart:yyyy-MM-dd}|{ThisYearStart:yyyy-MM-dd}" }
+            });
+                }
             }
         }
+
+        private delegate DataTable FilterDelegate(string term, byte page, byte size, out short pages);
+
+        private static Dictionary<string, FilterDelegate> _filterActions;
+        private static Dictionary<string, FilterDelegate> _FilterActions
+        {
+            get
+            {
+                if (_filterActions == null)
+                {
+                    _filterActions = new Dictionary<string, FilterDelegate>
+            {
+                { Filter_Mapping.TransactionID.valueMember, (string term,byte page,byte size, out short pages) =>
+                    {
+                        if (int.TryParse(term, out int id))
+                            return FilterByTransactionID(id, page, size, out pages);
+                        return ListAll(page, size, out pages);
+                    }
+                },
+                { Filter_Mapping.AccountFrom.valueMember, (string term,byte page,byte size, out short pages) =>
+                    {
+                        if (int.TryParse(term, out int id))
+                            return FilterByAccountFrom(id, page, size, out pages);
+                        return ListAll(page, size, out pages);
+                    }
+                },
+                { Filter_Mapping.AccountTo.valueMember, (string term,byte page,byte size, out short pages) =>
+                    {
+                        if (int.TryParse(term, out int id))
+                            return FilterByAccountTo(id, page, size, out pages);
+                        return ListAll(page, size, out pages);
+                    }
+                },
+                { Filter_Mapping.AccountOwner.valueMember, (string term,byte page,byte size, out short pages) =>
+                    {
+                        if (int.TryParse(term, out int id))
+                            return FilterByAccountOwner(id, page, size, out pages);
+                        return ListAll(page, size, out pages);
+                    }
+                },
+                { Filter_Mapping.Performer.valueMember, (string term,byte page,byte size, out short pages) =>
+                    {
+                        var parts = term.Split('|');
+                        bool isCustomer = bool.Parse(parts[0]);
+                        int? userID = (parts.Length > 1 && int.TryParse(parts[1], out int uid)) ? (int?)uid : null;
+                        return FilterByPerformer(isCustomer, userID, page, size, out pages);
+                    }
+                },
+                { Filter_Mapping.TransactionDate.valueMember, (string term,byte page,byte size, out short pages) =>
+                    {
+                        if (DateTime.TryParse(term, out DateTime dt))
+                            return FilterByDate(dt, page, size, out pages);
+                        return ListAll(page, size, out pages);
+                    }
+                },
+                { Filter_Mapping.All.valueMember, (string term,byte page,byte size, out short pages) => ListAll(page, size, out pages) }
+            };
+                }
+                return _filterActions;
+            }
+        }
+
+        public static DataTable FilterTransactionsHistory(string column, string term, byte pageNumber, byte pageSize, out short availablePages)
+        {
+            term = term?.Trim();
+
+            if (_FilterActions.TryGetValue(column, out FilterDelegate filterAction))
+                return filterAction(term, pageNumber, pageSize, out availablePages);
+
+            return ListAll(pageNumber, pageSize, out availablePages);
+        }
+
 
     }
 }

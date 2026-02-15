@@ -21,9 +21,9 @@ namespace BankSystem
 
         private void _Add_EventLog()
         {
-            if(!EventLog.SourceExists(clsGlobal.EventLogSourceName))
+            if(!EventLog.SourceExists(clsUtil_PL.EventLogSourceName))
             {
-                EventLog.CreateEventSource(clsGlobal.EventLogSourceName, "Application");
+                EventLog.CreateEventSource(clsUtil_PL.EventLogSourceName, "Application");
             }
         }
 
