@@ -59,7 +59,7 @@ namespace BankSystem.Accounts.UserControls
             txtCustomerID.Text = _TargetCustomer.CustomerID.ToString();
             txtFullName.Text = _TargetCustomer.PersonalInf.FullName;
             txtCreatedDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
-            txtCreatedByUser.Text = clsGlobal.LoggedInUser.UserName;
+            txtCreatedByUser.Text = clsUtil_PL.LoggedInUser.UserName;
             
            
         }
@@ -83,7 +83,7 @@ namespace BankSystem.Accounts.UserControls
             _account.AccountType = (clsAccounts.enAccountType)cmbAccountType.SelectedValue;
             _account.Balance = 0;
             _account.IsActive = rbIsActive.Checked;
-            _account.CreatedByUserID = clsGlobal.LoggedInUser.UserID;
+            _account.CreatedByUserID = clsUtil_PL.LoggedInUser.UserID;
             _account.CreatedDate = DateTime.Now;
         }
 

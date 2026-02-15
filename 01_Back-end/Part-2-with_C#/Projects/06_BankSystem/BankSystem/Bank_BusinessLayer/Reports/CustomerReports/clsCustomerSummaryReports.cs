@@ -10,11 +10,11 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
 {
     public class clsCustomerSummaryReports : clsCustomerReports_Main
     {
-        byte TotalAccounts { get; set; }
-        byte ActiveAccounts { get; set; }
-        double TotalBalance { get; set; }
-        DateTime LastActivityDate { get; set; }
-        bool CustomerStatus { get; set; }
+        public byte TotalAccounts { get; private set; }
+        public byte ActiveAccounts { get; private set; }
+        public double TotalBalance { get; private set; }
+        public DateTime LastActivityDate { get; private set; }
+        public bool CustomerStatus { get; private set; }
 
         clsCustomerSummaryReports()
         {
@@ -34,6 +34,68 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
             this.LastActivityDate = LastActivityDate;
             this.CustomerStatus = CustomerStatus;
         }
+        [Serializable]
+        public static class Filter_Mapping
+        {
+            public static (string valueMember, string DisplayMember) All
+            { get; private set; } = ("All", "All");
+
+            public static (string valueMember, string DisplayMember) CustomerID
+            { get; private set; } = ("CustomerID", "Customer ID");
+
+            public static (string valueMember, string DisplayMember) ActiveAccounts
+            { get; private set; } = ("activeaccounts", "Active Accounts Count");
+
+            public static (string valueMember, string DisplayMember) LastActivityDate
+            { get; private set; } = ("lastactivitydate", "Last Activity Date");
+
+            public static (string valueMember, string DisplayMember) CustomerStatus
+            { get; private set; } = ("customerstatus", "Customer Status");
+        }
+        [Serializable]
+        public static class Filter_ByGroupsMapping
+        {
+            private static DateTime Today => DateTime.Today;
+            private static DateTime ThisMonthStart => new DateTime(Today.Year, Today.Month, 1);
+            private static DateTime LastMonthStart => ThisMonthStart.AddMonths(-1);
+            private static DateTime ThisYearStart => new DateTime(Today.Year, 1, 1);
+            private static DateTime LastYearStart => ThisYearStart.AddYears(-1);
+
+            public static (string GroupName, Dictionary<string, string> GroupItems) LastActivityDate
+            {
+                get
+                {
+                    return (Filter_Mapping.LastActivityDate.valueMember,
+                        new Dictionary<string, string>
+                        {
+                    { "All", "" },
+                    { "Today", Today.ToString("yyyy-MM-dd") },
+                    { "Yesterday", Today.AddDays(-1).ToString("yyyy-MM-dd") },
+
+                    { "Last 7 Days", $"{Today.AddDays(-7):yyyy-MM-dd}|{Today:yyyy-MM-dd}" },
+                    { "This Month", $"{ThisMonthStart:yyyy-MM-dd}|{ThisMonthStart.AddMonths(1):yyyy-MM-dd}" },
+                    { "Last Month", $"{LastMonthStart:yyyy-MM-dd}|{ThisMonthStart:yyyy-MM-dd}" },
+                    { "This Year", $"{ThisYearStart:yyyy-MM-dd}|{ThisYearStart.AddYears(1):yyyy-MM-dd}" },
+                    { "Last Year", $"{LastYearStart:yyyy-MM-dd}|{ThisYearStart:yyyy-MM-dd}" }
+                        });
+                }
+            }
+
+            public static (string GroupName, Dictionary<string, string> GroupItems) CustomerStatus
+            {
+                get
+                {
+                    return (Filter_Mapping.CustomerStatus.valueMember,
+                        new Dictionary<string, string>
+                        {
+                    { "All", "" },
+                    { "Active", "1" },
+                    { "Inactive", "0" }
+                        });
+                }
+            }
+        }
+
         public new static clsCustomerSummaryReports Find (int CustomerID)
         {
             int ReportID = -1;
@@ -117,15 +179,17 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
                             {
                                 var dateParts = term.Split('|');
 
-                                if (DateTime.TryParse(dateParts[0], out DateTime fromDate))
-                                    from = fromDate;
 
-                                if (DateTime.TryParse(dateParts[1], out DateTime toDate))
+                                if (DateTime.TryParse(dateParts[0], out DateTime fromDate) && DateTime.TryParse(dateParts[1], out DateTime toDate))
+                                {
+                                    from = fromDate;
                                     to = toDate;
+                                }
+                                else
+                                    break;
                             }
                             else
                             {
-                                // Single date → treat as one day range
                                 if (DateTime.TryParse(term, out DateTime date))
                                 {
                                     from = date;

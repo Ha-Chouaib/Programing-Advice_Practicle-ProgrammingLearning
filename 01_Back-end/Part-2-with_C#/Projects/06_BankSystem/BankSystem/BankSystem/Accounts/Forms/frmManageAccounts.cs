@@ -1,6 +1,7 @@
 ﻿using Bank_BusinessLayer;
 using BankSystem.Customer.Forms;
 using BankSystem.Properties;
+using BankSystem.Reports.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,18 +36,14 @@ namespace BankSystem.Accounts.Forms
         }
         private Dictionary<string, string> _FilterBy_Options()
         {
-            Dictionary<string, string> Options = new Dictionary<string, string>
-            {
-                {"All","All"},
-                {"Account ID","ID" },
-                {"Customer ID","CustomerID" },
-                {"Status","IsActive"},
-                {"Account Type","AccountType" },
-
-            };
-
-            return Options;
+            return clsUtil_BL.ManagerRcordsHelper.FilterBy_Options(typeof(clsAccounts.Filter_Mapping));
         }
+        private Dictionary<string, Dictionary<string, string>> _FilterByGroups()
+        {
+            return clsUtil_BL.ManagerRcordsHelper.FilterBy_Groups(typeof(clsAccounts.Filter_ByGroupsMapping));
+
+        }
+
         private List<(string ContextMenuKey, Action<int, ToolStripMenuItem> ContextMenuAction)> _ContextMenuPackage()
         {
             List<(string ContextMenuKey, Action<int, ToolStripMenuItem> ContextMenuAction)> ContextMenuItems = new List<(string ContextMenuKey, Action<int, ToolStripMenuItem> ContextMenuAction)>
@@ -61,41 +58,15 @@ namespace BankSystem.Accounts.Forms
                 ("----------------------", null),
                 ("Update", _ContextMenuChangeStatus),
                 ("Delete", _ContextMenuDeleteAccount),
+                ("----------------------", null),
+                ("Load Balance Statement Report", _ContextMenuLoadBalanceStatementReport),
+                ("Load Account Activity Report", _ContextMenuLoadAcountActivityReport),
 
             };
 
             return ContextMenuItems;
         }
-        private Dictionary<string, Dictionary<string, string>> _FilterByGroups()
-        {
-            Dictionary<string, Dictionary<string, string>> FilterOptions = new Dictionary<string, Dictionary<string, string>>
-            {
-                  {
-                        "IsActive", new Dictionary<string, string>
-                        {
-                            { "All", "All" },
-                            { "Active", "1" },
-                            { "InActive", "0" }
-                        }
-
-                   },
-                 {
-                        "AccountType", new Dictionary<string, string>
-                        {
-                            { "All", "All" },
-                            { "Individual", "1" },
-                            { "Business", "2" },
-                            { "Save", "3" },
-
-
-                        }
-
-                   }
-            };
-
-            return FilterOptions;
-        }
-
+       
         void _ContextMenuViewAccountDetails(int accountID, ToolStripMenuItem menuItem)
         {
             clsAccounts account = clsAccounts.FindByID(accountID);
@@ -137,7 +108,7 @@ namespace BankSystem.Accounts.Forms
             }
             if (MessageBox.Show("Sure To delete this record?!", "Validation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                if (clsAccounts.Delete(accountID, clsGlobal.LoggedInUser.UserID))
+                if (clsAccounts.Delete(accountID, clsUtil_PL.LoggedInUser.UserID))
                 {
                     MessageBox.Show($"The acount's record With id [{accountID}] was deleted successfully");
                     ctrlManageRecords1.__RefreshRecordsList();
@@ -174,7 +145,30 @@ namespace BankSystem.Accounts.Forms
         {
             
         }
-      
+
+        void _ContextMenuLoadBalanceStatementReport(int accountID, ToolStripMenuItem menuItem)
+        {
+            clsAccounts account = clsAccounts.FindByID(accountID);
+            if (account != null)
+            {
+                frmBalanceStatementReportCard card = new frmBalanceStatementReportCard(account.AccountID,account.CustomerID);
+                card.ShowDialog();
+            }
+            MessageBox.Show($"Can't Find Any Account with id [{accountID}]!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
+        void _ContextMenuLoadAcountActivityReport(int accountID, ToolStripMenuItem menuItem)
+        {
+            
+            if (clsAccounts.Exists(accountID))
+            {
+                frmAccountActivityReportCard card = new frmAccountActivityReportCard(accountID,DateTime.Today);
+                card.ShowDialog();
+            }
+            MessageBox.Show($"Can't Find Any Account with id [{accountID}]!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
+
         private void _EndSession()
         {
             this.Close();

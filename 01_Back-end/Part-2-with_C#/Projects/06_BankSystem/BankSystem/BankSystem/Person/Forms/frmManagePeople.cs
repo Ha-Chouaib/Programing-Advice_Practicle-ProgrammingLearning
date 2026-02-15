@@ -40,19 +40,14 @@ namespace BankSystem.Person
         }
         private Dictionary<string,string> _FilterBy_Options()
         {
-            Dictionary<string,string> Options = new Dictionary<string, string> 
-            {
-                {"All","All"},
-                {"Person ID","ID" },
-                {"National No","NationalNo"},
-                {"Gender","Gender" },
-                {"Full Name","FullName"},
-                {"Email","Email" },
-                {"Phone Number","Phone"}
-            };
+            return clsUtil_BL.ManagerRcordsHelper.FilterBy_Options(typeof(clsPerson.Filter_Mapping));
 
-            return Options;
         }
+        private Dictionary<string, Dictionary<string, string>> _FilterByGroups()
+        {
+            return clsUtil_BL.ManagerRcordsHelper.FilterBy_Groups(typeof(clsPerson.Filter_ByGroupsMapping));
+        }
+
         private List<(string ContextMenuKey, Action<int,ToolStripMenuItem> ContextMenuAction)> _ContextMenuPackage()
         {
             List<(string ContextMenuKey, Action<int, ToolStripMenuItem> ContextMenuAction)> ContextMenuItems = new List<(string ContextMenuKey, Action<int, ToolStripMenuItem> ContextMenuAction)>
@@ -69,22 +64,6 @@ namespace BankSystem.Person
             };
 
             return ContextMenuItems;
-        }
-        private Dictionary<string, Dictionary<string, string>> _FilterByGroups()
-        {
-            Dictionary<string, Dictionary<string, string>> FilterOptions = new Dictionary<string, Dictionary<string, string>>
-            {
-                    {
-                        "Gender", new Dictionary<string, string>
-                        {
-                            { "All", "All" },
-                            { "Male", "false" },
-                            { "Female", "true" }
-                        }
-                    } 
-            };
-
-            return FilterOptions;
         }
         
         void _ContextMenuViewPersonDetails(int personId, ToolStripMenuItem menuItem)
@@ -108,7 +87,7 @@ namespace BankSystem.Person
         {
             if(MessageBox.Show("Sure To delete this record?!","Validation",MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.OK)
             {
-                if (clsPerson.Delete(personId, clsGlobal.LoggedInUser.UserID))
+                if (clsPerson.Delete(personId, clsUtil_PL.LoggedInUser.UserID))
                 {
                     MessageBox.Show($"The Person's record With id [{personId}] was deleted successfully");
                     ctrlManageRecords1.__RefreshRecordsList();

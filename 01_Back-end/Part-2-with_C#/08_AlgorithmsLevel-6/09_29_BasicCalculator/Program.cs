@@ -36,11 +36,7 @@ namespace _09_29_BasicCalculator
             while (i < input.Length)
             {
                 value = input[i];
-                if (char.IsDigit(value) && !HasPriority)
-                {
-                    numbers.Push(value - '0');
-                    i++;
-                }
+                
                 if (parentheses.Contains(value) || (char.IsDigit(value) && HasPriority) || (Operators.Contains(value) && HasPriority))
                 {
                     if (value == '(') HasPriority = true;                  
@@ -50,27 +46,23 @@ namespace _09_29_BasicCalculator
                     {
                         if (char.IsDigit(value))
                         {
-                            PriorityNumbers.Enqueue(value - '0');
-                            i++;
+                            int b = value - '0';
+                            int a = 0;
+                            if (numbers.Count > 0)
+                            {
+                                a = numbers.Pop();
+                            }
+                            int result = DoCalc(a, b, op);
+                            numbers.Push(result);
                         }
-                        else if (Operators.Contains(value))
+                        if (Operators.Contains(value))
                         {
                             op = value;
-                            i++;
                         }
-                        if(PriorityNumbers.Count == 2)
-                        {
-                            int a = PriorityNumbers.Dequeue();
-                            int b = PriorityNumbers.Dequeue();
-                            int result = DoCalc(a, b, op);
-                            PriorityNumbers.Enqueue(result);
-                        }
+                       
                     }
-                    else
-                    {
-                        HasPriority = false;
-                        numbers.Push(PriorityNumbers.Dequeue());
-                    }
+                    i++;
+
                 }
 
 
@@ -81,7 +73,19 @@ namespace _09_29_BasicCalculator
                         op = value;
                         i++;
                     }
-                    if(numbers.Count == 2)
+                    if (char.IsDigit(value))
+                    {
+                        int b = value - '0';
+                        int a = 0;
+                        if (numbers.Count > 0)
+                        {
+                            a = numbers.Pop();
+                        }
+                        
+                        int result = DoCalc(a, b, op);
+                        numbers.Push(result);
+                        i++;
+                    }
 
 
                 }
@@ -92,6 +96,11 @@ namespace _09_29_BasicCalculator
         }
         static void Main(string[] args)
         {
+            string input = "1+(1+2)";
+            int result = Calculate(input);
+            Console.WriteLine("input: " + input);
+            Console.WriteLine("Result: " + result);
+            Console.ReadLine();
         }
     }
 }

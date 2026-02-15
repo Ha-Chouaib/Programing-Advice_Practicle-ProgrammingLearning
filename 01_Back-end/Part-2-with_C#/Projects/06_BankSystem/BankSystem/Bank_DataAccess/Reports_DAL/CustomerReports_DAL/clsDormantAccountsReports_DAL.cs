@@ -100,7 +100,7 @@ namespace Bank_DataAccess.Reports.CustomerReports
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@CustomerD", CustomerID.HasValue ? (object)CustomerID.Value : DBNull.Value);
+                    cmd.Parameters.AddWithValue("@CustomerID", CustomerID.HasValue ? (object)CustomerID.Value : DBNull.Value);
                     cmd.Parameters.AddWithValue("@AccountID", AccountID.HasValue ? (object)AccountID.Value : DBNull.Value);
                     cmd.Parameters.AddWithValue("@ReportDate", ReportDate.HasValue ? (object)ReportDate.Value : DBNull.Value);
 

@@ -62,6 +62,35 @@ namespace Bank_BusinessLayer
             _Mode = enMode.eAddNew;
 
         }
+        [Serializable]
+        public static class Filter_Mapping
+        {
+            public static (string valueMember, string DisplayMember) All { get; private set; } = ("All", "All");
+            public static (string valueMember, string DisplayMember) PersonID { get; private set; } = ("ID", "Person ID");
+            public static (string valueMember, string DisplayMember) NationalNo { get; private set; } = ("NationalNo", "National No");
+            public static (string valueMember, string DisplayMember) Gender { get; private set; } = ("Gender", "Gender");
+            public static (string valueMember, string DisplayMember) FullName { get; private set; } = ("FullName", "Full Name");
+            public static (string valueMember, string DisplayMember) Email { get; private set; } = ("Email", "Email");
+            public static (string valueMember, string DisplayMember) Address { get; private set; } = ("Email", "Email");
+            public static (string valueMember, string DisplayMember) Phone { get; private set; } = ("Phone", "Phone Number");
+        }
+        [Serializable]
+        public static class Filter_ByGroupsMapping
+        {
+            public static (string GroupName, Dictionary<string, string> GroupItems) Gender
+            {
+                get
+                {
+                    return (Filter_Mapping.Gender.valueMember,
+                        new Dictionary<string, string>
+                        {
+                    { "All", "All" },
+                    { "Male", "false" },
+                    { "Female", "true" }
+                        });
+                }
+            }
+        }
 
         public static clsPerson Find(int PersonID)
         {
@@ -242,45 +271,82 @@ namespace Bank_BusinessLayer
         {
             return FilterPeople(null, null, null, null, null, null, address, pageNumber, pageSize, out availablePages);
         }
-        public static DataTable FilterPeople( string column,string term,byte pageNumber, byte pageSize, out short availablePages )
+        // Delegate for generic filtering
+        private delegate DataTable FilterDelegate(string term, byte pageNumber, byte pageSize, out short availablePages);
+
+        // Lazy-loaded filter actions dictionary
+        private static Dictionary<string, FilterDelegate> _filterActions;
+        private static Dictionary<string, FilterDelegate> _FilterActions
         {
-            column = column?.Trim().ToLower();
-            term = term?.Trim();
-           
-            switch (column)
+            get
             {
-                case "id":
-                    if (int.TryParse(term, out int personID))
-                        return FindByID(personID, pageNumber, pageSize, out availablePages);
-                    break;
+                if (_filterActions == null)
+                {
+                    _filterActions = new Dictionary<string, FilterDelegate>
+            {
+                {
+                    Filter_Mapping.PersonID.valueMember,
+                    (string term, byte page, byte size, out short pages) =>
+                        { return int.TryParse(term, out int id) ? FindByID(id, page, size, out pages) : ListPeopleRecords(page, size, out pages); }
+                },
 
-                case "gender":
-                    if (bool.TryParse(term, out bool gender))
-                        return FilterByGender(gender, pageNumber, pageSize, out availablePages);
-                    break;
+                {
+                    Filter_Mapping.Gender.valueMember,
+                    (string term, byte page, byte size, out short pages) =>
+                        { return bool.TryParse(term, out bool gender) ? FilterByGender(gender, page, size, out pages) : ListPeopleRecords(page, size, out pages); }
+                },
 
-                case "nationalno":
-                    return FilterByNationalNo(term, pageNumber, pageSize, out availablePages);
+                {
+                    Filter_Mapping.NationalNo.valueMember,
+                    (string term, byte page, byte size, out short pages) =>
+                        FilterByNationalNo(term, page, size, out pages)
+                },
 
-                case "fullName":
-                    return SearchByName(term, pageNumber, pageSize, out availablePages);
+                {
+                    Filter_Mapping.FullName.valueMember,
+                    (string term, byte page, byte size, out short pages) =>
+                        SearchByName(term, page, size, out pages)
+                },
 
-                case "email":
-                    return SearchByEmail(term, pageNumber, pageSize, out availablePages);
+                {
+                    Filter_Mapping.Email.valueMember,
+                    (string term, byte page, byte size, out short pages) =>
+                        SearchByEmail(term, page, size, out pages)
+                },
 
-                case "phone":
-                    return SearchByPhone(term, pageNumber, pageSize, out availablePages);
+                {
+                    Filter_Mapping.Phone.valueMember,
+                    (string term, byte page, byte size, out short pages) =>
+                        SearchByPhone(term, page, size, out pages)
+                },
 
-                case "address":
-                    return SearchByAddress(term, pageNumber, pageSize, out availablePages);
+                {
+                    Filter_Mapping.Address.valueMember,
+                    (string term, byte page, byte size, out short pages) =>
+                        SearchByAddress(term, page, size, out pages)
+                },
 
-                default:
-                    return ListPeopleRecords(pageNumber, pageSize, out availablePages);
+                {
+                    Filter_Mapping.All.valueMember,
+                    (string term, byte page, byte size, out short pages) =>
+                        ListPeopleRecords(page, size, out pages)
+                }
+            };
+                }
+                return _filterActions;
             }
+        }
+
+        // Unified entry point
+        public static DataTable FilterPeople(string column, string term, byte pageNumber, byte pageSize, out short availablePages)
+        {
+            term = term?.Trim();
+
+            if (_FilterActions.TryGetValue(column, out FilterDelegate action))
+                return action(term, pageNumber, pageSize, out availablePages);
 
             return ListPeopleRecords(pageNumber, pageSize, out availablePages);
         }
-
 
     }
 }

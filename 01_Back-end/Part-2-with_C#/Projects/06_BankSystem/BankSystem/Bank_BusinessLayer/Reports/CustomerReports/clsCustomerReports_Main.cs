@@ -12,6 +12,7 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
 
         public int CustomerReportID { get; protected set; }
         public int CustomerID { get;protected set; }
+        public clsCustomer Customer { get; protected set; }
         public short ReportTypeID { get;protected set; }
         public DateTime ReportDate { get;protected set; }
 
@@ -22,12 +23,13 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
             ReportTypeID = -1;
             ReportDate = DateTime.MinValue;
         }
-        protected clsCustomerReports_Main(int CustomerReportID,int customerID, short reportTypeID, DateTime reportDate)
+        protected clsCustomerReports_Main(int CustomerReportID, int customerID, short reportTypeID, DateTime reportDate)
         {
             this.CustomerReportID = CustomerReportID;
             CustomerID = customerID;
             ReportTypeID = reportTypeID;
             ReportDate = reportDate;
+            Customer = clsCustomer.FindCustomerByID(customerID);
         }
 
         protected  static clsCustomerReports_Main Find(int customerReportID)
@@ -39,10 +41,10 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
             if (clsCustomerReports_Main_DAL.Find(customerReportID, ref customerID, ref reportTypeID, ref reportDate))
             {
                 return new clsCustomerReports_Main(customerReportID, customerID, reportTypeID, reportDate);
-            } else
+            }else
             {
                 return null;
-            } 
+            }
         }
     }
 }

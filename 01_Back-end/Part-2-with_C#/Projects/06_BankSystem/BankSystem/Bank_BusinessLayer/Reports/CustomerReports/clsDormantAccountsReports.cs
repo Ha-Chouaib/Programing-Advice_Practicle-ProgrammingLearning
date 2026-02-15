@@ -24,6 +24,19 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
             this.DormantMonths = 0;
         }
 
+        [Serializable]
+        public static class Filter_Mapping
+        {
+            public static (string valueMember, string DisplayMember) All
+            { get { return ("All", "All"); } }
+
+            public static (string valueMember, string DisplayMember) CustomerID
+            { get; private set; } = ("CustomerID", "Customer ID");
+
+            public static (string valueMember, string DisplayMember) AccountID
+            { get; private set; } = ("AccountID", "Account ID");
+        }
+
         public clsDormantAccountsReports(int customerReportID, int customerID, DateTime reportDate, short reportTypeID, int AccountID, int CustomerID, int TransactionID, DateTime LastTransactionDate, byte DormantMonths)
             : base(customerReportID, customerID, reportTypeID, reportDate)
         {

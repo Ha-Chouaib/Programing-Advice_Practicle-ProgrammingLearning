@@ -6,7 +6,7 @@ using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.ServiceProcess;
-using System.Text;
+using System.Timers;
 using System.Threading.Tasks;
 
 namespace DatabaseBackupService
@@ -21,18 +21,62 @@ namespace DatabaseBackupService
             CanPauseAndContinue = true;
             CanStop = true;
 
-            clsSettings.InitializeSettings();
 
         }
-        
+        private Timer backupTimer;
+        private bool isBackupRunning = false;
+
         public void ScheduleTimer()
         {
+            // Parse interval from settings (in minutes)
+            if (!double.TryParse(clsSettings.ScheduleTime, out double intervalMinutes))
+            {
+                clsSettings.LogAction("Invalid ScheduleTime setting, using default 60 minutes.");
+                intervalMinutes = 60;
+            }
 
+            // Create the timer
+            backupTimer = new Timer
+            {
+                Interval = intervalMinutes * 60 * 1000, // convert minutes to milliseconds
+                AutoReset = true,                      // repeat automatically
+                Enabled = true
+            };
+
+            backupTimer.Elapsed += async (sender, e) =>
+            {
+                if (isBackupRunning)
+                {
+                    clsSettings.LogAction("Previous backup still running. Skipping this interval.");
+                    return;
+                }
+
+                try
+                {
+                    isBackupRunning = true;
+                    await Task.Run(() => PerformBackup());
+                }
+                finally
+                {
+                    isBackupRunning = false;
+                }
+            };
+
+            backupTimer.Start();
+            clsSettings.LogAction($"Backup timer scheduled every {intervalMinutes} minutes.");
         }
+
+        private void PerformBackup()
+        {
+            // Placeholder: we will implement the actual backup next
+            clsSettings.LogAction("PerformBackup() called — implement backup logic here.");
+        }
+            
+        
         protected override void OnStart(string[] args)
         {
             clsSettings.LogAction("Database Backup Service started.");
-            // Here you would add code to schedule the backup task based on ScheduleTime
+            clsSettings.InitializeSettings();
         }
 
         protected override void OnStop()

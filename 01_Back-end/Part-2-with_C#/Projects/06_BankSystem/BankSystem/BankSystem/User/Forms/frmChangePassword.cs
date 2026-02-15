@@ -66,7 +66,7 @@ namespace BankSystem.User.Forms
                 MessageBox.Show("Please fix the errors before saving.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (clsUser.UpdateUsePassword(_SelectedUser.UserID, clsSettings.EncryptString_Hashing(txtNewPass.Text.Trim())))
+            if (clsUser.UpdateUsePassword(_SelectedUser.UserID, clsUtil_BL.EncryptString_Hashing(txtNewPass.Text.Trim())))
             {
                 MessageBox.Show("Password updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 __OperationDoneSuccessfully?.Invoke();
@@ -88,7 +88,7 @@ namespace BankSystem.User.Forms
             {
                 _errorProvider.SetError(txtOriginalPass, "Original password is required.");
             }
-            else if (clsSettings.EncryptString_Hashing(txtOriginalPass.Text.Trim()) != _SelectedUser.Password)
+            else if (clsUtil_BL.EncryptString_Hashing(txtOriginalPass.Text.Trim()) != _SelectedUser.Password)
             {
                 _errorProvider.SetError(txtOriginalPass, "Original password is incorrect.");
             }
