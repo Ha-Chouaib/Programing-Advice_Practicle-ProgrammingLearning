@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Bank_BusinessLayer.Reports.clsAuditUserActions;
 
 namespace Bank_BusinessLayer.Reports
 {
@@ -28,6 +29,8 @@ namespace Bank_BusinessLayer.Reports
         string Notes { get; set; }
         int PerformedByUserID { get; set; }
         bool IsPerformedByAccountOwner { get; set; }
+
+        private static string _sectionKey => "TRANSACTIONS-HISTORY-REPORT";
 
 
         clsTransactionsReport()
@@ -62,7 +65,7 @@ namespace Bank_BusinessLayer.Reports
 
         public bool AuditTransaction()
         {
-           this.TransactionID =  clsTransactionHistory.AddNewTransaction(
+           this.TransactionID =  clsTransactionHistoryReport_DAL.AddNewTransaction(
                             (byte)TransactionType,
                             TransactionDate,
                             AccountFromID,
@@ -91,7 +94,7 @@ namespace Bank_BusinessLayer.Reports
             int PerformedByUserID = -1;
             bool IsPerformedByAccountOwner = false;
 
-            bool found = clsTransactionHistory.Find(TransactionID,
+            bool found = clsTransactionHistoryReport_DAL.Find(TransactionID,
                 ref TransactionType,
                 ref TransactionDate,
                 ref AccountFromID,
@@ -103,9 +106,11 @@ namespace Bank_BusinessLayer.Reports
                 ref PerformedByUserID,
                 ref IsPerformedByAccountOwner
                 );
-            if(found)
+            clsTransactionsReport hist = null;
+
+            if (found)
                 {
-                return new clsTransactionsReport(
+                hist = new clsTransactionsReport(
                     (enTransactionType)TransactionType,
                     TransactionDate,
                     AccountFromID,
@@ -118,18 +123,18 @@ namespace Bank_BusinessLayer.Reports
                     IsPerformedByAccountOwner
                     );
             }
-            else
+            if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
             {
-                return null;
+                AuditingHelper.AuditReadRecordOperation((clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(hist), hist.TransactionID), found, (_sectionKey, $"Read Tansaction history report with id: [{TransactionID}]"));
             }
-
+            return hist;
         }
-        public static DataTable FilterTransactions
+        private static DataTable FilterTransactions
         (int? transactionID, int? accountFromID, int? accountToID,int? accountOwnerID, bool? isPerformedByCustomer, int? performedByUserID, DateTime? transactionDate, byte pageNumber, byte pageSize, out short availablePages)
         {
             int totalRows = 0;
 
-            DataTable dt = clsTransactionHistory.FilterTransactions(
+            DataTable dt = clsTransactionHistoryReport_DAL.FilterTransactions(
                 transactionID,
                 accountFromID,
                 accountToID,
@@ -148,31 +153,53 @@ namespace Bank_BusinessLayer.Reports
 
         public static DataTable ListAll(byte pageNumber, byte pageSize, out short availablePages)
         {
-            return FilterTransactions(null, null, null, null, null, null, null, pageNumber, pageSize, out availablePages);
+            DataTable dt = FilterTransactions(null, null, null, null, null, null, null, pageNumber, pageSize, out availablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, "List All transaction history reports"));
+            return dt;
         }
         public static DataTable FilterByTransactionID(int transactionID, byte pageNumber, byte pageSize, out short availablePages)
         {
-            return FilterTransactions(transactionID, null, null, null, null, null, null, pageNumber, pageSize, out availablePages);
+            DataTable dt = FilterTransactions(transactionID, null, null, null, null, null, null, pageNumber, pageSize, out availablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter transaction history reports by transaction id [{transactionID}]"));
+            return dt;
         }
         public static DataTable FilterByAccountFrom(int accountFromID, byte pageNumber, byte pageSize, out short availablePages)
         {
-            return FilterTransactions(null, accountFromID, null, null, null, null, null, pageNumber, pageSize, out availablePages);
+            DataTable dt = FilterTransactions(null, accountFromID, null, null, null, null, null, pageNumber, pageSize, out availablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter transaction history reports by account from id [{accountFromID}]"));
+            return dt;
         }
         public static DataTable FilterByAccountTo(int accountToID, byte pageNumber, byte pageSize, out short availablePages)
         {
-            return FilterTransactions(null, null, accountToID, null, null, null, null, pageNumber, pageSize, out availablePages);
+            DataTable dt = FilterTransactions(null, null, accountToID, null, null, null, null, pageNumber, pageSize, out availablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter transaction history reports by account to id [{accountToID}]"));
+            return dt;
         }
         public static DataTable FilterByAccountOwner(int accountOwnerID, byte pageNumber, byte pageSize, out short availablePages)
         {
-            return FilterTransactions(null, null, null, accountOwnerID, null, null, null, pageNumber, pageSize, out availablePages);
+            DataTable dt = FilterTransactions(null, null, null, accountOwnerID, null, null, null, pageNumber, pageSize, out availablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter transaction history reports by account owner id [{accountOwnerID}]"));
+            return dt;
         }
         public static DataTable FilterByPerformer(bool isCustomer, int? userID, byte pageNumber, byte pageSize, out short availablePages)
         {
-            return FilterTransactions(null, null, null, null, isCustomer, userID, null, pageNumber, pageSize, out availablePages);
+            DataTable dt = FilterTransactions(null, null, null, null, isCustomer, userID, null, pageNumber, pageSize, out availablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter transaction history reports by transaction performer is performed by customer [{isCustomer}]"));
+            return dt;
         }
         public static DataTable FilterByDate(DateTime transactionDate, byte pageNumber, byte pageSize, out short availablePages)
         {
-            return FilterTransactions(null, null, null, null, null, null, transactionDate, pageNumber, pageSize, out availablePages);
+
+            DataTable dt = FilterTransactions(null, null, null, null, null, null, transactionDate, pageNumber, pageSize, out availablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter transaction history reports by transaction date [{transactionDate}]"));
+            return dt;
         }
         
         [Serializable]

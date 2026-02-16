@@ -101,7 +101,7 @@ namespace BankSystem.Customer.Forms
             }
             if (MessageBox.Show("Sure To delete this record?!", "Validation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                if (clsCustomer.Delete(customerID, clsUtil_PL.LoggedInUser.UserID))
+                if (clsCustomer.Delete(customerID, clsGlobal_BL.LoggedInUser.UserID))
                 {
                     MessageBox.Show($"The customer's record With id [{customerID}] was deleted successfully");
                     ctrlManageRecords1.__RefreshRecordsList();

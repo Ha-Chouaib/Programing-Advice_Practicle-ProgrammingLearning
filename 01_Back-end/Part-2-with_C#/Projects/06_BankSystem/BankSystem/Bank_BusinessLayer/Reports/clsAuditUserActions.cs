@@ -1,4 +1,5 @@
 ﻿using Bank_DataAccess.Reports;
+using BankSystem;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,8 @@ namespace Bank_BusinessLayer.Reports
         public int? EntityId { get; set; }
         public string Metadata { get; set; }
 
+        private static string _sectionKey => "USER-ACTIVITY-REPORT";
+
         public sealed class AuditPerformedBy
         { 
             public int UserID { get; set; }
@@ -35,46 +38,12 @@ namespace Bank_BusinessLayer.Reports
         }
         public sealed class AuditTargetEntity
         {
-            public string EntityName { get; set; }
-            public int? EntityID { get; set; }
-
+            public object  EntityRecord { get; set; }
         }
         public sealed class AuditChanges
         {
-            public Dictionary<string, object> Before { get; set; }
-            public Dictionary<string, object> After { get; set; }
-
-            public static (Dictionary<string, object> Before, Dictionary<string, object> After) Compare<T>(T oldObj, T newObj)
-            {
-                var before = new Dictionary<string, object>();
-                var after = new Dictionary<string, object>();
-
-                var props = typeof(T).GetProperties()
-                    .Where(p => p.CanRead && p.CanWrite &&
-                    !Attribute.IsDefined(p, typeof(AuditIgnoreAttribute)));
-
-                foreach (var prop in props)
-                {
-                    var oldValue = prop.GetValue(oldObj);
-                    var newValue = prop.GetValue(newObj);
-
-                    if (!AreEqual(oldValue, newValue))
-                    {
-                        before[prop.Name] = oldValue;
-                        after[prop.Name] = newValue;
-                    }
-                }
-                
-                return (before, after);
-            }
-
-            private static bool AreEqual(object a, object b)
-            {
-                if (a == null && b == null) return true;
-                if (a == null || b == null) return false;
-                return a.Equals(b);
-            }
-        
+            public object Before { get; set; }
+            public object After { get; set; }
         }
         public sealed class AuditResult
         {
@@ -136,6 +105,7 @@ namespace Bank_BusinessLayer.Reports
             this.Succeeded = Succeed;
             this.Metadata = MetaData;
         }
+        
         [Serializable]
         public static class Filter_Mapping
         {
@@ -199,6 +169,167 @@ namespace Bank_BusinessLayer.Reports
 
             return this.ReportId != -1;
         }
+        
+        public static class AuditingHelper
+        {
+            public class ActionKeys
+            {
+                public const string Addition = ".CREATE";
+                public const string Editing = ".UPDATE";
+                public const string Deletion = ".DELETE";
+                public const string ReadRecord = ".READ_RECORD";
+                public const string ReadRecordsList = ".READ_RECORDS-LIST";
+                public const string Validation = ".VALIDATION_CHECK";
+            }
+
+            public static void AuditUserActivity(AuditAction action, (object TargetEntity,int?EntityID) EntityWrapper, AuditChanges Changes, AuditResult auditResult)
+            {
+                var LoggedInUser = clsGlobal_BL.LoggedInUser;
+
+                var PerformedByUser = new AuditPerformedBy();
+                PerformedByUser.UserID = LoggedInUser.UserID;
+                PerformedByUser.UserName = LoggedInUser.UserName;
+                PerformedByUser.Role = LoggedInUser.Role.RoleName;
+
+                var MachineInfo = new AuditMachineInfo();
+                MachineInfo.MachineName = clsGlobal_BL.MachineInfo.GetMachineName();
+                MachineInfo.OSVersion = clsGlobal_BL.MachineInfo.GetOSVersion();
+                MachineInfo.IPAddress = clsGlobal_BL.MachineInfo.GetLocalIPAddress();
+                MachineInfo.SessionID = clsGlobal_BL.UserSession.SessionID;
+
+                var targetEntity = new AuditTargetEntity { EntityRecord = EntityWrapper.TargetEntity};
+               
+
+                var AuditContext = new AuditContext(PerformedByUser, action, targetEntity, Changes, auditResult, MachineInfo, 1);
+                clsAuditUserActions.AuditLogger(LoggedInUser.UserID, action.ActionKey, EntityWrapper.EntityID, auditResult.Success, AuditContext);
+
+            }
+            public static void AuditCreateOperation((object TargetEntity, int? EntityID) EntityWrapper, bool OperationSucceed,( string sectionKey,string SectionDescription)section)
+            {
+                var action = new clsAuditUserActions.AuditAction();
+                action.ActionKey = section.sectionKey + ActionKeys.Addition;
+                action.Description = section.SectionDescription;
+
+                var auditResult = new clsAuditUserActions.AuditResult();
+                if (OperationSucceed)
+                {
+                    auditResult.Success = true;
+                }
+                else
+                {
+                    auditResult.Success = false;
+                    auditResult.ErrorMessage = $"Failed to Create {section.sectionKey.ToLower()} record.";
+                }
+
+                AuditUserActivity(action, EntityWrapper, null, auditResult);
+
+
+            }
+            public static void AuditUpdateOperation(bool OperationSucceed,(string SectionKey, string SectionDescription) Section, object oldRecord, object NewRecord, int? EntityID)
+            {
+                var action = new clsAuditUserActions.AuditAction();
+                var auditResult = new clsAuditUserActions.AuditResult();
+                var auditchanges = new clsAuditUserActions.AuditChanges();
+
+                action.ActionKey = Section.SectionKey + ActionKeys.Editing;
+                action.Description = Section.SectionDescription;
+
+                if (OperationSucceed)
+                {
+                    auditchanges.Before = oldRecord;
+                    auditchanges.After = NewRecord;
+
+                    auditResult.Success = true;
+                }
+                else
+                {
+                    auditchanges = null;
+                    auditResult.Success = false;
+                    auditResult.ErrorMessage = $"Failed to update the {Section.SectionKey.ToLower()} record.";
+                }
+
+                if (oldRecord == null && NewRecord == null) auditchanges = null;
+
+                AuditUserActivity(action, (NewRecord,EntityID), auditchanges, auditResult);
+            }
+            public static void AuditReadRecordOperation((object TargetEntity, int? EntityID) EntityWrapper, bool OperationSucceed, (string SectionKey, string SectionDescription) Section)
+            {
+                var action = new clsAuditUserActions.AuditAction();
+                var auditResult = new clsAuditUserActions.AuditResult();
+                action.ActionKey = Section.SectionKey + ActionKeys.ReadRecord;
+                action.Description = Section.SectionDescription;
+
+                if (OperationSucceed)
+                {
+                    auditResult.Success = true;
+                }
+                else
+                {
+                    auditResult.Success = false;
+                    auditResult.ErrorMessage = $"Failed to read {Section.SectionKey.ToLower()} record.";
+                }
+                AuditUserActivity(action, EntityWrapper, null, auditResult);
+            }
+            public static void AuditReadRecordsListOperation(bool OperationSucceed, (string SectionKey, string SectionDescription) Section)
+            {
+                var action = new clsAuditUserActions.AuditAction();
+                var auditResult = new clsAuditUserActions.AuditResult();
+                action.ActionKey = Section.SectionKey + ActionKeys.ReadRecordsList;
+                action.Description = Section.SectionDescription;
+                if (OperationSucceed)
+                {
+                    auditResult.Success = true;
+                }
+                else
+                {
+                    auditResult.Success = false;
+                    auditResult.ErrorMessage = $"Failed to read {Section.SectionKey.ToLower()} records list.";
+                }
+                AuditUserActivity(action, (null,null), null, auditResult);
+
+            }
+            public static void AuditValidationOperation((object TargetEntity, int? EntityID) EntityWrapper, bool OperationSucceed, (string SectionKey, string SectionDescription) Section)
+            {
+                var action = new clsAuditUserActions.AuditAction();
+                var auditResult = new clsAuditUserActions.AuditResult();
+                action.ActionKey = Section.SectionKey + ActionKeys.Validation;
+                action.Description = Section.SectionDescription;
+                if (OperationSucceed)
+                {
+                    auditResult.Success = true;
+                }
+                else
+                {
+                    auditResult.Success = false;
+                    auditResult.ErrorMessage = $"The Target {Section} Entity state Does not much the conditions !";
+                }
+                AuditUserActivity(action,EntityWrapper, null, auditResult);
+            }
+            public static void AuditDeletionOperation((object TargetEntity, int? EntityID) EntityWrapper, bool OperationSucceed, (string SectionKey, string SectionDescription) Section)
+            {
+                var action = new clsAuditUserActions.AuditAction();
+                var auditResult = new clsAuditUserActions.AuditResult();
+                var auditchanges = new clsAuditUserActions.AuditChanges();
+                action.ActionKey = Section.SectionKey + ActionKeys.Deletion;
+                action.Description = Section.SectionDescription;
+                if (OperationSucceed)
+                {
+                   
+                    auditchanges.Before = EntityWrapper.TargetEntity;
+                    auditchanges.After = null;
+                    auditResult.Success = true;
+                }
+                else
+                {
+                    auditchanges = null;
+                    auditResult.Success = false;
+                    auditResult.ErrorMessage = $"Failed to delete {Section.SectionKey} record.";
+                }
+                AuditUserActivity(action, EntityWrapper, auditchanges, auditResult);
+            }
+
+        }
+
         public static clsAuditUserActions Find(int ReportID)
         {
             int UserId = -1;
@@ -227,27 +358,45 @@ namespace Bank_BusinessLayer.Reports
 
         public static DataTable ListAll(byte pageNumber, byte pageSize, out short AvailablePages)
         {
-            return FilterReports(null, null, null, null, null, pageNumber, pageSize, out AvailablePages);
+            DataTable dt = FilterReports(null, null, null, null, null, pageNumber, pageSize, out AvailablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, "List all user activity reports"));
+            return dt;
         }
         public static DataTable FilterByUserID(int userId, byte pageNumber, byte pageSize, out short AvailablePages)
         {
-            return FilterReports(userId,null,null,null,null,pageNumber, pageSize, out AvailablePages);
+            DataTable dt = FilterReports(userId, null, null, null, null, pageNumber, pageSize, out AvailablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter user activity reports by user id [{userId}]"));
+            return dt;
         }
         public static DataTable FilterByActionKey(string ActionKey, byte pageNumber, byte pageSize, out short AvailablePages)
         {
-            return FilterReports(null, ActionKey, null, null, null, pageNumber, pageSize, out AvailablePages);
+            DataTable dt = FilterReports(null, ActionKey, null, null, null, pageNumber, pageSize, out AvailablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter user activity reports by action key [{ActionKey}]"));
+            return dt;
         }
         public static DataTable FilterBySuccess(bool Success, byte pageNumber, byte pageSize, out short AvailablePages)
         {
-            return FilterReports(null, null, Success, null, null, pageNumber, pageSize, out AvailablePages);
+            DataTable dt = FilterReports(null, null, Success, null, null, pageNumber, pageSize, out AvailablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter user activity reports by actions success [{Success}]"));
+            return dt;
         }
         public static DataTable FilterByFromDate(DateTime fromDate, byte pageNumber, byte pageSize, out short AvailablePages)
         {
-            return FilterReports(null, null, null, fromDate, null, pageNumber, pageSize, out AvailablePages);
+            DataTable dt = FilterReports(null, null, null, fromDate, null, pageNumber, pageSize, out AvailablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter user activity reports by date range from date [{fromDate}]"));
+            return dt;
         }
         public static DataTable FilterByToDate(DateTime toDate, byte pageNumber, byte pageSize, out short AvailablePages)
         {
-            return FilterReports(null, null, null, null, toDate, pageNumber, pageSize, out AvailablePages);
+            DataTable dt = FilterReports(null, null, null, null, toDate, pageNumber, pageSize, out AvailablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter user activity reports by date range to date [{toDate}]"));
+            return dt;
         }
         
         private delegate DataTable FilterDelegate(string term, byte pageNumber, byte pageSize, out short availablePages);

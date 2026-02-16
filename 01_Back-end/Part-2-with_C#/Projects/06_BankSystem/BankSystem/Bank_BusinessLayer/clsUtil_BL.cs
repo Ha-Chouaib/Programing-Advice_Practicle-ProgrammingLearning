@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using static Bank_BusinessLayer.clsUser;
 
 namespace Bank_BusinessLayer
 {
@@ -23,7 +24,7 @@ namespace Bank_BusinessLayer
                 return BitConverter.ToString(hashbytes).Replace("-", "").ToLower();
             }
         }
-     
+
 
         public static string EncryptionKey = "1234567890123456";
         public static string Encrypt(string PlainText, string Key)
@@ -78,13 +79,13 @@ namespace Bank_BusinessLayer
                 string ValueName_Password = "Password";
 
                 Registry.SetValue(RegistryKeyPath, ValueName_UserName, UserName, RegistryValueKind.String);
-                Registry.SetValue(RegistryKeyPath, ValueName_Password, Encrypt(Password,EncryptionKey), RegistryValueKind.String);
+                Registry.SetValue(RegistryKeyPath, ValueName_Password, Encrypt(Password, EncryptionKey), RegistryValueKind.String);
                 return true;
             }
             catch (IOException ex)
             {
                 EventLog.WriteEntry(EventLog_SourceName, $"From remember user CredentialInfo: {ex.Message}", EventLogEntryType.Error);
-                
+
                 return false;
             }
 
@@ -117,10 +118,10 @@ namespace Bank_BusinessLayer
 
 
         }
-    
+
         public class ManagerRcordsHelper
         {
-            public static  Dictionary<string, string> FilterBy_Options(Type targetFilterMappingClass)
+            public static Dictionary<string, string> FilterBy_Options(Type targetFilterMappingClass)
             {
                 var Filter_Mapping = targetFilterMappingClass.GetProperties(BindingFlags.Static | BindingFlags.Public);
 
@@ -136,15 +137,15 @@ namespace Bank_BusinessLayer
                 return Options;
             }
 
-            public static Dictionary<string, Dictionary<string,string>> FilterBy_Groups(Type targetFilterByGroupsMappingClass)
+            public static Dictionary<string, Dictionary<string, string>> FilterBy_Groups(Type targetFilterByGroupsMappingClass)
             {
                 var Filter_Mapping = targetFilterByGroupsMappingClass.GetProperties(BindingFlags.Static | BindingFlags.Public);
 
-                Dictionary<string, Dictionary<string,string>> Options = new Dictionary<string, Dictionary<string,string>>();
+                Dictionary<string, Dictionary<string, string>> Options = new Dictionary<string, Dictionary<string, string>>();
 
                 foreach (var prop in Filter_Mapping)
                 {
-                    var option = ((string GroupName, Dictionary<string,string> GroupItems))prop.GetValue(null);
+                    var option = ((string GroupName, Dictionary<string, string> GroupItems))prop.GetValue(null);
 
                     Options.Add(option.GroupName, option.GroupItems);
                 }
@@ -153,17 +154,178 @@ namespace Bank_BusinessLayer
             }
         }
 
-        public static bool IsExternalCall(Type targetClass)
+        public class CallerInspector
         {
-            // Frame 0 = IsInternalCall // Frame 1 = MyMethod // Frame 2 = Caller of MyMethod
-            var stackTrace = new StackTrace();
-            var callingMethod = stackTrace.GetFrame(2)?.GetMethod();
+            //Stack race regular Frames 
+            // Frame 0 = Frame 0: The method currently executing(GetCallerNamespace())
+            // Frame 1 = The method we are inspecting (TargetMethod)
+            // Frame 2 = Caller of MyMethod
+            public static bool IsExternalClassCall(Type targetClass)
+            {
+                var caller = GetCallerType();
+                return caller != null && caller != targetClass;
+            }
+            public static bool IsExternalNamespaceCall()
+            {
 
-            if (callingMethod?.DeclaringType == null)
-                return false;
+                var target = GetTargetNamespace();
+                var caller = GetCallerNamespace();
 
-            return callingMethod.DeclaringType != targetClass;
+                if (string.IsNullOrEmpty(target)|| string.IsNullOrEmpty(caller))
+                    return false;
+
+                return target != caller;
+            }
+            public static string GetTargetNamespace() => GetTargetType()?.Namespace ?? "";
+            public static string GetCallerNamespace() => GetCallerType()?.Namespace ?? "";
+            public static Type GetTargetType()
+            {
+                var stack = new StackTrace();
+
+                // First real method after our helper = target
+                bool foundHelper = false;
+
+                for (int i = 0; i < stack.FrameCount; i++)
+                {
+                    var type = stack.GetFrame(i)?.GetMethod()?.DeclaringType;
+                    if (type == null) continue;
+
+                    if (type == typeof(CallerInspector))
+                    {
+                        foundHelper = true;
+                        continue;
+                    }
+
+                    if (foundHelper && IsUserType(type))
+                        return type;
+                }
+                return null;
+            }
+            public static Type GetCallerType()
+            {
+                var stack = new StackTrace();
+
+                bool foundTarget = false;
+
+                for (int i = 0; i < stack.FrameCount; i++)
+                {
+                    var type = stack.GetFrame(i)?.GetMethod()?.DeclaringType;
+                    if (type == null) continue;
+
+                    if (type == typeof(CallerInspector))
+                        continue;
+
+                    if (!foundTarget && IsUserType(type))
+                    {
+                        foundTarget = true;
+                        continue; // this is target
+                    }
+
+                    if (foundTarget && IsUserType(type))
+                        return type; // this is caller
+                }
+
+                return null;
+            }
+            private static bool IsUserType(Type type)
+            {
+                return
+                    type.Namespace != null &&
+                    !type.Namespace.StartsWith("System") &&
+                    !type.Namespace.StartsWith("Microsoft") &&
+                    !type.FullName.Contains("ExecutionContext") &&
+                    !type.FullName.Contains("AsyncTaskMethodBuilder") &&
+                    !type.FullName.Contains("MoveNext");
+            }
         }
 
+        public class HandleObjectsHelper
+        {
+            [Serializable]
+            public class LegalPropertiesSnapshot
+            {
+                public Type OriginalType { get; set; }
+
+                public Dictionary<string, PropertyValue> Properties { get; set; }
+            }
+
+            [Serializable]
+            public class PropertyValue
+            {
+                public object Value { get; set; }
+                public Type Type { get; set; }
+            }
+
+            public static object GetObjectLegalPropertiesOnly<T>(T target)
+            {
+                if (target == null) return null;
+
+                var legalProperties = typeof(T).GetProperties()
+                    .Where(p => p.CanRead && p.CanWrite &&
+                                !Attribute.IsDefined(p, typeof(AuditIgnoreAttribute)));
+
+                var snapshot = new LegalPropertiesSnapshot
+                {
+                    OriginalType = typeof(T),
+                    Properties = new Dictionary<string, PropertyValue>()
+                };
+
+                foreach (var prop in legalProperties)
+                {
+                    snapshot.Properties[prop.Name] = new PropertyValue
+                    {
+                        Value = prop.GetValue(target),
+                        Type = prop.PropertyType
+                    };
+                }
+
+                return snapshot;
+            }
+
+            public static (object Before, object After) CompareObjects<T>(T oldObj, T newObj)
+            {
+                var before = new LegalPropertiesSnapshot
+                {
+                    OriginalType = typeof(T),
+                    Properties = new Dictionary<string, PropertyValue>()
+                };
+                var after = new LegalPropertiesSnapshot
+                {
+                    OriginalType = typeof(T),
+                    Properties = new Dictionary<string, PropertyValue>()
+                };
+                var props = typeof(T).GetProperties()
+                    .Where(p => p.CanRead && p.CanWrite &&
+                    !Attribute.IsDefined(p, typeof(AuditIgnoreAttribute)));
+
+                foreach (var prop in props)
+                {
+                    var oldValue = prop.GetValue(oldObj);
+                    var newValue = prop.GetValue(newObj);
+
+                    if (!AreEqual(oldValue, newValue))
+                    {
+                        before.Properties[prop.Name] = new PropertyValue
+                        {
+                            Value = oldValue,
+                            Type = prop.PropertyType
+                        };
+                        after.Properties[prop.Name] = new PropertyValue
+                        {
+                            Value = newValue,
+                            Type = prop.PropertyType
+                        };
+                    }
+                }
+
+                return (before, after);
+            }
+            private static bool AreEqual(object a, object b)
+            {
+                if (a == null && b == null) return true;
+                if (a == null || b == null) return false;
+                return a.Equals(b);
+            }
+        }
     }
 }

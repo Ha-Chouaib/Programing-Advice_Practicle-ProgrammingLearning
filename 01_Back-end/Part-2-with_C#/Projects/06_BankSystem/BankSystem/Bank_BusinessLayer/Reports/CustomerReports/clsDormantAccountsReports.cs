@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Bank_BusinessLayer.Reports.clsAuditUserActions;
 
 namespace Bank_BusinessLayer.Reports.CustomerReports
 {
@@ -15,6 +16,7 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
         public DateTime LastTransactionDate { get; private set; }
         public byte DormantMonths { get;private set; }
 
+        private static string _sectionKey => "CUSTOMER-DORMANT-ACCOUNT-REPORT";
         public clsDormantAccountsReports()
         {
             this.AccountID = -1;
@@ -62,16 +64,19 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
             bool found =clsDormantAccountsReports_DAL.Find(ReportID, ref accountID, ref transactionID, ref lastTransactionDate, ref dormantMonths);
 
             var ReportHeader = clsCustomerReports_Main.Find(ReportID);
+            clsDormantAccountsReports report = null;
             if (found && ReportHeader != null)
             {
-                return new clsDormantAccountsReports(ReportHeader.CustomerReportID, ReportHeader.CustomerID, ReportHeader.ReportDate, ReportHeader.ReportTypeID, accountID, -1, transactionID, lastTransactionDate, dormantMonths);
+                report = new clsDormantAccountsReports(ReportHeader.CustomerReportID, ReportHeader.CustomerID, ReportHeader.ReportDate, ReportHeader.ReportTypeID, accountID, -1, transactionID, lastTransactionDate, dormantMonths);
             }
-            else
+            if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
             {
-                return null;
+                AuditingHelper.AuditReadRecordOperation((clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(report), report.CustomerReportID), found && ReportHeader != null, (_sectionKey, $"Read customer dormant account report with id: [{ReportID}]"));
             }
+            return report;
         }        
-        public static DataTable FilterReports(int? AccountID, int? CustomerID, DateTime? ReportDate, byte pageNumber, byte pageSize, out short AvailablePages)
+       
+        private static DataTable FilterReports(int? AccountID, int? CustomerID, DateTime? ReportDate, byte pageNumber, byte pageSize, out short AvailablePages)
         {
             DataTable dt = new DataTable();
             int totalRows = 0;
@@ -80,27 +85,37 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
 
             AvailablePages = (short)Math.Ceiling((double)totalRows / pageSize);
             return dt;
-        }
-
-        
+        }   
         public static DataTable ListAll(byte pageNumber, byte pageSize, out short AvailablePages)
         {
-            return FilterReports(null, null, null, pageNumber, pageSize, out AvailablePages);
+            DataTable dt = FilterReports(null, null, null, pageNumber, pageSize, out AvailablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, "List All customer dormant accounts reports"));
+            return dt;
         }
 
         public static DataTable FilterByAccountID(int accountID, byte pageNumber, byte pageSize, out short AvailablePages)
         {
-            return FilterReports(accountID, null, null, pageNumber, pageSize, out AvailablePages);
+            DataTable dt = FilterReports(accountID, null, null, pageNumber, pageSize, out AvailablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter customer dormant accounts reports by account id [{accountID}]"));
+            return dt;
         }
 
         public static DataTable FilterByCustomerID(int customerID, byte pageNumber, byte pageSize, out short AvailablePages)
         {
-            return FilterReports(null, customerID, null, pageNumber, pageSize, out AvailablePages);
+            DataTable dt = FilterReports(null, customerID, null, pageNumber, pageSize, out AvailablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter customer dormant accounts reports by customer id [{customerID}]"));
+            return dt;
         }
 
         public static DataTable FilterByReportDate(DateTime reportDate, byte pageNumber, byte pageSize, out short AvailablePages)
         {
-            return FilterReports(null, null, reportDate, pageNumber, pageSize, out AvailablePages);
+            DataTable dt = FilterReports(null, null, reportDate, pageNumber, pageSize, out AvailablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter customer dormant accounts reports by report date [{reportDate}]"));
+            return dt;
         }
         public static DataTable FilterDormantAccountsReports
             (

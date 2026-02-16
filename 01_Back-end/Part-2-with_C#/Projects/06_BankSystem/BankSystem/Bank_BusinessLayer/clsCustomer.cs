@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Bank_BusinessLayer.clsCustomer;
+using static Bank_BusinessLayer.Reports.clsAuditUserActions;
 
 namespace Bank_BusinessLayer
 {
@@ -24,6 +26,7 @@ namespace Bank_BusinessLayer
         public clsUser CreatedByUser { get; set; }
         public bool IsActive { get; set; }
 
+        private static string _sectionKey => "CUSTOMER";
        
         public clsCustomer()
         {
@@ -96,7 +99,6 @@ namespace Bank_BusinessLayer
             }
         }
 
-
         public static clsCustomer FindCustomerByID(int CustomerID)
         {
             int PersonID = -1;
@@ -105,11 +107,22 @@ namespace Bank_BusinessLayer
             DateTime CreatedDate = DateTime.Now;
             int CreatedByUserID = -1;
             bool IsActive = false;
-           
-            if( clsCustomerDataAccess.FindCustomerByID(CustomerID,ref  PersonID,ref Occupation,ref CustomerType ,ref CreatedDate,ref CreatedByUserID,ref IsActive))            
-                return new clsCustomer(CustomerID,PersonID,Occupation,(enCustomerType)CustomerType,CreatedDate,CreatedByUserID,IsActive);
-            else
-                return null;
+
+            clsCustomer _customer = null;
+            bool _Success = false;
+
+            if (clsCustomerDataAccess.FindCustomerByID(CustomerID, ref PersonID, ref Occupation, ref CustomerType, ref CreatedDate, ref CreatedByUserID, ref IsActive))
+            {
+                _customer = new clsCustomer(CustomerID, PersonID, Occupation, (enCustomerType)CustomerType, CreatedDate, CreatedByUserID, IsActive);
+                _Success = true;
+            }
+            if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
+            {
+                AuditingHelper.AuditReadRecordOperation((clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(_customer), CustomerID), _Success, (_sectionKey, $"Read customer record with customer id: {CustomerID}"));
+            }
+
+            return _customer;
+          
         }
         public static clsCustomer FindCustomerByPersonID(int PersonID)
         {
@@ -120,12 +133,22 @@ namespace Bank_BusinessLayer
             int CreatedByUserID = -1;
             bool IsActive = false;
 
+            clsCustomer _customer = null;
+            bool _Success = false;
+
             if (clsCustomerDataAccess.FindCustomerByPersonID(PersonID, ref CustomerID, ref Occupation, ref CustomerType, ref CreatedDate, ref CreatedByUserID, ref IsActive))
-                return new clsCustomer(CustomerID, PersonID, Occupation, (enCustomerType)CustomerType, CreatedDate, CreatedByUserID, IsActive);
-            else
-                return null;
+            {
+                _customer = new clsCustomer(CustomerID, PersonID, Occupation, (enCustomerType)CustomerType, CreatedDate, CreatedByUserID, IsActive);
+                _Success = true;
+            }
+            if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
+            {
+                AuditingHelper.AuditReadRecordOperation((clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(_customer), CustomerID), _Success, (_sectionKey, $"Read customer record with Person id: {PersonID}"));
+            }
+
+            return _customer;
+          
         }
-        
         public static clsCustomer FindBy(string findBy, string Term)
         {
             switch(findBy)
@@ -153,12 +176,21 @@ namespace Bank_BusinessLayer
         private bool _AddNewCustomer()
         {
             this.CustomerID= clsCustomerDataAccess.AddNewCustomer(this.PersonID,this.Occupation,Convert.ToByte(this.CustomerType),this.CreatedDate,this.CreatedByUserID,this.IsActive);
-            return this.CustomerID != -1;
-        }
+            bool OperationSucceed = this.CustomerID != -1;
+            AuditingHelper.AuditCreateOperation((clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(this), OperationSucceed ? this.PersonID : (int?)null), OperationSucceed, (_sectionKey, "Add New customer Record"));
 
+            return OperationSucceed;
+        }
         private bool _Update()
         {
-            return clsCustomerDataAccess.Update(this.CustomerID, this.Occupation, Convert.ToByte(this.CustomerType), this.IsActive);
+
+            var OldRecord = FindCustomerByID(this.CustomerID);
+            bool OperationSucceed = clsCustomerDataAccess.Update(this.CustomerID, this.Occupation, Convert.ToByte(this.CustomerType), this.IsActive);
+            var NewRecord = FindCustomerByID(this.CustomerID);
+
+            var changes = clsUtil_BL.HandleObjectsHelper.CompareObjects(OldRecord, NewRecord);
+            AuditingHelper.AuditUpdateOperation(OperationSucceed, (_sectionKey, "Update customer Record"), changes.Before, changes.After, this.CustomerID);
+            return OperationSucceed;
         }        
         public bool Save()
         {
@@ -179,46 +211,88 @@ namespace Bank_BusinessLayer
                     return false;
             }
         }
-    
         public static bool IsCustomerExistsByID(int CustomerID)
         {
-            return clsCustomerDataAccess.IsCustomerExistsByID(CustomerID);
+            bool found = clsCustomerDataAccess.IsCustomerExistsByID(CustomerID);
+            if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
+            {
+                var customer = FindCustomerByID(CustomerID);
+                var target = clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(customer);
+                AuditingHelper.AuditValidationOperation((target, CustomerID), found, (_sectionKey, $"Check customer existance by cusotomer id: {CustomerID}"));
+            }
+            return found;
         }
         public static bool IsCustomerExistsByPersonID(int PersonID)
         {
-            return clsCustomerDataAccess.IsCustomerExistsByPersonID((int)PersonID);
-        }
-        public static bool ChangeCustomerStatus(int CustomerID, bool IsActive)
-        {
-            return clsCustomerDataAccess.UpdateCustomerStatus(CustomerID, IsActive);
-        }
-        public bool ChangeCustomerStatus(bool IsActive)
-        {
-            return ChangeCustomerStatus(this.CustomerID, IsActive);
+            bool found = clsCustomerDataAccess.IsCustomerExistsByPersonID((int)PersonID);
+            if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
+            {
+                var customer = FindCustomerByID(PersonID);
+                var target = clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(customer);
+                AuditingHelper.AuditValidationOperation((target, customer.CustomerID), found, (_sectionKey, $"Check customer existance by person id: {PersonID}"));
+            }
+            return found;
         }
         public static bool IsCustomerActive(int CustomerID)
         {
-            return clsCustomerDataAccess.IsActive(CustomerID);
+            bool active = clsCustomerDataAccess.IsActive(CustomerID);
+            if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
+            {
+                var customer = FindCustomerByID(CustomerID);
+                var target = clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(customer);
+                AuditingHelper.AuditValidationOperation((target, CustomerID), active, (_sectionKey, $"Check customer status by cusotomer id: {CustomerID}"));
+            }
+            return active;
         }
+        public static bool HasAccountType(int CustomerID, clsAccounts.enAccountType AccountType)
+        {
+            bool has = clsCustomerDataAccess.HasAccountType(CustomerID, (byte)AccountType);
+            if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
+            {
+                var customer = FindCustomerByID(CustomerID);
+                var target = clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(customer);
+                AuditingHelper.AuditValidationOperation((target, CustomerID), has, (_sectionKey, $"Check if the customer[{CustomerID}] has similar account type[{AccountType}] "));
+            }
+            return has;
+        }
+
+        public static bool UpdateCustomerStatus(int CustomerID, bool IsActive)
+        {
+            var OldRecord = FindCustomerByID(CustomerID);
+            bool OperationSucceed = clsCustomerDataAccess.UpdateCustomerStatus(CustomerID, IsActive);
+            var NewRecord = FindCustomerByID(CustomerID);
+
+            var changes = clsUtil_BL.HandleObjectsHelper.CompareObjects(OldRecord, NewRecord);
+            AuditingHelper.AuditUpdateOperation(OperationSucceed, (_sectionKey, "Update customer Status Only"), changes.Before, changes.After, CustomerID);
+            return OperationSucceed;
+        }
+        public bool UpdateCustomerStatus(bool IsActive)
+        {
+            return UpdateCustomerStatus(this.CustomerID, IsActive);
+        }
+       
         public static bool Delete(int CustomerID, int DeletedByUserID)
         {
-            return clsCustomerDataAccess.Delete(CustomerID, DeletedByUserID);
+            clsCustomer DeletedRecord = FindCustomerByID(CustomerID);
+            bool deleted = clsCustomerDataAccess.Delete(CustomerID, DeletedByUserID);
+            AuditingHelper.AuditDeletionOperation((DeletedRecord, CustomerID), deleted, (_sectionKey, $"Delete customer Record with id < {CustomerID} >"));
+            return deleted;
         }
         public bool Delete(int DeletedByUserID)
         {
             return Delete(this.CustomerID);
         }
-         
+
         public static DataTable GetCustomerAccounts(int CustomerID)
         {
-            return clsCustomerDataAccess.GetCustomerAccounts(CustomerID);
+            DataTable dt = clsCustomerDataAccess.GetCustomerAccounts(CustomerID);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"List customer[{CustomerID}] related accounts"));
+            return dt;
         }
-        public static bool HasAccountType(int CustomerID,clsAccounts.enAccountType AccountType)
-        {
-            return clsCustomerDataAccess.HasAccountType(CustomerID, (byte)AccountType);
-        }
+      
 
-        public static DataTable FilterCustomers
+        private static DataTable FilterCustomers
         (
             int? customerID,
             int? personID,
@@ -249,38 +323,47 @@ namespace Bank_BusinessLayer
         }
         public static DataTable ListAll(byte pageNumber, byte pageSize, out short pages)
         {
-            return FilterCustomers(null, null, null, null, null,
-                                   pageNumber, pageSize, out pages);
+            DataTable dt = FilterCustomers(null, null, null, null, null, pageNumber, pageSize, out pages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, "List All cutomer Records"));
+            return dt;
         }
-
         public static DataTable FilterByCustomerID(int customerID, byte pageNumber, byte pageSize, out short pages)
         {
-            return FilterCustomers(customerID, null, null, null, null,
-                                   pageNumber, pageSize, out pages);
+            DataTable dt = FilterCustomers(customerID, null, null, null, null, pageNumber, pageSize, out pages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter customer records by customer id [{customerID}]"));
+            return dt;
         }
-
         public static DataTable FilterByPersonID(int personID, byte pageNumber, byte pageSize, out short pages)
         {
-            return FilterCustomers(null, personID, null, null, null,
-                                   pageNumber, pageSize, out pages);
+            DataTable dt = FilterCustomers(null, personID, null, null, null, pageNumber, pageSize, out pages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter customer records by person id [{personID}]"));
+            return dt;
         }
-
         public static DataTable FilterByStatus(bool isActive, byte pageNumber, byte pageSize, out short pages)
         {
-            return FilterCustomers(null, null, null, isActive, null,
-                                   pageNumber, pageSize, out pages);
+            DataTable dt = FilterCustomers(null, null, null, isActive, null, pageNumber, pageSize, out pages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter customer records by customer status [{isActive}]"));
+            return dt;
         }
-
         public static DataTable FilterByCustomerType(byte customerType, byte pageNumber, byte pageSize, out short pages)
         {
-            return FilterCustomers(null, null, null, null, customerType,
-                                   pageNumber, pageSize, out pages);
-        }
 
+            DataTable dt = FilterCustomers(null, null, null, null, customerType, pageNumber, pageSize, out pages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter customer records by customer type [{customerType}]"));
+            return dt;
+        }
         public static DataTable FilterByCreatedByUser(int userID, byte pageNumber, byte pageSize, out short pages)
         {
-            return FilterCustomers(null, null, userID, null, null,
-                                   pageNumber, pageSize, out pages);
+
+            DataTable dt = FilterCustomers(null, null, userID, null, null, pageNumber, pageSize, out pages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter customer records by user how created it [{userID}]"));
+            return dt;
         }
 
         private delegate DataTable FilterDelegate(string term, byte pageNumber, byte pageSize, out short availablePages);
@@ -351,6 +434,5 @@ namespace Bank_BusinessLayer
             return ListAll(pageNumber, pageSize, out availablePages);
         }
 
-    
     }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Bank_DataAccess
 {
-    public class clsTransactionHistory
+    public class clsTransactionHistoryReport_DAL
     {
         public static int AddNewTransaction(byte TransactionType, DateTime TransactionDate, int AccountFromID, int? AccountToID,
             double Amount, double OldBalance, double NewBalance, string Notes, int PerformedByUserID , bool IsPerformedByAccountOwner)
