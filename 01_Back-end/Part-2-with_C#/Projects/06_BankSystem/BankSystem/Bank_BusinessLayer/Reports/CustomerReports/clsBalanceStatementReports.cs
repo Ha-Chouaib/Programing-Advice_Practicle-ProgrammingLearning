@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
+using static Bank_BusinessLayer.Reports.clsAuditUserActions;
 
 namespace Bank_BusinessLayer.Reports.CustomerReports
 {
@@ -18,6 +19,8 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
         public double ClosingBalance { get; set; }
         public DateTime FromDate { get; set; }
         public DateTime ToDate { get; set; }
+
+        private static string _sectionKey => "CUSTOMER-BALANCE-STATEMENT-REPORT";
 
         public clsBalanceStatementReports()
         {
@@ -50,17 +53,20 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
             bool found = clsBalanceStatementReports_DAL.Find(customerID, accountID,ref ReportID, ref openingBalance, ref closingBalance, ref fromDate, ref toDate);
 
             var ReportHeader = clsCustomerReports_Main.Find(ReportID);
+            clsBalanceStatementReports report = null;
             if (found && ReportHeader != null)
             {
-                return new clsBalanceStatementReports(ReportHeader.CustomerReportID, ReportHeader.CustomerID, ReportHeader.ReportDate, ReportHeader.ReportTypeID, accountID, openingBalance, closingBalance, fromDate, toDate);
+                report = new clsBalanceStatementReports(ReportHeader.CustomerReportID, ReportHeader.CustomerID, ReportHeader.ReportDate, ReportHeader.ReportTypeID, accountID, openingBalance, closingBalance, fromDate, toDate);
             }
-            else
+            if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
             {
-                return null;
+                AuditingHelper.AuditReadRecordOperation((clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(report), report.CustomerReportID), found && ReportHeader != null, (_sectionKey, $"Read customer Balance statement report record for customer: [{customerID}] in account: [{accountID}]"));
             }
+
+            return report;
         }
 
-        public static DataTable FilterReports(int? customerID, int? accountID, DateTime? fromDate, DateTime? toDate, byte pageNumber, byte pageSize, out short availablePages)
+        private static DataTable FilterReports(int? customerID, int? accountID, DateTime? fromDate, DateTime? toDate, byte pageNumber, byte pageSize, out short availablePages)
         {
             DataTable dt = new DataTable();
             int totalRows = 0;
@@ -73,22 +79,34 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
 
         public static DataTable ListAll(byte pageNumber, byte pageSize, out short availablePages)
         {
-            return FilterReports(null, null, null, null, pageNumber, pageSize, out availablePages);
+            DataTable dt = FilterReports(null, null, null, null, pageNumber, pageSize, out availablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, "List All customer Balance statement reports"));
+            return dt;
         }
 
         public static DataTable FilterByCustomerID(int customerID, byte pageNumber, byte pageSize, out short availablePages)
         {
-            return FilterReports(customerID, null, null, null, pageNumber, pageSize, out availablePages);
+            DataTable dt = FilterReports(customerID, null, null, null, pageNumber, pageSize, out availablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter customer Balance statement reports by customer id [{customerID}]"));
+            return dt;
         }
 
         public static DataTable FilterByAccountID(int accountID, byte pageNumber, byte pageSize, out short availablePages)
         {
-            return FilterReports(null, accountID, null, null, pageNumber, pageSize, out availablePages);
+            DataTable dt = FilterReports(null, accountID, null, null, pageNumber, pageSize, out availablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter customer Balance statement reports by account id [{accountID}]"));
+            return dt;
         }
 
         public static DataTable FilterByDateRange(DateTime? fromDate, DateTime? toDate, byte pageNumber, byte pageSize, out short availablePages)
         {
-            return FilterReports(null, null, fromDate, toDate, pageNumber, pageSize, out availablePages);
+            DataTable dt = FilterReports(null, null, fromDate, toDate, pageNumber, pageSize, out availablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter customer Balance statement reports by Date range from[{fromDate}] to [{toDate}]"));
+            return dt;
         }
 
         [Serializable]
@@ -191,7 +209,7 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
             byte pageNumber,
             byte pageSize,
             out short availablePages
-            )
+        )
         {
             
             term = term?.Trim();

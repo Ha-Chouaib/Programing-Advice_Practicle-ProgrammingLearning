@@ -1,10 +1,15 @@
-﻿using Bank_DataAccess;
+﻿using Bank_BusinessLayer.Reports;
+using Bank_DataAccess;
+using BankSystem;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
+using static Bank_BusinessLayer.clsAccounts;
+using static Bank_BusinessLayer.Reports.clsAuditUserActions;
 
 namespace Bank_BusinessLayer
 {
@@ -26,7 +31,7 @@ namespace Bank_BusinessLayer
         public int CreatedByUserID { get; set; }
         public clsUser CreatedByUser    { get; set; }
 
-      
+        public static string _SectionKey => "ACCOUNT";
 
         public clsAccounts()
         {
@@ -113,10 +118,16 @@ namespace Bank_BusinessLayer
             bool IsActive = false;
             int CreatedByUserID = -1;
             DateTime CreatedDate = DateTime.MinValue;
-            if (clsAccountsDataAccess.FindByID(AccountID, ref CustomerID, ref AccountNumber, ref AccountType, ref Balance, ref IsActive, ref CreatedDate, ref CreatedByUserID))
-                return new clsAccounts(AccountID, CustomerID, AccountNumber, (enAccountType)AccountType, Balance, IsActive, CreatedDate, CreatedByUserID);
-            else
-                return null;
+
+            clsAccounts _account = null;
+            if (clsAccountsDataAccess.FindByID(AccountID, ref CustomerID, ref AccountNumber, ref AccountType, ref Balance, ref IsActive, ref CreatedDate, ref CreatedByUserID))               
+                _account = new clsAccounts(AccountID, CustomerID, AccountNumber, (enAccountType)AccountType, Balance, IsActive, CreatedDate, CreatedByUserID);
+            if(clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
+            {
+                AuditingHelper.AuditReadRecordOperation((_account, AccountID), _account != null, (_SectionKey, $"Read account record with account id [{AccountID}]"));
+            }
+
+            return _account;
         }
         public static clsAccounts FindByAccountNumber(string AccountNumber)
         {
@@ -127,10 +138,17 @@ namespace Bank_BusinessLayer
             bool IsActive = false;
             int CreatedByUserID = -1;
             DateTime CreatedDate = DateTime.MinValue;
+
+            clsAccounts _account = null;
+
             if (clsAccountsDataAccess.FindByAccountNumber(AccountNumber, ref AccountID, ref CustomerID, ref AccountType, ref Balance, ref IsActive, ref CreatedDate, ref CreatedByUserID))
-                return new clsAccounts(AccountID, CustomerID, AccountNumber, (enAccountType)AccountType, Balance, IsActive, CreatedDate, CreatedByUserID);
-            else
-                return null;
+                _account = new clsAccounts(AccountID, CustomerID, AccountNumber, (enAccountType)AccountType, Balance, IsActive, CreatedDate, CreatedByUserID);
+            if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
+            {
+                AuditingHelper.AuditReadRecordOperation((_account, AccountID), _account != null, (_SectionKey, $"Read account record with account number [{AccountNumber}]"));
+            }
+
+            return _account;
         }
         
         public static clsAccounts FindBy(string Column, string Term)
@@ -156,11 +174,20 @@ namespace Bank_BusinessLayer
                             this.Balance, this.IsActive, this.CreatedDate, this.CreatedByUserID);
             this.AccountID = result.AccountID;
             this.AccountNumber = result.AccountNumber;
+
+            AuditingHelper.AuditCreateOperation((this, this.AccountID), this != null, (_SectionKey, "Add new account record"));
+
             return this.AccountID != -1;
         }
         private bool _Update()
         {
-            return clsAccountsDataAccess.Update(this.AccountID,Convert.ToByte( this.AccountType), this.Balance, this.IsActive);
+            var OldRecord = FindByID(this.AccountID);
+            bool OperationSucceed = clsAccountsDataAccess.Update(this.AccountID, Convert.ToByte(this.AccountType), this.Balance, this.IsActive);
+            var NewRecord = FindByID(this.AccountID);
+
+            var changes = clsUtil_BL.HandleObjectsHelper.CompareObjects(OldRecord, NewRecord);
+            AuditingHelper.AuditUpdateOperation(OperationSucceed, (_SectionKey, "Update User Record"), changes.Before, changes.After, this.AccountID);
+            return OperationSucceed;
         }
         public bool Save()
         {
@@ -185,11 +212,23 @@ namespace Bank_BusinessLayer
 
         public static bool UpdateBalance(int AccountID, double Balance)
         {
-            return clsAccountsDataAccess.UpdateBalance(AccountID, Balance);
+            var OldRecord = FindByID(AccountID);
+            bool OperationSucceed = clsAccountsDataAccess.UpdateBalance(AccountID, Balance);
+            var NewRecord = FindByID(AccountID);
+
+            var changes = clsUtil_BL.HandleObjectsHelper.CompareObjects(OldRecord, NewRecord);
+            AuditingHelper.AuditUpdateOperation(OperationSucceed, (_SectionKey, "Update Only Account Balance"), changes.Before, changes.After, AccountID);
+            return OperationSucceed;
         }
         public static bool UpdateStatus(int AccountID, bool IsActive)
         {
-            return clsAccountsDataAccess.UpdateStatus(AccountID, IsActive);
+            var OldRecord = FindByID(AccountID);
+            bool OperationSucceed = clsAccountsDataAccess.UpdateStatus(AccountID, IsActive);
+            var NewRecord = FindByID(AccountID);
+
+            var changes = clsUtil_BL.HandleObjectsHelper.CompareObjects(OldRecord, NewRecord);
+            AuditingHelper.AuditUpdateOperation(OperationSucceed, (_SectionKey, "Update Only Account status"), changes.Before, changes.After, AccountID);
+            return OperationSucceed;
         }
         public bool UpdateStatus(bool IsActive)
         {
@@ -197,20 +236,53 @@ namespace Bank_BusinessLayer
         }
         public static bool UpdateAccountType(int AccountID, enAccountType AccountType)
         {
-            return clsAccountsDataAccess.UpdateAccountType(AccountID, (byte)AccountType);
+
+            var OldRecord = FindByID(AccountID);
+            bool OperationSucceed = clsAccountsDataAccess.UpdateAccountType(AccountID, (byte)AccountType);
+            var NewRecord = FindByID(AccountID);
+
+            var changes = clsUtil_BL.HandleObjectsHelper.CompareObjects(OldRecord, NewRecord);
+            AuditingHelper.AuditUpdateOperation(OperationSucceed, (_SectionKey, "Update Only Account Type"), changes.Before, changes.After, AccountID);
+            return OperationSucceed;
         }
 
         public static bool Exists(int AccountID)
         {
-            return clsAccountsDataAccess.ExistsByID(AccountID);
+            bool found = clsAccountsDataAccess.ExistsByID(AccountID);
+            if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
+            {
+                var account = FindByID(AccountID);
+                var target = clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(account);
+                AuditingHelper.AuditValidationOperation((target, AccountID), found, (_SectionKey, $"Check existance of account record with account id: {AccountID}"));
+            }
+            return found;
         }
         public static bool Exists(string AccountNumber)
         {
-            return clsAccountsDataAccess.ExistsByAccountNumber(AccountNumber);
+            bool found = clsAccountsDataAccess.ExistsByAccountNumber(AccountNumber);
+            if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
+            {
+                var account = FindByAccountNumber(AccountNumber);
+                var target = clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(account);
+                AuditingHelper.AuditValidationOperation((target, account.AccountID), found, (_SectionKey, $"Check existance of account record with account number: {AccountNumber}"));
+            }
+            return found;
         }
+        
         public static bool DepositWithdraw(int AccountID, double Amount)
         {
-            return clsAccountsDataAccess.DepositWithdraw(AccountID, Amount);
+            var account = FindByID(AccountID);
+            var target = clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(account);
+            bool done = clsAccountsDataAccess.DepositWithdraw(AccountID, Amount);
+
+            (string key, string description) section;
+            if (Amount > 0)
+                section = ($"{_SectionKey}_TRANSACTION-DEPOSIT", $"Append the Amount [{Amount}] to Account with id {AccountID}");
+            else
+                section = ($"{_SectionKey}_TRANSACTION-WITHDRAWAL", $"take the Amount [{Amount}] from Account with id {AccountID}");
+
+            AuditingHelper.AuditCreateOperation((target, AccountID), done, section);
+            return done;
         }
         public bool DepositWithdraw(double Amount)
         {
@@ -219,7 +291,13 @@ namespace Bank_BusinessLayer
 
         public static bool TransferMoney(int AccountFromID, int AccountToID, double Amount)
         {
-            return clsAccountsDataAccess.TransferMoney(AccountFromID, AccountToID, Amount);
+            var account = FindByID(AccountFromID);
+            var target = clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(account);
+            bool done = clsAccountsDataAccess.TransferMoney(AccountFromID, AccountToID, Amount);
+            (string key, string description) section = ($"{_SectionKey}_TRANSACTION-TRANSFERE", $"Move the Amount [{Amount}] from Account with id {AccountFromID} to account with id[{AccountToID}]");
+            AuditingHelper.AuditCreateOperation((target, AccountFromID), done, section);
+
+            return done;
         }
         public bool TransferMoney(int AccountToID, double Amount)
         {
@@ -228,14 +306,24 @@ namespace Bank_BusinessLayer
         }
         public static bool Delete(int AccountID, int DeletedByUserID)
         {
-            return clsAccountsDataAccess.Delete(AccountID,DeletedByUserID);
+            var DeletedRecord = FindByID(AccountID);
+            bool deleted = clsAccountsDataAccess.Delete(AccountID, DeletedByUserID);
+            AuditingHelper.AuditDeletionOperation((DeletedRecord, AccountID), deleted, (_SectionKey, $"Delete account Record with id < {AccountID} >"));
+            return deleted;
         }
 
         public static bool isActive(int AccountID)
         {
-            return clsAccountsDataAccess.IsActive(AccountID);
+            bool active = clsAccountsDataAccess.IsActive(AccountID);
+            if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
+            {
+                var account = FindByID(AccountID);
+                var target = clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(account);
+                AuditingHelper.AuditValidationOperation((target, account.AccountID), active, (_SectionKey, $"Check account status with ID: {AccountID}"));
+            }
+            return active;
         }
-        public static DataTable FilterAccounts
+        private static DataTable FilterAccounts
         (
             int? accountID,
             string accountNumber,
@@ -269,44 +357,69 @@ namespace Bank_BusinessLayer
 
         public static DataTable ListAll(byte pageNumber, byte pageSize, out short pages)
         {
-            return FilterAccounts(null, null, null, null, null, null,
-                                  pageNumber, pageSize, out pages);
+            DataTable dt = FilterAccounts(null, null, null, null, null, null, pageNumber, pageSize, out pages);
+
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_SectionKey, "List All Accounts Records"));
+
+            return dt;
         }
 
         public static DataTable FilterByAccountID(int accountID, byte pageNumber, byte pageSize, out short pages)
         {
-            return FilterAccounts(accountID, null, null, null, null, null,
-                                  pageNumber, pageSize, out pages);
+            DataTable dt = FilterAccounts(accountID, null, null, null, null, null, pageNumber, pageSize, out pages);
+
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_SectionKey, $"Filter accounts by account id [ {accountID} ]"));
+
+            return dt;
         }
 
         public static DataTable FilterByAccountNumber(string accountNumber, byte pageNumber, byte pageSize, out short pages)
         {
-            return FilterAccounts(null, accountNumber, null, null, null, null,
-                                  pageNumber, pageSize, out pages);
+            DataTable dt = FilterAccounts(null, accountNumber, null, null, null, null, pageNumber, pageSize, out pages);
+
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_SectionKey, $"Filter accounts by account number [ {accountNumber} ]"));
+
+            return dt;
         }
 
         public static DataTable FilterByCustomerID(int customerID, byte pageNumber, byte pageSize, out short pages)
         {
-            return FilterAccounts(null, null, customerID, null, null, null,
-                                  pageNumber, pageSize, out pages);
+            DataTable dt = FilterAccounts(null, null, customerID, null, null, null, pageNumber, pageSize, out pages);
+
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_SectionKey, $"Filter accounts by customer id [ {customerID} ]"));
+
+            return dt;
         }
 
         public static DataTable FilterByStatus(bool isActive, byte pageNumber, byte pageSize, out short pages)
         {
-            return FilterAccounts(null, null, null, null, isActive, null,
-                                  pageNumber, pageSize, out pages);
+            DataTable dt = FilterAccounts(null, null, null, null, isActive, null, pageNumber, pageSize, out pages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_SectionKey, $"Filter accounts by customer status [ {isActive} ]"));
+
+            return dt;
         }
 
         public static DataTable FilterByAccountType(byte accountType, byte pageNumber, byte pageSize, out short pages)
         {
-            return FilterAccounts(null, null, null, null, null, accountType,
-                                  pageNumber, pageSize, out pages);
+            DataTable dt = FilterAccounts(null, null, null, null, null, accountType, pageNumber, pageSize, out pages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_SectionKey, $"Filter accounts by account Type [ {accountType} ]"));
+
+            return dt;
         }
 
         public static DataTable FilterByCreatedByUser(int userID, byte pageNumber, byte pageSize, out short pages)
         {
-            return FilterAccounts(null, null, null, userID, null, null,
-                                  pageNumber, pageSize, out pages);
+            DataTable dt = FilterAccounts(null, null, null, userID, null, null, pageNumber, pageSize, out pages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_SectionKey, $"Filter accounts by the user how created it with id [ {userID} ]"));
+
+            return dt;
         }
 
         private delegate DataTable FilterDelegate(string term, byte pageNumber, byte pageSize, out short availablePages);
@@ -402,4 +515,5 @@ namespace Bank_BusinessLayer
         }
 
     }
+
 }

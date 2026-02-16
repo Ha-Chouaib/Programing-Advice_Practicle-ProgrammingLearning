@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Bank_BusinessLayer.Reports.clsAuditUserActions;
 
 namespace Bank_BusinessLayer.Reports.CustomerReports
 {
@@ -15,6 +16,8 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
         public double TotalBalance { get; private set; }
         public DateTime LastActivityDate { get; private set; }
         public bool CustomerStatus { get; private set; }
+
+        private static string _sectionKey => "CUSTOMER-BALANCE-STATEMENT-REPORT";
 
         clsCustomerSummaryReports()
         {
@@ -108,14 +111,19 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
 
 
              var ReportHeader = clsCustomerReports_Main.Find(ReportID);
+            clsCustomerSummaryReports report = null;
             if (found && ReportHeader != null)
             {
-                return new clsCustomerSummaryReports(ReportHeader.CustomerReportID, ReportHeader.CustomerID, ReportHeader.ReportDate, ReportHeader.ReportTypeID, TotalAccounts, ActiveAccounts, TotalBalance, LastActivityDate, CustomerStatus);
+                report = new clsCustomerSummaryReports(ReportHeader.CustomerReportID, ReportHeader.CustomerID, ReportHeader.ReportDate, ReportHeader.ReportTypeID, TotalAccounts, ActiveAccounts, TotalBalance, LastActivityDate, CustomerStatus);
             }
-            else
-                return null;
+            if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
+            {
+                AuditingHelper.AuditReadRecordOperation((clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(report), report.CustomerReportID), found && ReportHeader != null, (_sectionKey, $"Read customer Summary report for customer: [{CustomerID}]"));
+            }
+            return report;
+           
         }
-        public static DataTable FilterReports(int? CustomerID, byte? ActiveAccounts, DateTime? LastActivityFrom,DateTime? LastActivityTo, bool? CustomerStatus, byte pageNumber, byte pageSize, out short AvailablePages)
+        private static DataTable FilterReports(int? CustomerID, byte? ActiveAccounts, DateTime? LastActivityFrom,DateTime? LastActivityTo, bool? CustomerStatus, byte pageNumber, byte pageSize, out short AvailablePages)
         {
             DataTable result = new DataTable();
             int TotalRecords = 1;
@@ -125,23 +133,38 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
         }
         public static DataTable ListAll(byte pageNumber, byte pageSize, out short AvailablePages)
         {
-            return FilterReports(null, null, null,null, null, pageNumber, pageSize, out AvailablePages);
+            DataTable dt = FilterReports(null, null, null, null, null, pageNumber, pageSize, out AvailablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, "List All customer Summary reports"));
+            return dt;
         }
         public static DataTable FilterByCustomerID(int CustomerID, byte pageNumber, byte pageSize, out short AvailablePages)
         {
-            return FilterReports(CustomerID, null, null, null,null, pageNumber, pageSize, out AvailablePages);
+            DataTable dt = FilterReports(CustomerID, null, null, null, null, pageNumber, pageSize, out AvailablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter customer Summary reports by customer id [{CustomerID}]"));
+            return dt;
         }
         public static DataTable FilterByActiveAccountsStatus(byte? ActiveAccounts, byte pageNumber, byte pageSize, out short AvailablePages)
         {
-            return FilterReports(null, ActiveAccounts, null, null,null, pageNumber, pageSize, out AvailablePages);
+            DataTable dt = FilterReports(null, ActiveAccounts, null, null, null, pageNumber, pageSize, out AvailablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter customer Summary reports by Active accounts count [{ActiveAccounts}]"));
+            return dt;
         }
         public static DataTable FilterByLastActivityDate(DateTime? LastActivityfrom, DateTime? LastActivityTo, byte pageNumber, byte pageSize, out short AvailablePages)
         {
-            return FilterReports(null, null, LastActivityfrom, LastActivityTo, null, pageNumber, pageSize, out AvailablePages);
+            DataTable dt = FilterReports(null, null, LastActivityfrom, LastActivityTo, null, pageNumber, pageSize, out AvailablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter customer Summary reports by Date range from[{LastActivityfrom}] to [{LastActivityTo}]"));
+            return dt;
         }
         public static DataTable FilterByCustomerStatus(bool? CustomerStatus, byte pageNumber, byte pageSize, out short AvailablePages)
         {
-            return FilterReports(null, null, null, null,CustomerStatus, pageNumber, pageSize, out AvailablePages);
+            DataTable dt = FilterReports(null, null, null, null, CustomerStatus, pageNumber, pageSize, out AvailablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter customer Summary reports by customer status [{CustomerStatus}]"));
+            return dt;
         }
 
         public static DataTable FilterCustomerSummaryReports

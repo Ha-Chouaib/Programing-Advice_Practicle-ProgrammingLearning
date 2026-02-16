@@ -6,6 +6,7 @@ using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Bank_BusinessLayer.Reports.clsAuditUserActions;
 
 namespace Bank_BusinessLayer.Reports.CustomerReports
 {
@@ -20,6 +21,7 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
         public DateTime FromDate { get; private set; }
         public DateTime ToDate { get; private set; }
 
+        private static string _sectionKey => "CUSTOMER-ACCOUNT-ACTIVITY-REPORT";
 
         [Serializable]
         public static class Filter_Mapping
@@ -96,19 +98,23 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
             bool found = clsAccountActivityReports_DAL.Find(accountID, requestedDate, ref ReportID, ref transactionCount, ref totalDebit, ref totalCredit, ref fromDate, ref toDate);
 
             var ReportHeader = clsCustomerReports_Main.Find(ReportID);
+            clsAccountActivityReports report = null;
             if (found && ReportHeader != null)
             {
 
-                return new clsAccountActivityReports(ReportHeader.CustomerReportID, ReportHeader.CustomerID, ReportHeader.ReportDate, ReportHeader.ReportTypeID, accountID, transactionCount, totalDebit, totalCredit, fromDate, toDate);
+                report = new clsAccountActivityReports(ReportHeader.CustomerReportID, ReportHeader.CustomerID, ReportHeader.ReportDate, ReportHeader.ReportTypeID, accountID, transactionCount, totalDebit, totalCredit, fromDate, toDate);
+                
             }
-            else
+            if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
             {
-                return null;
+                AuditingHelper.AuditReadRecordOperation((clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(report), report.CustomerReportID), found && ReportHeader != null, (_sectionKey, $"Read customer account activity report record for account: {accountID}"));
             }
+
+            return report;
         }
 
 
-        public static DataTable FilterReports(int? customerID, int? accountID, DateTime? fromDate, DateTime? toDate, byte? minTransactions, double? minDebit, double? minCredit, byte pageNumber, byte pageSize, out short availablePages)
+        private static DataTable FilterReports(int? customerID, int? accountID, DateTime? fromDate, DateTime? toDate, byte? minTransactions, double? minDebit, double? minCredit, byte pageNumber, byte pageSize, out short availablePages)
         {
             DataTable dt = new DataTable();
             int totalRows = 0;
@@ -123,27 +129,44 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
 
         public static DataTable ListAll(byte pageNumber, byte pageSize, out short availablePages)
         {
-            return FilterReports(null, null, null, null, null, null, null, pageNumber, pageSize, out availablePages);
+            DataTable dt = FilterReports(null, null, null, null, null, null, null, pageNumber, pageSize, out availablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, "List All customer account activity report Records"));
+            return dt;
         }
 
         public static DataTable FilterByCustomerID(int customerID, byte pageNumber, byte pageSize, out short availablePages)
         {
-            return FilterReports(customerID, null, null, null, null, null, null, pageNumber, pageSize, out availablePages);
+            DataTable dt = FilterReports(customerID, null, null, null, null, null, null, pageNumber, pageSize, out availablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter customer account activity report Records by customer id [{customerID}]"));
+            return dt;
         }
 
         public static DataTable FilterByAccountID(int accountID, byte pageNumber, byte pageSize, out short availablePages)
         {
-            return FilterReports(null, accountID, null, null, null, null, null, pageNumber, pageSize, out availablePages);
+
+            DataTable dt = FilterReports(null, accountID, null, null, null, null, null, pageNumber, pageSize, out availablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter customer account activity report Records by account id [{accountID}]"));
+            return dt;
         }
 
         public static DataTable FilterByDateRange(DateTime fromDate, DateTime toDate, byte pageNumber, byte pageSize, out short availablePages)
         {
-            return FilterReports(null, null, fromDate, toDate, null, null, null, pageNumber, pageSize, out availablePages);
+            DataTable dt = FilterReports(null, null, fromDate, toDate, null, null, null, pageNumber, pageSize, out availablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter customer account activity report Records by Date range from[{fromDate}] to [{toDate}]"));
+            return dt;
         }
 
         public static DataTable FilterByMinTransactions(byte minTransactions, byte pageNumber, byte pageSize, out short availablePages)
         {
-            return FilterReports(null, null, null, null, minTransactions, null, null, pageNumber, pageSize, out availablePages);
+
+            DataTable dt = FilterReports(null, null, null, null, minTransactions, null, null, pageNumber, pageSize, out availablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter customer account activity report Records by minimum transaction count[{minTransactions}]"));
+            return dt;
         }
 
         private delegate DataTable FilterDelegate(string term, byte pageNumber, byte pageSize, out short availablePages);
@@ -211,13 +234,13 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
 
 
         public static DataTable FilterAccountActivityReports
-                    (
+              (
                     string column,
                     string term,
                     byte pageNumber,
                     byte pageSize,
                     out short availablePages
-                    )
+              )
         {
             term = term?.Trim();
 

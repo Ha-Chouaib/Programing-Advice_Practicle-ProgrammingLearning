@@ -16,7 +16,6 @@ namespace BankSystem.Customer.UserControls
         public ctrlFindCustomer()
         {
             InitializeComponent();
-            
         }
 
         public Action<clsCustomer> __GetCustomerRecord;

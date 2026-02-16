@@ -1,12 +1,14 @@
-﻿using System;
+﻿using Bank_DataAccess;
+using Bank_DataAccess.People;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using Bank_DataAccess;
-using Bank_DataAccess.People;
+using static Bank_BusinessLayer.Reports.clsAuditUserActions;
 
 namespace Bank_BusinessLayer
 {
@@ -27,6 +29,7 @@ namespace Bank_BusinessLayer
         public short CountryID { get; set; }
         public string ImagePath { get; set; }
 
+        private static string _sectionKey => "PERSON";
         private clsPerson(int PersonID, string NationalNo, string FirstName,  string LastName, DateTime DateOfBirth, byte Gender,
                                     string Email, string Phone, short CountryID, string Address,  string ImgPath)
         {
@@ -104,17 +107,22 @@ namespace Bank_BusinessLayer
             DateTime DateOfBirth = DateTime.MinValue;
             byte Gender = 3;
             short CountryID = -1;
-            if (clsPersonDataAccess.FindPersonByID(PersonID, ref  NationalNo, ref  FirstName, ref  LastName, ref  DateOfBirth, ref  Gender,
-                                    ref  Email, ref  Phone, ref  CountryID, ref  Address, ref ImagePath))
-            {
-                return new clsPerson(PersonID,  NationalNo,  FirstName,  LastName,  DateOfBirth, Gender,
-                                     Email,  Phone,  CountryID,  Address, ImagePath);
-            }
-            else
-            {
-                return null;
-            }
 
+            clsPerson _person = null;
+            bool _Success = false;
+
+            if (clsPersonDataAccess.FindPersonByID(PersonID, ref NationalNo, ref FirstName, ref LastName, ref DateOfBirth, ref Gender,
+                                    ref Email, ref Phone, ref CountryID, ref Address, ref ImagePath))
+            {
+                _person = new clsPerson(PersonID, NationalNo, FirstName, LastName, DateOfBirth, Gender,
+                                     Email, Phone, CountryID, Address, ImagePath);
+                _Success = true;
+            }
+            if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
+            {
+                AuditingHelper.AuditReadRecordOperation((clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(_person), _person.PersonID), _Success, (_sectionKey, $"Read person record with id: {PersonID}"));
+            }
+            return _person;
         }
         public static clsPerson Find(string NationalNo)
         {
@@ -128,24 +136,29 @@ namespace Bank_BusinessLayer
             DateTime DateOfBirth = DateTime.MinValue;
             byte Gender = 3;
             short CountryID = -1;
+
+            clsPerson _person = null;
+            bool _Success = false;
+
             if (clsPersonDataAccess.FindPersonByNationalNo(NationalNo, ref PersonID, ref FirstName, ref LastName, ref DateOfBirth, ref Gender,
                                     ref Email, ref Phone, ref CountryID, ref Address, ref ImagePath))
             {
-                return new clsPerson(PersonID, NationalNo, FirstName, LastName, DateOfBirth, Gender,
+                _person = new clsPerson(PersonID, NationalNo, FirstName, LastName, DateOfBirth, Gender,
                                      Email, Phone, CountryID, Address, ImagePath);
+                _Success = true;
             }
-            else
+            if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
             {
-                return null;
+                AuditingHelper.AuditReadRecordOperation((clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(_person), _person.PersonID), _Success, (_sectionKey, $"Read person record with nationalNO: {NationalNo}"));
             }
-
+            return _person;
         }
 
         public static clsPerson FindBy(string Column, string searchValue)
         {
-            switch(Column)
+            switch(Column.ToLower())
             {
-                case "PersonID":
+                case "personid":
                     if (int.TryParse(searchValue, out int ID))
                     {
                         return Find(ID);
@@ -153,7 +166,7 @@ namespace Bank_BusinessLayer
                     else
                         return null;
 
-                case "NationalNo":
+                case "nationalno":
                     return Find(searchValue);
 
                 default:
@@ -164,13 +177,22 @@ namespace Bank_BusinessLayer
         {
             this.PersonID = clsPersonDataAccess.AddNewPerson(this.NationalNo,this.FirstName,this.LastName,this.DateOfBirth,this.Gender,this.Email,
                 this.Phone,this.CountryID,this.Address,this.ImagePath);
-            return this.PersonID != -1;
+            bool OperationSucceed = this.PersonID != -1;
+            AuditingHelper.AuditCreateOperation((clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(this), OperationSucceed ? this.PersonID : (int?)null), OperationSucceed, (_sectionKey, "Add New person Record"));
+
+            return OperationSucceed;
         }
 
         private bool _UpdatePerson()
         {
-            return clsPersonDataAccess.UpdatePersonInf(this.PersonID,this.NationalNo, this.FirstName, this.LastName, this.DateOfBirth, this.Gender, this.Email,
+            var OldRecord = Find(this.PersonID);
+            bool OperationSucceed = clsPersonDataAccess.UpdatePersonInf(this.PersonID, this.NationalNo, this.FirstName, this.LastName, this.DateOfBirth, this.Gender, this.Email,
                 this.Phone, this.CountryID, this.Address, this.ImagePath);
+            var NewRecord = Find(OldRecord.PersonID);
+
+            var changes = clsUtil_BL.HandleObjectsHelper.CompareObjects(OldRecord, NewRecord);
+            AuditingHelper.AuditUpdateOperation(OperationSucceed, (_sectionKey, "Update person record"), changes.Before, changes.After, NewRecord.PersonID);
+            return OperationSucceed;
         }
     
         public bool Save()
@@ -202,11 +224,14 @@ namespace Bank_BusinessLayer
         }
         public static bool Delete(int PersonID, int DeletedByUserID)
         {
-            return clsPersonDataAccess.Delete(PersonID, DeletedByUserID);
+            clsPerson DeletedRecord = Find(PersonID);
+            bool deleted = clsPersonDataAccess.Delete(PersonID, DeletedByUserID);
+            AuditingHelper.AuditDeletionOperation((DeletedRecord, PersonID), deleted, (_sectionKey, $"Delete person Record with id < {PersonID} >"));
+            return deleted;
         }
 
 
-        public static DataTable FilterPeople
+        private static DataTable FilterPeople
                     (
                         int? personID,
                         bool? gender,
@@ -218,58 +243,68 @@ namespace Bank_BusinessLayer
                         byte pageNumber,
                         byte pageSize,
                         out short availablePages
-                    )
+        )
         {
             int totalRows = 0;
-
-            DataTable dt = clsPersonDataAccess.FilterPeople(
-                personID,
-                gender,
-                nationalNo,
-                fullName,
-                email,
-                phone,
-                address,
-                pageNumber,
-                pageSize,
-                out totalRows
-            );
-
+            DataTable dt = clsPersonDataAccess.FilterPeople(personID,gender,nationalNo,fullName,email,phone,address,pageNumber,pageSize,out totalRows);
             availablePages = (short)Math.Ceiling((double)totalRows / pageSize);
             return dt;
         }
-
         public static DataTable ListPeopleRecords(byte pageNumber, byte pageSize, out short availablePages)
         {
-            return FilterPeople(null, null, null, null, null, null, null, pageNumber, pageSize, out availablePages);
+            DataTable dt = FilterPeople(null, null, null, null, null, null, null, pageNumber, pageSize, out availablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, "List All person Records"));
+            return dt;
         }
-        public static DataTable FindByID(int personID, byte pageNumber, byte pageSize, out short availablePages)
+        public static DataTable FilterByPersonID(int personID, byte pageNumber, byte pageSize, out short availablePages)
         {
-            return FilterPeople(personID, null, null, null, null, null, null, pageNumber, pageSize, out availablePages);
+            DataTable dt = FilterPeople(personID, null, null, null, null, null, null, pageNumber, pageSize, out availablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter person Records by person id [{personID}]"));
+            return dt;
         }
         public static DataTable FilterByNationalNo(string nationalNo, byte pageNumber, byte pageSize, out short availablePages)
         {
-            return FilterPeople(null, null, nationalNo, null, null, null, null, pageNumber, pageSize, out availablePages);
+            DataTable dt = FilterPeople(null, null, nationalNo, null, null, null, null, pageNumber, pageSize, out availablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter person Records by nationalNo[{nationalNo}]"));
+            return dt;
         }
-        public static DataTable SearchByName(string fullName, byte pageNumber, byte pageSize, out short availablePages)
+        public static DataTable FilterByFullName(string fullName, byte pageNumber, byte pageSize, out short availablePages)
         {
-            return FilterPeople(null, null, null, fullName, null, null, null, pageNumber, pageSize, out availablePages);
+            DataTable dt = FilterPeople(null, null, null, fullName, null, null, null, pageNumber, pageSize, out availablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter person Records by full name[{fullName}]"));
+            return dt;
         }
         public static DataTable FilterByGender(bool gender, byte pageNumber, byte pageSize, out short availablePages)
         {
-            return FilterPeople(null, gender, null, null, null, null, null, pageNumber, pageSize, out availablePages);
+            DataTable dt = FilterPeople(null, gender, null, null, null, null, null, pageNumber, pageSize, out availablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter person Records by gender[{(gender ? "Female" : "Male")}]"));
+            return dt;
         }
-        public static DataTable SearchByEmail(string email, byte pageNumber, byte pageSize, out short availablePages)
+        public static DataTable FilterByEmail(string email, byte pageNumber, byte pageSize, out short availablePages)
         {
-            return FilterPeople(null, null, null, null, email, null, null, pageNumber, pageSize, out availablePages);
+            DataTable dt = FilterPeople(null, null, null, null, email, null, null, pageNumber, pageSize, out availablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter person Records by email[{email}]"));
+            return dt;
         }
-        public static DataTable SearchByPhone(string phone, byte pageNumber, byte pageSize, out short availablePages)
+        public static DataTable FilterByPhone(string phone, byte pageNumber, byte pageSize, out short availablePages)
         {
-            return FilterPeople(null, null, null, null, null, phone, null, pageNumber, pageSize, out availablePages);
+            DataTable dt = FilterPeople(null, null, null, null, null, phone, null, pageNumber, pageSize, out availablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter person Records by email[{phone}]"));
+            return dt;
         }
-        public static DataTable SearchByAddress(string address, byte pageNumber, byte pageSize, out short availablePages)
+        public static DataTable FilterByAddress(string address, byte pageNumber, byte pageSize, out short availablePages)
         {
-            return FilterPeople(null, null, null, null, null, null, address, pageNumber, pageSize, out availablePages);
+            DataTable dt = FilterPeople(null, null, null, null, null, null, address, pageNumber, pageSize, out availablePages);
+            bool OperationSucceed = dt != null;
+            AuditingHelper.AuditReadRecordsListOperation(OperationSucceed, (_sectionKey, $"Filter person Records by address[{address}]"));
+            return dt;
         }
         // Delegate for generic filtering
         private delegate DataTable FilterDelegate(string term, byte pageNumber, byte pageSize, out short availablePages);
@@ -287,7 +322,7 @@ namespace Bank_BusinessLayer
                 {
                     Filter_Mapping.PersonID.valueMember,
                     (string term, byte page, byte size, out short pages) =>
-                        { return int.TryParse(term, out int id) ? FindByID(id, page, size, out pages) : ListPeopleRecords(page, size, out pages); }
+                        { return int.TryParse(term, out int id) ? FilterByPersonID(id, page, size, out pages) : ListPeopleRecords(page, size, out pages); }
                 },
 
                 {
@@ -305,25 +340,25 @@ namespace Bank_BusinessLayer
                 {
                     Filter_Mapping.FullName.valueMember,
                     (string term, byte page, byte size, out short pages) =>
-                        SearchByName(term, page, size, out pages)
+                        FilterByFullName(term, page, size, out pages)
                 },
 
                 {
                     Filter_Mapping.Email.valueMember,
                     (string term, byte page, byte size, out short pages) =>
-                        SearchByEmail(term, page, size, out pages)
+                        FilterByEmail(term, page, size, out pages)
                 },
 
                 {
                     Filter_Mapping.Phone.valueMember,
                     (string term, byte page, byte size, out short pages) =>
-                        SearchByPhone(term, page, size, out pages)
+                        FilterByPhone(term, page, size, out pages)
                 },
 
                 {
                     Filter_Mapping.Address.valueMember,
                     (string term, byte page, byte size, out short pages) =>
-                        SearchByAddress(term, page, size, out pages)
+                        FilterByAddress(term, page, size, out pages)
                 },
 
                 {
