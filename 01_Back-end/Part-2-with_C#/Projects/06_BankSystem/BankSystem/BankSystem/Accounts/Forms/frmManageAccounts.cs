@@ -36,11 +36,11 @@ namespace BankSystem.Accounts.Forms
         }
         private Dictionary<string, string> _FilterBy_Options()
         {
-            return clsUtil_BL.ManagerRcordsHelper.FilterBy_Options(typeof(clsAccounts.Filter_Mapping));
+            return clsUtil_BL.MappingHelper.GetOptionsFromMapping(typeof(clsAccounts.Filter_Mapping));
         }
         private Dictionary<string, Dictionary<string, string>> _FilterByGroups()
         {
-            return clsUtil_BL.ManagerRcordsHelper.FilterBy_Groups(typeof(clsAccounts.Filter_ByGroupsMapping));
+            return clsUtil_BL.MappingHelper.FilterBy_Groups(typeof(clsAccounts.Filter_ByGroupsMapping));
 
         }
 
@@ -108,7 +108,7 @@ namespace BankSystem.Accounts.Forms
             }
             if (MessageBox.Show("Sure To delete this record?!", "Validation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                if (clsAccounts.Delete(accountID, clsUtil_PL.LoggedInUser.UserID))
+                if (clsAccounts.Delete(accountID, clsGlobal_BL.LoggedInUser.UserID))
                 {
                     MessageBox.Show($"The acount's record With id [{accountID}] was deleted successfully");
                     ctrlManageRecords1.__RefreshRecordsList();

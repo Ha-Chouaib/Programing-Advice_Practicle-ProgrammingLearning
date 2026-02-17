@@ -33,7 +33,7 @@ namespace BankSystem.Reports
        
         private Dictionary<string, string> _FilterBy_Options()
         {
-            return clsUtil_BL.ManagerRcordsHelper.FilterBy_Options(typeof(clsAccountActivityReports.Filter_Mapping));
+            return clsUtil_BL.MappingHelper.GetOptionsFromMapping(typeof(clsAccountActivityReports.Filter_Mapping));
         }
         private List<(string ContextMenuKey, Action<int, ToolStripMenuItem> ContextMenuAction)> _ContextMenuPackage()
         {
@@ -46,7 +46,7 @@ namespace BankSystem.Reports
         }
         private Dictionary<string, Dictionary<string, string>> _FilterByGroups()
         {
-            return clsUtil_BL.ManagerRcordsHelper.FilterBy_Groups(typeof(clsAccountActivityReports.Filter_ByGroupsMapping));
+            return clsUtil_BL.MappingHelper.FilterBy_Groups(typeof(clsAccountActivityReports.Filter_ByGroupsMapping));
         }
 
         void _ContextMenuViewReportDetails(int ReportID, ToolStripMenuItem menuItem)

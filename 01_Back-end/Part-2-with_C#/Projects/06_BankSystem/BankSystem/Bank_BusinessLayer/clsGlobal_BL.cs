@@ -53,23 +53,6 @@ namespace BankSystem
                 return _cachedLocalIP;
 
             }
-            public static class LogHelper
-            {
-                public static void LogError(string message)
-                {
-                    EventLog.WriteEntry(EventLogSourceName, message, EventLogEntryType.Error);
-                }
-                public static void LogWarning(string message)
-                {
-                    EventLog.WriteEntry(EventLogSourceName, message, EventLogEntryType.Warning);
-                }
-                public static void LogInformation(string message)
-                {
-                    EventLog.WriteEntry(EventLogSourceName, message, EventLogEntryType.Information);
-                }
-            }
-
-
         }
         public static class UserSession
         {
@@ -87,7 +70,6 @@ namespace BankSystem
                 SessionID = null;
             }
         }
-
         public static class LogHelper
         {
             public static void LogError(string message)

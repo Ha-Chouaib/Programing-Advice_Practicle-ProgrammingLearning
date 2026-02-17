@@ -40,12 +40,12 @@ namespace BankSystem.Person
         }
         private Dictionary<string,string> _FilterBy_Options()
         {
-            return clsUtil_BL.ManagerRcordsHelper.FilterBy_Options(typeof(clsPerson.Filter_Mapping));
+            return clsUtil_BL.MappingHelper.GetOptionsFromMapping(typeof(clsPerson.Filter_Mapping));
 
         }
         private Dictionary<string, Dictionary<string, string>> _FilterByGroups()
         {
-            return clsUtil_BL.ManagerRcordsHelper.FilterBy_Groups(typeof(clsPerson.Filter_ByGroupsMapping));
+            return clsUtil_BL.MappingHelper.FilterBy_Groups(typeof(clsPerson.Filter_ByGroupsMapping));
         }
 
         private List<(string ContextMenuKey, Action<int,ToolStripMenuItem> ContextMenuAction)> _ContextMenuPackage()
@@ -87,7 +87,7 @@ namespace BankSystem.Person
         {
             if(MessageBox.Show("Sure To delete this record?!","Validation",MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.OK)
             {
-                if (clsPerson.Delete(personId, clsUtil_PL.LoggedInUser.UserID))
+                if (clsPerson.Delete(personId, clsGlobal_BL.LoggedInUser.UserID))
                 {
                     MessageBox.Show($"The Person's record With id [{personId}] was deleted successfully");
                     ctrlManageRecords1.__RefreshRecordsList();

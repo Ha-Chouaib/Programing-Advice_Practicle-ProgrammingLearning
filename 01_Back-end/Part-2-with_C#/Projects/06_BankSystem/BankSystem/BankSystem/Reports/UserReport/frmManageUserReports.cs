@@ -33,11 +33,11 @@ namespace BankSystem.Reports.UserReport
         }
         private Dictionary<string, string> _FilterBy_Options()
         {
-            return clsUtil_BL.ManagerRcordsHelper.FilterBy_Options(typeof(clsUser.Filter_Mapping));
+            return clsUtil_BL.MappingHelper.GetOptionsFromMapping(typeof(clsUser.Filter_Mapping));
         }
         private Dictionary<string, Dictionary<string, string>> _FilterByGroups()
         {
-            return clsUtil_BL.ManagerRcordsHelper.FilterBy_Groups(typeof(clsUser.Filter_ByGroupsMapping));
+            return clsUtil_BL.MappingHelper.FilterBy_Groups(typeof(clsUser.Filter_ByGroupsMapping));
         }
 
         private List<(string ContextMenuKey, Action<int, ToolStripMenuItem> ContextMenuAction)> _ContextMenuPackage()

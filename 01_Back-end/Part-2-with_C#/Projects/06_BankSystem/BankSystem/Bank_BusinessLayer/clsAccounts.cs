@@ -249,23 +249,11 @@ namespace Bank_BusinessLayer
         public static bool Exists(int AccountID)
         {
             bool found = clsAccountsDataAccess.ExistsByID(AccountID);
-            if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
-            {
-                var account = FindByID(AccountID);
-                var target = clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(account);
-                AuditingHelper.AuditValidationOperation((target, AccountID), found, (_SectionKey, $"Check existance of account record with account id: {AccountID}"));
-            }
             return found;
         }
         public static bool Exists(string AccountNumber)
         {
             bool found = clsAccountsDataAccess.ExistsByAccountNumber(AccountNumber);
-            if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
-            {
-                var account = FindByAccountNumber(AccountNumber);
-                var target = clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(account);
-                AuditingHelper.AuditValidationOperation((target, account.AccountID), found, (_SectionKey, $"Check existance of account record with account number: {AccountNumber}"));
-            }
             return found;
         }
         
@@ -315,12 +303,6 @@ namespace Bank_BusinessLayer
         public static bool isActive(int AccountID)
         {
             bool active = clsAccountsDataAccess.IsActive(AccountID);
-            if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
-            {
-                var account = FindByID(AccountID);
-                var target = clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(account);
-                AuditingHelper.AuditValidationOperation((target, account.AccountID), active, (_SectionKey, $"Check account status with ID: {AccountID}"));
-            }
             return active;
         }
         private static DataTable FilterAccounts

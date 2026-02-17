@@ -333,46 +333,21 @@ namespace Bank_BusinessLayer
         public static bool ExistByID(int UserID)
         {
             bool found = clsUserDataAccess.ExistsByID(UserID);
-            if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
-            {
-                var user = FindUserByID(UserID);
-                var target = clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(user);
-                AuditingHelper.AuditValidationOperation((target,UserID),found,(_SectionKey, $"Check existance of user record with UserID: {UserID}"));
-            }
             return found;
         }
         public static bool ExistByPersonID(int PersonID)
         {
             bool found = clsUserDataAccess.ExistsByPersonID(PersonID);
-            if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
-            {
-                var user = FindUserByPersonID(PersonID);
-                var target = clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(user);
-                AuditingHelper.AuditValidationOperation((target, user.UserID), found, (_SectionKey, $"Check existance of user record with PersonID: {PersonID}"));
-            }
             return found;
         }
         public static bool ExistByUserName(string UserName)
         {
             bool found = clsUserDataAccess.ExistsByUserName(UserName);
-            if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
-            {
-                var user = FindUserByName(UserName);
-                var target = clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(user);
-                AuditingHelper.AuditValidationOperation((target, user.UserID), found, (_SectionKey, $"Check existance of user record with User name: {UserName}"));
-            }
             return found;
         }
         public bool HasPermission(clsRole.enPermissions permission)
         {
             bool hasPerm = (this.EffectivePermissions & (ulong)permission) == (ulong)permission;
-            if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
-            {
-                
-                var target = clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(this);
-                AuditingHelper.AuditValidationOperation((target, this.UserID), hasPerm, (_SectionKey, $"Check if the User with ID {this.UserID} Has Necessary Permissions?"));
-            }
-          
             return hasPerm;
         }
         public static bool Delete(int UserID, int DeletedByUserID)
@@ -385,13 +360,6 @@ namespace Bank_BusinessLayer
         public static bool IsUserActive(int UserID)
         {
             bool active = clsUserDataAccess.IsActive(UserID);
-
-            if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
-            {
-                var user = FindUserByID(UserID);
-                var target = clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(user);
-                AuditingHelper.AuditValidationOperation((target, UserID), active, (_SectionKey, $"Check status for the user with UserID: {UserID}"));
-            }
             return active;
         }
         private static DataTable FilterUsers

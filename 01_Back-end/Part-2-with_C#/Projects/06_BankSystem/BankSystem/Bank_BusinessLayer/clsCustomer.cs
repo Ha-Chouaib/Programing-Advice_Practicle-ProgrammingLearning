@@ -214,45 +214,21 @@ namespace Bank_BusinessLayer
         public static bool IsCustomerExistsByID(int CustomerID)
         {
             bool found = clsCustomerDataAccess.IsCustomerExistsByID(CustomerID);
-            if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
-            {
-                var customer = FindCustomerByID(CustomerID);
-                var target = clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(customer);
-                AuditingHelper.AuditValidationOperation((target, CustomerID), found, (_sectionKey, $"Check customer existance by cusotomer id: {CustomerID}"));
-            }
             return found;
         }
         public static bool IsCustomerExistsByPersonID(int PersonID)
         {
             bool found = clsCustomerDataAccess.IsCustomerExistsByPersonID((int)PersonID);
-            if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
-            {
-                var customer = FindCustomerByID(PersonID);
-                var target = clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(customer);
-                AuditingHelper.AuditValidationOperation((target, customer.CustomerID), found, (_sectionKey, $"Check customer existance by person id: {PersonID}"));
-            }
             return found;
         }
         public static bool IsCustomerActive(int CustomerID)
         {
             bool active = clsCustomerDataAccess.IsActive(CustomerID);
-            if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
-            {
-                var customer = FindCustomerByID(CustomerID);
-                var target = clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(customer);
-                AuditingHelper.AuditValidationOperation((target, CustomerID), active, (_sectionKey, $"Check customer status by cusotomer id: {CustomerID}"));
-            }
             return active;
         }
         public static bool HasAccountType(int CustomerID, clsAccounts.enAccountType AccountType)
         {
             bool has = clsCustomerDataAccess.HasAccountType(CustomerID, (byte)AccountType);
-            if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
-            {
-                var customer = FindCustomerByID(CustomerID);
-                var target = clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(customer);
-                AuditingHelper.AuditValidationOperation((target, CustomerID), has, (_sectionKey, $"Check if the customer[{CustomerID}] has similar account type[{AccountType}] "));
-            }
             return has;
         }
 

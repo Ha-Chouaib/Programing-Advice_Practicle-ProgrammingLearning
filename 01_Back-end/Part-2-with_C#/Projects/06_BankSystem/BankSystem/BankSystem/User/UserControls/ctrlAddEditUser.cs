@@ -144,7 +144,7 @@ namespace BankSystem.User.UserControls
             _User.CustomPermissions = _CustomPermissions;
             _User.RevokedPermissions = _RevokedPermissions;
             _User.CreatedDate = DateTime.Now;
-            _User.CreatedByUserID = clsUtil_PL.LoggedInUser.UserID;
+            _User.CreatedByUserID = clsGlobal_BL.LoggedInUser.UserID;
 
         }
         private void _SetUserData()
@@ -191,7 +191,7 @@ namespace BankSystem.User.UserControls
                 btnNext.Enabled = true;
                 tabUserData.Enabled = true;
                 txtCreatedDate.Text = DateTime.Now.ToString();
-                txtCreatedByUser.Text = clsUtil_PL.LoggedInUser.UserName;
+                txtCreatedByUser.Text = clsGlobal_BL.LoggedInUser.UserName;
                 return;
             }
             MessageBox.Show($"No User Founded By Id [{Person.PersonID}]! Please Select A Valid ID", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);

@@ -31,7 +31,7 @@ namespace BankSystem.Reports
         }
         private Dictionary<string, string> _FilterBy_Options()
         {
-            return clsUtil_BL.ManagerRcordsHelper.FilterBy_Options(typeof(clsDormantAccountsReports.Filter_Mapping));
+            return clsUtil_BL.MappingHelper.GetOptionsFromMapping(typeof(clsDormantAccountsReports.Filter_Mapping));
         }
         private List<(string ContextMenuKey, Action<int, ToolStripMenuItem> ContextMenuAction)> _ContextMenuPackage()
         {
