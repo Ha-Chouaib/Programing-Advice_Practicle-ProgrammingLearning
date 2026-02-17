@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="clsAccountsDataAccess.cs" />
     <Compile Include="clsCountriesDataAccess.cs" />
+    <Compile Include="clsCurrencies_DAL.cs" />
     <Compile Include="clsCustomerDataAccess.cs" />
     <Compile Include="Reports_DAL\clsTransactionsHistory_DAL.cs" />
     <Compile Include="clsRolesDataAccess.cs" />

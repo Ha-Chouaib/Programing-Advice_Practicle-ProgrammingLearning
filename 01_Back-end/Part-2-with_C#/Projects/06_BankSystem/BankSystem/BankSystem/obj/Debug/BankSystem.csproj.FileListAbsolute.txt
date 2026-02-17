@@ -87,3 +87,11 @@ C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-en
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Reports.Controls.ctrlDormantAccountsReportCard.resources
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Reports.Forms.frmAccountActivityReportCard.resources
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Reports.Forms.frmBalanceStatementReportCard.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Currencies.Controls.ctrlCurrencyCard.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Currencies.Controls.ctrlFindCurrency.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Reports.Forms.frmCustomerSummaryCard.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Reports.Forms.frmDormantAccountsReportCard.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Reports.UserReport.frmManageUserReports.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\bin\Debug\Newtonsoft.Json.dll
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\bin\Debug\Newtonsoft.Json.xml
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Currencies.Controls.ctrlCurrencyCalculator.resources

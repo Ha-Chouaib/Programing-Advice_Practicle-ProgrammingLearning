@@ -119,9 +119,9 @@ namespace Bank_BusinessLayer
 
         }
 
-        public class ManagerRcordsHelper
+        public class MappingHelper
         {
-            public static Dictionary<string, string> FilterBy_Options(Type targetFilterMappingClass)
+            public static Dictionary<string, string> GetOptionsFromMapping(Type targetFilterMappingClass)
             {
                 var Filter_Mapping = targetFilterMappingClass.GetProperties(BindingFlags.Static | BindingFlags.Public);
 

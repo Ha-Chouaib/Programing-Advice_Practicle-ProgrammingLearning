@@ -81,6 +81,30 @@
     <Compile Include="Accounts\UserControls\ctrlAddNewAccount.Designer.cs">
       <DependentUpon>ctrlAddNewAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Currencies\Controls\ctrlCurrencyCalculator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Currencies\Controls\ctrlCurrencyCalculator.Designer.cs">
+      <DependentUpon>ctrlCurrencyCalculator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Currencies\Controls\ctrlCurrencyCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Currencies\Controls\ctrlCurrencyCard.Designer.cs">
+      <DependentUpon>ctrlCurrencyCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Currencies\Controls\ctrlCurrency_UpdateRate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Currencies\Controls\ctrlCurrency_UpdateRate.Designer.cs">
+      <DependentUpon>ctrlCurrency_UpdateRate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Currencies\Controls\ctrlFindCurrency.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Currencies\Controls\ctrlFindCurrency.Designer.cs">
+      <DependentUpon>ctrlFindCurrency.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer\Forms\frmCustomerAccounts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -372,6 +396,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Accounts\UserControls\ctrlAddNewAccount.resx">
       <DependentUpon>ctrlAddNewAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Currencies\Controls\ctrlCurrencyCalculator.resx">
+      <DependentUpon>ctrlCurrencyCalculator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Currencies\Controls\ctrlCurrencyCard.resx">
+      <DependentUpon>ctrlCurrencyCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Currencies\Controls\ctrlCurrency_UpdateRate.resx">
+      <DependentUpon>ctrlCurrency_UpdateRate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Currencies\Controls\ctrlFindCurrency.resx">
+      <DependentUpon>ctrlFindCurrency.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\Forms\frmCustomerAccounts.resx">
       <DependentUpon>frmCustomerAccounts.cs</DependentUpon>
@@ -673,6 +709,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\SuccessIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Currencies\Forms\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
