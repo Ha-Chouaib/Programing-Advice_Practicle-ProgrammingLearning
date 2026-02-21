@@ -16,6 +16,7 @@ namespace BankSystem.User.Forms
         public frmEditUser()
         {
             InitializeComponent();
+            _HasPermissions();
             ctrlAddEditUser1.__EditUser();
             ctrlAddEditUser1.__OperationSucceeded += _RecordEditedSuccessfully;
             ctrlAddEditUser1.__OperationFailed += _FaildToEditUser;
@@ -24,11 +25,22 @@ namespace BankSystem.User.Forms
         public frmEditUser(int userID)
         {
             InitializeComponent();
+            _HasPermissions();
             ctrlAddEditUser1.__EditUser(userID);
             ctrlAddEditUser1.__OperationSucceeded += _RecordEditedSuccessfully;
             ctrlAddEditUser1.__OperationFailed += _FaildToEditUser;
             ctrlAddEditUser1.__OperationCanceld += _OperationCanceld;
 
+        }
+        private void _HasPermissions()
+        {
+            if (!clsGlobal_BL.LoggedInUser.HasPermission(clsRole.enPermissions.Users_Edit))
+            {
+                MessageBox.Show("You don't have permission to edit Users.",
+                    "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Load += (s, e) => this.Close();
+                return;
+            }
         }
         public Action __OperationDoneSuccessfully;
         private void _RecordEditedSuccessfully(clsUser user)

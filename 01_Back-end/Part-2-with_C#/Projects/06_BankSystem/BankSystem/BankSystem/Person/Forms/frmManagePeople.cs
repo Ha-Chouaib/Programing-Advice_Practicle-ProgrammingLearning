@@ -21,21 +21,67 @@ namespace BankSystem.Person
         public frmManagePeople()
         {
             InitializeComponent();
+            _HasPermissions();
             LoadManageRecordsControl();
+        }
+        private void _HasPermissions()
+        {
+            if (!clsGlobal_BL.LoggedInUser.HasPermission(clsRole.enPermissions.People_View))
+            {
+                MessageBox.Show("You don't have permission to view people records.",
+                    "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Load += (s, e) => this.Close();
+                return ;
+            }
+        }
+        static class ContextMenuItems
+        {
+            // Person Menu Items
+            public static (string valueMember, string displayMember) ViewPersonDetails => ("ViewPersonDetails", "View Details");
+            public static (string valueMember, string displayMember) EditPerson => ("EditPerson", "Edit Person");
+            public static (string valueMember, string displayMember) DeletePerson => ("DeletePerson", "Delete Person");
+            public static (string valueMember, string displayMember) SendPersonEmail => ("SendPersonEmail", "Send Email");
+            public static (string valueMember, string displayMember) CallPerson => ("CallPerson", "Call Person");
+            public static (string valueMember, string displayMember) Separator => ("Separator", "--------------");
+            public static (string valueMember, string displayMember) ConvertToUser => ("ConvertToUser", "Convert To User");
+            public static (string valueMember, string displayMember) ConvertToCustomer => ("ConvertToCustomer", "Convert To Customer");
         }
 
         public void LoadManageRecordsControl()
         {
             ctrlManageRecords1.__AddNewRecordDelegate += _AddNewPerson;
             ctrlManageRecords1.__UpdateRecordDelegate += _EditPerson;
-            ctrlManageRecords1.__CloseFormDelegate += _EndSession;
+            ctrlManageRecords1.__CloseFormDelegate += () => Close();
 
             ctrlManageRecords1.__HeaderImg.Image = Resources.Team;
 
             ctrlManageRecords1.__AddNewBtn.Text = "Add New Person";
             ctrlManageRecords1.__UpdateBtn.Text = "Edit Person";
 
+            ctrlManageRecords1.__AddNewBtn.Visible = clsGlobal_BL.LoggedInUser.HasPermission(clsRole.enPermissions.People_Add);
+            ctrlManageRecords1.__UpdateBtn.Visible = clsGlobal_BL.LoggedInUser.HasPermission(clsRole.enPermissions.People_Edit);
+
             ctrlManageRecords1.__Initialize(_FilterBy_Options(), clsPerson.FilterPeople, _ContextMenuPackage(), _FilterByGroups());
+            ctrlManageRecords1.__ContextMenuStrip.Opening += (s, e) =>
+            {
+                var user = clsGlobal_BL.LoggedInUser;
+
+                ctrlManageRecords1.__ContextMenuStrip.Items[ContextMenuItems.ViewPersonDetails.valueMember].Visible =
+                    user.HasPermission(clsRole.enPermissions.People_View);
+
+                ctrlManageRecords1.__ContextMenuStrip.Items[ContextMenuItems.EditPerson.valueMember].Visible =
+                    user.HasPermission(clsRole.enPermissions.People_Edit);
+
+                ctrlManageRecords1.__ContextMenuStrip.Items[ContextMenuItems.DeletePerson.valueMember].Visible =
+                    user.HasPermission(clsRole.enPermissions.People_Delete);
+
+                ctrlManageRecords1.__ContextMenuStrip.Items[ContextMenuItems.ConvertToUser.valueMember].Visible =
+                    user.HasPermission(clsRole.enPermissions.Users_Add);
+
+                ctrlManageRecords1.__ContextMenuStrip.Items[ContextMenuItems.ConvertToCustomer.valueMember].Visible =
+                    user.HasPermission(clsRole.enPermissions.Customers_Add);
+            };
+
             _ConfigureDataRecordsContainer();
         }
         private Dictionary<string,string> _FilterBy_Options()
@@ -48,24 +94,23 @@ namespace BankSystem.Person
             return clsUtil_BL.MappingHelper.FilterBy_Groups(typeof(clsPerson.Filter_ByGroupsMapping));
         }
 
-        private List<(string ContextMenuKey, Action<int,ToolStripMenuItem> ContextMenuAction)> _ContextMenuPackage()
+        private List<((string valueMember, string displayMember) ContextMenuItem, Action<int, ToolStripMenuItem> ContextMenuAction)> _ContextMenuPackage()
         {
-            List<(string ContextMenuKey, Action<int, ToolStripMenuItem> ContextMenuAction)> ContextMenuItems = new List<(string ContextMenuKey, Action<int, ToolStripMenuItem> ContextMenuAction)>
+            var contextMenuItems = new List<((string valueMember, string displayMember), Action<int, ToolStripMenuItem>)>
             {
-                ("View Details", _ContextMenuViewPersonDetails),
-                ("Edit Person", _ContextMenuEditPerson),
-                ("Delete Person", _ContextMenuDeletePerson),                
-                ("Send Email", _ContextMenuSendPersonEmail),
-                ("Call Person", _ContextMenuCallPerson),
-                ("--------------", null),
-                ("Convert To User", _ContextMenuConvertToUser),
-                ("Convert To Customer", _ContextMenuConvertToCustomer)
-
+                (ContextMenuItems.ViewPersonDetails, _ContextMenuViewPersonDetails),
+                (ContextMenuItems.EditPerson, _ContextMenuEditPerson),
+                (ContextMenuItems.DeletePerson, _ContextMenuDeletePerson),
+                (ContextMenuItems.SendPersonEmail, _ContextMenuSendPersonEmail),
+                (ContextMenuItems.CallPerson, _ContextMenuCallPerson),
+                (ContextMenuItems.Separator, null),
+                (ContextMenuItems.ConvertToUser, _ContextMenuConvertToUser),
+                (ContextMenuItems.ConvertToCustomer, _ContextMenuConvertToCustomer)
             };
 
-            return ContextMenuItems;
+            return contextMenuItems;
         }
-        
+
         void _ContextMenuViewPersonDetails(int personId, ToolStripMenuItem menuItem)
         {
             frmShowPersonDetails DisplayPersonalInfo = new frmShowPersonDetails(personId);

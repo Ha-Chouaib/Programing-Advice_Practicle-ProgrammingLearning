@@ -19,8 +19,33 @@ namespace BankSystem.User.Forms
         public frmManageUsers()
         {
             InitializeComponent();
+            _HasPermissions();
             LoadManageRecordsControl();
         }
+        private void _HasPermissions()
+        {
+            if (!clsGlobal_BL.LoggedInUser.HasPermission(clsRole.enPermissions.Users_View))
+            {
+                MessageBox.Show("You don't have permission to view Users records.",
+                    "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Load += (s, e) => this.Close();
+                return;
+            }
+        }
+         static class ContextMenuItems
+        {
+            public static (string valueMember, string displayMember) ViewUserCard => ("ViewUserCard", "View User Card");
+            public static (string valueMember, string displayMember) EditUser => ("EditUser", "Edit User");
+            public static (string valueMember, string displayMember) UpdatePassword => ("UpdatePassword", "Update Password");
+            public static (string valueMember, string displayMember) UpdateStatus => ("UpdateStatus", "Update Status");
+            public static (string valueMember, string displayMember) DeleteUser => ("DeleteUser", "Delete");
+            public static (string valueMember, string displayMember) Separator => ("Separator", "-------------------");
+            public static (string valueMember, string displayMember) MakeUserCustomer => ("MakeUserCustomer", "Make User a Customer");
+            public static (string valueMember, string displayMember) SendEmail => ("SendEmail", "Send Email");
+            public static (string valueMember, string displayMember) SendSMS => ("SendSMS", "Send SMS");
+            public static (string valueMember, string displayMember) CallUser => ("CallUser", "Call User");
+        }
+
         public void LoadManageRecordsControl()
         {
             ctrlManageRecords1.__AddNewRecordDelegate += _AddNewUser;
@@ -31,7 +56,32 @@ namespace BankSystem.User.Forms
 
             ctrlManageRecords1.__AddNewBtn.Text = "Add New User";
             ctrlManageRecords1.__UpdateBtn.Text = "Edit User";
+            ctrlManageRecords1.__AddNewBtn.Visible = clsGlobal_BL.LoggedInUser.HasPermission(clsRole.enPermissions.Users_Add);
+            ctrlManageRecords1.__UpdateBtn.Visible = clsGlobal_BL.LoggedInUser.HasPermission(clsRole.enPermissions.Users_Edit);
+
             ctrlManageRecords1.__Initialize(_FilterBy_Options(), clsUser.FilterUsers, _ContextMenuPackage(), _FilterByGroups());
+            ctrlManageRecords1.__ContextMenuStrip.Opening += (s, e) =>
+            {
+                var user = clsGlobal_BL.LoggedInUser;
+
+                ctrlManageRecords1.__ContextMenuStrip.Items[ContextMenuItems.ViewUserCard.valueMember].Visible =
+                    user.HasPermission(clsRole.enPermissions.Users_View);
+
+                ctrlManageRecords1.__ContextMenuStrip.Items[ContextMenuItems.EditUser.valueMember].Visible =
+                    user.HasPermission(clsRole.enPermissions.Users_Edit);
+
+                ctrlManageRecords1.__ContextMenuStrip.Items[ContextMenuItems.DeleteUser.valueMember].Visible =
+                    user.HasPermission(clsRole.enPermissions.Users_Delete);
+
+                ctrlManageRecords1.__ContextMenuStrip.Items[ContextMenuItems.UpdateStatus.valueMember].Visible =
+                    user.HasPermission(clsRole.enPermissions.Users_Edit);
+
+                ctrlManageRecords1.__ContextMenuStrip.Items[ContextMenuItems.UpdatePassword.valueMember].Visible =
+                    user.HasPermission(clsRole.enPermissions.Users_ChangePassword);
+
+                ctrlManageRecords1.__ContextMenuStrip.Items[ContextMenuItems.MakeUserCustomer.valueMember].Visible =
+                    user.HasPermission(clsRole.enPermissions.Customers_Add);
+            };
             _ConfigureDataRecordsContainer();
         }
         private Dictionary<string, string> _FilterBy_Options()
@@ -43,27 +93,26 @@ namespace BankSystem.User.Forms
             return clsUtil_BL.MappingHelper.FilterBy_Groups(typeof(clsUser.Filter_ByGroupsMapping));
         }
 
-        private List<(string ContextMenuKey, Action<int, ToolStripMenuItem> ContextMenuAction)> _ContextMenuPackage()
+        private List<((string valueMember, string displayMember) ContextMenuItem, Action<int, ToolStripMenuItem> ContextMenuAction)> _ContextMenuPackage()
         {
-            List<(string ContextMenuKey, Action<int, ToolStripMenuItem> ContextMenuAction)> ContextMenuItems = new List<(string ContextMenuKey, Action<int, ToolStripMenuItem> ContextMenuAction)>
+            var contextMenuItems = new List<((string valueMember, string displayMember), Action<int, ToolStripMenuItem>)>
             {
-                ("View User Card", _ContextMenuViewUserCard),
-                ("Edit User", _ContextMenuEditUser),
-                ("Update Password", _ContextMenuUpdatePassword),
-                ("Update Status", _ContextMenuChangeStatus),
-                ("Delete", _ContextMenuDeleteUser),
-                ("-------------------", null),
-                ("Make User a Customer", _ContextMenuConvertToCustomer),
-                ("-------------------", null),
-                ("Send Email", _ContextMenuSendUserEmail),
-                ("Send SMS", _ContextMenuSendUserSMS),
-                ("Call User", _ContextMenuCallUser),
-
+                (ContextMenuItems.ViewUserCard, _ContextMenuViewUserCard),
+                (ContextMenuItems.EditUser, _ContextMenuEditUser),
+                (ContextMenuItems.UpdatePassword, _ContextMenuUpdatePassword),
+                (ContextMenuItems.UpdateStatus, _ContextMenuChangeStatus),
+                (ContextMenuItems.DeleteUser, _ContextMenuDeleteUser),
+                (ContextMenuItems.Separator, null),
+                (ContextMenuItems.MakeUserCustomer, _ContextMenuConvertToCustomer),
+                (ContextMenuItems.Separator, null),
+                (ContextMenuItems.SendEmail, _ContextMenuSendUserEmail),
+                (ContextMenuItems.SendSMS, _ContextMenuSendUserSMS),
+                (ContextMenuItems.CallUser, _ContextMenuCallUser),
             };
 
-            return ContextMenuItems;
+            return contextMenuItems;
         }
-      
+ 
         void _ContextMenuViewUserCard(int userID, ToolStripMenuItem menuItem)
         {
             clsUser user = clsUser.FindUserByID(userID);

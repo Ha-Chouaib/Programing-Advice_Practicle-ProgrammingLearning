@@ -10,7 +10,7 @@ namespace Bank_DataAccess
 {
     public class clsRolesDataAccess
     {
-        public static int AddNewRole(string RoleName, ulong Permissions, string Description, bool IsActive, DateTime AddedAt, int AddedByUserID)
+        public static int AddNewRole(string RoleName, long Permissions, string Description, bool IsActive, DateTime AddedAt, int AddedByUserID)
         {
             string Query = "[dbo].[Sp_Role_AddNew]";
             int RoleID = -1;
@@ -52,7 +52,7 @@ namespace Bank_DataAccess
             return RoleID;
         }
 
-        public static bool Find(int RoleID, ref string RoleName, ref ulong Permissions, ref bool IsActive, ref string Description,ref DateTime AddedAt,ref int AddedByUserID)
+        public static bool Find(int RoleID, ref string RoleName, ref long Permissions, ref bool IsActive, ref string Description,ref DateTime AddedAt,ref int AddedByUserID)
         {
             string Query = "[dbo].[Sp_Role_GetByID]";
             bool found = false;
@@ -72,7 +72,7 @@ namespace Bank_DataAccess
                         {
 
                             RoleName = rdr["RoleName"].ToString() ?? string.Empty;
-                            Permissions = rdr["Permissions"] != DBNull.Value ? Convert.ToUInt64(rdr["Permissions"]) : 0UL;
+                            Permissions = rdr["Permissions"] != DBNull.Value ? Convert.ToInt64(rdr["Permissions"]) : 0L;
                             Description = rdr["Description"].ToString() ?? string.Empty;
                             IsActive = rdr["IsActive"] != DBNull.Value ? (bool)rdr["IsActive"] : false;
                             AddedAt = (DateTime)rdr["CreatedDate"];
@@ -96,7 +96,7 @@ namespace Bank_DataAccess
             }
             return found;
         }
-        public static bool Find(string RoleName, ref int RoleID, ref ulong Permissions, ref bool IsActive, ref string Description,ref DateTime AddedAt,ref int AddedByUserID)
+        public static bool Find(string RoleName, ref int RoleID, ref long Permissions, ref bool IsActive, ref string Description,ref DateTime AddedAt,ref int AddedByUserID)
         {
             string Query = "[dbo].[Sp_Role_GetByName]";
             bool found = false;
@@ -116,7 +116,7 @@ namespace Bank_DataAccess
                         {
 
                             RoleID = rdr["RoleID"] != DBNull.Value ? Convert.ToInt32(rdr["RoleID"]) : -1;
-                            Permissions = rdr["Permissions"] != DBNull.Value ? (ulong)rdr["Permissions"] : 0;
+                            Permissions = rdr["Permissions"] != DBNull.Value ? (long)rdr["Permissions"] : 0L;
                             Description = rdr["Description"].ToString() ?? string.Empty;
                             IsActive = rdr["IsActive"] != DBNull.Value ? (bool)rdr["IsActive"] : false;
                             AddedAt = rdr["CreatedDate"] != DBNull.Value ? (DateTime)rdr["CreatedDate"] : DateTime.MinValue;
@@ -142,7 +142,7 @@ namespace Bank_DataAccess
             return found;
         }
 
-        public static bool Update(int RoleID, string RoleName, ulong Permissions, string Description, bool IsActive)
+        public static bool Update(int RoleID, string RoleName, long Permissions, string Description, bool IsActive)
         {
             string Query = "[dbo].[Sp_Role_Update]";
             bool Success = false;

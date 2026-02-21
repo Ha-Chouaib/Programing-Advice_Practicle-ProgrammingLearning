@@ -55,7 +55,7 @@ namespace DatabaseBackupService
             LogFilePath_Default = Path.Combine(LogDirectoryPath_Default, LogFileName_Default);
 
             ConnectionString = ConfigurationManager.ConnectionStrings["DBConnectionString"]?.ConnectionString;
-            MainDirectoryPath = ConfigurationManager.AppSettings["MainFolder"] ?? MainDirectoryPath_Default;
+            MainDirectoryPath = ConfigurationManager.AppSettings["MainDirectoryPath "] ?? MainDirectoryPath_Default;
             BackupDirectoryPath = ConfigurationManager.AppSettings["BackupRepository"] ?? BackupDirectoryPath_Default;
             LogDirectoryPath = ConfigurationManager.AppSettings["LogFolder"] ?? LogDirectoryPath_Default;
             DatabaseName = ConfigurationManager.AppSettings["DBName"];
@@ -67,7 +67,13 @@ namespace DatabaseBackupService
             LogFilePath = Path.Combine(LogDirectoryPath, LogFileName);
         }
 
-
+        public static string AppendingTimeStampToFileName(string fileName)
+        {
+            string timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+            string extension = Path.GetExtension(fileName);
+            string nameWithoutExtension = Path.GetFileNameWithoutExtension(fileName);
+            return $"{nameWithoutExtension}_{timestamp}{extension}";
+        }
 
     }
 }

@@ -16,9 +16,20 @@ namespace BankSystem.Person.Forms
         public frmFindPerson()
         {
             InitializeComponent();
+            _HasPermissions();
             Find_Display();
         }
 
+        private void _HasPermissions()
+        {
+            if (!clsGlobal_BL.LoggedInUser.HasPermission(clsRole.enPermissions.People_Find))
+            {
+                MessageBox.Show("You don't have permission to search for people data.",
+                    "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Load += (s, e) => this.Close();
+                return;
+            }
+        }
         private void Find_Display()
         {
             ctrlFind1.__Initializing(_SetFindByOptions(),clsPerson.FindBy);

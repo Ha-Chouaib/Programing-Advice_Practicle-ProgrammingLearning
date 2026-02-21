@@ -28,7 +28,7 @@ namespace Bank_DataAccess
                     {
                         if (rdr.Read())
                         {
-                            Code = rdr["Code"].ToString() ?? string.Empty;
+                            Code = rdr["ID"].ToString() ?? string.Empty;
                             Country = rdr["Country"].ToString() ?? string.Empty;
                             Name = rdr["Name"].ToString() ?? string.Empty;
                             Rate = rdr["Rate"] != DBNull.Value ? Convert.ToSingle(rdr["Rate"]) : 0;
@@ -60,7 +60,7 @@ namespace Bank_DataAccess
                 using (SqlCommand cmd = new SqlCommand(Query, conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Code", Code);
+                    cmd.Parameters.AddWithValue("@ID", Code);
 
                     conn.Open();
                     using (SqlDataReader rdr = cmd.ExecuteReader())
@@ -108,7 +108,7 @@ namespace Bank_DataAccess
                         {
                             ID = rdr["ID"] != DBNull.Value ? Convert.ToInt32(rdr["ID"]) : -1;
                             Country = rdr["Country"].ToString() ?? string.Empty;
-                            Code = rdr["Code"].ToString() ?? string.Empty;
+                            Code = rdr["ID"].ToString() ?? string.Empty;
                             Rate = rdr["Rate"] != DBNull.Value ? Convert.ToSingle(rdr["Rate"]) : 0;
                             found = true;
                         }
@@ -137,7 +137,7 @@ namespace Bank_DataAccess
                 using (SqlCommand cmd = new SqlCommand(Query, conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Code", Code);
+                    cmd.Parameters.AddWithValue("@ID", Code);
                     cmd.Parameters.AddWithValue("@Rate", Rate);
 
                     conn.Open();
@@ -159,6 +159,40 @@ namespace Bank_DataAccess
 
             return success;
         }
+        public static bool UpdateRateByID(int ID, float Rate)
+        {
+            string Query = "[dbo].[Sp_CurrenciesUpdateRateByID]";
+            bool success = false;
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(DataAccessSettings.connectionString))
+                using (SqlCommand cmd = new SqlCommand(Query, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ID", ID);
+                    cmd.Parameters.AddWithValue("@Rate", Rate);
+
+                    conn.Open();
+                    using (SqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        if (rdr.Read())
+                            success = Convert.ToBoolean(rdr["success"]);
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                clsGlobal.LogError($"[DAL: Currencies.UpdateRateByID() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                clsGlobal.LogError($"[DAL: Currencies.UpdateRateByID() ] -> {ex.Message}");
+            }
+
+            return success;
+        }
+
         public static float GetRateByID(int ID)
         {
             float rate = 0;
@@ -191,9 +225,9 @@ namespace Bank_DataAccess
             try
             {
                 using (SqlConnection conn = new SqlConnection(DataAccessSettings.connectionString))
-                using (SqlCommand cmd = new SqlCommand("SELECT dbo.Fn_CurrenciesGetRateByCode(@Code)", conn))
+                using (SqlCommand cmd = new SqlCommand("SELECT dbo.Fn_CurrenciesGetRateByCode(@ID)", conn))
                 {
-                    cmd.Parameters.AddWithValue("@Code", Code);
+                    cmd.Parameters.AddWithValue("@ID", Code);
                     conn.Open();
                     rate = Convert.ToSingle(cmd.ExecuteScalar());
                 }
@@ -210,8 +244,9 @@ namespace Bank_DataAccess
             return rate;
         }
 
-        public static DataTable Filter(string country, string name, string code)
+        public static DataTable Filter(string country, string name, string code, short pageNumber, short pageSize, out int totalRows)
         {
+            totalRows = 0;
             DataTable dt = new DataTable();
             try
             {
@@ -223,11 +258,23 @@ namespace Bank_DataAccess
                     cmd.Parameters.AddWithValue("@Name", (object)name ?? DBNull.Value);
                     cmd.Parameters.AddWithValue("@Code", (object)code ?? DBNull.Value);
 
-                    conn.Open();
-                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    cmd.Parameters.AddWithValue("@PageNumber", pageNumber);
+                    cmd.Parameters.AddWithValue("@PageSize", pageSize);
+
+                    SqlParameter totalParam = new SqlParameter("@TotalRows", SqlDbType.Int)
                     {
-                        da.Fill(dt);
+                        Direction = ParameterDirection.Output
+                    };
+                    cmd.Parameters.Add(totalParam);
+
+                    conn.Open();
+                    using (SqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        dt.Load(rdr);
                     }
+
+                    totalRows = (int)(totalParam.Value ?? 0);
+
                 }
             }
             catch (SqlException ex)

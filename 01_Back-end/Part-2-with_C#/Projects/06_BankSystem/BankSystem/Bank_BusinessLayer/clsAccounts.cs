@@ -109,6 +109,12 @@ namespace Bank_BusinessLayer
             }
         }
 
+        [Serializable]
+        public static class FindBy_Mapping
+        {
+            public static (string valueMember, string DisplayMember) AccountID { get; private set; } = ("ID", "Account ID");
+            public static (string valueMember, string DisplayMember) AccountNumber { get; private set; } = ("AccountNumber", "Account Number");
+        }
         public static clsAccounts FindByID(int AccountID)
         {
             int CustomerID = -1;
@@ -151,23 +157,6 @@ namespace Bank_BusinessLayer
             return _account;
         }
         
-        public static clsAccounts FindBy(string Column, string Term)
-        {
-
-            switch(Column.ToLower())
-            {
-                case "accountid":
-                    int accountID;
-                    if (int.TryParse(Term, out accountID))
-                        return FindByID(accountID);
-                    break;
-                case "accountnumber":
-                    return FindByAccountNumber(Term);
-               default:
-                    return null;
-            }
-            return null;
-        }
         private bool _AddNew()
         {
             var result = clsAccountsDataAccess.AddNewAccount(this.CustomerID, Convert.ToByte(this.AccountType),
@@ -261,7 +250,9 @@ namespace Bank_BusinessLayer
         {
             var account = FindByID(AccountID);
             var target = clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(account);
-            bool done = clsAccountsDataAccess.DepositWithdraw(AccountID, Amount);
+            bool done = false;
+            if (!(account.Balance < Math.Abs(Amount) && Amount <= 0))
+                done= clsAccountsDataAccess.DepositWithdraw(AccountID, Amount);
 
             (string key, string description) section;
             if (Amount > 0)
@@ -281,7 +272,9 @@ namespace Bank_BusinessLayer
         {
             var account = FindByID(AccountFromID);
             var target = clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(account);
-            bool done = clsAccountsDataAccess.TransferMoney(AccountFromID, AccountToID, Amount);
+            bool done = false;
+            if (!(account.Balance < Math.Abs(Amount) || Amount <= 0))
+                done = clsAccountsDataAccess.TransferMoney(AccountFromID, AccountToID, Amount);
             (string key, string description) section = ($"{_SectionKey}_TRANSACTION-TRANSFERE", $"Move the Amount [{Amount}] from Account with id {AccountFromID} to account with id[{AccountToID}]");
             AuditingHelper.AuditCreateOperation((target, AccountFromID), done, section);
 
@@ -305,6 +298,40 @@ namespace Bank_BusinessLayer
             bool active = clsAccountsDataAccess.IsActive(AccountID);
             return active;
         }
+
+
+        private delegate clsAccounts _FindByDelegate(string term);
+        static Dictionary<string, _FindByDelegate> FindByActionsRef;
+        static Dictionary<string, _FindByDelegate> FindByActions
+        {
+            get
+            {
+                if (FindByActionsRef == null)
+                {
+                    FindByActionsRef = new Dictionary<string, _FindByDelegate>
+                    {
+                        {FindBy_Mapping.AccountID.valueMember,(string term)=>
+                            {
+                                if(int.TryParse(term, out int id))
+                                    return FindByID(id);
+                                return null;
+                            }
+                        },
+                        {FindBy_Mapping.AccountNumber.valueMember,(string term)=> FindByAccountNumber(term)},
+                       
+                    };
+                }
+                return FindByActionsRef;
+            }
+        }
+        public static clsAccounts FindBy(string column, string term)
+        {
+
+            if (FindByActions.TryGetValue(column, out _FindByDelegate action))
+                return action(term.Trim());
+            return null;
+        }
+
         private static DataTable FilterAccounts
         (
             int? accountID,

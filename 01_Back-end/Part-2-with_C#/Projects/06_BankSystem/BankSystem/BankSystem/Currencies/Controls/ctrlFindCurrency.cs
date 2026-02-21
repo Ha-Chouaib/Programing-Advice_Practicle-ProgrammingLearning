@@ -16,23 +16,26 @@ namespace BankSystem.Currencies.Controls
         public ctrlFindCurrency()
         {
             InitializeComponent();
-            _InitiateFindControl();
+            ctrlFind1.__ObjectFound += _DisplayInfo;
+
         }
         public Action<clsCurrencies> __CurrencyFound;
         private void _InitiateFindControl()
         {
             ctrlFind1.__Initializing(clsUtil_BL.MappingHelper.GetOptionsFromMapping(typeof(clsCurrencies.FindBy_Mapping)), clsCurrencies.FindBy);
-            ctrlFind1.__txtSearchTerm.KeyPress += (s, e) => 
-            {
-                if (clsCurrencies.FindBy_Mapping.ID.valueMember == ctrlFind1.__FindOptionsCombo.SelectedValue.ToString())
-                    e.Handled = !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar);
-            };
-            ctrlFind1.__ObjectFound += _DisplayInfo;
+            if (clsCurrencies.FindBy_Mapping.ID.valueMember == ctrlFind1.__FindOptionsCombo.SelectedValue.ToString())
+                clsUtil_PL.TextBoxHelper.AllowOnlyNumbers(ctrlFind1.__txtSearchTerm);
         }
+        
         private void _DisplayInfo(object s,object currency)
         {
             ctrlCurrencyCard1.__ShowCard(currency as clsCurrencies);
             __CurrencyFound?.Invoke(currency as clsCurrencies);
+        }
+        
+        public void __ShowCard()
+        {
+            _InitiateFindControl();
         }
         public void __ShowCard(clsCurrencies currency)
         {
@@ -53,6 +56,11 @@ namespace BankSystem.Currencies.Controls
         public void __ShowCard(string currencyCode)
         {
             __ShowCard(clsCurrencies.FindByCode(currencyCode));
+        }
+        
+        public void __Refresh()
+        {
+            ctrlCurrencyCard1.__Refresh();
         }
     }
 }

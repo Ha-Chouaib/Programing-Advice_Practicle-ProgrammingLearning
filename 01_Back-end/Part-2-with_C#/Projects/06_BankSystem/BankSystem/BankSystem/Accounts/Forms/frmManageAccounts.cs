@@ -2,6 +2,7 @@
 using BankSystem.Customer.Forms;
 using BankSystem.Properties;
 using BankSystem.Reports.Forms;
+using BankSystem.Transactions.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,8 +20,29 @@ namespace BankSystem.Accounts.Forms
         public frmManageAccounts()
         {
             InitializeComponent();
+            if (!clsGlobal_BL.LoggedInUser.HasPermission(clsRole.enPermissions.Accounts_View))
+            {
+                MessageBox.Show("Access Denied.", "Permission", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Load += (s, e) => this.Close();
+                return;
+            }
             LoadManageRecordsControl();
         }
+        static class ContextMenuItems
+        {
+            public static (string valueMember, string displayMember) ViewAccountDetails => ("ViewAccountDetails", "View Details");
+            public static (string valueMember, string displayMember) ViewOwner => ("ViewOwner", "View Owner");
+            public static (string valueMember, string displayMember) ViewRelatedAccounts => ("ViewRelatedAccounts", "View Related Accounts");
+            public static (string valueMember, string displayMember) Separator => ("Separator", "----------------------");
+            public static (string valueMember, string displayMember) Deposit => ("Deposit", "Deposit");
+            public static (string valueMember, string displayMember) Withdrawal => ("Withdrawal", "Withdrawal");
+            public static (string valueMember, string displayMember) Transfer => ("Transfer", "Transfer");
+            public static (string valueMember, string displayMember) UpdateStatus => ("UpdateAccountStatus", "Update Status");
+            public static (string valueMember, string displayMember) DeleteAccount => ("DeleteAccount", "Delete");
+            public static (string valueMember, string displayMember) LoadBalanceStatementReport => ("LoadBalanceStatementReport", "Load Balance Statement Report");
+            public static (string valueMember, string displayMember) LoadAccountActivityReport => ("LoadAccountActivityReport", "Load Account Activity Report");
+        }
+
         public void LoadManageRecordsControl()
         {
             ctrlManageRecords1.__AddNewRecordDelegate += _AddNewAccount;
@@ -29,7 +51,33 @@ namespace BankSystem.Accounts.Forms
             ctrlManageRecords1.__HeaderImg.Image = Resources.process_8257890;
 
             ctrlManageRecords1.__AddNewBtn.Text = "Add New Account";
+            ctrlManageRecords1.__AddNewBtn.Visible = clsGlobal_BL.LoggedInUser.HasPermission(clsRole.enPermissions.Accounts_Add);
             ctrlManageRecords1.__UpdateBtn.Visible = false;
+            ctrlManageRecords1.__ContextMenuStrip.Opening += (s, e) =>
+            {
+                var user = clsGlobal_BL.LoggedInUser;
+
+                ctrlManageRecords1.__ContextMenuStrip.Items[ContextMenuItems.Deposit.valueMember].Visible =
+                    user.HasPermission(clsRole.enPermissions.Transactions_Deposit);
+
+                ctrlManageRecords1.__ContextMenuStrip.Items[ContextMenuItems.Withdrawal.valueMember].Visible =
+                    user.HasPermission(clsRole.enPermissions.Transactions_Withdraw);
+
+                ctrlManageRecords1.__ContextMenuStrip.Items[ContextMenuItems.Transfer.valueMember].Visible =
+                    user.HasPermission(clsRole.enPermissions.Transactions_Transfer);
+
+                ctrlManageRecords1.__ContextMenuStrip.Items[ContextMenuItems.UpdateStatus.valueMember].Visible =
+                    user.HasPermission(clsRole.enPermissions.Accounts_ChangeStatus);
+
+                ctrlManageRecords1.__ContextMenuStrip.Items[ContextMenuItems.DeleteAccount.valueMember].Visible =
+                    user.HasPermission(clsRole.enPermissions.Accounts_Delete);
+
+                ctrlManageRecords1.__ContextMenuStrip.Items[ContextMenuItems.LoadBalanceStatementReport.valueMember].Visible =
+                    user.HasPermission(clsRole.enPermissions.Reports_Transaction);
+
+                ctrlManageRecords1.__ContextMenuStrip.Items[ContextMenuItems.LoadAccountActivityReport.valueMember].Visible =
+                    user.HasPermission(clsRole.enPermissions.Reports_Transaction);
+            };
 
             ctrlManageRecords1.__Initialize(_FilterBy_Options(), clsAccounts.FilterAccounts, _ContextMenuPackage(), _FilterByGroups());
             _ConfigureDataRecordsContainer();
@@ -44,29 +92,29 @@ namespace BankSystem.Accounts.Forms
 
         }
 
-        private List<(string ContextMenuKey, Action<int, ToolStripMenuItem> ContextMenuAction)> _ContextMenuPackage()
+        private List<((string valueMember, string displayMember) ContextMenuItem, Action<int, ToolStripMenuItem> ContextMenuAction)> _ContextMenuPackage()
         {
-            List<(string ContextMenuKey, Action<int, ToolStripMenuItem> ContextMenuAction)> ContextMenuItems = new List<(string ContextMenuKey, Action<int, ToolStripMenuItem> ContextMenuAction)>
+            var contextMenuItems = new List<((string valueMember, string displayMember), Action<int, ToolStripMenuItem>)>
             {
-                ("View Details", _ContextMenuViewAccountDetails),
-                ("View Owner", _ContextMenuViewCustomerDetails),
-                ("View Related Accounts", _ContextMenuViewRelatedAccounts),
-                ("----------------------", null),
-                ("Deposit", _ContextMenuDeposit),
-                ("Withdrawal", _ContextMenuWithdraw),
-                ("Transfer", _ContextMenuTransfer),
-                ("----------------------", null),
-                ("Update", _ContextMenuChangeStatus),
-                ("Delete", _ContextMenuDeleteAccount),
-                ("----------------------", null),
-                ("Load Balance Statement Report", _ContextMenuLoadBalanceStatementReport),
-                ("Load Account Activity Report", _ContextMenuLoadAcountActivityReport),
-
+                (ContextMenuItems.ViewAccountDetails, _ContextMenuViewAccountDetails),
+                (ContextMenuItems.ViewOwner, _ContextMenuViewCustomerDetails),
+                (ContextMenuItems.ViewRelatedAccounts, _ContextMenuViewRelatedAccounts),
+                (ContextMenuItems.Separator, null),
+                (ContextMenuItems.Deposit, _ContextMenuDeposit),
+                (ContextMenuItems.Withdrawal, _ContextMenuWithdraw),
+                (ContextMenuItems.Transfer, _ContextMenuTransfer),
+                (ContextMenuItems.Separator, null),
+                (ContextMenuItems.UpdateStatus, _ContextMenuChangeStatus),
+                (ContextMenuItems.DeleteAccount, _ContextMenuDeleteAccount),
+                (ContextMenuItems.Separator, null),
+                (ContextMenuItems.LoadBalanceStatementReport, _ContextMenuLoadBalanceStatementReport),
+                (ContextMenuItems.LoadAccountActivityReport, _ContextMenuLoadAcountActivityReport),
             };
 
-            return ContextMenuItems;
+            return contextMenuItems;
         }
-       
+
+
         void _ContextMenuViewAccountDetails(int accountID, ToolStripMenuItem menuItem)
         {
             clsAccounts account = clsAccounts.FindByID(accountID);
@@ -137,13 +185,17 @@ namespace BankSystem.Accounts.Forms
 
         void _ContextMenuDeposit(int accountID, ToolStripMenuItem menuItem)
         {
+            frmDepositMoney dep = new frmDepositMoney(accountID);
+            dep.ShowDialog();
         }
         void _ContextMenuWithdraw(int accountID, ToolStripMenuItem menuItem)
         {
+            frmWithdrawMoney withdraw = new frmWithdrawMoney(accountID);
+            withdraw.ShowDialog();
         }
         void _ContextMenuTransfer(int accountID, ToolStripMenuItem menuItem)
         {
-            
+            frmTransferMoney transfer = new frmTransferMoney(accountID); transfer.ShowDialog();
         }
 
         void _ContextMenuLoadBalanceStatementReport(int accountID, ToolStripMenuItem menuItem)

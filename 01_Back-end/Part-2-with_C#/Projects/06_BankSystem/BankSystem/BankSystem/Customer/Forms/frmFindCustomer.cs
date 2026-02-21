@@ -16,14 +16,26 @@ namespace BankSystem.Customer.Forms
         public frmFindCustomer()
         {
             InitializeComponent();
+            _HasPermissions();
             ctrlFindCustomer1.__initializeFindControl();
         }
         public frmFindCustomer(int customerID)
         {
             InitializeComponent();
+            _HasPermissions();
             ctrlFindCustomer1.__DisplayCustomerData(clsCustomer.FindCustomerByID(customerID));
         }
-       
+        private void _HasPermissions()
+        {
+            if (!clsGlobal_BL.LoggedInUser.HasPermission(clsRole.enPermissions.Customers_Find))
+            {
+                MessageBox.Show("You don't have permission to Read customers Info.",
+                    "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Load += (s, e) => this.Close();
+                return;
+            }
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -80,7 +80,6 @@
             this.txtAmount.Size = new System.Drawing.Size(216, 39);
             this.txtAmount.TabIndex = 4;
             this.txtAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
             // 
             // txtResult
             // 
@@ -216,6 +215,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ctrlCurrencyCalculator";
             this.Size = new System.Drawing.Size(1375, 609);
+            this.Load += new System.EventHandler(this.ctrlCurrencyCalculator_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

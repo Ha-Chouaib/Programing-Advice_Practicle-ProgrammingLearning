@@ -16,6 +16,7 @@ namespace BankSystem.Customer.Forms
         public frmEditCustomer()
         {
             InitializeComponent();
+            _HasPermissions();
             ctrlAddEditCustomer1.__EditCustomer();
             ctrlAddEditCustomer1.__Added_Updated_Record += GetOperationResult;
             ctrlAddEditCustomer1.__CancelOperation += _CloseForm;
@@ -23,10 +24,22 @@ namespace BankSystem.Customer.Forms
         public frmEditCustomer(int customerID)
         {
             InitializeComponent();
+            _HasPermissions();
             ctrlAddEditCustomer1.__EditCustomer(customerID);
             ctrlAddEditCustomer1.__Added_Updated_Record += GetOperationResult;
             ctrlAddEditCustomer1.__CancelOperation += _CloseForm;
         }
+        private void _HasPermissions()
+        {
+            if (!clsGlobal_BL.LoggedInUser.HasPermission(clsRole.enPermissions.Customers_Edit))
+            {
+                MessageBox.Show("You don't have permission to Edit customer Data.",
+                    "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Load += (s, e) => this.Close();
+                return;
+            }
+        }
+
         public Action<clsCustomer> __CustomerRecoredUpdated;
         public Action __OperatinDoneSuccessfully;
         private void GetOperationResult(clsCustomer UpdatedRecord)

@@ -16,7 +16,18 @@ namespace BankSystem.Person
         public frmEditPerson()
         {
             InitializeComponent();
+            _HasPermissions();
             _LoadFindControl();
+        }
+        private void _HasPermissions()
+        {
+            if (!clsGlobal_BL.LoggedInUser.HasPermission(clsRole.enPermissions.People_Edit))
+            {
+                MessageBox.Show("You don't have permission to Edit personal data.",
+                    "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Load += (s, e) => this.Close();
+                return;
+            }
         }
         public Action<clsPerson> __GetUpdatedPersonRecord;
         public Action __RefreshContent;

@@ -23,7 +23,7 @@ namespace DataAccessLayer
                 using (SqlCommand command = new SqlCommand(Query, connection))
                 {
                     connection.Open();
-
+                    command.CommandTimeout = 3600;// 1 hour max
                     command.ExecuteNonQuery();
                     result = true;
                 }

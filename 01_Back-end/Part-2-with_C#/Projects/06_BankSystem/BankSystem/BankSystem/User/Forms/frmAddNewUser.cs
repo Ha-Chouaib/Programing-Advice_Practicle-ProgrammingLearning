@@ -16,6 +16,7 @@ namespace BankSystem.User.Forms
         public frmAddNewUser()
         {
             InitializeComponent();
+            _HasPermissions();
             ctrlAddEditUser1.__AddNewUser();
             ctrlAddEditUser1.__OperationSucceeded += _UserAddedSuccessfully;
             ctrlAddEditUser1.__OperationFailed += _FaildToAddUser;
@@ -24,10 +25,21 @@ namespace BankSystem.User.Forms
         public frmAddNewUser(int PersonID)
         {
             InitializeComponent();
+            _HasPermissions();
             ctrlAddEditUser1.__AddNewUser(PersonID);
             ctrlAddEditUser1.__OperationSucceeded += _UserAddedSuccessfully;
             ctrlAddEditUser1.__OperationFailed += _FaildToAddUser;
             ctrlAddEditUser1.__OperationCanceld += _OperationCanceld;
+        }
+        private void _HasPermissions()
+        {
+            if (!clsGlobal_BL.LoggedInUser.HasPermission(clsRole.enPermissions.Users_Add))
+            {
+                MessageBox.Show("You don't have permission to add Users.",
+                    "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Load += (s, e) => this.Close();
+                return;
+            }
         }
         public Action __OperationDoneSuccessfully;
         

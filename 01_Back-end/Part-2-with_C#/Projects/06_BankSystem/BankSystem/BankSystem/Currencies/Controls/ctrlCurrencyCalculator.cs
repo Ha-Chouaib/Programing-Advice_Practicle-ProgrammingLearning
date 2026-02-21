@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace BankSystem.Currencies.Controls
 {
@@ -16,9 +17,16 @@ namespace BankSystem.Currencies.Controls
         public ctrlCurrencyCalculator()
         {
             InitializeComponent();
-            _LoadCurrenciesNameToCombo();
             ctrlCurrencyFrom.__currencyCatched += _CatchCurrencyFrom;
             ctrlCurrencyTo.__currencyCatched += _CatchCurrencyTo;
+            clsUtil_PL.TextBoxHelper.AllowOnlyNumbers(txtAmount, true);
+
+        }
+        private void ctrlCurrencyCalculator_Load(object sender, EventArgs e)
+        {
+            if (DesignMode) return;
+            _LoadCurrenciesNameToCombo();
+           
         }
 
         enum enCurrency_Oprions { enFrom,enTo}
@@ -29,11 +37,12 @@ namespace BankSystem.Currencies.Controls
 
         private void _LoadCurrenciesNameToCombo()
         {
+
             DataTable dt = clsCurrencies.ListAll();
             Dictionary<string,string> dic = new Dictionary<string,string>();
             foreach (DataRow dr in dt.Rows)
             {
-                dic.Add($"{dr["Name"]}", $"{dr["Code"]}");
+                dic.Add($"{dr["Name"]}", $"{dr["ID"]}");
             }
 
             cmbCurrencyOptions.DataSource = new BindingSource(dic, null);
@@ -56,10 +65,10 @@ namespace BankSystem.Currencies.Controls
             {
                 case enCurrency_Oprions.enFrom:
                     
-                    ctrlCurrencyFrom.__ShowCard(cmbCurrencyOptions.SelectedValue.ToString());
+                    ctrlCurrencyFrom.__ShowCard((int)cmbCurrencyOptions.SelectedValue);
                     break;
                 case enCurrency_Oprions.enTo:
-                    ctrlCurrencyTo.__ShowCard(cmbCurrencyOptions.SelectedValue.ToString());
+                    ctrlCurrencyTo.__ShowCard((int)cmbCurrencyOptions.SelectedValue);
                     break;
                 default:
                     break;
@@ -115,12 +124,6 @@ namespace BankSystem.Currencies.Controls
             }
 
         }
-
-        private void txtAmount_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && !(e.KeyChar == '.' && !txtAmount.Text.Contains('.'));
-        }
-
         private void rbFrom_CheckedChanged(object sender, EventArgs e)
         {
             _DetectSelectedCurrencyType();
@@ -135,5 +138,7 @@ namespace BankSystem.Currencies.Controls
         {
             _CalculateAmount();
         }
+
+       
     }
 }

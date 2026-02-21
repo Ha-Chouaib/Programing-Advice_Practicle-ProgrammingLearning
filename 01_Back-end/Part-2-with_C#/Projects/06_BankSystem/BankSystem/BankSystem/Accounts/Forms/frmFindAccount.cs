@@ -16,48 +16,39 @@ namespace BankSystem.Accounts.Forms
         public frmFindAccount()
         {
             InitializeComponent();
-            ctrlFind1.Enabled = true;
-            ctrlFind1.__Initializing(_FilterBy_Options(),clsAccounts.FindBy);
-            ctrlFind1.__FindOptionsCombo.SelectedValueChanged += (s, e) =>
-            {
-                ctrlFind1.__txtSearchTerm.KeyPress -= null;
-                if (((KeyValuePair<int, string>)ctrlFind1.__FindOptionsCombo.SelectedItem).Value == "AccountID")
-                    ctrlFind1.__txtSearchTerm.KeyPress += (s1, e1) => { e1.Handled = !char.IsControl(e1.KeyChar) && !char.IsDigit(e1.KeyChar); };
-                else
-                    ctrlFind1.__txtSearchTerm.KeyPress += (s1, e1) => { e1.Handled = false; };
-            };
-            ctrlFind1.__ObjectFound += _GetAccountRecord;
+            _HasPermissions();
+            ctrlFindAccount1.__FindAccount();
         }
         public frmFindAccount(clsAccounts account)
         {
 
             InitializeComponent();
-            _DisplayAccountInfo(account);
+            _HasPermissions();
+           ctrlFindAccount1.__ShowCard(account);
         }
-        private void _DisplayAccountInfo(clsAccounts account)
+
+        public frmFindAccount(int accountId)
         {
-            ctrlFind1.__txtSearchTerm.Text = account.AccountID.ToString();
-            ctrlFind1.__FindOptionsCombo.Text = "Account ID";
-            ctrlFind1.Enabled = false;
-           _GetAccountRecord(this, account);
-        }
-        private void _GetAccountRecord(object s, object account)
-        {
-            ctrlAccountCard1.__DisplayAccountInfo(account as clsAccounts);
-            ctrlAccountCard1.__OnClose = () =>
-            {
-                this.Close();
-            };
+
+            InitializeComponent();
+            _HasPermissions();
+            ctrlFindAccount1.__ShowCard(accountId);
 
         }
-        private Dictionary<string, string> _FilterBy_Options()
+
+        private void _HasPermissions()
         {
-            Dictionary<string, string> Options = new Dictionary<string, string>
+            if (!clsGlobal_BL.LoggedInUser.HasPermission(clsRole.enPermissions.Accounts_Find))
             {
-                {"Account ID","AccountID" },
-                {"Account Number","AccountNumber" },
-            };
-            return Options;
+                MessageBox.Show("You don't have permission to Access accounts Info.",
+                    "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Load += (s, e) => this.Close();
+                return;
+            }
+        }
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

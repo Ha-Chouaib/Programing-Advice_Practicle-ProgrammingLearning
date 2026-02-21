@@ -153,6 +153,16 @@ namespace BankSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap currencies_6871665 {
+            get {
+                object obj = ResourceManager.GetObject("currencies_6871665", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap customers {
             get {
                 object obj = ResourceManager.GetObject("customers", resourceCulture);
@@ -193,6 +203,16 @@ namespace BankSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Deposit_Hm {
+            get {
+                object obj = ResourceManager.GetObject("Deposit_Hm", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DormantAccounts {
             get {
                 object obj = ResourceManager.GetObject("DormantAccounts", resourceCulture);
@@ -216,6 +236,16 @@ namespace BankSystem.Properties {
         internal static System.Drawing.Bitmap ErrorIcon {
             get {
                 object obj = ResourceManager.GetObject("ErrorIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exchange_money_17562018 {
+            get {
+                object obj = ResourceManager.GetObject("exchange-money_17562018", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -443,6 +473,16 @@ namespace BankSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap TransferMoney_logo {
+            get {
+                object obj = ResourceManager.GetObject("TransferMoney_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap up {
             get {
                 object obj = ResourceManager.GetObject("up", resourceCulture);
@@ -496,6 +536,16 @@ namespace BankSystem.Properties {
         internal static System.Drawing.Bitmap withdrawal {
             get {
                 object obj = ResourceManager.GetObject("withdrawal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap withdrawal_8813649 {
+            get {
+                object obj = ResourceManager.GetObject("withdrawal_8813649", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

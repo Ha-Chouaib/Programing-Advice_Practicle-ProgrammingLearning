@@ -74,7 +74,7 @@ namespace Bank_BusinessLayer
             public static (string valueMember, string DisplayMember) Gender { get; private set; } = ("Gender", "Gender");
             public static (string valueMember, string DisplayMember) FullName { get; private set; } = ("FullName", "Full Name");
             public static (string valueMember, string DisplayMember) Email { get; private set; } = ("Email", "Email");
-            public static (string valueMember, string DisplayMember) Address { get; private set; } = ("Email", "Email");
+            public static (string valueMember, string DisplayMember) Address { get; private set; } = ("Address", "Address");
             public static (string valueMember, string DisplayMember) Phone { get; private set; } = ("Phone", "Phone Number");
         }
         [Serializable]

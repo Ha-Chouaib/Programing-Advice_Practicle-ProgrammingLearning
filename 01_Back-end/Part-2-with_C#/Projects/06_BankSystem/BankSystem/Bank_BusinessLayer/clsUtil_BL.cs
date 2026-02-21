@@ -167,14 +167,28 @@ namespace Bank_BusinessLayer
             }
             public static bool IsExternalNamespaceCall()
             {
+                var stack = new StackTrace();
+                string targetNamespace = null;
+                bool foundTarget = false;
 
-                var target = GetTargetNamespace();
-                var caller = GetCallerNamespace();
+                for (int i = 0; i < stack.FrameCount; i++)
+                {
+                    var type = stack.GetFrame(i)?.GetMethod()?.DeclaringType;
+                    if (type == null || !IsUserType(type) || type == typeof(CallerInspector))
+                        continue;
 
-                if (string.IsNullOrEmpty(target)|| string.IsNullOrEmpty(caller))
-                    return false;
+                    if (!foundTarget)
+                    {
+                        targetNamespace = type.Namespace; // immediate method being inspected
+                        foundTarget = true;
+                        continue;
+                    }
 
-                return target != caller;
+                    // IMMEDIATE caller found - check only this one
+                    return type.Namespace != targetNamespace;
+                }
+
+                return false;
             }
             public static string GetTargetNamespace() => GetTargetType()?.Namespace ?? "";
             public static string GetCallerNamespace() => GetCallerType()?.Namespace ?? "";

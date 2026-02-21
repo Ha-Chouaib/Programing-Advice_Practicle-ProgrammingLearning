@@ -99,10 +99,22 @@ namespace BankSystem
                     Icon = Resources.bank_transaction,
                     SubItems = new List<clsMenuBtnModel>
                     {
-                        new clsMenuBtnModel { Key = "frmDeposit", Title = "Deposit",Icon = Resources.deposit },
-                        new clsMenuBtnModel { Key = "frmWithdraw", Title = "Withdraw" ,Icon= Resources.withdrawal},
-                        new clsMenuBtnModel { Key = "frmTransfer", Title = "Transfer" , Icon = Resources.TransferMoney },
-                        new clsMenuBtnModel { Key = "frmTransactionHistory", Title = "Transaction History" ,Icon = Resources.history}
+                        new clsMenuBtnModel { Key = "frmDepositMoney", Title = "Deposit",Icon = Resources.deposit },
+                        new clsMenuBtnModel { Key = "frmWithdrawMoney", Title = "Withdraw" ,Icon= Resources.withdrawal},
+                        new clsMenuBtnModel { Key = "frmTransferMoney", Title = "Transfer" , Icon = Resources.TransferMoney },
+                    }
+                },
+                 new clsMenuBtnModel
+                {
+                    Key = "Currencies",
+                    Title = "Currencies",
+                    Icon = Resources.currencies_6871665,
+                    SubItems = new List<clsMenuBtnModel>
+                    {
+                        new clsMenuBtnModel { Key = "frmManageCurrencies", Title = "Manage Currencies",Icon = Resources.currencies_6871665 },
+                        new clsMenuBtnModel { Key = "frmFindCarrency", Title = "Find Currency" , Icon = Resources.find_in_file },
+                        new clsMenuBtnModel { Key = "frmCurrencyCalculator", Title = "Exchange Money" ,Icon= Resources.exchange_money_17562018},
+                        new clsMenuBtnModel { Key = "frmCurrencyUpdateRate", Title = "Update Currency Rate" ,Icon = Resources.update}
                     }
                 },
             
@@ -115,8 +127,8 @@ namespace BankSystem
                     SubItems = new List<clsMenuBtnModel>
                     {
                         new clsMenuBtnModel { Key = "frmCustomerReports", Title = "Customer Report",Icon = Resources.reporter },
-                        new clsMenuBtnModel { Key = "frmTransactionReport", Title = "Transaction Report" ,Icon = Resources.bank_transaction__1_},
-                        new clsMenuBtnModel { Key = "frmUserActivityReport", Title = "User Activity Report",Icon = Resources.activity },
+                        new clsMenuBtnModel { Key = "frmTransactionReports", Title = "Transaction Report" ,Icon = Resources.bank_transaction__1_},
+                        new clsMenuBtnModel { Key = "frmManageUserReports", Title = "User Activity Report",Icon = Resources.activity },
                         new clsMenuBtnModel { Key = "frmSystemLogs", Title = "System Logs" ,Icon = Resources.log}
                     }
                 },

@@ -13,9 +13,11 @@ namespace BankSystem.User.UserControls
 {
     public partial class PopupFrm_UserPermissionSettings : Form
     {
-        public PopupFrm_UserPermissionSettings(ulong rolePermissions, ulong customPermissions, ulong revokedPermissions)
+        public PopupFrm_UserPermissionSettings(long rolePermissions, long customPermissions, long revokedPermissions)
         {
             InitializeComponent();
+            _HasPermissions();
+
             this.BringToFront();
             this.RolePermissions = rolePermissions;
             this.CustomPermissions = customPermissions;
@@ -26,13 +28,22 @@ namespace BankSystem.User.UserControls
         {
             InitializeComponent();
         }
-
-        public Action<ulong, ulong> __CustomPermissionsDone;
+        private void _HasPermissions()
+        {
+            if (!clsGlobal_BL.LoggedInUser.HasPermission(clsRole.enPermissions.Users_ManageRoles))
+            {
+                MessageBox.Show("You don't have permission to view people records.",
+                    "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Load += (s, e) => this.Close();
+                return;
+            }
+        }
+        public Action<long, long> __CustomPermissionsDone;
         public Action __Canceled;
 
-        private ulong CustomPermissions;
-        private ulong RevokedPermissions;
-        private ulong RolePermissions;
+        private long CustomPermissions;
+        private long RevokedPermissions;
+        private long RolePermissions;
         private void _LoadPermissions()
         {
             foreach(var perm in clsRole.GetPermissionsList())
@@ -47,7 +58,7 @@ namespace BankSystem.User.UserControls
                 };
                 chk.CheckedChanged += (s, e) =>
                 {
-                    ulong permValue = (ulong)chk.Tag;
+                    long permValue = (long)chk.Tag;
                     if ((RolePermissions & permValue) == permValue)
                     {
                         if (chk.Checked)

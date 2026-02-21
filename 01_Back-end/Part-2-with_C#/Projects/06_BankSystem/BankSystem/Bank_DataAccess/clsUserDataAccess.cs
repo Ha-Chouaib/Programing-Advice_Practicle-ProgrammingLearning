@@ -14,7 +14,7 @@ namespace Bank_DataAccess
     public class clsUserDataAccess
     {
 
-        public static int AddNewUser(int PersonID,string UserName,DateTime CreatedDate,int RoleID ,string Password, bool IsActive, int CreatedByUserID, ulong CustomPermissions,ulong RevokedPermissions)
+        public static int AddNewUser(int PersonID,string UserName,DateTime CreatedDate,int RoleID ,string Password, bool IsActive, int CreatedByUserID, long CustomPermissions,long RevokedPermissions)
         {
             string Query = "Sp_Users_AddNew";
             int UserID = -1;
@@ -59,7 +59,7 @@ namespace Bank_DataAccess
             return UserID;
         }
         public  static bool FindUserByID(int UserID ,ref int PersonID,ref string UserName,ref DateTime CreatedDate,
-            ref int RoleID,ref string Password,ref bool IsActive,ref int CreatedByUserID, ref ulong CustomPermissions,ref ulong RevokedPermissions)
+            ref int RoleID,ref string Password,ref bool IsActive,ref int CreatedByUserID, ref long CustomPermissions,ref long RevokedPermissions)
         {
             string Query = "Sp_User_GetByID";
             bool found= false;
@@ -84,8 +84,8 @@ namespace Bank_DataAccess
                             Password = rdr["Password"].ToString() ?? string.Empty;
                             IsActive = (rdr["IsActive"] != DBNull.Value) ? (bool)rdr["IsActive"] : false ;
                             CreatedByUserID = rdr["CreatedByUserID"]!= DBNull.Value ? Convert.ToInt32(rdr["CreatedByUserID"]) : -1;
-                            CustomPermissions = rdr["CustomPermissions"] != DBNull.Value ? Convert.ToUInt64(rdr["CustomPermissions"]) : 0UL;
-                            RevokedPermissions = rdr["RevokedPermissions"] != DBNull.Value? Convert.ToUInt64(rdr["RevokedPermissions"]) : 0UL;
+                            CustomPermissions = rdr["CustomPermissions"] != DBNull.Value ? Convert.ToInt64(rdr["CustomPermissions"]) : 0L;
+                            RevokedPermissions = rdr["RevokedPermissions"] != DBNull.Value? Convert.ToInt64(rdr["RevokedPermissions"]) : 0L;
                             found = true;
                         }
                     }
@@ -108,7 +108,7 @@ namespace Bank_DataAccess
         }
 
         public static bool FindUserByPersonID(int PersonID, ref int UserID , ref string UserName, ref DateTime CreatedDate,
-            ref int RoleID, ref string Password, ref bool IsActive, ref int CreatedByUserID, ref ulong CustomPermissions,ref ulong RevokedPermissions)
+            ref int RoleID, ref string Password, ref bool IsActive, ref int CreatedByUserID, ref long CustomPermissions,ref long RevokedPermissions)
         {
             string Query = "[dbo].[Sp_User_GetByPersonID]";
             bool found = false;
@@ -133,8 +133,8 @@ namespace Bank_DataAccess
                             Password = rdr["Password"].ToString() ?? string.Empty;
                             IsActive = (rdr["IsActive"] != DBNull.Value) ? (bool)rdr["IsActive"] : false;
                             CreatedByUserID = rdr["CreatedByUserID"] != DBNull.Value ? Convert.ToInt32(rdr["CreatedByUserID"]) : -1;
-                            CustomPermissions = rdr["CustomPermissions"] != DBNull.Value ? (ulong)rdr["CustomPermissions"] : 0;
-                            RevokedPermissions = rdr["RevokedPermissions"] != DBNull.Value ? (ulong)rdr["RevokedPermissions"] : 0;
+                            CustomPermissions = rdr["CustomPermissions"] != DBNull.Value ? (long)rdr["CustomPermissions"] : 0L;
+                            RevokedPermissions = rdr["RevokedPermissions"] != DBNull.Value ? (long)rdr["RevokedPermissions"] : 0L;
 
                             found = true;
                         }
@@ -158,7 +158,7 @@ namespace Bank_DataAccess
         }
 
         public static bool FindUserByName(string UserName , ref int UserID, ref int PersonID, ref DateTime CreatedDate,
-            ref int RoleID, ref string Password, ref bool IsActive, ref int CreatedByUserID, ref ulong CustomPermissions,ref ulong RevokedPermissions)
+            ref int RoleID, ref string Password, ref bool IsActive, ref int CreatedByUserID, ref long CustomPermissions,ref long RevokedPermissions)
         {
             string Query = "[dbo].[Sp_User_GetByName]";
             bool found = false;
@@ -183,8 +183,8 @@ namespace Bank_DataAccess
                             Password = rdr["Password"].ToString() ?? string.Empty;
                             IsActive = (rdr["IsActive"] != DBNull.Value) ? (bool)rdr["IsActive"] : false;
                             CreatedByUserID = rdr["CreatedByUserID"] != DBNull.Value ? Convert.ToInt32(rdr["CreatedByUserID"]) : -1;
-                            CustomPermissions = rdr["CustomPermissions"] != DBNull.Value ? (ulong)rdr["CustomPermissions"] : 0;
-                            RevokedPermissions = rdr["RevokedPermissions"] != DBNull.Value ? (ulong)rdr["RevokedPermissions"] : 0;
+                            CustomPermissions = rdr["CustomPermissions"] != DBNull.Value ? (long)rdr["CustomPermissions"] : 0L;
+                            RevokedPermissions = rdr["RevokedPermissions"] != DBNull.Value ? (long)rdr["RevokedPermissions"] : 0L;
 
                             found = true;
                         }
@@ -207,7 +207,7 @@ namespace Bank_DataAccess
 
         }
 
-        public static bool Update(int UserID,string UserName,string Password, int RoleID,bool IsActive,ulong CustomPermissions,ulong RevokedPermissions)
+        public static bool Update(int UserID,string UserName,string Password, int RoleID,bool IsActive,long CustomPermissions,long RevokedPermissions)
         {
             string Query = "[dbo].[Sp_User_Update]";
             bool Success = false;
@@ -411,7 +411,7 @@ namespace Bank_DataAccess
 
             return success;
         }
-        public static bool UpdateUserPermissions(int UserID, ulong CustomPermissions, ulong RevokedPermissions)
+        public static bool UpdateUserPermissions(int UserID, long CustomPermissions, long RevokedPermissions)
         {
             string Query = "[dbo].[Sp_User_UpdatePermissions]";
             bool success = false;
@@ -454,7 +454,7 @@ namespace Bank_DataAccess
 
         public static bool ExistsByID(int UserID)
         {
-            string Query = @" SELECT dbo.Fn_IsUserExistsByID(@UserID)";
+            string Query = @"SELECT dbo.Fn_IsUserExistsByID(@UserID)";
             bool Exists = false;
             try
             {
@@ -481,7 +481,7 @@ namespace Bank_DataAccess
         }
         public static bool ExistsByPersonID(int PersonID)
         {
-            string Query = @" SELECT dbo.Fn_IsUserExistsByPersonID(@PersonID)";
+            string Query = @"SELECT dbo.Fn_IsUserExistsByPersonID(@PersonID)";
             bool Exists = false;
             try
             {
@@ -508,7 +508,7 @@ namespace Bank_DataAccess
         }
         public static bool ExistsByUserName(string UserName)
         {
-            string Query = @" SELECT dbo.Fn_IsUserExistsByName(@UserName)";
+            string Query = @"SELECT dbo.Fn_IsUserExistsByName(@UserName)";
             bool Exists = false;
             try
             {
@@ -534,6 +534,33 @@ namespace Bank_DataAccess
             return Exists;
         }
 
+        public static long GetEffectivePermissions(int userId)
+        {
+            string Query = @"SELECT [dbo].[Fn_GetUserPermissions](@UserID)";
+            long permissions = 0;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
+                using (SqlCommand cmd = new SqlCommand(Query, connection))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@UserID", userId);
+
+                    connection.Open();
+                    object result = cmd.ExecuteScalar();
+                    if (result != null && long.TryParse(result.ToString(), out long perm)) permissions = perm;
+                }
+            }
+            catch (SqlException ex)
+            {
+                clsGlobal.LogError($"[DAL: User.GetEffectivePermissions() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                clsGlobal.LogError($"[DAL: User.GetEffectivePermissions() ] -> {ex.Message}");
+            }
+            return permissions;
+        }
         public static bool IsActive(int UserID)
         {
             string Query = @" SELECT dbo.Fn_IsUserActive(@UserID)";

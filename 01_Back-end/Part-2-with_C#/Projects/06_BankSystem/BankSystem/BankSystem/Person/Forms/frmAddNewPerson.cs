@@ -16,8 +16,19 @@ namespace BankSystem.Person
         public frmAddNewPerson()
         {
             InitializeComponent();
+            _HasPermissions();
             ctrlAddEditPerson1.OnPersonAdded_Updated += _GetNewPersonAdded;
             ctrlAddEditPerson1.OnOperationCanceled += _LeaveForm;
+        }
+        private void _HasPermissions()
+        {
+            if (!clsGlobal_BL.LoggedInUser.HasPermission(clsRole.enPermissions.People_Add))
+            {
+                MessageBox.Show("You don't have permission to add new person record.",
+                    "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Load += (s, e) => this.Close();
+                return;
+            }
         }
         clsPerson _Person= new clsPerson();
         public Action __RefreshContent;

@@ -1,0 +1,7 @@
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\09_WindowsServices\DatabaseBackupService\DatabaseBackupService\bin\Debug\DatabaseBackupService.exe.config
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\09_WindowsServices\DatabaseBackupService\DatabaseBackupService\bin\Debug\DatabaseBackupService.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\09_WindowsServices\DatabaseBackupService\DatabaseBackupService\bin\Debug\DatabaseBackupService.pdb
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\09_WindowsServices\DatabaseBackupService\DatabaseBackupService\obj\Debug\DatabaseBackupService.csproj.AssemblyReference.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\09_WindowsServices\DatabaseBackupService\DatabaseBackupService\obj\Debug\DatabaseBackupService.csproj.CoreCompileInputs.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\09_WindowsServices\DatabaseBackupService\DatabaseBackupService\obj\Debug\DatabaseBackupService.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\09_WindowsServices\DatabaseBackupService\DatabaseBackupService\obj\Debug\DatabaseBackupService.pdb
