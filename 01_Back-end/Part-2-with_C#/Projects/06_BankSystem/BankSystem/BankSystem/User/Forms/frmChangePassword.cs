@@ -16,13 +16,26 @@ namespace BankSystem.User.Forms
         public frmChangePassword()
         {
             InitializeComponent();
+            _HasPermissions();
             _EditPassword();
         }
         public frmChangePassword(int userID)
         {
             InitializeComponent();
+            _HasPermissions();
             _EditPassword(userID);
         }
+        private void _HasPermissions()
+        {
+            if (!clsGlobal_BL.LoggedInUser.HasPermission(clsRole.enPermissions.Users_ChangePassword))
+            {
+                MessageBox.Show("You don't have permission to change Users password.",
+                    "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Load += (s, e) => this.Close();
+                return;
+            }
+        }
+
         clsUser _SelectedUser;
         ErrorProvider _errorProvider = new ErrorProvider();
         public Action __OperationDoneSuccessfully;

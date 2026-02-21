@@ -16,16 +16,27 @@ namespace BankSystem.Person.Forms
         public frmShowPersonDetails()
         {
             InitializeComponent();
+            _HasPermissions();
         }
         public frmShowPersonDetails(int PersonID)
         {
             InitializeComponent();
-
+            _HasPermissions();
             person = clsPerson.Find(PersonID);
           if ( person != null)
             {
                 ctrlDisplayPersonDetails1.__ShowPersonalInfo(person);
                 ctrlDisplayPersonDetails1.__UpdatedPersonRecord += _GetUpdatedPersonRecord;
+            }
+        }
+        private void _HasPermissions()
+        {
+            if (!clsGlobal_BL.LoggedInUser.HasPermission(clsRole.enPermissions.People_View))
+            {
+                MessageBox.Show("You don't have permission to view people info.",
+                    "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Load += (s, e) => this.Close();
+                return;
             }
         }
         clsPerson person {  get; set; }

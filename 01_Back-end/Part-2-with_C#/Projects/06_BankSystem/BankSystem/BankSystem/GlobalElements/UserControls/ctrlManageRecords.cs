@@ -26,17 +26,25 @@ namespace BankSystem
         public PictureBox __HeaderImg => pbRecordsProfile;
         public Button __AddNewBtn => btnAddNew;
         public Button __UpdateBtn => btnUpdate;
-
+        public ContextMenuStrip __ContextMenuStrip => contextMenuStrip1;
         public byte __PageNumber { get; set; }= 1;
-        public byte __PageSize { get; set; } = 3;
+
+        [DefaultValue(50)]
+        public byte __PageSize { get; set; } = 50;
+
         public short __AvailablePages { get; set; } = 0;
 
         StringBuilder _Column = new StringBuilder();
         StringBuilder _Term = new StringBuilder();
 
         private Dictionary<string, Dictionary<string, string>> _FilterByGroups { get; set; }
-        public void __Initialize(Dictionary<string,string> FilterByOptions, FilterRecordsDelegate FilterDelegate,
-            List<(string ContextMenuKey,Action<int, ToolStripMenuItem> ContextMenuAction)> ContextMenuPackage,Dictionary<string,Dictionary<string,string>> FilterByGroups = null )
+        public void __Initialize
+            (
+            Dictionary<string,string> FilterByOptions,
+            FilterRecordsDelegate FilterDelegate,
+            List<((string valueMember,string displayMember) ContextMenu,Action<int, ToolStripMenuItem> ContextMenuAction)> ContextMenuPackage,
+            Dictionary<string,Dictionary<string,string>> FilterByGroups = null 
+            )
         {
 
             cmbFilterOptions.DataSource = new BindingSource(FilterByOptions, null);
@@ -52,12 +60,13 @@ namespace BankSystem
             __RefreshRecordsList();
 
         }
-        private void _LoadContextMenu(List<(string ContextMenuKey, Action<int,ToolStripMenuItem> ContextMenuAction)> ContextMenuPackage)
+        private void _LoadContextMenu(List<((string valueMember, string displayMember) ContextMenuItem, Action<int,ToolStripMenuItem> ContextMenuAction)> ContextMenuPackage)
         {
             contextMenuStrip1.Items.Clear();
             foreach (var action in ContextMenuPackage)
             {
-                var item = new ToolStripMenuItem(action.ContextMenuKey);
+                var item = new ToolStripMenuItem(action.ContextMenuItem.displayMember);
+                item.Name = action.ContextMenuItem.valueMember;
                 item.Click += (s, e) =>
                 {
                     if(int.TryParse(dgvListRecords.CurrentRow.Cells[0].Value.ToString(), out int SelectedRecordID))

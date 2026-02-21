@@ -20,29 +20,23 @@ namespace BankSystem
 
             public static void AllowOnlyNumbers(TextBox textBox, bool allowDecimal = false)
             {
-                if (_numericHandler != null)
-                    textBox.KeyPress -= _numericHandler;
+                RemoveNumericFilter(textBox);
 
                 _numericHandler = (s, e) =>
                 {
-                    if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-                    {
-                        if (!(allowDecimal && e.KeyChar == '.'))
-                            e.Handled = true;
-                    }
-
-                    if (allowDecimal && e.KeyChar == '.' && ((TextBox)s).Text.Contains('.'))
-                        e.Handled = true;
+                    e.Handled = !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && !(e.KeyChar == '.' && !textBox.Text.Contains('.') && allowDecimal);
                 };
 
                 textBox.KeyPress += _numericHandler;
             }
 
-            public static void RemoveNumericFilter(TextBox textBox)
+            private static void RemoveNumericFilter(TextBox textBox)
             {
                 if (_numericHandler != null)
                     textBox.KeyPress -= _numericHandler;
             }
+            
+
         }
         public static class FormHelper
         {

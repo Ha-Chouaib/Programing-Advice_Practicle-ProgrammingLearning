@@ -172,6 +172,8 @@ namespace Bank_BusinessLayer.Reports
         
         public static class AuditingHelper
         {
+            [ThreadStatic]
+            private static bool _isAuditing;
             public class ActionKeys
             {
                 public const string Addition = ".CREATE";
@@ -184,24 +186,35 @@ namespace Bank_BusinessLayer.Reports
 
             public static void AuditUserActivity(AuditAction action, (object TargetEntity,int?EntityID) EntityWrapper, AuditChanges Changes, AuditResult auditResult)
             {
-                var LoggedInUser = clsGlobal_BL.LoggedInUser;
+                if (_isAuditing) return; // ← breaks the recursion
+                _isAuditing = true;
+                try
+                {
+                    var LoggedInUser = clsGlobal_BL.LoggedInUser;
 
-                var PerformedByUser = new AuditPerformedBy();
-                PerformedByUser.UserID = LoggedInUser.UserID;
-                PerformedByUser.UserName = LoggedInUser.UserName;
-                PerformedByUser.Role = LoggedInUser.Role.RoleName;
+                    var PerformedByUser = new AuditPerformedBy();
+                    PerformedByUser.UserID = LoggedInUser.UserID;
+                    PerformedByUser.UserName = LoggedInUser.UserName;
+                    PerformedByUser.Role = LoggedInUser.Role.RoleName;
 
-                var MachineInfo = new AuditMachineInfo();
-                MachineInfo.MachineName = clsGlobal_BL.MachineInfo.GetMachineName();
-                MachineInfo.OSVersion = clsGlobal_BL.MachineInfo.GetOSVersion();
-                MachineInfo.IPAddress = clsGlobal_BL.MachineInfo.GetLocalIPAddress();
-                MachineInfo.SessionID = clsGlobal_BL.UserSession.SessionID;
+                    var MachineInfo = new AuditMachineInfo();
+                    MachineInfo.MachineName = clsGlobal_BL.MachineInfo.GetMachineName();
+                    MachineInfo.OSVersion = clsGlobal_BL.MachineInfo.GetOSVersion();
+                    MachineInfo.IPAddress = clsGlobal_BL.MachineInfo.GetLocalIPAddress();
+                    MachineInfo.SessionID = clsGlobal_BL.UserSession.SessionID;
 
-                var targetEntity = new AuditTargetEntity { EntityRecord = EntityWrapper.TargetEntity};
-               
+                    var targetEntity = new AuditTargetEntity { EntityRecord = EntityWrapper.TargetEntity };
 
-                var AuditContext = new AuditContext(PerformedByUser, action, targetEntity, Changes, auditResult, MachineInfo, 1);
-                clsAuditUserActions.AuditLogger(LoggedInUser.UserID, action.ActionKey, EntityWrapper.EntityID, auditResult.Success, AuditContext);
+
+                    var AuditContext = new AuditContext(PerformedByUser, action, targetEntity, Changes, auditResult, MachineInfo, 1);
+                    clsAuditUserActions.AuditLogger(LoggedInUser.UserID, action.ActionKey, EntityWrapper.EntityID, auditResult.Success, AuditContext);
+                }
+                finally
+                {
+                    _isAuditing = false; // ← always resets even if exception thrown
+                }
+
+              
 
             }
             public static void AuditCreateOperation((object TargetEntity, int? EntityID) EntityWrapper, bool OperationSucceed,( string sectionKey,string SectionDescription)section)

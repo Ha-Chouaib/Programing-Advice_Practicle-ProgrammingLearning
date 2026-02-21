@@ -50,5 +50,12 @@ namespace BankSystem.Currencies.Controls
             txtRate.Text = _currency.Rate.ToString();
 
         }
+    
+        public void __Refresh()
+        {
+            if (_currency == null) return;
+            _currency = clsCurrencies.FindByID(_currency.ID);
+            _DisplayCardInfo();
+        }
     }
 }

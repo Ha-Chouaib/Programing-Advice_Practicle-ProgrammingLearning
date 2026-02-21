@@ -81,6 +81,12 @@
     <Compile Include="Accounts\UserControls\ctrlAddNewAccount.Designer.cs">
       <DependentUpon>ctrlAddNewAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Accounts\UserControls\ctrlFindAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Accounts\UserControls\ctrlFindAccount.Designer.cs">
+      <DependentUpon>ctrlFindAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Currencies\Controls\ctrlCurrencyCalculator.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -104,6 +110,30 @@
     </Compile>
     <Compile Include="Currencies\Controls\ctrlFindCurrency.Designer.cs">
       <DependentUpon>ctrlFindCurrency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Currencies\Forms\frmCurrencyCalculator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Currencies\Forms\frmCurrencyCalculator.Designer.cs">
+      <DependentUpon>frmCurrencyCalculator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Currencies\Forms\frmCurrencyUpdateRate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Currencies\Forms\frmCurrencyUpdateRate.Designer.cs">
+      <DependentUpon>frmCurrencyUpdateRate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Currencies\Forms\frmFindCarrency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Currencies\Forms\frmFindCarrency.Designer.cs">
+      <DependentUpon>frmFindCarrency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Currencies\Forms\frmManageCurrencies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Currencies\Forms\frmManageCurrencies.Designer.cs">
+      <DependentUpon>frmManageCurrencies.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer\Forms\frmCustomerAccounts.cs">
       <SubType>Form</SubType>
@@ -264,69 +294,99 @@
     <Compile Include="GlobalElements\UserControls\SideBarMenu\ctrlSubMenu.Designer.cs">
       <DependentUpon>ctrlSubMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\Controls\ctrlAccountActtivityReport_Card.cs">
+    <Compile Include="Reports\Controls\Customer\ctrlAccountActtivityReport_Card.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Reports\Controls\ctrlAccountActtivityReport_Card.Designer.cs">
+    <Compile Include="Reports\Controls\Customer\ctrlAccountActtivityReport_Card.Designer.cs">
       <DependentUpon>ctrlAccountActtivityReport_Card.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\Controls\ctrlBalanceStatementReportCard.cs">
+    <Compile Include="Reports\Controls\Customer\ctrlBalanceStatementReportCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Reports\Controls\ctrlBalanceStatementReportCard.Designer.cs">
+    <Compile Include="Reports\Controls\Customer\ctrlBalanceStatementReportCard.Designer.cs">
       <DependentUpon>ctrlBalanceStatementReportCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\Controls\ctrlCustomerSummaryReportCard.cs">
+    <Compile Include="Reports\Controls\Customer\ctrlCustomerSummaryReportCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Reports\Controls\ctrlCustomerSummaryReportCard.Designer.cs">
+    <Compile Include="Reports\Controls\Customer\ctrlCustomerSummaryReportCard.Designer.cs">
       <DependentUpon>ctrlCustomerSummaryReportCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\Controls\ctrlDormantAccountsReportCard.cs">
+    <Compile Include="Reports\Controls\Customer\ctrlDormantAccountsReportCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Reports\Controls\ctrlDormantAccountsReportCard.Designer.cs">
+    <Compile Include="Reports\Controls\Customer\ctrlDormantAccountsReportCard.Designer.cs">
       <DependentUpon>ctrlDormantAccountsReportCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\Forms\frmAccountActivityReportCard.cs">
+    <Compile Include="Reports\Forms\CustomerReports\frmAccountActivityReportCard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reports\Forms\frmAccountActivityReportCard.Designer.cs">
+    <Compile Include="Reports\Forms\CustomerReports\frmAccountActivityReportCard.Designer.cs">
       <DependentUpon>frmAccountActivityReportCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\Forms\frmBalanceStatementReportCard.cs">
+    <Compile Include="Reports\Forms\CustomerReports\frmBalanceStatementReportCard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reports\Forms\frmBalanceStatementReportCard.Designer.cs">
+    <Compile Include="Reports\Forms\CustomerReports\frmBalanceStatementReportCard.Designer.cs">
       <DependentUpon>frmBalanceStatementReportCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\Forms\frmCustomerSummaryCard.cs">
+    <Compile Include="Reports\Forms\CustomerReports\frmCustomerSummaryCard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reports\Forms\frmCustomerSummaryCard.Designer.cs">
+    <Compile Include="Reports\Forms\CustomerReports\frmCustomerSummaryCard.Designer.cs">
       <DependentUpon>frmCustomerSummaryCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\Forms\frmDormantAccountsReportCard.cs">
+    <Compile Include="Reports\Forms\CustomerReports\frmDormantAccountsReportCard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reports\Forms\frmDormantAccountsReportCard.Designer.cs">
+    <Compile Include="Reports\Forms\CustomerReports\frmDormantAccountsReportCard.Designer.cs">
       <DependentUpon>frmDormantAccountsReportCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\ReportsInitializer\clsInitializeAccountActivityReport.cs" />
     <Compile Include="Reports\ReportsInitializer\clsInitializeBalanceStatementReport.cs" />
     <Compile Include="Reports\ReportsInitializer\clsInitializeCustomeSummaryrReport.cs" />
     <Compile Include="Reports\ReportsInitializer\clsInitializeDormantAccountsReport.cs" />
-    <Compile Include="Reports\Forms\frmCustomerReports.cs">
+    <Compile Include="Reports\Forms\CustomerReports\frmCustomerReports.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reports\Forms\frmCustomerReports.Designer.cs">
+    <Compile Include="Reports\Forms\CustomerReports\frmCustomerReports.Designer.cs">
       <DependentUpon>frmCustomerReports.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\UserReport\frmManageUserReports.cs">
+    <Compile Include="Reports\Forms\UserReport\frmManageUserReports.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reports\UserReport\frmManageUserReports.Designer.cs">
+    <Compile Include="Reports\Forms\UserReport\frmManageUserReports.Designer.cs">
       <DependentUpon>frmManageUserReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\Controls\ctrlDeposit_Withdrawal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Transactions\Controls\ctrlDeposit_Withdrawal.Designer.cs">
+      <DependentUpon>ctrlDeposit_Withdrawal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\Controls\ctrlTransferMoney.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Transactions\Controls\ctrlTransferMoney.Designer.cs">
+      <DependentUpon>ctrlTransferMoney.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\Forms\frmDepositMoney.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\Forms\frmDepositMoney.Designer.cs">
+      <DependentUpon>frmDepositMoney.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\Forms\frmTransferMoney.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\Forms\frmTransferMoney.Designer.cs">
+      <DependentUpon>frmTransferMoney.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\Forms\frmWithdrawMoney.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\Forms\frmWithdrawMoney.Designer.cs">
+      <DependentUpon>frmWithdrawMoney.cs</DependentUpon>
     </Compile>
     <Compile Include="User\Forms\frmAddNewUser.cs">
       <SubType>Form</SubType>
@@ -397,6 +457,9 @@
     <EmbeddedResource Include="Accounts\UserControls\ctrlAddNewAccount.resx">
       <DependentUpon>ctrlAddNewAccount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\UserControls\ctrlFindAccount.resx">
+      <DependentUpon>ctrlFindAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Currencies\Controls\ctrlCurrencyCalculator.resx">
       <DependentUpon>ctrlCurrencyCalculator.cs</DependentUpon>
     </EmbeddedResource>
@@ -408,6 +471,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Currencies\Controls\ctrlFindCurrency.resx">
       <DependentUpon>ctrlFindCurrency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Currencies\Forms\frmCurrencyCalculator.resx">
+      <DependentUpon>frmCurrencyCalculator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Currencies\Forms\frmCurrencyUpdateRate.resx">
+      <DependentUpon>frmCurrencyUpdateRate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Currencies\Forms\frmFindCarrency.resx">
+      <DependentUpon>frmFindCarrency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Currencies\Forms\frmManageCurrencies.resx">
+      <DependentUpon>frmManageCurrencies.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\Forms\frmCustomerAccounts.resx">
       <DependentUpon>frmCustomerAccounts.cs</DependentUpon>
@@ -489,35 +564,50 @@
     <EmbeddedResource Include="GlobalElements\UserControls\SideBarMenu\ctrlSubMenu.resx">
       <DependentUpon>ctrlSubMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Controls\ctrlAccountActtivityReport_Card.resx">
+    <EmbeddedResource Include="Reports\Controls\Customer\ctrlAccountActtivityReport_Card.resx">
       <DependentUpon>ctrlAccountActtivityReport_Card.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Controls\ctrlBalanceStatementReportCard.resx">
+    <EmbeddedResource Include="Reports\Controls\Customer\ctrlBalanceStatementReportCard.resx">
       <DependentUpon>ctrlBalanceStatementReportCard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Controls\ctrlCustomerSummaryReportCard.resx">
+    <EmbeddedResource Include="Reports\Controls\Customer\ctrlCustomerSummaryReportCard.resx">
       <DependentUpon>ctrlCustomerSummaryReportCard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Controls\ctrlDormantAccountsReportCard.resx">
+    <EmbeddedResource Include="Reports\Controls\Customer\ctrlDormantAccountsReportCard.resx">
       <DependentUpon>ctrlDormantAccountsReportCard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Forms\frmAccountActivityReportCard.resx">
+    <EmbeddedResource Include="Reports\Forms\CustomerReports\frmAccountActivityReportCard.resx">
       <DependentUpon>frmAccountActivityReportCard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Forms\frmBalanceStatementReportCard.resx">
+    <EmbeddedResource Include="Reports\Forms\CustomerReports\frmBalanceStatementReportCard.resx">
       <DependentUpon>frmBalanceStatementReportCard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Forms\frmCustomerReports.resx">
+    <EmbeddedResource Include="Reports\Forms\CustomerReports\frmCustomerReports.resx">
       <DependentUpon>frmCustomerReports.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Forms\frmCustomerSummaryCard.resx">
+    <EmbeddedResource Include="Reports\Forms\CustomerReports\frmCustomerSummaryCard.resx">
       <DependentUpon>frmCustomerSummaryCard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Forms\frmDormantAccountsReportCard.resx">
+    <EmbeddedResource Include="Reports\Forms\CustomerReports\frmDormantAccountsReportCard.resx">
       <DependentUpon>frmDormantAccountsReportCard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\UserReport\frmManageUserReports.resx">
+    <EmbeddedResource Include="Reports\Forms\UserReport\frmManageUserReports.resx">
       <DependentUpon>frmManageUserReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\Controls\ctrlDeposit_Withdrawal.resx">
+      <DependentUpon>ctrlDeposit_Withdrawal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\Controls\ctrlTransferMoney.resx">
+      <DependentUpon>ctrlTransferMoney.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\Forms\frmDepositMoney.resx">
+      <DependentUpon>frmDepositMoney.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\Forms\frmTransferMoney.resx">
+      <DependentUpon>frmTransferMoney.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\Forms\frmWithdrawMoney.resx">
+      <DependentUpon>frmWithdrawMoney.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\Forms\frmAddNewUser.resx">
       <DependentUpon>frmAddNewUser.cs</DependentUpon>
@@ -711,7 +801,19 @@
     <None Include="Resources\SuccessIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Currencies\Forms\" />
+    <None Include="Resources\currencies_6871665.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exchange-money_17562018.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TransferMoney_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\withdrawal_8813649.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Deposit_Hm.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

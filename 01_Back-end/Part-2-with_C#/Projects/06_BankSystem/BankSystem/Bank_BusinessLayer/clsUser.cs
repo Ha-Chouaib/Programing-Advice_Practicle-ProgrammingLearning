@@ -12,6 +12,7 @@ using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
+using static Bank_BusinessLayer.clsRole;
 using static Bank_BusinessLayer.Reports.clsAuditUserActions;
 using static System.Collections.Specialized.BitVector32;
 
@@ -38,9 +39,9 @@ namespace Bank_BusinessLayer
         public string Password { get; set; }
         public bool IsActive { get; set; }
         public int CreatedByUserID { get; set; }
-        public ulong CustomPermissions { get; set; }
-        public ulong RevokedPermissions { get; set; }
-        public ulong EffectivePermissions { get; set; }
+        public long CustomPermissions { get; set; }
+        public long RevokedPermissions { get; set; }
+        public long EffectivePermissions { get; set; }
         enum enMode { enAddNew, enUpdate }
         enMode _Mode = enMode.enAddNew;
         
@@ -64,7 +65,7 @@ namespace Bank_BusinessLayer
             _Mode = enMode.enAddNew;
         }
         private clsUser(int UserID, int PersonID, string UserName, DateTime CreatedDate, int RoleID, string Password, bool IsActive,
-            int CreatedByUserID, ulong CustomPermissions, ulong RevokedPermissions)
+            int CreatedByUserID, long CustomPermissions, long RevokedPermissions)
         {
             this.UserID = UserID;
             this.PersonID = PersonID;
@@ -179,8 +180,8 @@ namespace Bank_BusinessLayer
             string Password = "";
             bool IsActive = false;
             int CreatedByUserID = -1;
-            ulong CustomPermissions = 0;
-            ulong RevokedPermissions = 0;
+            long CustomPermissions = 0;
+            long RevokedPermissions = 0;
 
             clsUser _user = null;
             bool _Success = false;
@@ -207,8 +208,8 @@ namespace Bank_BusinessLayer
             string Password = "";
             bool IsActive = false;
             int CreatedByUserID = -1;
-            ulong CustomPermissions = 0;
-            ulong RevokedPermissions = 0;
+            long CustomPermissions = 0;
+            long RevokedPermissions = 0;
 
             clsUser _User = null;
             bool _Success = false;
@@ -233,8 +234,8 @@ namespace Bank_BusinessLayer
             string Password = "";
             bool IsActive = false;
             int CreatedByUserID = -1;
-            ulong CustomPermissions = 0;
-            ulong RevokedPermissions = 0;
+            long CustomPermissions = 0;
+            long RevokedPermissions = 0;
 
             clsUser _user = null;
             bool _success = false;
@@ -317,7 +318,7 @@ namespace Bank_BusinessLayer
             AuditingHelper.AuditUpdateOperation(OperationSucceed, (_SectionKey, "Update User Status Only"), changes.Before, changes.After, UserID);
             return OperationSucceed;
         }
-        public static bool UpdateUserPermissions(int UserID, ulong CustomPermissions, ulong RevokedPermissions)
+        public static bool UpdateUserPermissions(int UserID, long CustomPermissions, long RevokedPermissions)
         {
 
 
@@ -347,8 +348,21 @@ namespace Bank_BusinessLayer
         }
         public bool HasPermission(clsRole.enPermissions permission)
         {
-            bool hasPerm = (this.EffectivePermissions & (ulong)permission) == (ulong)permission;
+            bool hasPerm = (GetEffectivePemissions() & (long)permission) == (long)permission;
             return hasPerm;
+        }
+        public bool HasPermission(enRolePresets preset)
+        {
+            return (EffectivePermissions & (long)preset) == (long)preset;
+        }
+
+        public long GetEffectivePemissions()
+        {
+            return GetEffectivePemissions(this.UserID);
+        }
+        public static long GetEffectivePemissions(int userId)
+        {
+            return clsUserDataAccess.GetEffectivePermissions(userId);
         }
         public static bool Delete(int UserID, int DeletedByUserID)
         {

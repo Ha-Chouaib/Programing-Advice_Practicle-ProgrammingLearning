@@ -232,7 +232,7 @@ namespace Bank_DataAccess
             return Exists;
 
         }
-        
+       
         public static bool Update(int AccountID,byte AccountType,double Balance,  bool IsActive)
         {
 

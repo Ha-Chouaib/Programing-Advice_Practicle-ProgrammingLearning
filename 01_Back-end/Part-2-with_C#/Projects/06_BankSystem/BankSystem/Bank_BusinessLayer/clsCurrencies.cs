@@ -65,7 +65,6 @@ namespace Bank_BusinessLayer
             }
             return null;
         }
-
         public static clsCurrencies FindByCode(string code)
         {
             int id = -1;
@@ -142,15 +141,19 @@ namespace Bank_BusinessLayer
         }
         public bool UpdateRate()
         {
-            var OldRecord = FindByCode(this.Code);
-            bool OperationSucceed = clsCurrencies_DAL.UpdateRateByCode(Code, Rate);
-            var NewRecord = FindByCode(this.Code);
+           return UpdateRate(this.ID, this.Rate);
+        }
+        public static bool UpdateRate(int currencyID,float rate)
+        {
+            var OldRecord = FindByID(currencyID);
+            bool OperationSucceed = clsCurrencies_DAL.UpdateRateByID(currencyID, rate);
+            var NewRecord = FindByID(currencyID);
 
             var changes = clsUtil_BL.HandleObjectsHelper.CompareObjects(OldRecord, NewRecord);
-            AuditingHelper.AuditUpdateOperation(OperationSucceed, (_SectionKey, $"Update rate for currency [{Code}] to Rate [{Rate}]"), changes.Before, changes.After, this.ID);
+            AuditingHelper.AuditUpdateOperation(OperationSucceed, (_SectionKey, $"Update rate for currency [{NewRecord.Code}] to Rate [{rate}]"), changes.Before, changes.After, currencyID);
             return OperationSucceed;
         }
-
+       
         public static double CalculateCurrency(double amount, float FromRate, float ToRate)
         {
             double amountInUSD = amount / FromRate;
@@ -167,41 +170,52 @@ namespace Bank_BusinessLayer
             return clsCurrencies_DAL.GetRateByCode(code);
         }
 
-        private static DataTable _Filter(string country, string name, string code)
+        private static DataTable _Filter(string country, string name, string code,  short pageNumber, short pageSize, out short availablePages)
         {
-            DataTable dt = clsCurrencies_DAL.Filter(country, name, code);
+            int totalRows = 0;
+            DataTable dt = clsCurrencies_DAL.Filter(country, name, code, pageNumber, pageSize, out totalRows);
+            availablePages = (short)Math.Ceiling((double)totalRows / pageSize);
             return dt;
         }
 
+        public static DataTable ListAll(byte pageNumber, byte pageSize, out short availablePages)
+        {
+            DataTable dt = _Filter(null, null, null, pageNumber, pageSize, out availablePages);
+            AuditingHelper.AuditReadRecordsListOperation(dt != null, (_SectionKey, "List All Currencies"));
+            return dt;
+        }
         public static DataTable ListAll()
         {
-            DataTable dt = _Filter(null, null, null);
-            //AuditingHelper.AuditReadRecordsListOperation(dt != null, (_SectionKey, "List All Currencies"));
+            short pageNumber =0;
+            short pageSize = -1;
+            short availablePages;
+            DataTable dt = _Filter(null, null, null, pageNumber, pageSize, out availablePages);
+            
             return dt;
         }
 
-        public static DataTable FilterByCountry(string country)
+        public static DataTable FilterByCountry(string country, byte pageNumber, byte pageSize, out short availablePages)
         {
-            DataTable dt = _Filter(country, null, null);
+            DataTable dt = _Filter(country, null, null, pageNumber, pageSize, out availablePages);
             AuditingHelper.AuditReadRecordsListOperation(dt != null, (_SectionKey, $"Filter currencies by country [{country}]"));
             return dt;
         }
 
-        public static DataTable FilterByName(string name)
+        public static DataTable FilterByName(string name, byte pageNumber, byte pageSize, out short availablePages)
         {
-            DataTable dt = _Filter(null, name, null);
+            DataTable dt = _Filter(null, name, null, pageNumber, pageSize, out availablePages);
             AuditingHelper.AuditReadRecordsListOperation(dt != null, (_SectionKey, $"Filter currencies by name [{name}]"));
             return dt;
         }
 
-        public static DataTable FilterByCode(string code)
+        public static DataTable FilterByCode(string code, byte pageNumber, byte pageSize, out short availablePages)
         {
-            DataTable dt = _Filter(null, null, code);
+            DataTable dt = _Filter(null, null, code, pageNumber, pageSize, out availablePages);
             AuditingHelper.AuditReadRecordsListOperation(dt != null, (_SectionKey, $"Filter currencies by code [{code}]"));
             return dt;
         }
         
-        private delegate DataTable FilterDelegate(string term);
+        private delegate DataTable FilterDelegate(string term, byte pageNumber, byte pageSize, out short availablePages);
         private static Dictionary<string, FilterDelegate> _filterActions;
         private static Dictionary<string, FilterDelegate> _FilterActions
         {
@@ -211,24 +225,24 @@ namespace Bank_BusinessLayer
                 {
                     _filterActions = new Dictionary<string, FilterDelegate>
             {
-                { Filter_Mapping.Country.valueMember, (t)=> FilterByCountry(t) },
-                { Filter_Mapping.Name.valueMember,    (t)=> FilterByName(t) },
-                { Filter_Mapping.Code.valueMember,    (t)=> FilterByCode(t) },
-                { Filter_Mapping.All.valueMember,     (t)=> ListAll() }
+                { Filter_Mapping.Country.valueMember, (string t,byte Pn,byte Ps,out short Pgs)=> FilterByCountry(t,Pn,Ps,out Pgs) },
+                { Filter_Mapping.Name.valueMember,    (string t,byte Pn,byte Ps,out short Pgs)=> FilterByName(t,Pn,Ps,out Pgs) },
+                { Filter_Mapping.Code.valueMember,    (string t,byte Pn,byte Ps,out short Pgs)=> FilterByCode(t,Pn,Ps,out Pgs) },
+                { Filter_Mapping.All.valueMember,     (string t,byte Pn,byte Ps,out short Pgs)=> ListAll(Pn,Ps,out Pgs) }
             };
                 }
                 return _filterActions;
             }
         }
 
-        public static DataTable Filter(string column, string term)
+        public static DataTable Filter(string column, string term, byte pageNumber, byte pageSize, out short availablePages)
         {
             term = term?.Trim();
 
             if (_FilterActions.TryGetValue(column, out FilterDelegate action))
-                return action(term);
+                return action(term,pageNumber,pageSize,out availablePages);
 
-            return ListAll();
+            return ListAll(pageNumber, pageSize, out availablePages);
         }
     }
 }

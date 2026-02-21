@@ -19,7 +19,7 @@ namespace BankSystem.Reports
 
         private ctrlManageRecords _RecordsManager { get; set; }
 
-
+       
         public void LoadManageRecordsControl()
         {
             _RecordsManager.__UpdateBtn.Visible = false;
@@ -35,15 +35,21 @@ namespace BankSystem.Reports
         {
             return clsUtil_BL.MappingHelper.GetOptionsFromMapping(typeof(clsAccountActivityReports.Filter_Mapping));
         }
-        private List<(string ContextMenuKey, Action<int, ToolStripMenuItem> ContextMenuAction)> _ContextMenuPackage()
+
+        static class _contextMenuItems
         {
-            List<(string ContextMenuKey, Action<int, ToolStripMenuItem> ContextMenuAction)> ContextMenuItems = new List<(string ContextMenuKey, Action<int, ToolStripMenuItem> ContextMenuAction)>
+            public static (string valueMember, string displayMember) viewDeatails => ("ViewDetails", "View Details");
+        }
+        private List<((string valueMember, string displayMember) ContextMenuItem, Action<int, ToolStripMenuItem> ContextMenuAction)> _ContextMenuPackage()
+        {
+            var contextMenuItems = new List<((string valueMember, string displayMember), Action<int, ToolStripMenuItem>)>
             {
-                ("View Details", _ContextMenuViewReportDetails),
+                (_contextMenuItems.viewDeatails, _ContextMenuViewReportDetails),
             };
 
-            return ContextMenuItems;
+            return contextMenuItems;
         }
+
         private Dictionary<string, Dictionary<string, string>> _FilterByGroups()
         {
             return clsUtil_BL.MappingHelper.FilterBy_Groups(typeof(clsAccountActivityReports.Filter_ByGroupsMapping));

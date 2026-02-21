@@ -1,5 +1,6 @@
 ﻿using Bank_BusinessLayer;
 using BankSystem.Accounts.Forms;
+using BankSystem.Transactions.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,8 @@ namespace BankSystem.Accounts.UserControls
             InitializeComponent();
            
         }
+        clsAccounts _selectedAccount = new clsAccounts();
+
         public void __InitializControl()
         {
             ctrlFindCustomer1.__initializeFindControl();
@@ -33,23 +36,26 @@ namespace BankSystem.Accounts.UserControls
             }
             _GetCustomerID(CustomerID);
         }
-        
+
+
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
-            clsAccounts selectedAccount = new clsAccounts();
             if (dgvCustomerAccounts.CurrentRow != null)
             {
-                selectedAccount = clsAccounts.FindByID((int)dgvCustomerAccounts.CurrentRow.Cells[0].Value);
+                _selectedAccount = clsAccounts.FindByID((int)dgvCustomerAccounts.CurrentRow.Cells[0].Value);
             } 
-            if(selectedAccount != null)
+            if(_selectedAccount != null)
             {
 
-                activeItem.Enabled = !selectedAccount.IsActive;
-                inactiveItem.Enabled = selectedAccount.IsActive;
+                activeItem.Enabled = !_selectedAccount.IsActive;
+                inactiveItem.Enabled = _selectedAccount.IsActive;
 
-                transferItem.Enabled = withdrawalItem.Enabled = (selectedAccount.Balance > 0);
+                transferItem.Enabled = withdrawalItem.Enabled = (_selectedAccount.Balance > 0);
 
             }
+            depositItem.Visible = clsGlobal_BL.LoggedInUser.HasPermission(clsRole.enPermissions.Transactions_Deposit);
+            withdrawalItem.Visible = clsGlobal_BL.LoggedInUser.HasPermission(clsRole.enPermissions.Transactions_Withdraw);
+            transferItem.Visible = clsGlobal_BL.LoggedInUser.HasPermission(clsRole.enPermissions.Transactions_Transfer);
         }
         private void _GetCustomerID(int CustomerID)
         {
@@ -68,19 +74,20 @@ namespace BankSystem.Accounts.UserControls
 
         private void depositItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("TO DO");
+            frmDepositMoney dep = new frmDepositMoney(_selectedAccount);
+            dep.ShowDialog();
         }
 
         private void transferItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("TO DO");
-
+            frmTransferMoney tran = new frmTransferMoney(_selectedAccount);
+            tran.ShowDialog();
         }
 
         private void withdrawalItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("TO DO");
-
+            frmWithdrawMoney withd = new frmWithdrawMoney(_selectedAccount);
+            withd.ShowDialog();
         }
 
         private void activeItem_Click(object sender, EventArgs e)

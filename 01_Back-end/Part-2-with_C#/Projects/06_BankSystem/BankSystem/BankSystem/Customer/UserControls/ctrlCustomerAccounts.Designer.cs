@@ -55,9 +55,10 @@
             this.dgvCustomerAccounts.AllowUserToResizeRows = false;
             this.dgvCustomerAccounts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCustomerAccounts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
-            this.dgvCustomerAccounts.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCustomerAccounts.BackgroundColor = System.Drawing.Color.Black;
             this.dgvCustomerAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCustomerAccounts.ContextMenuStrip = this.contextMenuStrip1;
+            this.dgvCustomerAccounts.GridColor = System.Drawing.SystemColors.HighlightText;
             this.dgvCustomerAccounts.Location = new System.Drawing.Point(3, 538);
             this.dgvCustomerAccounts.Name = "dgvCustomerAccounts";
             this.dgvCustomerAccounts.ReadOnly = true;
@@ -107,21 +108,21 @@
             // depositItem
             // 
             this.depositItem.Name = "depositItem";
-            this.depositItem.Size = new System.Drawing.Size(168, 26);
+            this.depositItem.Size = new System.Drawing.Size(224, 26);
             this.depositItem.Text = "Deposit";
             this.depositItem.Click += new System.EventHandler(this.depositItem_Click);
             // 
             // withdrawalItem
             // 
             this.withdrawalItem.Name = "withdrawalItem";
-            this.withdrawalItem.Size = new System.Drawing.Size(168, 26);
+            this.withdrawalItem.Size = new System.Drawing.Size(224, 26);
             this.withdrawalItem.Text = "Withdrawal";
             this.withdrawalItem.Click += new System.EventHandler(this.withdrawalItem_Click);
             // 
             // transferItem
             // 
             this.transferItem.Name = "transferItem";
-            this.transferItem.Size = new System.Drawing.Size(168, 26);
+            this.transferItem.Size = new System.Drawing.Size(224, 26);
             this.transferItem.Text = "Transfer";
             this.transferItem.Click += new System.EventHandler(this.transferItem_Click);
             // 
@@ -137,14 +138,14 @@
             // activeItem
             // 
             this.activeItem.Name = "activeItem";
-            this.activeItem.Size = new System.Drawing.Size(143, 26);
+            this.activeItem.Size = new System.Drawing.Size(224, 26);
             this.activeItem.Text = "Active";
             this.activeItem.Click += new System.EventHandler(this.activeItem_Click);
             // 
             // inactiveItem
             // 
             this.inactiveItem.Name = "inactiveItem";
-            this.inactiveItem.Size = new System.Drawing.Size(143, 26);
+            this.inactiveItem.Size = new System.Drawing.Size(224, 26);
             this.inactiveItem.Text = "Inactive";
             this.inactiveItem.Click += new System.EventHandler(this.inactiveItem_Click);
             // 
@@ -183,7 +184,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.Controls.Add(this.ctrlFindCustomer1);
             this.Controls.Add(this.lblAccountsCount);
             this.Controls.Add(this.label2);

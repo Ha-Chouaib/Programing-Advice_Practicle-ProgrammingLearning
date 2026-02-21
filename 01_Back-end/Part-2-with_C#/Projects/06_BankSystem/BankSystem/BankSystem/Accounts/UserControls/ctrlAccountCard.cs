@@ -19,12 +19,13 @@ namespace BankSystem.Accounts.UserControls
             InitializeComponent();
         }
 
-        public Action __OnClose;
         private clsAccounts _account;
+        public Action<clsAccounts> __AccountObjectCatched; 
         public void __DisplayAccountInfo(clsAccounts account)
         {
             _account = account;
             if (_account == null) return;
+            __AccountObjectCatched?.Invoke(_account);
 
             txtCustomerName.Text = _account.CustomerInf.PersonalInf.FullName;
             txtCustomerID.Text = _account.CustomerID.ToString();
@@ -61,10 +62,10 @@ namespace BankSystem.Accounts.UserControls
             }
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        public void __Refresh()
         {
-            __OnClose?.Invoke();
+            if (_account != null)
+                __DisplayAccountInfo(clsAccounts.FindByID(_account.AccountID));
         }
     }
 }

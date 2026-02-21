@@ -16,6 +16,7 @@ namespace BankSystem.Customer.Forms
         public frmAddNewCustomer()
         {
             InitializeComponent();
+            _HasPermissions();
 
             ctrlAddEditCustomer1.__AddNewCustomer();
             ctrlAddEditCustomer1.__Added_Updated_Record += GetOperationResult;
@@ -24,10 +25,21 @@ namespace BankSystem.Customer.Forms
         public frmAddNewCustomer(int personID)
         {
             InitializeComponent();
+            _HasPermissions();
 
             ctrlAddEditCustomer1.__AddNewCustomer(personID);
             ctrlAddEditCustomer1.__Added_Updated_Record += GetOperationResult;
             ctrlAddEditCustomer1.__CancelOperation += _CloseForm;
+        }
+        private void _HasPermissions()
+        {
+            if (!clsGlobal_BL.LoggedInUser.HasPermission(clsRole.enPermissions.Customers_Add))
+            {
+                MessageBox.Show("You don't have permission to add customers.",
+                    "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Load += (s, e) => this.Close();
+                return;
+            }
         }
         public Action<clsCustomer> __NewCustomerAdded;
         public Action __OperatinDoneSuccessfully;

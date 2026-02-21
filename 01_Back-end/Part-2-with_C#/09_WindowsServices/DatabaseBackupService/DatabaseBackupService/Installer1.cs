@@ -20,7 +20,7 @@ namespace DatabaseBackupService
 
             serviceProcessInstaller = new ServiceProcessInstaller
             {
-                Account = ServiceAccount.LocalService,// are you sure
+                Account = ServiceAccount.LocalSystem
 
             };
             serviceInstaller = new ServiceInstaller
@@ -29,7 +29,7 @@ namespace DatabaseBackupService
                 DisplayName = "Database Backup Service",
                 StartType = ServiceStartMode.Automatic,
                 Description = "Backup a Target Database to specific destination.",
-               //come back to here nigga ServicesDependedOn = new string[] { "RpcSs", "EventLog", "LanManWorkstation" }
+               ServicesDependedOn = new string[] { "MSSQLSERVER"}
 
             };
 

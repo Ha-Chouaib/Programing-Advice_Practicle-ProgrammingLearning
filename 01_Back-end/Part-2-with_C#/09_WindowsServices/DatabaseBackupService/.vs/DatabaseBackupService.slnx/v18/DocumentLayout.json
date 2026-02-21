@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\DatabaseBackupService\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A1234F69-E750-4314-80B3-3DAE390D1CBF}|DatabaseBackupService\\DatabaseBackupService.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\DatabaseBackupService\\databasebackupservice\\databasebackupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A1234F69-E750-4314-80B3-3DAE390D1CBF}|DatabaseBackupService\\DatabaseBackupService.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\09_windowsservices\\databasebackupservice\\databasebackupservice\\databasebackupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A1234F69-E750-4314-80B3-3DAE390D1CBF}|DatabaseBackupService\\DatabaseBackupService.csproj|solutionrelative:databasebackupservice\\databasebackupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1234F69-E750-4314-80B3-3DAE390D1CBF}|DatabaseBackupService\\DatabaseBackupService.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\09_windowsservices\\databasebackupservice\\databasebackupservice\\clssettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1234F69-E750-4314-80B3-3DAE390D1CBF}|DatabaseBackupService\\DatabaseBackupService.csproj|solutionrelative:databasebackupservice\\clssettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A1234F69-E750-4314-80B3-3DAE390D1CBF}|DatabaseBackupService\\DatabaseBackupService.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\DatabaseBackupService\\databasebackupservice\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A1234F69-E750-4314-80B3-3DAE390D1CBF}|DatabaseBackupService\\DatabaseBackupService.csproj|solutionrelative:databasebackupservice\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A1234F69-E750-4314-80B3-3DAE390D1CBF}|DatabaseBackupService\\DatabaseBackupService.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\DatabaseBackupService\\databasebackupservice\\clsbackup_db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A1234F69-E750-4314-80B3-3DAE390D1CBF}|DatabaseBackupService\\DatabaseBackupService.csproj|solutionrelative:databasebackupservice\\clsbackup_db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1234F69-E750-4314-80B3-3DAE390D1CBF}|DatabaseBackupService\\DatabaseBackupService.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\DatabaseBackupService\\databasebackupservice\\clssettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1234F69-E750-4314-80B3-3DAE390D1CBF}|DatabaseBackupService\\DatabaseBackupService.csproj|solutionrelative:databasebackupservice\\clssettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A1234F69-E750-4314-80B3-3DAE390D1CBF}|DatabaseBackupService\\DatabaseBackupService.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\DatabaseBackupService\\databasebackupservice\\installer1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A1234F69-E750-4314-80B3-3DAE390D1CBF}|DatabaseBackupService\\DatabaseBackupService.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\DatabaseBackupService\\databasebackupservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A1234F69-E750-4314-80B3-3DAE390D1CBF}|DatabaseBackupService\\DatabaseBackupService.csproj|solutionrelative:databasebackupservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1234F69-E750-4314-80B3-3DAE390D1CBF}|DatabaseBackupService\\DatabaseBackupService.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\DatabaseBackupService\\databasebackupservice\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{A1234F69-E750-4314-80B3-3DAE390D1CBF}|DatabaseBackupService\\DatabaseBackupService.csproj|solutionrelative:databasebackupservice\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A1234F69-E750-4314-80B3-3DAE390D1CBF}|DatabaseBackupService\\DatabaseBackupService.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\DatabaseBackupService\\databasebackupservice\\databasebackupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -46,13 +46,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "clsSettings.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\DatabaseBackupService\\DatabaseBackupService\\clsSettings.cs",
               "RelativeDocumentMoniker": "DatabaseBackupService\\clsSettings.cs",
               "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\DatabaseBackupService\\DatabaseBackupService\\clsSettings.cs",
               "RelativeToolTip": "DatabaseBackupService\\clsSettings.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAgwDYAAABXAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAxwDkAAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-29T15:24:12.556Z",
               "EditorCaption": ""
@@ -65,20 +65,20 @@
               "RelativeDocumentMoniker": "DatabaseBackupService\\clsBackup_DB.cs",
               "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\DatabaseBackupService\\DatabaseBackupService\\clsBackup_DB.cs",
               "RelativeToolTip": "DatabaseBackupService\\clsBackup_DB.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAowCMAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAcwBkAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-29T15:21:25.103Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Installer1.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\DatabaseBackupService\\DatabaseBackupService\\Installer1.cs",
               "RelativeDocumentMoniker": "DatabaseBackupService\\Installer1.cs",
               "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\DatabaseBackupService\\DatabaseBackupService\\Installer1.cs",
               "RelativeToolTip": "DatabaseBackupService\\Installer1.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAkwAwAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAUwBYAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-27T20:51:39.206Z",
               "EditorCaption": ""
@@ -97,26 +97,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\DatabaseBackupService\\DatabaseBackupService\\Program.cs",
               "RelativeDocumentMoniker": "DatabaseBackupService\\Program.cs",
               "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\DatabaseBackupService\\DatabaseBackupService\\Program.cs",
               "RelativeToolTip": "DatabaseBackupService\\Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAkwAkAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAUwCUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-27T20:49:49.841Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "App.config",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\DatabaseBackupService\\DatabaseBackupService\\App.config",
               "RelativeDocumentMoniker": "DatabaseBackupService\\App.config",
               "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\DatabaseBackupService\\DatabaseBackupService\\App.config",
               "RelativeToolTip": "DatabaseBackupService\\App.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
               "WhenOpened": "2026-01-26T15:07:49.753Z",
               "EditorCaption": ""
@@ -129,7 +129,7 @@
               "RelativeDocumentMoniker": "DatabaseBackupService\\DatabaseBackupService.cs",
               "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\09_WindowsServices\\DatabaseBackupService\\DatabaseBackupService\\DatabaseBackupService.cs",
               "RelativeToolTip": "DatabaseBackupService\\DatabaseBackupService.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAowEoAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAHwAAAAAAAAAAAA/wJIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-26T15:05:11.355Z",
               "EditorCaption": ""

@@ -36,8 +36,8 @@ namespace BankSystem.User.UserControls
 
         private clsUser _User;
         private int _PersonID = -1;
-        private ulong _CustomPermissions = 0;
-        private ulong _RevokedPermissions = 0;
+        private long _CustomPermissions = 0;
+        private long _RevokedPermissions = 0;
 
         private ErrorProvider _ErrorProvider = new ErrorProvider();
         enum enMode
@@ -214,14 +214,14 @@ namespace BankSystem.User.UserControls
         {
             tabControl1.SelectedTab = tabPersonalInf;
         }
-        private void _GetCustomRevokedPermissions(ulong customPermissions, ulong revokedPermissions)
+        private void _GetCustomRevokedPermissions(long customPermissions, long revokedPermissions)
         {
             _CustomPermissions = customPermissions;
             _RevokedPermissions = revokedPermissions;
         }
         private void lnkCustomPermissions_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ulong RolePermissions =clsRole.Find(((KeyValuePair<int, string>)cmbRoles.SelectedItem).Key).Permissions;
+            long RolePermissions =clsRole.Find(((KeyValuePair<int, string>)cmbRoles.SelectedItem).Key).Permissions;
             if (RolePermissions == 0)
             {
                 MessageBox.Show("Please select a role first.", "No Role Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);

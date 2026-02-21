@@ -23,7 +23,32 @@ namespace BankSystem.Customer.Forms
         public frmManageCustomers()
         {
             InitializeComponent();
+            _HasPermissions();
             LoadManageRecordsControl();
+        }
+
+        private void _HasPermissions()
+        {
+            if (!clsGlobal_BL.LoggedInUser.HasPermission(clsRole.enPermissions.Customers_ViewAccounts))
+            {
+                MessageBox.Show("You don't have permission to view customers.",
+                    "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Load += (s, e) => this.Close();
+                return;
+            }
+        }
+        static class ContextMenuItems
+        {
+
+            public static (string valueMember, string displayMember) ViewCustomerDetails => ("ViewCustomerDetails", "View Details");
+            public static (string valueMember, string displayMember) EditCustomer => ("EditCustomer", "Edit Customer");
+            public static (string valueMember, string displayMember) DeleteCustomer => ("DeleteCustomer", "Delete Customer");
+            public static (string valueMember, string displayMember) SendEmail => ("SendEmail", "Send Email");
+            public static (string valueMember, string displayMember) CallCustomer => ("CallCustomer", "Call Customer");
+            public static (string valueMember, string displayMember) Separator => ("Separator", "-----------------");
+            public static (string valueMember, string displayMember) ConvertToUser => ("ConvertToUser", "Convert To User");
+            public static (string valueMember, string displayMember) AddAccount => ("AddAccount", "Add Account");
+            public static (string valueMember, string displayMember) LoadCustomerSummaryReport => ("LoadCustomerSummaryReport", "Load Customer Summary Report");
         }
 
         public void LoadManageRecordsControl()
@@ -34,10 +59,35 @@ namespace BankSystem.Customer.Forms
 
             ctrlManageRecords1.__HeaderImg.Image = Resources.social_responsibility_18024872;
 
+
             ctrlManageRecords1.__AddNewBtn.Text = "Add New Customer";
             ctrlManageRecords1.__UpdateBtn.Text = "Edit Customer";
 
+            ctrlManageRecords1.__AddNewBtn.Visible = clsGlobal_BL.LoggedInUser.HasPermission(clsRole.enPermissions.Customers_Add);
+            ctrlManageRecords1.__UpdateBtn.Visible = clsGlobal_BL.LoggedInUser.HasPermission(clsRole.enPermissions.Customers_Edit);
+
+
             ctrlManageRecords1.__Initialize( _FilterBy_Options(), clsCustomer.FilterCustomers, _ContextMenuPackage(), _FilterByGroups());
+            ctrlManageRecords1.__ContextMenuStrip.Opening += (s, e) =>
+            {
+                var user = clsGlobal_BL.LoggedInUser;
+
+                ctrlManageRecords1.__ContextMenuStrip.Items[ContextMenuItems.ViewCustomerDetails.valueMember].Visible =
+                    user.HasPermission(clsRole.enPermissions.Customers_View);
+
+                ctrlManageRecords1.__ContextMenuStrip.Items[ContextMenuItems.EditCustomer.valueMember].Visible =
+                    user.HasPermission(clsRole.enPermissions.Customers_Edit);
+
+                ctrlManageRecords1.__ContextMenuStrip.Items[ContextMenuItems.DeleteCustomer.valueMember].Visible =
+                    user.HasPermission(clsRole.enPermissions.Customers_Delete);
+
+                ctrlManageRecords1.__ContextMenuStrip.Items[ContextMenuItems.AddAccount.valueMember].Visible =
+                    user.HasPermission(clsRole.enPermissions.Accounts_Add);
+
+                ctrlManageRecords1.__ContextMenuStrip.Items[ContextMenuItems.LoadCustomerSummaryReport.valueMember].Visible =
+                    user.HasPermission(clsRole.enPermissions.Reports_Customer);
+            };
+
             _ConfigureDataRecordsContainer();
         }
         private Dictionary<string, string> _FilterBy_Options()
@@ -50,26 +100,25 @@ namespace BankSystem.Customer.Forms
             return clsUtil_BL.MappingHelper.FilterBy_Groups(typeof(clsCustomer.Filter_ByGroupsMapping));
         }
 
-        private List<(string ContextMenuKey, Action<int, ToolStripMenuItem> ContextMenuAction)> _ContextMenuPackage()
+        private List<((string valueMember, string displayMember) ContextMenuItem, Action<int, ToolStripMenuItem> ContextMenuAction)> _ContextMenuPackage()
         {
-            List<(string ContextMenuKey, Action<int, ToolStripMenuItem > ContextMenuAction)> ContextMenuItems = new List<(string ContextMenuKey, Action<int, ToolStripMenuItem > ContextMenuAction)>
+            var contextMenuItems = new List<((string valueMember, string displayMember), Action<int, ToolStripMenuItem>)>
             {
-                ("View Details", _ContextMenuViewCustomerDetails),
-                ("Edit Customer", _ContextMenuEditCustomer),
-                ("Delete Customer", _ContextMenuDeleteCustomer),
-                ("Send Email", _ContextMenuSendCustomerEmail),
-                ("Call Customer", _ContextMenuCallCustomer),
-                ("-----------------", null),
-                ("Convert To User", _ContextMenuConvertToUser),
-                ("Add Account", _ContextMenuAddNewAccount),
-                ("-----------------", null),
-                ("Load Customer Summary Report", _ContextMenuLoadCustomerSummaryReport),
-
+                (ContextMenuItems.ViewCustomerDetails, _ContextMenuViewCustomerDetails),
+                (ContextMenuItems.EditCustomer, _ContextMenuEditCustomer),
+                (ContextMenuItems.DeleteCustomer, _ContextMenuDeleteCustomer),
+                (ContextMenuItems.SendEmail, _ContextMenuSendCustomerEmail),
+                (ContextMenuItems.CallCustomer, _ContextMenuCallCustomer),
+                (ContextMenuItems.Separator, null),
+                (ContextMenuItems.ConvertToUser, _ContextMenuConvertToUser),
+                (ContextMenuItems.AddAccount, _ContextMenuAddNewAccount),
+                (ContextMenuItems.Separator, null),
+                (ContextMenuItems.LoadCustomerSummaryReport, _ContextMenuLoadCustomerSummaryReport),
             };
 
-            return ContextMenuItems;
+            return contextMenuItems;
         }
-       
+
         void _ContextMenuViewCustomerDetails(int customerID, ToolStripMenuItem menuItem)
         {
             clsCustomer customer = clsCustomer.FindCustomerByID(customerID);

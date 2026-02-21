@@ -16,15 +16,28 @@ namespace BankSystem.Accounts.Forms
         public frmAddNewAccount()
         {
             InitializeComponent();
+            _HasPermissions();
+
             ctrlAddNewAccount1.__OnOperationDone += NewAccountAddedSucessfully;
             ctrlAddNewAccount1.__OnOperationaCanceled += Close_Cancel;
         }
         public frmAddNewAccount(int customerID)
         {
             InitializeComponent();
+            _HasPermissions();
             ctrlAddNewAccount1.__AddNewAccount(customerID);
             ctrlAddNewAccount1.__OnOperationDone += NewAccountAddedSucessfully;
             ctrlAddNewAccount1.__OnOperationaCanceled += Close_Cancel;
+        }
+        private void _HasPermissions()
+        {
+            if (!clsGlobal_BL.LoggedInUser.HasPermission(clsRole.enPermissions.Accounts_Add))
+            {
+                MessageBox.Show("You don't have permission to add accounts.",
+                    "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Load += (s, e) => this.Close();
+                return;
+            }
         }
         public Action __OperationDoneSuccessfully;
         private void NewAccountAddedSucessfully(clsAccounts account)

@@ -15,7 +15,18 @@ namespace BankSystem
     public class clsGlobal_BL
     {
         public static string EventLogSourceName = "BankSystem_App";
-        public static clsUser LoggedInUser => clsUser.FindUserByID(1);
+        private static clsUser _loggedInUser;
+        public static clsUser LoggedInUser
+        {
+            get
+            {
+                if (_loggedInUser == null)
+                    _loggedInUser = clsUser.FindUserByID(1);
+                return _loggedInUser;
+            }
+        }
+
+        public static void ClearSession() => _loggedInUser = null;
         public static class MachineInfo
         {
             public static string GetMachineName()
