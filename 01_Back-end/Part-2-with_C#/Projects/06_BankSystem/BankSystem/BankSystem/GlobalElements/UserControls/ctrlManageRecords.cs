@@ -26,6 +26,7 @@ namespace BankSystem
         public PictureBox __HeaderImg => pbRecordsProfile;
         public Button __AddNewBtn => btnAddNew;
         public Button __UpdateBtn => btnUpdate;
+        public Button __CloseBtn => btnClose;
         public ContextMenuStrip __ContextMenuStrip => contextMenuStrip1;
         public byte __PageNumber { get; set; }= 1;
 

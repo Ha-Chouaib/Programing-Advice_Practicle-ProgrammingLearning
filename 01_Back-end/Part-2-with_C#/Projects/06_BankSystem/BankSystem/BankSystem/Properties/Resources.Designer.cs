@@ -103,6 +103,16 @@ namespace BankSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap backup_restore {
+            get {
+                object obj = ResourceManager.GetObject("backup&restore", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BalanceStatement_report {
             get {
                 object obj = ResourceManager.GetObject("BalanceStatement-report", resourceCulture);
@@ -323,6 +333,16 @@ namespace BankSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap loggingHist {
+            get {
+                object obj = ResourceManager.GetObject("loggingHist", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ManagePeopleImg {
             get {
                 object obj = ResourceManager.GetObject("ManagePeopleImg", resourceCulture);
@@ -403,6 +423,16 @@ namespace BankSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Roles {
+            get {
+                object obj = ResourceManager.GetObject("Roles", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap search {
             get {
                 object obj = ResourceManager.GetObject("search", resourceCulture);
@@ -416,6 +446,16 @@ namespace BankSystem.Properties {
         internal static System.Drawing.Bitmap search_11349253 {
             get {
                 object obj = ResourceManager.GetObject("search_11349253", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap settings_12891607 {
+            get {
+                object obj = ResourceManager.GetObject("settings_12891607", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -456,6 +496,16 @@ namespace BankSystem.Properties {
         internal static System.Drawing.Bitmap Team {
             get {
                 object obj = ResourceManager.GetObject("Team", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap transaction_history_18409907 {
+            get {
+                object obj = ResourceManager.GetObject("transaction-history_18409907", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -516,6 +566,16 @@ namespace BankSystem.Properties {
         internal static System.Drawing.Bitmap user__1_ {
             get {
                 object obj = ResourceManager.GetObject("user (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap userAuditing {
+            get {
+                object obj = ResourceManager.GetObject("userAuditing", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

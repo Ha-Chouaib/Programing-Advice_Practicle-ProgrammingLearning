@@ -213,7 +213,7 @@ namespace Bank_BusinessLayer
             AddedByUserID = -1;
             _Mode = enMode.AddNew;
         }
-        public clsRole(int roleID, string roleName, long permissions, string description, bool isActive, DateTime addedAt, int addedByUserID)
+        private clsRole(int roleID, string roleName, long permissions, string description, bool isActive, DateTime addedAt, int addedByUserID)
         {
             RoleID = roleID;
             RoleName = roleName;
@@ -293,6 +293,7 @@ namespace Bank_BusinessLayer
         {
             return clsRolesDataAccess.GetRoles();
         }
+        
 
     }
 }

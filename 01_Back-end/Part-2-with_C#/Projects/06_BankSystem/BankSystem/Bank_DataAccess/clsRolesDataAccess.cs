@@ -22,7 +22,7 @@ namespace Bank_DataAccess
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@RoleName", RoleName);
-                    cmd.Parameters.AddWithValue("@Permissions", Permissions);
+                    cmd.Parameters.AddWithValue("@Permission", Permissions);
                     cmd.Parameters.AddWithValue("@Description", Description);
                     cmd.Parameters.AddWithValue("@IsActive", IsActive);
                     cmd.Parameters.AddWithValue("@CreatedDate", AddedAt);

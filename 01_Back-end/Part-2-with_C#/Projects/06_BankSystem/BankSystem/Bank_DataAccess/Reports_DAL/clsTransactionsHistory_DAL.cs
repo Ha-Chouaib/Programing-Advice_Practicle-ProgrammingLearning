@@ -113,7 +113,6 @@ namespace Bank_DataAccess
 
                     cmd.Parameters.AddWithValue("@TransactionID", TransactionID.HasValue ? (object)TransactionID.Value : DBNull.Value);
                     cmd.Parameters.AddWithValue("@AccountFromID", AccountFromID.HasValue ? (object)AccountFromID.Value : DBNull.Value);
-                    cmd.Parameters.AddWithValue("@AccountToID", AccountToID.HasValue ? (object)AccountToID.Value : DBNull.Value);
                     cmd.Parameters.AddWithValue("@AccountOwnerID", AccountOwnerID.HasValue ? (object)AccountOwnerID.Value : DBNull.Value);
                     cmd.Parameters.AddWithValue("@PerformedByCustomer", IsPerformedByCustomer.HasValue ? (object)IsPerformedByCustomer.Value : DBNull.Value);
                     cmd.Parameters.AddWithValue("@TransactionDate", TransactionDate.HasValue ? (object)TransactionDate.Value : DBNull.Value);
