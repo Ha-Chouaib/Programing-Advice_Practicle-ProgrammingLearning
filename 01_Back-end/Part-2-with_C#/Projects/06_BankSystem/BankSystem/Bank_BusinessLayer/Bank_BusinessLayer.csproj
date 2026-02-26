@@ -58,7 +58,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reports\clsAuditUserActions.cs" />
-    <Compile Include="Reports\clsSystemLogs.cs" />
+    <Compile Include="Reports\clsLoginHistory.cs" />
     <Compile Include="Reports\clsTransactionsReport.cs" />
     <Compile Include="Reports\CustomerReports\clsAccountActivityReports.cs" />
     <Compile Include="Reports\CustomerReports\clsBalanceStatementReports.cs" />

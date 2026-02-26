@@ -267,7 +267,7 @@
             // ctrlManageRecords
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.cmbFilterByGroups);
             this.Controls.Add(this.pbRecordsProfile);

@@ -39,7 +39,6 @@ C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-en
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Currencies.Forms.frmCurrencyCalculator.resources
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Currencies.Forms.frmCurrencyUpdateRate.resources
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Currencies.Forms.frmFindCarrency.resources
-C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Currencies.Forms.frmManageCurrencies.resources
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Customer.Forms.frmCustomerAccounts.resources
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Accounts.UserControls.ctrlCustomerAccounts.resources
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Customer.Forms.frmAddNewCustomer.resources
@@ -106,3 +105,15 @@ C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-en
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Transactions.Forms.frmTransferMoney.resources
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Transactions.Forms.frmDepositMoney.resources
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Transactions.Forms.frmWithdrawMoney.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.SystemSettings.Controls.ctrlCustomBtn.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.SystemSettings.Forms.frmSystemSettings.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Reports.Controls.Customer.ctrlSystemLogsManager.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Reports.Forms.frmTransactionsHistory.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Reports.Forms.frmLoggingHistory.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Roles.ctrlAddEditRole.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Roles.ctrlRoleCard.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Roles.Forms.frmAddNewRole.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Roles.Forms.frmEditRole.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Roles.Forms.frmRoleCard.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Roles.Controls.ctrlManageRoles.resources
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\Projects\06_BankSystem\BankSystem\BankSystem\obj\Debug\BankSystem.Currencies.Controls.ctrlManageCurrencies.resources

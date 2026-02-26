@@ -104,40 +104,11 @@ namespace BankSystem
                         new clsMenuBtnModel { Key = "frmTransferMoney", Title = "Transfer" , Icon = Resources.TransferMoney },
                     }
                 },
-                 new clsMenuBtnModel
-                {
-                    Key = "Currencies",
-                    Title = "Currencies",
-                    Icon = Resources.currencies_6871665,
-                    SubItems = new List<clsMenuBtnModel>
-                    {
-                        new clsMenuBtnModel { Key = "frmManageCurrencies", Title = "Manage Currencies",Icon = Resources.currencies_6871665 },
-                        new clsMenuBtnModel { Key = "frmFindCarrency", Title = "Find Currency" , Icon = Resources.find_in_file },
-                        new clsMenuBtnModel { Key = "frmCurrencyCalculator", Title = "Exchange Money" ,Icon= Resources.exchange_money_17562018},
-                        new clsMenuBtnModel { Key = "frmCurrencyUpdateRate", Title = "Update Currency Rate" ,Icon = Resources.update}
-                    }
-                },
-            
-                // 🔹 Reports
                 new clsMenuBtnModel
                 {
-                    Key = "frmReports",
-                    Title = "Reports",
-                    Icon = Resources.general_reports,
-                    SubItems = new List<clsMenuBtnModel>
-                    {
-                        new clsMenuBtnModel { Key = "frmCustomerReports", Title = "Customer Report",Icon = Resources.reporter },
-                        new clsMenuBtnModel { Key = "frmTransactionReports", Title = "Transaction Report" ,Icon = Resources.bank_transaction__1_},
-                        new clsMenuBtnModel { Key = "frmManageUserReports", Title = "User Activity Report",Icon = Resources.activity },
-                        new clsMenuBtnModel { Key = "frmSystemLogs", Title = "System Logs" ,Icon = Resources.log}
-                    }
-                },
-                new clsMenuBtnModel
-                {
-                    Key = "Log_Out",
-                    Title = "Leave",
-                    Icon = Resources.sign_out,
-                    BtnBackColor= Color.Red
+                    Key = "frmSystemSettings",
+                    Title = "System Settings",
+                    Icon = Resources.settings_12891607,
                 }
 
 
