@@ -27,7 +27,7 @@ namespace BankSystem.Person
             _UploadCountries();
         }
 
-        clsPerson _person { get; set; }
+        clsPerson _person;
         ErrorProvider errorProvider = new ErrorProvider();
 
         public event EventHandler<clsPerson> OnPersonAdded_Updated;
@@ -49,6 +49,10 @@ namespace BankSystem.Person
             _person.NationalNo = txtNationalNo.Text;
             _person.CountryID =(short) clsCountries.Find(cbCountry.SelectedItem.ToString()).CountryID;
             _person.DateOfBirth = dtDateOfBirth.Value;
+
+            string ImagePath = pbProfileImg.Tag as string;
+            _person.ImagePath = ImagePath?? "";
+
 
         }
         public void UpdatePerson(clsPerson person)
@@ -181,7 +185,7 @@ namespace BankSystem.Person
             if (ofdGetProfileImg.ShowDialog() == DialogResult.OK)
             {
                 pbProfileImg.Image = Image.FromFile(ofdGetProfileImg.FileName);
-                _person.ImagePath = ofdGetProfileImg.FileName;
+                pbProfileImg.Tag = ofdGetProfileImg.FileName;
                 pbRemoveImg.Visible = true;
             }
         }
@@ -194,6 +198,5 @@ namespace BankSystem.Person
 
         }
 
-      
     }
 }

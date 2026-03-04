@@ -34,7 +34,9 @@
             // fpnlSideBarContainer
             // 
             this.fpnlSideBarContainer.AutoScroll = true;
+            this.fpnlSideBarContainer.AutoSize = true;
             this.fpnlSideBarContainer.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.fpnlSideBarContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
             this.fpnlSideBarContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fpnlSideBarContainer.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.fpnlSideBarContainer.Location = new System.Drawing.Point(0, 0);
@@ -53,6 +55,7 @@
             this.Name = "ctrlSideBarMenu";
             this.Size = new System.Drawing.Size(331, 548);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

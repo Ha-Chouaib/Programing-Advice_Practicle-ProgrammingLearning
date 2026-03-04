@@ -130,7 +130,8 @@ namespace Bank_DataAccess.People
         }
 
         public static int AddNewPerson(string NationalNo,  string FirstName,  string LastName,  DateTime DateOfBirth,  byte Gender,
-                                     string Email,  string Phone,  short CountryID,  string Address,  string ImgPath)
+                                     string Email,  string Phone,  short CountryID,  string Address,  string ImgPath
+            )
         {
 
             string Query = @"[dbo].[Sp_Person_AddNew]";
@@ -356,7 +357,7 @@ namespace Bank_DataAccess.People
 
 
                 using (SqlConnection conn = new SqlConnection(DataAccessSettings.connectionString))
-                using (SqlCommand cmd = new SqlCommand("dbo.Sp_People_FilterPaged", conn))
+                using (SqlCommand cmd = new SqlCommand("[dbo].[Sp_People_FilterPaged]", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 

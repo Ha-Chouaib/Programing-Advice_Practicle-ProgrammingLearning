@@ -28,12 +28,15 @@ namespace Bank_DataAccess.Reports
                     cmd.Parameters.AddWithValue("@MachineName", MachineName);
                   
 
-
+                    connection.Open();
                     using (SqlDataReader rdr = cmd.ExecuteReader())
                     {
-                        ID = clsGlobal.DB_SafeGet<int>(rdr, "LoginID", -1);
-                        if (ID == -1)
-                            throw new InvalidOperationException(clsGlobal.DB_SafeGet(rdr, "ErrorMSG", ""));
+                        if (rdr.Read())
+                        {
+                            ID = clsGlobal.DB_SafeGet<int>(rdr, "LoginID", -1);
+                            if (ID == -1)
+                                throw new InvalidOperationException(clsGlobal.DB_SafeGet(rdr, "ErrorMSG", ""));
+                        }
                     }
 
                 }

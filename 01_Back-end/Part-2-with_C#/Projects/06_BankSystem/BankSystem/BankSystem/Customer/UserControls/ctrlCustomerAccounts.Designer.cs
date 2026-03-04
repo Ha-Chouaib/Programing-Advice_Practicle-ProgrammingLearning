@@ -108,21 +108,21 @@
             // depositItem
             // 
             this.depositItem.Name = "depositItem";
-            this.depositItem.Size = new System.Drawing.Size(224, 26);
+            this.depositItem.Size = new System.Drawing.Size(168, 26);
             this.depositItem.Text = "Deposit";
             this.depositItem.Click += new System.EventHandler(this.depositItem_Click);
             // 
             // withdrawalItem
             // 
             this.withdrawalItem.Name = "withdrawalItem";
-            this.withdrawalItem.Size = new System.Drawing.Size(224, 26);
+            this.withdrawalItem.Size = new System.Drawing.Size(168, 26);
             this.withdrawalItem.Text = "Withdrawal";
             this.withdrawalItem.Click += new System.EventHandler(this.withdrawalItem_Click);
             // 
             // transferItem
             // 
             this.transferItem.Name = "transferItem";
-            this.transferItem.Size = new System.Drawing.Size(224, 26);
+            this.transferItem.Size = new System.Drawing.Size(168, 26);
             this.transferItem.Text = "Transfer";
             this.transferItem.Click += new System.EventHandler(this.transferItem_Click);
             // 
@@ -138,14 +138,14 @@
             // activeItem
             // 
             this.activeItem.Name = "activeItem";
-            this.activeItem.Size = new System.Drawing.Size(224, 26);
+            this.activeItem.Size = new System.Drawing.Size(143, 26);
             this.activeItem.Text = "Active";
             this.activeItem.Click += new System.EventHandler(this.activeItem_Click);
             // 
             // inactiveItem
             // 
             this.inactiveItem.Name = "inactiveItem";
-            this.inactiveItem.Size = new System.Drawing.Size(224, 26);
+            this.inactiveItem.Size = new System.Drawing.Size(143, 26);
             this.inactiveItem.Text = "Inactive";
             this.inactiveItem.Click += new System.EventHandler(this.inactiveItem_Click);
             // 

@@ -49,8 +49,8 @@ namespace BankSystem
         {
 
             cmbFilterOptions.DataSource = new BindingSource(FilterByOptions, null);
-            cmbFilterOptions.ValueMember = "value";
-            cmbFilterOptions.DisplayMember = "key";
+            cmbFilterOptions.ValueMember = "key";
+            cmbFilterOptions.DisplayMember = "value";
             cmbFilterOptions.SelectedIndex = 0;
 
             _FilterByGroups = FilterByGroups;

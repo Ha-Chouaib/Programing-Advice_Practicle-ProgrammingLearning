@@ -99,6 +99,6 @@ namespace BankSystem.Person
             ctrlAddEditPerson1.OnOperationCanceled += _LeaveForm;
         }
 
-
+      
     }
 }

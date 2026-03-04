@@ -1,0 +1,16 @@
+<Solution>
+  <Folder Name="/Win32_API's/">
+    <Project Path="../../../../../Downloads/04 Shutdown Windows/04 Shutdown Windows/ConsoleApp1/ConsoleApp1/04_ShutDownWindows.csproj" />
+    <Project Path="../../../../../Downloads/05 MessageBox/05 MessageBox/ConsoleApp1/ConsoleApp1/05_MessageBox.csproj" />
+    <Project Path="../../../../../Downloads/08 Wifi Networks/08 Wifi Networks/WifiNetworks/WifiNetworks/08_WifiNetworks.csproj" />
+    <Project Path="../../../../../Downloads/Change WallPaper/Change WallPaper/Change WallPaper/01_Change WallPaper.csproj" />
+    <Project Path="../../../../../Downloads/ExcelSheetCreator/ExcelSheetCreator/ExcelSheetCreator/11_ExcelSheetCreator.csproj" />
+    <Project Path="../../../../../Downloads/Fetching Battery Information/Fetching Battery Information/Fetching Battery Information/03_Fetching Battery Information.csproj" />
+    <Project Path="../../../../../Downloads/Getting Screen Resolution/Getting Screen Resolution/Getting Screen Resolution/02_Getting Screen Resolution.csproj" />
+    <Project Path="../../../../../Downloads/OutlookEmailSender/OutlookEmailSender/OutlookEmailSender/09_OutlookEmailSender.csproj" />
+    <Project Path="../../../../../Downloads/PowerPointCreator/PowerPointCreator/PowerPointCreator/PowerPointCreator.csproj" />
+    <Project Path="../../../../../Downloads/RunningProcesses/RunningProcesses/RunningProcesses/06_RunningProcesses.csproj" />
+    <Project Path="../../../../../Downloads/WordDocumentCreator/WordDocumentCreator/WordDocumentCreator/10_WordDocumentCreator.csproj" />
+    <Project Path="07_AudioAPI/07_AudioAPI.csproj" />
+  </Folder>
+</Solution>

@@ -38,7 +38,7 @@ namespace BankSystem
 
         private void pbSearch_Click(object sender, EventArgs e)
         {
-            string ColumnName = ((KeyValuePair<string,string>)cmbFindOptions.SelectedItem).Value;
+            string ColumnName = cmbFindOptions.SelectedValue.ToString();
             string searchTerm = txtSearch.Text.Trim();
             if (string.IsNullOrEmpty(searchTerm))
             {
@@ -57,8 +57,8 @@ namespace BankSystem
         private void _FillSearchOptions()
         {
             cmbFindOptions.DataSource = new BindingSource(_FindByOptions, null);
-            cmbFindOptions.DisplayMember = "key";
-            cmbFindOptions.ValueMember = "value";
+            cmbFindOptions.DisplayMember = "value";
+            cmbFindOptions.ValueMember = "key";
             cmbFindOptions.SelectedIndex = 0;
         }
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
@@ -71,14 +71,13 @@ namespace BankSystem
                 pbSearch_Click(null, null);
                
             }
-            if (cmbFindOptions.SelectedValue.ToString() == "PersonID")
-                e.Handled = !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar);
+           
         }
 
         private void cmbFindOptions_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtSearch.Text = string.Empty;
-            txtSearch.Focus();                
+            txtSearch.Focus();
         }
     }
 }

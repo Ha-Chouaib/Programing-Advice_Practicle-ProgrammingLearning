@@ -32,8 +32,8 @@
             this.pnlMainBtn = new System.Windows.Forms.Panel();
             this.pbArrow = new System.Windows.Forms.PictureBox();
             this.pbIcon = new System.Windows.Forms.PictureBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlSubContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlMainBtn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIcon)).BeginInit();
@@ -64,9 +64,10 @@
             this.pnlMainBtn.Controls.Add(this.btnMain);
             this.pnlMainBtn.Controls.Add(this.pbArrow);
             this.pnlMainBtn.Controls.Add(this.pbIcon);
+            this.pnlMainBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMainBtn.Location = new System.Drawing.Point(0, 5);
             this.pnlMainBtn.Name = "pnlMainBtn";
-            this.pnlMainBtn.Size = new System.Drawing.Size(303, 64);
+            this.pnlMainBtn.Size = new System.Drawing.Size(340, 61);
             this.pnlMainBtn.TabIndex = 3;
             // 
             // pbArrow
@@ -90,13 +91,6 @@
             this.pbIcon.TabIndex = 1;
             this.pbIcon.TabStop = false;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(400, 143);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(8, 8);
-            this.flowLayoutPanel1.TabIndex = 4;
-            // 
             // pnlSubContainer
             // 
             this.pnlSubContainer.AutoSize = true;
@@ -110,6 +104,13 @@
             this.pnlSubContainer.Visible = false;
             this.pnlSubContainer.WrapContents = false;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(400, 143);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(8, 8);
+            this.flowLayoutPanel1.TabIndex = 4;
+            // 
             // ctrlSubMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -120,7 +121,7 @@
             this.Controls.Add(this.pnlMainBtn);
             this.Name = "ctrlSubMenu";
             this.Padding = new System.Windows.Forms.Padding(0, 5, 5, 0);
-            this.Size = new System.Drawing.Size(313, 75);
+            this.Size = new System.Drawing.Size(345, 66);
             this.Load += new System.EventHandler(this.ctrlSubMenu_Load);
             this.pnlMainBtn.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbArrow)).EndInit();
@@ -135,7 +136,7 @@
         private System.Windows.Forms.PictureBox pbIcon;
         private System.Windows.Forms.Button btnMain;
         private System.Windows.Forms.Panel pnlMainBtn;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel pnlSubContainer;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

@@ -11,8 +11,8 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
 {
     public class clsCustomerSummaryReports : clsCustomerReports_Main
     {
-        public byte TotalAccounts { get; private set; }
-        public byte ActiveAccounts { get; private set; }
+        public short TotalAccounts { get; private set; }
+        public short ActiveAccounts { get; private set; }
         public double TotalBalance { get; private set; }
         public DateTime LastActivityDate { get; private set; }
         public bool CustomerStatus { get; private set; }
@@ -28,7 +28,7 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
             this.LastActivityDate = DateTime.MinValue;
             this.CustomerStatus = false;
         }
-        clsCustomerSummaryReports(int customerReportID, int customerID, DateTime reportDate, short reportTypeID, byte TotalAccounts, byte ActiveAccounts, double TotalBalance, DateTime LastActivityDate, bool CustomerStatus)
+        clsCustomerSummaryReports(int customerReportID, int customerID, DateTime reportDate, short reportTypeID, short TotalAccounts, short ActiveAccounts, double TotalBalance, DateTime LastActivityDate, bool CustomerStatus)
             :base(customerReportID, customerID, reportTypeID, reportDate)
         {
             this.TotalAccounts = TotalAccounts;
@@ -99,29 +99,55 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
             }
         }
 
-        public new static clsCustomerSummaryReports Find (int CustomerID)
+        public new static clsCustomerSummaryReports Find(int CustomerID)
         {
             int ReportID = -1;
-            byte TotalAccounts = 0;
-            byte ActiveAccounts = 0;
+            short TotalAccounts = 0;      // Bug 1 fixed: byte → short
+            short ActiveAccounts = 0;     // Bug 1 fixed: byte → short
             double TotalBalance = 0;
             DateTime LastActivityDate = DateTime.MinValue;
             bool CustomerStatus = false;
-            bool found = clsCustomerSummaryReportsDAL.Find(CustomerID, ref ReportID, ref TotalAccounts, ref ActiveAccounts, ref TotalBalance, ref LastActivityDate, ref CustomerStatus); 
 
+            bool found = clsCustomerSummaryReportsDAL.Find(
+                CustomerID,
+                ref ReportID,
+                ref TotalAccounts,
+                ref ActiveAccounts,
+                ref TotalBalance,
+                ref LastActivityDate,
+                ref CustomerStatus
+            );
 
-             var ReportHeader = clsCustomerReports_Main.Find(ReportID);
+            var ReportHeader = found ? clsCustomerReports_Main.Find(ReportID) : null;
+
+            // Bug 2 fixed: null instead of empty object
             clsCustomerSummaryReports report = null;
+
             if (found && ReportHeader != null)
             {
-                report = new clsCustomerSummaryReports(ReportHeader.CustomerReportID, ReportHeader.CustomerID, ReportHeader.ReportDate, ReportHeader.ReportTypeID, TotalAccounts, ActiveAccounts, TotalBalance, LastActivityDate, CustomerStatus);
+                report = new clsCustomerSummaryReports(
+                    ReportHeader.CustomerReportID,
+                    ReportHeader.CustomerID,
+                    ReportHeader.ReportDate,
+                    ReportHeader.ReportTypeID,
+                    TotalAccounts,
+                    ActiveAccounts,
+                    TotalBalance,
+                    LastActivityDate,
+                    CustomerStatus
+                );
             }
+
             if (clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
             {
-                AuditingHelper.AuditReadRecordOperation((clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(report), report.CustomerReportID), found && ReportHeader != null, (_sectionKey, $"Read customer Summary report for customer: [{CustomerID}]"));
+                AuditingHelper.AuditReadRecordOperation(
+                    (clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(report), ReportID),
+                    found && ReportHeader != null,
+                    (_sectionKey, $"Read customer Summary report for customer: [{CustomerID}]")
+                );
             }
+
             return report;
-           
         }
         private static DataTable FilterReports(int? CustomerID, byte? ActiveAccounts, DateTime? LastActivityFrom,DateTime? LastActivityTo, bool? CustomerStatus, byte pageNumber, byte pageSize, out short AvailablePages)
         {

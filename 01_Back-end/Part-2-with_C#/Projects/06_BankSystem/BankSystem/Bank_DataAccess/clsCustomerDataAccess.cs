@@ -227,7 +227,7 @@ namespace Bank_DataAccess
 
         public static bool IsCustomerExistsByID(int CustomerID)
         {
-            string Query = @" SELECT dbo.Fn_IsCustomerExistsByID(@CustomerID)";
+            string Query = @"SELECT dbo.Fn_IsCustomerExistsByID(@CustomerID)";
             bool Exists = false;
             try
             {

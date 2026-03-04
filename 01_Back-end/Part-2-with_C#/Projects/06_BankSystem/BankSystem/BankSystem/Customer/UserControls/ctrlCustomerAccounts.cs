@@ -63,6 +63,7 @@ namespace BankSystem.Accounts.UserControls
             if (clsCustomer.IsCustomerExistsByID(CustomerID))
             {
                 dgvCustomerAccounts.DataSource = new BindingSource(clsCustomer.GetCustomerAccounts(CustomerID), null);
+                lblAccountsCount.Text = dgvCustomerAccounts.RowCount.ToString();
             }
         }
 

@@ -38,6 +38,7 @@ namespace BankSystem.User.UserControls
         private int _PersonID = -1;
         private long _CustomPermissions = 0;
         private long _RevokedPermissions = 0;
+        private string EncryptedPassword = string.Empty;
 
         private ErrorProvider _ErrorProvider = new ErrorProvider();
         enum enMode
@@ -139,7 +140,8 @@ namespace BankSystem.User.UserControls
             _User.PersonID = _PersonID;
             _User.RoleID = ((KeyValuePair<int, string>)cmbRoles.SelectedItem).Key;
             _User.UserName = txtUserName.Text;
-            _User.Password = clsUtil_BL.EncryptString_Hashing(txtConfirmPassword.Text);
+            _User.Password = clsUtil_BL.EncryptString_Hashing(txtConfirmPassword.Text.Trim());
+            EncryptedPassword = clsUtil_BL.Encrypt(txtConfirmPassword.Text.Trim(), clsUtil_BL.EncryptionKey);
             _User.IsActive = rbIsActive.Checked;
             _User.CustomPermissions = _CustomPermissions;
             _User.RevokedPermissions = _RevokedPermissions;
@@ -263,6 +265,12 @@ namespace BankSystem.User.UserControls
                 btnCancel.Text = "Close";
                 if (_Mode == enMode.AddNew)
                     __EditUser(_User.UserID);
+                else
+                {
+                    if (_User.UserID == clsGlobal_BL.LoggedInUser.UserID)
+                        clsUtil_BL.UpdateUserCridential(_User.UserName,EncryptedPassword);
+
+                }
                 return;
             }
             __OperationFailed?.Invoke();

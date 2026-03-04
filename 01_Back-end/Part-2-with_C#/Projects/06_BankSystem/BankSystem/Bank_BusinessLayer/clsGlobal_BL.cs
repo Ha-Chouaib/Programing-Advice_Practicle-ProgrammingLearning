@@ -24,6 +24,7 @@ namespace BankSystem
                     _loggedInUser = clsUser.FindUserByID(1);
                 return _loggedInUser;
             }
+            set { _loggedInUser = value; }
         }
 
         public static void ClearSession() => _loggedInUser = null;

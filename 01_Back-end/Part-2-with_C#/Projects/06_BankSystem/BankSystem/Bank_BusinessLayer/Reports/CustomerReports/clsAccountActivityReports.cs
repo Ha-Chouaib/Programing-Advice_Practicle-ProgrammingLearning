@@ -97,8 +97,8 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
 
             bool found = clsAccountActivityReports_DAL.Find(accountID, requestedDate, ref ReportID, ref transactionCount, ref totalDebit, ref totalCredit, ref fromDate, ref toDate);
 
-            var ReportHeader = clsCustomerReports_Main.Find(ReportID);
-            clsAccountActivityReports report = null;
+            var ReportHeader = found ?clsCustomerReports_Main.Find(ReportID) : null;
+            clsAccountActivityReports report = new clsAccountActivityReports();
             if (found && ReportHeader != null)
             {
 

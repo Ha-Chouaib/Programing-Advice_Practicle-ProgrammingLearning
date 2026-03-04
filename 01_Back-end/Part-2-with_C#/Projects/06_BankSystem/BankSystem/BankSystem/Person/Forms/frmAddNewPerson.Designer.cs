@@ -33,7 +33,7 @@
             // 
             // ctrlAddEditPerson1
             // 
-            this.ctrlAddEditPerson1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
+            this.ctrlAddEditPerson1.BackColor = System.Drawing.Color.Transparent;
             this.ctrlAddEditPerson1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ctrlAddEditPerson1.Location = new System.Drawing.Point(13, 13);
             this.ctrlAddEditPerson1.Margin = new System.Windows.Forms.Padding(4);
@@ -45,6 +45,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(594, 749);
             this.Controls.Add(this.ctrlAddEditPerson1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

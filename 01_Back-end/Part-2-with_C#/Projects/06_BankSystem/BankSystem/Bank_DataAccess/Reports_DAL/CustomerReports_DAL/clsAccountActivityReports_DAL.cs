@@ -56,14 +56,14 @@ namespace Bank_DataAccess.Reports.CustomerReports
                 using (SqlCommand cmd = new SqlCommand(Query, conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@BalanceStatementReportID", CustomerReportId);
+                    cmd.Parameters.AddWithValue("@AccountActivityReportID", CustomerReportId);
                     conn.Open();
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
                         {
                             TransctionCount = clsGlobal.DB_SafeGet<byte>(reader, "TransactionCount", 0);
-                            TotalDepit = clsGlobal.DB_SafeGet<double>(reader, "TotalDepit", 0);
+                            TotalDepit = clsGlobal.DB_SafeGet<double>(reader, "TotalDebit", 0);
                             TotalCredit = clsGlobal.DB_SafeGet<double>(reader, "TotalCredit", 0);
                             FromDate = clsGlobal.DB_SafeGet<DateTime>(reader, "FromDate", DateTime.MinValue);
                             ToDate = clsGlobal.DB_SafeGet<DateTime>(reader, "ToDate", DateTime.MinValue);

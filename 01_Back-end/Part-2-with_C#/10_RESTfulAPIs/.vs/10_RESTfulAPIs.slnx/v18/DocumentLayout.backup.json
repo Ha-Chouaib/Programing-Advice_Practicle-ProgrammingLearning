@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\10_RESTfulAPIs\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AC468A96-ADF4-4018-83C2-BC33F98C5044}|..\\..\\..\\..\\..\\Downloads\\Change WallPaper\\Change WallPaper\\Change WallPaper\\Change WallPaper.csproj|c:\\users\\jook\\downloads\\change wallpaper\\change wallpaper\\change wallpaper\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Downloads\\Change WallPaper\\Change WallPaper\\Change WallPaper\\Program.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Downloads\\Change WallPaper\\Change WallPaper\\Change WallPaper\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\Downloads\\Change WallPaper\\Change WallPaper\\Change WallPaper\\Program.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Downloads\\Change WallPaper\\Change WallPaper\\Change WallPaper\\Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T14:32:52.378Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

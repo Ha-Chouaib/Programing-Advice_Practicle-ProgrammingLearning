@@ -15,16 +15,16 @@ namespace Bank_BusinessLayer.Reports
     {
        
 
-        int LoginID { get; set; }
-        DateTime LoginDate { get; set; }
-        int LoggedInUserID { get; set; }
-        string SessionID { get; set; }
-        string MachineName { get; set; }
-
+        public int LoginID { get; set; }
+        public DateTime LoginDate { get; set; }
+        public int LoggedInUserID { get; set; }
+        public string SessionID { get; set; }
+        public string MachineName { get; set; }
+         
         private static string _sectionKey => "Login-HISTORY-REPORTS";
 
 
-        clsLoginHistory()
+        public clsLoginHistory()
         {
             LoginID = -1;
             LoginDate = DateTime.Now;
@@ -43,7 +43,7 @@ namespace Bank_BusinessLayer.Reports
             this.MachineName = MachineName;
         }
 
-        public bool AuditUserLogins()
+        public  bool AuditUserLogins()
         {
             this.LoginID = clsLoggingHistory_DAL.AddNewLog(this.LoggedInUserID,this.LoginDate,this.SessionID,this.MachineName);
             return this.LoginID > 0;

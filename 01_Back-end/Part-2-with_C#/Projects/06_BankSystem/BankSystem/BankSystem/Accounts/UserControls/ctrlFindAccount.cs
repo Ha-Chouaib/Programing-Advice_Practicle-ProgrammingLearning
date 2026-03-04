@@ -26,7 +26,7 @@ namespace BankSystem.Accounts.UserControls
             ctrlFind1.__FindOptionsCombo.SelectedValueChanged += (s, e) =>
             {
                 ctrlFind1.__txtSearchTerm.KeyPress -= null;
-                if (((KeyValuePair<int, string>)ctrlFind1.__FindOptionsCombo.SelectedItem).Value == clsAccounts.FindBy_Mapping.AccountID.valueMember)
+                if (ctrlFind1.__FindOptionsCombo.SelectedValue.ToString() == clsAccounts.FindBy_Mapping.AccountID.valueMember)
                     ctrlFind1.__txtSearchTerm.KeyPress += (s1, e1) => { e1.Handled = !char.IsControl(e1.KeyChar) && !char.IsDigit(e1.KeyChar); };
                 else
                     ctrlFind1.__txtSearchTerm.KeyPress += (s1, e1) => { e1.Handled = false; };

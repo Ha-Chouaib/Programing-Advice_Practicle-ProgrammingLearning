@@ -37,6 +37,9 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
@@ -190,11 +193,29 @@
       <DependentUpon>ctrlFindCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalElements\Classes\clsUtil_PL.cs" />
+    <Compile Include="GlobalElements\Forms\frmAccountSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalElements\Forms\frmAccountSettings.Designer.cs">
+      <DependentUpon>frmAccountSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalElements\Forms\frmMappTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalElements\Forms\frmMappTransactions.Designer.cs">
+      <DependentUpon>frmMappTransactions.cs</DependentUpon>
+    </Compile>
     <Compile Include="GlobalElements\UserControls\ctrlFind.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GlobalElements\UserControls\ctrlFind.Designer.cs">
       <DependentUpon>ctrlFind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalElements\UserControls\ctrlHomePageShorts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GlobalElements\UserControls\ctrlHomePageShorts.Designer.cs">
+      <DependentUpon>ctrlHomePageShorts.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalElements\UserControls\ctrlManageRecords.cs">
       <SubType>UserControl</SubType>
@@ -207,12 +228,6 @@
     </Compile>
     <Compile Include="Customer\UserControls\ctrlAddEditCustomer.Designer.cs">
       <DependentUpon>ctrlAddEditCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GlobalElements\Forms\frmBaseForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GlobalElements\Forms\frmBaseForm.Designer.cs">
-      <DependentUpon>frmBaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalElements\Forms\frmHomePage.cs">
       <SubType>Form</SubType>
@@ -348,16 +363,28 @@
     <Compile Include="Reports\CustomerReports\Forms\frmDormantAccountsReportCard.Designer.cs">
       <DependentUpon>frmDormantAccountsReportCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\frmLoggingHistory.cs">
+    <Compile Include="Reports\LogingHistory\frmLoggingHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reports\frmLoggingHistory.Designer.cs">
+    <Compile Include="Reports\LogingHistory\frmLoggingHistory.Designer.cs">
       <DependentUpon>frmLoggingHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\frmTransactionsHistory.cs">
+    <Compile Include="Reports\TransactionHistory\ctrlTranactionsHistCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\TransactionHistory\ctrlTranactionsHistCard.Designer.cs">
+      <DependentUpon>ctrlTranactionsHistCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\TransactionHistory\frmTransactionHistCard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reports\frmTransactionsHistory.Designer.cs">
+    <Compile Include="Reports\TransactionHistory\frmTransactionHistCard.Designer.cs">
+      <DependentUpon>frmTransactionHistCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\TransactionHistory\frmTransactionsHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\TransactionHistory\frmTransactionsHistory.Designer.cs">
       <DependentUpon>frmTransactionsHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\CustomerReports\ReportsInitializer\clsInitializeAccountActivityReport.cs" />
@@ -370,11 +397,29 @@
     <Compile Include="Reports\CustomerReports\Forms\frmCustomerReports.Designer.cs">
       <DependentUpon>frmCustomerReports.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\frmManageUserReports.cs">
+    <Compile Include="Reports\UserActivityReport\ctrlUserReportCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\UserActivityReport\ctrlUserReportCard.Designer.cs">
+      <DependentUpon>ctrlUserReportCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\UserActivityReport\frmManageUserReports.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reports\frmManageUserReports.Designer.cs">
+    <Compile Include="Reports\UserActivityReport\frmManageUserReports.Designer.cs">
       <DependentUpon>frmManageUserReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\UserActivityReport\frmUserReportCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\UserActivityReport\frmUserReportCard.Designer.cs">
+      <DependentUpon>frmUserReportCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\UserActivityReport\frmUserReport_EntityChanges.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\UserActivityReport\frmUserReport_EntityChanges.Designer.cs">
+      <DependentUpon>frmUserReport_EntityChanges.cs</DependentUpon>
     </Compile>
     <Compile Include="Roles\Controls\ctrlAddEditRole.cs">
       <SubType>UserControl</SubType>
@@ -577,17 +622,23 @@
     <EmbeddedResource Include="Customer\UserControls\ctrlFindCustomer.resx">
       <DependentUpon>ctrlFindCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GlobalElements\Forms\frmAccountSettings.resx">
+      <DependentUpon>frmAccountSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalElements\Forms\frmMappTransactions.resx">
+      <DependentUpon>frmMappTransactions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GlobalElements\UserControls\ctrlFind.resx">
       <DependentUpon>ctrlFind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalElements\UserControls\ctrlHomePageShorts.resx">
+      <DependentUpon>ctrlHomePageShorts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GlobalElements\UserControls\ctrlManageRecords.resx">
       <DependentUpon>ctrlManageRecords.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\UserControls\ctrlAddEditCustomer.resx">
       <DependentUpon>ctrlAddEditCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GlobalElements\Forms\frmBaseForm.resx">
-      <DependentUpon>frmBaseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GlobalElements\Forms\frmHomePage.resx">
       <DependentUpon>frmHomePage.cs</DependentUpon>
@@ -617,7 +668,7 @@
       <DependentUpon>ctrlDisplayPersonDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
@@ -660,14 +711,29 @@
     <EmbeddedResource Include="Reports\CustomerReports\Forms\frmDormantAccountsReportCard.resx">
       <DependentUpon>frmDormantAccountsReportCard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\frmLoggingHistory.resx">
+    <EmbeddedResource Include="Reports\LogingHistory\frmLoggingHistory.resx">
       <DependentUpon>frmLoggingHistory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\frmTransactionsHistory.resx">
+    <EmbeddedResource Include="Reports\TransactionHistory\ctrlTranactionsHistCard.resx">
+      <DependentUpon>ctrlTranactionsHistCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TransactionHistory\frmTransactionHistCard.resx">
+      <DependentUpon>frmTransactionHistCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TransactionHistory\frmTransactionsHistory.resx">
       <DependentUpon>frmTransactionsHistory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\frmManageUserReports.resx">
+    <EmbeddedResource Include="Reports\UserActivityReport\ctrlUserReportCard.resx">
+      <DependentUpon>ctrlUserReportCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\UserActivityReport\frmManageUserReports.resx">
       <DependentUpon>frmManageUserReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\UserActivityReport\frmUserReportCard.resx">
+      <DependentUpon>frmUserReportCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\UserActivityReport\frmUserReport_EntityChanges.resx">
+      <DependentUpon>frmUserReport_EntityChanges.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Roles\Controls\ctrlAddEditRole.resx">
       <DependentUpon>ctrlAddEditRole.cs</DependentUpon>
@@ -736,6 +802,7 @@
       <DependentUpon>PopupFrm_UserPermissionSettings.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -932,6 +999,17 @@
   <ItemGroup>
     <None Include="Resources\transaction-history_18409907.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\logout_12080248.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BankImg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close 64.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

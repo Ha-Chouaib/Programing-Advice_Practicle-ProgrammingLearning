@@ -22,7 +22,7 @@ namespace Bank_DataAccess.Reports.CustomerReports
                     using (SqlCommand cmd = new SqlCommand(Query, conn))
                     {
                         cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@CustomerReportID", CustomerreportID);
+                        cmd.Parameters.AddWithValue("@CustomerReportsID", CustomerreportID);
                         conn.Open();
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {

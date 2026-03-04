@@ -33,7 +33,7 @@
             // 
             // ctrlAddEditCustomer1
             // 
-            this.ctrlAddEditCustomer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.ctrlAddEditCustomer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(23)))), ((int)(((byte)(29)))));
             this.ctrlAddEditCustomer1.Location = new System.Drawing.Point(22, 28);
             this.ctrlAddEditCustomer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ctrlAddEditCustomer1.Name = "ctrlAddEditCustomer1";
@@ -44,7 +44,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(23)))), ((int)(((byte)(29)))));
             this.ClientSize = new System.Drawing.Size(1147, 916);
             this.Controls.Add(this.ctrlAddEditCustomer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
