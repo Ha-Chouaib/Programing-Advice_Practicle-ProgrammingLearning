@@ -118,7 +118,7 @@ namespace BankSystem.User.Forms
             clsUser user = clsUser.FindUserByID(userID);
             if (user != null)
             {
-                frmFindUser UserCard = new frmFindUser(userID);
+                frmFindUser UserCard = new frmFindUser(user);
                 UserCard.ShowDialog();
             }
             else

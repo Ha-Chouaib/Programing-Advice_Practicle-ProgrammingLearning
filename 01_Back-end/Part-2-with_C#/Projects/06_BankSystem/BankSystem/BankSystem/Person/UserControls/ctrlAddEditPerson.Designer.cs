@@ -62,9 +62,9 @@
             // lblAddEdit
             // 
             this.lblAddEdit.AutoSize = true;
-            this.lblAddEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
+            this.lblAddEdit.BackColor = System.Drawing.Color.Transparent;
             this.lblAddEdit.Font = new System.Drawing.Font("Myanmar Text", 24.75F, System.Drawing.FontStyle.Bold);
-            this.lblAddEdit.ForeColor = System.Drawing.Color.Black;
+            this.lblAddEdit.ForeColor = System.Drawing.Color.Cyan;
             this.lblAddEdit.Location = new System.Drawing.Point(125, 24);
             this.lblAddEdit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddEdit.Name = "lblAddEdit";
@@ -74,9 +74,10 @@
             // 
             // txtFirstName
             // 
-            this.txtFirstName.BackColor = System.Drawing.Color.White;
+            this.txtFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(23)))), ((int)(((byte)(29)))));
             this.txtFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFirstName.Font = new System.Drawing.Font("Trebuchet MS", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.txtFirstName.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.txtFirstName.Location = new System.Drawing.Point(32, 320);
             this.txtFirstName.Margin = new System.Windows.Forms.Padding(4);
             this.txtFirstName.Multiline = true;
@@ -87,9 +88,10 @@
             // 
             // txtLastName
             // 
-            this.txtLastName.BackColor = System.Drawing.Color.White;
+            this.txtLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(23)))), ((int)(((byte)(29)))));
             this.txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLastName.Font = new System.Drawing.Font("Trebuchet MS", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.txtLastName.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.txtLastName.Location = new System.Drawing.Point(307, 320);
             this.txtLastName.Margin = new System.Windows.Forms.Padding(4);
             this.txtLastName.Multiline = true;
@@ -100,9 +102,10 @@
             // 
             // txtNationalNo
             // 
-            this.txtNationalNo.BackColor = System.Drawing.Color.White;
+            this.txtNationalNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(23)))), ((int)(((byte)(29)))));
             this.txtNationalNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNationalNo.Font = new System.Drawing.Font("Trebuchet MS", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.txtNationalNo.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.txtNationalNo.Location = new System.Drawing.Point(32, 390);
             this.txtNationalNo.Margin = new System.Windows.Forms.Padding(4);
             this.txtNationalNo.Multiline = true;
@@ -113,9 +116,10 @@
             // 
             // txtPhoneNumber
             // 
-            this.txtPhoneNumber.BackColor = System.Drawing.Color.White;
+            this.txtPhoneNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(23)))), ((int)(((byte)(29)))));
             this.txtPhoneNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPhoneNumber.Font = new System.Drawing.Font("Trebuchet MS", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.txtPhoneNumber.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.txtPhoneNumber.Location = new System.Drawing.Point(34, 465);
             this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhoneNumber.Multiline = true;
@@ -126,8 +130,10 @@
             // 
             // txtAddress
             // 
+            this.txtAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(23)))), ((int)(((byte)(29)))));
             this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAddress.Font = new System.Drawing.Font("Trebuchet MS", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.txtAddress.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.txtAddress.Location = new System.Drawing.Point(34, 598);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtAddress.Multiline = true;
@@ -138,9 +144,10 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.BackColor = System.Drawing.Color.White;
+            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(23)))), ((int)(((byte)(29)))));
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmail.Font = new System.Drawing.Font("Trebuchet MS", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.txtEmail.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.txtEmail.Location = new System.Drawing.Point(307, 465);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Multiline = true;
@@ -152,9 +159,10 @@
             // rbMail
             // 
             this.rbMail.AutoSize = true;
-            this.rbMail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
+            this.rbMail.BackColor = System.Drawing.Color.Transparent;
             this.rbMail.Checked = true;
             this.rbMail.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbMail.ForeColor = System.Drawing.SystemColors.Info;
             this.rbMail.Location = new System.Drawing.Point(307, 539);
             this.rbMail.Margin = new System.Windows.Forms.Padding(4);
             this.rbMail.Name = "rbMail";
@@ -168,8 +176,9 @@
             // rbFemail
             // 
             this.rbFemail.AutoSize = true;
-            this.rbFemail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
+            this.rbFemail.BackColor = System.Drawing.Color.Transparent;
             this.rbFemail.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbFemail.ForeColor = System.Drawing.SystemColors.Info;
             this.rbFemail.Location = new System.Drawing.Point(432, 535);
             this.rbFemail.Margin = new System.Windows.Forms.Padding(4);
             this.rbFemail.Name = "rbFemail";
@@ -182,6 +191,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Info;
             this.label1.Location = new System.Drawing.Point(28, 293);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -193,6 +203,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Info;
             this.label2.Location = new System.Drawing.Point(303, 293);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
@@ -204,6 +215,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Info;
             this.label3.Location = new System.Drawing.Point(30, 363);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
@@ -215,6 +227,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Info;
             this.label4.Location = new System.Drawing.Point(28, 438);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
@@ -226,6 +239,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.Info;
             this.label5.Location = new System.Drawing.Point(303, 438);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
@@ -237,6 +251,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Info;
             this.label6.Location = new System.Drawing.Point(30, 571);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
@@ -271,13 +286,12 @@
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnSave.BackColor = System.Drawing.Color.Transparent;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(177, 676);
+            this.btnSave.ForeColor = System.Drawing.Color.Cyan;
+            this.btnSave.Location = new System.Drawing.Point(330, 677);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 31);
@@ -288,12 +302,12 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.btnCancel.BackColor = System.Drawing.Color.Transparent;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(307, 676);
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnCancel.Location = new System.Drawing.Point(154, 677);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 31);
@@ -314,6 +328,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.Info;
             this.label8.Location = new System.Drawing.Point(303, 369);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
@@ -335,6 +350,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.Info;
             this.label9.Location = new System.Drawing.Point(30, 502);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
@@ -373,7 +389,7 @@
             // 
             // pbProfileImg
             // 
-            this.pbProfileImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
+            this.pbProfileImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(22)))), ((int)(((byte)(239)))), ((int)(((byte)(83)))));
             this.pbProfileImg.Image = global::BankSystem.Properties.Resources.person_man;
             this.pbProfileImg.Location = new System.Drawing.Point(250, 103);
             this.pbProfileImg.Margin = new System.Windows.Forms.Padding(4);
@@ -391,7 +407,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(15)))), ((int)(((byte)(20)))));
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.pbRemoveImg);
             this.Controls.Add(this.lblPersonID);

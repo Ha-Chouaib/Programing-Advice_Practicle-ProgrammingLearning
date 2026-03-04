@@ -12,46 +12,53 @@ namespace Bank_DataAccess.Reports.CustomerReports
         private static int _GenerateCustomerSummaryReport(int CustomerID)
         {
             int CustomerReportID = -1;
-            string Query = @"[dbo].[Sp_CustomerSummaryReport_Generate]";
+            string Query = "[dbo].[Sp_CustomerSummaryReport_Generate]";
             try
             {
                 using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
                 using (SqlCommand cmd = new SqlCommand(Query, connection))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
+
                     cmd.Parameters.AddWithValue("@CustomerID", CustomerID);
 
                     SqlParameter outputId = new SqlParameter("@CustomerReportID", SqlDbType.Int)
                     {
                         Direction = ParameterDirection.Output
                     };
-
                     cmd.Parameters.Add(outputId);
+
+                    SqlParameter returnValue = new SqlParameter()
+                    {
+                        Direction = ParameterDirection.ReturnValue
+                    };
+                    cmd.Parameters.Add(returnValue);
 
                     connection.Open();
                     cmd.ExecuteNonQuery();
-                    CustomerReportID = Convert.ToInt32(outputId.Value);
 
-                    if (CustomerReportID == -1)
+                    int spReturn = Convert.ToInt32(returnValue.Value);
+                    if (spReturn == -1)
                     {
-                        throw new InvalidOperationException($"No Customer exist  with ID [{CustomerID}].");
+                        throw new InvalidOperationException($"No Customer exists with ID [{CustomerID}].");
                     }
+
+                    CustomerReportID = outputId.Value != DBNull.Value
+                        ? Convert.ToInt32(outputId.Value)
+                        : -1;
                 }
             }
             catch (SqlException ex)
             {
-                clsGlobal.LogError($"DAL -> CustomerSummaryReports._GenerateCustomerSummaryReport() ,SQL Error: {ex.Message}");
+                clsGlobal.LogError($"DAL -> CustomerSummaryReports._GenerateCustomerSummaryReport(), SQL Error: {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsGlobal.LogError($"DAL -> CustomerSummaryReports._GenerateCustomerSummaryReport() {ex.Message}");
-
+                clsGlobal.LogError($"DAL -> CustomerSummaryReports._GenerateCustomerSummaryReport(): {ex.Message}");
             }
             return CustomerReportID;
-
-
         }
-        public static bool Find(int CustomerID,ref int ReportID,ref byte TotalAccounts ,ref byte ActiveAccounts,ref double TotalBalance,ref DateTime LastActivityDate,ref bool CustomerStatus)
+        public static bool Find(int CustomerID,ref int ReportID,ref short TotalAccounts ,ref short ActiveAccounts,ref double TotalBalance,ref DateTime LastActivityDate,ref bool CustomerStatus)
         {
             string Query = @"[dbo].[Sp_CustomerSummaryReports_GetByID]";
             bool found = false;
@@ -71,8 +78,8 @@ namespace Bank_DataAccess.Reports.CustomerReports
                     {
                         if (reader.Read())
                         {
-                            TotalAccounts = clsGlobal.DB_SafeGet<byte>(reader, "TotalAccounts", 0);
-                            ActiveAccounts = clsGlobal.DB_SafeGet<byte>(reader, "ActiveAccounts", 0);
+                            TotalAccounts = clsGlobal.DB_SafeGet<short>(reader, "TotalAccounts", 0);
+                            ActiveAccounts = clsGlobal.DB_SafeGet<short>(reader, "ActiveAccounts", 0);
                             TotalBalance = clsGlobal.DB_SafeGet<double>(reader, "TotalBalance", 0);
                             LastActivityDate = clsGlobal.DB_SafeGet<DateTime>(reader, "LastActivityDate", DateTime.MinValue);
                             CustomerStatus = clsGlobal.DB_SafeGet<bool>(reader, "CustomerStatus", false);

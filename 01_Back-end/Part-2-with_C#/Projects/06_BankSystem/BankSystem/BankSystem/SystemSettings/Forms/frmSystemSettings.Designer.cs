@@ -32,26 +32,26 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pnlTopBar = new System.Windows.Forms.Panel();
+            this.lblCurrentViewTinyTitle = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblCurrentViewTitle = new System.Windows.Forms.Label();
+            this.pnlMain = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.ctrlBtnSysLogs = new BankSystem.SystemSettings.Controls.ctrlCustomBtn();
             this.ctrlBtnCurrencies = new BankSystem.SystemSettings.Controls.ctrlCustomBtn();
             this.crtlBtnRoles = new BankSystem.SystemSettings.Controls.ctrlCustomBtn();
             this.ctrlBtnBackup = new BankSystem.SystemSettings.Controls.ctrlCustomBtn();
             this.ctrlBtnAppInfo = new BankSystem.SystemSettings.Controls.ctrlCustomBtn();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pnlTopBar = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.pnlMain = new System.Windows.Forms.Panel();
             this.pnlSideBar.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlTopBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSideBar
@@ -110,6 +110,118 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "SECURITY";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Controls.Add(this.pictureBox1);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(352, 92);
+            this.panel5.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Cascadia Code", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(163)))), ((int)(((byte)(175)))));
+            this.label2.Location = new System.Drawing.Point(19, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(120, 22);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "BANK SYSTEM";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(240)))));
+            this.label1.Location = new System.Drawing.Point(59, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 31);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Settings";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel4
+            // 
+            this.panel4.Location = new System.Drawing.Point(41, 36);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(176, 56);
+            this.panel4.TabIndex = 2;
+            // 
+            // pnlTopBar
+            // 
+            this.pnlTopBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
+            this.pnlTopBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTopBar.Controls.Add(this.lblCurrentViewTinyTitle);
+            this.pnlTopBar.Controls.Add(this.label8);
+            this.pnlTopBar.Controls.Add(this.lblCurrentViewTitle);
+            this.pnlTopBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTopBar.Location = new System.Drawing.Point(354, 0);
+            this.pnlTopBar.Name = "pnlTopBar";
+            this.pnlTopBar.Size = new System.Drawing.Size(1620, 93);
+            this.pnlTopBar.TabIndex = 1;
+            // 
+            // lblCurrentViewTinyTitle
+            // 
+            this.lblCurrentViewTinyTitle.AutoSize = true;
+            this.lblCurrentViewTinyTitle.Font = new System.Drawing.Font("Cascadia Code", 8.2F);
+            this.lblCurrentViewTinyTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(128)))), ((int)(((byte)(237)))));
+            this.lblCurrentViewTinyTitle.Location = new System.Drawing.Point(137, 52);
+            this.lblCurrentViewTinyTitle.Name = "lblCurrentViewTinyTitle";
+            this.lblCurrentViewTinyTitle.Size = new System.Drawing.Size(144, 18);
+            this.lblCurrentViewTinyTitle.TabIndex = 6;
+            this.lblCurrentViewTinyTitle.Text = "App && Branch Info";
+            this.lblCurrentViewTinyTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Cascadia Code", 8.2F);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
+            this.label8.Location = new System.Drawing.Point(37, 52);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(88, 18);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Settings >";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblCurrentViewTitle
+            // 
+            this.lblCurrentViewTitle.AutoSize = true;
+            this.lblCurrentViewTitle.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrentViewTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(240)))));
+            this.lblCurrentViewTitle.Location = new System.Drawing.Point(5, 12);
+            this.lblCurrentViewTitle.Name = "lblCurrentViewTitle";
+            this.lblCurrentViewTitle.Size = new System.Drawing.Size(221, 31);
+            this.lblCurrentViewTitle.TabIndex = 1;
+            this.lblCurrentViewTitle.Text = "App && Branch Info";
+            this.lblCurrentViewTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlMain
+            // 
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMain.Location = new System.Drawing.Point(354, 93);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(1620, 851);
+            this.pnlMain.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Cascadia Code", 9.2F);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
+            this.label3.Location = new System.Drawing.Point(20, 151);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 21);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "GENERAL";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ctrlBtnSysLogs
             // 
@@ -185,6 +297,7 @@
             this.ctrlBtnBackup.Name = "ctrlBtnBackup";
             this.ctrlBtnBackup.Size = new System.Drawing.Size(345, 50);
             this.ctrlBtnBackup.TabIndex = 6;
+            this.ctrlBtnBackup.Click += new System.EventHandler(this.ctrlBtnBackup_Click_1);
             // 
             // ctrlBtnAppInfo
             // 
@@ -203,54 +316,7 @@
             this.ctrlBtnAppInfo.Name = "ctrlBtnAppInfo";
             this.ctrlBtnAppInfo.Size = new System.Drawing.Size(342, 53);
             this.ctrlBtnAppInfo.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Cascadia Code", 9.2F);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
-            this.label3.Location = new System.Drawing.Point(20, 151);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 21);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "GENERAL";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel5
-            // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.label2);
-            this.panel5.Controls.Add(this.label1);
-            this.panel5.Controls.Add(this.pictureBox1);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(352, 92);
-            this.panel5.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cascadia Code", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(163)))), ((int)(((byte)(175)))));
-            this.label2.Location = new System.Drawing.Point(19, 11);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 22);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "BANK SYSTEM";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(240)))));
-            this.label1.Location = new System.Drawing.Point(59, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 31);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Settings";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ctrlBtnAppInfo.Click += new System.EventHandler(this.ctrlBtnAppInfo_Click);
             // 
             // pictureBox1
             // 
@@ -261,70 +327,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // panel4
-            // 
-            this.panel4.Location = new System.Drawing.Point(41, 36);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(176, 56);
-            this.panel4.TabIndex = 2;
-            // 
-            // pnlTopBar
-            // 
-            this.pnlTopBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(22)))), ((int)(((byte)(29)))));
-            this.pnlTopBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlTopBar.Controls.Add(this.label9);
-            this.pnlTopBar.Controls.Add(this.label8);
-            this.pnlTopBar.Controls.Add(this.label7);
-            this.pnlTopBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTopBar.Location = new System.Drawing.Point(354, 0);
-            this.pnlTopBar.Name = "pnlTopBar";
-            this.pnlTopBar.Size = new System.Drawing.Size(1620, 93);
-            this.pnlTopBar.TabIndex = 1;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Cascadia Code", 8.2F);
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(128)))), ((int)(((byte)(237)))));
-            this.label9.Location = new System.Drawing.Point(137, 52);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(144, 18);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "App && Branch Info";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Cascadia Code", 8.2F);
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(114)))), ((int)(((byte)(128)))));
-            this.label8.Location = new System.Drawing.Point(37, 52);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 18);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Settings >";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(240)))));
-            this.label7.Location = new System.Drawing.Point(5, 12);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(221, 31);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "App && Branch Info";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnlMain
-            // 
-            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(354, 93);
-            this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1620, 851);
-            this.pnlMain.TabIndex = 2;
             // 
             // frmSystemSettings
             // 
@@ -342,9 +344,9 @@
             this.pnlSideBar.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlTopBar.ResumeLayout(false);
             this.pnlTopBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -359,8 +361,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private Controls.ctrlCustomBtn ctrlBtnAppInfo;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -368,8 +368,10 @@
         private Controls.ctrlCustomBtn ctrlBtnCurrencies;
         private Controls.ctrlCustomBtn crtlBtnRoles;
         private Controls.ctrlCustomBtn ctrlBtnBackup;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblCurrentViewTinyTitle;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblCurrentViewTitle;
+        private Controls.ctrlCustomBtn ctrlBtnAppInfo;
+        private System.Windows.Forms.Label label3;
     }
 }

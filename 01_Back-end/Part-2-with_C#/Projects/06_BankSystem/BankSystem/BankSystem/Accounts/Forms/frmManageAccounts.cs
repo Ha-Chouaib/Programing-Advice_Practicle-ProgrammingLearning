@@ -203,8 +203,9 @@ namespace BankSystem.Accounts.Forms
             clsAccounts account = clsAccounts.FindByID(accountID);
             if (account != null)
             {
-                frmBalanceStatementReportCard card = new frmBalanceStatementReportCard(account.AccountID,account.CustomerID);
+                frmBalanceStatementReportCard card = new frmBalanceStatementReportCard(account.CustomerID,account.AccountID);
                 card.ShowDialog();
+                return;
             }
             MessageBox.Show($"Can't Find Any Account with id [{accountID}]!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -216,6 +217,7 @@ namespace BankSystem.Accounts.Forms
             {
                 frmAccountActivityReportCard card = new frmAccountActivityReportCard(accountID,DateTime.Today);
                 card.ShowDialog();
+                return;
             }
             MessageBox.Show($"Can't Find Any Account with id [{accountID}]!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 

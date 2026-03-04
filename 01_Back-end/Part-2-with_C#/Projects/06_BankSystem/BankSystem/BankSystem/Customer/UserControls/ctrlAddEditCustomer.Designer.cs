@@ -32,15 +32,17 @@
             this.lblHeader = new System.Windows.Forms.Label();
             this.ctrlDisplayPersonDetails1 = new BankSystem.Person.UserControls.ctrlDisplayPersonDetails();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblCreatedDate = new System.Windows.Forms.Label();
+            this.lblCustomerID = new System.Windows.Forms.Label();
             this.cbIsActive = new System.Windows.Forms.CheckBox();
             this.cmbCustomerType = new System.Windows.Forms.ComboBox();
             this.txtOccupation = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAddNewPerson = new System.Windows.Forms.Button();
-            this.lblCustomerID = new System.Windows.Forms.Label();
-            this.lblCreatedDate = new System.Windows.Forms.Label();
             this.lblSearchFor = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +59,7 @@
             this.lblHeader.AutoSize = true;
             this.lblHeader.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblHeader.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.ForeColor = System.Drawing.Color.Cyan;
             this.lblHeader.Location = new System.Drawing.Point(351, 30);
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(406, 59);
@@ -73,7 +76,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(23)))), ((int)(((byte)(29)))));
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.lblCreatedDate);
             this.groupBox1.Controls.Add(this.lblCustomerID);
             this.groupBox1.Controls.Add(this.cbIsActive);
@@ -87,6 +92,31 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Custmoer Data";
+            // 
+            // lblCreatedDate
+            // 
+            this.lblCreatedDate.AutoSize = true;
+            this.lblCreatedDate.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.lblCreatedDate.ForeColor = System.Drawing.SystemColors.Info;
+            this.lblCreatedDate.Location = new System.Drawing.Point(649, 150);
+            this.lblCreatedDate.Name = "lblCreatedDate";
+            this.lblCreatedDate.Size = new System.Drawing.Size(184, 20);
+            this.lblCreatedDate.TabIndex = 4;
+            this.lblCreatedDate.Text = "Created Date [01/12/2025]";
+            this.lblCreatedDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCreatedDate.Visible = false;
+            // 
+            // lblCustomerID
+            // 
+            this.lblCustomerID.AutoSize = true;
+            this.lblCustomerID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.lblCustomerID.ForeColor = System.Drawing.Color.Cyan;
+            this.lblCustomerID.Location = new System.Drawing.Point(376, 23);
+            this.lblCustomerID.Name = "lblCustomerID";
+            this.lblCustomerID.Size = new System.Drawing.Size(135, 23);
+            this.lblCustomerID.TabIndex = 3;
+            this.lblCustomerID.Text = "Customer ID [...]";
+            this.lblCustomerID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cbIsActive
             // 
@@ -165,46 +195,44 @@
             this.btnAddNewPerson.Visible = false;
             this.btnAddNewPerson.Click += new System.EventHandler(this.btnAddNewPerson_Click);
             // 
-            // lblCustomerID
-            // 
-            this.lblCustomerID.AutoSize = true;
-            this.lblCustomerID.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lblCustomerID.ForeColor = System.Drawing.Color.Cyan;
-            this.lblCustomerID.Location = new System.Drawing.Point(376, 23);
-            this.lblCustomerID.Name = "lblCustomerID";
-            this.lblCustomerID.Size = new System.Drawing.Size(135, 23);
-            this.lblCustomerID.TabIndex = 3;
-            this.lblCustomerID.Text = "Customer ID [...]";
-            this.lblCustomerID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblCreatedDate
-            // 
-            this.lblCreatedDate.AutoSize = true;
-            this.lblCreatedDate.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.lblCreatedDate.ForeColor = System.Drawing.SystemColors.Info;
-            this.lblCreatedDate.Location = new System.Drawing.Point(649, 150);
-            this.lblCreatedDate.Name = "lblCreatedDate";
-            this.lblCreatedDate.Size = new System.Drawing.Size(230, 25);
-            this.lblCreatedDate.TabIndex = 4;
-            this.lblCreatedDate.Text = "Created Date [01/12/2025]";
-            this.lblCreatedDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblCreatedDate.Visible = false;
-            // 
             // lblSearchFor
             // 
             this.lblSearchFor.AutoSize = true;
             this.lblSearchFor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchFor.ForeColor = System.Drawing.SystemColors.Info;
             this.lblSearchFor.Location = new System.Drawing.Point(701, 97);
             this.lblSearchFor.Name = "lblSearchFor";
             this.lblSearchFor.Size = new System.Drawing.Size(98, 20);
             this.lblSearchFor.TabIndex = 8;
             this.lblSearchFor.Text = "Search For ...";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Info;
+            this.label1.Location = new System.Drawing.Point(164, 46);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 20);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Occupation";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Info;
+            this.label2.Location = new System.Drawing.Point(593, 51);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(114, 20);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Customer Type";
+            // 
             // ctrlAddEditCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(23)))), ((int)(((byte)(29)))));
             this.Controls.Add(this.lblSearchFor);
             this.Controls.Add(this.btnAddNewPerson);
             this.Controls.Add(this.btnCancel);
@@ -237,5 +265,7 @@
         private System.Windows.Forms.Label lblCustomerID;
         private System.Windows.Forms.Label lblCreatedDate;
         private System.Windows.Forms.Label lblSearchFor;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

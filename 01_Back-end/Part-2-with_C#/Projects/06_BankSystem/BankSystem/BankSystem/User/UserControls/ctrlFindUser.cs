@@ -27,9 +27,9 @@ namespace BankSystem.User.UserControls
             ctrlFind1.Enabled = true;
             Dictionary<string, string> FindByoptions = new Dictionary<string, string>
             {
-                {"User ID","UserID" },
-                {"Person ID","PersonID" },
-                {"User Name","UserName" }
+                {"UserID","User ID" },
+                {"PersonID","Person ID" },
+                {"UserName","User Name" }
             };
 
             ctrlFind1.__Initializing(FindByoptions, clsUser.FindBy);

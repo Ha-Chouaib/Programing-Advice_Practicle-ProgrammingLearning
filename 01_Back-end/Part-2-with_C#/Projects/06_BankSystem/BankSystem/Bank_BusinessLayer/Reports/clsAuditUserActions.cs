@@ -84,6 +84,11 @@ namespace Bank_BusinessLayer.Reports
             public byte Version { get; set; } = 1;
         }
 
+        public AuditContext GetAuditContext()
+        {
+            if (string.IsNullOrEmpty(this.Metadata)) return null;
+            return JsonConvert.DeserializeObject<AuditContext>(this.Metadata);
+        }
         public clsAuditUserActions()
         {
             this.ReportId = -1;
@@ -267,38 +272,41 @@ namespace Bank_BusinessLayer.Reports
             }
             public static void AuditReadRecordOperation((object TargetEntity, int? EntityID) EntityWrapper, bool OperationSucceed, (string SectionKey, string SectionDescription) Section)
             {
-                var action = new clsAuditUserActions.AuditAction();
-                var auditResult = new clsAuditUserActions.AuditResult();
-                action.ActionKey = Section.SectionKey + ActionKeys.ReadRecord;
-                action.Description = Section.SectionDescription;
 
-                if (OperationSucceed)
-                {
-                    auditResult.Success = true;
-                }
-                else
-                {
-                    auditResult.Success = false;
-                    auditResult.ErrorMessage = $"Failed to read {Section.SectionKey.ToLower()} record.";
-                }
-                AuditUserActivity(action, EntityWrapper, null, auditResult);
+                clsGlobal_BL.LogHelper.LogInformation($"Audit: Attempting to read {Section.SectionKey} record with ID [{EntityWrapper.EntityID}]. Operation Succeeded: {OperationSucceed}");
+                //var action = new clsAuditUserActions.AuditAction();
+                //var auditResult = new clsAuditUserActions.AuditResult();
+                //action.ActionKey = Section.SectionKey + ActionKeys.ReadRecord;
+                //action.Description = Section.SectionDescription;
+
+                //if (OperationSucceed)
+                //{
+                //    auditResult.Success = true;
+                //}
+                //else
+                //{
+                //    auditResult.Success = false;
+                //    auditResult.ErrorMessage = $"Failed to read {Section.SectionKey.ToLower()} record.";
+                //}
+                //AuditUserActivity(action, EntityWrapper, null, auditResult);
             }
             public static void AuditReadRecordsListOperation(bool OperationSucceed, (string SectionKey, string SectionDescription) Section)
             {
-                var action = new clsAuditUserActions.AuditAction();
-                var auditResult = new clsAuditUserActions.AuditResult();
-                action.ActionKey = Section.SectionKey + ActionKeys.ReadRecordsList;
-                action.Description = Section.SectionDescription;
-                if (OperationSucceed)
-                {
-                    auditResult.Success = true;
-                }
-                else
-                {
-                    auditResult.Success = false;
-                    auditResult.ErrorMessage = $"Failed to read {Section.SectionKey.ToLower()} records list.";
-                }
-                AuditUserActivity(action, (null,null), null, auditResult);
+                clsGlobal_BL.LogHelper.LogInformation($"Audit: Attempting to read {Section.SectionKey} records list. Operation Succeeded: {OperationSucceed}");
+                //var action = new clsAuditUserActions.AuditAction();
+                //var auditResult = new clsAuditUserActions.AuditResult();
+                //action.ActionKey = Section.SectionKey + ActionKeys.ReadRecordsList;
+                //action.Description = Section.SectionDescription;
+                //if (OperationSucceed)
+                //{
+                //    auditResult.Success = true;
+                //}
+                //else
+                //{
+                //    auditResult.Success = false;
+                //    auditResult.ErrorMessage = $"Failed to read {Section.SectionKey.ToLower()} records list.";
+                //}
+                //AuditUserActivity(action, (null,null), null, auditResult);
 
             }
             public static void AuditValidationOperation((object TargetEntity, int? EntityID) EntityWrapper, bool OperationSucceed, (string SectionKey, string SectionDescription) Section)

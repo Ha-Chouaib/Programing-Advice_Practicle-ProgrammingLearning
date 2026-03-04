@@ -147,9 +147,12 @@ namespace Bank_BusinessLayer
 
             var changes = clsUtil_BL.HandleObjectsHelper.CompareObjects(OldRecord, NewRecord);
             AuditingHelper.AuditUpdateOperation(OperationSucceed, (_SectionKey, "Update User Record"), changes.Before, changes.After, this.UserID);
+
+
             return OperationSucceed;
 
         }
+      
         public bool Save()
         {
             switch (_Mode)

@@ -52,7 +52,7 @@
             this.lnkCustomerDetails.AutoSize = true;
             this.lnkCustomerDetails.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkCustomerDetails.LinkColor = System.Drawing.Color.Cyan;
-            this.lnkCustomerDetails.Location = new System.Drawing.Point(405, 460);
+            this.lnkCustomerDetails.Location = new System.Drawing.Point(345, 417);
             this.lnkCustomerDetails.Name = "lnkCustomerDetails";
             this.lnkCustomerDetails.Size = new System.Drawing.Size(200, 23);
             this.lnkCustomerDetails.TabIndex = 53;
@@ -65,7 +65,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.Info;
-            this.label7.Location = new System.Drawing.Point(594, 274);
+            this.label7.Location = new System.Drawing.Point(534, 231);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(107, 20);
             this.label7.TabIndex = 52;
@@ -76,7 +76,7 @@
             this.txtTotalBalance.BackColor = System.Drawing.Color.Black;
             this.txtTotalBalance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTotalBalance.ForeColor = System.Drawing.Color.White;
-            this.txtTotalBalance.Location = new System.Drawing.Point(598, 298);
+            this.txtTotalBalance.Location = new System.Drawing.Point(538, 255);
             this.txtTotalBalance.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotalBalance.Multiline = true;
             this.txtTotalBalance.Name = "txtTotalBalance";
@@ -90,7 +90,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Info;
-            this.label4.Location = new System.Drawing.Point(90, 274);
+            this.label4.Location = new System.Drawing.Point(30, 231);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(137, 20);
             this.label4.TabIndex = 50;
@@ -101,7 +101,7 @@
             this.txtLastActivityDate.BackColor = System.Drawing.Color.Black;
             this.txtLastActivityDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLastActivityDate.ForeColor = System.Drawing.Color.White;
-            this.txtLastActivityDate.Location = new System.Drawing.Point(94, 298);
+            this.txtLastActivityDate.Location = new System.Drawing.Point(34, 255);
             this.txtLastActivityDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtLastActivityDate.Multiline = true;
             this.txtLastActivityDate.Name = "txtLastActivityDate";
@@ -115,7 +115,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Info;
-            this.label6.Location = new System.Drawing.Point(594, 87);
+            this.label6.Location = new System.Drawing.Point(534, 44);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(118, 20);
             this.label6.TabIndex = 48;
@@ -126,7 +126,7 @@
             this.Closing.AutoSize = true;
             this.Closing.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Closing.ForeColor = System.Drawing.SystemColors.Info;
-            this.Closing.Location = new System.Drawing.Point(594, 178);
+            this.Closing.Location = new System.Drawing.Point(534, 135);
             this.Closing.Name = "Closing";
             this.Closing.Size = new System.Drawing.Size(125, 20);
             this.Closing.TabIndex = 47;
@@ -137,7 +137,7 @@
             this.AccountID.AutoSize = true;
             this.AccountID.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AccountID.ForeColor = System.Drawing.SystemColors.Info;
-            this.AccountID.Location = new System.Drawing.Point(90, 178);
+            this.AccountID.Location = new System.Drawing.Point(30, 135);
             this.AccountID.Name = "AccountID";
             this.AccountID.Size = new System.Drawing.Size(99, 20);
             this.AccountID.TabIndex = 46;
@@ -148,7 +148,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Info;
-            this.label2.Location = new System.Drawing.Point(200, 364);
+            this.label2.Location = new System.Drawing.Point(140, 321);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 20);
             this.label2.TabIndex = 45;
@@ -159,7 +159,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Info;
-            this.label1.Location = new System.Drawing.Point(90, 87);
+            this.label1.Location = new System.Drawing.Point(30, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 20);
             this.label1.TabIndex = 44;
@@ -170,7 +170,7 @@
             this.txtActiveAccounts.BackColor = System.Drawing.Color.Black;
             this.txtActiveAccounts.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtActiveAccounts.ForeColor = System.Drawing.Color.White;
-            this.txtActiveAccounts.Location = new System.Drawing.Point(598, 202);
+            this.txtActiveAccounts.Location = new System.Drawing.Point(538, 159);
             this.txtActiveAccounts.Margin = new System.Windows.Forms.Padding(4);
             this.txtActiveAccounts.Multiline = true;
             this.txtActiveAccounts.Name = "txtActiveAccounts";
@@ -184,7 +184,7 @@
             this.txtReportDate.BackColor = System.Drawing.Color.Black;
             this.txtReportDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtReportDate.ForeColor = System.Drawing.Color.White;
-            this.txtReportDate.Location = new System.Drawing.Point(90, 388);
+            this.txtReportDate.Location = new System.Drawing.Point(30, 345);
             this.txtReportDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtReportDate.Multiline = true;
             this.txtReportDate.Name = "txtReportDate";
@@ -199,7 +199,7 @@
             this.txtTotalAccounts.BackColor = System.Drawing.Color.Black;
             this.txtTotalAccounts.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTotalAccounts.ForeColor = System.Drawing.Color.White;
-            this.txtTotalAccounts.Location = new System.Drawing.Point(598, 111);
+            this.txtTotalAccounts.Location = new System.Drawing.Point(538, 68);
             this.txtTotalAccounts.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotalAccounts.Multiline = true;
             this.txtTotalAccounts.Name = "txtTotalAccounts";
@@ -213,7 +213,7 @@
             this.txtCustomerID.BackColor = System.Drawing.Color.Black;
             this.txtCustomerID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCustomerID.ForeColor = System.Drawing.Color.White;
-            this.txtCustomerID.Location = new System.Drawing.Point(94, 202);
+            this.txtCustomerID.Location = new System.Drawing.Point(34, 159);
             this.txtCustomerID.Margin = new System.Windows.Forms.Padding(4);
             this.txtCustomerID.Multiline = true;
             this.txtCustomerID.Name = "txtCustomerID";
@@ -227,7 +227,7 @@
             this.txtReportID.BackColor = System.Drawing.Color.Black;
             this.txtReportID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtReportID.ForeColor = System.Drawing.Color.White;
-            this.txtReportID.Location = new System.Drawing.Point(94, 111);
+            this.txtReportID.Location = new System.Drawing.Point(34, 68);
             this.txtReportID.Margin = new System.Windows.Forms.Padding(4);
             this.txtReportID.Multiline = true;
             this.txtReportID.Name = "txtReportID";
@@ -241,7 +241,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Info;
-            this.label3.Location = new System.Drawing.Point(698, 364);
+            this.label3.Location = new System.Drawing.Point(638, 321);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(128, 20);
             this.label3.TabIndex = 55;
@@ -252,7 +252,7 @@
             this.txtCustomerStatus.BackColor = System.Drawing.Color.Black;
             this.txtCustomerStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCustomerStatus.ForeColor = System.Drawing.Color.White;
-            this.txtCustomerStatus.Location = new System.Drawing.Point(596, 388);
+            this.txtCustomerStatus.Location = new System.Drawing.Point(536, 345);
             this.txtCustomerStatus.Margin = new System.Windows.Forms.Padding(4);
             this.txtCustomerStatus.Multiline = true;
             this.txtCustomerStatus.Name = "txtCustomerStatus";
@@ -285,7 +285,7 @@
             this.Controls.Add(this.txtCustomerID);
             this.Controls.Add(this.txtReportID);
             this.Name = "ctrlCustomerSummaryReportCard";
-            this.Size = new System.Drawing.Size(1024, 497);
+            this.Size = new System.Drawing.Size(909, 462);
             this.ResumeLayout(false);
             this.PerformLayout();
 

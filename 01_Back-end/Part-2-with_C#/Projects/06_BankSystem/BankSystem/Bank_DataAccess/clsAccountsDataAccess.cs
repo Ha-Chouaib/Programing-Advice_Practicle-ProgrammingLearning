@@ -422,10 +422,20 @@ namespace Bank_DataAccess
                     connection.Open();
                     using (SqlDataReader rdr = cmd.ExecuteReader())
                     {
-                        Success = clsGlobal.DB_SafeGet<bool>(rdr, "Success", false);
-
-                        if (!Success)
-                            throw new InvalidOperationException(clsGlobal.DB_SafeGet<string>(rdr, "ErrorMSG", ""));
+                        if (rdr.Read()) 
+                        {
+                            Success = clsGlobal.DB_SafeGet<bool>(rdr, "Success", false);
+                            if (!Success)
+                            {
+                                string message = clsGlobal.DB_SafeGet<string>(rdr, "Message", "Unknown error");
+                                throw new InvalidOperationException(message);
+                            }
+                        }
+                        else
+                        {
+                            throw new InvalidOperationException("Stored procedure returned no result.");
+                        }
+                       
 
                     }
                 }
@@ -463,21 +473,30 @@ namespace Bank_DataAccess
                     connection.Open();
                     using (SqlDataReader rdr = cmd.ExecuteReader())
                     {
-                        Success = clsGlobal.DB_SafeGet<bool>(rdr, "Success", false);
-
-                        if (!Success)
-                            throw new InvalidOperationException(clsGlobal.DB_SafeGet<string>(rdr, "Message", ""));
+                        if (rdr.Read()) 
+                        {
+                            Success = clsGlobal.DB_SafeGet<bool>(rdr, "Success", false);
+                            if (!Success)
+                            {
+                                string message = clsGlobal.DB_SafeGet<string>(rdr, "Message", "Unknown error");
+                                throw new InvalidOperationException(message);
+                            }
+                        }
+                        else
+                        {
+                            throw new InvalidOperationException("Stored procedure returned no result.");
+                        }
 
                     }
                 }
             }
             catch (SqlException ex)
             {
-                clsGlobal.LogError($"[DAL: Customer.TransferMoney() ] -> SqlServer Error({ex.Number}): {ex.Message}");
+                clsGlobal.LogError($"[DAL: Account.TransferMoney() ] -> SqlServer Error({ex.Number}): {ex.Message}");
             }
             catch (Exception ex)
             {
-                clsGlobal.LogError($"[DAL: Customer.TransferMoney() ] -> {ex.Message}");
+                clsGlobal.LogError($"[DAL: Account.TransferMoney() ] -> {ex.Message}");
 
             }
             return Success;

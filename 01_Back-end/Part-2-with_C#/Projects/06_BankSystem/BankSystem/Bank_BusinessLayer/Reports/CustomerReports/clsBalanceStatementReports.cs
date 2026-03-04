@@ -52,8 +52,8 @@ namespace Bank_BusinessLayer.Reports.CustomerReports
 
             bool found = clsBalanceStatementReports_DAL.Find(customerID, accountID,ref ReportID, ref openingBalance, ref closingBalance, ref fromDate, ref toDate);
 
-            var ReportHeader = clsCustomerReports_Main.Find(ReportID);
-            clsBalanceStatementReports report = null;
+            var ReportHeader = found? clsCustomerReports_Main.Find(ReportID) : null;
+            clsBalanceStatementReports report = new clsBalanceStatementReports();
             if (found && ReportHeader != null)
             {
                 report = new clsBalanceStatementReports(ReportHeader.CustomerReportID, ReportHeader.CustomerID, ReportHeader.ReportDate, ReportHeader.ReportTypeID, accountID, openingBalance, closingBalance, fromDate, toDate);

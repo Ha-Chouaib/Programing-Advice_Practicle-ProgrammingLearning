@@ -33,7 +33,7 @@ namespace BankSystem.Reports.Controls
             txtActiveAccounts.Text = Report.ActiveAccounts.ToString();
             txtLastActivityDate.Text = Report.LastActivityDate.ToString("d");
             txtCustomerStatus.Text = Report.CustomerStatus ? "Active" : "Inactive";
-
+            txtReportDate.Text = Report.ReportDate.ToString("g");
             lnkCustomerDetails.Enabled = Report.CustomerID == -1 ? false : true;
         }
         public void __DisplayReportCard(int customerID)

@@ -183,9 +183,8 @@ namespace Bank_DataAccess
                             Password = rdr["Password"].ToString() ?? string.Empty;
                             IsActive = (rdr["IsActive"] != DBNull.Value) ? (bool)rdr["IsActive"] : false;
                             CreatedByUserID = rdr["CreatedByUserID"] != DBNull.Value ? Convert.ToInt32(rdr["CreatedByUserID"]) : -1;
-                            CustomPermissions = rdr["CustomPermissions"] != DBNull.Value ? (long)rdr["CustomPermissions"] : 0L;
-                            RevokedPermissions = rdr["RevokedPermissions"] != DBNull.Value ? (long)rdr["RevokedPermissions"] : 0L;
-
+                            CustomPermissions = rdr["CustomPermissions"] != DBNull.Value ? Convert.ToInt64(rdr["CustomPermissions"]) : 0L;
+                            RevokedPermissions = rdr["RevokedPermissions"] != DBNull.Value ? Convert.ToInt64(rdr["RevokedPermissions"]) : 0L;
                             found = true;
                         }
                     }

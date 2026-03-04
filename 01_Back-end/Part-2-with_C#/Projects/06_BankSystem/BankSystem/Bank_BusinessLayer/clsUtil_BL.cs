@@ -1,4 +1,6 @@
 ﻿using Bank_BusinessLayer.Reports.CustomerReports;
+using Bank_DataAccess;
+using BankSystem;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -15,7 +17,7 @@ namespace Bank_BusinessLayer
 {
     public class clsUtil_BL
     {
-        public static string EventLog_SourceName = "DVLD_App";
+        public static string EventLog_SourceName => clsGlobal_BL.EventLogSourceName;
         public static string EncryptString_Hashing(string Str_ToEncrypt)
         {
             using (SHA256 sha256 = SHA256.Create())
@@ -51,6 +53,7 @@ namespace Bank_BusinessLayer
         }
         public static string Decrypt(string cipherText, string Key)
         {
+            if (string.IsNullOrEmpty(cipherText)) return "";
             using (Aes aesAlg = Aes.Create())
             {
                 aesAlg.Key = Encoding.UTF8.GetBytes(Key);
@@ -70,7 +73,7 @@ namespace Bank_BusinessLayer
         }
 
 
-        private static string RegistryKeyPath = @"HKEY_CURRENT_USER\SOFTWARE\DVLD";
+        private static string RegistryKeyPath = @"HKEY_CURRENT_USER\SOFTWARE\BankSystem_App";
         public static bool RememberUsernameAndPasssword(string UserName, string Password)
         {
             try
@@ -119,6 +122,20 @@ namespace Bank_BusinessLayer
 
         }
 
+        public static  void UpdateUserCridential(string userName, string Encryptedpassword)
+        {
+            string crd_Username = "", crd_Password = "";
+            if (clsUtil_BL.GetUserCredential(ref crd_Username, ref crd_Password))
+            {
+
+                if (!string.IsNullOrEmpty(crd_Username) && !string.IsNullOrEmpty(crd_Password))
+                {
+                    clsUtil_BL.RememberUsernameAndPasssword(userName, Encryptedpassword);
+                }
+                else
+                    clsUtil_BL.RememberUsernameAndPasssword("", "");
+            }
+        }
         public class MappingHelper
         {
             public static Dictionary<string, string> GetOptionsFromMapping(Type targetFilterMappingClass)

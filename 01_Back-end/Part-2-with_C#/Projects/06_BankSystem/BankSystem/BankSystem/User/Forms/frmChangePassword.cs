@@ -79,10 +79,14 @@ namespace BankSystem.User.Forms
                 MessageBox.Show("Please fix the errors before saving.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (clsUser.UpdateUsePassword(_SelectedUser.UserID, clsUtil_BL.EncryptString_Hashing(txtNewPass.Text.Trim())))
+
+            string pass = txtNewPass.Text.Trim();
+            if (clsUser.UpdateUsePassword(_SelectedUser.UserID, clsUtil_BL.EncryptString_Hashing(pass)))
             {
                 MessageBox.Show("Password updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 __OperationDoneSuccessfully?.Invoke();
+                if (_SelectedUser.UserID == clsGlobal_BL.LoggedInUser.UserID)
+                    clsUtil_BL.UpdateUserCridential(_SelectedUser.UserName,clsUtil_BL.Encrypt(pass,clsUtil_BL.EncryptionKey));
                 this.Close();
             }
             else

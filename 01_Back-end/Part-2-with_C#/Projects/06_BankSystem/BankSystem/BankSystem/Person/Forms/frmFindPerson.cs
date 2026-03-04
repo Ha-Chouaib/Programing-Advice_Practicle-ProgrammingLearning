@@ -20,6 +20,14 @@ namespace BankSystem.Person.Forms
             Find_Display();
         }
 
+        public frmFindPerson(clsPerson person)
+        {
+            InitializeComponent();
+            _HasPermissions(person.PersonID);
+            ctrlFind1.Enabled = false;
+            ctrlDisplayPersonDetails1.__ShowPersonalInfo(person);
+        }
+
         private void _HasPermissions()
         {
             if (!clsGlobal_BL.LoggedInUser.HasPermission(clsRole.enPermissions.People_Find))
@@ -30,8 +38,18 @@ namespace BankSystem.Person.Forms
                 return;
             }
         }
+        private void _HasPermissions(int PersonId)
+        {
+            if (clsGlobal_BL.LoggedInUser.HasPermission(clsRole.enPermissions.People_Find) || clsGlobal_BL.LoggedInUser.PersonID == PersonId) return;
+
+            MessageBox.Show("You don't have permission to search for people data.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            this.Load += (s, e) => this.Close();
+            return;
+        }
+
         private void Find_Display()
         {
+            ctrlFind1.Enabled = true;
             ctrlFind1.__Initializing(_SetFindByOptions(),clsPerson.FindBy);
             ctrlFind1.__FindOptionsCombo.SelectedValueChanged += (s, e) =>
             {
@@ -52,8 +70,8 @@ namespace BankSystem.Person.Forms
         {
             Dictionary<string, string> options = new Dictionary<string, string>
             {
-                {"Person ID","PersonID" },
-                {"National No","NationalNo" }
+                {"PersonID","Person ID" },
+                {"NationalNo","National No" }
             };
             return options;
         }

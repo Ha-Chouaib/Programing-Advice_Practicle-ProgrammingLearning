@@ -36,10 +36,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(231, 15);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.SystemColors.Info;
+            this.label1.Location = new System.Drawing.Point(521, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(193, 38);
+            this.label1.Size = new System.Drawing.Size(116, 23);
             this.label1.TabIndex = 2;
             this.label1.Text = "Find a Person";
             // 
@@ -52,7 +54,7 @@
             // 
             // ctrlAddEditPerson1
             // 
-            this.ctrlAddEditPerson1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
+            this.ctrlAddEditPerson1.BackColor = System.Drawing.Color.Transparent;
             this.ctrlAddEditPerson1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ctrlAddEditPerson1.Location = new System.Drawing.Point(28, 103);
             this.ctrlAddEditPerson1.Margin = new System.Windows.Forms.Padding(4);
@@ -64,6 +66,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(643, 846);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ctrlFind1);

@@ -23,7 +23,7 @@ namespace BankSystem.Customer.UserControls
         public void __initializeFindControl()
         {
             ctrlFind1.__Initializing(new Dictionary<string, string>
-            { { "Customer ID", "CustomerID" }, { "Person ID", "PersonID" } }, clsCustomer.FindBy);
+            { { "CustomerID", "Customer ID" }, { "PersonID", "Person ID" } }, clsCustomer.FindBy);
             ctrlFind1.__txtSearchTerm.KeyPress += (s, e) => { e.Handled = (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)); };
             ctrlFind1.__ObjectFound += _ShowData;
         }

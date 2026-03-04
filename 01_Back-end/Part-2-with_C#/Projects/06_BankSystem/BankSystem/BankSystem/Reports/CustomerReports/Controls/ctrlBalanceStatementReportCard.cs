@@ -35,7 +35,7 @@ namespace BankSystem.Reports.Controls
             txtReportID.Text = BalanceStatementReport.ReportDate.ToString();
             txtOpeningBalance.Text = BalanceStatementReport.OpeningBalance.ToString("C2");
             txtClosingBalance.Text = BalanceStatementReport.ClosingBalance.ToString("C2");
-
+            txtReportDate.Text = BalanceStatementReport.ReportDate.ToString("g");
             lnkCustomerDetails.Enabled = (BalanceStatementReport.CustomerID == -1) ? false : true;
             lnkAccountDetails.Enabled = (BalanceStatementReport.AccountID == -1) ? false : true;
 

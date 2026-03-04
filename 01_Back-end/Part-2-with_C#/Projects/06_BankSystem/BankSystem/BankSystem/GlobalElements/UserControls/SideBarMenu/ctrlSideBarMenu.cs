@@ -24,8 +24,8 @@ namespace BankSystem.SideBarMenu
             fpnlSideBarContainer.FlowDirection = FlowDirection.TopDown;
             fpnlSideBarContainer.Dock = DockStyle.Fill;
             fpnlSideBarContainer.Left = (this.ClientSize.Width - fpnlSideBarContainer.Width) / 2;
-
-            fpnlSideBarContainer.BackColor = Color.FromArgb(15, 23, 42); 
+            
+            fpnlSideBarContainer.BackColor = Color.FromArgb(19, 23, 29); 
 
         }
 
@@ -79,7 +79,7 @@ namespace BankSystem.SideBarMenu
                         AutoSizeMode = AutoSizeMode.GrowAndShrink,
                         Margin = Padding.Empty   ,
                         Height = 35,
-                        Width = fpnlSideBarContainer.Width,
+                        Width = this.Width,
 
                     };
 
@@ -92,7 +92,8 @@ namespace BankSystem.SideBarMenu
                             item.HoverForeColor.IsEmpty ? Color.White : item.HoverForeColor
                         );
 
-                        subMenu.SubContainer.BackColor = Color.FromArgb(30, 41, 59); 
+                        subMenu.SubContainer.BackColor = Color.FromArgb(30, 41, 59);
+                        subMenu.Width = this.Width;
                     }
                     else
                     {

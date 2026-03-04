@@ -1,10 +1,13 @@
-﻿using BankSystem.Properties;
+﻿using BankSystem.GlobalElements.Forms;
+using BankSystem.GlobalElements.UserControls;
+using BankSystem.Properties;
 using BankSystem.SideBarMenu;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,17 +15,80 @@ using System.Windows.Forms;
 
 namespace BankSystem
 {
-    public partial class frmHomePage : frmBaseForm
+    public partial class frmHomePage : Form
     {
         public frmHomePage()
         {
             InitializeComponent();
 
         }
+        frmLogin _LoginForm;
+        public frmHomePage(frmLogin loginForm)
+        {
+            InitializeComponent();
+            _LoginForm = loginForm;
+            InitializeMainPanel();
 
-        private void frmHomePage_Load(object sender, EventArgs e)
+        }
+
+        private void InitializeMainPanel()
+        {
+            ctrlHomePageShorts shorts = new ctrlHomePageShorts();
+            if (!pnlMain.Controls.Contains(shorts))
+            {
+                pnlMain.Controls.Clear();
+                pnlMain.Controls.Add(shorts);
+                shorts.Location = new Point((pnlMain.Width - shorts.Width) / 2, (pnlMain.Height - shorts.Height) / 2);
+                pnlMain.SizeChanged += (s, ev) => { shorts.Location = new Point((pnlMain.Width - shorts.Width) / 2, (pnlMain.Height - shorts.Height) / 2); };
+                shorts.BringToFront();
+            }
+          
+        }
+        private void frmHomePage_Load_1(object sender, EventArgs e)
         {
             BuildSideBar();
+            if (!IsInDesignMode())
+            {
+                Initialize();
+
+            }
+
+        }
+
+        private bool IsInDesignMode()
+        {
+            // safest design-mode check that also works in inheritance
+            return LicenseManager.UsageMode == LicenseUsageMode.Designtime;
+        }
+
+
+        private void Initialize()
+        {
+            Date_Clock();
+            string imgPath = clsGlobal_BL.LoggedInUser.PersonalInfo.ImagePath;
+            bool isMale = clsGlobal_BL.LoggedInUser.PersonalInfo.Gender == 0;
+            Image profile = !string.IsNullOrEmpty(imgPath) && File.Exists(imgPath) ? Image.FromFile(imgPath) : isMale ? Resources.person_man : Resources.person_woman;
+
+            btnAccountSettings.__BtnImage = profile;
+        }
+        private void Date_Clock()
+        {
+
+            timer1.Tick += timer1_Tick;
+            timer1.Start();
+
+            _UpdateClock();
+
+
+        }
+        private void _UpdateClock()
+        {
+            lblClok.Text = $"{DateTime.Now.ToString("yyyy/MM/dd")} -- {DateTime.Now.ToString("hh:mm:ss tt")}";
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            _UpdateClock();
         }
 
         private List<clsMenuBtnModel> _MenuItems()
@@ -118,8 +184,8 @@ namespace BankSystem
         }
         public void BuildSideBar()
         {
-            ctrlSideBarMenu1.SideBarItemClicked += LoadForm;
-            ctrlSideBarMenu1.BuildSideBarMenu(_MenuItems());
+            ctrlSideBarMenu2.SideBarItemClicked += LoadForm;
+            ctrlSideBarMenu2.BuildSideBarMenu(_MenuItems());
         }
 
         private void LoadForm(object sender, clsMenuBtnModel Item)
@@ -135,6 +201,18 @@ namespace BankSystem
 
             frm.ShowDialog();
 
+        }
+
+        private void btnAccountSettings_Click_1(object sender, EventArgs e)
+        {
+            frmAccountSettings settings = new frmAccountSettings(btnAccountSettings);
+            settings.ShowDialog();
+        }
+
+        private void frmHomePage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            clsGlobal_BL.ClearSession();
+            _LoginForm.Show();
         }
     }
 }

@@ -128,6 +128,7 @@ namespace Bank_BusinessLayer
             clsAccounts _account = null;
             if (clsAccountsDataAccess.FindByID(AccountID, ref CustomerID, ref AccountNumber, ref AccountType, ref Balance, ref IsActive, ref CreatedDate, ref CreatedByUserID))               
                 _account = new clsAccounts(AccountID, CustomerID, AccountNumber, (enAccountType)AccountType, Balance, IsActive, CreatedDate, CreatedByUserID);
+
             if(clsUtil_BL.CallerInspector.IsExternalNamespaceCall())
             {
                 AuditingHelper.AuditReadRecordOperation((_account, AccountID), _account != null, (_SectionKey, $"Read account record with account id [{AccountID}]"));
@@ -249,18 +250,19 @@ namespace Bank_BusinessLayer
         public static bool DepositWithdraw(int AccountID, double Amount)
         {
             var account = FindByID(AccountID);
+
             var target = clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(account);
             bool done = false;
-            if (!(account.Balance < Math.Abs(Amount) && Amount <= 0))
+            double oldBalance = account.Balance;
+            byte TransactionType = Amount > 0 ? (byte)clsTransactionsReport.enTransactionType.Deposit : (byte)clsTransactionsReport.enTransactionType.Withdrawal;
+
+            if (!(oldBalance < Math.Abs(Amount)))
                 done= clsAccountsDataAccess.DepositWithdraw(AccountID, Amount);
+            
+            if (done) clsTransactionsReport.AuditTransaction(TransactionType, AccountID, null, Amount,
+                oldBalance,( Amount < 0 ? (oldBalance - Amount) : (oldBalance + Amount)), "");
 
-            (string key, string description) section;
-            if (Amount > 0)
-                section = ($"{_SectionKey}_TRANSACTION-DEPOSIT", $"Append the Amount [{Amount}] to Account with id {AccountID}");
-            else
-                section = ($"{_SectionKey}_TRANSACTION-WITHDRAWAL", $"take the Amount [{Amount}] from Account with id {AccountID}");
 
-            AuditingHelper.AuditCreateOperation((target, AccountID), done, section);
             return done;
         }
         public bool DepositWithdraw(double Amount)
@@ -273,10 +275,13 @@ namespace Bank_BusinessLayer
             var account = FindByID(AccountFromID);
             var target = clsUtil_BL.HandleObjectsHelper.GetObjectLegalPropertiesOnly(account);
             bool done = false;
-            if (!(account.Balance < Math.Abs(Amount) || Amount <= 0))
+            double oldBalance = account.Balance;
+            if (!(oldBalance < Math.Abs(Amount) || Amount <= 0))
                 done = clsAccountsDataAccess.TransferMoney(AccountFromID, AccountToID, Amount);
-            (string key, string description) section = ($"{_SectionKey}_TRANSACTION-TRANSFERE", $"Move the Amount [{Amount}] from Account with id {AccountFromID} to account with id[{AccountToID}]");
-            AuditingHelper.AuditCreateOperation((target, AccountFromID), done, section);
+           
+            if (done) clsTransactionsReport.AuditTransaction((byte)clsTransactionsReport.enTransactionType.Transfer, AccountFromID, AccountToID, Amount,
+                oldBalance, (oldBalance - Amount), "");
+
 
             return done;
         }

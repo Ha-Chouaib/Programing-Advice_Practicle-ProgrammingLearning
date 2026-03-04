@@ -37,7 +37,7 @@ namespace BankSystem.Reports.Controls
             txtTotalDebit.Text = AccountActivityReport.TotalDebit.ToString("C2");
             txtTotalCredit.Text = AccountActivityReport.TotalCredit.ToString("C2");
             txtReportID.Text = AccountActivityReport.ReportDate.ToString();
-
+            txtReportDate.Text = AccountActivityReport.ReportDate.ToString("g");
             lnkCustomerDetails.Enabled = (AccountActivityReport.CustomerID == -1) ? false : true;
             lnkAccountDetails.Enabled = (AccountActivityReport.AccountID == -1) ? false : true;
 

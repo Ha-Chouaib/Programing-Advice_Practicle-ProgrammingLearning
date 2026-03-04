@@ -192,9 +192,11 @@ namespace Bank_BusinessLayer
 
             var changes = clsUtil_BL.HandleObjectsHelper.CompareObjects(OldRecord, NewRecord);
             AuditingHelper.AuditUpdateOperation(OperationSucceed, (_sectionKey, "Update person record"), changes.Before, changes.After, NewRecord.PersonID);
+
+            
             return OperationSucceed;
         }
-    
+       
         public bool Save()
         {
             switch(_Mode)
@@ -333,8 +335,7 @@ namespace Bank_BusinessLayer
 
                 {
                     Filter_Mapping.NationalNo.valueMember,
-                    (string term, byte page, byte size, out short pages) =>
-                        FilterByNationalNo(term, page, size, out pages)
+                    (string term, byte page, byte size, out short pages) => FilterByNationalNo(term, page, size, out pages)
                 },
 
                 {

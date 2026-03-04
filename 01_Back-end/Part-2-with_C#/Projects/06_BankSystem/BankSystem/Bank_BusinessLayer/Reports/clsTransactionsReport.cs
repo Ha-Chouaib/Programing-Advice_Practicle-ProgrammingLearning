@@ -1,4 +1,5 @@
 ﻿using Bank_DataAccess;
+using BankSystem;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -18,17 +19,17 @@ namespace Bank_BusinessLayer.Reports
             Transfer = 3
         }
 
-        int TransactionID { get; set; }
-        enTransactionType TransactionType { get; set; }        
-        DateTime TransactionDate { get; set; }
-        int AccountFromID { get; set; }
-        int? AccountToID { get; set; }
-        double Amount { get; set; }
-        double OldBalance { get; set; }
-        double NewBalance { get; set; }
-        string Notes { get; set; }
-        int PerformedByUserID { get; set; }
-        bool IsPerformedByAccountOwner { get; set; }
+        public int TransactionID { get; set; }
+        public enTransactionType TransactionType { get; set; }
+        public DateTime TransactionDate { get; set; }
+        public int AccountFromID { get; set; }
+        public int? AccountToID { get; set; }
+        public double Amount { get; set; }
+        public double OldBalance { get; set; }
+        public double NewBalance { get; set; }
+        public string Notes { get; set; }
+        public int PerformedByUserID { get; set; }
+        public bool IsPerformedByAccountOwner { get; set; }
 
         private static string _sectionKey => "TRANSACTIONS-HISTORY-REPORT";
 
@@ -63,21 +64,22 @@ namespace Bank_BusinessLayer.Reports
             IsPerformedByAccountOwner = isPerformedByAccountOwner;
         }
 
-        public bool AuditTransaction()
+        public static  int AuditTransaction(byte TransactionType,int AccountFromID,int? AccountToID,double Amount,
+            double OldBalance,double NewBalance,string Notes)
         {
-           this.TransactionID =  clsTransactionHistoryReport_DAL.AddNewTransaction(
-                            (byte)TransactionType,
-                            TransactionDate,
+           return clsTransactionHistoryReport_DAL.AddNewTransaction(
+                            TransactionType,
+                            DateTime.Now,
                             AccountFromID,
                             AccountToID,
                             Amount,
                             OldBalance,
                             NewBalance,
                             Notes,
-                            PerformedByUserID,
+                            clsGlobal_BL.LoggedInUser.UserID,
                             false
             );
-            return this.TransactionID > 0;
+
         }
 
         public static clsTransactionsReport Find(int TransactionID)

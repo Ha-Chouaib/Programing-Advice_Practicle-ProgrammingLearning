@@ -82,14 +82,14 @@ namespace BankSystem.Customer.UserControls
         private void _LoadFindbyOptions_ForAddNew()
         {
             Dictionary<string, string> findByOptions = new Dictionary<string, string> 
-            {{ "Person ID","PersonID"}, { "National No","NationalNo"} };
+            {{ "PersonID","Person ID"}, { "NationalNo","National No"} };
 
             ctrlFind1.__Initializing(findByOptions, clsPerson.FindBy);
             ctrlFind1.__txtSearchTerm.KeyPress += (s, e) =>
             { 
                 if(ctrlFind1.__FindOptionsCombo.SelectedValue.ToString() == "NationalNo")
                 {
-                    e.Handled = (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar));
+                    e.Handled = false;
                 }
                 else
                     e.Handled = (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)); 
@@ -201,5 +201,6 @@ namespace BankSystem.Customer.UserControls
         }
         private void btnCancel_Click(object sender, EventArgs e) => __CancelOperation?.Invoke();
 
+       
     }
 }
