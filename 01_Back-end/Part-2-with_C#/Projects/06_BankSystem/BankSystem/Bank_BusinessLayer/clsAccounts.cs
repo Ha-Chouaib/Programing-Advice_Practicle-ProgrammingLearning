@@ -256,7 +256,7 @@ namespace Bank_BusinessLayer
             double oldBalance = account.Balance;
             byte TransactionType = Amount > 0 ? (byte)clsTransactionsReport.enTransactionType.Deposit : (byte)clsTransactionsReport.enTransactionType.Withdrawal;
 
-            if (!(oldBalance < Math.Abs(Amount)))
+            if (!(oldBalance < Math.Abs(Amount) && Amount < 0))
                 done= clsAccountsDataAccess.DepositWithdraw(AccountID, Amount);
             
             if (done) clsTransactionsReport.AuditTransaction(TransactionType, AccountID, null, Amount,

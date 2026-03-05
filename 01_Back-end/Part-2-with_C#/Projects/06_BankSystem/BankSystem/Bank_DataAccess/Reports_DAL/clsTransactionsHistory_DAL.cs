@@ -27,20 +27,24 @@ namespace Bank_DataAccess
                     cmd.Parameters.AddWithValue("@TransactionType", TransactionType);
                     cmd.Parameters.AddWithValue("@TransactionDate", TransactionDate);
                     cmd.Parameters.AddWithValue("@AccountFromID", AccountFromID);
-                    cmd.Parameters.AddWithValue("@AccountToID", AccountToID);
+                    cmd.Parameters.AddWithValue("@AccountToID", AccountToID.HasValue ? (object)AccountToID : DBNull.Value);
                     cmd.Parameters.AddWithValue("@Amount", Amount);
                     cmd.Parameters.AddWithValue("@OldBalance", OldBalance);
                     cmd.Parameters.AddWithValue("@NewBalance", NewBalance);
                     cmd.Parameters.AddWithValue("@Notes", string.IsNullOrEmpty(Notes) ? DBNull.Value : (object)Notes);
                     cmd.Parameters.AddWithValue("@PerformedByUserID", PerformedByUserID);
-                    cmd.Parameters.AddWithValue("@PerformedByCustomer", IsPerformedByAccountOwner);
+                    cmd.Parameters.AddWithValue("@IsPerformedByAccountOwner", IsPerformedByAccountOwner);
 
+                    connection.Open();
 
                     using (SqlDataReader rdr = cmd.ExecuteReader())
                     {
-                        ID = clsGlobal.DB_SafeGet<int>(rdr, "TransactionID", -1);
-                        if (ID == -1)
-                            throw new InvalidOperationException(clsGlobal.DB_SafeGet(rdr, "ErrorMSG", ""));
+                        if (rdr.Read())
+                        {
+                            ID = clsGlobal.DB_SafeGet<int>(rdr, "TransactionID", -1);
+                            if (ID == -1)
+                                throw new InvalidOperationException(clsGlobal.DB_SafeGet(rdr, "ErrorMSG", ""));
+                        }
                     }
 
                 }
@@ -130,7 +134,8 @@ namespace Bank_DataAccess
                     conn.Open();
                     using (SqlDataReader rdr = cmd.ExecuteReader())
                     {
-                        dt.Load(rdr);
+                       
+                            dt.Load(rdr);
                     }
 
                     totalRows = (int)(totalParam.Value ?? 0);

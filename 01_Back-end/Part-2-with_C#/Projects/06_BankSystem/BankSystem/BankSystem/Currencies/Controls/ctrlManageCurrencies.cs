@@ -30,7 +30,13 @@ namespace BankSystem.Currencies.Controls
         public void LoadManageRecordsControl()
         {
             _RecordsManager.__UpdateBtn.Visible = false;
-            _RecordsManager.__AddNewBtn.Visible = false;
+            _RecordsManager.__AddNewBtn.Text = "Currency Calculator";
+            _RecordsManager.__AddNewBtn.AutoSize = true;
+            _RecordsManager.__AddNewBtn.Click += (s, e) =>
+            {
+                frmCurrencyCalculator calculator = new frmCurrencyCalculator();
+                calculator.ShowDialog();
+            };
             _RecordsManager.__HeaderImg.Image = Resources.currencies_6871665;
             _RecordsManager.__CloseBtn.Visible = false;
             _RecordsManager.__Initialize(_FilterBy_Options(), clsCurrencies.Filter, _ContextMenuPackage(), null);
