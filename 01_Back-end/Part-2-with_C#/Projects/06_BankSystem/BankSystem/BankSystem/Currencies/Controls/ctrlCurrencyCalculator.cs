@@ -42,12 +42,12 @@ namespace BankSystem.Currencies.Controls
             Dictionary<string,string> dic = new Dictionary<string,string>();
             foreach (DataRow dr in dt.Rows)
             {
-                dic.Add($"{dr["Name"]}", $"{dr["ID"]}");
+                dic.Add($"{dr["ID"]}", $"{dr["Name"]}");
             }
-
+            if (dic.Count == 0) return;
             cmbCurrencyOptions.DataSource = new BindingSource(dic, null);
-            cmbCurrencyOptions.DisplayMember = "Key";
-            cmbCurrencyOptions.ValueMember = "Value";
+            cmbCurrencyOptions.DisplayMember = "value";
+            cmbCurrencyOptions.ValueMember = "key";
             cmbCurrencyOptions.SelectedIndex = 0;
         }
         private void _DetectSelectedCurrencyType()
@@ -61,14 +61,17 @@ namespace BankSystem.Currencies.Controls
         }
         private void _PerformCurrencySelection()
         {
+            if(cmbCurrencyOptions.SelectedValue == null) return;
             switch(_CurrencyOption)
             {
                 case enCurrency_Oprions.enFrom:
                     
-                    ctrlCurrencyFrom.__ShowCard((int)cmbCurrencyOptions.SelectedValue);
+                    if(int.TryParse(cmbCurrencyOptions.SelectedValue.ToString(), out int currencyID))
+                    ctrlCurrencyFrom.__ShowCard(currencyID);
                     break;
                 case enCurrency_Oprions.enTo:
-                    ctrlCurrencyTo.__ShowCard((int)cmbCurrencyOptions.SelectedValue);
+                    if (int.TryParse(cmbCurrencyOptions.SelectedValue.ToString(), out int ID))
+                        ctrlCurrencyTo.__ShowCard(ID);
                     break;
                 default:
                     break;

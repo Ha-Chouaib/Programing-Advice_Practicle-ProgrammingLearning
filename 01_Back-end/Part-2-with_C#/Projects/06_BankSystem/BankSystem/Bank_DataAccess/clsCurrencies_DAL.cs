@@ -244,7 +244,7 @@ namespace Bank_DataAccess
             return rate;
         }
 
-        public static DataTable Filter(string country, string name, string code, short pageNumber, short pageSize, out int totalRows)
+        public static DataTable Filter(string country, string name, string code, short pageNumber , short pageSize, out int totalRows)
         {
             totalRows = 0;
             DataTable dt = new DataTable();

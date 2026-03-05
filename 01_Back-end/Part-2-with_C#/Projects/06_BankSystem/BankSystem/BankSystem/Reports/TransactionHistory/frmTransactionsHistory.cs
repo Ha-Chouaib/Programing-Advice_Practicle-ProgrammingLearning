@@ -86,8 +86,8 @@ namespace BankSystem.Reports.Forms
         private void _ConfigureDataRecordsContainer()
         {
             var grid = ctrlManageRecords1.__RecordsContainer;
-            if(grid.DataSource == null)
-                return;
+            if (ctrlManageRecords1.__RecordsContainer.RowCount == 0) return;
+
             grid.Columns["TransactionID"].HeaderText = "Transaction ID";
             grid.Columns["Code"].HeaderText = "Transaction Name";
             grid.Columns["TransactionDate"].HeaderText = "Transaction Date";
