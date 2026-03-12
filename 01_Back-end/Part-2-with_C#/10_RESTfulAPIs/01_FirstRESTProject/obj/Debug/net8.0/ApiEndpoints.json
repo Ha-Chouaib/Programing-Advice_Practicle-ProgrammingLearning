@@ -1,0 +1,127 @@
+[
+  {
+    "ContainingType": "_01_FirstRESTProject.Controllers.MyFirstAPIController",
+    "Method": "Multipy",
+    "RelativePath": "api/MyFirstAPI/multiply/{n1} / {n2}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "n1",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "n2",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Int32",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "_01_FirstRESTProject.Controllers.MyFirstAPIController",
+    "Method": "GetMyName",
+    "RelativePath": "api/MyFirstAPI/MyName",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "MyName"
+  },
+  {
+    "ContainingType": "_01_FirstRESTProject.Controllers.MyFirstAPIController",
+    "Method": "Sum",
+    "RelativePath": "api/MyFirstAPI/sum/{n1}/{n2}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "n1",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "n2",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Int32",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "_01_FirstRESTProject.Controllers.MyFirstAPIController",
+    "Method": "GetyourName",
+    "RelativePath": "api/MyFirstAPI/YourName",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "YourName"
+  },
+  {
+    "ContainingType": "_01_FirstRESTProject.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[_01_FirstRESTProject.WeatherForecast, 01_FirstRESTProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]
