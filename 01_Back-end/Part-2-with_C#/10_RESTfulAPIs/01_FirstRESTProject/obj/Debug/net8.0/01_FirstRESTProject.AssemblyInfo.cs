@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("01_FirstRESTProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a7ed7d035a17f771f1bbb8a31a0b8184306b68eb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+df33ed9390f37c572cc36dc72b3bcbecfb06265f")]
 [assembly: System.Reflection.AssemblyProductAttribute("01_FirstRESTProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("01_FirstRESTProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

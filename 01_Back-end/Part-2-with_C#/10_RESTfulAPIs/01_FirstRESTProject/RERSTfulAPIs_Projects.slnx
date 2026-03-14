@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="../02_StudentAPI_Project_GetAll/02_StudentsAPI.csproj" Id="9d2c0d1b-3bc3-492d-b6d6-01b227c10555" />
   <Project Path="01_FirstRESTProject.csproj" />
 </Solution>
