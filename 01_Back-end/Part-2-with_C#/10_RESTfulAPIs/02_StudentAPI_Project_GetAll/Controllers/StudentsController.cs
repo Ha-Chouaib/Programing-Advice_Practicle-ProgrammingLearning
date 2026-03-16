@@ -1,6 +1,7 @@
 ﻿using _02_StudentsAPI.DataSimulation;
 using _02_StudentsAPI.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections;
 
 namespace _02_StudentsAPI.Controllers
 {
@@ -71,5 +72,47 @@ namespace _02_StudentsAPI.Controllers
             return true;
         }
 
+        [HttpDelete ("{Id}",Name ="DeleteStudent")]
+        [ProducesResponseType (StatusCodes.Status200OK)]
+        [ProducesResponseType (StatusCodes.Status400BadRequest)]
+        [ProducesResponseType (StatusCodes.Status404NotFound)]
+        public ActionResult DeleteStudent(int Id)
+        {
+            if (Id < 0) return BadRequest($"Invalid Id {Id}! Not Accepted");
+
+            var Student = StudentData.StudentsList.FirstOrDefault(s => s.Id == Id);
+            if (Student == null) return NotFound($"No Student Found With Id {Id}");
+            StudentData.StudentsList.Remove(Student);
+            return Ok($"The Student with Id {Id} has been deleted successfuly");
+
+        }
+
+
+        [HttpPut ("{Id}",Name ="UpdateStudent")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public ActionResult<Student> UpdateStudent(int Id,Student student)
+        {
+            if (!ValidateStudentRecord(student)) return BadRequest("Invalid Recored");
+
+            var s = StudentData.StudentsList.FirstOrDefault(s => s.Id == Id);
+            if (s == null) return NotFound($"No Student Found With Id {Id}");
+
+            if(!UpdateStudent(s,student)) return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while updating the student");
+
+
+            return Ok(student);
+        }
+
+        private bool UpdateStudent(Student Old, Student New)
+        {
+            Old.Id = New.Id;
+            Old.Name = New.Name;
+            Old.Age = New.Age;
+            Old.Grade = Old.Grade;
+            return true;
+        }
     }
 }

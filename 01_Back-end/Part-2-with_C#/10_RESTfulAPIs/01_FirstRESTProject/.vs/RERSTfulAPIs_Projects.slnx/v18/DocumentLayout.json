@@ -33,7 +33,7 @@
               "RelativeDocumentMoniker": "..\\02_StudentAPI_Project_GetAll\\Controllers\\StudentsController.cs",
               "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\10_RESTfulAPIs\\02_StudentAPI_Project_GetAll\\Controllers\\StudentsController.cs",
               "RelativeToolTip": "..\\02_StudentAPI_Project_GetAll\\Controllers\\StudentsController.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAcwEUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAQwF8AAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-14T14:59:48.139Z",
               "EditorCaption": ""
@@ -48,7 +48,8 @@
               "RelativeToolTip": "..\\02_StudentAPI_Project_GetAll\\DataSimulation\\StudentData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-14T14:53:00.566Z"
+              "WhenOpened": "2026-03-14T14:53:00.566Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
