@@ -2,31 +2,25 @@
 
 namespace RESTfulAPI_ClientSideCode
 {
-     class Program
+    class Program
     {
         static readonly HttpClient httpClient = new HttpClient();
-
-        static Student NewStudent = new Student
-        {
-            Name = "Chouaib Hadadi",
-            Age = 23,
-            Grade = 95
-        };
 
         static async Task Main(string[] args)
         {
             httpClient.BaseAddress = new Uri("https://localhost:7010/api/Students/");
-           
+
 
             await GetAllStudents();
             await GetPassedStudents();
             await GetAverageGrade();
             await GetStudentByID(1);
-            // await GetStudentByID(-1);
-            //await GetStudentByID(100);
-            await AddNewStudent(NewStudent);
+            await GetStudentByID(-1);
+            await GetStudentByID(100);
+            await AddNewStudent(new Student { Name = "Chouaib Hadadi", Age = 23, Grade = 95 });
             await GetAllStudents();
-
+            await DeleteStudent(1);
+            await UpdateStudent(2, new Student { Name = "Salma", Age = 22, Grade = 90 });
         }
 
         static async Task GetAllStudents()
@@ -67,7 +61,7 @@ namespace RESTfulAPI_ClientSideCode
                 Console.WriteLine($"An error occurred: {ex.Message}");
             }
         }
-    
+
         static async Task GetAverageGrade()
         {
             try
@@ -81,9 +75,9 @@ namespace RESTfulAPI_ClientSideCode
             catch (Exception ex)
             {
                 Console.WriteLine($"An error occurred: {ex.Message}");
-            } 
+            }
         }
-        
+
         static async Task GetStudentByID(int ID)
         {
             try
@@ -99,16 +93,16 @@ namespace RESTfulAPI_ClientSideCode
                 Console.WriteLine($"An error occurred: {ex.Message}");
             }
         }
-        
+
         static async Task AddNewStudent(Student student)
         {
             try
             {
                 Console.WriteLine("\n\n__________________________________________________");
                 Console.WriteLine($"\nAdding a Student ..\n");
-                var response = await httpClient.PostAsJsonAsync<Student>("",student);
+                var response = await httpClient.PostAsJsonAsync<Student>("", student);
 
-                if(response.IsSuccessStatusCode)
+                if (response.IsSuccessStatusCode)
                 {
                     var addedStudent = await response.Content.ReadFromJsonAsync<Student>();
                     Console.WriteLine($"Added Student - ID: {addedStudent.Id}, Name: {addedStudent.Name}, Age: {addedStudent.Age}, Grade: {addedStudent.Grade}");
@@ -125,7 +119,67 @@ namespace RESTfulAPI_ClientSideCode
                 Console.WriteLine($"An error occurred: {ex.Message}");
             }
         }
-        
-        
+
+        static async Task DeleteStudent(int ID)
+        {
+            try
+            {
+                Console.WriteLine("\n\n__________________________________________________");
+                Console.WriteLine($"\nDeleting a Student with Id {ID}..\n");
+
+                var response = await httpClient.DeleteAsync($"{ID}");
+                if (response.IsSuccessStatusCode)
+                {
+                    Console.WriteLine($"Student with ID {ID} has been deleted.");
+                    return;
+                }
+                if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    Console.WriteLine($"Not Found: Student with ID {ID} not found.");
+                    return;
+                }
+                if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
+                {
+                    Console.WriteLine($"Bad Request: Not accepted ID {ID}");
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An Error Occurred! => {ex.Message}");
+            }
+        }
+
+        static async Task UpdateStudent(int id, Student updatedStudent)
+        {
+            try
+            {
+                Console.WriteLine("\n_____________________________");
+                Console.WriteLine($"\nUpdating student with ID {id}...\n");
+                var response = await httpClient.PutAsJsonAsync($"{id}", updatedStudent);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var student = await response.Content.ReadFromJsonAsync<Student>();
+                    Console.WriteLine($"Updated Student: ID: {student.Id}, Name: {student.Name}, Age: {student.Age}, Grade: {student.Grade}");
+                }
+                else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
+                {
+                    Console.WriteLine("Failed to update student: Invalid data.");
+                }
+                else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+                {
+                    Console.WriteLine($"Student with ID {id} not found.");
+                }
+                else if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
+                {
+                    Console.WriteLine($"The Server Couldn't Update The Record");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
+        }
     }
 }
