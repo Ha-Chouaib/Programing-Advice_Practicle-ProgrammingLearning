@@ -1,0 +1,29 @@
+D:\Demo\Encoding\Encoding-Demo\bin\Debug\net8.0\Encoding-Demo.exe
+D:\Demo\Encoding\Encoding-Demo\bin\Debug\net8.0\Encoding-Demo.deps.json
+D:\Demo\Encoding\Encoding-Demo\bin\Debug\net8.0\Encoding-Demo.runtimeconfig.json
+D:\Demo\Encoding\Encoding-Demo\bin\Debug\net8.0\Encoding-Demo.dll
+D:\Demo\Encoding\Encoding-Demo\bin\Debug\net8.0\Encoding-Demo.pdb
+D:\Demo\Encoding\Encoding-Demo\obj\Debug\net8.0\Encoding-Demo.GeneratedMSBuildEditorConfig.editorconfig
+D:\Demo\Encoding\Encoding-Demo\obj\Debug\net8.0\Encoding-Demo.AssemblyInfoInputs.cache
+D:\Demo\Encoding\Encoding-Demo\obj\Debug\net8.0\Encoding-Demo.AssemblyInfo.cs
+D:\Demo\Encoding\Encoding-Demo\obj\Debug\net8.0\Encoding-Demo.csproj.CoreCompileInputs.cache
+D:\Demo\Encoding\Encoding-Demo\obj\Debug\net8.0\Encoding-Demo.dll
+D:\Demo\Encoding\Encoding-Demo\obj\Debug\net8.0\refint\Encoding-Demo.dll
+D:\Demo\Encoding\Encoding-Demo\obj\Debug\net8.0\Encoding-Demo.pdb
+D:\Demo\Encoding\Encoding-Demo\obj\Debug\net8.0\Encoding-Demo.genruntimeconfig.cache
+D:\Demo\Encoding\Encoding-Demo\obj\Debug\net8.0\ref\Encoding-Demo.dll
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\03_Encoding-Demo\bin\Debug\net8.0\Encoding-Demo.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\03_Encoding-Demo\bin\Debug\net8.0\Encoding-Demo.deps.json
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\03_Encoding-Demo\bin\Debug\net8.0\Encoding-Demo.runtimeconfig.json
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\03_Encoding-Demo\bin\Debug\net8.0\Encoding-Demo.dll
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\03_Encoding-Demo\bin\Debug\net8.0\Encoding-Demo.pdb
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\03_Encoding-Demo\obj\Debug\net8.0\Encoding-Demo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\03_Encoding-Demo\obj\Debug\net8.0\Encoding-Demo.AssemblyInfoInputs.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\03_Encoding-Demo\obj\Debug\net8.0\Encoding-Demo.AssemblyInfo.cs
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\03_Encoding-Demo\obj\Debug\net8.0\Encoding-Demo.csproj.CoreCompileInputs.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\03_Encoding-Demo\obj\Debug\net8.0\Encoding-Demo.sourcelink.json
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\03_Encoding-Demo\obj\Debug\net8.0\Encoding-Demo.dll
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\03_Encoding-Demo\obj\Debug\net8.0\refint\Encoding-Demo.dll
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\03_Encoding-Demo\obj\Debug\net8.0\Encoding-Demo.pdb
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\03_Encoding-Demo\obj\Debug\net8.0\Encoding-Demo.genruntimeconfig.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\03_Encoding-Demo\obj\Debug\net8.0\ref\Encoding-Demo.dll
