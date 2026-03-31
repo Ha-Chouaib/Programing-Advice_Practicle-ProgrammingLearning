@@ -3,7 +3,15 @@ using StudentDataAccessLayer;
 
 namespace StudentAPIBusinessLayer
 {
-
+    // Remember the original passwords for the following students:
+    //            new { Id = 2, Name = "Salma", Password = "Admin1" },
+    //            new { Id = 3, Name = "Maher Khalid", Password = "password2" },
+    //            new { Id = 4, Name = "Suha Hadid", Password = "password3" },
+    //            new { Id = 5, Name = "loay", Password = "password4" },
+    //            new { Id = 6, Name = "Huda", Password = "password5" },
+    //            new { Id = 7, Name = "Majida", Password = "password6" },
+    //            new { Id = 8, Name = "Majda 3", Password = "password7" },
+    //            new { Id = 11, Name = "Mazen Abdullah", Password = "Admin2" },
     public class Student
     {
         public enum enMode { AddNew = 0, Update = 1 };
@@ -65,6 +73,15 @@ namespace StudentAPIBusinessLayer
             return StudentData.GetAverageGrade();
         }
 
+        public static Student? Find(string email)
+        {
+            StudentDTO? SDTO = StudentData.GetStudentByEmail(email);
+            if (SDTO != null)
+                
+                return new Student(SDTO, enMode.Update);
+            else
+                return null;
+        }
         public static Student? Find(int ID)
             {  
 
