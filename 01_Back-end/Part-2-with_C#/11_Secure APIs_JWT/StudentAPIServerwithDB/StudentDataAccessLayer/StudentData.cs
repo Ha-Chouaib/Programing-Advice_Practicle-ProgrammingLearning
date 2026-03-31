@@ -204,6 +204,46 @@ namespace StudentDataAccessLayer
             }
             return null;
         }
+        
+        public static StudentDTO? GetStudentByEmail(string email)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(_connectionString))
+                using (var command = new SqlCommand("SP_GetStudentByEmail", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@Email", email);
+                    connection.Open();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new StudentDTO
+                            (
+                                reader.GetInt32(reader.GetOrdinal("Id")),
+                                reader.GetString(reader.GetOrdinal("Name")),
+                                reader.GetInt32(reader.GetOrdinal("Age")),
+                                reader.GetInt32(reader.GetOrdinal("Grade")),
+                                reader.GetString(reader.GetOrdinal("Email")),
+                                reader.GetString(reader.GetOrdinal("PasswordHash")),
+                                reader.GetString(reader.GetOrdinal("Role"))
+                            );
+                        }
+                        
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"DAL GetStudentByEmail() -> SQL Error({ex.Number}): {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error retrieving student by email: {ex.Message}");
+            }
+            return null;
+        }
         public static int AddStudent(StudentDTO StudentDTO)
         {
             int id = -1;

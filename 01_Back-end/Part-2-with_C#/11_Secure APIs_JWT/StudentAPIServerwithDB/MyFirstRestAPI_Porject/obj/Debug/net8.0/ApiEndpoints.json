@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "StudentApi.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "StudentAPIBusinessLayer.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "StudentApi.Controllers.StudentsController",
     "Method": "AddStudent",
     "RelativePath": "api/Students",
