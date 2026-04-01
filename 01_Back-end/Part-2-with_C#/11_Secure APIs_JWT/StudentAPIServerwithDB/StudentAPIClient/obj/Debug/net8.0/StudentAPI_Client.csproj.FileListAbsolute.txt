@@ -1,0 +1,15 @@
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\StudentAPIServerwithDB\StudentAPIClient\bin\Debug\net8.0\StudentAPI_Client.exe
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\StudentAPIServerwithDB\StudentAPIClient\bin\Debug\net8.0\StudentAPI_Client.deps.json
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\StudentAPIServerwithDB\StudentAPIClient\bin\Debug\net8.0\StudentAPI_Client.runtimeconfig.json
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\StudentAPIServerwithDB\StudentAPIClient\bin\Debug\net8.0\StudentAPI_Client.dll
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\StudentAPIServerwithDB\StudentAPIClient\bin\Debug\net8.0\StudentAPI_Client.pdb
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\StudentAPIServerwithDB\StudentAPIClient\obj\Debug\net8.0\StudentAPI_Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\StudentAPIServerwithDB\StudentAPIClient\obj\Debug\net8.0\StudentAPI_Client.AssemblyInfoInputs.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\StudentAPIServerwithDB\StudentAPIClient\obj\Debug\net8.0\StudentAPI_Client.AssemblyInfo.cs
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\StudentAPIServerwithDB\StudentAPIClient\obj\Debug\net8.0\StudentAPI_Client.csproj.CoreCompileInputs.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\StudentAPIServerwithDB\StudentAPIClient\obj\Debug\net8.0\StudentAPI_Client.sourcelink.json
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\StudentAPIServerwithDB\StudentAPIClient\obj\Debug\net8.0\StudentAPI_Client.dll
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\StudentAPIServerwithDB\StudentAPIClient\obj\Debug\net8.0\refint\StudentAPI_Client.dll
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\StudentAPIServerwithDB\StudentAPIClient\obj\Debug\net8.0\StudentAPI_Client.pdb
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\StudentAPIServerwithDB\StudentAPIClient\obj\Debug\net8.0\StudentAPI_Client.genruntimeconfig.cache
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\StudentAPIServerwithDB\StudentAPIClient\obj\Debug\net8.0\ref\StudentAPI_Client.dll

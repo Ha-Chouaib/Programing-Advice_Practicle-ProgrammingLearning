@@ -417,3 +417,4 @@ C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-en
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\StudentAPIServerwithDB\MyFirstRestAPI_Porject\obj\Debug\net8.0\StudentApi.pdb
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\StudentAPIServerwithDB\MyFirstRestAPI_Porject\obj\Debug\net8.0\StudentApi.genruntimeconfig.cache
 C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\StudentAPIServerwithDB\MyFirstRestAPI_Porject\obj\Debug\net8.0\ref\StudentApi.dll
+C:\Users\jook\Desktop\Programing-Advice_Practicle-ProgrammingLearning\01_Back-end\Part-2-with_C#\11_Secure APIs_JWT\StudentAPIServerwithDB\MyFirstRestAPI_Porject\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
