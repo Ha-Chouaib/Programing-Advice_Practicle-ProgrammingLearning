@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace StudentApi.Controllers 
 {
-    [Authorize]
+    [Authorize]// Requires authentication for all endpoints in this controller by default.
     [ApiController] // Marks the class as a Web API controller with enhanced features.
   //  [Route("[controller]")] // Sets the route for this controller to "students", based on the controller name.
     [Route("api/Students")]
@@ -15,8 +15,11 @@ namespace StudentApi.Controllers
     {
 
 
-        [HttpGet("All", Name ="GetAllStudents")] 
+        [Authorize(Roles = "Admin")]// Only users with the "Admin" role can access this endpoint.
+        [HttpGet("All", Name ="GetAllStudents")]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public ActionResult<IEnumerable<StudentDTO>> GetAllStudents() 
         {
@@ -30,9 +33,11 @@ namespace StudentApi.Controllers
 
         }
 
-        
+        [AllowAnonymous]// Allow anonymous access to this endpoint, overriding the [Authorize] attribute at the controller level.
         [HttpGet("Passed",Name = "GetPassedStudents")]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public ActionResult<IEnumerable<StudentDTO>> GetPassedStudents()
 
@@ -48,9 +53,11 @@ namespace StudentApi.Controllers
             return Ok(PassedStudentsList); // Return the list of students who passed.
         }
 
-        
+        [AllowAnonymous]
         [HttpGet("AverageGrade", Name = "GetAverageGrade")]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public ActionResult<double> GetAverageGrade()
         {
@@ -59,10 +66,12 @@ namespace StudentApi.Controllers
             return Ok(averageGrade);
         }
 
-
+        
         [HttpGet("{id}", Name = "GetStudentById")]        
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public ActionResult<StudentDTO> GetStudentById(int id)
         {
@@ -92,10 +101,12 @@ namespace StudentApi.Controllers
 
         }
 
-
         
+        [Authorize(Roles = "Admin")]
         [HttpPost(Name = "AddStudent")]
         [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult<StudentDTO> AddStudent(StudentDTO newStudentDTO)
         {
@@ -119,11 +130,13 @@ namespace StudentApi.Controllers
 
         }
 
-       
 
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id}", Name = "UpdateStudent")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public ActionResult<StudentDTO> UpdateStudent(int id, StudentDTO updatedStudent)
         {
@@ -156,10 +169,12 @@ namespace StudentApi.Controllers
 
         }
 
-
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}", Name = "DeleteStudent")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public ActionResult DeleteStudent(int id)
         {
