@@ -2,9 +2,11 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using StudentAPIBusinessLayer;
 using StudentDataAccessLayer;
+using Microsoft.AspNetCore.Authorization;
 
 namespace StudentApi.Controllers 
 {
+    [Authorize]
     [ApiController] // Marks the class as a Web API controller with enhanced features.
   //  [Route("[controller]")] // Sets the route for this controller to "students", based on the controller name.
     [Route("api/Students")]
@@ -106,7 +108,7 @@ namespace StudentApi.Controllers
           //newStudent.Id = StudentDataSimulation.StudentsList.Count > 0 ? StudentDataSimulation.StudentsList.Max(s => s.Id) + 1 : 1;
 
           Student student = new Student( new StudentDTO(newStudentDTO.Id, newStudentDTO.Name, newStudentDTO.Age, newStudentDTO.Grade,
-                                                                                newStudentDTO.Email, newStudentDTO.PasswordHash,newStudentDTO.Role ) ) ;
+                                                                                newStudentDTO.Email,clsCryptography.PassowrdBcyptHashing(newStudentDTO.PasswordHash),newStudentDTO.Role ) ) ;
             student.Save();
 
             newStudentDTO.Id = student.ID;
@@ -144,6 +146,9 @@ namespace StudentApi.Controllers
             student.Name = updatedStudent.Name;
             student.Age = updatedStudent.Age;
             student.Grade = updatedStudent.Grade;
+            student.Email = updatedStudent.Email;
+            student.PasswordHash = clsCryptography.PassowrdBcyptHashing(updatedStudent.PasswordHash);
+            student.Role = updatedStudent.Role;
             student.Save();
 
             //we return the DTO not the full student object.
