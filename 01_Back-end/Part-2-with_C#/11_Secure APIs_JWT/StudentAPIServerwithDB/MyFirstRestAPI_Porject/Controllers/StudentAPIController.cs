@@ -11,7 +11,6 @@ namespace StudentApi.Controllers
     [ApiController] // Marks the class as a Web API controller with enhanced features.
   //  [Route("[controller]")] // Sets the route for this controller to "students", based on the controller name.
     [Route("api/Students")]
-
     public class StudentsController : ControllerBase 
     {
 
@@ -74,7 +73,7 @@ namespace StudentApi.Controllers
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public ActionResult<StudentDTO> GetStudentById(int id)
+        public async Task<ActionResult<StudentDTO>> GetStudentById(int id, [FromServices] IAuthorizationService authorizationService)
         {
 
             if (id < 1)
@@ -90,16 +89,10 @@ namespace StudentApi.Controllers
                 return NotFound($"Student with ID {id} not found.");
             }
 
-            var userId =User.FindFirstValue(ClaimTypes.NameIdentifier);// Get the user ID from the claims of the authenticated user.
-            var userRole = User.FindFirstValue(ClaimTypes.Role); // Get the user role from the claims of the authenticated user.
+            var authResult = await authorizationService.AuthorizeAsync(User, id, "StudentOwnerOrAdmin");
 
-            int authenticatedStudentId = int.Parse(userId); // Assuming the user ID is stored as a string in the claims, we parse it to an integer.
-            bool isAdmin = userRole == "Admin"; // Check if the user has the "Admin" role.
-
-            if(!isAdmin && authenticatedStudentId != id) // If the user is not an admin and is trying to access a student record that does not belong to them, we return a forbidden response.
-            {
-                return Forbid();
-            }
+            if(!authResult.Succeeded)return Forbid();
+         
 
             //here we get only the DTO object to send it back.
             StudentDTO SDTO = student.SDTO;

@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using System.Text;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.OpenApi.Models;
+using StudentApi.Authorization;
+using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -33,7 +35,15 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
         }
     );
 
-builder.Services.AddAuthorization();
+builder.Services.AddSingleton<IAuthorizationHandler, StudentOwnerOrAdminHandler>();
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("StudentOwnerOrAdmin", policy =>
+    {
+        policy.Requirements.Add(new StudentOwnerOrAdminRequirement());
+    });
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -114,7 +124,7 @@ app.UseHttpsRedirection();
 
 app.UseCors("StudentApiCorsPolicy");
 
-//app.UseAuthentication();
+app.UseAuthentication();
 
 app.UseAuthorization();
 
