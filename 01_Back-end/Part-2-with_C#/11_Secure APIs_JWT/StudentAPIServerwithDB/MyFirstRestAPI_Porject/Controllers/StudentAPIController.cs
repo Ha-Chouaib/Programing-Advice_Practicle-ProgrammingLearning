@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using StudentAPIBusinessLayer;
 using StudentDataAccessLayer;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace StudentApi.Controllers 
 {
@@ -81,16 +82,23 @@ namespace StudentApi.Controllers
                 return BadRequest($"Not accepted ID {id}");
             }
 
-            //var student = StudentDataSimulation.StudentsList.FirstOrDefault(s => s.Id == id);
-            //if (student == null)
-            //{
-            //    return NotFound($"Student with ID {id} not found.");
-            //}
+            
             Student? student = Student.Find(id);
 
             if (student == null)
             {
                 return NotFound($"Student with ID {id} not found.");
+            }
+
+            var userId =User.FindFirstValue(ClaimTypes.NameIdentifier);// Get the user ID from the claims of the authenticated user.
+            var userRole = User.FindFirstValue(ClaimTypes.Role); // Get the user role from the claims of the authenticated user.
+
+            int authenticatedStudentId = int.Parse(userId); // Assuming the user ID is stored as a string in the claims, we parse it to an integer.
+            bool isAdmin = userRole == "Admin"; // Check if the user has the "Admin" role.
+
+            if(!isAdmin && authenticatedStudentId != id) // If the user is not an admin and is trying to access a student record that does not belong to them, we return a forbidden response.
+            {
+                return Forbid();
             }
 
             //here we get only the DTO object to send it back.
