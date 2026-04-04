@@ -120,7 +120,8 @@ namespace StudentApi.Controllers
           //newStudent.Id = StudentDataSimulation.StudentsList.Count > 0 ? StudentDataSimulation.StudentsList.Max(s => s.Id) + 1 : 1;
 
           Student student = new Student( new StudentDTO(newStudentDTO.Id, newStudentDTO.Name, newStudentDTO.Age, newStudentDTO.Grade,
-                                                                                newStudentDTO.Email,clsCryptography.PassowrdBcyptHashing(newStudentDTO.PasswordHash),newStudentDTO.Role ) ) ;
+                                                                                newStudentDTO.Email,clsCryptography.PassowrdBcyptHashing(newStudentDTO.PasswordHash),newStudentDTO.Role,
+                                                                                newStudentDTO.RefreshTokenHash,newStudentDTO.RefreshTokenExpiresAt,newStudentDTO.RefreshTokenRevokedAt) ) ;
             student.Save();
 
             newStudentDTO.Id = student.ID;

@@ -30,7 +30,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
                 ValidAudience = "StudentApiUsers",//The expected audience of the token, which should match the audience specified when the token was created.
 
                 //The key used to validate the token's signature, which should match the key used to sign the token.
-                IssuerSigningKey = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(Encoding.UTF8.GetBytes("THIS_IS_A_VERY_SECRET_KEY_123456"))
+                IssuerSigningKey = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(Encoding.UTF8.GetBytes("THIS_IS_A_VERY_SECRET_KEY_123456")),
+                
+                ClockSkew = TimeSpan.Zero //here we set the clock skew to zero to prevent any additional time window for token expiration,
+                                          //ensuring that tokens expire exactly at their specified expiration time without any grace period.
+                                          //This enhances security by reducing the risk of token misuse after expiration.
             };
         }
     );

@@ -18,7 +18,7 @@ namespace StudentAPIBusinessLayer
         public enMode Mode = enMode.AddNew;
 
         public StudentDTO SDTO {
-            get { return (new StudentDTO(this.ID, this.Name, this.Age, this.Grade, this.Email, this.PasswordHash,this.Role)); }
+            get { return (new StudentDTO(this.ID, this.Name, this.Age, this.Grade, this.Email, this.PasswordHash,this.Role,this.RefreshTokenHash,this.RefreshTokenExpiresAt,this.RefreshTokenRevokedAt)); }
         }
 
         public int ID { get; set; }
@@ -28,7 +28,9 @@ namespace StudentAPIBusinessLayer
         public string Email { get; set; }
         public string PasswordHash { get; set; }
         public string Role { get; set; }
-
+        public string RefreshTokenHash { get; set; }
+        public DateTime? RefreshTokenExpiresAt { get; set; }
+        public DateTime? RefreshTokenRevokedAt { get; set; }
 
         public Student(StudentDTO SDTO, enMode cMode =enMode.AddNew )
 
@@ -40,6 +42,9 @@ namespace StudentAPIBusinessLayer
             this.Email = SDTO.Email;
             this.PasswordHash = SDTO.PasswordHash;
             this.Role = SDTO.Role;
+            this.RefreshTokenHash = SDTO.RefreshTokenHash;
+            this.RefreshTokenExpiresAt = SDTO.RefreshTokenExpiresAt;
+            this.RefreshTokenRevokedAt = SDTO.RefreshTokenRevokedAt;
             Mode = cMode;
         }
 
@@ -97,7 +102,7 @@ namespace StudentAPIBusinessLayer
                 return null;
             }
 
-            public bool Save()
+        public bool Save()
             {
                 switch (Mode)
                 {
@@ -122,11 +127,38 @@ namespace StudentAPIBusinessLayer
                 return false;
             }
 
-            public static bool DeleteStudent(int ID)
+        public static bool DeleteStudent(int ID)
             {
                 return StudentData.DeleteStudent(ID);
             }
 
+
+        public static bool UpdateRefreshToken(int StudentID,string RefreshTokenHash)
+        {
+            return StudentData.UpdateRefreshTokenHash(StudentID, RefreshTokenHash);
+        }
+        public bool UpdateRefreshToken(string RefreshTokenHash)
+        {
+            return StudentData.UpdateRefreshTokenHash(this.ID, RefreshTokenHash);
+        }
+
+        public static bool UpdateRefreshTokenData(int StudentID,string RefreshTokenHash,DateTime ExpiresAt,DateTime RevokedAt)
+        {
+            return StudentData.UpdateRefreshTokenData(StudentID,RefreshTokenHash,ExpiresAt,RevokedAt);
+        }
+        public bool UpdateRefreshTokenData(string RefreshTokenHash,DateTime? ExpiresAt,DateTime? RevokedAt)
+        {
+            return StudentData.UpdateRefreshTokenData(this.ID,RefreshTokenHash,ExpiresAt,RevokedAt);
+        }
+
+        public static bool RevokeRefreshToken(int StudentID,DateTime? RevokedAt)
+        {
+            return StudentData.RevokeRefreshToken(StudentID,RevokedAt);
+        }
+         public bool RevokeRefreshToken(DateTime? RevokedAt)
+        {
+            return StudentData.RevokeRefreshToken(this.ID,RevokedAt);
         }
     }
+}
 

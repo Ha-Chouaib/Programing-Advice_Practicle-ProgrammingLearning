@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\11_Secure APIs_JWT\\StudentAPIServerwithDB\\StudentAPIClient\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{04FECE2D-E414-4A4E-8A55-8A135408FC71}|Testing Secured APIs with Consol App.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\11_secure apis_jwt\\studentapiserverwithdb\\studentapiclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04FECE2D-E414-4A4E-8A55-8A135408FC71}|Testing Secured APIs with Consol App.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{04FECE2D-E414-4A4E-8A55-8A135408FC71}|StudentAPI_Client.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\11_secure apis_jwt\\studentapiserverwithdb\\studentapiclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04FECE2D-E414-4A4E-8A55-8A135408FC71}|StudentAPI_Client.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -28,7 +28,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\11_Secure APIs_JWT\\StudentAPIServerwithDB\\StudentAPIClient\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAIwFUAAABnAAAAAAAAAA==",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAgwBYAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-01T07:57:20.648Z",
               "EditorCaption": ""

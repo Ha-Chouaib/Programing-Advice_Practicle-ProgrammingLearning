@@ -6,7 +6,7 @@ namespace StudentDataAccessLayer
 {
     public class StudentDTO
     {
-        public StudentDTO(int id, string name, int age, int grade, string email, string Passwordhash,string role)
+        public StudentDTO(int id, string name, int age, int grade, string email, string Passwordhash, string role, string? refreshTokenHash, DateTime? RefreshTokenExpiresAt, DateTime? RefreshTokenRevokedAt)
         {
             this.Id = id;
             this.Name = name;
@@ -15,6 +15,9 @@ namespace StudentDataAccessLayer
             this.Email = email;
             this.PasswordHash = Passwordhash;
             this.Role = role;
+            this.RefreshTokenHash = refreshTokenHash;
+            this.RefreshTokenExpiresAt = RefreshTokenExpiresAt;
+            this.RefreshTokenRevokedAt = RefreshTokenRevokedAt;
         }
 
 
@@ -26,9 +29,15 @@ namespace StudentDataAccessLayer
         public string PasswordHash { get; set; }
         public string Role { get; set; }
 
+        public string? RefreshTokenHash { get; set; }
+        public DateTime? RefreshTokenExpiresAt { get; set; }
+        public DateTime? RefreshTokenRevokedAt { get; set; }
+
+
 
     }
 
+    
     public class StudentData
     {
         static string _connectionString = "Server=localhost;Database=StudentsDB;User Id=sa;Password=sa123456;Encrypt=False;TrustServerCertificate=True;Connection Timeout=30;";
@@ -36,7 +45,7 @@ namespace StudentDataAccessLayer
         public static List<StudentDTO> GetAllStudents()
         {
             var StudentsList = new List<StudentDTO>();
-           try
+            try
             {
                 using (SqlConnection conn = new SqlConnection(_connectionString))
                 {
@@ -52,13 +61,16 @@ namespace StudentDataAccessLayer
                             {
                                 StudentsList.Add(new StudentDTO
                                 (
-                                    reader.GetInt32(reader.GetOrdinal("Id")),
-                                    reader.GetString(reader.GetOrdinal("Name")),
-                                    reader.GetInt32(reader.GetOrdinal("Age")),
-                                    reader.GetInt32(reader.GetOrdinal("Grade")),
-                                    reader.GetString(reader.GetOrdinal("Email")),
-                                    reader.GetString(reader.GetOrdinal("PasswordHash")),
-                                    reader.GetString(reader.GetOrdinal("Role"))
+                                    reader.SafeGet<int>("Id"),
+                                    reader.SafeGet<string>("Name"),
+                                    reader.SafeGet<int>("Age"),
+                                    reader.SafeGet<int>("Grade"),
+                                    reader.SafeGet<string>("Email"),
+                                    reader.SafeGet<string>("PasswordHash"),
+                                    reader.SafeGet<string>("Role"),
+                                    reader.SafeGet<string>("RefreshTokenHash"),
+                                    reader.SafeGet<DateTime>("RefreshTokenExpiresAt"),
+                                    reader.SafeGet<DateTime>("RefreshTokenRevokedAt")
 
                                 ));
                             }
@@ -76,8 +88,8 @@ namespace StudentDataAccessLayer
             catch (Exception ex)
             {
                 Console.WriteLine($"Error GetAllStudents(): {ex.Message}");
-            }   
-           return StudentsList;
+            }
+            return StudentsList;
 
         }
         public static List<StudentDTO> GetPassedStudents()
@@ -100,13 +112,16 @@ namespace StudentDataAccessLayer
                             {
                                 StudentsList.Add(new StudentDTO
                                 (
-                                    reader.GetInt32(reader.GetOrdinal("Id")),
-                                    reader.GetString(reader.GetOrdinal("Name")),
-                                    reader.GetInt32(reader.GetOrdinal("Age")),
-                                    reader.GetInt32(reader.GetOrdinal("Grade")),
-                                    reader.GetString(reader.GetOrdinal("Email")),
-                                    reader.GetString(reader.GetOrdinal("PasswordHash")),
-                                    reader.GetString(reader.GetOrdinal("Role"))
+                                     reader.SafeGet<int>("Id"),
+                                reader.SafeGet<string>("Name"),
+                                reader.SafeGet<int>("Age"),
+                                reader.SafeGet<int>("Grade"),
+                                reader.SafeGet<string>("Email"),
+                                reader.SafeGet<string>("PasswordHash"),
+                                reader.SafeGet<string>("Role"),
+                                reader.SafeGet<string>("RefreshTokenHash"),
+                                reader.SafeGet<DateTime>("RefreshTokenExpiresAt"),
+                                reader.SafeGet<DateTime>("RefreshTokenRevokedAt")
                                 ));
                             }
                         }
@@ -124,7 +139,7 @@ namespace StudentDataAccessLayer
                 Console.WriteLine($"Error GetPassedStudents(): {ex.Message}");
             }
 
-           return StudentsList;
+            return StudentsList;
 
         }
         public static double GetAverageGrade()
@@ -160,7 +175,7 @@ namespace StudentDataAccessLayer
             {
                 Console.WriteLine($"Error GetAverageGrade(): {ex.Message}");
             }
-           
+
             return averageGrade;
         }
         public static StudentDTO? GetStudentById(int studentId)
@@ -180,16 +195,19 @@ namespace StudentDataAccessLayer
                         {
                             return new StudentDTO
                             (
-                                reader.GetInt32(reader.GetOrdinal("Id")),
-                                reader.GetString(reader.GetOrdinal("Name")),
-                                reader.GetInt32(reader.GetOrdinal("Age")),
-                                reader.GetInt32(reader.GetOrdinal("Grade")),
-                                reader.GetString(reader.GetOrdinal("Email")),
-                                reader.GetString(reader.GetOrdinal("PasswordHash")),
-                                reader.GetString(reader.GetOrdinal("Role"))
+                                reader.SafeGet<int>("Id"),
+                                reader.SafeGet<string>("Name"),
+                                reader.SafeGet<int>("Age"),
+                                reader.SafeGet<int>("Grade"),
+                                reader.SafeGet<string>("Email"),
+                                reader.SafeGet<string>("PasswordHash"),
+                                reader.SafeGet<string>("Role"),
+                                reader.SafeGet<string>("RefreshTokenHash"),
+                                reader.SafeGet<DateTime>("RefreshTokenExpiresAt"),
+                                reader.SafeGet<DateTime>("RefreshTokenRevokedAt")
                             );
                         }
-                        
+
                     }
                 }
 
@@ -204,7 +222,7 @@ namespace StudentDataAccessLayer
             }
             return null;
         }
-        
+
         public static StudentDTO? GetStudentByEmail(string email)
         {
             try
@@ -221,16 +239,21 @@ namespace StudentDataAccessLayer
                         {
                             return new StudentDTO
                             (
-                                reader.GetInt32(reader.GetOrdinal("Id")),
-                                reader.GetString(reader.GetOrdinal("Name")),
-                                reader.GetInt32(reader.GetOrdinal("Age")),
-                                reader.GetInt32(reader.GetOrdinal("Grade")),
-                                reader.GetString(reader.GetOrdinal("Email")),
-                                reader.GetString(reader.GetOrdinal("PasswordHash")),
-                                reader.GetString(reader.GetOrdinal("Role"))
+                                reader.SafeGet<int>("Id"),
+                                reader.SafeGet<string>("Name"),
+                                reader.SafeGet<int>("Age"),
+                                reader.SafeGet<int>("Grade"),
+                                reader.SafeGet<string>("Email"),
+                                reader.SafeGet<string>("PasswordHash"),
+                                reader.SafeGet<string>("Role"),
+                                reader.SafeGet<string>("RefreshTokenHash"),
+                                reader.SafeGet<DateTime>("RefreshTokenExpiresAt"),
+                                reader.SafeGet<DateTime>("RefreshTokenRevokedAt")
+
+
                             );
                         }
-                        
+
                     }
                 }
             }
@@ -260,6 +283,9 @@ namespace StudentDataAccessLayer
                     command.Parameters.AddWithValue("@Email", StudentDTO.Email);
                     command.Parameters.AddWithValue("@PasswordHash", StudentDTO.PasswordHash);
                     command.Parameters.AddWithValue("@Role", StudentDTO.Role);
+                    command.Parameters.AddWithValue("@RefreshTokenHash", StudentDTO.RefreshTokenHash);
+                    command.Parameters.AddWithValue("@RefreshTokenExpiresAt", StudentDTO.RefreshTokenExpiresAt);
+                    command.Parameters.AddWithValue("@RefreshTokenRevokedAt", StudentDTO.RefreshTokenRevokedAt);
 
                     var outputIdParam = new SqlParameter("@NewStudentId", SqlDbType.Int)
                     {
@@ -281,7 +307,7 @@ namespace StudentDataAccessLayer
             {
                 Console.WriteLine($"DAL Error adding student: {ex.Message}");
             }
-           return id;
+            return id;
         }
         public static bool UpdateStudent(StudentDTO StudentDTO)
         {
@@ -300,6 +326,9 @@ namespace StudentDataAccessLayer
                     command.Parameters.AddWithValue("@Email", StudentDTO.Email);
                     command.Parameters.AddWithValue("@PasswordHash", StudentDTO.PasswordHash);
                     command.Parameters.AddWithValue("@Role", StudentDTO.Role);
+                    command.Parameters.AddWithValue("@RefreshTokenHash", StudentDTO.RefreshTokenHash);
+                    command.Parameters.AddWithValue("@RefreshTokenExpiresAt", StudentDTO.RefreshTokenExpiresAt);
+                    command.Parameters.AddWithValue("@RefreshTokenRevokedAt", StudentDTO.RefreshTokenRevokedAt);
                     connection.Open();
                     command.ExecuteNonQuery();
                     int rowsAffected = (int)command.ExecuteNonQuery();
@@ -315,8 +344,8 @@ namespace StudentDataAccessLayer
             {
                 Console.WriteLine($"DAL Error updating student: {ex.Message}");
             }
-            return success;  
-        } 
+            return success;
+        }
         public static bool DeleteStudent(int studentId)
         {
 
@@ -329,10 +358,101 @@ namespace StudentDataAccessLayer
                 connection.Open();
 
                 int rowsAffected = (int)command.ExecuteNonQuery();
-                return (rowsAffected==1);
+                return (rowsAffected == 1);
 
 
             }
+        }
+
+        public static bool UpdateRefreshTokenData(int studentId, string refreshTokenHash, DateTime? expiresAt,DateTime? revokedAt)
+        {
+           
+            bool success = false;
+            try
+            {
+                using (var connection = new SqlConnection(_connectionString))
+                using (var command = new SqlCommand("Sp_UpdateStudentRefreshTokenData", connection))
+                {
+
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@StudentId", studentId);
+                    command.Parameters.AddWithValue("@RefreshTokenHash", refreshTokenHash);
+                    command.Parameters.AddWithValue("@RefreshTokenExpiresAt", expiresAt ?? (object)DBNull.Value);
+                    command.Parameters.AddWithValue("@RefreshTokenRevokedAt", revokedAt ?? (object)DBNull.Value);
+                    connection.Open();
+                    int rowsAffected = (int)command.ExecuteNonQuery();
+                    success = (rowsAffected == 1);
+
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"DAL Update Student RefreshTokenData() -> SQL Error({ex.Number}): {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"DAL Error updating student RefreshTokenData(): {ex.Message}");
+            }
+            return success;
+        }
+        public static bool UpdateRefreshTokenHash(int studentId, string refreshTokenHash)
+        {
+           
+            bool success = false;
+            try
+            {
+                using (var connection = new SqlConnection(_connectionString))
+                using (var command = new SqlCommand("[dbo].[Sp_UpdateStudentRefreshToken]", connection))
+                {
+
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@StudentId", studentId);
+                    command.Parameters.AddWithValue("@RefreshTokenHash", refreshTokenHash);
+
+                    connection.Open();
+                    int rowsAffected = (int)command.ExecuteNonQuery();
+                    success = (rowsAffected == 1);
+
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"DAL Update Student RefreshTokenData() -> SQL Error({ex.Number}): {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"DAL Error updating student RefreshTokenData(): {ex.Message}");
+            }
+            return success;
+        }
+        public static bool RevokeRefreshToken(int studentId, DateTime? revokedAt)
+        {
+            bool revoked = false;
+            try
+            {
+                using (var connection = new SqlConnection(_connectionString))
+                using (var command = new SqlCommand("Sp_RevokeRefreshToken", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@StudentId", studentId);
+                    command.Parameters.AddWithValue("@RefreshTokenRevokedAt", revokedAt?? (object)DBNull.Value);
+                    connection.Open();
+                    int rowsAffected = (int)command.ExecuteNonQuery();
+                    revoked = (rowsAffected == 1);
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"DAL Students RevokeRefreshToken-> SQL Error({ex.Number}): {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"DAL Error student RevokeRefreshToken: {ex.Message}");
+            }
+
+            return revoked;
         }
     }
 }
