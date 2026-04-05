@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.OpenApi.Models;
 using StudentApi.Authorization;
 using System.Text;
+using System.Threading.RateLimiting;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -47,6 +48,26 @@ builder.Services.AddAuthorization(options =>
     {
         policy.Requirements.Add(new StudentOwnerOrAdminRequirement());
     });
+});
+
+builder.Services.AddRateLimiter(options =>
+{
+    options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+
+    options.AddPolicy("AuthLimiter", httpContext =>
+    {
+        var ip = httpContext.Connection.RemoteIpAddress?.ToString() ?? "unknown";
+
+        return RateLimitPartition.GetFixedWindowLimiter(partitionKey: ip,
+            factory: partition => new FixedWindowRateLimiterOptions
+        {
+            PermitLimit = 5,
+            Window = TimeSpan.FromMinutes(1),
+            QueueProcessingOrder = QueueProcessingOrder.OldestFirst,
+            QueueLimit = 0
+        });
+    });
+
 });
 
 builder.Services.AddControllers();
@@ -124,14 +145,30 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+app.UseHttpsRedirection();//This middleware redirects HTTP requests to HTTPS, ensuring that all communication with the API is encrypted and secure.
+                          //It helps protect sensitive data from being transmitted over unencrypted connections, enhancing the overall security of the application.
 
-app.UseCors("StudentApiCorsPolicy");
+app.UseCors("StudentApiCorsPolicy");//This middleware enables Cross-Origin Resource Sharing (CORS) for the API, allowing it to accept requests from specified origins (e.g., frontend applications running on different domains). 
+                                    //By defining a CORS policy, we can control which external domains are allowed to access the API, enhancing security while enabling necessary cross-origin interactions.
 
-app.UseAuthentication();
+app.UseRateLimiter();//This middleware applies rate limiting to incoming requests, helping to prevent abuse and protect the API from excessive traffic. 
+                     //By configuring rate limits, we can mitigate the risk of denial-of-service (DoS) attacks and ensure that the API remains responsive and available to legitimate users.
+app.Use(async (context, next) =>
+{
+   await next();
+    if (context.Response.StatusCode == StatusCodes.Status429TooManyRequests)
+    {
+        await context.Response.WriteAsync("Too many requests. Please try again later.");
+    }
+});
 
-app.UseAuthorization();
+app.UseAuthentication();//This middleware enables authentication for the API, allowing it to validate and process authentication tokens (e.g., JWTs) included in incoming requests. 
+                        //By using authentication, we can ensure that only authorized users can access protected endpoints, enhancing the security of the application by preventing unauthorized access.
 
-app.MapControllers();
+app.UseAuthorization();//This middleware enables authorization for the API, allowing it to enforce access control policies based on user roles and permissions. 
+                       //By using authorization, we can restrict access to certain endpoints or resources to specific users or groups, enhancing security by ensuring that users can only perform actions they are authorized for.
+
+app.MapControllers();//This middleware maps incoming HTTP requests to the appropriate controller actions based on the defined routes. 
+                     //By using MapControllers, we can organize our API endpoints into controllers and handle requests in a structured manner, improving maintainability and scalability of the application.
 
 app.Run();

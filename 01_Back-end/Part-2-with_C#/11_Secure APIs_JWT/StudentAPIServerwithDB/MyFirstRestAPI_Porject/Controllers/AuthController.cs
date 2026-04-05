@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.IdentityModel.Tokens;
 using StudentApi.DTOs.Auth;
 using StudentAPIBusinessLayer;
@@ -14,6 +15,7 @@ namespace StudentApi.Controllers
     public class AuthController : ControllerBase
     {
         [HttpPost("login")]
+        [EnableRateLimiting("AuthLimiter")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public IActionResult Login([FromBody] LoginRequest request)
@@ -24,13 +26,13 @@ namespace StudentApi.Controllers
 
             //[1] check if a student with the provided email exists in the database. If not, return an Unauthorized response indicating invalid credentials.
             //This prevents attackers from knowing whether an email is registered or not, enhancing security by not revealing user existence information.
-            if (student == null) return Unauthorized("Invalid credentials.Ema");
+            if (student == null) return Unauthorized("Invalid credentials");
 
             //[2] check if the provided password matches the stored password hash using BCrypt. The Verify method takes the plaintext password and the stored hash, and returns true if they match, false otherwise.
             //This ensures that even if the database is compromised, attackers cannot easily retrieve plaintext passwords.
             bool isPasswordValid = BCrypt.Net.BCrypt.Verify(request.Password, student.PasswordHash);
 
-            if (!isPasswordValid) return Unauthorized("Invalid credentials.Pass");
+            if (!isPasswordValid) return Unauthorized("Invalid credentials");
 
             //[3] create claims for the JWT token, including user ID, email, and role.
             //These claims will be included in the token payload and can be used for authorization in subsequent requests.
@@ -85,6 +87,7 @@ namespace StudentApi.Controllers
         }
 
         [HttpPost("refresh")]
+        [EnableRateLimiting("AuthLimiter")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public IActionResult Refresh([FromBody] RefreshRequest request)

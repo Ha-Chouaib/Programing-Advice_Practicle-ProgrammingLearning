@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\11_Secure APIs_JWT\\StudentAPIServerwithDB\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1E669797-6B35-4255-AD8E-E22E0C9A13AE}|MyFirstRestAPI_Porject\\StudentApi.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\11_secure apis_jwt\\studentapiserverwithdb\\myfirstrestapi_porject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E669797-6B35-4255-AD8E-E22E0C9A13AE}|MyFirstRestAPI_Porject\\StudentApi.csproj|solutionrelative:myfirstrestapi_porject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1E669797-6B35-4255-AD8E-E22E0C9A13AE}|MyFirstRestAPI_Porject\\StudentApi.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\11_secure apis_jwt\\studentapiserverwithdb\\myfirstrestapi_porject\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E669797-6B35-4255-AD8E-E22E0C9A13AE}|MyFirstRestAPI_Porject\\StudentApi.csproj|solutionrelative:myfirstrestapi_porject\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -21,14 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{1E669797-6B35-4255-AD8E-E22E0C9A13AE}|MyFirstRestAPI_Porject\\StudentApi.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\11_secure apis_jwt\\studentapiserverwithdb\\myfirstrestapi_porject\\controllers\\studentapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E669797-6B35-4255-AD8E-E22E0C9A13AE}|MyFirstRestAPI_Porject\\StudentApi.csproj|solutionrelative:myfirstrestapi_porject\\controllers\\studentapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1E669797-6B35-4255-AD8E-E22E0C9A13AE}|MyFirstRestAPI_Porject\\StudentApi.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\11_secure apis_jwt\\studentapiserverwithdb\\myfirstrestapi_porject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E669797-6B35-4255-AD8E-E22E0C9A13AE}|MyFirstRestAPI_Porject\\StudentApi.csproj|solutionrelative:myfirstrestapi_porject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1E669797-6B35-4255-AD8E-E22E0C9A13AE}|MyFirstRestAPI_Porject\\StudentApi.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\11_secure apis_jwt\\studentapiserverwithdb\\myfirstrestapi_porject\\authorization\\studentowneroradminrequirement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E669797-6B35-4255-AD8E-E22E0C9A13AE}|MyFirstRestAPI_Porject\\StudentApi.csproj|solutionrelative:myfirstrestapi_porject\\authorization\\studentowneroradminrequirement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1E669797-6B35-4255-AD8E-E22E0C9A13AE}|MyFirstRestAPI_Porject\\StudentApi.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\11_secure apis_jwt\\studentapiserverwithdb\\myfirstrestapi_porject\\dtos\\auth\\tokenresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -58,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,44 +62,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "StudentOwnerOrAdminRequirement.cs",
-              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\11_Secure APIs_JWT\\StudentAPIServerwithDB\\MyFirstRestAPI_Porject\\Authorization\\StudentOwnerOrAdminRequirement.cs",
-              "RelativeDocumentMoniker": "MyFirstRestAPI_Porject\\Authorization\\StudentOwnerOrAdminRequirement.cs",
-              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\11_Secure APIs_JWT\\StudentAPIServerwithDB\\MyFirstRestAPI_Porject\\Authorization\\StudentOwnerOrAdminRequirement.cs",
-              "RelativeToolTip": "MyFirstRestAPI_Porject\\Authorization\\StudentOwnerOrAdminRequirement.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-01T10:45:41.024Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\11_Secure APIs_JWT\\StudentAPIServerwithDB\\MyFirstRestAPI_Porject\\Program.cs",
               "RelativeDocumentMoniker": "MyFirstRestAPI_Porject\\Program.cs",
               "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\11_Secure APIs_JWT\\StudentAPIServerwithDB\\MyFirstRestAPI_Porject\\Program.cs",
               "RelativeToolTip": "MyFirstRestAPI_Porject\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAJUAAAAAAAAAAAAYwJwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-01T06:01:47.141Z"
+              "WhenOpened": "2026-04-01T06:01:47.141Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\11_Secure APIs_JWT\\StudentAPIServerwithDB\\MyFirstRestAPI_Porject\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "MyFirstRestAPI_Porject\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\11_Secure APIs_JWT\\StudentAPIServerwithDB\\MyFirstRestAPI_Porject\\Controllers\\AuthController.cs",
               "RelativeToolTip": "MyFirstRestAPI_Porject\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACIAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-31T17:26:53.086Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "clsCryptography.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\11_Secure APIs_JWT\\StudentAPIServerwithDB\\StudentAPIBusinessLayer\\clsCryptography.cs",
               "RelativeDocumentMoniker": "StudentAPIBusinessLayer\\clsCryptography.cs",
@@ -115,7 +100,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "StudentAPIController.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\11_Secure APIs_JWT\\StudentAPIServerwithDB\\MyFirstRestAPI_Porject\\Controllers\\StudentAPIController.cs",
               "RelativeDocumentMoniker": "MyFirstRestAPI_Porject\\Controllers\\StudentAPIController.cs",
@@ -127,7 +112,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "StudentData.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\11_Secure APIs_JWT\\StudentAPIServerwithDB\\StudentDataAccessLayer\\StudentData.cs",
               "RelativeDocumentMoniker": "StudentDataAccessLayer\\StudentData.cs",
@@ -139,7 +124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "DataReaderExtensions.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\11_Secure APIs_JWT\\StudentAPIServerwithDB\\StudentDataAccessLayer\\DataReaderExtensions.cs",
               "RelativeDocumentMoniker": "StudentDataAccessLayer\\DataReaderExtensions.cs",
@@ -151,7 +136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Student.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\11_Secure APIs_JWT\\StudentAPIServerwithDB\\StudentAPIBusinessLayer\\Student.cs",
               "RelativeDocumentMoniker": "StudentAPIBusinessLayer\\Student.cs",
@@ -163,7 +148,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "TokenResponse.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\11_Secure APIs_JWT\\StudentAPIServerwithDB\\MyFirstRestAPI_Porject\\DTOs\\Auth\\TokenResponse.cs",
               "RelativeDocumentMoniker": "MyFirstRestAPI_Porject\\DTOs\\Auth\\TokenResponse.cs",
@@ -175,7 +160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "RefreshRequest.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\11_Secure APIs_JWT\\StudentAPIServerwithDB\\MyFirstRestAPI_Porject\\DTOs\\Auth\\RefreshRequest.cs",
               "RelativeDocumentMoniker": "MyFirstRestAPI_Porject\\DTOs\\Auth\\RefreshRequest.cs",
@@ -187,7 +172,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "LogoutRequest.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\11_Secure APIs_JWT\\StudentAPIServerwithDB\\MyFirstRestAPI_Porject\\DTOs\\Auth\\LogoutRequest.cs",
               "RelativeDocumentMoniker": "MyFirstRestAPI_Porject\\DTOs\\Auth\\LogoutRequest.cs",
@@ -199,7 +184,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "StudentOwnerOrAdminHandler.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\11_Secure APIs_JWT\\StudentAPIServerwithDB\\MyFirstRestAPI_Porject\\Authorization\\StudentOwnerOrAdminHandler.cs",
               "RelativeDocumentMoniker": "MyFirstRestAPI_Porject\\Authorization\\StudentOwnerOrAdminHandler.cs",
