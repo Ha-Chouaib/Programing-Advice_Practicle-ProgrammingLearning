@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.OpenApi.Models;
 using StudentApi.Authorization;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.RateLimiting;
 var builder = WebApplication.CreateBuilder(args);
@@ -158,7 +159,27 @@ app.Use(async (context, next) =>
    await next();
     if (context.Response.StatusCode == StatusCodes.Status429TooManyRequests)
     {
+        var userId = context.User.FindFirstValue(ClaimTypes.NameIdentifier);
+        var ip = context.Connection.RemoteIpAddress?.ToString() ?? "Unknown IP";
+        var path = context.Request.Path.ToString();
+
+        app.Logger.LogWarning("Rate limit exceeded for user: {UserId}, IP: {IP}, Path: {Path}", userId ?? "Anonymous", ip, path);
         await context.Response.WriteAsync("Too many requests. Please try again later.");
+    }
+    if(context.Response.StatusCode == StatusCodes.Status401Unauthorized)
+    {
+        var ip = context.Connection.RemoteIpAddress?.ToString() ?? "Unknown IP";
+        var path = context.Request.Path.ToString();
+        app.Logger.LogWarning("Unauthorized access attempt from IP: {IP}, Path: {Path}", ip, path);
+        await context.Response.WriteAsync("Unauthorized. Please provide valid credentials.");
+    }
+    if(context.Response.StatusCode == StatusCodes.Status403Forbidden)
+    {
+        var userId = context.User.FindFirstValue(ClaimTypes.NameIdentifier);
+        var ip = context.Connection.RemoteIpAddress?.ToString() ?? "Unknown IP";
+        var path = context.Request.Path.ToString();
+        app.Logger.LogWarning("Forbidden access attempt by user: {UserId}, IP: {IP}, Path: {Path}", userId ?? "Anonymous", ip, path);
+        await context.Response.WriteAsync("Forbidden. You do not have permission to access this resource.");
     }
 });
 

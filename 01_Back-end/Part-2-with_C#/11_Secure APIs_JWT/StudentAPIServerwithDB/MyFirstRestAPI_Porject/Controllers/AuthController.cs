@@ -14,25 +14,44 @@ namespace StudentApi.Controllers
     [Route("api/[controller]")]
     public class AuthController : ControllerBase
     {
+
+        private readonly ILogger<AuthController> _logger;
+        public AuthController(ILogger<AuthController> logger)
+        {
+            _logger = logger;
+        }
+
+
         [HttpPost("login")]
         [EnableRateLimiting("AuthLimiter")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public IActionResult Login([FromBody] LoginRequest request)
         {
+            var ip = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "Unknown IP";
 
             //[0]
             var student = Student.Find(request.Email);
 
             //[1] check if a student with the provided email exists in the database. If not, return an Unauthorized response indicating invalid credentials.
             //This prevents attackers from knowing whether an email is registered or not, enhancing security by not revealing user existence information.
-            if (student == null) return Unauthorized("Invalid credentials");
+            if (student == null)
+            {
+                _logger.LogWarning("Failed login attempt for non-existent email: {Email} from IP: {IP}", request.Email, ip);
+                return Unauthorized("Invalid credentials");
+            }
 
             //[2] check if the provided password matches the stored password hash using BCrypt. The Verify method takes the plaintext password and the stored hash, and returns true if they match, false otherwise.
             //This ensures that even if the database is compromised, attackers cannot easily retrieve plaintext passwords.
             bool isPasswordValid = BCrypt.Net.BCrypt.Verify(request.Password, student.PasswordHash);
 
-            if (!isPasswordValid) return Unauthorized("Invalid credentials");
+            if (!isPasswordValid)
+            {
+                _logger.LogWarning("Failed login attempt for non-existent email: {Email} from IP: {IP}", request.Email, ip);
+
+                return Unauthorized("Invalid credentials");
+            }
+                
 
             //[3] create claims for the JWT token, including user ID, email, and role.
             //These claims will be included in the token payload and can be used for authorization in subsequent requests.
@@ -69,6 +88,8 @@ namespace StudentApi.Controllers
 
             student.UpdateRefreshTokenData(BCrypt.Net.BCrypt.HashPassword(refreshToken), DateTime.UtcNow.AddDays(7), null);
 
+            _logger.LogInformation("User {Email} logged in successfully from IP: {IP}", request.Email, ip);
+
             return Ok(new TokenResponse
             {
                 AccessToken = accessToken,
@@ -94,8 +115,18 @@ namespace StudentApi.Controllers
         {
             var student = Student.Find(request.Email);
 
-            if (student == null) return Unauthorized("Invalid refresh request");
-            if (student.RefreshTokenRevokedAt != null) return Unauthorized("Refresh token revoked.");
+            var ip = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "Unknown IP";
+            if (student == null)
+            { 
+                _logger.LogWarning("Failed refresh attempt for non-existent email: {Email} from IP:{IP}", request.Email,ip);
+                return Unauthorized("Invalid refresh request"); 
+            }
+            if (student.RefreshTokenRevokedAt != null)
+            {
+                _logger.LogWarning("Failed refresh attempt with revoked token for email: {Email} from IP:{IP}", request.Email,ip);
+                return Unauthorized("Refresh token revoked.");
+            }
+               
             if (student.RefreshTokenExpiresAt == null || student.RefreshTokenExpiresAt <= DateTime.UtcNow) return Unauthorized("Refresh token expired.");
 
             bool isRefreshTokenValid = BCrypt.Net.BCrypt.Verify(request.RefreshToken, student.RefreshTokenHash);

@@ -13,7 +13,11 @@ namespace StudentApi.Controllers
     [Route("api/Students")]
     public class StudentsController : ControllerBase 
     {
-
+        private readonly ILogger<StudentsController> _logger;
+        public StudentsController(ILogger<StudentsController> logger) 
+        {
+            _logger = logger;
+        }
 
         [Authorize(Roles = "Admin")]// Only users with the "Admin" role can access this endpoint.
         [HttpGet("All", Name ="GetAllStudents")]
@@ -23,6 +27,7 @@ namespace StudentApi.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public ActionResult<IEnumerable<StudentDTO>> GetAllStudents() 
         {
+
 
             List<StudentDTO> StudentsList = Student.GetAllStudents();
             if (StudentsList.Count == 0)
@@ -180,19 +185,67 @@ namespace StudentApi.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public ActionResult DeleteStudent(int id)
         {
+            // Capture IP once for tracing (helps investigations later)
+            var ip = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "unknown";
+
+            // Identify the admin who is performing the action
+            // ClaimTypes.NameIdentifier is what you put in JWT during login.
+            var adminId = User.FindFirstValue(ClaimTypes.NameIdentifier) ?? "unknown";
             if (id < 1)
             {
+                _logger.LogWarning(
+                                    "Admin action blocked (invalid id). AdminId={AdminId}, Action=DeleteStudent, TargetId={TargetId}, IP={IP}",
+                                    adminId,
+                                    id,
+                                    ip);
                 return BadRequest($"Not accepted ID {id}");
             }
 
-            // var student = StudentDataSimulation.StudentsList.FirstOrDefault(s => s.Id == id);
-            // StudentDataSimulation.StudentsList.Remove(student);
+            Student? student = Student.Find(id);
+            if (student == null)
+            {
+                _logger.LogWarning(
+                                    "Admin action blocked (student not found). AdminId={AdminId}, Action=DeleteStudent, TargetId={TargetId}, IP={IP}",
+                                    adminId,
+                                    id,
+                                    ip);
+                return NotFound($"Student with ID {id} not found.");
+            }
 
-           if(Student.DeleteStudent(id))
-            
+            //Log Before Deletion for traceability (important for audits and investigations)
+            //If DeleteStudent fails, we will know who attempted it and from where.
+            _logger.LogInformation(
+                                    "Admin action started. AdminId={AdminId}, Action=DeleteStudent, TargetId={TargetId}, TargetEmail={TargetEmail}, IP={IP}",
+                                    adminId,
+                                    student.ID,
+                                    student.Email,
+                                    ip
+                                  );
+
+            if (Student.DeleteStudent(id))
+            {
+                _logger.LogInformation(
+                                    "Admin action successful. AdminId={AdminId}, Action=DeleteStudent, TargetId={TargetId}, TargetEmail={TargetEmail}, IP={IP}",
+                                    adminId,
+                                    student.ID,
+                                    student.Email,
+                                    ip
+                                  );
                 return Ok($"Student with ID {id} has been deleted.");
+            }
+                
             else
-                return NotFound($"Student with ID {id} not found. no rows deleted!");
+            {
+                _logger.LogError(
+                                    "Admin action failed (deletion error). AdminId={AdminId}, Action=DeleteStudent, TargetId={TargetId}, TargetEmail={TargetEmail}, IP={IP}",
+                                    adminId,
+                                    student.ID,
+                                    student.Email,
+                                    ip
+                                  );
+                return StatusCode(StatusCodes.Status500InternalServerError, $"An error occurred while trying to delete student with ID {id}. Please try again later.");
+            }
+               
         }
 
     }
