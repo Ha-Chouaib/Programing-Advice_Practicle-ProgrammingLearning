@@ -14,14 +14,15 @@ namespace StudentApi.Controllers
     [Route("api/[controller]")]
     public class AuthController : ControllerBase
     {
+        private readonly IConfiguration _config;
 
         private readonly ILogger<AuthController> _logger;
-        public AuthController(ILogger<AuthController> logger)
+        public AuthController(ILogger<AuthController> logger,IConfiguration config)
         {
             _logger = logger;
+            _config = config;
         }
-
-
+       
         [HttpPost("login")]
         [EnableRateLimiting("AuthLimiter")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -63,7 +64,15 @@ namespace StudentApi.Controllers
             };
 
             //[4] _ This key must be stored securely in a real application, e.g., in environment variables or a secrets manager not hardcoded in the source code.
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("THIS_IS_A_VERY_SECRET_KEY_123456"));
+
+            var secretKey = _config["Jwt:SecretKey"];
+
+            if (string.IsNullOrEmpty(secretKey))
+            {
+                throw new InvalidOperationException("JWT secret key is missing");
+            }
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
 
             //[5] Here we specify the signing algorithm (HMAC SHA256) and the key to sign the JWT token.
             //This ensures that the token cannot be tampered with and can be verified by the server when received in subsequent requests.
@@ -138,7 +147,13 @@ namespace StudentApi.Controllers
                 new Claim(ClaimTypes.Email, student.Email),
                 new Claim(ClaimTypes.Role, student.Role)
             };
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("THIS_IS_A_VERY_SECRET_KEY_123456"));
+            var secretKey = _config["Jwt:SecretKey"];
+
+            if (string.IsNullOrEmpty(secretKey))
+            {
+                throw new InvalidOperationException("JWT secret key is missing");
+            }
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
 
             var cerds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 

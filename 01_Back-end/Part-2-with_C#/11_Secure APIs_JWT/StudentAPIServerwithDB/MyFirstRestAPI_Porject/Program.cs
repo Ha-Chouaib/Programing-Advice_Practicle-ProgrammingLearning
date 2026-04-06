@@ -7,6 +7,13 @@ using System.Text;
 using System.Threading.RateLimiting;
 var builder = WebApplication.CreateBuilder(args);
 
+var secretKey = builder.Configuration["Jwt:SecretKey"];
+if(string.IsNullOrEmpty(secretKey))
+{
+    throw new InvalidOperationException("JWT secret key is not configured. Please set a secret key in the configuration.");
+}
+
+
 // Add services to the container.
 builder.Services.AddCors(options =>
 {
@@ -19,6 +26,7 @@ builder.Services.AddCors(options =>
 });
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer
     (
+
         options =>
         {
             options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
@@ -30,9 +38,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 
                 ValidIssuer = "StudentApi",//The expected issuer of the token, which should match the issuer specified when the token was created.
                 ValidAudience = "StudentApiUsers",//The expected audience of the token, which should match the audience specified when the token was created.
-
+                
                 //The key used to validate the token's signature, which should match the key used to sign the token.
-                IssuerSigningKey = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(Encoding.UTF8.GetBytes("THIS_IS_A_VERY_SECRET_KEY_123456")),
+                IssuerSigningKey = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey)),
                 
                 ClockSkew = TimeSpan.Zero //here we set the clock skew to zero to prevent any additional time window for token expiration,
                                           //ensuring that tokens expire exactly at their specified expiration time without any grace period.
