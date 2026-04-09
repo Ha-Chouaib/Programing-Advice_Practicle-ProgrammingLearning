@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Multi-Column Layout</title>
+
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+            line-height: 1.5;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .ThreeColumns {
+            column-count: 3;
+            column-gap: 1.5rem;
+        }
+        .withRule {
+            column-count: 3;
+            column-gap: 1.5rem;
+            column-rule: 2px solid #333;
+            margin-top: 2rem;
+            padding-top: 1rem;
+        }
+        .autoColumns {
+            column-width: 200px;
+            column-gap: 1.5rem;
+            margin-top: 2rem;
+            padding-top: 1rem;
+        }
+        .withImg {
+            width: 100%;
+            break-inside: avoid;
+            display: block ;
+            margin-bottom: 1rem;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <H1>CSS Multi-Column Layout</H1>
+    <p>
+        The CSS Multi-Column Layout module allows you to create multi-column layouts with ease. It provides properties to control the number of columns, the width of columns, and the gap between them.
+    </p>
+
+    <h2>Example: Basic Multi-Column Layout</h2>
+    <div class="ThreeColumns">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <h2>Example: Multi-Column Layout with Rules</h2>
+    <div class="withRule">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <h2>Example: Responsive Multi-Column Layout</h2>
+    <div class="autoColumns">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+        >This paragraph spans across all columns, demonstrating the use of the column-span property.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <h2>Example: with Images</h2>
+    <div class="withImg" >
+        <img src="https://via.placeholder.com/400x200" alt="Placeholder Image">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+
+</body>
+</html>
