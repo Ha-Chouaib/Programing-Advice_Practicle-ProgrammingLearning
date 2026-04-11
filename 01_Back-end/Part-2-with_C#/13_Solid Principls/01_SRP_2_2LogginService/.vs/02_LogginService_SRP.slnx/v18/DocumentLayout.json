@@ -1,0 +1,90 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\01_2_SRP_Logging Service\\02_LogginService_SRP\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{197F445E-D51A-5010-F5E2-61C18E7EFF62}|02_LogginService_SRP\\02_LogginService_SRP.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\13_solid principls\\01_2_srp_logging service\\02_logginservice_srp\\02_logginservice_srp\\clsdatabaseloggingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{197F445E-D51A-5010-F5E2-61C18E7EFF62}|02_LogginService_SRP\\02_LogginService_SRP.csproj|solutionrelative:02_logginservice_srp\\clsdatabaseloggingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{197F445E-D51A-5010-F5E2-61C18E7EFF62}|02_LogginService_SRP\\02_LogginService_SRP.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\13_solid principls\\01_2_srp_logging service\\02_logginservice_srp\\02_logginservice_srp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{197F445E-D51A-5010-F5E2-61C18E7EFF62}|02_LogginService_SRP\\02_LogginService_SRP.csproj|solutionrelative:02_logginservice_srp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{197F445E-D51A-5010-F5E2-61C18E7EFF62}|02_LogginService_SRP\\02_LogginService_SRP.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\13_solid principls\\01_2_srp_logging service\\02_logginservice_srp\\02_logginservice_srp\\clseventlogloggingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{197F445E-D51A-5010-F5E2-61C18E7EFF62}|02_LogginService_SRP\\02_LogginService_SRP.csproj|solutionrelative:02_logginservice_srp\\clseventlogloggingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{197F445E-D51A-5010-F5E2-61C18E7EFF62}|02_LogginService_SRP\\02_LogginService_SRP.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\13_solid principls\\01_2_srp_logging service\\02_logginservice_srp\\02_logginservice_srp\\clslfileloggingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{197F445E-D51A-5010-F5E2-61C18E7EFF62}|02_LogginService_SRP\\02_LogginService_SRP.csproj|solutionrelative:02_logginservice_srp\\clslfileloggingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "clsDataBaseLoggingService.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\01_2_SRP_Logging Service\\02_LogginService_SRP\\02_LogginService_SRP\\clsDataBaseLoggingService.cs",
+              "RelativeDocumentMoniker": "02_LogginService_SRP\\clsDataBaseLoggingService.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\01_2_SRP_Logging Service\\02_LogginService_SRP\\02_LogginService_SRP\\clsDataBaseLoggingService.cs",
+              "RelativeToolTip": "02_LogginService_SRP\\clsDataBaseLoggingService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T17:48:28.905Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "clsEventLogLoggingService.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\01_2_SRP_Logging Service\\02_LogginService_SRP\\02_LogginService_SRP\\clsEventLogLoggingService.cs",
+              "RelativeDocumentMoniker": "02_LogginService_SRP\\clsEventLogLoggingService.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\01_2_SRP_Logging Service\\02_LogginService_SRP\\02_LogginService_SRP\\clsEventLogLoggingService.cs",
+              "RelativeToolTip": "02_LogginService_SRP\\clsEventLogLoggingService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T17:47:55.178Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "clslFileLoggingService.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\01_2_SRP_Logging Service\\02_LogginService_SRP\\02_LogginService_SRP\\clslFileLoggingService.cs",
+              "RelativeDocumentMoniker": "02_LogginService_SRP\\clslFileLoggingService.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\01_2_SRP_Logging Service\\02_LogginService_SRP\\02_LogginService_SRP\\clslFileLoggingService.cs",
+              "RelativeToolTip": "02_LogginService_SRP\\clslFileLoggingService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T17:47:30.695Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\01_2_SRP_Logging Service\\02_LogginService_SRP\\02_LogginService_SRP\\Program.cs",
+              "RelativeDocumentMoniker": "02_LogginService_SRP\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\01_2_SRP_Logging Service\\02_LogginService_SRP\\02_LogginService_SRP\\Program.cs",
+              "RelativeToolTip": "02_LogginService_SRP\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T17:44:38.358Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

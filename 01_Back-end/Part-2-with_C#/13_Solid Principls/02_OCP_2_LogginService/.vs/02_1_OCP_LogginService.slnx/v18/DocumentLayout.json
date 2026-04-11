@@ -1,0 +1,126 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\02_1_OCP_LogginService\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2AC619A5-6088-4CB6-A94D-E8732D398467}|02_1_OCP_LogginService\\02_1_OCP_LogginService.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\13_solid principls\\02_1_ocp_logginservice\\02_1_ocp_logginservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AC619A5-6088-4CB6-A94D-E8732D398467}|02_1_OCP_LogginService\\02_1_OCP_LogginService.csproj|solutionrelative:02_1_ocp_logginservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AC619A5-6088-4CB6-A94D-E8732D398467}|02_1_OCP_LogginService\\02_1_OCP_LogginService.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\13_solid principls\\02_1_ocp_logginservice\\02_1_ocp_logginservice\\clsloggingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AC619A5-6088-4CB6-A94D-E8732D398467}|02_1_OCP_LogginService\\02_1_OCP_LogginService.csproj|solutionrelative:02_1_ocp_logginservice\\clsloggingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AC619A5-6088-4CB6-A94D-E8732D398467}|02_1_OCP_LogginService\\02_1_OCP_LogginService.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\13_solid principls\\02_1_ocp_logginservice\\02_1_ocp_logginservice\\clslfileloggingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AC619A5-6088-4CB6-A94D-E8732D398467}|02_1_OCP_LogginService\\02_1_OCP_LogginService.csproj|solutionrelative:02_1_ocp_logginservice\\clslfileloggingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AC619A5-6088-4CB6-A94D-E8732D398467}|02_1_OCP_LogginService\\02_1_OCP_LogginService.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\13_solid principls\\02_1_ocp_logginservice\\02_1_ocp_logginservice\\clsdatabaseloggingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AC619A5-6088-4CB6-A94D-E8732D398467}|02_1_OCP_LogginService\\02_1_OCP_LogginService.csproj|solutionrelative:02_1_ocp_logginservice\\clsdatabaseloggingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AC619A5-6088-4CB6-A94D-E8732D398467}|02_1_OCP_LogginService\\02_1_OCP_LogginService.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\13_solid principls\\02_1_ocp_logginservice\\02_1_ocp_logginservice\\clseventlogloggingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AC619A5-6088-4CB6-A94D-E8732D398467}|02_1_OCP_LogginService\\02_1_OCP_LogginService.csproj|solutionrelative:02_1_ocp_logginservice\\clseventlogloggingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AC619A5-6088-4CB6-A94D-E8732D398467}|02_1_OCP_LogginService\\02_1_OCP_LogginService.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\13_solid principls\\02_1_ocp_logginservice\\02_1_ocp_logginservice\\iloggin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AC619A5-6088-4CB6-A94D-E8732D398467}|02_1_OCP_LogginService\\02_1_OCP_LogginService.csproj|solutionrelative:02_1_ocp_logginservice\\iloggin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "clsLoggingService.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\02_1_OCP_LogginService\\02_1_OCP_LogginService\\clsLoggingService.cs",
+              "RelativeDocumentMoniker": "02_1_OCP_LogginService\\clsLoggingService.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\02_1_OCP_LogginService\\02_1_OCP_LogginService\\clsLoggingService.cs",
+              "RelativeToolTip": "02_1_OCP_LogginService\\clsLoggingService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T19:13:30.108Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ILoggin.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\02_1_OCP_LogginService\\02_1_OCP_LogginService\\ILoggin.cs",
+              "RelativeDocumentMoniker": "02_1_OCP_LogginService\\ILoggin.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\02_1_OCP_LogginService\\02_1_OCP_LogginService\\ILoggin.cs",
+              "RelativeToolTip": "02_1_OCP_LogginService\\ILoggin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T19:07:32.355Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "clslFileLoggingService.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\02_1_OCP_LogginService\\02_1_OCP_LogginService\\clslFileLoggingService.cs",
+              "RelativeDocumentMoniker": "02_1_OCP_LogginService\\clslFileLoggingService.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\02_1_OCP_LogginService\\02_1_OCP_LogginService\\clslFileLoggingService.cs",
+              "RelativeToolTip": "02_1_OCP_LogginService\\clslFileLoggingService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T19:06:02.722Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "clsEventLogLoggingService.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\02_1_OCP_LogginService\\02_1_OCP_LogginService\\clsEventLogLoggingService.cs",
+              "RelativeDocumentMoniker": "02_1_OCP_LogginService\\clsEventLogLoggingService.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\02_1_OCP_LogginService\\02_1_OCP_LogginService\\clsEventLogLoggingService.cs",
+              "RelativeToolTip": "02_1_OCP_LogginService\\clsEventLogLoggingService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T19:06:00.76Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "clsDataBaseLoggingService.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\02_1_OCP_LogginService\\02_1_OCP_LogginService\\clsDataBaseLoggingService.cs",
+              "RelativeDocumentMoniker": "02_1_OCP_LogginService\\clsDataBaseLoggingService.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\02_1_OCP_LogginService\\02_1_OCP_LogginService\\clsDataBaseLoggingService.cs",
+              "RelativeToolTip": "02_1_OCP_LogginService\\clsDataBaseLoggingService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T19:05:57.725Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\02_1_OCP_LogginService\\02_1_OCP_LogginService\\Program.cs",
+              "RelativeDocumentMoniker": "02_1_OCP_LogginService\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\02_1_OCP_LogginService\\02_1_OCP_LogginService\\Program.cs",
+              "RelativeToolTip": "02_1_OCP_LogginService\\Program.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAYwBcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-10T19:02:24.415Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

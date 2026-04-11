@@ -1,0 +1,143 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\03_OCP_PaymentService\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{963E786D-0BA5-4F3C-BDEB-A5C57C71F26D}|03_OCP_PaymentService\\03_OCP_PaymentService.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\13_solid principls\\03_ocp_paymentservice\\03_ocp_paymentservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{963E786D-0BA5-4F3C-BDEB-A5C57C71F26D}|03_OCP_PaymentService\\03_OCP_PaymentService.csproj|solutionrelative:03_ocp_paymentservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{963E786D-0BA5-4F3C-BDEB-A5C57C71F26D}|03_OCP_PaymentService\\03_OCP_PaymentService.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\13_solid principls\\03_ocp_paymentservice\\03_ocp_paymentservice\\clspaypalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{963E786D-0BA5-4F3C-BDEB-A5C57C71F26D}|03_OCP_PaymentService\\03_OCP_PaymentService.csproj|solutionrelative:03_ocp_paymentservice\\clspaypalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{963E786D-0BA5-4F3C-BDEB-A5C57C71F26D}|03_OCP_PaymentService\\03_OCP_PaymentService.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\13_solid principls\\03_ocp_paymentservice\\03_ocp_paymentservice\\clscriditcardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{963E786D-0BA5-4F3C-BDEB-A5C57C71F26D}|03_OCP_PaymentService\\03_OCP_PaymentService.csproj|solutionrelative:03_ocp_paymentservice\\clscriditcardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{963E786D-0BA5-4F3C-BDEB-A5C57C71F26D}|03_OCP_PaymentService\\03_OCP_PaymentService.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\13_solid principls\\03_ocp_paymentservice\\03_ocp_paymentservice\\clsbanktransferservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{963E786D-0BA5-4F3C-BDEB-A5C57C71F26D}|03_OCP_PaymentService\\03_OCP_PaymentService.csproj|solutionrelative:03_ocp_paymentservice\\clsbanktransferservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{963E786D-0BA5-4F3C-BDEB-A5C57C71F26D}|03_OCP_PaymentService\\03_OCP_PaymentService.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\13_solid principls\\03_ocp_paymentservice\\03_ocp_paymentservice\\clsbitcoinservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{963E786D-0BA5-4F3C-BDEB-A5C57C71F26D}|03_OCP_PaymentService\\03_OCP_PaymentService.csproj|solutionrelative:03_ocp_paymentservice\\clsbitcoinservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{963E786D-0BA5-4F3C-BDEB-A5C57C71F26D}|03_OCP_PaymentService\\03_OCP_PaymentService.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\13_solid principls\\03_ocp_paymentservice\\03_ocp_paymentservice\\clspaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{963E786D-0BA5-4F3C-BDEB-A5C57C71F26D}|03_OCP_PaymentService\\03_OCP_PaymentService.csproj|solutionrelative:03_ocp_paymentservice\\clspaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{963E786D-0BA5-4F3C-BDEB-A5C57C71F26D}|03_OCP_PaymentService\\03_OCP_PaymentService.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\13_solid principls\\03_ocp_paymentservice\\03_ocp_paymentservice\\ipaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{963E786D-0BA5-4F3C-BDEB-A5C57C71F26D}|03_OCP_PaymentService\\03_OCP_PaymentService.csproj|solutionrelative:03_ocp_paymentservice\\ipaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "clsBitcoinService.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\03_OCP_PaymentService\\03_OCP_PaymentService\\clsBitcoinService.cs",
+              "RelativeDocumentMoniker": "03_OCP_PaymentService\\clsBitcoinService.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\03_OCP_PaymentService\\03_OCP_PaymentService\\clsBitcoinService.cs",
+              "RelativeToolTip": "03_OCP_PaymentService\\clsBitcoinService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T10:50:19.591Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "clsBankTransferService.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\03_OCP_PaymentService\\03_OCP_PaymentService\\clsBankTransferService.cs",
+              "RelativeDocumentMoniker": "03_OCP_PaymentService\\clsBankTransferService.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\03_OCP_PaymentService\\03_OCP_PaymentService\\clsBankTransferService.cs",
+              "RelativeToolTip": "03_OCP_PaymentService\\clsBankTransferService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T10:49:46.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "clsCriditCardService.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\03_OCP_PaymentService\\03_OCP_PaymentService\\clsCriditCardService.cs",
+              "RelativeDocumentMoniker": "03_OCP_PaymentService\\clsCriditCardService.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\03_OCP_PaymentService\\03_OCP_PaymentService\\clsCriditCardService.cs",
+              "RelativeToolTip": "03_OCP_PaymentService\\clsCriditCardService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T10:49:16.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "clsPayPalService.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\03_OCP_PaymentService\\03_OCP_PaymentService\\clsPayPalService.cs",
+              "RelativeDocumentMoniker": "03_OCP_PaymentService\\clsPayPalService.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\03_OCP_PaymentService\\03_OCP_PaymentService\\clsPayPalService.cs",
+              "RelativeToolTip": "03_OCP_PaymentService\\clsPayPalService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAwAwAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T10:48:47.675Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "clsPaymentService.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\03_OCP_PaymentService\\03_OCP_PaymentService\\clsPaymentService.cs",
+              "RelativeDocumentMoniker": "03_OCP_PaymentService\\clsPaymentService.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\03_OCP_PaymentService\\03_OCP_PaymentService\\clsPaymentService.cs",
+              "RelativeToolTip": "03_OCP_PaymentService\\clsPaymentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T10:48:23.849Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\03_OCP_PaymentService\\03_OCP_PaymentService\\Program.cs",
+              "RelativeDocumentMoniker": "03_OCP_PaymentService\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\03_OCP_PaymentService\\03_OCP_PaymentService\\Program.cs*",
+              "RelativeToolTip": "03_OCP_PaymentService\\Program.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T10:47:26.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IPaymentService.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\03_OCP_PaymentService\\03_OCP_PaymentService\\IPaymentService.cs",
+              "RelativeDocumentMoniker": "03_OCP_PaymentService\\IPaymentService.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\03_OCP_PaymentService\\03_OCP_PaymentService\\IPaymentService.cs",
+              "RelativeToolTip": "03_OCP_PaymentService\\IPaymentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-11T10:51:54.599Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
