@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\05_DIP_Solution-Report\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3E30C066-1684-416B-82F9-2AF82EB28967}|05_DIP_Solution-Report\\05_DIP_Solution-Report.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\13_solid principls\\05_dip_solution-report\\05_dip_solution-report\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E30C066-1684-416B-82F9-2AF82EB28967}|05_DIP_Solution-Report\\05_DIP_Solution-Report.csproj|solutionrelative:05_dip_solution-report\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\05_DIP_Solution-Report\\05_DIP_Solution-Report\\Program.cs",
+              "RelativeDocumentMoniker": "05_DIP_Solution-Report\\Program.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\05_DIP_Solution-Report\\05_DIP_Solution-Report\\Program.cs",
+              "RelativeToolTip": "05_DIP_Solution-Report\\Program.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAmwBoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T06:27:03.88Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

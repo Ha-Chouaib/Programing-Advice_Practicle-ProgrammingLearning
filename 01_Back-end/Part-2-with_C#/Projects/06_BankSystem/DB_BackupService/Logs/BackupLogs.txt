@@ -107,3 +107,7 @@ BACKUP DATABASE is terminating abnormally.
 [11/04/2026 15:14:28] SQL Error during backup: The server principal "AUTORITE NT\Système" is not able to access the database "BankSystem" under the current security context.
 BACKUP DATABASE is terminating abnormally.
 [11/04/2026 15:14:28] Backup failed.
+[12/04/2026 09:38:45] Database Backup Service started.
+[12/04/2026 09:38:45] Backup timer scheduled every 1440 minutes.
+[12/04/2026 09:41:16] Database Backup Service started.
+[12/04/2026 09:41:16] Backup timer scheduled every 1440 minutes.
