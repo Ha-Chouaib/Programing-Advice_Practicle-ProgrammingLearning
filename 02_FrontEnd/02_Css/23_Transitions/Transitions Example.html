@@ -1,0 +1,202 @@
+<!-- ──────────────── Code Overview ────────────────
+🎯 Purpose
+   Showcase four core transition techniques in one page:
+     1️⃣ Width expansion (transition-property + duration)
+     2️⃣ Delayed background-color change (transition-delay)
+     3️⃣ Different easing curves (transition-timing-function)
+     4️⃣ Multiple-property shorthand (full transition syntax)
+
+🏗️ Layout
+   • Four <section> blocks, each with a clickable “demo-box”.
+   • Flex containers keep the demos centered and responsive.
+
+🧰 Use Cases
+   • Smooth hover cues (buttons, cards, menus)
+   • Staggered animations with delays
+   • Organic motion via easing curves
+   • Multi-property animations (color + transform, etc.)
+
+🔗 Key Transition Properties
+   • transition-property        → which CSS property animates
+   • transition-duration        → how long the change takes
+   • transition-delay           → wait time before starting
+   • transition-timing-function → acceleration curve (ease, linear, cubic-bezier)
+   • transition (shorthand)     → bundles all of the above
+
+────────────────────────────────────────────────── -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Transitions – Combined Demo</title>
+  <style>
+    /* 🌐 Reset & Base Styles */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.5;
+    }
+    h1, h2 { text-align: center; margin-bottom: 1rem; }
+    section { margin-bottom: 3rem; }
+
+    /* 📐 Flex wrapper for demo tiles */
+    .demo-container {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* 🧱 Demo tile base look */
+    .demo-box {
+      width: 100px; height: 100px;
+      background: #e74c3c;      /* default red */
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .label { text-align: center; font-size: .85rem; color: #555; margin-top: .5rem; max-width: 100px; }
+
+    /* ───────────── 1) Width Expansion ─────────────
+       transition-property  → only “width” will animate
+       transition-duration  → 2 s stretch time
+    */
+    .width-demo {
+      transition-property: width;   /* animate width only                     */
+      transition-duration: 2s;      /* over two seconds                       */
+    }
+    .width-demo:hover { width: 200px; } /* new width triggers the transition */
+
+    /* ────────── 2) Delayed Background-Color ──────────
+       transition (shorthand): background-color 1s ease 0.5s
+         • property  → background-color
+         • duration  → 1 s
+         • timing    → ease
+         • delay     → 0.5 s  (starts half-second after hover)
+    */
+    .delay-demo {
+      transition: background-color 1s ease 0.5s;
+    }
+    .delay-demo:hover { background-color: #3498db; } /* blue after delay */
+
+    /* ─────────── 3) Easing Curve Comparison ───────────
+       Base rule sets property & duration.  Each variant overrides
+       transition-timing-function for its own curve on hover.
+    */
+    .timing-demo { transition: transform 1s; }   /* ← property + duration */
+/*
+      Linear: moves at a steady pace—no acceleration or deceleration.
+
+      Ease: starts gently, accelerates through the middle, then decelerates into the end.
+
+      Ease-in-out: even gentler start and end, with a quicker “cruise” in the middle.
+*/
+    .timing-demo.ease:hover   {
+      transition-timing-function: ease;          /* default “ease” curve : Slow start → speed up → slow end */
+      transform: translateY(-20px);
+    }
+    .timing-demo.linear:hover {
+      transition-timing-function: linear;        /* constant speed from start to end       */
+      transform: translateY(-20px);
+    }
+    .timing-demo.in-out:hover {
+      transition-timing-function: ease-in-out;   /* Slow start → fast middle → slow end   */
+      transform: translateY(-20px);
+    }
+
+    /* ─────── 4) Multiple-Property Shorthand ───────
+       Two properties animate in parallel:
+         ① background-color  → 0.8 s, ease-in-out, 0.2 s delay
+         ② transform         → 1 s   with custom cubic-bezier easing
+       The cubic-bezier curve (0.68,-0.55,0.27,1.55) creates an
+       overshoot “bounce” effect.
+    */
+    .shorthand-demo {
+      transition:
+        background-color 0.8s ease-in-out 0.2s,
+        transform  1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        /*
+        Control Point 1 is at (0.68, –0.55)
+          At 68% of the way through the duration, the animation’s progress dips to –55% (i.e. it actually moves backward briefly).
+
+        Control Point 2 is at (0.27, 1.55)
+          At 27% of the duration, the animation’s progress is at 155% (i.e. it overshoots the end point early).
+
+        What this produces
+         A slight “reverse pull” at the very start (because y₁ is negative).
+         A rapid swing forward past 100% of the final value (because y₂ > 1).
+         Then it settles back into place by the end of the duration.
+        */
+    }
+    .shorthand-demo:hover {
+      background-color: #2ecc71;                 /* green fade, delayed   */
+      transform: rotate(15deg) scale(1.2);       /* bounce-eased spin+zoom */
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Transitions – Combined Demo</h1>
+
+  <!-- 1️⃣ Width Expansion -->
+  <section>
+    <h2>1) Width Expansion</h2>
+    <div class="demo-container">
+      <div>
+        <div class="demo-box width-demo">Hover</div>
+        <div class="label">width → 200 px<br>duration 2 s</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2️⃣ Delayed Background Change -->
+  <section>
+    <h2>2) Delayed Background Change</h2>
+    <div class="demo-container">
+      <div>
+        <div class="demo-box delay-demo">Hover</div>
+        <div class="label">bg-color<br>1 s&nbsp;dur · 0.5 s&nbsp;delay</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3️⃣ Easing Curves -->
+  <section>
+    <h2>3) Easing Curves</h2>
+    <div class="demo-container">
+      <div>
+        <div class="demo-box timing-demo ease">Ease</div>
+        <div class="label">ease</div>
+      </div>
+      <div>
+        <div class="demo-box timing-demo linear">Lin</div>
+        <div class="label">linear</div>
+      </div>
+      <div>
+        <div class="demo-box timing-demo in-out">In-Out</div>
+        <div class="label">ease-in-out</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4️⃣ Multiple-Property Shorthand -->
+  <section>
+    <h2>4) Multiple-Property Shorthand</h2>
+    <div class="demo-container">
+      <div>
+        <div class="demo-box shorthand-demo">Hover</div>
+        <div class="label">bg + transform<br>custom cubic</div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
