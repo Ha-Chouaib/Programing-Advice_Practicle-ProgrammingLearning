@@ -1,0 +1,135 @@
+<!--
+  Code Overview – Simple CSS Masks 
+  -----------------------------------------
+  Purpose:
+    • Show the simplest possible uses of CSS masks with gradients.
+  Layout:
+    • Three small demos in one page:
+      1) Bottom fade on an image (linear-gradient)
+      2) Circular avatar cutout (radial-gradient)
+      3) Soft vignette around an image (radial-gradient)
+  Use Cases:
+    • Hero/banner fades, circular avatars, subtle edge darkening.
+  Key Properties:
+    • mask-image (and -webkit-mask-image for Safari/iOS)
+    • Gradients: linear-gradient, radial-gradient
+    • Alpha controls visibility: opaque (1) shows, transparent (0) hides
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Simple CSS Mask Examples</title>
+<style>
+  /* Basic page styling */
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 2rem 1rem;
+    font-family: system-ui, Arial, sans-serif;
+    background: #f6f8fb; color: #2c3e50;
+  }
+  h1 { text-align: center; margin-bottom: 1rem; }
+  .wrap {
+    max-width: 900px; margin: 0 auto; display: grid; gap: 1.5rem;
+  }
+  .card {
+    background: #fff; border: 1px solid #e6ebf2; border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    overflow: hidden;
+  }
+  .card h2 { margin: 0; padding: .8rem 1rem; background: #0d3b66; color: #fff; font-size: 1rem; }
+  .demo { position: relative; height: 280px; display: grid; place-items: center; }
+  .bg {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center;
+  }
+  .caption {
+    position: relative; z-index: 1;
+    background: rgba(13,59,102,.75); color: #fff;
+    padding: .4rem .7rem; border-radius: 6px; font-size: .9rem;
+  }
+
+  /* 1) Bottom Fade – linear-gradient mask
+     Opaque at the top (shows image), fades to transparent at the bottom (hides). */
+  .fade-bottom .bg {
+    background-image: url("images/A2.jpg");
+    mask-image: linear-gradient(to bottom,
+                 rgba(0,0,0,1) 65%,
+                 rgba(0,0,0,0) 100%);
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+    /* Safari/iOS */
+    -webkit-mask-image: linear-gradient(to bottom,
+                 rgba(0,0,0,1) 65%,
+                 rgba(0,0,0,0) 100%);
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+  }
+
+  /* 2) Circular Avatar – radial-gradient mask
+     Opaque circle in the center (shows), transparent outside (hides) = perfect circle crop. */
+  .avatar {
+    display: grid; place-items: center; padding: 1.25rem;
+  }
+  .avatar .img {
+    width: 180px; height: 180px;
+    background-image: url("images/A2.jpg");
+    background-size: cover; background-position: center;
+    /* 99% for a crisp edge; 100% can anti-alias. */
+    mask-image: radial-gradient(circle at 50% 50%,
+                 rgba(0,0,0,1) 99%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: radial-gradient(circle at 50% 50%,
+                 rgba(0,0,0,1) 99%, rgba(0,0,0,0) 100%);
+    border: 6px solid #0d3b66; border-radius: 50%;
+  }
+
+  /* 3) Simple Vignette – radial-gradient mask
+     Center stays opaque; edges go transparent for a soft edge. */
+  .vignette .bg {
+    background-image: url("images/A2.jpg");
+    mask-image: radial-gradient(circle at 50% 50%,
+                 rgba(0,0,0,1) 55%, rgba(0,0,0,0) 95%);
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+    -webkit-mask-image: radial-gradient(circle at 50% 50%,
+                 rgba(0,0,0,1) 55%, rgba(0,0,0,0) 95%);
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+  }
+</style>
+</head>
+<body>
+  <h1>Simple CSS Masks </h1>
+  <div class="wrap">
+
+    <!-- 1) Bottom Fade -->
+    <section class="card fade-bottom">
+      <h2>1) Bottom Fade (linear-gradient)</h2>
+      <div class="demo">
+        <div class="bg"></div>
+        <div class="caption">Bottom fades out so text can sit below cleanly.</div>
+      </div>
+    </section>
+
+    <!-- 2) Circular Avatar -->
+    <section class="card">
+      <h2>2) Circular Avatar (radial-gradient)</h2>
+      <div class="demo avatar">
+        <div class="img" aria-label="Avatar photo"></div>
+        <div class="caption">A perfect circle crop made with a mask.</div>
+      </div>
+    </section>
+
+    <!-- 3) Vignette -->
+    <section class="card vignette">
+      <h2>3) Simple Vignette (radial-gradient)</h2>
+      <div class="demo">
+        <div class="bg"></div>
+        <div class="caption">Soft edges that draw focus to the center.</div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>

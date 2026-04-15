@@ -1,0 +1,141 @@
+<!--
+  Code Overview — Image-Filled Text (Masking Text with an Image)
+  ----------------------------------------------------------------
+  Purpose:
+    • Show how to “mask” text so that an image is only visible inside the glyphs.
+    • Achieved with background-clip:text (widely used technique).
+
+  Layout:
+    • One page with two demos:
+      1) Static image inside text
+      2) Animated “pan” where the image slides under the text
+
+  Use Cases:
+    • Hero headlines with photographic texture
+    • Brand treatments and promo banners
+    • Fancy headings without editing the image in Photoshop
+
+  Key Properties:
+    • background-image: sets the picture that will fill the text
+    • background-clip: text and -webkit-background-clip: text: clip background to glyphs
+    • color: transparent / -webkit-text-fill-color: transparent: hide the normal text paint
+    • background-size / background-position: control the portion of image shown
+    • animation (optional): pan the background for a dynamic effect
+
+  Notes:
+    • Use both unprefixed and -webkit- prefixed versions for broad support (Safari).
+    • Provide a readable fallback color when the effect isn’t supported.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Mask Text with an Image (Background-Clip Technique)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  :root {
+    --headline-size: clamp(4.2rem, 12vw, 12rem);
+    --subhead-size: clamp(1.2rem, 3.5vw, 2rem);
+  }
+
+  /* Page baseline */
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif;
+    background: #0f172a;              /* deep slate background */
+    color: #e2e8f0;                    /* light text for fallbacks */
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 6vmin 4vmin;
+  }
+  .wrap {
+    max-width: 1100px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Shared “image-in-text” base */
+  .image-text {
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: .02em;
+    margin: 0 0 .6rem;
+    /* Fallback: if clipping isn’t supported, we keep readable text color */
+    color: #e2e8f0;
+  }
+
+  /* Apply the effect only if supported */
+  @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .image-text {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      /* The magic: clip the background to the text shape */
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      /* Hide normal text paint so only the background shows */
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+  }
+
+  /* Demo 1 — static image inside text */
+  .hero {
+    font-size: 12rem;
+    background-image: url("images/A2.jpg");
+  }
+
+  /* Demo 2 — animated pan: image slides under the text */
+  .hero-pan {
+    font-size: 12rem;
+    background-image: url("images/A2.jpg");
+    background-size: 200% auto;           /* larger so there’s room to move */
+    animation: pan 18s linear infinite;   /* continuous horizontal slide */
+  }
+  @keyframes pan {
+    0%   { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+
+  /* Subheading / caption text */
+  .sub {
+    font-size: var(--subhead-size);
+    opacity: .85;
+    margin: .5rem 0 2rem;
+  }
+
+  /* Optional: outline style for extra definition on dark bg (works where supported) */
+  .outlined {
+    /* Stroke around text (WebKit) for stronger edges; harmless elsewhere */
+    -webkit-text-stroke: 1px rgba(255,255,255,.15);
+  }
+
+  /* A little card to frame the examples */
+  .card {
+    border: 1px solid rgba(148,163,184,.25);
+    border-radius: 16px;
+    padding: clamp(1rem, 4vmin, 2rem);
+    background: linear-gradient(180deg, rgba(2,6,23,.6), rgba(2,6,23,.3));
+    box-shadow: 0 20px 60px rgba(0,0,0,.30);
+  }
+  .spacer { height: 2rem; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1 class="image-text hero outlined">Abu-Hadhoud</h1>
+      <p class="sub">Static photo fills the glyphs. Great for hero headlines and banners.</p>
+
+      <div class="spacer"></div>
+
+      <h2 class="image-text hero-pan">MOVING TEXTURE EFFECT</h2>
+      <p class="sub">Same trick, but the background image pans for a lively, animated look.</p>
+    </div>
+  </div>
+</body>
+</html>

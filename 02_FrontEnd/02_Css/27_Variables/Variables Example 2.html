@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CSS Variables – Font & Spacing Example</title>
+<style>
+  /* 1️⃣ Declare variables in :root for font and spacing */
+  :root {
+    --main-font-size: 18px;
+    --heading-font-size: 28px;
+    --section-padding: 20px;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    font-size: var(--main-font-size);
+    margin: 0;
+    padding: 0;
+    background: #f7f7f7;
+  }
+
+  h1 {
+    font-size: var(--heading-font-size);
+    text-align: center;
+    margin: var(--section-padding) 0;
+  }
+
+  section {
+    background: white;
+    margin: var(--section-padding);
+    padding: var(--section-padding);
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  button {
+    display: block;
+    margin: var(--section-padding) auto;
+    padding: 8px 16px;
+    font-size: var(--main-font-size);
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<h1>Resizable Layout with CSS Variables</h1>
+
+<section>
+  <p>This layout uses CSS variables for font sizes and spacing.</p>
+  <p>Change them with JavaScript and see everything update instantly.</p>
+</section>
+
+<button id="increase">Increase Size</button>
+<button id="decrease">Decrease Size</button>
+
+<script>
+  const root = document.documentElement;
+
+  document.getElementById('increase').addEventListener('click', () => {
+    // Get current values
+    let mainFont = parseInt(getComputedStyle(root).getPropertyValue('--main-font-size'));
+    let headingFont = parseInt(getComputedStyle(root).getPropertyValue('--heading-font-size'));
+    let padding = parseInt(getComputedStyle(root).getPropertyValue('--section-padding'));
+
+    // Increase each by 2px
+    root.style.setProperty('--main-font-size', (mainFont + 2) + 'px');
+    root.style.setProperty('--heading-font-size', (headingFont + 2) + 'px');
+    root.style.setProperty('--section-padding', (padding + 4) + 'px');
+  });
+
+  document.getElementById('decrease').addEventListener('click', () => {
+    let mainFont = parseInt(getComputedStyle(root).getPropertyValue('--main-font-size'));
+    let headingFont = parseInt(getComputedStyle(root).getPropertyValue('--heading-font-size'));
+    let padding = parseInt(getComputedStyle(root).getPropertyValue('--section-padding'));
+
+    // Decrease each by 2px
+    root.style.setProperty('--main-font-size', Math.max(mainFont - 2, 10) + 'px');
+    root.style.setProperty('--heading-font-size', Math.max(headingFont - 2, 14) + 'px');
+    root.style.setProperty('--section-padding', Math.max(padding - 4, 8) + 'px');
+  });
+</script>
+
+</body>
+</html>

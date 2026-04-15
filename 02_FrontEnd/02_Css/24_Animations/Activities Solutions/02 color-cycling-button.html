@@ -1,0 +1,58 @@
+<!--
+  Code Overview: Color Cycling Button
+  -------------------------------------------------
+  Purpose:
+    • Animate a button’s background through multiple hues in a loop.
+  Layout:
+    • Centered button with a continuous background-color keyframe cycle.
+  Use Cases:
+    • Attention-grabbing CTAs, loading indicators.
+  Key Properties:
+    • @keyframes cycleColors – defines color stops at 0%, 33%, 66%, 100%.
+    • animation-duration, animation-iteration-count, animation-timing-function.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Color Cycling Button</title>
+  <style>
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body {
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      background: #ecf0f1;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Keyframes for cycling through red, green, blue */
+    @keyframes cycleColors {
+      0%   { background-color: #e74c3c; }
+      33%  { background-color: #27ae60; }
+      66%  { background-color: #2980b9; }
+      100% { background-color: #e74c3c; }
+    }
+
+    .cycle-btn {
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      animation-name: cycleColors;
+      animation-duration: 5s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="cycle-btn">Cycle Colors</button>
+
+</body>
+</html>

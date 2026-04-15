@@ -1,0 +1,190 @@
+<!--
+  Code Overview: Top Navigation Menu with Animation
+  -------------------------------------------------
+  Purpose:
+    • Create a responsive top navigation bar that animates into view on page load.
+    • Add a sliding underline effect on menu item hover.
+
+  Layout:
+    • A fixed <nav> at the top of the page containing an unordered list of links.
+    • Main page content below to demonstrate the fixed header.
+
+  Use Cases:
+    • Modern website headers that draw attention.
+    • Animated underlines for interactive feedback on menu items.
+
+  Key Properties & Techniques:
+    • @keyframes slideDown – nav slides in from above.
+    • animation-name / animation-duration / animation-timing-function.
+    • transition on pseudo-element ::after for underline slide.
+    • fixed positioning for persistent header.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animated Top Navigation Menu</title>
+  <style>
+    /* Reset & Base */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+      background: #f4f4f4;
+    }
+
+    
+    /* 1) Top Navigation Bar */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #2c3e50;
+      animation-name: slideDown;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-out;
+      z-index: 1000;
+    }
+    /* 2) Slide-down animation for the nav */
+    
+    @keyframes slideDown {
+      0%   { transform: translateY(-100%); }
+      100% { transform: translateY(0); }
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 1rem;
+    }
+    nav li {
+      margin: 0 1.5rem;
+      position: relative; /* for underline pseudo-element */
+    }
+    nav a {
+      color: #ecf0f1;
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 0.25rem 0;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #1abc9c;
+    }
+
+    /* 3) Sliding underline effect */
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0; bottom: -4px;
+      width: 0; height: 2px;
+      background: #1abc9c;
+      transition: width 0.3s ease;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* 4) Page content to demonstrate fixed nav */
+    main {
+      padding: 6rem 2rem 2rem; /* top padding to clear fixed nav */
+    }
+    .section {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="section">
+      <h2>Welcome!</h2>
+      <p>
+        This is a demo of an animated top navigation menu. 
+        On page load, the nav slides down from above. 
+        Hover over each menu item to see the sliding underline effect.
+      </p>
+    </div>
+    <div class="section">
+      <h2>Scroll for More</h2>
+      <p>
+        Even as you scroll, the navigation remains fixed at the top,
+        providing quick access to main sections.
+      </p>
+    </div>
+
+     <div class="section">
+      <h2>Scroll for More</h2>
+      <p>
+        Even as you scroll, the navigation remains fixed at the top,
+        providing quick access to main sections.
+      </p>
+    </div>
+     <div class="section">
+      <h2>Scroll for More</h2>
+      <p>
+        Even as you scroll, the navigation remains fixed at the top,
+        providing quick access to main sections.
+      </p>
+    </div>
+     <div class="section">
+      <h2>Scroll for More</h2>
+      <p>
+        Even as you scroll, the navigation remains fixed at the top,
+        providing quick access to main sections.
+      </p>
+    </div>
+     <div class="section">
+      <h2>Scroll for More</h2>
+      <p>
+        Even as you scroll, the navigation remains fixed at the top,
+        providing quick access to main sections.
+      </p>
+    </div>
+     <div class="section">
+      <h2>Scroll for More</h2>
+      <p>
+        Even as you scroll, the navigation remains fixed at the top,
+        providing quick access to main sections.
+      </p>
+    </div>
+     <div class="section">
+      <h2>Scroll for More</h2>
+      <p>
+        Even as you scroll, the navigation remains fixed at the top,
+        providing quick access to main sections.
+      </p>
+    </div>
+     <div class="section">
+      <h2>Scroll for More</h2>
+      <p>
+        Even as you scroll, the navigation remains fixed at the top,
+        providing quick access to main sections.
+      </p>
+    </div>
+     <div class="section">
+      <h2>Scroll for More</h2>
+      <p>
+        Even as you scroll, the navigation remains fixed at the top,
+        providing quick access to main sections.
+      </p>
+    </div>
+  </main>
+
+</body>
+</html>
