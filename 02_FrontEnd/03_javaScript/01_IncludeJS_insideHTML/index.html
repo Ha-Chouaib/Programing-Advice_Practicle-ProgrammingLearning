@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 Ways to Include JavaScript</title>
+    
+    <script src="script.js" defer></script> <!-- External JavaScript file [Best Practice]-->
+</head>
+<body>
+    <h1>3 Ways to Include JavaScript</h1>
+    <p>This is an example of including JavaScript in three different ways.</p>
+    
+    <form action="">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <button type="submit" 
+        style="width: 200px; height: 50px; background-color: blue; color: white; font-size: 16px; border: none; border-radius: 5px; cursor: pointer;"
+        onclick="console.log('This Inline script'); alert('hello I came from internal js');"
+        >Submit</button>
+    </form>
+
+    <script>
+        // Internal JavaScript
+        console.log("This is internal JavaScript!");
+    </script>
+</body>
+</html>
