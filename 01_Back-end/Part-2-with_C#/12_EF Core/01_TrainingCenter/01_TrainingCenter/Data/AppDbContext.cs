@@ -59,7 +59,7 @@ namespace _01_TrainingCenter.Data
                 entity.HasIndex(e => new { e.StudentId, e.CourseId }, "UQ_Enrollments_StudentId_CourseId").IsUnique();
 
                 entity.Property(e => e.CompletionDate).HasColumnType("datetime");
-                entity.Property(e => e.EnrollementDate).HasColumnType("datetime");
+                entity.Property(e => e.EnrollmentDate).HasColumnType("datetime");
                 entity.Property(e => e.FinalGrade).HasColumnType("decimal(5,2)");
                 entity.Property(e => e.ProgressPercent).HasColumnType("decimal(5,2)");
                 entity.Property(e => e.Status).HasMaxLength(20);

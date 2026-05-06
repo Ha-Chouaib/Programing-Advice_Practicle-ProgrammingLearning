@@ -12,7 +12,7 @@ namespace _01_TrainingCenter.Entities
         public int EnrollmentId { get; set; }
         public int StudentId { get; set; }
         public int CourseId { get; set; }
-        public DateTime EnrollementDate { get; set; }
+        public DateTime EnrollmentDate { get; set; }
         public DateTime? CompletionDate { get; set; }
         public decimal ProgressPercent { get; set; }
         public decimal FinalGrade { get; set; }

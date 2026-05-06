@@ -17,7 +17,6 @@ namespace _01_TrainingCenter.Entities
         public DateTime RegisteredAt { get; set; }
         public string Status { get; set; } = null!;
         public string ? PhoneNumber { get; set; }
-        public bool IsActive { get; set; }
         public virtual StudentProfile? StudentProfile { get; set; }
         public virtual ICollection<Enrollment> Enrollments { get; set; } = new List<Enrollment>();
     }
