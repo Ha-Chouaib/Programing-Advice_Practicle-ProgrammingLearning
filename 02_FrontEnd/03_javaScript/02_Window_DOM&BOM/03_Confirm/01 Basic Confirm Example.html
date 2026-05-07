@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript Window Basic Confirm Example</title>
+  </head>
+  <body>
+    <h2>Test Page</h2>
+
+    <script>
+      // window.confirm("Are you sure?");
+      // confirm("Are you sure?"); // Same result
+
+      let result = confirm("Are you sure?");
+      if (result) {
+        alert("User agreed");
+      } else {
+        alert("User did not agree!");
+      }
+
+      /* 🔹 Best Practices
+          ✅ Use it for:
+
+            -Confirming critical actions (delete, logout, exit).
+            -Asking for permission before navigating away or submitting forms.
+          
+          ❌ Avoid it for:
+
+            -Repetitive prompts — they can frustrate users.
+            -Modern web apps — use custom modals or UI components instead.
+          💡 For learning and debugging, confirm() is an excellent way to practice user interaction flow in pure JavaScript.
+
+*/
+    </script>
+  </body>
+</html>

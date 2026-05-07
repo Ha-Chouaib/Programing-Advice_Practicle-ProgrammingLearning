@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript Window Basic Prompt Example</title>
+  </head>
+  <body>
+    <h2>Test Page</h2>
+
+    <script>
+      // window.prompt("What is your name?");
+      // prompt("What is your name?"); // Same result
+
+      let name = prompt("What is your name?");
+      alert("Hello, " + name + "!");
+
+      /* 🔹 Best Practices
+          While useful for learning and testing, prompt() is not ideal for production apps.
+
+          ❌ It blocks other interactions (modal behavior).
+          ❌ You can’t customize its design (browser-controlled).
+          ❌ Modern web apps prefer custom HTML forms or modal popups.
+
+          Still, it’s an excellent tool to understand input/output logic in JavaScript!
+
+*/
+    </script>
+  </body>
+</html>

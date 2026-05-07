@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript Window Prompt Handling Cancel or Empty Input</title>
+  </head>
+  <body>
+    <h2>Test Page</h2>
+
+    <script>
+      let age = prompt("Enter your age:");
+
+      if (age === null) {
+        alert("You canceled the input.");
+      } else if (age === "") {
+        alert("You didn’t type anything!");
+      } else {
+        alert("You are " + age + " years old!");
+      }
+    </script>
+  </body>
+</html>

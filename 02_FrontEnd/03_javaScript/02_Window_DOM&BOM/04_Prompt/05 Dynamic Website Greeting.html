@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript Window Prompt Dynamic Website Greeting</title>
+  </head>
+  <body>
+    <h2>Test Page</h2>
+
+    <script>
+      let userName = prompt("What's your name?");
+
+      if (userName) {
+        document.body.innerHTML = `<h2>Welcome, ${userName}!</h2>`;
+      } else {
+        document.body.innerHTML = "<h2>Welcome, guest!</h2>";
+      }
+    </script>
+  </body>
+</html>

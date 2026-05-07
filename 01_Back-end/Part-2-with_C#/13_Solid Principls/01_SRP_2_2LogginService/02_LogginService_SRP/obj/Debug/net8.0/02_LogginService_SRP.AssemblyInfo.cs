@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("02_LogginService_SRP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a4394dcc943b8d48ffaef535380de9b9a2adf5ba")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c5a92890833ca2eec29cd7e1944c2fd81fb4a4fb")]
 [assembly: System.Reflection.AssemblyProductAttribute("02_LogginService_SRP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("02_LogginService_SRP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

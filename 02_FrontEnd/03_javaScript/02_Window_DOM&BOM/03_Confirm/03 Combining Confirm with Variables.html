@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript Window Combining Confirm with variables Example</title>
+  </head>
+  <body>
+    <h2>Test Page</h2>
+
+    <script>
+      let user = "Omar";
+      if (confirm(`Do you want to log out, ${user}?`)) {
+        alert("You have logged out successfully.");
+      } else {
+        alert("Logout canceled.");
+      }
+    </script>
+  </body>
+</html>

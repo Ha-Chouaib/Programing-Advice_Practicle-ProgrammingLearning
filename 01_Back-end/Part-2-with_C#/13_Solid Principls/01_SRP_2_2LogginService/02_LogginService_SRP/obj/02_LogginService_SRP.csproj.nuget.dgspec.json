@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\01_2_SRP_Logging Service\\02_LogginService_SRP\\02_LogginService_SRP\\02_LogginService_SRP.csproj": {}
+    "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\01_SRP_2_2LogginService\\02_LogginService_SRP\\02_LogginService_SRP.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\01_2_SRP_Logging Service\\02_LogginService_SRP\\02_LogginService_SRP\\02_LogginService_SRP.csproj": {
+    "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\01_SRP_2_2LogginService\\02_LogginService_SRP\\02_LogginService_SRP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\01_2_SRP_Logging Service\\02_LogginService_SRP\\02_LogginService_SRP\\02_LogginService_SRP.csproj",
+        "projectUniqueName": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\01_SRP_2_2LogginService\\02_LogginService_SRP\\02_LogginService_SRP.csproj",
         "projectName": "02_LogginService_SRP",
-        "projectPath": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\01_2_SRP_Logging Service\\02_LogginService_SRP\\02_LogginService_SRP\\02_LogginService_SRP.csproj",
+        "projectPath": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\01_SRP_2_2LogginService\\02_LogginService_SRP\\02_LogginService_SRP.csproj",
         "packagesPath": "C:\\Users\\jook\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\01_2_SRP_Logging Service\\02_LogginService_SRP\\02_LogginService_SRP\\obj\\",
+        "outputPath": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\13_Solid Principls\\01_SRP_2_2LogginService\\02_LogginService_SRP\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -30,6 +30,7 @@
         },
         "frameworks": {
           "net8.0": {
+            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {}
           }
@@ -48,6 +49,7 @@
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "imports": [
             "net461",
@@ -65,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

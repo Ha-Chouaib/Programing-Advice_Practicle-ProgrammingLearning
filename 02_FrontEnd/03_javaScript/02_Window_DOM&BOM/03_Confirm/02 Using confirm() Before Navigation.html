@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript Window - Using confirm() Before Navigation</title>
+  </head>
+  <body>
+    <h2>Test Page</h2>
+
+    <script>
+      if (confirm("Are you sure you want to leave this page?")) {
+        window.location.href = "https://www.google.com";
+      } else {
+        alert("Stayed on the page!");
+      }
+    </script>
+  </body>
+</html>

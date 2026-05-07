@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessing vars via Window </title>
+</head>
+<body>
+    <h1>Press F12 to open the Developer Tools And see Accessing Results</h1>
+    <script>
+        // Example of accessing variables via the window object
+        var myVar = "var variable";
+        let myLet = "let variable";
+        console.log(window.myVar); // Outputs: var variable
+        console.log(window.myLet); // Outputs: undefined, because let variables are not added to the window object
+        console.log(myVar); // Outputs: var variable
+        console.log(myLet); // Outputs: let variable
+
+    </script>
+</body>
+</html>

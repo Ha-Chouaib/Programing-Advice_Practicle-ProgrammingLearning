@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript Window Variable Example</title>
+  </head>
+  <body>
+    <h2>Check the Console (Press F12 → Console tab)</h2>
+
+    <script>
+      //🧩 Example: Showing a message
+      window.alert("Hello, World!");
+      alert("Hello, World!"); // window is implied
+
+      //🧩 Example: Showing a Variable
+      let userName = "Omar";
+      alert("Welcome, " + userName + "!");
+
+      //🧩 Example: Showing a Variable
+      let score = 95;
+      alert("Your score is: " + score);
+
+      //🧩 Example: Displaying a Calculation
+      let total = 10 + 5;
+      alert("The total is " + total);
+
+      //🧩 Example: Multiline Message
+      alert("Hello!\nWelcome to JavaScript Learning.");
+
+      //🧩 Example: Using Template Literals
+      let FirstName = "Omar";
+      let age = 20;
+      alert(`Hello ${FirstName}! You are ${age} years old.`);
+
+      /*
+      
+       When to Use and When Not To
+        
+       ✅ Use it for:
+
+            Testing or debugging code
+            Showing quick notifications in demos
+            Stopping script execution for user awareness
+            
+        ❌ Avoid it for:
+
+        Production websites (interrupts user flow)
+        Repetitive messages (can be annoying)
+        Large-scale apps (use modal UI instead)
+        
+        💡 Modern apps use custom popups (e.g., SweetAlert, Bootstrap modals) instead of alert(), but understanding alert() is still essential for learning the basics of JavaScript behavior and timing.
+      
+      */
+    </script>
+  </body>
+</html>
