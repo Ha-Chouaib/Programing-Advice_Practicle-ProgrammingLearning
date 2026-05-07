@@ -73,7 +73,23 @@ Console.WriteLine(context.Database.CanConnect() ? "Connection successful!" : "Co
 
 //CompareApproaches(context);//N+1 Problem Demonstration vs Include() vs Projection
 
-ShowStudentsWithEnrollmentsAndCourses(context);
+//ShowStudentsWithEnrollmentsAndCourses(context);
+
+//ShowCourseReport(context);//Join() = Inner Join In DB, you can pick nedded Fields Only
+
+//ShowStudentsWithProfiles(context);//LeftJoin() -> Keep Left side Records And Get Only Matching Records from Right side
+
+//ShowStudentEnrollments(context);//SelectMany() for Flattening Collections
+
+//ShowExpensiveCourses(context);//Subqueries and Nested Queries
+
+//ComparePagination(context);//Pagination with Skip() and Take()
+
+CompareTracking(context);// AsNotracking() vs normal tracking way for readOnly Records
+
+
+
+
 
 //----------------------------------------------
 
@@ -683,10 +699,341 @@ static void ShowStudentsWithEnrollmentsAndCourses(AppDbContext context)
     }
 }
 
+/*
+   Use Include() when you need related entities
+   Use Join() when you need custom report data
+ */
+
+//##----------------- Join() = Inner Join In DB, you can pick nedded Fields Only----------------------
+static void ShowCourseReport(AppDbContext context)
+{
+    Console.WriteLine("Course Report Using Join()");
+    Console.WriteLine("--------------------------");
+    Console.WriteLine();
+
+    // Build query first
+    var query =
+        context.Courses
+               .Join(
+                   context.Instructors,
+                   course => course.InstructorId,
+                   instructor => instructor.InstructorId,
+                   (course, instructor) => new
+                   {
+                       course.Title,
+                       course.Code,
+                       InstructorName =
+                           instructor.FirstName + " " + instructor.LastName
+                   })
+               .OrderBy(x => x.Title);
+
+
+    // Execute query
+    var report = query.ToList();
+
+    // Print readable output
+    Console.WriteLine("Courses With Instructors:");
+    Console.WriteLine("-------------------------");
+
+    Console.WriteLine();
+    foreach (var row in report)
+    {
+        Console.WriteLine(
+            $"{row.Code} - {row.Title} - {row.InstructorName}");
+    }
+
+    Console.WriteLine();
+    Console.WriteLine($"Total Courses: {report.Count}");
+}
+//##----------------- LeftJoin() -> Keep Left side Records And Get Only Matching Records from Right side----------------------
+static void ShowStudentsWithProfiles(AppDbContext context)
+{
+    Console.WriteLine("Students With Profiles - Left Join");
+    Console.WriteLine("----------------------------------");
+    Console.WriteLine();
+
+    // Build query first
+    var report =
+        from s in context.Students
+        join p in context.StudentProfiles
+            on s.StudentId equals p.StudentId
+            into profileGroup
+        from p in profileGroup.DefaultIfEmpty()
+        select new
+        {
+            s.StudentId,
+            StudentName = s.FirstName + " " + s.LastName,
+            City = p != null ? p.City : "No Profile",
+            Country = p != null ? p.Country : "No Profile"
+        };
+
+    // Apply sorting
+    var query =
+        report.OrderBy(x => x.StudentId);
+
+    // Execute query
+    var result = query.ToList();
+
+    // Print readable output
+    Console.WriteLine("Student Report:");
+    Console.WriteLine("---------------");
+
+    Console.WriteLine();
+    foreach (var row in result)
+    {
+        Console.WriteLine(
+            $"{row.StudentId} - {row.StudentName} - {row.City} - {row.Country}");
+    }
+
+    Console.WriteLine();
+    Console.WriteLine($"Total Students: {result.Count}");
+}
+
+//##----------------- SelectMany() for Flattening Collections ----------------------
+/*
+    Use SelectMany() when each row has a collection
+    and you want one flat combined result
+
+    Using Select() Here is a bad Practice, because it will return a collection of collections (IEnumerable<IEnumerable<T>>), which is not what we want for reporting.
+        -> Nested Foreach loops will be needed to access individual enrollments, and it can lead to more complex and less efficient code.
+        ->Analogy: Imagine you have
+            Three folders
+            Each folder has files
+            
+            Select()
+            → returns folders with files inside
+            
+            SelectMany()
+            → puts all files on one table
+
+
+    SelectMany() VS Join():
+        -> SelectMany() is used to flatten collections, while Join() is used to combine data from two different sources based on a related key. 
+        -> In this example, SelectMany() is more appropriate because we want to flatten the enrollments for each student into a single result set, rather than combining two separate entities like students and instructors.
+ */
+static void ShowStudentEnrollments(AppDbContext context)
+{
+    Console.WriteLine("Student Enrollments Using SelectMany()");
+    Console.WriteLine("--------------------------------------");
+    Console.WriteLine();
+
+    // Build query first
+    var query =
+        context.Students
+               .SelectMany(
+                   student => student.Enrollments,
+                   (student, enrollment) => new
+                   {
+                       student.StudentId,
+                       StudentName =
+                           student.FirstName + " " + student.LastName,
+                       enrollment.CourseId,
+                       enrollment.Status
+                   })
+               .OrderBy(x => x.StudentId);
+
+
+    // Execute query
+    var report = query.ToList();
+
+    Console.WriteLine("Student Course Registrations:");
+    Console.WriteLine("-----------------------------");
+    Console.WriteLine();
+
+    foreach (var row in report)
+    {
+        Console.WriteLine(
+            $"{row.StudentId} - {row.StudentName} - Course: {row.CourseId} - {row.Status}");
+    }
+
+    Console.WriteLine();
+    Console.WriteLine($"Total Registrations: {report.Count}");
+}
 
 
 
+//##----------------- Subqueries and Nested Queries ----------------------
+static void ShowExpensiveCourses(AppDbContext context)
+{
+    Console.WriteLine("Courses Priced Above Average");
+    Console.WriteLine("----------------------------");
+    Console.WriteLine();
 
+    // Build query first
+    var query =
+        context.Courses
+               .Where(c =>
+                   c.Price >
+                   context.Courses.Average(x => x.Price))
+               .OrderBy(c => c.Price);
+
+   
+    // Execute query
+    // ToQueryString previews query shape,
+    // runtime logging shows actual executed SQL for Average().
+    var courses = query.ToList();
+
+    // Print readable output
+    Console.WriteLine("\nExpensive Courses:");
+    Console.WriteLine("------------------");
+
+
+    Console.WriteLine();
+    foreach (var course in courses)
+    {
+        Console.WriteLine(
+            $"{course.Code} - {course.Title} - {course.Price}");
+    }
+
+    Console.WriteLine();
+    Console.WriteLine($"Total Courses: {courses.Count}");
+}
+
+
+//##----------------- Pagination with Skip() and Take() ----------------------
+static void ComparePagination(AppDbContext context)
+{
+    int pageNumber = 2;
+    int pageSize = 5;
+
+    ShowBadPaginationApproach(context, pageNumber, pageSize);
+
+    PrintSeparator();
+
+    ShowGoodPaginationApproach(context, pageNumber, pageSize);
+}
+static void ShowBadPaginationApproach(
+    AppDbContext context,
+    int pageNumber,
+    int pageSize)
+{
+    Console.WriteLine("BAD APPROACH - Load Everything, Then Paginate");
+    Console.WriteLine("--------------------------------------------");
+    Console.WriteLine();
+
+    // Build query first
+    var badQuery =
+        context.Students;
+
+    // Execute query and load ALL students into memory
+    var allStudents = badQuery.ToList();
+
+    Console.WriteLine($"Total Loaded Rows: {allStudents.Count}");
+    Console.WriteLine("All rows were loaded into memory.");
+    Console.WriteLine();
+
+    // Pagination happens in memory here, not in SQL Server
+    var badPage =
+        allStudents
+            .OrderBy(s => s.StudentId)
+            .Skip((pageNumber - 1) * pageSize)
+            .Take(pageSize)
+            .ToList();
+
+    Console.WriteLine($"Page {pageNumber} Results - BAD:");
+    Console.WriteLine("--------------------------");
+
+    Console.WriteLine();
+    foreach (var student in badPage)
+    {
+        Console.WriteLine(
+            $"{student.StudentId} - {student.FirstName} {student.LastName}");
+    }
+
+    Console.WriteLine();
+    Console.WriteLine(
+        "Only a few records are displayed, but the entire table was loaded first.");
+    Console.WriteLine();
+}
+static void ShowGoodPaginationApproach(
+    AppDbContext context,
+    int pageNumber,
+    int pageSize)
+{
+    Console.WriteLine("GOOD APPROACH - Paginate In The Database");
+    Console.WriteLine("----------------------------------------");
+    Console.WriteLine();
+
+    // Build query first
+    var goodQuery =
+        context.Students
+               .OrderBy(s => s.StudentId)
+               .Skip((pageNumber - 1) * pageSize)
+               .Take(pageSize);
+
+   
+
+    // Execute query and load ONLY the required page
+    var goodPage = goodQuery.ToList();
+
+    Console.WriteLine($"Page {pageNumber} Results - GOOD:");
+    Console.WriteLine("---------------------------");
+
+    Console.WriteLine();
+    foreach (var student in goodPage)
+    {
+        Console.WriteLine(
+            $"{student.StudentId} - {student.FirstName} {student.LastName}");
+    }
+
+    Console.WriteLine();
+    Console.WriteLine($"Loaded Rows: {goodPage.Count}");
+    Console.WriteLine("Only the required page rows were loaded from the database.");
+    Console.WriteLine();
+}
+
+
+//##---------------- ReadOnly Operations -> AsNoTracking ---------------
+//Only we use NoTracking for ReadOnly Data No Chages required, to avoid changerTracker scanning Overhead
+static void CompareTracking(AppDbContext context)
+{
+    ShowTrackingQuery(context);
+
+    PrintSeparator();
+
+    ShowNoTrackingQuery(context);
+}
+static void ShowTrackingQuery(AppDbContext context)
+{
+    Console.WriteLine("TRACKING QUERY - Default Behavior");
+    Console.WriteLine("---------------------------------");
+    Console.WriteLine();
+
+    // Build query first
+    var trackingQuery =
+        context.Students;
+
+    
+    // Execute query
+    var trackedStudents = trackingQuery.ToList();
+
+    Console.WriteLine($"Returned Students Count: {trackedStudents.Count}");
+    Console.WriteLine($"Tracked Entities Count : {context.ChangeTracker.Entries().Count()}");
+    Console.WriteLine("EF Core is tracking these entities.");
+    Console.WriteLine();
+}
+static void ShowNoTrackingQuery(AppDbContext context)
+{
+    Console.WriteLine("NO TRACKING QUERY - Read-Only Scenario");
+    Console.WriteLine("--------------------------------------");
+    Console.WriteLine();
+
+    // Clear previously tracked entities to make the comparison clean
+    context.ChangeTracker.Clear();
+
+    // Build query first
+    var noTrackingQuery =
+        context.Students
+               .AsNoTracking();
+
+    // Execute query
+    var untrackedStudents = noTrackingQuery.ToList();
+
+    Console.WriteLine($"Returned Students Count: {untrackedStudents.Count}");
+    Console.WriteLine($"Tracked Entities Count : {context.ChangeTracker.Entries().Count()}");
+    Console.WriteLine("EF Core is NOT tracking these entities.");
+    Console.WriteLine();
+}
 
 
 
