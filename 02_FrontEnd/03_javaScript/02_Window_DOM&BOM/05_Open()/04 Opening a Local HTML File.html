@@ -1,0 +1,30 @@
+<!-- Syntax:
+      window.open(URL, name, specs, replace);
+
+      Parameters:
+
+      URL: The address of the page to open (optional). Default: blank page.
+      name: A target name for the window/tab (e.g., _blank, _self, custom name).
+      specs:A string defining window features (size, position, scrollbars, etc.).
+      replace: Boolean (optional). If true, replaces the current history entry.
+       -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript Window.open Opening a Local HTML File Example</title>
+  </head>
+  <body>
+    <h2>Test Page</h2>
+
+    <button onclick="showMyWindow();">Show My Window</button>
+
+    <script>
+      function showMyWindow() {
+        //Opens another HTML file from your project in a new tab or window.
+        window.open("info.html", "_blank", "width=600,height=400");
+      }
+    </script>
+  </body>
+</html>

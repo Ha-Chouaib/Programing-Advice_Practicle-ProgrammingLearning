@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Example: Display All Values Together</title>
+  </head>
+  <body>
+    <h2>Test Page</h2>
+    <h3>Example: Display All Values Together</h3>
+
+    <button onclick="showWindowInfo();">Test Now</button>
+    <p>Check Console Log for the results (press F12)</p>
+
+    <script>
+      function showWindowInfo() {
+        console.log("Inner Width:", window.innerWidth);
+        console.log("Inner Height:", window.innerHeight);
+        console.log("Outer Width:", window.outerWidth);
+        console.log("Outer Height:", window.outerHeight);
+        console.log("Screen X:", window.screenX);
+        console.log("Screen Y:", window.screenY);
+      }
+    </script>
+  </body>
+</html>

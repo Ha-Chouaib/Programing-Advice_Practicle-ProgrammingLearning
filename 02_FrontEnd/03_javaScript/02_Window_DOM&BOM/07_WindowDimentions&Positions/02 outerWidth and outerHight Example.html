@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript outerWidth and outerHight Example</title>
+  </head>
+  <body>
+    <h2>Test Page</h2>
+    <h3>JavaScript window.outerWidth and window.outerHeight Example</h3>
+
+    <button onclick="Test();">Test Now</button>
+    <p>Check Console Log for the results (press F12)</p>
+
+    <script>
+      function Test() {
+        /* ✅ Purpose:
+        Return the total width and height of the entire browser window, including borders, scrollbars, and toolbars.
+        */
+
+        console.log("Total window width:", window.outerWidth);
+        console.log("Total window height:", window.outerHeight);
+        /* 
+          💡 This represents the whole browser window — not just the webpage area.
+          These values can help developers understand how much screen space the browser occupies.
+        */
+
+        // Example: Auto-adjust an element:
+        if (window.outerWidth < 800) {
+          alert("Your browser window is quite small!");
+        }
+      }
+    </script>
+  </body>
+</html>

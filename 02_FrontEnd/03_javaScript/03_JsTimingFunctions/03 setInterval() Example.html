@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript setInterval() Example</title>
+  </head>
+  <body>
+    <h2>Test Page</h2>
+    <h3>JavaScript setInterval() Example</h3>
+    <p>Check the log for the results - Press F12</p>
+
+    <button onclick="Test();">Test Now</button>
+
+    <script>
+      function Test() {
+        /* ✅ Purpose:
+                Executes a function repeatedly every given number of milliseconds.
+        */
+
+        setInterval(() => {
+          console.log("Running every 2 seconds...");
+        }, 2000);
+
+        /* 
+          ✅ Logs a message every 2 seconds until you stop it manually.
+          💡 Commonly used for animations, timers, or auto-refreshing data.
+      */
+      }
+    </script>
+  </body>
+</html>

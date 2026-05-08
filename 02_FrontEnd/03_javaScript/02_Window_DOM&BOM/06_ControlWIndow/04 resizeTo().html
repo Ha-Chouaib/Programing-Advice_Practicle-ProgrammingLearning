@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript Window.open focus() Example</title>
+  </head>
+  <body>
+    <h2>Test Page</h2>
+
+    <button onclick="showMyWindow();">Show My Window</button>
+
+    <script>
+      function showMyWindow() {
+        let popup = window.open(
+          "info.html",
+          "infoWin",
+          "width=500,height=400,scrollbars=yes,resizable=yes,top=300,left=400"
+        );
+        setTimeout(() => {
+          popup.resizeTo(800, 600); // Resize the popup after 3 seconds
+        }, 3000);
+
+        /* 
+          💡 You can use this method to adjust the popup’s size based on user interaction or screen size.
+
+          ⚠️ Many browsers block or restrict window resizing for tabs and main windows to prevent intrusive behavior.
+      */
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!-- Syntax:
+      window.open(URL, name, specs, replace);
+
+      Parameters:
+
+      URL: The address of the page to open (optional). Default: blank page.
+      name: A target name for the window/tab (e.g., _blank, _self, custom name).
+      specs:A string defining window features (size, position, scrollbars, etc.).
+      replace: Boolean (optional). If true, replaces the current history entry.
+       -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript Window.open Specifying Target and Features Example</title>
+  </head>
+  <body>
+    <h2>Test Page</h2>
+
+    <button
+      onclick="window.open('https://www.google.com', '_blank', 'width=500,height=400,left=200,top=100' );"
+    >
+      Open Google
+    </button>
+
+    <!-- 
+    ✅ Opens a small popup window (500×400) at position (200,100) on the screen.
+
+      💡 width and height define the popup size.
+      💡 left and top define the popup’s position relative to the screen. 
+      
+      -->
+  </body>
+</html>

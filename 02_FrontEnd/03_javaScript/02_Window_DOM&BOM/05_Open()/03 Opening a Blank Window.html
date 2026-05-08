@@ -1,0 +1,32 @@
+<!-- Syntax:
+      window.open(URL, name, specs, replace);
+
+      Parameters:
+
+      URL: The address of the page to open (optional). Default: blank page.
+      name: A target name for the window/tab (e.g., _blank, _self, custom name).
+      specs:A string defining window features (size, position, scrollbars, etc.).
+      replace: Boolean (optional). If true, replaces the current history entry.
+       -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript Window.open Opening a Blank Window Example</title>
+  </head>
+  <body>
+    <h2>Test Page</h2>
+
+    <button onclick="showMyWindow();">Open a Blank Window</button>
+
+    <script>
+      function showMyWindow() {
+        //Creates an empty popup and writes HTML content into it dynamically.
+
+        let newWin = window.open("", "myPopup", "width=800,height=600");
+        newWin.document.write("<h2>Hello from a new window!</h2>");
+      }
+    </script>
+  </body>
+</html>

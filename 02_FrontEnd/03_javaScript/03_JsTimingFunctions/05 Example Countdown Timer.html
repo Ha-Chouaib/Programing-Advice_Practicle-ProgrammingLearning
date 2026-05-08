@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Example Countdown Timer</title>
+  </head>
+  <body>
+    <h2>Test Page</h2>
+    <h3>Example Countdown Timer</h3>
+    <p>Check the log for the results - Press F12</p>
+    <h1 id="Koko">5</h1>
+
+    <button onclick="startCountdown()">Start Countdown</button>
+
+    <script>
+      function startCountdown() {
+        let timeLeft = 5;
+
+        // This will find the element with ID Koko from DOM
+        let Koko = document.getElementById("Koko");
+
+        Koko.textContent = timeLeft;
+
+        let countdown = setInterval(() => {
+          timeLeft--;
+          Koko.textContent = timeLeft;
+
+          if (timeLeft === 0) {
+            clearInterval(countdown);
+            setTimeout(() => alert("Time’s up!"), 500);
+          }
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>

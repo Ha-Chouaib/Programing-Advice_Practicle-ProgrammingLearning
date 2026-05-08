@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript setTimeout() Example</title>
+  </head>
+  <body>
+    <h2>Test Page</h2>
+    <h3>JavaScript setTimeout() Example</h3>
+
+    <button onclick="Test();">Test Now</button>
+
+    <script>
+      function Test() {
+        /* ✅ Purpose:
+                Executes a function once after a specified number of milliseconds.
+        */
+
+        setTimeout(() => {
+          alert("Hello after 3 seconds!");
+        }, 3000);
+
+        /* 
+          ✅ Displays an alert 3 seconds after running the code.
+
+          💡 If you don’t clear it, the function runs once and then stops automatically.
+      */
+      }
+    </script>
+  </body>
+</html>

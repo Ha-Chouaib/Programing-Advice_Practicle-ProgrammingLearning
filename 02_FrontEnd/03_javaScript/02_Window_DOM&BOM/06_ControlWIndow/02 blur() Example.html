@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript Window.open blur() Example</title>
+  </head>
+  <body>
+    <h2>Test Page</h2>
+
+    <button onclick="showMyWindow();">Show My Window</button>
+
+    <script>
+      function showMyWindow() {
+        let popup = window.open("info.html", "infoWin", "width=400,height=300");
+
+        setTimeout(() => {
+          popup.blur(); // Sends the popup behind after 3 seconds
+        }, 3000);
+
+        /* 
+         💡 Often paired with focus() to test or control focus behavior between multiple windows.
+
+         ⚠️ Some modern browsers may restrict blur() effects to improve user experience and prevent abuse.
+         
+      */
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript window.screenX and window.screenY Example</title>
+  </head>
+  <body>
+    <h2>Test Page</h2>
+    <h3>JavaScript window.screenX and window.screenY Example</h3>
+
+    <button onclick="Test();">Test Now</button>
+    <p>Check Console Log for the results (press F12)</p>
+
+    <script>
+      function Test() {
+        /* ✅ Purpose:
+                Return the x and y coordinates (in pixels) of the top-left corner of the browser window relative to the user’s screen.
+        */
+
+        console.log("Distance from left edge of screen:", window.screenX);
+        console.log("Distance from top edge of screen:", window.screenY);
+        /* 
+          💡 These values tell you where the window is positioned on the monitor.
+              They’re most useful when managing popup windows or multi-monitor setups.
+        */
+      }
+    </script>
+  </body>
+</html>

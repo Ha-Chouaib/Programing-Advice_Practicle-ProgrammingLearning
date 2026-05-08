@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript Window.open focus() Example</title>
+  </head>
+  <body>
+    <h2>Test Page</h2>
+
+    <button onclick="showMyWindow();">Show My Window</button>
+
+    <script>
+      function showMyWindow() {
+        let popup = window.open("info.html", "infoWin", "width=400,height=300");
+        setTimeout(() => {
+          popup.focus(); // Brings popup to front after 3 seconds
+        }, 3000);
+
+        /* 
+          💡 Commonly used to ensure the popup window becomes visible or active after being opened.
+
+          ⚠️ Note: Some browsers limit focus control to windows opened by the same script and may block it for user privacy.
+      */
+      }
+    </script>
+  </body>
+</html>

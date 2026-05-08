@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript Window.innerWidth & window.innerHeight Example</title>
+  </head>
+  <body>
+    <h2>Test Page</h2>
+    <h3>JavaScript window.innerWidth and window.innerHeight Example</h3>
+
+    <button onclick="Test();">Test Now</button>
+    <p>Check Console Log for the results (press F12)</p>
+
+    <script>
+      function Test() {
+        /* ✅ Purpose:
+        Return the width and height (in pixels) of the content area — that’s the visible part of the webpage inside the browser window, excluding toolbars, menus, and window borders.
+        */
+
+        console.log("Content width:", window.innerWidth);
+        console.log("Content height:", window.innerHeight);
+        /* 
+          Displays the width and height of the viewport.
+          These values change dynamically when you resize the window or zoom the page.
+
+          💡 Often used in responsive scripts or to reposition elements.
+      */
+
+        // Example: Auto-adjust an element:
+        if (window.innerWidth < 600) {
+          document.body.style.backgroundColor = "lightblue";
+        } else {
+          document.body.style.backgroundColor = "white";
+        }
+      }
+    </script>
+  </body>
+</html>

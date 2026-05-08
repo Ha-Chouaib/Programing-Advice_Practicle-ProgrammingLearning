@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript Window.open Basic Example</title>
+  </head>
+  <body>
+    <h2>Test Page</h2>
+
+    <button onclick="window.open('https://www.google.com')">Open Google</button>
+
+    <script>
+      /*
+     Syntax:
+      window.open(URL, name, specs, replace);
+
+      Parameters:
+
+      URL: The address of the page to open (optional). Default: blank page.
+      name: A target name for the window/tab (e.g., _blank, _self, custom name).
+      specs:A string defining window features (size, position, scrollbars, etc.).
+      replace: Boolean (optional). If true, replaces the current history entry.
+      
+      */
+
+      // window.open("https://www.google.com");
+
+      /* It will not work because of security: 
+
+      ⚠️ Browser Security Note
+        Modern browsers often block popups unless:
+
+        They are triggered by a user action (like a click or button press).
+        They meet specific browser security policies.
+        💡 To ensure success, always call window.open() inside an event handler (e.g., onclick).
+
+        <button onclick="window.open('www.google.com')">Open Google</button>
+
+*/
+    </script>
+  </body>
+</html>

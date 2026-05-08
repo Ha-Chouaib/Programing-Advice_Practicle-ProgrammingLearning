@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript Window.open Writing to a Popup Window Example</title>
+    <style></style>
+  </head>
+  <body>
+    <h2>Test Page</h2>
+
+    <button onclick="ShowMyWindow()">Show My Window</button>
+
+    <script>
+      function ShowMyWindow() {
+        let popup = window.open("", "popupDemo", "width=400,height=300");
+
+        popup.document.write(
+          "<h1>Hello!</h1><p>This popup was created by JavaScript.</p>"
+        );
+
+        popup.document.body.style.backgroundColor = "#a52a2a";
+        popup.document.body.style.color = "#ffffff";
+      }
+    </script>
+  </body>
+</html>

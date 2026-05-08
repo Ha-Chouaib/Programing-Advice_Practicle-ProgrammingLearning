@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript Window.open moveTo() Example</title>
+  </head>
+  <body>
+    <h2>Test Page</h2>
+
+    <button onclick="showMyWindow();">Show My Window</button>
+
+    <script>
+      function showMyWindow() {
+        let popup = window.open("info.html", "infoWin", "width=400,height=300");
+
+        setTimeout(() => {
+          popup.moveTo(300, 400); // Moves popup 300px right and 400px down
+        }, 3000);
+
+        /* 
+          💡 This is helpful when managing multiple windows or creating multi-monitor layouts.
+
+          ⚠️ Works only for windows opened via window.open() and may be limited by browser settings.
+       */
+      }
+    </script>
+  </body>
+</html>

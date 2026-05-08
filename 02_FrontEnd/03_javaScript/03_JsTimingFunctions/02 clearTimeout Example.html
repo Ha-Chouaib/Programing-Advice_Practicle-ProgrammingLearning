@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript clearTimeout Example</title>
+  </head>
+  <body>
+    <h2>Test Page</h2>
+    <h3>JavaScript clearTimeout Example</h3>
+
+    <button onclick="Test();">Test Now</button>
+
+    <script>
+      function Test() {
+        /* ✅ Purpose:
+                Cancels a timeout created with setTimeout() before it executes.
+        */
+
+        let timeoutID = setTimeout(() => {
+          alert("This message will never appear!");
+        }, 5000);
+
+        clearTimeout(timeoutID); // Cancels the timeout
+
+        /* 
+          ✅ The message never appears because we canceled it.
+      */
+      }
+    </script>
+  </body>
+</html>
