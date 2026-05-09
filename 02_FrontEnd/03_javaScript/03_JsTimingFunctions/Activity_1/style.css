@@ -1,0 +1,46 @@
+body
+{
+    background: #000;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.container
+{
+    border: 1px solid white;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+}
+button
+{
+    background: #00000000;
+    color: #eb8c11;
+    border-radius: 10px;
+    outline: none;
+    border: .5px solid white; 
+    font-size: 20px;
+    padding: 5px;
+    cursor: pointer;
+}
+#timer
+{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    color: white;
+    border: 1px solid sandybrown;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    display: none;
+}
+

@@ -37,6 +37,8 @@ Console.WriteLine("Testing database connection...");
 Console.WriteLine(context.Database.CanConnect() ? "Connection successful!" : "Connection failed.");
 
 
+
+
 //=================================Execute Methods
 
 //RetrieveAndDisplayStudents(context);
@@ -92,6 +94,33 @@ CompareTracking(context);// AsNotracking() vs normal tracking way for readOnly R
 
 
 //----------------------------------------------
+
+
+//###------------------Helper Methods -----------------
+static void PrintGeneratedSql(string entityName, string sql)
+{
+    Console.WriteLine($"Generated SQL for {entityName}:");
+    Console.WriteLine(sql);
+    Console.WriteLine(new string('-', 50));
+}
+static void PrintStudent(Student student)
+{
+    Console.WriteLine("Student Details:");
+    Console.WriteLine($"ID: {student.StudentId}," +
+             $" Name: {student.FirstName} {student.LastName}," +
+             $" Email: {student.Email}," +
+             $" Phone: {student.PhoneNumber}," +
+             $" Registered At: {student.RegisteredAt}," +
+             $" Status: {student.Status}");
+    Console.WriteLine();
+    Console.WriteLine(new string('=', 45));
+}
+static void PrintSeparator()
+{
+    Console.WriteLine(new string('-', 60));
+    Console.WriteLine();
+}
+
 
 //=================================Method Definitions ====================================
 static void RetrieveAndDisplayStudents(AppDbContext context)
@@ -1037,30 +1066,307 @@ static void ShowNoTrackingQuery(AppDbContext context)
 
 
 
-//###------------------Helper Methods -----------------
-static void PrintGeneratedSql(string entityName, string sql)
+//##========================== CRUD Operations ======================================
+
+//**-----------------Update----------------
+
+static void UpdateStudent(AppDbContext context)
 {
-    Console.WriteLine($"Generated SQL for {entityName}:");
-    Console.WriteLine(sql);
-    Console.WriteLine(new string('-', 50));
+    ShowBadUpdateUsingAsNoTracking(context);
+
+    PrintSeparator();
+
+    ShowGoodUpdateUsingTrackedEntity(context);
 }
-static void PrintStudent(Student student)
+static void ShowBadUpdateUsingAsNoTracking(AppDbContext context)
 {
-    Console.WriteLine("Student Details:");
-    Console.WriteLine($"ID: {student.StudentId}," +
-             $" Name: {student.FirstName} {student.LastName}," +
-             $" Email: {student.Email}," +
-             $" Phone: {student.PhoneNumber}," +
-             $" Registered At: {student.RegisteredAt}," +
-             $" Status: {student.Status}");
+    Console.WriteLine("BAD APPROACH - Update Using AsNoTracking()");
+    Console.WriteLine("------------------------------------------");
     Console.WriteLine();
-    Console.WriteLine(new string('=', 45));
-}
-static void PrintSeparator()
-{
-    Console.WriteLine(new string('-', 60));
+
+    // Build query first
+    var badQuery =
+        context.Students
+               .AsNoTracking()
+               .Where(s => s.StudentId == 1);
+
+    // Execute query
+    // ToQueryString previews query shape,
+    // runtime logging shows actual executed SQL for FirstOrDefault().
+    var badStudent = badQuery.FirstOrDefault();
+
+    if (badStudent == null)
+    {
+        Console.WriteLine("Student not found.");
+        return;
+    }
+
+    Console.WriteLine($"Original Name: {badStudent.FirstName}");
+
+    // Modify property in memory only
+    badStudent.FirstName = "UpdatedName";
+
+    Console.WriteLine($"Changed Name In Memory: {badStudent.FirstName}");
+
+    // SaveChanges() will not update this entity because it is not tracked
+    int affectedRows = context.SaveChanges();
+
+    Console.WriteLine();
+    Console.WriteLine($"Affected Rows: {affectedRows}");
+    Console.WriteLine("Nothing was updated because the entity was loaded using AsNoTracking().");
     Console.WriteLine();
 }
+static void ShowGoodUpdateUsingTrackedEntity(AppDbContext context)
+{
+    Console.WriteLine("GOOD APPROACH - Update Using Tracked Entity");
+    Console.WriteLine("-------------------------------------------");
+    Console.WriteLine();
+
+    // Build query first
+    var goodQuery =
+        context.Students
+               .Where(s => s.StudentId == 1);
+
+    
+    // Execute query
+    // ToQueryString previews query shape,
+    // runtime logging shows actual executed SQL for FirstOrDefault().
+    var student = goodQuery.FirstOrDefault();
+
+    if (student == null)
+    {
+        Console.WriteLine("Student not found.");
+        return;
+    }
+
+    Console.WriteLine($"Before Update: {student.FirstName}");
+
+    // Modify property while entity is tracked by EF Core
+    student.FirstName = "Ali Updated";
+
+    Console.WriteLine($"After Change In Memory: {student.FirstName}");
+
+    // Save changes
+    // Runtime logging shows the actual executed UPDATE SQL.
+    int affectedRows = context.SaveChanges();
+
+    Console.WriteLine();
+    Console.WriteLine($"Affected Rows: {affectedRows}");
+    Console.WriteLine("Changes saved to database.");
+    Console.WriteLine();
+}
+
+//-- Update Detached Entities That comes from real API --
+
+// Simulate API DTO
+
+
+var dto = new UpdateStudentDto
+{
+    StudentId = 1,
+    FirstName = "UpdatedName",
+    PhoneNumber = "0799999999"
+};
+
+static void CompareUpdateAtachedEntitiesApproaches(AppDbContext context,UpdateStudentDto dto)
+{
+    UpdateUsingLoadThenUpdate(context, dto);
+
+    context.ChangeTracker.Clear();
+
+    Console.WriteLine(new string('=', 70));
+
+    UpdateUsingControlledAttach(context, dto);
+
+    context.ChangeTracker.Clear();
+
+    Console.WriteLine(new string('=', 70));
+
+    UpdateUsingAttach(context, dto);
+}
+
+static void UpdateUsingLoadThenUpdate(
+    AppDbContext context,
+    UpdateStudentDto dto)
+{
+    Console.WriteLine("\n\nPattern 1 - Load Then Update");
+    Console.WriteLine("----------------------------");
+
+    var student = context.Students
+        .FirstOrDefault(s => s.StudentId == dto.StudentId);
+
+    if (student == null)
+    {
+        Console.WriteLine("Student not found.");
+        return;
+    }
+
+    student.FirstName = dto.FirstName;
+    student.PhoneNumber = dto.PhoneNumber;
+
+    context.SaveChanges();
+
+    Console.WriteLine("Updated using Load-Then-Update.");
+}
+static void UpdateUsingControlledAttach(
+    AppDbContext context,
+    UpdateStudentDto dto)
+{
+    Console.WriteLine("\n\nPattern 2 - Controlled Attach");
+    Console.WriteLine("-----------------------------");
+
+    var student = new Student
+    {
+        StudentId = dto.StudentId,
+        PhoneNumber = dto.PhoneNumber
+    };
+
+    context.Attach(student);
+
+    context.Entry(student)
+        .Property(s => s.PhoneNumber)
+        .IsModified = true;
+
+    context.SaveChanges();
+
+    Console.WriteLine("Updated using Attach + IsModified.");
+}
+static void UpdateUsingAttach(
+    AppDbContext context,
+    UpdateStudentDto dto)
+{
+    Console.WriteLine("\n\nPattern 3 - Update() (Full Update)");
+    Console.WriteLine("----------------------------------");
+
+    var student = new Student
+    {
+        StudentId = dto.StudentId,
+        FirstName = dto.FirstName,
+        PhoneNumber = dto.PhoneNumber
+    };
+
+    try
+    {
+        context.Students.Update(student);
+        context.SaveChanges();
+
+        Console.WriteLine("Updated using Update().");
+    }
+    catch (DbUpdateException ex)
+    {
+        Console.WriteLine("\n\n Update() failed due to missing required fields.");
+        Console.WriteLine("Reason:");
+        Console.WriteLine(ex.InnerException?.Message);
+    }
+}
+
+//------------Insert  & Delete ---------------------
+
+static void InsertDeleteTest(AppDbContext context)
+{
+    int newStudentId = InsertStudent(context);
+
+    PrintSeparator();
+
+    DeleteStudent(context, newStudentId);
+
+}
+//-- Insert --
+static int InsertStudent(AppDbContext context)
+{
+    Console.WriteLine("INSERT EXAMPLE");
+    Console.WriteLine("--------------");
+    Console.WriteLine();
+
+    // Create a new Student entity in memory
+    var newStudent = new Student
+    {
+        FirstName = "Ali",
+        LastName = "Hassan",
+        Email = "ali.hassan@example.com",
+        Status = "Active",
+        RegisteredAt = DateTime.Now
+    };
+
+    // Add() tells EF Core to track this entity as Added
+    context.Students.Add(newStudent);
+
+    Console.WriteLine("Student added to Change Tracker as Added.");
+    Console.WriteLine("INSERT does not support ToQueryString().");
+    Console.WriteLine("Runtime logging will show the actual executed INSERT SQL.");
+    Console.WriteLine();
+
+    // Execute INSERT
+    int affectedRows = context.SaveChanges();
+
+    Console.WriteLine($"Affected Rows       : {affectedRows}");
+    Console.WriteLine($"Generated Student ID: {newStudent.StudentId}");
+    Console.WriteLine("Student inserted successfully.");
+    Console.WriteLine();
+
+    return newStudent.StudentId;
+}
+//-- Delete --
+static void DeleteStudent(AppDbContext context, int studentId)
+{
+    Console.WriteLine("DELETE EXAMPLE");
+    Console.WriteLine("--------------");
+    Console.WriteLine();
+
+    // Build query first
+    var query =
+        context.Students
+               .Where(s => s.StudentId == studentId);
+
+    
+
+    // Execute query
+    // ToQueryString previews query shape,
+    // runtime logging shows actual executed SQL for FirstOrDefault().
+    var student = query.FirstOrDefault();
+
+    if (student == null)
+    {
+        Console.WriteLine($"No student found with ID = {studentId}");
+        return;
+    }
+
+    Console.WriteLine(
+        $"Deleting Student: {student.FirstName} {student.LastName} (ID = {student.StudentId})");
+
+    // Remove() tells EF Core to track this entity as Deleted
+    context.Students.Remove(student);
+
+    Console.WriteLine();
+    Console.WriteLine("Student marked as Deleted in Change Tracker.");
+    Console.WriteLine("DELETE does not support ToQueryString().");
+    Console.WriteLine("Runtime logging will show the actual executed DELETE SQL.");
+    Console.WriteLine();
+
+    // Execute DELETE
+    int affectedRows = context.SaveChanges();
+
+    Console.WriteLine($"Affected Rows: {affectedRows}");
+    Console.WriteLine("Student deleted successfully.");
+    Console.WriteLine();
+}
+
+
+
+
+
+
+public class UpdateStudentDto
+{
+    public int StudentId { get; set; }
+    public string FirstName { get; set; } = string.Empty;
+    public string PhoneNumber { get; set; } = string.Empty;
+}
+
+//=================================================================================
+
+
+
 
 
 

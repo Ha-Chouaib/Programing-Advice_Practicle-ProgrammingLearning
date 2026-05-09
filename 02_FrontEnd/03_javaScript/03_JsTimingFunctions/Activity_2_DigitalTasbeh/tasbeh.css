@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body
+{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    background-image: url(tasbeeh-gold.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center ; 
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    gap: 20vh;
+    padding-top: 5vh;
+    align-items: center;
+    justify-content: center;
+
+     perspective: 800px;           
+}
+.logo
+{
+    position: absolute;
+    left: 3vw;
+    top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+}
+.logo > img
+{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 1px 1px 100px 0px rgba(233, 191, 4, 0.397);
+}
+.logo > a
+{
+    text-decoration: none;
+    color: rgb(5, 223, 204);
+}
+.logo > a:hover
+{
+    color: hsl(36, 67%, 54%);
+}
+
+.container
+{
+    border: 3px solid hsl(36, 85%, 69%);
+    width: 700px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 40px 0px rgba(233, 191, 4, 0.397);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: #000000dc;
+    transform: rotateX(400deg);
+    perspective: 900px;
+}
+#btn-start
+{
+    background: hsl(36, 85%, 69%);
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 23px;
+    cursor: pointer;
+}
+.content-container
+{
+    position: relative;
+    width: 90%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(180deg, #000000, #ffffff0e);
+    border-radius: 10px;
+    padding: 0 20px;
+    
+
+    border: 2px solid rgba(21, 230, 245, 0.356);
+    transform: rotateX(-390deg) translateY(-30px);
+}
+#tasbeh-content
+{
+    width: 85%;
+    text-align: center;
+    background: transparent;
+    border-bottom: solid 1px cyan;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-bottom: 10px;
+    font-weight: bolder;
+    font-size: 50;
+}
+
+#timer
+{
+    border: 1px solid rgb(241, 162, 16);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    color: aqua;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
