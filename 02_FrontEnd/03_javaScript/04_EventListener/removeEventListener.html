@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>removeEventListener Example</title>
+
+    <style>
+      /* Center page */
+      body {
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #f4f4f4;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Style buttons */
+      button {
+        padding: 15px 40px;
+        font-size: 1.2rem;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        margin: 10px;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+
+  <body>
+    <button id="btn">Click Me</button>
+    <button id="removeBtn">Remove Click Event</button>
+
+    <script>
+      const btn = document.getElementById("btn");
+      const removeBtn = document.getElementById("removeBtn");
+
+      // A named function required for removal
+      function showMessage() {
+        alert("Button clicked!");
+      }
+
+      function RemoveClick() {
+        btn.removeEventListener("click", showMessage);
+
+        alert("Click event removed!");
+      }
+
+      // Add event to Button 1
+      btn.addEventListener("click", showMessage);
+
+      // Remove the event when clicking Button 2
+      removeBtn.addEventListener("click", RemoveClick);
+    </script>
+  </body>
+</html>

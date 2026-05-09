@@ -15,62 +15,56 @@ function StartTasbeh()
     btnStart.disabled = true;
     btnStart.style.opacity = ".5";
     btnStart.style.cursor = "not-allowed";
+  let interval = setInterval(()=>{
+    tasbehCount ++;
 
-    let timeout = setTimeout(()=>
+    if(tasbehCount === 33)
+    {
+        tasbehLevel ++;
+        tasbehCount = 0;
+    }
+    
+    tasbeh.textContent = "سبحان الله";
+    tasbeh.style.color = "white";
+    timer.textContent = `${tasbehCount}`;
+    
+    timer.style.border = "1px solid white";
+   
+
+    if(tasbehLevel >= 2)
+    {
+        tasbeh.textContent = "الحمد لله";
+        tasbeh.style.color = "red";
+        timer.textContent = `${tasbehCount}`;
+        timer.style.border = "1px solid red";
+
+    }
+    if( tasbehLevel >= 3)
+    {
+        tasbeh.textContent = "الله أكبر";
+        tasbeh.style.color = "gold";
+        timer.textContent = `${tasbehCount}`;
+        timer.style.border = "1px solid gold";
+
+       
+
+    }
+    if(tasbehLevel === 4)
         {
+            tasbeh.textContent = "لا إله إلا الله وحده لا شريك له، له الملك وله الحمد وهو على كل شيء قدير";
+            tasbeh.style.color = "green";
+            timer.textContent = "0";
             
-           
-            let interval = setInterval(()=>{
-                tasbehCount ++;
+            timer.style.border = "1px solid green";
+            btnStart.disabled = false;
+            btnStart.style.opacity = "1";
+            btnStart.style.cursor = "pointer";
+            alert("في ميزان حسناتكم")
 
-                if(tasbehCount === 33)
-                {
-                    tasbehLevel ++;
-                    tasbehCount = 0;
-                }
-                
-                tasbeh.textContent = "سبحان الله";
-                tasbeh.style.color = "white";
-                timer.textContent = `${tasbehCount}`;
-                
-                timer.style.border = "1px solid white";
-               
+            clearInterval(interval);
+            btnStart.removeEventListener("click",StartTasbeh);
+        }
 
-                if(tasbehLevel >= 2)
-                {
-                    tasbeh.textContent = "الحمد لله";
-                    tasbeh.style.color = "red";
-                    timer.textContent = `${tasbehCount}`;
-                    timer.style.border = "1px solid red";
+}, 500)
 
-                }
-                if( tasbehLevel >= 3)
-                {
-                    tasbeh.textContent = "الله أكبر";
-                    tasbeh.style.color = "gold";
-                    timer.textContent = `${tasbehCount}`;
-                    timer.style.border = "1px solid gold";
-
-                   
-
-                }
-                if(tasbehLevel === 4)
-                    {
-                        tasbeh.textContent = "لا إله إلا الله وحده لا شريك له، له الملك وله الحمد وهو على كل شيء قدير";
-                        tasbeh.style.color = "green";
-                        timer.textContent = "0";
-                        
-                        timer.style.border = "1px solid green";
-                        btnStart.disabled = false;
-                        btnStart.style.opacity = "1";
-                        btnStart.style.cursor = "pointer";
-                        alert("في ميزان حسناتكم")
-
-                        clearInterval(interval);
-
-                    }
-
-            }, 500)
-
-        },300);
 }

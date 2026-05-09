@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>onclick vs addEventListener Demo</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: Arial, sans-serif;
+        background-color: #f8f8f8;
+      }
+
+      button {
+        padding: 12px 35px;
+        font-size: 1.1rem;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+      }
+
+      #output {
+        margin-top: 25px;
+        font-size: 1.2rem;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>🧠 onclick vs addEventListener()</h2>
+
+    <button id="myBtn">Click Me!</button>
+
+    <div id="output">Watch the console output below 👇</div>
+
+    <script>
+      const btn = document.getElementById("myBtn");
+      const output = document.getElementById("output");
+
+      // --- Old style: onclick ---
+
+      // First onclick function
+      function firstOnClick() {
+        console.log("First onclick handler");
+      }
+
+      // Second onclick function (will overwrite the first one)
+      function secondOnClick() {
+        console.log("Second onclick handler (overwrites first)");
+      }
+
+      // Assign both to demonstrate overwriting
+      btn.onclick = firstOnClick;
+      btn.onclick = secondOnClick; // ⚠️ This replaces the first one
+
+      // --- Modern style: addEventListener() ---
+
+      function firstListener() {
+        console.log("First addEventListener handler");
+      }
+
+      function secondListener() {
+        console.log("Second addEventListener handler");
+      }
+
+      function updateOutput() {
+        output.textContent = "✅ Button clicked — check the console!";
+      }
+
+      // Attach multiple listeners — both will run
+      btn.addEventListener("click", firstListener);
+      btn.addEventListener("click", secondListener);
+      btn.addEventListener("click", updateOutput);
+    </script>
+  </body>
+</html>

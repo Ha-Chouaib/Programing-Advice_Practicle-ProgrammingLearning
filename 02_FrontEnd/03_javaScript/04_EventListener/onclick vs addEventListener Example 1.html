@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>addEventListener Example</title>
+    <style>
+      /* Center page */
+      body {
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #f4f4f4;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Style buttons */
+      button {
+        padding: 15px 40px;
+        font-size: 1.2rem;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        margin: 10px;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Button using normal onclick event -->
+    <button id="Button1" onclick="showMessage()">Button 1</button>
+
+    <!-- Button using addEventListener -->
+    <button id="Button2">Button 2</button>
+
+    <script>
+      function showMessage() {
+        alert("Button Clicked...");
+      }
+
+      // Attach event listener to the second button
+      const Button2 = document.getElementById("Button2");
+      Button2.addEventListener("click", showMessage);
+    </script>
+  </body>
+</html>
