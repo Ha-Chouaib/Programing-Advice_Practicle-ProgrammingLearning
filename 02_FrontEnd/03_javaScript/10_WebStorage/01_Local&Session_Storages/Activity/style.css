@@ -1,0 +1,153 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: aliceblue;
+    background: #000;
+}
+
+.card
+{
+ background: #ffffff25;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center ;
+    border-radius: 20px;
+    box-shadow: 0 0 400px  rgb(0, 255, 255);
+}
+
+button
+{
+    background: #000;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    
+}
+.container{
+    width: 400px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center ;
+}
+.form-item
+{
+    display: flex;
+    flex-direction: column;
+}
+.color-container
+{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+#favoritcolor
+{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+input{
+    background: #000;
+    border: none;
+    padding: 10px 5px;
+    border-radius: 10px;
+    color: aliceblue;
+}
+.custom-btn
+{
+    width: 100px;
+    padding: 8px 0;
+    border-radius: 10px;
+    background: #000;
+    border: none;
+    font-weight: bolder;
+    color: cyan;
+    border-bottom: 1px solid cyan;
+}
+
+
+.clear-storage
+{
+    border: 2px solid rgba(0, 255, 255, 0.363);
+    border-radius: 10px;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center ;
+}
+.clear-item
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.clear-item > input
+{
+    border: .5px solid rgba(255, 255, 255, 0.253);
+    background-color: rgba(240, 248, 255, 0.13);
+}
+
+#btn-delete-item
+{
+    color: gold;
+    border-bottom: 1px solid gold;
+    border-top: 1px solid gold;
+    padding: 10px 0;
+    background: #4505d850;
+    width: 100px;
+}
+#btn-clear-all
+{
+    color: red;
+    border-top: 1px solid red;
+    border-bottom: 1px solid red;
+
+    padding: 10px 0;
+    background: #4505d850;
+    width: 100px;
+}
+.clear-storage > span
+{
+    background: #fffefe1f;
+    width: 95%;
+    text-align: center;
+    padding-top: 10px;
+    border-radius: 10px;
+    border-bottom:  1px solid ;
+}
+.display-info .display-item
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 95%;
+}
+.display-info .display-item > .value
+{
+    width: 100%;
+    background-color: #000;
+    text-align: center;
+    height: 30px;
+    border-radius: 20px;
+}

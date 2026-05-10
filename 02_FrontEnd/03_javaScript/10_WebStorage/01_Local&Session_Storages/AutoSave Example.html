@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Session Storage Auto Save</title>
+
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #f4f4f4;
+        font-family: Arial, sans-serif;
+      }
+
+      textarea {
+        width: 400px;
+        height: 180px;
+        padding: 12px;
+        font-size: 1.1rem;
+        border-radius: 8px;
+        border: 1px solid #aaa;
+        resize: none;
+      }
+
+      h2 {
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>No Save</h2>
+
+    <!-- Text area where user types -->
+    <textarea id="textBox1" placeholder="Type something..."></textarea>
+
+    <h2>Auto Save (Session Storage)</h2>
+
+    <!-- Text area where user types -->
+    <textarea id="textBox2" placeholder="Type something..."></textarea>
+
+    <script>
+      // ---------------------------------------------------------------------
+      // Restore saved text (if exists) when the page loads (refresh)
+      // ---------------------------------------------------------------------
+      // sessionStorage.getItem("draftText") retrieves the saved text
+      // If no text was saved, it returns null
+      const savedText = sessionStorage.getItem("draftText");
+
+      // If something was saved earlier during the same tab session, show it
+      if (savedText !== null) {
+        document.getElementById("textBox2").value = savedText;
+      }
+
+      // ---------------------------------------------------------------------
+      // Save text AUTOMATICALLY on every keystroke
+      // ---------------------------------------------------------------------
+      // Add an input event listener that runs EVERY time the user types
+
+      const textBox2 = document.getElementById("textBox2");
+
+      textBox2.addEventListener("input", function () {
+        // Take the current text in the box
+        const currentText = this.value;
+
+        // Save it inside sessionStorage under the key "draftText"
+        sessionStorage.setItem("draftText", currentText);
+        // The text is now saved and will survive refresh but not tab closing
+      });
+
+      // ---------------------------------------------------------------------
+      // Optional: You can also clear the text when tab is closed
+      // But sessionStorage automatically clears itself on tab close.
+      // So no code is needed for clearing.
+      // ---------------------------------------------------------------------
+    </script>
+  </body>
+</html>

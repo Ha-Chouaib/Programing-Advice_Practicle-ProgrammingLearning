@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Web Storage Demo</title>
+
+    <style>
+      body {
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #f4f4f4;
+        font-family: Arial, sans-serif;
+      }
+
+      input {
+        padding: 10px;
+        width: 300px;
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+      }
+
+      button {
+        padding: 12px 30px;
+        margin: 6px;
+        border: none;
+        background: #007bff;
+        color: white;
+        font-size: 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        background: #0056b3;
+        transform: scale(1.05);
+      }
+
+      #output {
+        margin-top: 20px;
+        font-size: 1.2rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Web Storage Demo</h2>
+
+    <!-- Input field where the user types their name -->
+    <input id="nameInput" type="text" placeholder="Enter your name..." />
+
+    <p style="font-size: 14; font-weight: 900">Local Storage Sotrage</p>
+    <!-- Buttons for Local Storage actions -->
+    <button onclick="saveLS()">Save in Local Storage</button>
+    <button onclick="loadLS()">Load from Local Storage</button>
+    <button onclick="clearLS()">Clear Local Storage</button>
+
+    <br />
+
+    <p style="font-size: 14; font-weight: 900">Session Sotrage</p>
+
+    <!-- Buttons for Session Storage actions -->
+    <button onclick="saveSS()">Save in Session Storage</button>
+    <button onclick="loadSS()">Load from Session Storage</button>
+    <button onclick="clearSS()">Clear Session Storage</button>
+
+    <br />
+
+    <p style="font-size: 14; font-weight: 900">Navigate Pages</p>
+    <a href="Page2.html" target="_self"> Go to Page2 in the same tab</a><br />
+    <a href="Page2.html" target="_blank"> Go to Page2 in the New tab</a>
+
+    <br />
+
+    <div id="output"></div>
+
+    <script>
+      // ---------------------------------------------------------
+      // LOCAL STORAGE FUNCTIONS
+      // ---------------------------------------------------------
+
+      // Save data into Local Storage
+      function saveLS() {
+        // Read value from input field
+        let name = document.getElementById("nameInput").value;
+
+        // Save the value under the key "name"
+        localStorage.setItem("name", name);
+
+        // Notify the user
+        alert("Saved in localStorage");
+      }
+
+      // Load data from Local Storage
+      function loadLS() {
+        // Retrieve the value stored under "name"
+        let name = localStorage.getItem("name");
+
+        // Show it in the output area
+        // (If no value found, show 'No value found')
+        document.getElementById("output").textContent =
+          "Local Storage: " + (name ?? "No value found");
+      }
+
+      // Clear ALL data inside Local Storage
+      function clearLS() {
+        localStorage.clear();
+        alert("localStorage cleared");
+      }
+
+      // ---------------------------------------------------------
+      // SESSION STORAGE FUNCTIONS
+      // ---------------------------------------------------------
+
+      // Save data into Session Storage
+      function saveSS() {
+        // Read value from input field
+        let name = document.getElementById("nameInput").value;
+
+        // Save inside sessionStorage
+        sessionStorage.setItem("name", name);
+
+        // Notify the user
+        alert("Saved in sessionStorage");
+      }
+
+      // Load data from Session Storage
+      function loadSS() {
+        // Get item from sessionStorage
+        let name = sessionStorage.getItem("name");
+
+        // Display in output box
+        document.getElementById("output").textContent =
+          "Session Storage: " + (name ?? "No value found");
+      }
+
+      // Clear ALL data inside Session Storage
+      function clearSS() {
+        sessionStorage.clear();
+        alert("sessionStorage cleared");
+      }
+    </script>
+  </body>
+</html>
