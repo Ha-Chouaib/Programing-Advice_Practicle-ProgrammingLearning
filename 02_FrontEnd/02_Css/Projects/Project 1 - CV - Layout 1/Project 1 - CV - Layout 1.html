@@ -123,7 +123,7 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      overflow: hidden;                       
+      overflow: hidden;         
     }
 
   
@@ -144,7 +144,7 @@
       height: 120px;
       border-radius: 50%;
       overflow: hidden;
-      border: 3px solid rgba(79,70,229,.2);
+      border: 3px solid rgba(48, 0, 221, 0.863);
     }
     .avatar img {
       width: 100%;
@@ -379,6 +379,24 @@
       /* Optional: show URLs in print
       a::after { content: " (" attr(href) ")"; font-size: 10px; color: #555; } */
     }
+
+     details > summary {
+      list-style: none;
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--accent);
+      font-family: 'Courier New', Courier, monospace;
+      background: var(--line);
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      padding: 5px;
+      border-radius: 15px;
+    }
+    .skills >details[open] > summary {
+      background: var(--accent);
+      color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -476,12 +494,11 @@
             </p>
           </section>
 
-          <section class="block" aria-labelledby="skills-title">
-            <h3 id="skills-title">Skills</h3>
-
-            <!-- Each .meter > span width is driven by inline --v -->
-            <div class="skill">
-              <span>HTML / Semantic Markup</span><span class=" screenReaders-only">80%</span>
+          <section class="block skills" aria-labelledby="skills-title">
+            <details>
+              <summary><h3 id="skills-title">Skills</h3></summary>            
+              <div class="skill">
+              <span>HTML / Semantic Markup</span><span class="screenReaders-only">80%</span>
               <div class="meter" aria-hidden="true"><span style="--v: 90%"></span></div>
             </div>
             <div class="skill">
@@ -500,10 +517,15 @@
               <span>Git / Collaboration</span><span class="screenReaders-only">75%</span>
               <div class="meter" aria-hidden="true"><span style="--v: 75%"></span></div>
             </div>
+            </details>
+
+            
           </section>
 
           <section class="block" aria-labelledby="tools-title">
-            <h3 id="tools-title">Tools & Tech</h3>
+            <details> 
+              <summary> <h3 id="tools-title">Tools & Tech</h3> </summary>
+            
             <div class="chips" role="list" aria-label="Tools and technologies">
               <span class="tag" role="listitem">VS Code</span>
               <span class="tag" role="listitem">Figma</span>
@@ -512,22 +534,32 @@
               <span class="tag" role="listitem">Chrome DevTools</span>
               <span class="tag" role="listitem">Netlify</span>
             </div>
+             </details>
           </section>
 
           <section class="block" aria-labelledby="languages-title">
-            <h3 id="languages-title">Languages</h3>
-            <p>Arabic (Native), English (Professional)</p>
+            <details>
+              <summary> <h3 id="languages-title">Languages</h3></summary>
+                <p>Arabic (Native)</p>
+                <p>English (Professional)</p>
+              </details>
           </section>
 
           <section class="block" aria-labelledby="interests-title">
-            <h3 id="interests-title">Interests</h3>
-            <p>Open-source, Web Performance, UI Design, Teaching</p>
+           <details>
+              <summary> <h3 id="interests-title">Interests</h3> </summary>
+                <p>Open-source</p>
+                <p>Web Performance</p>
+                <p>UI Design</p>
+                <p>Teaching</p>
+           </details>
           </section>
 
           <section class="block" aria-labelledby="Certifications-title">
-            <h3 id="certifications-title">Certifications</h3>
+            <details>
+
+            <summary> <h3 id="certifications-title">Certifications</h3> </summary>
             
-            <div class="Cert-Container" role="list" aria-label="Certifications">
               <div class="Cert-Card" role="listitem">
                       <div class="line">
                         <div class="lable"><span>Cert Name:</span></div> <div class="value"><span>web development</span></div>
@@ -561,7 +593,7 @@
                           <div class="lable"><span>Date:</span></div> <div class="value"><span>2024</span></div>
                       </div>
               </div>
-            </div>
+            </details>
           </section>
         </aside>
 
