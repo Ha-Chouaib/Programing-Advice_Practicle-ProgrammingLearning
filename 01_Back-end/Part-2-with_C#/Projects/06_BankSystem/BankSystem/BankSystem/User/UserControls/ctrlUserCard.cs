@@ -50,15 +50,23 @@ namespace BankSystem.User.UserControls
 
             txtFullName.Text = Person.FullName;
 
+            try
+            {
+                Image Profile;
+                if (string.IsNullOrEmpty(Person.ImagePath))
+                    Profile = Person.Gender == 0 ? Properties.Resources.person_man : Properties.Resources.person_woman;
+                else
+                    Profile = Image.FromFile(Person?.ImagePath);
+                pictureBox1.Image = Profile;
 
-           
-            Image Profile;
-            if (string.IsNullOrEmpty(Person.ImagePath))
-                Profile = Person.Gender == 0 ? Properties.Resources.person_man : Properties.Resources.person_woman;
-            else
-                Profile = Image.FromFile(Person?.ImagePath);
+            }catch(Exception ex) 
+            {
+                
+            }
 
-            pictureBox1.Image = Profile;
+
+
+
         }
     }
 }

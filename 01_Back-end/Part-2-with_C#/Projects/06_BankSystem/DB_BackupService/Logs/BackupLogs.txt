@@ -243,3 +243,27 @@ BACKUP DATABASE is terminating abnormally.
 [27/08/2026 14:50:26] SQL Error during backup: The server principal "AUTORITE NT\Système" is not able to access the database "BankSystem" under the current security context.
 BACKUP DATABASE is terminating abnormally.
 [27/08/2026 14:50:26] Backup failed.
+[03/09/2026 16:15:44] Backup started.
+[03/09/2026 16:15:44] SQL Error during backup: The server principal "AUTORITE NT\Système" is not able to access the database "BankSystem" under the current security context.
+BACKUP DATABASE is terminating abnormally.
+[03/09/2026 16:15:44] Backup failed.
+[07/09/2026 11:01:17] Backup started.
+[07/09/2026 11:01:17] SQL Error during backup: The server principal "AUTORITE NT\Système" is not able to access the database "BankSystem" under the current security context.
+BACKUP DATABASE is terminating abnormally.
+[07/09/2026 11:01:17] Backup failed.
+[09/09/2026 16:31:51] Database Backup Service stopping...
+[09/09/2026 16:31:51] Database Backup Service stopped.
+[09/09/2026 16:33:19] Database Backup Service started.
+[09/09/2026 16:33:19] Backup timer scheduled every 1440 minutes.
+[10/09/2026 00:02:49] Database Backup Service started.
+[10/09/2026 00:02:49] Backup timer scheduled every 1440 minutes.
+[10/09/2026 00:05:27] Database Backup Service started.
+[10/09/2026 00:05:27] Backup timer scheduled every 1440 minutes.
+[14/09/2026 00:33:58] Backup started.
+[14/09/2026 00:33:59] SQL Error during backup: The server principal "AUTORITE NT\Système" is not able to access the database "BankSystem" under the current security context.
+BACKUP DATABASE is terminating abnormally.
+[14/09/2026 00:33:59] Backup failed.
+[15/09/2026 04:33:17] Database Backup Service started.
+[15/09/2026 04:33:17] Backup timer scheduled every 1440 minutes.
+[15/09/2026 04:34:53] Database Backup Service started.
+[15/09/2026 04:34:53] Backup timer scheduled every 1440 minutes.
