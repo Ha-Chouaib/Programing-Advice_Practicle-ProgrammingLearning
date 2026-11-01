@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>30 CSS Checkboxes & Radios – Effects Gallery (No JS)</title>
+<style>
+/* ──────────────────────────────────────────────────────────────────────────────
+│  ╔═════════════════════════════════════════════════════════════════════════╗
+│  ║                           CODE OVERVIEW                                 ║
+│  ╚═════════════════════════════════════════════════════════════════════════╝
+│  • Purpose → A single HTML/CSS page showcasing **30 distinct styles** for   │
+│               checkboxes and radios (paired). Each style has a checkbox     │
+│               class `.cb-N` and a radio class `.rd-N` for N = 1…30.        │
+│  • Layout  → Responsive grid; each cell displays one checkbox + one radio   │
+│               with a descriptive label.                                     │
+│  • Approach → Pure CSS (no JS). We hide the native appearance using         │
+│               `appearance:none` but keep real `<input type="checkbox|radio">`│
+│               for semantics, keyboard, and screen readers.                  │
+│  • Techniques → borders, gradients, glassmorphism, neon glow, embossed,     │
+│                 conic stripes, notches, icons via SVG data-URIs, outlines,  │
+│                 focus rings, animation, scale, rotate, clip-path.           │
+│  • A11y → Inputs remain focusable. Use `:focus-visible` rings; `label`      │
+│           click targets; sufficient color contrast.                          │
+└──────────────────────────────────────────────────────────────────────────────*/
+
+:root{
+  --bg: #0b1220;          /* page background */
+  --panel: #0f172a;       /* card background */
+  --ink: #e5e7eb;         /* text */
+  --muted: #99a5bb;       /* secondary */
+  --ring: 0 0 0 3px rgba(34,211,238,.45);
+  --brand1: #22d3ee;      /* cyan */
+  --brand2: #a78bfa;      /* violet */
+  --ok: #10b981; --warn:#f59e0b; --err:#ef4444;
+  --bd: rgba(255,255,255,.18);
+  --radius: 12px;
+}
+@media (prefers-color-scheme: light){
+  :root{ --bg:#f5f7fb; --panel:#ffffff; --ink:#0f172a; --muted:#4b5563; --bd:rgba(0,0,0,.16); --ring:0 0 0 3px rgba(14,165,233,.35); }
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; font-family:system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif; color:var(--ink);
+  background: radial-gradient(1200px 700px at 10% -10%, rgba(34,211,238,.10), transparent 60%),
+              radial-gradient(1200px 700px at 100% 0%, rgba(167,139,250,.08), transparent 60%),
+              var(--bg);
+}
+.header{max-width:1100px;margin:36px auto 8px;padding:0 16px}
+.header h1{margin:0 0 6px;font-weight:800}
+.header p{margin:0;color:var(--muted)}
+.wrapper{max-width:1100px;margin:16px auto 64px;padding:16px;background:color-mix(in oklab,var(--panel) 92%,transparent);border:1px solid var(--bd);border-radius:18px;box-shadow:0 24px 70px rgba(0,0,0,.28)}
+
+/* Grid: each style in a cell */
+.grid{display:grid;grid-template-columns: repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.cell{display:flex;flex-direction:column;gap:10px;padding:16px;border:1px dashed var(--bd);border-radius:14px;background:color-mix(in oklab,var(--panel) 94%,transparent)}
+.title{font-weight:700;color:var(--muted)}
+
+/* ───────── Base control reset ───────── */
+/* We keep real inputs but remove UA styling; size to 22px; animate smoothly */
+input[type="checkbox"], input[type="radio"]{
+  -webkit-appearance:none; appearance:none; display:inline-grid; place-content:center;
+  width:22px; height:22px; margin:0; cursor:pointer; border-radius:6px; border:1.5px solid var(--bd);
+  background:#0f182a; transition: box-shadow .18s ease, border-color .18s ease, background .18s ease, transform .12s ease;
+}
+/* Radios are circular by default; we'll override per-style as needed */
+input[type="radio"]{ border-radius:50% }
+
+/* Keyboard focus ring for all controls */
+input[type="checkbox"]:focus-visible,
+input[type="radio"]:focus-visible{ outline:none; box-shadow: var(--ring) }
+
+/* Helper container to enlarge click target */
+.control{ display:flex; align-items:center; gap:10px }
+.control label{ cursor:pointer }
+
+/* Inline rows inside a cell */
+.row{ display:flex; align-items:center; gap:14px }
+.badge{font:600 .78rem/1 system-ui; color:#0b1220; background:linear-gradient(135deg,var(--brand1),var(--brand2)); padding:2px 8px; border-radius:999px}
+
+/* Checkmark & dot SVGs as CSS backgrounds (data URI) */
+:root{
+  --check-svg: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>');
+  --dot-svg: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6" fill="white"/></svg>');
+}
+
+/* ───────────────── 30 Styles (paired: .cb-N for checkbox, .rd-N for radio) ───────────────── */
+
+/* 1) Solid brand fill + white mark */
+.cb-1{ background:#0ea5e9; border-color:#0ea5e9 }
+.cb-1:checked{ background:#0ea5e9; background-image:var(--check-svg); background-repeat:no-repeat; background-position:center; background-size:16px 16px }
+.rd-1{ background:#0ea5e9; border-color:#0ea5e9 }
+.rd-1:checked{ background:#0ea5e9; background-image:var(--dot-svg); background-repeat:no-repeat; background-position:center; background-size:14px 14px }
+
+/* 2) Gradient fill (cyan→violet) */
+.cb-2, .rd-2{ border:2px solid transparent; background:
+ linear-gradient(#0f182a,#0f182a) padding-box,
+ linear-gradient(135deg,var(--brand1),var(--brand2)) border-box; }
+.cb-2:checked{ background:linear-gradient(135deg,var(--brand1),var(--brand2)); background-image:var(--check-svg); background-repeat:no-repeat; background-position:center; background-size:16px }
+.rd-2{ border-radius:50% }
+.rd-2:checked{ background:linear-gradient(135deg,var(--brand1),var(--brand2)); background-image:var(--dot-svg); background-repeat:no-repeat; background-position:center; background-size:14px }
+
+/* 3) Ghost outline (no fill until checked) */
+.cb-3, .rd-3{ background:transparent; border-color:color-mix(in oklab,var(--ink) 35%, transparent) }
+.cb-3:hover, .rd-3:hover{ border-color:color-mix(in oklab,var(--ink) 55%, transparent) }
+.cb-3:checked{ background:#15233f; background-image:var(--check-svg); background-position:center; background-repeat:no-repeat }
+.rd-3:checked{ background:#15233f; background-image:var(--dot-svg); background-position:center; background-repeat:no-repeat }
+
+/* 4) Neon glow */
+.cb-4, .rd-4{ border-color:#22d3ee; box-shadow:0 0 12px rgba(34,211,238,.35) }
+.cb-4:checked, .rd-4:checked{ background:#22d3ee; background-image:var(--check-svg); background-position:center; background-repeat:no-repeat }
+.rd-4:checked{ background-image:var(--dot-svg) }
+
+/* 5) Glassmorphism */
+.cb-5, .rd-5{ background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.25); backdrop-filter: blur(8px) saturate(120%) }
+.cb-5:checked{ background:rgba(255,255,255,.22); background-image:var(--check-svg); background-position:center; background-repeat:no-repeat }
+.rd-5:checked{ background:rgba(255,255,255,.22); background-image:var(--dot-svg); background-position:center; background-repeat:no-repeat }
+
+/* 6) Thick border + inner inset */
+.cb-6, .rd-6{ border-width:3px; box-shadow: inset 0 2px 6px rgba(0,0,0,.45) }
+.cb-6:checked{ background:#0ea5e9; background-image:var(--check-svg); background-repeat:no-repeat; background-position:center }
+.rd-6:checked{ background:#0ea5e9; background-image:var(--dot-svg); background-repeat:no-repeat; background-position:center }
+
+/* 7) Rounded pill checkbox / circular radio (soft) */
+.cb-7{ border-radius:8px; background:#111b30 }
+.cb-7:checked{ background:#22c55e; background-image:var(--check-svg); background-position:center; background-repeat:no-repeat }
+.rd-7{ border-radius:50%; background:#111b30 }
+.rd-7:checked{ background:#22c55e; background-image:var(--dot-svg); background-position:center; background-repeat:no-repeat }
+
+/* 8) Success outline (green), inner glow on checked */
+.cb-8, .rd-8{ border-color:#10b981 }
+.cb-8:checked, .rd-8:checked{ box-shadow:0 0 0 6px rgba(16,185,129,.22) inset; background:#0f1a30; background-image:var(--check-svg); background-repeat:no-repeat; background-position:center }
+.rd-8:checked{ background-image:var(--dot-svg) }
+
+/* 9) Warning theme */
+.cb-9, .rd-9{ border-color:#f59e0b }
+.cb-9:checked, .rd-9:checked{ background:#f59e0b; background-image:var(--check-svg); background-position:center; background-repeat:no-repeat }
+.rd-9:checked{ background-image:var(--dot-svg) }
+
+/* 10) Danger theme */
+.cb-10, .rd-10{ border-color:#ef4444 }
+.cb-10:checked, .rd-10:checked{ background:#ef4444; background-image:var(--check-svg); background-position:center; background-repeat:no-repeat }
+.rd-10:checked{ background-image:var(--dot-svg) }
+
+/* 11) Stripe fill (repeating) */
+.cb-11, .rd-11{ background: repeating-linear-gradient(45deg,#0f182a 0 10px,#0a1424 10px 20px); border-color:#2b3b58 }
+.cb-11:checked{ background: repeating-linear-gradient(45deg,#1e3a8a 0 10px,#0ea5e9 10px 20px); background-image:var(--check-svg); background-position:center; background-repeat:no-repeat }
+.rd-11:checked{ background: repeating-linear-gradient(45deg,#1e3a8a 0 10px,#0ea5e9 10px 20px); background-image:var(--dot-svg); background-position:center; background-repeat:no-repeat }
+
+/* 12) Gradient border (double background) */
+.cb-12, .rd-12{ border:2px solid transparent; background:
+  linear-gradient(#0f182a,#0f182a) padding-box,
+  linear-gradient(90deg,#ef4444,#f59e0b,#22c55e,#3b82f6,#a855f7) border-box; }
+.cb-12:checked{ background:linear-gradient(90deg,#ef4444,#f59e0b,#22c55e,#3b82f6,#a855f7); background-image:var(--check-svg); background-position:center; background-repeat:no-repeat }
+.rd-12:checked{ background:linear-gradient(90deg,#ef4444,#f59e0b,#22c55e,#3b82f6,#a855f7); background-image:var(--dot-svg); background-position:center; background-repeat:no-repeat }
+
+/* 13) Minimal ghost + underline (visual cue via box-shadow) */
+.cb-13, .rd-13{ background:transparent; border-color:transparent; box-shadow: inset 0 -2px 0 color-mix(in oklab,var(--ink) 35%, transparent) }
+.cb-13:hover, .rd-13:hover{ box-shadow: inset 0 -2px 0 color-mix(in oklab,var(--ink) 60%, transparent) }
+.cb-13:checked, .rd-13:checked{ background:#0ea5e9 }
+.cb-13:checked{ background-image:var(--check-svg); background-repeat:no-repeat; background-position:center }
+.rd-13{ border-radius:50% }
+.rd-13:checked{ background-image:var(--dot-svg); background-repeat:no-repeat; background-position:center }
+
+/* 14) Beveled (embossed edges) */
+.cb-14, .rd-14{ box-shadow: inset 1px 1px 0 rgba(255,255,255,.08), inset -1px -1px 0 rgba(0,0,0,.5) }
+.cb-14:checked{ background:#93c5fd; background-image:var(--check-svg); background-position:center; background-repeat:no-repeat }
+.rd-14:checked{ background:#93c5fd; background-image:var(--dot-svg); background-position:center; background-repeat:no-repeat }
+
+/* 15) Notched corners (checkbox only) */
+.cb-15{ clip-path: polygon(6px 0,100% 0,100% calc(100% - 6px),calc(100% - 6px) 100%,0 100%,0 6px) }
+.cb-15:checked{ background:#22c55e; background-image:var(--check-svg); background-position:center; background-repeat:no-repeat }
+.rd-15{ border:2px solid #334155; box-shadow: inset 0 0 0 3px #0f182a }
+.rd-15:checked{ background:#22c55e; background-image:var(--dot-svg); background-position:center; background-repeat:no-repeat }
+
+/* 16) Thick outline on focus only */
+.cb-16, .rd-16{ border-color:#334155 }
+.cb-16:focus-visible, .rd-16:focus-visible{ box-shadow: 0 0 0 4px rgba(51,65,85,.45) }
+.cb-16:checked{ background:#64748b; background-image:var(--check-svg); background-repeat:no-repeat; background-position:center }
+.rd-16:checked{ background:#64748b; background-image:var(--dot-svg); background-repeat:no-repeat; background-position:center }
+
+/* 17) Metallic sheen */
+.cb-17, .rd-17{ background:linear-gradient(160deg,#d1d5db 0%,#ffffff 30%,#bfc5cc 50%,#ffffff 70%,#a8b0b9 100%); border-color:#94a3b8 }
+.cb-17:checked{ background:#0ea5e9; background-image:var(--check-svg); background-repeat:no-repeat; background-position:center }
+.rd-17:checked{ background:#0ea5e9; background-image:var(--dot-svg); background-repeat:no-repeat; background-position:center }
+
+/* 18) Inner dot/mark animates scale */
+.cb-18, .rd-18{ position:relative }
+.cb-18::after, .rd-18::after{ content:""; width:12px; height:12px; transform:scale(0); transition: transform .14s ease; background:white; border-radius:2px }
+.cb-18::after{ background:white; mask: var(--check-svg) center/16px 16px no-repeat }
+.rd-18::after{ border-radius:50% }
+.cb-18:checked::after, .rd-18:checked::after{ transform:scale(1) }
+
+/* 19) Glow ring pulse on hover */
+@keyframes pulseGlow{ 0%,100%{ box-shadow:0 0 0 0 rgba(34,211,238,0) } 50%{ box-shadow:0 0 0 10px rgba(34,211,238,.15) } }
+.cb-19:hover, .rd-19:hover{ animation: pulseGlow 1.4s ease infinite }
+.cb-19:checked{ background:#22d3ee; background-image:var(--check-svg); background-repeat:no-repeat; background-position:center }
+.rd-19:checked{ background:#22d3ee; background-image:var(--dot-svg); background-repeat:no-repeat; background-position:center }
+
+/* 20) Rainbow conic border */
+.cb-20, .rd-20{ border:2px solid transparent; background:
+  linear-gradient(#0f182a,#0f182a) padding-box,
+  conic-gradient(from 180deg at 50% 50%,#ef4444,#f59e0b,#22c55e,#3b82f6,#a855f7,#ef4444) border-box }
+.cb-20:checked{ background:conic-gradient(from 180deg at 50% 50%,#ef4444,#f59e0b,#22c55e,#3b82f6,#a855f7,#ef4444); background-image:var(--check-svg); background-repeat:no-repeat; background-position:center }
+.rd-20:checked{ background:conic-gradient(from 180deg at 50% 50%,#ef4444,#f59e0b,#22c55e,#3b82f6,#a855f7,#ef4444); background-image:var(--dot-svg); background-repeat:no-repeat; background-position:center }
+
+/* 21) Outline dashed */
+.cb-21, .rd-21{ background:transparent; border-style:dashed; border-color:#64748b }
+.cb-21:checked{ background:#0ea5e9; background-image:var(--check-svg); background-repeat:no-repeat; background-position:center }
+.rd-21:checked{ background:#0ea5e9; background-image:var(--dot-svg); background-repeat:no-repeat; background-position:center }
+
+/* 22) Double border */
+.cb-22, .rd-22{ border:3px double #3b4b67 }
+.cb-22:checked{ background:#22c55e; background-image:var(--check-svg); background-position:center; background-repeat:no-repeat }
+.rd-22:checked{ background:#22c55e; background-image:var(--dot-svg); background-position:center; background-repeat:no-repeat }
+
+/* 23) Soft shadow lift */
+.cb-23, .rd-23{ box-shadow:0 8px 20px rgba(0,0,0,.35) }
+.cb-23:active, .rd-23:active{ transform:translateY(1px) }
+.cb-23:checked{ background:#93c5fd; background-image:var(--check-svg); background-position:center; background-repeat:no-repeat }
+.rd-23:checked{ background:#93c5fd; background-image:var(--dot-svg); background-position:center; background-repeat:no-repeat }
+
+/* 24) Frosted strong */
+.cb-24, .rd-24{ background:rgba(255,255,255,.14); border-color:rgba(255,255,255,.35); backdrop-filter: blur(12px) saturate(130%) }
+.cb-24:checked{ background:rgba(255,255,255,.35); background-image:var(--check-svg); background-position:center; background-repeat:no-repeat }
+.rd-24:checked{ background:rgba(255,255,255,.35); background-image:var(--dot-svg); background-position:center; background-repeat:no-repeat }
+
+/* 25) Iconic themed (checkbox: star, radio: heart) */
+.cb-25{ background:#0f182a; border-color:#eab308 }
+.cb-25:checked{ background:#eab308; background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9"/></svg>'); background-repeat:no-repeat; background-position:center; background-size:16px }
+.rd-25{ border-color:#ef4444 }
+.rd-25:checked{ background:#ef4444; background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 21s-6-4.35-9-7.5C-1 9 2 4 6 4c2.2 0 3.4 1.3 6 4 2.6-2.7 3.8-4 6-4 4 0 7 5 3 9.5-3 3.15-9 7.5-9 7.5z"/></svg>'); background-repeat:no-repeat; background-position:center; background-size:14px }
+
+/* 26) Outline → fill on hover */
+.cb-26, .rd-26{ background:transparent; border-color:#22d3ee }
+.cb-26:hover, .rd-26:hover{ background:rgba(34,211,238,.15) }
+.cb-26:checked, .rd-26:checked{ background:#22d3ee; background-image:var(--check-svg); background-position:center; background-repeat:no-repeat }
+.rd-26:checked{ background-image:var(--dot-svg) }
+
+/* 27) Angular (checkbox square, radio diamond look via rotate) */
+.cb-27{ border-radius:2px }
+.cb-27:checked{ background:#3b82f6; background-image:var(--check-svg); background-repeat:no-repeat; background-position:center }
+.rd-27{ border-radius:4px; transform: rotate(45deg) }
+.rd-27:checked{ background:#3b82f6; background-image:var(--dot-svg); background-repeat:no-repeat; background-position:center }
+
+/* 28) Tiny notch using background-clip */
+.cb-28, .rd-28{ border:2px solid transparent; background:
+  linear-gradient(#0f182a,#0f182a) padding-box,
+  linear-gradient(135deg,#334155,#64748b) border-box; border-radius:10px }
+.cb-28:checked{ background:linear-gradient(135deg,#334155,#64748b); background-image:var(--check-svg); background-position:center; background-repeat:no-repeat }
+.rd-28{ border-radius:50% }
+.rd-28:checked{ background:linear-gradient(135deg,#334155,#64748b); background-image:var(--dot-svg); background-position:center; background-repeat:no-repeat }
+
+/* 29) Glow shadow (outer) */
+.cb-29, .rd-29{ box-shadow:0 0 0 0 rgba(34,211,238,0) }
+.cb-29:checked, .rd-29:checked{ box-shadow:0 0 18px rgba(34,211,238,.45); background:#1f2d4a; background-image:var(--check-svg); background-position:center; background-repeat:no-repeat }
+.rd-29:checked{ background-image:var(--dot-svg) }
+
+/* 30) Monochrome brutalist (thick border, high contrast) */
+.cb-30, .rd-30{ background:#0b1220; border:3px solid #e5e7eb }
+.cb-30:checked, .rd-30:checked{ background:#e5e7eb; }
+.cb-30:checked{ background-image:var(--check-svg); background-repeat:no-repeat; background-position:center; filter: invert(1) }
+.rd-30{ border-radius:50% }
+.rd-30:checked{ background-image:var(--dot-svg); background-repeat:no-repeat; background-position:center; filter: invert(1) }
+
+</style>
+</head>
+<body>
+  <header class="header">
+    <h1>30 CSS Checkbox & Radio Styles – No JavaScript</h1>
+    <p>Each row shows a <span class="badge">checkbox (.cb‑N)</span> paired with a <span class="badge">radio (.rd‑N)</span>. Use Tab/Space/Arrow keys to test accessibility.</p>
+  </header>
+
+  <main class="wrapper">
+    <section class="grid" aria-label="Controls gallery">
+
+      <!-- Template for each style: title + row with checkbox + radio -->
+      <!-- 1 -->
+      <div class="cell">
+        <div class="title">1) Solid Brand Fill</div>
+        <div class="row">
+          <div class="control">
+            <input id="cb1" type="checkbox" class="cb-1" />
+            <label for="cb1">Checkbox</label>
+          </div>
+          <div class="control">
+            <input id="rd1" name="rdgrp1" type="radio" class="rd-1" />
+            <label for="rd1">Radio</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="cell"><div class="title">2) Gradient Fill</div>
+        <div class="row">
+          <div class="control"><input id="cb2" type="checkbox" class="cb-2" /><label for="cb2">Checkbox</label></div>
+          <div class="control"><input id="rd2" name="rdgrp2" type="radio" class="rd-2" /><label for="rd2">Radio</label></div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="cell"><div class="title">3) Ghost Outline</div>
+        <div class="row">
+          <div class="control"><input id="cb3" type="checkbox" class="cb-3" /><label for="cb3">Checkbox</label></div>
+          <div class="control"><input id="rd3" name="rdgrp3" type="radio" class="rd-3" /><label for="rd3">Radio</label></div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="cell"><div class="title">4) Neon Glow</div>
+        <div class="row">
+          <div class="control"><input id="cb4" type="checkbox" class="cb-4" /><label for="cb4">Checkbox</label></div>
+          <div class="control"><input id="rd4" name="rdgrp4" type="radio" class="rd-4" /><label for="rd4">Radio</label></div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="cell"><div class="title">5) Glassmorphism</div>
+        <div class="row">
+          <div class="control"><input id="cb5" type="checkbox" class="cb-5" /><label for="cb5">Checkbox</label></div>
+          <div class="control"><input id="rd5" name="rdgrp5" type="radio" class="rd-5" /><label for="rd5">Radio</label></div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="cell"><div class="title">6) Thick Border Inset</div>
+        <div class="row">
+          <div class="control"><input id="cb6" type="checkbox" class="cb-6" /><label for="cb6">Checkbox</label></div>
+          <div class="control"><input id="rd6" name="rdgrp6" type="radio" class="rd-6" /><label for="rd6">Radio</label></div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="cell"><div class="title">7) Soft Rounded</div>
+        <div class="row">
+          <div class="control"><input id="cb7" type="checkbox" class="cb-7" /><label for="cb7">Checkbox</label></div>
+          <div class="control"><input id="rd7" name="rdgrp7" type="radio" class="rd-7" /><label for="rd7">Radio</label></div>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="cell"><div class="title">8) Success Glow</div>
+        <div class="row">
+          <div class="control"><input id="cb8" type="checkbox" class="cb-8" /><label for="cb8">Checkbox</label></div>
+          <div class="control"><input id="rd8" name="rdgrp8" type="radio" class="rd-8" /><label for="rd8">Radio</label></div>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="cell"><div class="title">9) Warning Theme</div>
+        <div class="row">
+          <div class="control"><input id="cb9" type="checkbox" class="cb-9" /><label for="cb9">Checkbox</label></div>
+          <div class="control"><input id="rd9" name="rdgrp9" type="radio" class="rd-9" /><label for="rd9">Radio</label></div>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="cell"><div class="title">10) Danger Theme</div>
+        <div class="row">
+          <div class="control"><input id="cb10" type="checkbox" class="cb-10" /><label for="cb10">Checkbox</label></div>
+          <div class="control"><input id="rd10" name="rdgrp10" type="radio" class="rd-10" /><label for="rd10">Radio</label></div>
+        </div>
+      </div>
+
+      <!-- 11 -->
+      <div class="cell"><div class="title">11) Striped</div>
+        <div class="row">
+          <div class="control"><input id="cb11" type="checkbox" class="cb-11" /><label for="cb11">Checkbox</label></div>
+          <div class="control"><input id="rd11" name="rdgrp11" type="radio" class="rd-11" /><label for="rd11">Radio</label></div>
+        </div>
+      </div>
+
+      <!-- 12 -->
+      <div class="cell"><div class="title">12) Gradient Border</div>
+        <div class="row">
+          <div class="control"><input id="cb12" type="checkbox" class="cb-12" /><label for="cb12">Checkbox</label></div>
+          <div class="control"><input id="rd12" name="rdgrp12" type="radio" class="rd-12" /><label for="rd12">Radio</label></div>
+        </div>
+      </div>
+
+      <!-- 13 -->
+      <div class="cell"><div class="title">13) Minimal Underline</div>
+        <div class="row">
+          <div class="control"><input id="cb13" type="checkbox" class="cb-13" /><label for="cb13">Checkbox</label></div>
+          <div class="control"><input id="rd13" name="rdgrp13" type="radio" class="rd-13" /><label for="rd13">Radio</label></div>
+        </div>
+      </div>
+
+      <!-- 14 -->
+      <div class="cell"><div class="title">14) Beveled</div>
+        <div class="row">
+          <div class="control"><input id="cb14" type="checkbox" class="cb-14" /><label for="cb14">Checkbox</label></div>
+          <div class="control"><input id="rd14" name="rdgrp14" type="radio" class="rd-14" /><label for="rd14">Radio</label></div>
+        </div>
+      </div>
+
+      <!-- 15 -->
+      <div class="cell"><div class="title">15) Notched & Ring</div>
+        <div class="row">
+          <div class="control"><input id="cb15" type="checkbox" class="cb-15" /><label for="cb15">Checkbox</label></div>
+          <div class="control"><input id="rd15" name="rdgrp15" type="radio" class="rd-15" /><label for="rd15">Radio</label></div>
+        </div>
+      </div>
+
+      <!-- 16 -->
+      <div class="cell"><div class="title">16) Focus Outline</div>
+        <div class="row">
+          <div class="control"><input id="cb16" type="checkbox" class="cb-16" /><label for="cb16">Checkbox</label></div>
+          <div class="control"><input id="rd16" name="rdgrp16" type="radio" class="rd-16" /><label for="rd16">Radio</label></div>
+        </div>
+      </div>
+
+      <!-- 17 -->
+      <div class="cell"><div class="title">17) Metallic Sheen</div>
+        <div class="row">
+          <div class="control"><input id="cb17" type="checkbox" class="cb-17" /><label for="cb17">Checkbox</label></div>
+          <div class="control"><input id="rd17" name="rdgrp17" type="radio" class="rd-17" /><label for="rd17">Radio</label></div>
+        </div>
+      </div>
+
+      <!-- 18 -->
+      <div class="cell"><div class="title">18) Scale-in Mark</div>
+        <div class="row">
+          <div class="control"><input id="cb18" type="checkbox" class="cb-18" /><label for="cb18">Checkbox</label></div>
+          <div class="control"><input id="rd18" name="rdgrp18" type="radio" class="rd-18" /><label for="rd18">Radio</label></div>
+        </div>
+      </div>
+
+      <!-- 19 -->
+      <div class="cell"><div class="title">19) Pulse Glow Hover</div>
+        <div class="row">
+          <div class="control"><input id="cb19" type="checkbox" class="cb-19" /><label for="cb19">Checkbox</label></div>
+          <div class="control"><input id="rd19" name="rdgrp19" type="radio" class="rd-19" /><label for="rd19">Radio</label></div>
+        </div>
+      </div>
+
+      <!-- 20 -->
+      <div class="cell"><div class="title">20) Conic Border</div>
+        <div class="row">
+          <div class="control"><input id="cb20" type="checkbox" class="cb-20" /><label for="cb20">Checkbox</label></div>
+          <div class="control"><input id="rd20" name="rdgrp20" type="radio" class="rd-20" /><label for="rd20">Radio</label></div>
+        </div>
+      </div>
+
+      <!-- 21 -->
+      <div class="cell"><div class="title">21) Dashed Outline</div>
+        <div class="row">
+          <div class="control"><input id="cb21" type="checkbox" class="cb-21" /><label for="cb21">Checkbox</label></div>
+          <div class="control"><input id="rd21" name="rdgrp21" type="radio" class="rd-21" /><label for="rd21">Radio</label></div>
+        </div>
+      </div>
+
+      <!-- 22 -->
+      <div class="cell"><div class="title">22) Double Border</div>
+        <div class="row">
+          <div class="control"><input id="cb22" type="checkbox" class="cb-22" /><label for="cb22">Checkbox</label></div>
+          <div class="control"><input id="rd22" name="rdgrp22" type="radio" class="rd-22" /><label for="rd22">Radio</label></div>
+        </div>
+      </div>
+
+      <!-- 23 -->
+      <div class="cell"><div class="title">23) Shadow Lift</div>
+        <div class="row">
+          <div class="control"><input id="cb23" type="checkbox" class="cb-23" /><label for="cb23">Checkbox</label></div>
+          <div class="control"><input id="rd23" name="rdgrp23" type="radio" class="rd-23" /><label for="rd23">Radio</label></div>
+        </div>
+      </div>
+
+      <!-- 24 -->
+      <div class="cell"><div class="title">24) Strong Frosted</div>
+        <div class="row">
+          <div class="control"><input id="cb24" type="checkbox" class="cb-24" /><label for="cb24">Checkbox</label></div>
+          <div class="control"><input id="rd24" name="rdgrp24" type="radio" class="rd-24" /><label for="rd24">Radio</label></div>
+        </div>
+      </div>
+
+      <!-- 25 -->
+      <div class="cell"><div class="title">25) Iconic: Star & Heart</div>
+        <div class="row">
+          <div class="control"><input id="cb25" type="checkbox" class="cb-25" /><label for="cb25">Checkbox</label></div>
+          <div class="control"><input id="rd25" name="rdgrp25" type="radio" class="rd-25" /><label for="rd25">Radio</label></div>
+        </div>
+      </div>
+
+      <!-- 26 -->
+      <div class="cell"><div class="title">26) Outline → Fill</div>
+        <div class="row">
+          <div class="control"><input id="cb26" type="checkbox" class="cb-26" /><label for="cb26">Checkbox</label></div>
+          <div class="control"><input id="rd26" name="rdgrp26" type="radio" class="rd-26" /><label for="rd26">Radio</label></div>
+        </div>
+      </div>
+
+      <!-- 27 -->
+      <div class="cell"><div class="title">27) Angular / Diamond</div>
+        <div class="row">
+          <div class="control"><input id="cb27" type="checkbox" class="cb-27" /><label for="cb27">Checkbox</label></div>
+          <div class="control"><input id="rd27" name="rdgrp27" type="radio" class="rd-27" /><label for="rd27">Radio</label></div>
+        </div>
+      </div>
+
+      <!-- 28 -->
+      <div class="cell"><div class="title">28) Gradient Steel</div>
+        <div class="row">
+          <div class="control"><input id="cb28" type="checkbox" class="cb-28" /><label for="cb28">Checkbox</label></div>
+          <div class="control"><input id="rd28" name="rdgrp28" type="radio" class="rd-28" /><label for="rd28">Radio</label></div>
+        </div>
+      </div>
+
+      <!-- 29 -->
+      <div class="cell"><div class="title">29) Outer Glow</div>
+        <div class="row">
+          <div class="control"><input id="cb29" type="checkbox" class="cb-29" /><label for="cb29">Checkbox</label></div>
+          <div class="control"><input id="rd29" name="rdgrp29" type="radio" class="rd-29" /><label for="rd29">Radio</label></div>
+        </div>
+      </div>
+
+      <!-- 30 -->
+      <div class="cell"><div class="title">30) Brutalist Mono</div>
+        <div class="row">
+          <div class="control"><input id="cb30" type="checkbox" class="cb-30" /><label for="cb30">Checkbox</label></div>
+          <div class="control"><input id="rd30" name="rdgrp30" type="radio" class="rd-30" /><label for="rd30">Radio</label></div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>30 CSS Dropdowns & Lists – Effects Gallery (No JS)</title>
+<style>
+/* ──────────────────────────────────────────────────────────────────────────────
+│  ╔═════════════════════════════════════════════════════════════════════════╗
+│  ║                           CODE OVERVIEW                                 ║
+│  ╚═════════════════════════════════════════════════════════════════════════╝
+│  • Purpose → A single HTML/CSS page showcasing **30 distinct styles**:     │
+│      - 15 custom dropdown (<select>) styles (.dd-1 … .dd-15)               │
+│      - 15 list styles for <ul>/<ol> (.ls-16 … .ls-30)                      │
+│    No JavaScript. Each style has its own class with clear comments.        │
+│                                                                             │
+│  • Layout → Two sections in responsive grids. Each cell shows a label and  │
+│              the styled component.                                          │
+│                                                                             │
+│  • Techniques → gradients, glassmorphism, neon glow, double-borders,       │
+│    outline→fill, metallic sheens, zebra/timeline/tag lists, ::marker,      │
+│    counters, data-URI SVG icons, and accessible focus rings.               │
+│                                                                             │
+│  • Accessibility → Real <select> elements with keyboard support,           │
+│    `color-scheme: dark` for dropdown popups (supported UAs),               │
+│    high-contrast text, and :focus-visible rings.                           │
+└──────────────────────────────────────────────────────────────────────────────*/
+
+:root{
+  --bg: #0b1220;         /* page backdrop */
+  --panel: #0f172a;      /* panel/card */
+  --ink: #e5e7eb;        /* primary text */
+  --muted: #9aa4b2;      /* secondary text */
+  --ring: 0 0 0 3px rgba(34,211,238,.45);
+  --brand1: #22d3ee;     /* cyan */
+  --brand2: #a78bfa;     /* violet */
+  --bd: rgba(255,255,255,.16);
+  --radius: 14px;
+}
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#f5f7fb; --panel:#ffffff; --ink:#0f172a; --muted:#4b5563; --bd: rgba(0,0,0,.15);
+    --ring: 0 0 0 3px rgba(14,165,233,.35);
+  }
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; font-family:system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif; color:var(--ink);
+  background: radial-gradient(1200px 700px at 10% -10%, rgba(34,211,238,.10), transparent 60%),
+              radial-gradient(1200px 700px at 100% 0%, rgba(167,139,250,.08), transparent 60%),
+              var(--bg);
+}
+.header{max-width:1150px;margin:36px auto 8px;padding:0 16px}
+.header h1{margin:0 0 6px;font-weight:800}
+.header p{margin:0;color:var(--muted)}
+.wrapper{max-width:1150px;margin:16px auto 64px;padding:16px;background:color-mix(in oklab,var(--panel) 92%,transparent);border:1px solid var(--bd);border-radius:18px;box-shadow:0 24px 70px rgba(0,0,0,.28)}
+
+/* ───────── Shared grids ───────── */
+.grid{display:grid;grid-template-columns: repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.cell{display:flex;flex-direction:column;gap:10px;padding:16px;border:1px dashed var(--bd);border-radius:14px;background:color-mix(in oklab,var(--panel) 94%,transparent)}
+.cell .title{font-weight:700;color:var(--muted)}
+
+.badge{font:600 .8rem/1 system-ui; color:#0b1220; background:linear-gradient(135deg,var(--brand1),var(--brand2)); padding:2px 8px; border-radius:999px}
+
+/* ───────────────────────────────── Dropdowns (base + 15 variants) ───────────────────────────────── */
+/* Base select look; variants layer on top with their own class (.dd-N) */
+.select{ /* shared visual baseline for all dropdowns */
+  --sel-bg: #0f1a30;          /* background for closed state */
+  --sel-ink: #e8efff;         /* text color */
+  --sel-bd: var(--bd);        /* border color */
+  width:100%; padding:12px 42px 12px 14px; border-radius:12px; border:1px solid var(--sel-bd);
+  background-color: var(--sel-bg); color: var(--sel-ink);
+  font: 600 0.95rem/1.2 system-ui, sans-serif;
+  transition: border-color .18s ease, box-shadow .18s ease, filter .18s ease, background .18s ease;
+  appearance:none; -webkit-appearance:none; -moz-appearance:none;
+  color-scheme: dark;         /* hint dark popup where supported */
+}
+.select:focus-visible{ outline:none; box-shadow: var(--ring); border-color:transparent }
+
+/* Custom chevron for all dropdowns via the wrapper pseudo-element */
+.select-wrap{ position:relative }
+.select-wrap::after{
+  content:""; position:absolute; right:12px; top:50%; transform:translateY(-50%);
+  width:18px; height:18px; pointer-events:none; opacity:.95;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>');
+  background-repeat:no-repeat; background-size:18px 18px;
+}
+
+/* Make opened menu dark/legible in engines that inherit option styles */
+select option, select optgroup{ background-color:#0f1a30; color:#e8efff }
+
+/* ───────── 15 dropdown variants: .dd-1 … .dd-15 ───────── */
+/* 1) Solid brand */
+.dd-1{ background: linear-gradient(135deg,var(--brand1),var(--brand2)); color:#0b1220; border:none }
+.dd-1:hover{ filter: brightness(1.05) }
+
+/* 2) Gradient border (double bg) */
+.dd-2{ background:
+  linear-gradient(var(--sel-bg),var(--sel-bg)) padding-box,
+  linear-gradient(135deg,var(--brand1),var(--brand2)) border-box;
+  border:2px solid transparent }
+
+/* 3) Ghost outline */
+.dd-3{ background:transparent; color:var(--ink); border-color:color-mix(in oklab,var(--ink) 35%, transparent) }
+.dd-3:hover{ border-color:color-mix(in oklab,var(--ink) 55%, transparent) }
+
+/* 4) Neon glow */
+.dd-4{ border-color:#22d3ee; box-shadow:0 0 14px rgba(34,211,238,.35) inset }
+
+/* 5) Glassmorphism */
+.dd-5{ background: rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.22); backdrop-filter: blur(8px) saturate(120%) }
+.dd-5:hover{ background: rgba(255,255,255,.12) }
+
+/* 6) Pill shape */
+.dd-6{ border-radius:999px }
+
+/* 7) Notched corners via clip-path */
+.dd-7{ clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0 calc(100% - 10px), 0 10px) }
+
+/* 8) Underline only */
+.dd-8{ border:none; border-bottom:3px solid var(--bd); border-radius:0; background:transparent }
+.dd-8:focus-visible{ box-shadow:none; border-bottom-color: var(--brand1) }
+
+/* 9) Metallic sheen */
+.dd-9{ background:linear-gradient(160deg,#d1d5db 0%,#ffffff 30%,#bfc5cc 50%,#ffffff 70%,#a8b0b9 100%); color:#1f2937 }
+
+/* 10) Rainbow border */
+.dd-10{ background:
+  linear-gradient(var(--sel-bg),var(--sel-bg)) padding-box,
+  linear-gradient(90deg,#ef4444,#f59e0b,#22c55e,#3b82f6,#a855f7) border-box; border:2px solid transparent }
+
+/* 11) Striped fill */
+.dd-11{ background: repeating-linear-gradient(45deg, #0f1a30 0 12px, #0b1324 12px 24px) }
+
+/* 12) Minimal thin border */
+.dd-12{ border-color:#334155 }
+
+/* 13) Double border */
+.dd-13{ border:3px double #3b4b67 }
+
+/* 14) Soft shadow (elevated) */
+.dd-14{ box-shadow: 0 10px 24px rgba(0,0,0,.35) }
+
+/* 15) Brutalist thick outline */
+.dd-15{ background:#0b1220; color:#e5e7eb; border:3px solid #e5e7eb }
+
+
+/* ───────────────────────────────── Lists (base + 15 variants) ───────────────────────────────── */
+.list{ /* baseline for lists */
+  margin: 0; padding: 10px 12px 10px 1.25rem; list-style-position: outside;
+  background: color-mix(in oklab,var(--panel) 94%, transparent); border:1px solid var(--bd); border-radius:12px;
+}
+.list li{ padding: 6px 4px; color: var(--ink) }
+
+/* 16) Colored bullets */
+.ls-16{ list-style: disc }
+.ls-16 li::marker{ color: #22d3ee }
+
+/* 17) Checklist with SVG check bullets */
+.ls-17{ list-style: none; padding-left: 0 }
+.ls-17 li{ position:relative; padding-left: 28px }
+.ls-17 li::before{ content:""; position:absolute; left:8px; top:9px; width:14px; height:14px;
+  background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23a7f3d0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>');
+  background-repeat:no-repeat; background-size:14px 14px }
+
+/* 18) Numbered steps (ol with counters) */
+.ls-18{ counter-reset: step; list-style: none; padding-left:0 }
+.ls-18 li{ counter-increment: step; padding-left: 36px; position:relative }
+.ls-18 li::before{ content: counter(step); position:absolute; left:8px; top:6px; width:22px; height:22px; line-height:22px; text-align:center; font-weight:800; color:#0b1220; background:linear-gradient(135deg,var(--brand1),var(--brand2)); border-radius:6px }
+
+/* 19) Vertical timeline */
+.ls-19{ list-style:none; padding-left: 22px; position: relative }
+.ls-19::before{ content:""; position:absolute; left:11px; top:8px; bottom:8px; width:2px; background: linear-gradient(#334155,#64748b) }
+.ls-19 li::before{ content:""; position:absolute; left:-5px;  top:12px; width:10px; height:10px; border-radius:50%; background:#22d3ee; box-shadow:0 0 0 3px rgba(34,211,238,.2) }
+.ls-19 li{ position:relative; padding:10px; }
+
+/* 20) Card list (grid cards) */
+.ls-20{ list-style:none; padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:10px }
+.ls-20 li{ background: color-mix(in oklab,var(--panel) 92%, transparent); border:1px solid var(--bd); border-radius:12px; padding:12px; box-shadow:0 8px 20px rgba(0,0,0,.25) }
+.ls-20 li:hover{ transform: translateY(-2px) }
+
+/* 21) Zebra stripes */
+.ls-21 li:nth-child(odd){ background: rgba(255,255,255,.04); border-radius:8px }
+
+/* 22) Dashed dividers */
+.ls-22{ list-style:none; padding-left:0 }
+.ls-22 li{ border-bottom:1px dashed var(--bd) }
+.ls-22 li:last-child{ border-bottom:none }
+
+/* 23) Tags/Chips (inline items) */
+.ls-23{ list-style:none; padding-left:0; display:flex; flex-wrap:wrap; gap:8px }
+.ls-23 li{ background:linear-gradient(135deg,var(--brand1),var(--brand2)); color:#0b1220; padding:6px 10px; border-radius:999px; font-weight:700 }
+
+/* 24) Pill bullets */
+.ls-24{ list-style:none; padding-left:0 }
+.ls-24 li{ position:relative; padding-left:34px }
+.ls-24 li::before{ content:""; position:absolute; left:8px; top:8px; width:18px; height:18px; border-radius:999px; background:linear-gradient(135deg,#0ea5e9,#a78bfa) }
+
+/* 25) Star bullets (SVG) */
+.ls-25{ list-style:none; padding-left:0 }
+.ls-25 li{ position:relative; padding-left:30px }
+.ls-25 li::before{ content:""; position:absolute; left:6px; top:8px; width:18px; height:18px; background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23fde68a" stroke="%23f59e0b" stroke-width="1.5"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9"/></svg>'); background-size:18px 18px; background-repeat:no-repeat }
+
+/* 26) Ribbon marker on left */
+.ls-26{ list-style:none; padding-left:0 }
+.ls-26 li{ position:relative; padding-left:18px }
+.ls-26 li::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:6px; background: linear-gradient(180deg,#22d3ee,#a78bfa) }
+
+/* 27) Gradient ::marker for ordered list */
+.ls-27{ list-style: decimal; counter-reset:item }
+.ls-27 li::marker{ color: #a78bfa }
+
+/* 28) Neon glow bullets */
+.ls-28{ list-style: disc }
+.ls-28 li::marker{ color:#22d3ee; text-shadow: 0 0 8px rgba(34,211,238,.6) }
+
+/* 29) Frosted list items */
+.ls-29 li{ background: rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.25); backdrop-filter: blur(8px) saturate(120%); border-radius:8px; margin:6px 0; padding:8px 10px }
+
+/* 30) Bracketed numerals */
+.ls-30{ counter-reset: num; list-style:none; padding-left:0 }
+.ls-30 li{ counter-increment: num; position:relative; padding-left:42px }
+.ls-30 li::before{ content:"[" counter(num) "]"; position:absolute; left:8px; top:6px; font-weight:800; color:#22d3ee }
+
+</style>
+</head>
+<body>
+  <header class="header">
+    <h1>30 CSS Dropdown & List Styles – No JavaScript</h1>
+    <p>15 dropdowns (<span class="badge">.dd‑1 … .dd‑15</span>) and 15 list styles (<span class="badge">.ls‑16 … .ls‑30</span>) with clear comments and accessible focus rings.</p>
+  </header>
+
+  <main class="wrapper">
+    <!-- ========================= DROPDOWNS ========================= -->
+    <h2 style="margin:8px 2px 12px;color:var(--muted)">Dropdown Styles</h2>
+    <section class="grid" aria-label="Dropdowns gallery">
+      <!-- Helper: the same option set reused for each select -->
+      
+      <div class="cell"><div class="title">1) Solid Brand</div>
+        <div class="select-wrap">
+          <select class="select dd-1">
+            <option selected>Choose a plan</option>
+            <option>Starter</option><option>Pro</option><option>Business</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="cell"><div class="title">2) Gradient Border</div>
+        <div class="select-wrap"><select class="select dd-2"><option selected>Choose a plan</option><option>Starter</option><option>Pro</option><option>Business</option></select></div>
+      </div>
+
+      <div class="cell"><div class="title">3) Ghost Outline</div>
+        <div class="select-wrap"><select class="select dd-3"><option selected>Choose a plan</option><option>Starter</option><option>Pro</option><option>Business</option></select></div>
+      </div>
+
+      <div class="cell"><div class="title">4) Neon Glow</div>
+        <div class="select-wrap"><select class="select dd-4"><option selected>Choose a plan</option><option>Starter</option><option>Pro</option><option>Business</option></select></div>
+      </div>
+
+      <div class="cell"><div class="title">5) Glassmorphism</div>
+        <div class="select-wrap"><select class="select dd-5"><option selected>Choose a plan</option><option>Starter</option><option>Pro</option><option>Business</option></select></div>
+      </div>
+
+      <div class="cell"><div class="title">6) Pill</div>
+        <div class="select-wrap"><select class="select dd-6"><option selected>Choose a plan</option><option>Starter</option><option>Pro</option><option>Business</option></select></div>
+      </div>
+
+      <div class="cell"><div class="title">7) Notched Corners</div>
+        <div class="select-wrap"><select class="select dd-7"><option selected>Choose a plan</option><option>Starter</option><option>Pro</option><option>Business</option></select></div>
+      </div>
+
+      <div class="cell"><div class="title">8) Underline Only</div>
+        <div class="select-wrap"><select class="select dd-8"><option selected>Choose a plan</option><option>Starter</option><option>Pro</option><option>Business</option></select></div>
+      </div>
+
+      <div class="cell"><div class="title">9) Metallic Sheen</div>
+        <div class="select-wrap"><select class="select dd-9"><option selected>Choose a plan</option><option>Starter</option><option>Pro</option><option>Business</option></select></div>
+      </div>
+
+      <div class="cell"><div class="title">10) Rainbow Border</div>
+        <div class="select-wrap"><select class="select dd-10"><option selected>Choose a plan</option><option>Starter</option><option>Pro</option><option>Business</option></select></div>
+      </div>
+
+      <div class="cell"><div class="title">11) Striped Fill</div>
+        <div class="select-wrap"><select class="select dd-11"><option selected>Choose a plan</option><option>Starter</option><option>Pro</option><option>Business</option></select></div>
+      </div>
+
+      <div class="cell"><div class="title">12) Minimal Thin Border</div>
+        <div class="select-wrap"><select class="select dd-12"><option selected>Choose a plan</option><option>Starter</option><option>Pro</option><option>Business</option></select></div>
+      </div>
+
+      <div class="cell"><div class="title">13) Double Border</div>
+        <div class="select-wrap"><select class="select dd-13"><option selected>Choose a plan</option><option>Starter</option><option>Pro</option><option>Business</option></select></div>
+      </div>
+
+      <div class="cell"><div class="title">14) Soft Shadow</div>
+        <div class="select-wrap"><select class="select dd-14"><option selected>Choose a plan</option><option>Starter</option><option>Pro</option><option>Business</option></select></div>
+      </div>
+
+      <div class="cell"><div class="title">15) Brutalist Thick Outline</div>
+        <div class="select-wrap"><select class="select dd-15"><option selected>Choose a plan</option><option>Starter</option><option>Pro</option><option>Business</option></select></div>
+      </div>
+    </section>
+
+    <!-- ========================= LISTS ========================= -->
+    <h2 style="margin:22px 2px 12px;color:var(--muted)">List Styles</h2>
+    <section class="grid" aria-label="Lists gallery">
+
+      <div class="cell"><div class="title">16) Colored Bullets</div>
+        <ul class="list ls-16">
+          <li>Responsive layout</li>
+          <li>Accessible focus states</li>
+          <li>Strong color contrast</li>
+        </ul>
+      </div>
+
+      <div class="cell"><div class="title">17) Checklist (SVG)</div>
+        <ul class="list ls-17">
+          <li>Semantic HTML</li>
+          <li>Keyboard friendly</li>
+          <li>Copy‑paste ready</li>
+        </ul>
+      </div>
+
+      <div class="cell"><div class="title">18) Numbered Steps</div>
+        <ol class="list ls-18">
+          <li>Choose a base</li>
+          <li>Apply a variant</li>
+          <li>Test focus states</li>
+        </ol>
+      </div>
+
+      <div class="cell"><div class="title">19) Vertical Timeline</div>
+        <ul class="list ls-19">
+          <li>Sign up</li>
+          <li>Verify email</li>
+          <li>Start building</li>
+        </ul>
+      </div>
+
+      <div class="cell"><div class="title">20) Card Grid List</div>
+        <ul class="list ls-20">
+          <li>Buttons</li><li>Inputs</li><li>Dropdowns</li><li>Lists</li>
+        </ul>
+      </div>
+
+      <div class="cell"><div class="title">21) Zebra Stripes</div>
+        <ul class="list ls-21">
+          <li>First item</li>
+          <li>Second item</li>
+          <li>Third item</li>
+        </ul>
+      </div>
+
+      <div class="cell"><div class="title">22) Dashed Dividers</div>
+        <ul class="list ls-22">
+          <li>Design tokens</li>
+          <li>Component APIs</li>
+          <li>Usage examples</li>
+        </ul>
+      </div>
+
+      <div class="cell"><div class="title">23) Tags / Chips</div>
+        <ul class="list ls-23">
+          <li>UI</li><li>CSS</li><li>HTML</li><li>UX</li>
+        </ul>
+      </div>
+
+      <div class="cell"><div class="title">24) Pill Bullets</div>
+        <ul class="list ls-24">
+          <li>Install</li>
+          <li>Configure</li>
+          <li>Deploy</li>
+        </ul>
+      </div>
+
+      <div class="cell"><div class="title">25) Star Bullets (SVG)</div>
+        <ul class="list ls-25">
+          <li>Favorites</li>
+          <li>Pinned</li>
+          <li>Featured</li>
+        </ul>
+      </div>
+
+      <div class="cell"><div class="title">26) Ribbon Marker</div>
+        <ul class="list ls-26">
+          <li>Overview</li>
+          <li>Docs</li>
+          <li>Changelog</li>
+        </ul>
+      </div>
+
+      <div class="cell"><div class="title">27) Gradient ::marker</div>
+        <ol class="list ls-27">
+          <li>Plan</li>
+          <li>Design</li>
+          <li>Ship</li>
+        </ol>
+      </div>
+
+      <div class="cell"><div class="title">28) Neon Glow Bullets</div>
+        <ul class="list ls-28">
+          <li>Fast</li>
+          <li>Modern</li>
+          <li>Accessible</li>
+        </ul>
+      </div>
+
+      <div class="cell"><div class="title">29) Frosted Items</div>
+        <ul class="list ls-29">
+          <li>Blurred panels</li>
+          <li>Subtle borders</li>
+          <li>Soft lighting</li>
+        </ul>
+      </div>
+
+      <div class="cell"><div class="title">30) Bracketed Numerals</div>
+        <ul class="list ls-30">
+          <li>Alpha</li>
+          <li>Beta</li>
+          <li>Stable</li>
+        </ul>
+      </div>
+
+    </section>
+  </main>
+</body>
+</html>

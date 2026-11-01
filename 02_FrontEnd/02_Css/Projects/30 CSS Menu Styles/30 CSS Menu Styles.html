@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>30 CSS Menus – Effects Gallery (No JS)</title>
+<style>
+/* ──────────────────────────────────────────────────────────────────────────────
+│  ╔═════════════════════════════════════════════════════════════════════════╗
+│  ║                           CODE OVERVIEW                                 ║
+│  ╚═════════════════════════════════════════════════════════════════════════╝
+│  • Purpose → A single HTML/CSS page showcasing **30 distinct navigation     │
+│    menu styles**—no JavaScript. Each style uses `.mn-1` … `.mn-30`.         │
+│  • Markup → Each demo uses semantic <nav aria-label> with a <ul> of links.  │
+│    The links support keyboard nav and visible focus rings.                  │
+│  • Techniques → pills, tabs, underlines, gradients, neon, glass, bevel,     │
+│    dashed/double borders, notched corners, cards, timelines, vertical bars, │
+│    chip/tags, and more—using only CSS.                                      │
+│  • A11y → :focus-visible rings, sufficient color contrast, aria-current on  │
+│    active links.                                                            │
+└──────────────────────────────────────────────────────────────────────────────*/
+
+:root{
+  --bg:#0b1220; --panel:#0f172a; --ink:#e5e7eb; --muted:#9aa4b2;
+  --brand1:#22d3ee; --brand2:#a78bfa; --bd:rgba(255,255,255,.16);
+  --ring:0 0 0 3px rgba(34,211,238,.45); --radius:12px;
+}
+@media (prefers-color-scheme: light){
+  :root{ --bg:#f5f7fb; --panel:#ffffff; --ink:#0f172a; --muted:#4b5563; --bd:rgba(0,0,0,.16); --ring:0 0 0 3px rgba(14,165,233,.35) }
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; font-family:system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif; color:var(--ink);
+  background: radial-gradient(1200px 700px at 10% -10%, rgba(34,211,238,.10), transparent 60%),
+              radial-gradient(1200px 700px at 100% 0%, rgba(167,139,250,.08), transparent 60%),
+              var(--bg);
+}
+.header{max-width:1150px;margin:36px auto 8px;padding:0 16px}
+.header h1{margin:0 0 6px;font-weight:800}
+.header p{margin:0;color:var(--muted)}
+.wrapper{max-width:1150px;margin:16px auto 64px;padding:16px;background:color-mix(in oklab,var(--panel) 92%,transparent);border:1px solid var(--bd);border-radius:18px;box-shadow:0 24px 70px rgba(0,0,0,.28)}
+
+/* ───────── Gallery grid ───────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.cell{display:flex;flex-direction:column;gap:12px;padding:16px;border:1px dashed var(--bd);border-radius:14px;background:color-mix(in oklab,var(--panel) 94%,transparent)}
+.cell .title{font-weight:700;color:var(--muted)}
+
+.badge{font:600 .8rem/1 system-ui; color:#0b1220; background:linear-gradient(135deg,var(--brand1),var(--brand2)); padding:2px 8px; border-radius:999px}
+
+/* ───────── Base menu (structure shared by all) ───────── */
+.menu{ /* container */
+  display:block; width:100%;
+}
+.menu ul{ /* list wrapper */
+  margin:0; padding:0; list-style:none; display:flex; flex-wrap:wrap; gap:10px; align-items:center
+}
+.menu a{ /* individual link */
+  --bg:#0f1a30; --ink:#e8efff; --bdc:var(--bd);
+  display:inline-flex; align-items:center; justify-content:center; gap:.6ch;
+  height:40px; padding:0 14px; border-radius:10px; border:1px solid var(--bdc);
+  background:var(--bg); color:var(--ink); font-weight:800; text-decoration:none;
+  transition: color .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease, transform .12s ease, filter .18s ease;
+}
+.menu a:focus-visible{ outline:none; box-shadow: var(--ring) }
+.menu .active{ background:linear-gradient(135deg,var(--brand1),var(--brand2)); color:#0b1220; border-color:transparent }
+
+/* Some helper icons (SVG data-URIs) */
+:root{
+  --home:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7"/><path d="M9 22V12h6v10"/></svg>');
+  --grid:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>');
+  --tag:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41L12 22 2 12 10.59 3.41a2 2 0 0 1 2.82 0l7.18 7.18a2 2 0 0 1 0 2.82z"/><circle cx="7.5" cy="10.5" r="1.5"/></svg>');
+  --book:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M4 4v16"/><path d="M20 22V6a2 2 0 0 0-2-2H6.5A2.5 2.5 0 0 0 4 6.5"/></svg>');
+  --mail:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg>');
+}
+.icon{ /* small utility to inject icon as bg */
+  padding-left:26px; position:relative;
+}
+.icon::before{ content:""; position:absolute; left:8px; top:50%; transform:translateY(-50%);
+  width:16px; height:16px; background-repeat:no-repeat; background-size:16px 16px; opacity:.9 }
+
+/* ───────────────────────────────── 30 Variants (mn-1 … mn-30) ───────────────────────────────── */
+
+/* 1) Solid pill gradient tabs */
+.mn-1 a{ border:none; border-radius:999px; background:#0f1a30 }
+.mn-1 a.active{ background:linear-gradient(135deg,var(--brand1),var(--brand2)); color:#0b1220 }
+
+/* 2) Outline pills */
+.mn-2 a{ background:transparent; color:var(--ink); border:2px solid color-mix(in oklab,var(--ink) 35%, transparent) }
+.mn-2 a:hover{ border-color:color-mix(in oklab,var(--ink) 65%, transparent) }
+.mn-2 a.active{ background:var(--ink); color:#0b1220 }
+
+/* 3) Underline slide on hover/active */
+.mn-3 a{ background:transparent; border:none; border-radius:0; position:relative }
+.mn-3 a::after{ content:""; position:absolute; left:10px; right:10px; bottom:-6px; height:3px; background:linear-gradient(90deg,transparent,transparent); transition:.2s }
+.mn-3 a:hover::after, .mn-3 a.active::after{ background:linear-gradient(90deg,var(--brand1),var(--brand2)) }
+
+/* 4) Neon glow */
+.mn-4 a{ border-color:#22d3ee; box-shadow: inset 0 0 12px rgba(34,211,238,.25) }
+.mn-4 a.active{ background:#22d3ee; color:#0b1220 }
+
+/* 5) Glassmorphism */
+.mn-5 a{ background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.25); backdrop-filter: blur(8px) saturate(120%) }
+.mn-5 a:hover{ background:rgba(255,255,255,.12) }
+
+/* 6) Soft shadow lift */
+.mn-6 a{ box-shadow:0 10px 22px rgba(0,0,0,.28) }
+.mn-6 a:hover{ transform: translateY(-1px) }
+
+/* 7) Square brutalist */
+.mn-7 a{ border-radius:0; border:3px solid #e5e7eb; background:#0b1220; color:#e5e7eb }
+.mn-7 a.active{ background:#e5e7eb; color:#0b1220 }
+
+/* 8) Gradient border (double bg) */
+.mn-8 a{ border:2px solid transparent; background:
+  linear-gradient(#0f1a30,#0f1a30) padding-box,
+  linear-gradient(135deg,var(--brand1),var(--brand2)) border-box }
+
+/* 9) Dashed outline */
+.mn-9 a{ background:transparent; border-style:dashed; border-color:#64748b }
+.mn-9 a.active{ background:#64748b; color:#0b1220; border-color:transparent }
+
+/* 10) Double border */
+.mn-10 a{ border:3px double #3b4b67; background:transparent }
+.mn-10 a.active{ background:linear-gradient(135deg,#13203b,#0a172b) }
+
+/* 11) Metallic sheen */
+.mn-11 a{ background:linear-gradient(160deg,#d1d5db 0%,#ffffff 30%,#bfc5cc 50%,#ffffff 70%,#a8b0b9 100%); color:#1f2937; border-color:#94a3b8 }
+.mn-11 a.active{ background:linear-gradient(135deg,var(--brand1),var(--brand2)); color:#0b1220 }
+
+/* 12) Rainbow ring */
+.mn-12 a{ border:2px solid transparent; background:
+  linear-gradient(#0f1a30,#0f1a30) padding-box,
+  linear-gradient(90deg,#ef4444,#f59e0b,#22c55e,#3b82f6,#a855f7) border-box }
+.mn-12 a.active{ background:linear-gradient(90deg,#ef4444,#f59e0b,#22c55e,#3b82f6,#a855f7); color:#0b1220 }
+
+/* 13) Striped fill */
+.mn-13 a{ background: repeating-linear-gradient(45deg,#0f1a30 0 12px,#0b1324 12px 24px) }
+
+/* 14) Chip tags */
+.mn-14 a{ min-height:32px; height:32px; border-radius:999px; font-weight:900; text-transform:uppercase; letter-spacing:.3px }
+
+/* 15) Notched corners */
+.mn-15 a{ clip-path: polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px) }
+
+/* 16) Top border tabs */
+.mn-16 a{ background:transparent; border-radius:0; border:none; position:relative }
+.mn-16 a::before{ content:""; position:absolute; left:0; right:0; top:-8px; height:3px; background:transparent; transition:.2s }
+.mn-16 a:hover::before, .mn-16 a.active::before{ background:linear-gradient(90deg,var(--brand1),var(--brand2)) }
+
+/* 17) Big pill CTA */
+.mn-17 a{ height:46px; border-radius:999px; box-shadow:0 14px 26px rgba(0,0,0,.35) }
+
+/* 18) Inset bevel */
+.mn-18 a{ box-shadow: inset 1px 1px 0 rgba(255,255,255,.08), inset -1px -1px 0 rgba(0,0,0,.5) }
+
+/* 19) Edge glow */
+.mn-19 a{ box-shadow:0 0 0 0 rgba(34,211,238,0) }
+.mn-19 a.active{ box-shadow:0 0 18px rgba(34,211,238,.45) }
+
+/* 20) Minimal text links */
+.mn-20 a{ background:transparent; border:none; color:#a5b4fc; text-decoration:underline; text-underline-offset:4px; font-weight:800 }
+.mn-20 a:hover{ filter:brightness(1.2) }
+.mn-20 a.active{ color:#fca5a5 }
+
+/* 21) Card tabs (joined) */
+.mn-21 ul{ gap:0 }
+.mn-21 li:first-child a{ border-top-left-radius:12px; border-bottom-left-radius:12px }
+.mn-21 li:last-child a{ border-top-right-radius:12px; border-bottom-right-radius:12px }
+.mn-21 a{ border-left-width:0; border-right-width:0 }
+.mn-21 li:first-child a{ border-left-width:1px }
+.mn-21 li:last-child a{ border-right-width:1px }
+
+/* 22) Compact square */
+.mn-22 a{ height:34px; border-radius:6px }
+
+/* 23) Outline → fill */
+.mn-23 a{ background:transparent; border:2px solid #22d3ee }
+.mn-23 a:hover{ background:rgba(34,211,238,.15) }
+.mn-23 a.active{ background:#22d3ee; color:#0b1220 }
+
+/* 24) Frosted strong */
+.mn-24 a{ background:rgba(255,255,255,.14); border-color:rgba(255,255,255,.35); backdrop-filter: blur(12px) saturate(130%) }
+.mn-24 a.active{ background:rgba(255,255,255,.35); color:#0b1220 }
+
+/* 25) Icon menu (left icons) */
+.mn-25 a{ padding-left:34px; position:relative }
+.mn-25 a::before{ content:""; position:absolute; left:10px; top:50%; transform:translateY(-50%); width:16px; height:16px; background-repeat:no-repeat; background-size:16px 16px; opacity:.9 }
+.mn-25 a[data-i="home"]::before{ background-image:var(--home) }
+.mn-25 a[data-i="prod"]::before{ background-image:var(--grid) }
+.mn-25 a[data-i="price"]::before{ background-image:var(--tag) }
+.mn-25 a[data-i="blog"]::before{ background-image:var(--book) }
+.mn-25 a[data-i="contact"]::before{ background-image:var(--mail) }
+
+/* 26) Vertical sidebar (justified) */
+.mn-26 ul{ flex-direction:column; align-items:stretch }
+.mn-26 a{ justify-content:flex-start }
+
+/* 27) Divider nav */
+.mn-27 a{ border:none; background:transparent; border-radius:0 }
+.mn-27 ul{ gap:0 }
+.mn-27 li{ position:relative }
+.mn-27 li+li::before{ content:""; position:absolute; left:-1px; top:8px; bottom:8px; width:1px; background: #334155 }
+
+/* 28) Underline grow (scaleX) */
+.mn-28 a{ background:transparent; border:none; position:relative }
+.mn-28 a::after{ content:""; position:absolute; left:10px; right:10px; bottom:-6px; height:2px; background: currentColor; transform: scaleX(0); transform-origin:left; transition: transform .2s ease }
+.mn-28 a:hover::after, .mn-28 a.active::after{ transform: scaleX(1) }
+
+/* 29) Card buttons (shadow lift + gap) */
+.mn-29 a{ box-shadow:0 8px 20px rgba(0,0,0,.25) }
+.mn-29 a:hover{ transform: translateY(-2px) }
+
+/* 30) Monochrome thick outline */
+.mn-30 a{ background:#0b1220; border:3px solid #e5e7eb; color:#e5e7eb }
+.mn-30 a.active{ background:#e5e7eb; color:#0b1220 }
+
+</style>
+</head>
+<body>
+  <header class="header">
+    <h1>30 CSS Menu Styles – No JavaScript</h1>
+    <p>Each example uses a unique class <span class="badge">.mn‑N</span> (N = 1…30). All menus are semantic (<code>nav</code> + <code>ul</code>) with clear focus rings.</p>
+  </header>
+
+  <main class="wrapper">
+    <section class="grid" aria-label="Menus gallery">
+
+      <!-- Helper: demo items used across all menus -->
+      <!-- Home · Products · Pricing · Blog · Contact (second item is active) -->
+
+      <!-- 1 -->
+      <div class="cell">
+        <div class="title">1) Solid Pill Gradient</div>
+        <nav class="menu mn-1" aria-label="Menu 1"><ul>
+          <li><a href="#">Home</a></li>
+          <li><a class="active" href="#" aria-current="page">Products</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+      <!-- 2 -->
+      <div class="cell"><div class="title">2) Outline Pills</div>
+        <nav class="menu mn-2" aria-label="Menu 2"><ul>
+          <li><a href="#">Home</a></li><li><a class="active" href="#" aria-current="page">Products</a></li><li><a href="#">Pricing</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+      <!-- 3 -->
+      <div class="cell"><div class="title">3) Underline Slide</div>
+        <nav class="menu mn-3" aria-label="Menu 3"><ul>
+          <li><a href="#">Home</a></li><li><a class="active" href="#" aria-current="page">Products</a></li><li><a href="#">Pricing</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+      <!-- 4 -->
+      <div class="cell"><div class="title">4) Neon Glow</div>
+        <nav class="menu mn-4" aria-label="Menu 4"><ul>
+          <li><a href="#">Home</a></li><li><a class="active" href="#" aria-current="page">Products</a></li><li><a href="#">Pricing</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+      <!-- 5 -->
+      <div class="cell"><div class="title">5) Glassmorphism</div>
+        <nav class="menu mn-5" aria-label="Menu 5"><ul>
+          <li><a href="#">Home</a></li><li><a class="active" href="#" aria-current="page">Products</a></li><li><a href="#">Pricing</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+      <!-- 6 -->
+      <div class="cell"><div class="title">6) Soft Shadow Lift</div>
+        <nav class="menu mn-6" aria-label="Menu 6"><ul>
+          <li><a href="#">Home</a></li><li><a class="active" href="#" aria-current="page">Products</a></li><li><a href="#">Pricing</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+      <!-- 7 -->
+      <div class="cell"><div class="title">7) Square Brutalist</div>
+        <nav class="menu mn-7" aria-label="Menu 7"><ul>
+          <li><a href="#">Home</a></li><li><a class="active" href="#" aria-current="page">Products</a></li><li><a href="#">Pricing</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+      <!-- 8 -->
+      <div class="cell"><div class="title">8) Gradient Border</div>
+        <nav class="menu mn-8" aria-label="Menu 8"><ul>
+          <li><a href="#">Home</a></li><li><a class="active" href="#" aria-current="page">Products</a></li><li><a href="#">Pricing</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+      <!-- 9 -->
+      <div class="cell"><div class="title">9) Dashed Outline</div>
+        <nav class="menu mn-9" aria-label="Menu 9"><ul>
+          <li><a href="#">Home</a></li><li><a class="active" href="#" aria-current="page">Products</a></li><li><a href="#">Pricing</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+      <!-- 10 -->
+      <div class="cell"><div class="title">10) Double Border</div>
+        <nav class="menu mn-10" aria-label="Menu 10"><ul>
+          <li><a href="#">Home</a></li><li><a class="active" href="#" aria-current="page">Products</a></li><li><a href="#">Pricing</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+      <!-- 11 -->
+      <div class="cell"><div class="title">11) Metallic Sheen</div>
+        <nav class="menu mn-11" aria-label="Menu 11"><ul>
+          <li><a href="#">Home</a></li><li><a class="active" href="#" aria-current="page">Products</a></li><li><a href="#">Pricing</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+      <!-- 12 -->
+      <div class="cell"><div class="title">12) Rainbow Ring</div>
+        <nav class="menu mn-12" aria-label="Menu 12"><ul>
+          <li><a href="#">Home</a></li><li><a class="active" href="#" aria-current="page">Products</a></li><li><a href="#">Pricing</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+      <!-- 13 -->
+      <div class="cell"><div class="title">13) Striped Fill</div>
+        <nav class="menu mn-13" aria-label="Menu 13"><ul>
+          <li><a href="#">Home</a></li><li><a class="active" href="#" aria-current="page">Products</a></li><li><a href="#">Pricing</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+      <!-- 14 -->
+      <div class="cell"><div class="title">14) Chip Tags</div>
+        <nav class="menu mn-14" aria-label="Menu 14"><ul>
+          <li><a href="#">Home</a></li><li><a class="active" href="#" aria-current="page">Products</a></li><li><a href="#">Pricing</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+      <!-- 15 -->
+      <div class="cell"><div class="title">15) Notched Corners</div>
+        <nav class="menu mn-15" aria-label="Menu 15"><ul>
+          <li><a href="#">Home</a></li><li><a class="active" href="#" aria-current="page">Products</a></li><li><a href="#">Pricing</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+      <!-- 16 -->
+      <div class="cell"><div class="title">16) Top Border Tabs</div>
+        <nav class="menu mn-16" aria-label="Menu 16"><ul>
+          <li><a href="#">Home</a></li><li><a class="active" href="#" aria-current="page">Products</a></li><li><a href="#">Pricing</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+      <!-- 17 -->
+      <div class="cell"><div class="title">17) Big Pill CTA</div>
+        <nav class="menu mn-17" aria-label="Menu 17"><ul>
+          <li><a href="#">Home</a></li><li><a class="active" href="#" aria-current="page">Products</a></li><li><a href="#">Pricing</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+      <!-- 18 -->
+      <div class="cell"><div class="title">18) Inset Bevel</div>
+        <nav class="menu mn-18" aria-label="Menu 18"><ul>
+          <li><a href="#">Home</a></li><li><a class="active" href="#" aria-current="page">Products</a></li><li><a href="#">Pricing</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+      <!-- 19 -->
+      <div class="cell"><div class="title">19) Edge Glow</div>
+        <nav class="menu mn-19" aria-label="Menu 19"><ul>
+          <li><a href="#">Home</a></li><li><a class="active" href="#" aria-current="page">Products</a></li><li><a href="#">Pricing</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+      <!-- 20 -->
+      <div class="cell"><div class="title">20) Minimal Text Links</div>
+        <nav class="menu mn-20" aria-label="Menu 20"><ul>
+          <li><a href="#">Home</a></li><li><a class="active" href="#" aria-current="page">Products</a></li><li><a href="#">Pricing</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+      <!-- 21 -->
+      <div class="cell"><div class="title">21) Card Tabs (Joined)</div>
+        <nav class="menu mn-21" aria-label="Menu 21"><ul>
+          <li><a href="#">Home</a></li><li><a class="active" href="#" aria-current="page">Products</a></li><li><a href="#">Pricing</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+      <!-- 22 -->
+      <div class="cell"><div class="title">22) Compact Square</div>
+        <nav class="menu mn-22" aria-label="Menu 22"><ul>
+          <li><a href="#">Home</a></li><li><a class="active" href="#" aria-current="page">Products</a></li><li><a href="#">Pricing</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+      <!-- 23 -->
+      <div class="cell"><div class="title">23) Outline → Fill</div>
+        <nav class="menu mn-23" aria-label="Menu 23"><ul>
+          <li><a href="#">Home</a></li><li><a class="active" href="#" aria-current="page">Products</a></li><li><a href="#">Pricing</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+      <!-- 24 -->
+      <div class="cell"><div class="title">24) Frosted Strong</div>
+        <nav class="menu mn-24" aria-label="Menu 24"><ul>
+          <li><a href="#">Home</a></li><li><a class="active" href="#" aria-current="page">Products</a></li><li><a href="#">Pricing</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+      <!-- 25 -->
+      <div class="cell"><div class="title">25) Icon Menu</div>
+        <nav class="menu mn-25" aria-label="Menu 25"><ul>
+          <li><a class="icon" data-i="home" href="#">Home</a></li>
+          <li><a class="icon active" data-i="prod" href="#" aria-current="page">Products</a></li>
+          <li><a class="icon" data-i="price" href="#">Pricing</a></li>
+          <li><a class="icon" data-i="blog" href="#">Blog</a></li>
+          <li><a class="icon" data-i="contact" href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+      <!-- 26 -->
+      <div class="cell"><div class="title">26) Vertical Sidebar</div>
+        <nav class="menu mn-26" aria-label="Menu 26"><ul>
+          <li><a href="#">Home</a></li>
+          <li><a class="active" href="#" aria-current="page">Products</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+      <!-- 27 -->
+      <div class="cell"><div class="title">27) Divider Nav</div>
+        <nav class="menu mn-27" aria-label="Menu 27"><ul>
+          <li><a href="#">Home</a></li><li><a class="active" href="#" aria-current="page">Products</a></li><li><a href="#">Pricing</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+      <!-- 28 -->
+      <div class="cell"><div class="title">28) Underline Grow</div>
+        <nav class="menu mn-28" aria-label="Menu 28"><ul>
+          <li><a href="#">Home</a></li><li><a class="active" href="#" aria-current="page">Products</a></li><li><a href="#">Pricing</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+      <!-- 29 -->
+      <div class="cell"><div class="title">29) Card Buttons</div>
+        <nav class="menu mn-29" aria-label="Menu 29"><ul>
+          <li><a href="#">Home</a></li><li><a class="active" href="#" aria-current="page">Products</a></li><li><a href="#">Pricing</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+      <!-- 30 -->
+      <div class="cell"><div class="title">30) Monochrome Thick Outline</div>
+        <nav class="menu mn-30" aria-label="Menu 30"><ul>
+          <li><a href="#">Home</a></li><li><a class="active" href="#" aria-current="page">Products</a></li><li><a href="#">Pricing</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li>
+        </ul></nav>
+      </div>
+
+    </section>
+  </main>
+</body>
+</html>

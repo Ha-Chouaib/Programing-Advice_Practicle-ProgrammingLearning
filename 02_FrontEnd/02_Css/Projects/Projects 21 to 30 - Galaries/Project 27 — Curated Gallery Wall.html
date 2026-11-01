@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project 27 – Curated Gallery Wall (22 photos, No JS)</title>
+
+  <style>
+    /* ─────────────────────────────────────────────────────────
+       PROJECT 27: Curated Gallery Wall — Professional Minimal
+       ---------------------------------------------------------
+       Goals:
+       • Museum-like curation: generous whitespace, fine rules,
+         precise typography, restrained color accents.
+       • Pure CSS, no JavaScript. Keyboard accessible.
+       • Overlay caption is HIDDEN by default; only appears on
+         hover or keyboard focus.
+
+       Techniques:
+       • Fluid CSS Grid using auto-fit/minmax columns
+       • Fixed aspect ratio for consistent tiles (4:3, editorial)
+       • Object-fit cover to preserve crop quality
+       • Subtle motion: scale + shadow; reduced motion support
+       • :focus-visible outlines for accessibility
+       • Light/Dark themes with CSS variables
+       • Print pass for clean hard copies
+    ───────────────────────────────────────────────────────── */
+
+    /* ---------- Theming ---------- */
+    :root{
+      --bg: #0e1114;            /* deep grey-blue */
+      --ink: #e7eaee;           /* high-contrast type on dark */
+      --muted: #9aa3b2;         /* secondary text */
+      --accent: #60a5fa;        /* refined blue accent */
+      --accent-ink: #0b1020;
+
+      --frame: #1b2330;         /* tile border/frame */
+      --tile: #0f141a;          /* tile background */
+      --rule: #202a38;          /* hairline rules */
+
+      --maxw: 1260px;           /* content width */
+      --radius: 14px;           /* tile corner radius */
+      --gap: 18px;              /* grid gap */
+      --shadow-rest: 0 10px 24px rgba(0,0,0,.28);
+      --shadow-hover: 0 18px 42px rgba(0,0,0,.45);
+
+      --title-size: clamp(1.6rem, 2.6vw, 2.2rem);
+      --lead-size: clamp(1rem, 1.2vw, 1.06rem);
+    }
+
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg: #f7f8fa;
+        --ink: #111827;
+        --muted: #6b7280;
+        --accent: #2563eb;
+        --accent-ink: #ffffff;
+
+        --frame: #e5e7eb;
+        --tile: #ffffff;
+        --rule: #e5e7eb;
+
+        --shadow-rest: 0 10px 24px rgba(0,0,0,.08);
+        --shadow-hover: 0 18px 42px rgba(0,0,0,.14);
+      }
+    }
+
+    /* ---------- Base ---------- */
+    html, body { margin:0; padding:0; }
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans";
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ---------- Header & Navigation ---------- */
+    header{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 2rem 1rem 1.25rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .bar{
+      display:flex; align-items:center; justify-content:space-between; gap:1rem;
+      flex-wrap: wrap;
+    }
+    .brand{
+      display:flex; align-items:center; gap:.8rem;
+    }
+    .mark{
+      /* small square “logomark” with subtle gradient */
+      width: 28px; height: 28px; border-radius: 6px;
+      background: linear-gradient(135deg, var(--accent) 0%, color-mix(in oklab, var(--accent) 35%, transparent) 100%);
+      box-shadow: 0 4px 12px rgba(0,0,0,.25), 0 0 0 1px rgba(255,255,255,.06) inset;
+      flex: none;
+    }
+    h1{
+      margin:0; font-size: var(--title-size); letter-spacing:.2px;
+    }
+    .lead{
+      margin:.45rem 0 0; color: var(--muted); font-size: var(--lead-size); max-width: 68ch;
+    }
+
+    nav ul{
+      list-style:none; margin:0; padding:0; display:flex; gap:1rem; flex-wrap:wrap;
+    }
+    nav a{
+      display:inline-block; text-decoration:none; color: var(--ink);
+      padding: .45rem .6rem;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      position: relative;
+      transition: border-color .2s ease, color .2s ease, transform .2s ease;
+    }
+    nav a::after{
+      /* elegant underline on hover/focus */
+      content:"";
+      position:absolute; left:.6rem; right:.6rem; bottom:.35rem;
+      height:2px; border-radius:2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform .25s ease;
+    }
+    nav a:hover{ color: var(--accent); transform: translateY(-1px); }
+    nav a:hover::after, nav a:focus-visible::after{ transform: scaleX(1); }
+    nav a:focus-visible{
+      outline: 3px solid color-mix(in oklab, var(--accent) 45%, transparent);
+      outline-offset: 3px;
+    }
+
+    /* ---------- Grid ---------- */
+    .gallery{
+      max-width: var(--maxw);
+      margin: 1.4rem auto 2.4rem;
+      padding: 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: var(--gap);
+    }
+
+    /* ---------- Tile ---------- */
+    figure.tile{
+      margin:0;
+      background: var(--tile);
+      border: 1px solid var(--frame);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-rest);
+      overflow: clip; /* blocks outlines from bleeding */
+      position: relative;
+      transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+    }
+    figure.tile:hover{ transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+    figure.tile:has(a:focus-visible){
+      /* elevate when keyboard focusing the inner link */
+      transform: translateY(-6px); box-shadow: var(--shadow-hover);
+      border-color: color-mix(in oklab, var(--accent) 40%, var(--frame));
+    }
+
+    /* Image: keep consistent shape, crop gracefully */
+    .thumb{
+      width: 100%;
+      aspect-ratio: 4 / 3;     /* editorial 4:3 for a polished grid */
+      object-fit: cover;
+      display:block;
+      transform: scale(1);
+      transition: transform .28s ease, filter .28s ease;
+      filter: saturate(1.02) contrast(1.02);
+    }
+    .tile:hover .thumb,
+    .tile:has(a:focus-visible) .thumb{
+      transform: scale(1.015);
+      filter: saturate(1.06) contrast(1.06);
+    }
+
+    /* ---------- Caption Overlay (hidden by default) ---------- */
+    figcaption.caption{
+      /* gradient veil + caption block pinned to bottom */
+      position: absolute; inset: auto 0 0 0;
+      display:flex; align-items: flex-end; justify-content: space-between;
+      gap:.75rem;
+      padding: .85rem .95rem;
+      color: #fff;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.60) 100%);
+
+      /* Hidden until hover/focus */
+      opacity: 0; transform: translateY(10px);
+      transition: opacity .28s ease, transform .28s ease;
+    }
+    .tile:hover .caption,
+    .tile:has(a:focus-visible) .caption{ opacity:1; transform: translateY(0); }
+
+    .meta{
+      display:flex; align-items:center; gap:.6rem; flex-wrap: wrap;
+      font-size: .95rem;
+    }
+    .chip{
+      display:inline-block; padding:.15rem .5rem; border-radius: 999px;
+      background: color-mix(in oklab, var(--accent) 75%, black);
+      box-shadow: 0 0 0 2px rgba(255,255,255,.15) inset;
+      font-weight: 600; letter-spacing:.02em; font-size:.82rem;
+    }
+    .code{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      letter-spacing:.02em;
+      opacity:.95;
+    }
+
+    /* ---------- Links for accessibility ---------- */
+    .tile a{
+      position:absolute; inset:0;
+      /* Make the entire tile focusable without visible link UI.
+         The figcaption becomes the visible affordance on hover/focus. */
+    }
+    .tile a:focus-visible{
+      outline: 3px solid color-mix(in oklab, var(--accent) 55%, transparent);
+      outline-offset: -3px;   /* keep ring inside frame */
+      border-radius: 6px;
+    }
+
+    /* ---------- Motion preference ---------- */
+    @media (prefers-reduced-motion: reduce){
+      *{ transition: none !important; }
+    }
+
+    /* ---------- Print ---------- */
+    @media print{
+      @page{ margin: 14mm; }
+      *{ -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      body{ background: #fff; color:#000; }
+      header{ border:0; }
+      nav{ display:none !important; }
+      figure.tile{ box-shadow: none !important; transform:none !important; }
+      figcaption.caption{
+        opacity:1 !important; transform:none !important;
+        background: rgba(0,0,0,.06) !important; color:#000 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ── Header & refined navigation (no JS) ───────────── -->
+  <header>
+    <div class="bar">
+      <div class="brand">
+        <span class="mark" aria-hidden="true"></span>
+        <div>
+          <h1>Project 27 — Curated Gallery Wall</h1>
+          <p class="lead">A restrained, editorial grid for showcasing 22 images. Hover or focus reveals museum‑style captions; keyboard users get equal polish.</p>
+        </div>
+      </div>
+
+      <!-- Menu suggestion: simple, typographic primary nav with animated underline -->
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#">Overview</a></li>
+          <li><a href="#">Series</a></li>
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Exhibitions</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ── Gallery Grid: ALL 22 Photos (A1 → A22) ────────── -->
+  <main class="gallery" aria-label="Curated image grid">
+    <!-- Each tile: figure > img + overlay caption; link covers tile for focusability -->
+
+    <!-- 1 -->
+    <figure class="tile">
+      <img class="thumb" src="images/A1.jpg" alt="A1 — coastal path at dawn">
+      <a href="#" aria-label="Open A1"></a>
+      <figcaption class="caption">
+        <span class="meta"><span class="chip">Feature</span><span class="code">A1</span> · Coastal Path</span>
+        <span class="meta" aria-hidden="true">4:3</span>
+      </figcaption>
+    </figure>
+
+    <!-- 2 -->
+    <figure class="tile">
+      <img class="thumb" src="images/A2.jpg" alt="A2 — broad city avenue">
+      <a href="#" aria-label="Open A2"></a>
+      <figcaption class="caption">
+        <span class="meta"><span class="chip">City</span><span class="code">A2</span> · Avenue</span>
+        <span class="meta" aria-hidden="true">4:3</span>
+      </figcaption>
+    </figure>
+
+    <!-- 3 -->
+    <figure class="tile">
+      <img class="thumb" src="images/A3.jpg" alt="A3 — tower lines and sky">
+      <a href="#" aria-label="Open A3"></a>
+      <figcaption class="caption">
+        <span class="meta"><span class="chip">Lines</span><span class="code">A3</span> · Tower</span>
+        <span class="meta" aria-hidden="true">4:3</span>
+      </figcaption>
+    </figure>
+
+    <!-- 4 -->
+    <figure class="tile">
+      <img class="thumb" src="images/A4.jpg" alt="A4 — riverside bend">
+      <a href="#" aria-label="Open A4"></a>
+      <figcaption class="caption">
+        <span class="meta"><span class="chip">Landscape</span><span class="code">A4</span> · Riverside</span>
+        <span class="meta" aria-hidden="true">4:3</span>
+      </figcaption>
+    </figure>
+
+    <!-- 5 -->
+    <figure class="tile">
+      <img class="thumb" src="images/A5.jpg" alt="A5 — brick wall with ivy">
+      <a href="#" aria-label="Open A5"></a>
+      <figcaption class="caption">
+        <span class="meta"><span class="chip">Texture</span><span class="code">A5</span> · Brick & Ivy</span>
+        <span class="meta" aria-hidden="true">4:3</span>
+      </figcaption>
+    </figure>
+
+    <!-- 6 -->
+    <figure class="tile">
+      <img class="thumb" src="images/A6.jpg" alt="A6 — morning market scene">
+      <a href="#" aria-label="Open A6"></a>
+      <figcaption class="caption">
+        <span class="meta"><span class="chip">People</span><span class="code">A6</span> · Market</span>
+        <span class="meta" aria-hidden="true">4:3</span>
+      </figcaption>
+    </figure>
+
+    <!-- 7 -->
+    <figure class="tile">
+      <img class="thumb" src="images/A7.jpg" alt="A7 — footpath with sunrise">
+      <a href="#" aria-label="Open A7"></a>
+      <figcaption class="caption">
+        <span class="meta"><span class="chip">Morning</span><span class="code">A7</span> · First Light</span>
+        <span class="meta" aria-hidden="true">4:3</span>
+      </figcaption>
+    </figure>
+
+    <!-- 8 -->
+    <figure class="tile">
+      <img class="thumb" src="images/A8.jpg" alt="A8 — sea edge and rocks">
+      <a href="#" aria-label="Open A8"></a>
+      <figcaption class="caption">
+        <span class="meta"><span class="chip">Coast</span><span class="code">A8</span> · Sea’s Edge</span>
+        <span class="meta" aria-hidden="true">4:3</span>
+      </figcaption>
+    </figure>
+
+    <!-- 9 -->
+    <figure class="tile">
+      <img class="thumb" src="images/A9.jpg" alt="A9 — geometric city grid">
+      <a href="#" aria-label="Open A9"></a>
+      <figcaption class="caption">
+        <span class="meta"><span class="chip">Geometry</span><span class="code">A9</span> · City Grid</span>
+        <span class="meta" aria-hidden="true">4:3</span>
+      </figcaption>
+    </figure>
+
+    <!-- 10 -->
+    <figure class="tile">
+      <img class="thumb" src="images/A10.jpg" alt="A10 — rusted metal with light">
+      <a href="#" aria-label="Open A10"></a>
+      <figcaption class="caption">
+        <span class="meta"><span class="chip">Detail</span><span class="code">A10</span> · Rust & Light</span>
+        <span class="meta" aria-hidden="true">4:3</span>
+      </figcaption>
+    </figure>
+
+    <!-- 11 -->
+    <figure class="tile">
+      <img class="thumb" src="images/A11.jpg" alt="A11 — quiet window">
+      <a href="#" aria-label="Open A11"></a>
+      <figcaption class="caption">
+        <span class="meta"><span class="chip">Interior</span><span class="code">A11</span> · Quiet Window</span>
+        <span class="meta" aria-hidden="true">4:3</span>
+      </figcaption>
+    </figure>
+
+    <!-- 12 -->
+    <figure class="tile">
+      <img class="thumb" src="images/A12.jpg" alt="A12 — green pause in a park">
+      <a href="#" aria-label="Open A12"></a>
+      <figcaption class="caption">
+        <span class="meta"><span class="chip">Park</span><span class="code">A12</span> · Green Pause</span>
+        <span class="meta" aria-hidden="true">4:3</span>
+      </figcaption>
+    </figure>
+
+    <!-- 13 -->
+    <figure class="tile">
+      <img class="thumb" src="images/A13.jpg" alt="A13 — overpass arc">
+      <a href="#" aria-label="Open A13"></a>
+      <figcaption class="caption">
+        <span class="meta"><span class="chip">Structure</span><span class="code">A13</span> · Overpass Arc</span>
+        <span class="meta" aria-hidden="true">4:3</span>
+      </figcaption>
+    </figure>
+
+    <!-- 14 -->
+    <figure class="tile">
+      <img class="thumb" src="images/A14.jpg" alt="A14 — wildflowers in field">
+      <a href="#" aria-label="Open A14"></a>
+      <figcaption class="caption">
+        <span class="meta"><span class="chip">Nature</span><span class="code">A14</span> · Wildflowers</span>
+        <span class="meta" aria-hidden="true">4:3</span>
+      </figcaption>
+    </figure>
+
+    <!-- 15 -->
+    <figure class="tile">
+      <img class="thumb" src="images/A15.jpg" alt="A15 — café corner with chairs">
+      <a href="#" aria-label="Open A15"></a>
+      <figcaption class="caption">
+        <span class="meta"><span class="chip">Street</span><span class="code">A15</span> · Café Corner</span>
+        <span class="meta" aria-hidden="true">4:3</span>
+      </figcaption>
+    </figure>
+
+    <!-- 16 -->
+    <figure class="tile">
+      <img class="thumb" src="images/A16.jpg" alt="A16 — beach sand and foam">
+      <a href="#" aria-label="Open A16"></a>
+      <figcaption class="caption">
+        <span class="meta"><span class="chip">Shore</span><span class="code">A16</span> · Sand & Foam</span>
+        <span class="meta" aria-hidden="true">4:3</span>
+      </figcaption>
+    </figure>
+
+    <!-- 17 -->
+    <figure class="tile">
+      <img class="thumb" src="images/A17.jpg" alt="A17 — night walk lights">
+      <a href="#" aria-label="Open A17"></a>
+      <figcaption class="caption">
+        <span class="meta"><span class="chip">Night</span><span class="code">A17</span> · Night Walk</span>
+        <span class="meta" aria-hidden="true">4:3</span>
+      </figcaption>
+    </figure>
+
+    <!-- 18 -->
+    <figure class="tile">
+      <img class="thumb" src="images/A18.jpg" alt="A18 — quiet stone steps">
+      <a href="#" aria-label="Open A18"></a>
+      <figcaption class="caption">
+        <span class="meta"><span class="chip">Steps</span><span class="code">A18</span> · Stone Steps</span>
+        <span class="meta" aria-hidden="true">4:3</span>
+      </figcaption>
+    </figure>
+
+    <!-- 19 -->
+    <figure class="tile">
+      <img class="thumb" src="images/A19.jpg" alt="A19 — red door">
+      <a href="#" aria-label="Open A19"></a>
+      <figcaption class="caption">
+        <span class="meta"><span class="chip">Color</span><span class="code">A19</span> · Red Door</span>
+        <span class="meta" aria-hidden="true">4:3</span>
+      </figcaption>
+    </figure>
+
+    <!-- 20 -->
+    <figure class="tile">
+      <img class="thumb" src="images/A20.jpg" alt="A20 — soft building shadows">
+      <a href="#" aria-label="Open A20"></a>
+      <figcaption class="caption">
+        <span class="meta"><span class="chip">Light</span><span class="code">A20</span> · Soft Shadows</span>
+        <span class="meta" aria-hidden="true">4:3</span>
+      </figcaption>
+    </figure>
+
+    <!-- 21 -->
+    <figure class="tile">
+      <img class="thumb" src="images/A21.jpg" alt="A21 — field lines and sky">
+      <a href="#" aria-label="Open A21"></a>
+      <figcaption class="caption">
+        <span class="meta"><span class="chip">Lines</span><span class="code">A21</span> · Field Lines</span>
+        <span class="meta" aria-hidden="true">4:3</span>
+      </figcaption>
+    </figure>
+
+    <!-- 22 -->
+    <figure class="tile">
+      <img class="thumb" src="images/A22.jpg" alt="A22 — last light over horizon">
+      <a href="#" aria-label="Open A22"></a>
+      <figcaption class="caption">
+        <span class="meta"><span class="chip">Dusk</span><span class="code">A22</span> · Last Light</span>
+        <span class="meta" aria-hidden="true">4:3</span>
+      </figcaption>
+    </figure>
+  </main>
+</body>
+</html>

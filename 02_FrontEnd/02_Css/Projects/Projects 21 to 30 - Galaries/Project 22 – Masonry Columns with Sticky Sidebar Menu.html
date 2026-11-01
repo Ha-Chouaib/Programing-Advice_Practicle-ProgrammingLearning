@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project 22 – Masonry Columns with Sticky Sidebar Menu</title>
+
+  <style>
+    /* ==========================================================
+       📸 Project 22 – Masonry Columns with Sticky Sidebar Menu
+       - NO JavaScript. Pure HTML + CSS.
+       - Menu: Left vertical, sticky, slim accent bar
+       - Layout: CSS columns masonry wall
+       - Effects: Grayscale -> color on hover, caption ribbon
+       - A11y: Alt text, focus styles, big tap areas
+       ========================================================== */
+
+    /* ---------- Design Tokens (CSS variables) ---------- */
+    :root{
+      --bg: #fbfbfb;
+      --ink: #1f2937;      /* text */
+      --muted:#6b7280;     /* secondary text */
+      --accent:#059669;    /* emerald-600 */
+      --accent-ink:#ffffff;
+      --card:#ffffff;
+      --border:#e5e7eb;
+      --radius:14px;
+      --shadow:0 10px 24px rgba(0,0,0,.10);
+      --maxw:1200px;
+      --sidew: 240px;      /* sidebar width on desktop */
+      --gap: 1.25rem;      /* space between masonry columns */
+    }
+
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0e1116;
+        --ink:#e5e7eb;
+        --muted:#9aa2b2;
+        --accent:#34d399;     /* emerald-400 */
+        --accent-ink:#0e1116;
+        --card:#161b22;
+        --border:#232a34;
+        --shadow:0 16px 36px rgba(0,0,0,.55);
+      }
+    }
+
+    /* ---------- Base / Reset ---------- */
+    *{box-sizing:border-box; margin:0; padding:0}
+    html,body{height:100%}
+    body{
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.7;
+    }
+    img{display:block; max-width:100%; height:auto}
+
+    /* ---------- Header (simple) ---------- */
+    header{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 1.6rem 1rem .9rem;
+      border-bottom:1px solid var(--border);
+    }
+    header h1{
+      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      letter-spacing:.2px;
+      margin-bottom:.25rem;
+    }
+    header p{ color: var(--muted); }
+
+    /* ---------- Page Grid (Sidebar + Content) ---------- */
+    .page{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: var(--sidew) 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 900px){
+      .page{ grid-template-columns: 1fr; }
+    }
+
+    /* ---------- Sticky Sidebar Menu ---------- */
+    .sidebar{
+      position: sticky; top: 1rem;       /* stays visible while scrolling */
+      align-self: start;
+      background: var(--card);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1rem;
+    }
+    .sidebar h2{
+      font-size: 1.05rem;
+      margin: .1rem 0 .6rem;
+      color: var(--accent);
+      letter-spacing:.02em;
+    }
+
+    /* Vertical nav: skinny accent bar + link block */
+    .menu{
+      display: grid;
+      gap: .35rem;
+      list-style:none;
+    }
+    .menu a{
+      display:flex; align-items:center; gap:.6rem;
+      text-decoration:none; color: var(--ink);
+      padding:.55rem .65rem;
+      border-radius: 10px;
+      border:1px dashed transparent;
+      transition: background .2s ease, transform .2s ease, border-color .2s ease;
+    }
+    .menu a::before{
+      content:"";
+      width:4px; height: 1.2em;
+      border-radius: 6px;
+      background: var(--border);         /* neutral when idle */
+      flex: 0 0 4px;
+    }
+    .menu a:hover{
+      background: rgba(5,150,105,.08);
+      border-color: rgba(5,150,105,.35);
+      transform: translateX(2px);
+    }
+    .menu a:hover::before{ background: var(--accent); }
+
+    /* ---------- Masonry Columns ---------- */
+    .masonry{
+      /* Columns produce the "waterfall" effect */
+      column-count: 3;
+      column-gap: var(--gap);
+    }
+    @media (max-width: 1200px){ .masonry{ column-count: 2; } }
+    @media (max-width: 680px){  .masonry{ column-count: 1; } }
+
+    /* Each card must avoid splitting across columns */
+    .card{
+      break-inside: avoid;               /* key line for masonry cards */
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin: 0 0 var(--gap);
+      overflow: hidden;
+      transform: translateZ(0);          /* improves rendering on some GPUs */
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .card:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 14px 28px rgba(0,0,0,.14);
+    }
+
+    /* Image styling: consistent crop + grayscale effect on idle */
+    .thumb{
+      width: 100%;
+      /* Use a gentle default height hint; allow natural height too */
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      filter: grayscale(.35) contrast(1.05);
+      transition: filter .35s ease, transform .45s ease;
+    }
+    .card:hover .thumb{
+      filter: grayscale(0);
+      transform: scale(1.04);
+    }
+
+    .pad{ padding: .9rem 1rem 1rem; }
+    .title{
+      font-size: 1.15rem;
+      color: var(--accent);
+      margin: .15rem 0 .4rem;
+      line-height: 1.25;
+    }
+    .lede{ margin: 0 0 .65rem; color: var(--ink); }
+    .meta{
+      color: var(--muted);
+      font-size: .95rem;
+      border-top: 1px dashed var(--border);
+      padding-top: .55rem;
+      display:flex; justify-content:space-between; align-items:center; gap:.5rem;
+    }
+
+    /* Small caption ribbon that sits over the image’s bottom-left corner */
+    .ribbon{
+      position: absolute;
+      left: .75rem; bottom: .75rem;
+      background: rgba(5,150,105,.92);
+      color: var(--accent-ink);
+      font-size: .82rem;
+      padding: .25rem .5rem;
+      border-radius: 8px;
+      box-shadow: 0 6px 14px rgba(5,150,105,.35);
+    }
+    .card-figure{ position: relative; } /* to anchor the ribbon */
+
+    /* ---------- Focus styles for accessibility ---------- */
+    a:focus-visible{
+      outline: 3px solid rgba(5,150,105,.35);
+      outline-offset: 2px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Simple header -->
+  <header>
+    <h1>Project 22 – Masonry Columns with Sticky Sidebar Menu</h1>
+    <p>A CSS‑only masonry gallery. Hover an image to reveal full color. Sidebar stays in view while you scroll.</p>
+  </header>
+
+  <!-- Page grid: left sidebar + right content -->
+  <main class="page">
+    <!-- ===== Sticky Sidebar (different menu style) ===== -->
+    <aside class="sidebar" aria-label="Gallery navigation">
+      <h2>Browse</h2>
+      <ul class="menu">
+        <!-- These can be real anchors to sections/categories on long pages -->
+        <li><a href="#">All</a></li>
+        <li><a href="#">Portraits</a></li>
+        <li><a href="#">Landscapes</a></li>
+        <li><a href="#">Architecture</a></li>
+        <li><a href="#">Abstract</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </aside>
+
+    <!-- ===== Masonry Wall (ALL 22 images) ===== -->
+    <section class="masonry" aria-label="Masonry gallery">
+      <!-- Repeatable card pattern:
+           .card
+             figure.card-figure
+               img.thumb
+               small.ribbon (optional)
+             .pad (text)
+      -->
+
+      <!-- A1 -->
+      <article class="card">
+        <figure class="card-figure">
+          <img class="thumb" src="images/A1.jpg" alt="Gallery image A1">
+          <small class="ribbon">A1</small>
+        </figure>
+        <div class="pad">
+          <h3 class="title">Image A1</h3>
+          <p class="lede">Subtle grayscale to color transition on hover.</p>
+          <div class="meta"><span>Masonry</span><span>#01</span></div>
+        </div>
+      </article>
+
+      <!-- A2 -->
+      <article class="card">
+        <figure class="card-figure">
+          <img class="thumb" src="images/A2.jpg" alt="Gallery image A2">
+          <small class="ribbon">A2</small>
+        </figure>
+        <div class="pad">
+          <h3 class="title">Image A2</h3>
+          <p class="lede">Cards avoid splitting between columns via <code>break-inside</code>.</p>
+          <div class="meta"><span>Masonry</span><span>#02</span></div>
+        </div>
+      </article>
+
+      <!-- A3 -->
+      <article class="card">
+        <figure class="card-figure">
+          <img class="thumb" src="images/A3.jpg" alt="Gallery image A3">
+          <small class="ribbon">A3</small>
+        </figure>
+        <div class="pad">
+          <h3 class="title">Image A3</h3>
+          <p class="lede">Each card uses a gentle lift + shadow on hover.</p>
+          <div class="meta"><span>Masonry</span><span>#03</span></div>
+        </div>
+      </article>
+
+      <!-- A4 -->
+      <article class="card">
+        <figure class="card-figure">
+          <img class="thumb" src="images/A4.jpg" alt="Gallery image A4">
+          <small class="ribbon">A4</small>
+        </figure>
+        <div class="pad">
+          <h3 class="title">Image A4</h3>
+          <p class="lede">The sidebar stays visible with <code>position: sticky</code>.</p>
+          <div class="meta"><span>Masonry</span><span>#04</span></div>
+        </div>
+      </article>
+
+      <!-- A5 -->
+      <article class="card">
+        <figure class="card-figure">
+          <img class="thumb" src="images/A5.jpg" alt="Gallery image A5">
+          <small class="ribbon">A5</small>
+        </figure>
+        <div class="pad">
+          <h3 class="title">Image A5</h3>
+          <p class="lede">Try changing <code>column-count</code> in media queries.</p>
+          <div class="meta"><span>Masonry</span><span>#05</span></div>
+        </div>
+      </article>
+
+      <!-- A6 -->
+      <article class="card">
+        <figure class="card-figure">
+          <img class="thumb" src="images/A6.jpg" alt="Gallery image A6">
+          <small class="ribbon">A6</small>
+        </figure>
+        <div class="pad">
+          <h3 class="title">Image A6</h3>
+          <p class="lede">Images are cropped uniformly with <code>object-fit: cover</code>.</p>
+          <div class="meta"><span>Masonry</span><span>#06</span></div>
+        </div>
+      </article>
+
+      <!-- A7 -->
+      <article class="card">
+        <figure class="card-figure">
+          <img class="thumb" src="images/A7.jpg" alt="Gallery image A7">
+          <small class="ribbon">A7</small>
+        </figure>
+        <div class="pad">
+          <h3 class="title">Image A7</h3>
+          <p class="lede">Caption ribbons help identify frames.</p>
+          <div class="meta"><span>Masonry</span><span>#07</span></div>
+        </div>
+      </article>
+
+      <!-- A8 -->
+      <article class="card">
+        <figure class="card-figure">
+          <img class="thumb" src="images/A8.jpg" alt="Gallery image A8">
+          <small class="ribbon">A8</small>
+        </figure>
+        <div class="pad">
+          <h3 class="title">Image A8</h3>
+          <p class="lede">Cards keep integrity thanks to <code>break-inside: avoid</code>.</p>
+          <div class="meta"><span>Masonry</span><span>#08</span></div>
+        </div>
+      </article>
+
+      <!-- A9 -->
+      <article class="card">
+        <figure class="card-figure">
+          <img class="thumb" src="images/A9.jpg" alt="Gallery image A9">
+          <small class="ribbon">A9</small>
+        </figure>
+        <div class="pad">
+          <h3 class="title">Image A9</h3>
+          <p class="lede">Use <code>column-gap</code> to control gutter width.</p>
+          <div class="meta"><span>Masonry</span><span>#09</span></div>
+        </div>
+      </article>
+
+      <!-- A10 -->
+      <article class="card">
+        <figure class="card-figure">
+          <img class="thumb" src="images/A10.jpg" alt="Gallery image A10">
+          <small class="ribbon">A10</small>
+        </figure>
+        <div class="pad">
+          <h3 class="title">Image A10</h3>
+          <p class="lede">Responsive: columns drop from 3 → 2 → 1.</p>
+          <div class="meta"><span>Masonry</span><span>#10</span></div>
+        </div>
+      </article>
+
+      <!-- A11 -->
+      <article class="card">
+        <figure class="card-figure">
+          <img class="thumb" src="images/A11.jpg" alt="Gallery image A11">
+          <small class="ribbon">A11</small>
+        </figure>
+        <div class="pad">
+          <h3 class="title">Image A11</h3>
+          <p class="lede">Try removing grayscale for a different feel.</p>
+          <div class="meta"><span>Masonry</span><span>#11</span></div>
+        </div>
+      </article>
+
+      <!-- A12 -->
+      <article class="card">
+        <figure class="card-figure">
+          <img class="thumb" src="images/A12.jpg" alt="Gallery image A12">
+          <small class="ribbon">A12</small>
+        </figure>
+        <div class="pad">
+          <h3 class="title">Image A12</h3>
+          <p class="lede">Hover adds a subtle scale for depth.</p>
+          <div class="meta"><span>Masonry</span><span>#12</span></div>
+        </div>
+      </article>
+
+      <!-- A13 -->
+      <article class="card">
+        <figure class="card-figure">
+          <img class="thumb" src="images/A13.jpg" alt="Gallery image A13">
+          <small class="ribbon">A13</small>
+        </figure>
+        <div class="pad">
+          <h3 class="title">Image A13</h3>
+          <p class="lede">Cards use rounded corners and soft shadows.</p>
+          <div class="meta"><span>Masonry</span><span>#13</span></div>
+        </div>
+      </article>
+
+      <!-- A14 -->
+      <article class="card">
+        <figure class="card-figure">
+          <img class="thumb" src="images/A14.jpg" alt="Gallery image A14">
+          <small class="ribbon">A14</small>
+        </figure>
+        <div class="pad">
+          <h3 class="title">Image A14</h3>
+          <p class="lede">Great exercise for understanding CSS columns.</p>
+          <div class="meta"><span>Masonry</span><span>#14</span></div>
+        </div>
+      </article>
+
+      <!-- A15 -->
+      <article class="card">
+        <figure class="card-figure">
+          <img class="thumb" src="images/A15.jpg" alt="Gallery image A15">
+          <small class="ribbon">A15</small>
+        </figure>
+        <div class="pad">
+          <h3 class="title">Image A15</h3>
+          <p class="lede">Change <code>aspect-ratio</code> to vary tile height.</p>
+          <div class="meta"><span>Masonry</span><span>#15</span></div>
+        </div>
+      </article>
+
+      <!-- A16 -->
+      <article class="card">
+        <figure class="card-figure">
+          <img class="thumb" src="images/A16.jpg" alt="Gallery image A16">
+          <small class="ribbon">A16</small>
+        </figure>
+        <div class="pad">
+          <h3 class="title">Image A16</h3>
+          <p class="lede">Try taller hero cards by removing aspect ratio.</p>
+          <div class="meta"><span>Masonry</span><span>#16</span></div>
+        </div>
+      </article>
+
+      <!-- A17 -->
+      <article class="card">
+        <figure class="card-figure">
+          <img class="thumb" src="images/A17.jpg" alt="Gallery image A17">
+          <small class="ribbon">A17</small>
+        </figure>
+        <div class="pad">
+          <h3 class="title">Image A17</h3>
+          <p class="lede">Experiment with different <code>gap</code> values.</p>
+          <div class="meta"><span>Masonry</span><span>#17</span></div>
+        </div>
+      </article>
+
+      <!-- A18 -->
+      <article class="card">
+        <figure class="card-figure">
+          <img class="thumb" src="images/A18.jpg" alt="Gallery image A18">
+          <small class="ribbon">A18</small>
+        </figure>
+        <div class="pad">
+          <h3 class="title">Image A18</h3>
+          <p class="lede">Dark mode supported via <code>prefers-color-scheme</code>.</p>
+          <div class="meta"><span>Masonry</span><span>#18</span></div>
+        </div>
+      </article>
+
+      <!-- A19 -->
+      <article class="card">
+        <figure class="card-figure">
+          <img class="thumb" src="images/A19.jpg" alt="Gallery image A19">
+          <small class="ribbon">A19</small>
+        </figure>
+        <div class="pad">
+          <h3 class="title">Image A19</h3>
+          <p class="lede">Try changing theme colors in <code>:root</code>.</p>
+          <div class="meta"><span>Masonry</span><span>#19</span></div>
+        </div>
+      </article>
+
+      <!-- A20 -->
+      <article class="card">
+        <figure class="card-figure">
+          <img class="thumb" src="images/A20.jpg" alt="Gallery image A20">
+          <small class="ribbon">A20</small>
+        </figure>
+        <div class="pad">
+          <h3 class="title">Image A20</h3>
+          <p class="lede">Swap fonts to change the editorial vibe.</p>
+          <div class="meta"><span>Masonry</span><span>#20</span></div>
+        </div>
+      </article>
+
+      <!-- A21 -->
+      <article class="card">
+        <figure class="card-figure">
+          <img class="thumb" src="images/A21.jpg" alt="Gallery image A21">
+          <small class="ribbon">A21</small>
+        </figure>
+        <div class="pad">
+          <h3 class="title">Image A21</h3>
+          <p class="lede">Focus rings improve keyboard accessibility.</p>
+          <div class="meta"><span>Masonry</span><span>#21</span></div>
+        </div>
+      </article>
+
+      <!-- A22 -->
+      <article class="card">
+        <figure class="card-figure">
+          <img class="thumb" src="images/A22.jpg" alt="Gallery image A22">
+          <small class="ribbon">A22</small>
+        </figure>
+        <div class="pad">
+          <h3 class="title">Image A22</h3>
+          <p class="lede">All 22 images included in this layout.</p>
+          <div class="meta"><span>Masonry</span><span>#22</span></div>
+        </div>
+      </article>
+
+    </section>
+  </main>
+</body>
+</html>

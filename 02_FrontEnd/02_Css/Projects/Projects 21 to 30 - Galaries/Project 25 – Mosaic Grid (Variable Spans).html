@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project 25 – Mosaic Grid (Variable Spans, 22 photos)</title>
+
+  <style>
+    /* ─────────────────────────────────────────────────────────
+       PROJECT 25: Mosaic Grid (Variable Spans) — No JavaScript
+       ---------------------------------------------------------
+       ✦ Goal
+         Build a dense, magazine-style mosaic using CSS Grid:
+         - Auto-filled grid columns with repeat(auto-fit, minmax()).
+         - Selected tiles "promoted" to larger spans (2x2 or 2x1).
+         - Subtle grayscale→color and scale-up on hover.
+         - Overlay caption appears only on hover.
+
+       ✦ Learning Focus
+         1) Grid auto-placement & dense packing
+         2) repeat(auto-fit, minmax()) responsive columns
+         3) grid-column / grid-row span utilities
+         4) Transition + transform for tasteful motion
+         5) Dark-mode aware theming via CSS variables
+         6) Semantic <figure>/<figcaption> and accessible alt text
+         7) Print adjustments
+
+       ✦ Menu Idea for this project
+         A minimalist underlined menu (no pills) with a sliding underline on hover.
+
+       ✦ Constraints
+         • No JavaScript.
+         • Overlay captions are hidden unless the card is hovered.
+
+       ---------------------------------------------------------
+    ───────────────────────────────────────────────────────── */
+
+    /* ========== Theme tokens ========== */
+    :root{
+      --bg: #fbfbfb;
+      --ink: #111827;
+      --muted: #6b7280;
+
+      --accent: #16a34a;      /* emerald-600 */
+      --accent-ink: #ffffff;
+
+      --card: #ffffff;
+      --border: #e5e7eb;
+
+      --shadow-rest: 0 10px 24px rgba(0,0,0,.10);
+      --shadow-up:   0 16px 36px rgba(0,0,0,.18);
+
+      --radius: 16px;
+      --gap: 1rem;
+      --maxw: 1200px;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg: #0f1319;
+        --ink: #e6e8ec;
+        --muted: #9aa2b2;
+
+        --accent: #34d399;    /* emerald-400 */
+        --accent-ink: #0f1319;
+
+        --card: #141a22;
+        --border: #232a34;
+
+        --shadow-rest: 0 16px 36px rgba(0,0,0,.55);
+        --shadow-up:   0 22px 48px rgba(0,0,0,.55);
+      }
+    }
+
+    /* ========== Base ========== */
+    html,body{ margin:0; padding:0; }
+    body{
+      font-family: ui-serif, Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.72;
+    }
+
+    /* ========== Header & Underline Menu ========== */
+    header{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 2rem 1rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .masthead{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:1rem;
+      flex-wrap: wrap;
+    }
+    .masthead h1{
+      margin:0;
+      font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+      letter-spacing:.2px;
+    }
+    .dek{ margin:.35rem 0 0; color: var(--muted); max-width: 65ch; }
+
+    /* Simple underline-style menu */
+    nav.underline{
+      margin-top: 1rem;
+      display:flex; flex-wrap: wrap;
+      gap: 1rem 1.25rem;
+    }
+    .underline a{
+      position: relative;
+      text-decoration: none;
+      color: var(--ink);
+      padding-bottom: .2rem;
+      font-size: .98rem;
+    }
+    .underline a::after{
+      content:"";
+      position: absolute;
+      left: 0; bottom: -2px;
+      width: 0%;
+      height: 2px;
+      background: var(--accent);
+      transition: width .25s ease;
+    }
+    .underline a:hover::after{ width: 100%; }
+
+    /* ========== Mosaic Grid ========== */
+    .wrap{
+      max-width: var(--maxw);
+      margin: 1.25rem auto 2.25rem;
+      padding: 0 1rem;
+    }
+
+    /* We build a responsive grid where each column is at least 220px.
+       grid-auto-rows defines an implicit row height unit that we can
+       multiply with spans to create larger tiles. */
+    .mosaic{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-auto-rows: 180px;          /* base row height unit */
+      gap: var(--gap);
+      grid-auto-flow: dense;          /* pack items tightly */
+    }
+
+    /* ========== Tile (card) ========== */
+    .tile{
+      position: relative;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-rest);
+      transition: transform .28s ease, box-shadow .28s ease, filter .28s ease;
+      will-change: transform;
+    }
+
+    /* Image fills the tile; grayscale gives an understated look that
+       pops into color on hover. */
+    .tile img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display:block;
+      filter: grayscale(.25) saturate(.95) contrast(1.02);
+      transition: transform .35s ease, filter .35s ease;
+    }
+
+    /* Hover interaction: lift card slightly, bring color & a touch of scale. */
+    .tile:hover{
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-up);
+      z-index: 2;
+    }
+    .tile:hover img{
+      filter: grayscale(0) saturate(1.08) contrast(1.06);
+      transform: scale(1.03);
+    }
+
+    /* Hover-only overlay caption (hidden by default, slides up) */
+    .cap{
+      position: absolute;
+      inset: auto 0 0 0;     /* stick to bottom */
+      background: linear-gradient(0deg, rgba(0,0,0,.58), rgba(0,0,0,0));
+      color: #fff;
+      padding: .85rem 1rem 1rem;
+      transform: translateY(100%);
+      transition: transform .35s ease;
+      font-size: .98rem;
+      letter-spacing:.2px;
+    }
+    .tile:hover .cap{ transform: translateY(0%); }
+
+    /* ========== Span utilities (make some items larger) ========== */
+    /* span-2x2: double width + double height */
+    .span-2x2{
+      grid-column: span 2;
+      grid-row: span 2;           /* -> 2 * 180px = 360px tall  */
+    }
+    /* span-2x1: double width, single height (wide banner) */
+    .span-2x1{
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+    /* span-1x2: single width, double height (tall portrait) */
+    .span-1x2{
+      grid-column: span 1;
+      grid-row: span 2;
+    }
+
+    /* On narrower screens we’ll reduce some spans to avoid overflow rows */
+    @media (max-width: 760px){
+      .span-2x2{ grid-column: span 1; grid-row: span 2; } /* keep tall, drop wide */
+      .span-2x1{ grid-column: span 1; }                   /* drop wide */
+    }
+
+    /* ========== Focus styles (overlay remains hover-only to meet spec) ========== */
+    .tile:focus-visible{
+      outline: none;
+      box-shadow:
+        0 0 0 3px rgba(22,163,74,.36),
+        0 0 0 6px rgba(22,163,74,.18),
+        var(--shadow-rest);
+    }
+
+    /* ========== Description block ========== */
+    .note{
+      max-width: var(--maxw);
+      margin: 0 auto 2.5rem;
+      padding: 0 1rem;
+      color: var(--muted);
+      font-size: .98rem;
+    }
+
+    /* ========== Print niceties ========== */
+    @media print{
+      @page{ margin: 14mm; }
+      *{ -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .underline{ display:none !important; }
+      .tile{ transform:none !important; box-shadow:none !important; }
+      .cap{ display:none !important; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ========== Header ========== -->
+  <header>
+    <div class="masthead">
+      <div>
+        <h1>Project 25 – Mosaic Grid (Variable Spans)</h1>
+        <p class="dek">
+          A dense, editorial mosaic built with CSS Grid. Selected items get larger spans for rhythm and hierarchy.
+          Hover to colorize, gently scale, and reveal the caption overlay — all without JavaScript.
+        </p>
+      </div>
+    </div>
+
+    <!-- Underline menu (design suggestion for this project) -->
+    <nav class="underline" aria-label="Sample categories (decorative)">
+      <a href="#">All</a>
+      <a href="#">Essentials</a>
+      <a href="#">Portrait</a>
+      <a href="#">Landscape</a>
+      <a href="#">Architecture</a>
+      <a href="#">Editorial</a>
+    </nav>
+  </header>
+
+  <!-- ========== Mosaic Grid with ALL 22 images ========== -->
+  <main class="wrap" aria-label="Mosaic gallery">
+    <section class="mosaic">
+      <!-- You can rearrange spans to change the rhythm.
+           Tip: Don’t overuse large spans; sprinkle them. -->
+
+      <!-- 1 -->
+      <figure class="tile"><img src="images/A1.jpg"  alt="Photo A1 — subject view"><figcaption class="cap">A1 — Morning Layers</figcaption></figure>
+
+      <!-- 2 (wide) -->
+      <figure class="tile span-2x1"><img src="images/A2.jpg"  alt="Photo A2 — subject view"><figcaption class="cap">A2 — Broad Street</figcaption></figure>
+
+      <!-- 3 (tall) -->
+      <figure class="tile span-1x2"><img src="images/A3.jpg"  alt="Photo A3 — subject view"><figcaption class="cap">A3 — Tower Lines</figcaption></figure>
+
+      <!-- 4 -->
+      <figure class="tile"><img src="images/A4.jpg"  alt="Photo A4 — subject view"><figcaption class="cap">A4 — Riverside Drift</figcaption></figure>
+
+      <!-- 5 -->
+      <figure class="tile"><img src="images/A5.jpg"  alt="Photo A5 — subject view"><figcaption class="cap">A5 — Brick & Ivy</figcaption></figure>
+
+      <!-- 6 (2x2 feature) -->
+      <figure class="tile span-2x2"><img src="images/A6.jpg"  alt="Photo A6 — subject view"><figcaption class="cap">A6 — Market Pulse</figcaption></figure>
+
+      <!-- 7 -->
+      <figure class="tile"><img src="images/A7.jpg"  alt="Photo A7 — subject view"><figcaption class="cap">A7 — Path at Dawn</figcaption></figure>
+
+      <!-- 8 -->
+      <figure class="tile"><img src="images/A8.jpg"  alt="Photo A8 — subject view"><figcaption class="cap">A8 — Sea’s Edge</figcaption></figure>
+
+      <!-- 9 (wide) -->
+      <figure class="tile span-2x1"><img src="images/A9.jpg"  alt="Photo A9 — subject view"><figcaption class="cap">A9 — City Grid</figcaption></figure>
+
+      <!-- 10 -->
+      <figure class="tile"><img src="images/A10.jpg" alt="Photo A10 — subject view"><figcaption class="cap">A10 — Rust & Light</figcaption></figure>
+
+      <!-- 11 -->
+      <figure class="tile"><img src="images/A11.jpg" alt="Photo A11 — subject view"><figcaption class="cap">A11 — Quiet Window</figcaption></figure>
+
+      <!-- 12 (tall) -->
+      <figure class="tile span-1x2"><img src="images/A12.jpg" alt="Photo A12 — subject view"><figcaption class="cap">A12 — Green Pause</figcaption></figure>
+
+      <!-- 13 -->
+      <figure class="tile"><img src="images/A13.jpg" alt="Photo A13 — subject view"><figcaption class="cap">A13 — Overpass Arc</figcaption></figure>
+
+      <!-- 14 -->
+      <figure class="tile"><img src="images/A14.jpg" alt="Photo A14 — subject view"><figcaption class="cap">A14 — Wildflowers</figcaption></figure>
+
+      <!-- 15 (2x2 feature) -->
+      <figure class="tile span-2x2"><img src="images/A15.jpg" alt="Photo A15 — subject view"><figcaption class="cap">A15 — Café Corner</figcaption></figure>
+
+      <!-- 16 -->
+      <figure class="tile"><img src="images/A16.jpg" alt="Photo A16 — subject view"><figcaption class="cap">A16 — Sand & Foam</figcaption></figure>
+
+      <!-- 17 -->
+      <figure class="tile"><img src="images/A17.jpg" alt="Photo A17 — subject view"><figcaption class="cap">A17 — Night Walk</figcaption></figure>
+
+      <!-- 18 (wide) -->
+      <figure class="tile span-2x1"><img src="images/A18.jpg" alt="Photo A18 — subject view"><figcaption class="cap">A18 — Quiet Steps</figcaption></figure>
+
+      <!-- 19 -->
+      <figure class="tile"><img src="images/A19.jpg" alt="Photo A19 — subject view"><figcaption class="cap">A19 — Red Door</figcaption></figure>
+
+      <!-- 20 -->
+      <figure class="tile"><img src="images/A20.jpg" alt="Photo A20 — subject view"><figcaption class="cap">A20 — Soft Shadows</figcaption></figure>
+
+      <!-- 21 (tall) -->
+      <figure class="tile span-1x2"><img src="images/A21.jpg" alt="Photo A21 — subject view"><figcaption class="cap">A21 — Field Lines</figcaption></figure>
+
+      <!-- 22 -->
+      <figure class="tile"><img src="images/A22.jpg" alt="Photo A22 — subject view"><figcaption class="cap">A22 — Last Light</figcaption></figure>
+    </section>
+  </main>
+
+  
+</body>
+</html>

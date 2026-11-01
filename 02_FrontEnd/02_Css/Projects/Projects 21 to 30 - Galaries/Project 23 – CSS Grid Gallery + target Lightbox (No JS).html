@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project 23 – CSS Grid Gallery + :target Lightbox (No JS)</title>
+
+  <style>
+    /* ==========================================================
+       🖼️ Project 23 — CSS Grid Gallery + :target Lightbox
+       - NO JavaScript. Pure HTML + CSS.
+       - Layout: Responsive CSS Grid (auto-fit / minmax)
+       - Effect: Hover scale + soft shadow; CSS :target lightbox
+       - Menu: Top underline (animated) navigation
+       - A11y: Alt text, clear focus, Escape route with "close" links
+       ========================================================== */
+
+    /* ---------- Theme Tokens ---------- */
+    :root{
+      --bg: #fcfbf9;
+      --ink: #1f2328;
+      --muted:#6b7280;
+      --accent:#0ea5e9;       /* sky-500 */
+      --accent-ink:#ffffff;
+      --card:#ffffff;
+      --border:#e5e7eb;
+      --radius:16px;
+      --shadow:0 12px 28px rgba(0,0,0,.12);
+      --maxw:1200px;
+      --gap: 1rem;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0c0f14;
+        --ink:#e6e8ec;
+        --muted:#9aa2b2;
+        --accent:#38bdf8;     /* sky-400 */
+        --accent-ink:#0c0f14;
+        --card:#151a21;
+        --border:#232a34;
+        --shadow:0 18px 36px rgba(0,0,0,.55);
+      }
+    }
+
+    /* ---------- Base / Reset ---------- */
+    *{ box-sizing:border-box; margin:0; padding:0 }
+    img{ display:block; max-width:100%; height:auto }
+    html,body{ height:100% }
+    body{
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.7;
+    }
+
+    /* ---------- Header with Underline Menu ---------- */
+    header{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 1.75rem 1rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .masthead{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:1rem;
+      flex-wrap: wrap;
+    }
+    .masthead h1{
+      margin:0; font-size: clamp(1.6rem, 3.2vw, 2.2rem); letter-spacing:.2px;
+    }
+    .dek{ margin:.25rem 0 0; color: var(--muted); }
+
+    /* Top nav: animated underline via background-size trick */
+    nav{
+      margin-top: .8rem;
+      display:flex; gap:.75rem; flex-wrap: wrap;
+    }
+    nav a{
+      text-decoration:none; color: var(--ink);
+      padding:.4rem .55rem;
+      border-radius: 8px;
+      /* Underline animation: a linear-gradient sized to 0% width by default */
+      background: linear-gradient(currentColor, currentColor) left bottom / 0% 2px no-repeat transparent;
+      transition: background-size .25s ease, color .2s ease, transform .2s ease;
+    }
+    nav a:hover{
+      background-size: 100% 2px;         /* animate underline to full width */
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+    a:focus-visible{
+      outline: 3px solid rgba(14,165,233,.35);  /* visible keyboard focus */
+      outline-offset: 3px;
+      border-radius: 10px;
+    }
+
+    /* ---------- Gallery Grid ---------- */
+    .wrap{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    .grid{
+      display: grid;
+      gap: var(--gap);
+      /* Auto-fit responsive columns:
+         - Each cell wants at least 240px, but can grow to 1fr
+         - This collapses cleanly from 4 -> 3 -> 2 -> 1 columns */
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .card:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 16px 32px rgba(0,0,0,.16);
+    }
+
+    /* Image: enforce consistent crop with aspect-ratio + cover */
+    .thumb{
+      width:100%;
+      aspect-ratio: 4 / 3;              /* neat grid rhythm; adjust as desired */
+      object-fit: cover;
+      /* Subtle editorial effect: faint desaturation & warmth that eases on hover */
+      filter: saturate(.9) contrast(1.02);
+      transition: transform .45s ease, filter .35s ease;
+    }
+    .card:hover .thumb{
+      transform: scale(1.035);
+      filter: saturate(1) contrast(1.05);
+    }
+
+    .pad{ padding: .9rem 1rem 1.1rem; }
+    .title{
+      margin:.1rem 0 .4rem;
+      font-size:1.1rem; color: var(--accent);
+      line-height:1.25;
+    }
+    .lede{ margin:0; color: var(--ink); opacity:.95 }
+
+    /* ---------- CSS :target Lightbox (no JS) ---------- */
+    /* Structure:
+       - Each grid item links to #imgN (an overlay <section id="imgN"> below)
+       - When hash matches, :target becomes visible as a fullscreen overlay
+       - Clicking the close button or background link returns to # (closes) */
+    .lightbox{
+      position: fixed;
+      inset: 0;                           /* top:0 right:0 bottom:0 left:0 */
+      background: rgba(0,0,0,.72);
+      display: none;                      /* hidden by default */
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      z-index: 50;
+    }
+    .lightbox:target{
+      display: flex;                      /* becomes visible when targeted */
+    }
+
+    .frame{
+      background: var(--card);
+      color: var(--ink);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      max-width: min(980px, 92vw);
+      max-height: 86vh;
+      overflow: auto;                     /* scroll if content taller than viewport */
+      padding: 1.1rem;
+    }
+    .full{
+      width:100%;
+      height:auto;
+      max-height: 64vh;                   /* keep caption visible below */
+      object-fit: contain;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .caption{
+      margin-top: .75rem;
+      display:flex; align-items:center; justify-content:space-between; gap:.75rem;
+      flex-wrap: wrap;
+    }
+    .caption h3{
+      margin:.2rem 0; font-size:1.1rem; color: var(--accent);
+    }
+    .caption p{ margin:0; color: var(--muted) }
+
+    /* Close button pattern: a normal link back to "#" */
+    .close{
+      display:inline-block;
+      margin-left:auto;
+      text-decoration:none;
+      background: var(--accent);
+      color: var(--accent-ink);
+      font-weight:700;
+      padding:.45rem .8rem;
+      border-radius: 999px;
+      box-shadow: 0 10px 24px rgba(14,165,233,.32);
+    }
+
+    /* Optional helper: clicking backdrop closes too (link filling the screen) */
+    .backdrop-close{
+      position: fixed; inset:0;
+      /* put it behind .frame but above the page; clicking returns to "#" */
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== Masthead + Underline Menu ===== -->
+  <header>
+    <div class="masthead">
+      <div>
+        <h1>Project 23 – CSS Grid Gallery + :target Lightbox</h1>
+        <p class="dek">Responsive grid, hover polish, and a no‑JS lightbox. Clean underline menu above.</p>
+      </div>
+    </div>
+
+    <!-- Top menu with animated underline; links are placeholders
+         You can point these to anchors/sections in a longer page -->
+    <nav aria-label="Primary">
+      <a href="#">All</a>
+      <a href="#">Portraits</a>
+      <a href="#">Landscapes</a>
+      <a href="#">Architecture</a>
+      <a href="#">Abstract</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ===== Gallery Grid (ALL 22 IMAGES) ===== -->
+  <main class="wrap">
+    <section class="grid" aria-label="Grid gallery">
+
+      <!-- Repeatable card:
+           <article class="card">
+             <a href="#imgN" aria-label="Open image N in lightbox">
+               <img src="images/AXX.jpg" class="thumb" alt="...">
+             </a>
+             <div class="pad">
+               <h3 class="title">Image AN</h3>
+               <p class="lede">Short caption / teaching point.</p>
+             </div>
+           </article>
+      -->
+
+      <!-- A1 -->
+      <article class="card">
+        <a href="#img1" aria-label="Open image A1 in lightbox">
+          <img class="thumb" src="images/A1.jpg" alt="Gallery image A1">
+        </a>
+        <div class="pad">
+          <h3 class="title">Image A1</h3>
+          <p class="lede">CSS Grid cell with 4:3 crop using <code>aspect-ratio</code>.</p>
+        </div>
+      </article>
+
+      <!-- A2 -->
+      <article class="card">
+        <a href="#img2" aria-label="Open image A2 in lightbox">
+          <img class="thumb" src="images/A2.jpg" alt="Gallery image A2">
+        </a>
+        <div class="pad">
+          <h3 class="title">Image A2</h3>
+          <p class="lede">Hover adds subtle scale + increased contrast.</p>
+        </div>
+      </article>
+
+      <!-- A3 -->
+      <article class="card">
+        <a href="#img3" aria-label="Open image A3 in lightbox">
+          <img class="thumb" src="images/A3.jpg" alt="Gallery image A3">
+        </a>
+        <div class="pad">
+          <h3 class="title">Image A3</h3>
+          <p class="lede">Cards use rounded corners and soft shadow.</p>
+        </div>
+      </article>
+
+      <!-- A4 -->
+      <article class="card">
+        <a href="#img4" aria-label="Open image A4 in lightbox">
+          <img class="thumb" src="images/A4.jpg" alt="Gallery image A4">
+        </a>
+        <div class="pad">
+          <h3 class="title">Image A4</h3>
+          <p class="lede">Auto-fit columns collapse from 4 → 1 responsively.</p>
+        </div>
+      </article>
+
+      <!-- A5 -->
+      <article class="card">
+        <a href="#img5" aria-label="Open image A5 in lightbox">
+          <img class="thumb" src="images/A5.jpg" alt="Gallery image A5">
+        </a>
+        <div class="pad">
+          <h3 class="title">Image A5</h3>
+          <p class="lede">Professional menu with underline animation.</p>
+        </div>
+      </article>
+
+      <!-- A6 -->
+      <article class="card">
+        <a href="#img6" aria-label="Open image A6 in lightbox">
+          <img class="thumb" src="images/A6.jpg" alt="Gallery image A6">
+        </a>
+        <div class="pad">
+          <h3 class="title">Image A6</h3>
+          <p class="lede"><code>object-fit: cover</code> keeps crops tidy.</p>
+        </div>
+      </article>
+
+      <!-- A7 -->
+      <article class="card">
+        <a href="#img7" aria-label="Open image A7 in lightbox">
+          <img class="thumb" src="images/A7.jpg" alt="Gallery image A7">
+        </a>
+        <div class="pad">
+          <h3 class="title">Image A7</h3>
+          <p class="lede">Use <code>minmax(240px, 1fr)</code> for flexible columns.</p>
+        </div>
+      </article>
+
+      <!-- A8 -->
+      <article class="card">
+        <a href="#img8" aria-label="Open image A8 in lightbox">
+          <img class="thumb" src="images/A8.jpg" alt="Gallery image A8">
+        </a>
+        <div class="pad">
+          <h3 class="title">Image A8</h3>
+          <p class="lede">Alt text supports basic accessibility.</p>
+        </div>
+      </article>
+
+      <!-- A9 -->
+      <article class="card">
+        <a href="#img9" aria-label="Open image A9 in lightbox">
+          <img class="thumb" src="images/A9.jpg" alt="Gallery image A9">
+        </a>
+        <div class="pad">
+          <h3 class="title">Image A9</h3>
+          <p class="lede">Try varying <code>gap</code> for different feels.</p>
+        </div>
+      </article>
+
+      <!-- A10 -->
+      <article class="card">
+        <a href="#img10" aria-label="Open image A10 in lightbox">
+          <img class="thumb" src="images/A10.jpg" alt="Gallery image A10">
+        </a>
+        <div class="pad">
+          <h3 class="title">Image A10</h3>
+          <p class="lede">Dark mode adapts via <code>prefers-color-scheme</code>.</p>
+        </div>
+      </article>
+
+      <!-- A11 -->
+      <article class="card">
+        <a href="#img11" aria-label="Open image A11 in lightbox">
+          <img class="thumb" src="images/A11.jpg" alt="Gallery image A11">
+        </a>
+        <div class="pad">
+          <h3 class="title">Image A11</h3>
+          <p class="lede">Focus rings help keyboard navigation.</p>
+        </div>
+      </article>
+
+      <!-- A12 -->
+      <article class="card">
+        <a href="#img12" aria-label="Open image A12 in lightbox">
+          <img class="thumb" src="images/A12.jpg" alt="Gallery image A12">
+        </a>
+        <div class="pad">
+          <h3 class="title">Image A12</h3>
+          <p class="lede">Use real captions for context.</p>
+        </div>
+      </article>
+
+      <!-- A13 -->
+      <article class="card">
+        <a href="#img13" aria-label="Open image A13 in lightbox">
+          <img class="thumb" src="images/A13.jpg" alt="Gallery image A13">
+        </a>
+        <div class="pad">
+          <h3 class="title">Image A13</h3>
+          <p class="lede">Adjust <code>aspect-ratio</code> to change rhythm.</p>
+        </div>
+      </article>
+
+      <!-- A14 -->
+      <article class="card">
+        <a href="#img14" aria-label="Open image A14 in lightbox">
+          <img class="thumb" src="images/A14.jpg" alt="Gallery image A14">
+        </a>
+        <div class="pad">
+          <h3 class="title">Image A14</h3>
+          <p class="lede">Scale effect capped for grace (no jitter).</p>
+        </div>
+      </article>
+
+      <!-- A15 -->
+      <article class="card">
+        <a href="#img15" aria-label="Open image A15 in lightbox">
+          <img class="thumb" src="images/A15.jpg" alt="Gallery image A15">
+        </a>
+        <div class="pad">
+          <h3 class="title">Image A15</h3>
+          <p class="lede">Editorial palette set by CSS variables.</p>
+        </div>
+      </article>
+
+      <!-- A16 -->
+      <article class="card">
+        <a href="#img16" aria-label="Open image A16 in lightbox">
+          <img class="thumb" src="images/A16.jpg" alt="Gallery image A16">
+        </a>
+        <div class="pad">
+          <h3 class="title">Image A16</h3>
+          <p class="lede">Small shadows add depth without distraction.</p>
+        </div>
+      </article>
+
+      <!-- A17 -->
+      <article class="card">
+        <a href="#img17" aria-label="Open image A17 in lightbox">
+          <img class="thumb" src="images/A17.jpg" alt="Gallery image A17">
+        </a>
+        <div class="pad">
+          <h3 class="title">Image A17</h3>
+          <p class="lede">Keep copy short to avoid uneven tiles.</p>
+        </div>
+      </article>
+
+      <!-- A18 -->
+      <article class="card">
+        <a href="#img18" aria-label="Open image A18 in lightbox">
+          <img class="thumb" src="images/A18.jpg" alt="Gallery image A18">
+        </a>
+        <div class="pad">
+          <h3 class="title">Image A18</h3>
+          <p class="lede">Borders help on both light and dark themes.</p>
+        </div>
+      </article>
+
+      <!-- A19 -->
+      <article class="card">
+        <a href="#img19" aria-label="Open image A19 in lightbox">
+          <img class="thumb" src="images/A19.jpg" alt="Gallery image A19">
+        </a>
+        <div class="pad">
+          <h3 class="title">Image A19</h3>
+          <p class="lede">Try serif vs sans for brand tone.</p>
+        </div>
+      </article>
+
+      <!-- A20 -->
+      <article class="card">
+        <a href="#img20" aria-label="Open image A20 in lightbox">
+          <img class="thumb" src="images/A20.jpg" alt="Gallery image A20">
+        </a>
+        <div class="pad">
+          <h3 class="title">Image A20</h3>
+          <p class="lede">Increase min cell width for fewer columns.</p>
+        </div>
+      </article>
+
+      <!-- A21 -->
+      <article class="card">
+        <a href="#img21" aria-label="Open image A21 in lightbox">
+          <img class="thumb" src="images/A21.jpg" alt="Gallery image A21">
+        </a>
+        <div class="pad">
+          <h3 class="title">Image A21</h3>
+          <p class="lede">Lightbox is CSS‑only via <code>:target</code>.</p>
+        </div>
+      </article>
+
+      <!-- A22 -->
+      <article class="card">
+        <a href="#img22" aria-label="Open image A22 in lightbox">
+          <img class="thumb" src="images/A22.jpg" alt="Gallery image A22">
+        </a>
+        <div class="pad">
+          <h3 class="title">Image A22</h3>
+          <p class="lede">Close with the button or click backdrop.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- ===== CSS :target Lightboxes (22 overlays) =====
+       Pattern: <section id="imgN" class="lightbox"> ... </section>
+       - The first link inside is a full-screen "backdrop-close" anchor to '#'
+         so clicking outside the frame closes the overlay.
+       - The "Close" button (top-right of caption) also links to '#'.
+  -->
+  <section id="img1" class="lightbox" role="dialog" aria-label="Image A1 full view">
+    <a class="backdrop-close" href="#"></a>
+    <div class="frame">
+      <img class="full" src="images/A1.jpg" alt="Image A1 full size">
+      <div class="caption">
+        <h3>A1 — Full View</h3>
+        <p>Example: 4:3 crop in grid, natural ratio here.</p>
+        <a class="close" href="#">Close</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="img2" class="lightbox" role="dialog" aria-label="Image A2 full view">
+    <a class="backdrop-close" href="#"></a>
+    <div class="frame">
+      <img class="full" src="images/A2.jpg" alt="Image A2 full size">
+      <div class="caption">
+        <h3>A2 — Full View</h3>
+        <p>Hover polish: scale + contrast.</p>
+        <a class="close" href="#">Close</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="img3" class="lightbox" role="dialog" aria-label="Image A3 full view">
+    <a class="backdrop-close" href="#"></a>
+    <div class="frame">
+      <img class="full" src="images/A3.jpg" alt="Image A3 full size">
+      <div class="caption">
+        <h3>A3 — Full View</h3>
+        <p>Soft corners and shadows for depth.</p>
+        <a class="close" href="#">Close</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="img4" class="lightbox" role="dialog" aria-label="Image A4 full view">
+    <a class="backdrop-close" href="#"></a>
+    <div class="frame">
+      <img class="full" src="images/A4.jpg" alt="Image A4 full size">
+      <div class="caption">
+        <h3>A4 — Full View</h3>
+        <p>Grid auto-fit adapts to viewport width.</p>
+        <a class="close" href="#">Close</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="img5" class="lightbox" role="dialog" aria-label="Image A5 full view">
+    <a class="backdrop-close" href="#"></a>
+    <div class="frame">
+      <img class="full" src="images/A5.jpg" alt="Image A5 full size">
+      <div class="caption">
+        <h3>A5 — Full View</h3>
+        <p>Underline menu uses background-size animation.</p>
+        <a class="close" href="#">Close</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="img6" class="lightbox" role="dialog" aria-label="Image A6 full view">
+    <a class="backdrop-close" href="#"></a>
+    <div class="frame">
+      <img class="full" src="images/A6.jpg" alt="Image A6 full size">
+      <div class="caption">
+        <h3>A6 — Full View</h3>
+        <p>Uniform crops using object-fit: cover.</p>
+        <a class="close" href="#">Close</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="img7" class="lightbox" role="dialog" aria-label="Image A7 full view">
+    <a class="backdrop-close" href="#"></a>
+    <div class="frame">
+      <img class="full" src="images/A7.jpg" alt="Image A7 full size">
+      <div class="caption">
+        <h3>A7 — Full View</h3>
+        <p>Min column width controls layout density.</p>
+        <a class="close" href="#">Close</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="img8" class="lightbox" role="dialog" aria-label="Image A8 full view">
+    <a class="backdrop-close" href="#"></a>
+    <div class="frame">
+      <img class="full" src="images/A8.jpg" alt="Image A8 full size">
+      <div class="caption">
+        <h3>A8 — Full View</h3>
+        <p>Always add alt text for meaning and access.</p>
+        <a class="close" href="#">Close</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="img9" class="lightbox" role="dialog" aria-label="Image A9 full view">
+    <a class="backdrop-close" href="#"></a>
+    <div class="frame">
+      <img class="full" src="images/A9.jpg" alt="Image A9 full size">
+      <div class="caption">
+        <h3>A9 — Full View</h3>
+        <p>Tune grid gap for the design vibe you want.</p>
+        <a class="close" href="#">Close</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="img10" class="lightbox" role="dialog" aria-label="Image A10 full view">
+    <a class="backdrop-close" href="#"></a>
+    <div class="frame">
+      <img class="full" src="images/A10.jpg" alt="Image A10 full size">
+      <div class="caption">
+        <h3>A10 — Full View</h3>
+        <p>Dark mode with prefers-color-scheme.</p>
+        <a class="close" href="#">Close</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="img11" class="lightbox" role="dialog" aria-label="Image A11 full view">
+    <a class="backdrop-close" href="#"></a>
+    <div class="frame">
+      <img class="full" src="images/A11.jpg" alt="Image A11 full size">
+      <div class="caption">
+        <h3>A11 — Full View</h3>
+        <p>Focus-visible for keyboard users.</p>
+        <a class="close" href="#">Close</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="img12" class="lightbox" role="dialog" aria-label="Image A12 full view">
+    <a class="backdrop-close" href="#"></a>
+    <div class="frame">
+      <img class="full" src="images/A12.jpg" alt="Image A12 full size">
+      <div class="caption">
+        <h3>A12 — Full View</h3>
+        <p>Use captions to add context or credits.</p>
+        <a class="close" href="#">Close</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="img13" class="lightbox" role="dialog" aria-label="Image A13 full view">
+    <a class="backdrop-close" href="#"></a>
+    <div class="frame">
+      <img class="full" src="images/A13.jpg" alt="Image A13 full size">
+      <div class="caption">
+        <h3>A13 — Full View</h3>
+        <p>Aspect ratios set visual rhythm.</p>
+        <a class="close" href="#">Close</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="img14" class="lightbox" role="dialog" aria-label="Image A14 full view">
+    <a class="backdrop-close" href="#"></a>
+    <div class="frame">
+      <img class="full" src="images/A14.jpg" alt="Image A14 full size">
+      <div class="caption">
+        <h3>A14 — Full View</h3>
+        <p>Hover effects should feel calm and precise.</p>
+        <a class="close" href="#">Close</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="img15" class="lightbox" role="dialog" aria-label="Image A15 full view">
+    <a class="backdrop-close" href="#"></a>
+    <div class="frame">
+      <img class="full" src="images/A15.jpg" alt="Image A15 full size">
+      <div class="caption">
+        <h3>A15 — Full View</h3>
+        <p>Color system via CSS variables.</p>
+        <a class="close" href="#">Close</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="img16" class="lightbox" role="dialog" aria-label="Image A16 full view">
+    <a class="backdrop-close" href="#"></a>
+    <div class="frame">
+      <img class="full" src="images/A16.jpg" alt="Image A16 full size">
+      <div class="caption">
+        <h3>A16 — Full View</h3>
+        <p>Shadows: subtle realism, not drama.</p>
+        <a class="close" href="#">Close</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="img17" class="lightbox" role="dialog" aria-label="Image A17 full view">
+    <a class="backdrop-close" href="#"></a>
+    <div class="frame">
+      <img class="full" src="images/A17.jpg" alt="Image A17 full size">
+      <div class="caption">
+        <h3>A17 — Full View</h3>
+        <p>Keep text short; let images speak.</p>
+        <a class="close" href="#">Close</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="img18" class="lightbox" role="dialog" aria-label="Image A18 full view">
+    <a class="backdrop-close" href="#"></a>
+    <div class="frame">
+      <img class="full" src="images/A18.jpg" alt="Image A18 full size">
+      <div class="caption">
+        <h3>A18 — Full View</h3>
+        <p>Borders define edges on any theme.</p>
+        <a class="close" href="#">Close</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="img19" class="lightbox" role="dialog" aria-label="Image A19 full view">
+    <a class="backdrop-close" href="#"></a>
+    <div class="frame">
+      <img class="full" src="images/A19.jpg" alt="Image A19 full size">
+      <div class="caption">
+        <h3>A19 — Full View</h3>
+        <p>Typography changes the mood quickly.</p>
+        <a class="close" href="#">Close</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="img20" class="lightbox" role="dialog" aria-label="Image A20 full view">
+    <a class="backdrop-close" href="#"></a>
+    <div class="frame">
+      <img class="full" src="images/A20.jpg" alt="Image A20 full size">
+      <div class="caption">
+        <h3>A20 — Full View</h3>
+        <p>Try 320px min size for fewer columns.</p>
+        <a class="close" href="#">Close</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="img21" class="lightbox" role="dialog" aria-label="Image A21 full view">
+    <a class="backdrop-close" href="#"></a>
+    <div class="frame">
+      <img class="full" src="images/A21.jpg" alt="Image A21 full size">
+      <div class="caption">
+        <h3>A21 — Full View</h3>
+        <p>:target toggles visibility without JS.</p>
+        <a class="close" href="#">Close</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="img22" class="lightbox" role="dialog" aria-label="Image A22 full view">
+    <a class="backdrop-close" href="#"></a>
+    <div class="frame">
+      <img class="full" src="images/A22.jpg" alt="Image A22 full size">
+      <div class="caption">
+        <h3>A22 — Full View</h3>
+        <p>Backdrop is also a close link to "#".</p>
+        <a class="close" href="#">Close</a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

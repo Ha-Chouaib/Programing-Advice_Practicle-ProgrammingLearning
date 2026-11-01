@@ -3,11 +3,27 @@
   "WorkspaceRootPath": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2E92AE6C-E6D8-491F-A22F-EA3BFB1AE6E3}|Bank_BusinessLayer\\Bank_BusinessLayer.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\bank_businesslayer\\clsutil_bl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E92AE6C-E6D8-491F-A22F-EA3BFB1AE6E3}|Bank_BusinessLayer\\Bank_BusinessLayer.csproj|solutionrelative:bank_businesslayer\\clsutil_bl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0A08617-91A6-4FF9-A1E4-14867027E3FC}|BankSystem\\BankSystem.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\projects\\06_banksystem\\banksystem\\banksystem\\globalelements\\forms\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0A08617-91A6-4FF9-A1E4-14867027E3FC}|BankSystem\\BankSystem.csproj|solutionrelative:banksystem\\globalelements\\forms\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E92AE6C-E6D8-491F-A22F-EA3BFB1AE6E3}|Bank_BusinessLayer\\Bank_BusinessLayer.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\bank_businesslayer\\clsglobal_bl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E92AE6C-E6D8-491F-A22F-EA3BFB1AE6E3}|Bank_BusinessLayer\\Bank_BusinessLayer.csproj|solutionrelative:bank_businesslayer\\clsglobal_bl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0A08617-91A6-4FF9-A1E4-14867027E3FC}|BankSystem\\BankSystem.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\banksystem\\globalelements\\forms\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A0A08617-91A6-4FF9-A1E4-14867027E3FC}|BankSystem\\BankSystem.csproj|solutionrelative:banksystem\\globalelements\\forms\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A0A08617-91A6-4FF9-A1E4-14867027E3FC}|BankSystem\\BankSystem.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\banksystem\\user\\usercontrols\\popupfrm_userpermissionsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A0A08617-91A6-4FF9-A1E4-14867027E3FC}|BankSystem\\BankSystem.csproj|solutionrelative:banksystem\\user\\usercontrols\\popupfrm_userpermissionsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A0A08617-91A6-4FF9-A1E4-14867027E3FC}|BankSystem\\BankSystem.csproj|c:\\users\\jook\\desktop\\programing-advice_practicle-programminglearning\\01_back-end\\part-2-with_c#\\projects\\06_banksystem\\banksystem\\banksystem\\user\\usercontrols\\ctrlusercard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A0A08617-91A6-4FF9-A1E4-14867027E3FC}|BankSystem\\BankSystem.csproj|C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\banksystem\\user\\usercontrols\\ctrlusercard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A0A08617-91A6-4FF9-A1E4-14867027E3FC}|BankSystem\\BankSystem.csproj|solutionrelative:banksystem\\user\\usercontrols\\ctrlusercard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -58,15 +74,66 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmLogin.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\GlobalElements\\Forms\\frmLogin.cs",
+              "RelativeDocumentMoniker": "BankSystem\\GlobalElements\\Forms\\frmLogin.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\GlobalElements\\Forms\\frmLogin.cs",
+              "RelativeToolTip": "BankSystem\\GlobalElements\\Forms\\frmLogin.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAwBYAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-03T18:57:54.59Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "clsGlobal_BL.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_BusinessLayer\\clsGlobal_BL.cs",
+              "RelativeDocumentMoniker": "Bank_BusinessLayer\\clsGlobal_BL.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_BusinessLayer\\clsGlobal_BL.cs",
+              "RelativeToolTip": "Bank_BusinessLayer\\clsGlobal_BL.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAswBYAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-03T18:58:35.148Z",
+              "IsPinned": true
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "clsUtil_BL.cs",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_BusinessLayer\\clsUtil_BL.cs",
+              "RelativeDocumentMoniker": "Bank_BusinessLayer\\clsUtil_BL.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_BusinessLayer\\clsUtil_BL.cs",
+              "RelativeToolTip": "Bank_BusinessLayer\\clsUtil_BL.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAA8wB4AAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-03T19:01:39.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmLogin.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\GlobalElements\\Forms\\frmLogin.cs",
+              "RelativeDocumentMoniker": "BankSystem\\GlobalElements\\Forms\\frmLogin.cs",
+              "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\GlobalElements\\Forms\\frmLogin.cs [Design]",
+              "RelativeToolTip": "BankSystem\\GlobalElements\\Forms\\frmLogin.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-03T18:57:51.205Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "ctrlUserCard.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\User\\UserControls\\ctrlUserCard.cs",
               "RelativeDocumentMoniker": "BankSystem\\User\\UserControls\\ctrlUserCard.cs",
@@ -74,37 +141,34 @@
               "RelativeToolTip": "BankSystem\\User\\UserControls\\ctrlUserCard.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T08:15:23.69Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-16T08:15:23.69Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "PopupFrm_UserPermissionSettings.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\User\\UserControls\\PopupFrm_UserPermissionSettings.cs",
               "RelativeDocumentMoniker": "BankSystem\\User\\UserControls\\PopupFrm_UserPermissionSettings.cs",
               "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\User\\UserControls\\PopupFrm_UserPermissionSettings.cs",
               "RelativeToolTip": "BankSystem\\User\\UserControls\\PopupFrm_UserPermissionSettings.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAmwFcAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAmwFcAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T07:23:21.998Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-16T07:23:21.998Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "PopupFrm_UserPermissionSettings.cs [Design]",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\User\\UserControls\\PopupFrm_UserPermissionSettings.cs",
               "RelativeDocumentMoniker": "BankSystem\\User\\UserControls\\PopupFrm_UserPermissionSettings.cs",
               "ToolTip": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\User\\UserControls\\PopupFrm_UserPermissionSettings.cs [Design]",
               "RelativeToolTip": "BankSystem\\User\\UserControls\\PopupFrm_UserPermissionSettings.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T07:23:18.236Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-09-16T07:23:18.236Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "ctrlHomePageShorts.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\GlobalElements\\UserControls\\ctrlHomePageShorts.cs",
               "RelativeDocumentMoniker": "BankSystem\\GlobalElements\\UserControls\\ctrlHomePageShorts.cs",
@@ -116,7 +180,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "clsTransactionsHistory_DAL.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_DataAccess\\Reports_DAL\\clsTransactionsHistory_DAL.cs",
               "RelativeDocumentMoniker": "Bank_DataAccess\\Reports_DAL\\clsTransactionsHistory_DAL.cs",
@@ -128,7 +192,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "frmManagePeople.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\Person\\Forms\\frmManagePeople.cs",
               "RelativeDocumentMoniker": "BankSystem\\Person\\Forms\\frmManagePeople.cs",
@@ -140,7 +204,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "ctrlManageCurrencies.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\Currencies\\Controls\\ctrlManageCurrencies.cs",
               "RelativeDocumentMoniker": "BankSystem\\Currencies\\Controls\\ctrlManageCurrencies.cs",
@@ -152,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "ctrlCurrencyCalculator.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\Currencies\\Controls\\ctrlCurrencyCalculator.cs",
               "RelativeDocumentMoniker": "BankSystem\\Currencies\\Controls\\ctrlCurrencyCalculator.cs",
@@ -164,7 +228,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "clsAccounts.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_BusinessLayer\\clsAccounts.cs",
               "RelativeDocumentMoniker": "Bank_BusinessLayer\\clsAccounts.cs",
@@ -176,7 +240,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "clsCurrencies_DAL.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\Bank_DataAccess\\clsCurrencies_DAL.cs",
               "RelativeDocumentMoniker": "Bank_DataAccess\\clsCurrencies_DAL.cs",
@@ -188,7 +252,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "frmTransactionsHistory.cs",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\Reports\\TransactionHistory\\frmTransactionsHistory.cs",
               "RelativeDocumentMoniker": "BankSystem\\Reports\\TransactionHistory\\frmTransactionsHistory.cs",
@@ -200,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "ctrlCurrencyCalculator.cs [Design]",
               "DocumentMoniker": "C:\\Users\\jook\\Desktop\\Programing-Advice_Practicle-ProgrammingLearning\\01_Back-end\\Part-2-with_C#\\Projects\\06_BankSystem\\BankSystem\\BankSystem\\Currencies\\Controls\\ctrlCurrencyCalculator.cs",
               "RelativeDocumentMoniker": "BankSystem\\Currencies\\Controls\\ctrlCurrencyCalculator.cs",

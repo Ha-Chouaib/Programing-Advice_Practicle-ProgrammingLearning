@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project 29 – Responsive Mosaic Grid (No JS)</title>
+
+  <style>
+    /* ============================================================
+       Project 29 – Responsive Mosaic Grid
+       ------------------------------------------------------------
+       • No JavaScript. Pure CSS Grid + transitions.
+       • Top glassy menu bar with pill links.
+       • Auto-fit masonry-like grid using responsive "cards".
+       • Mosaic feel: selected items span extra rows/cols at ≥ 900px.
+       • Hover/focus: image de-saturate → color + subtle zoom,
+         caption slides up with gradient readability.
+       • Fully keyboard accessible via :focus-visible.
+       ============================================================ */
+
+    :root{
+      --bg: #0f172a;            /* slate-900 */
+      --ink: #e5e7eb;           /* slate-200 */
+      --muted: #9aa2b2;         /* cool gray for copy */
+      --accent: #22d3ee;        /* cyan-400 */
+      --accent-ink: #061015;
+      --tile-bg: #0b1222;       /* deep navy card */
+      --ring: 0 0 0 3px rgba(34,211,238,.55), 0 0 0 7px rgba(34,211,238,.18);
+      --radius: 14px;
+      --shadow: 0 14px 32px rgba(0,0,0,.35);
+      --gap: 12px;              /* grid gap */
+      --maxw: 1200px;
+    }
+
+    /* ===== Base ===== */
+    html, body { margin:0; }
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 10% -10%, #1e293b 0%, #0f172a 55%), #0f172a;
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    /* ===== Top Navigation (glassy bar) ===== */
+    .nav{
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: blur(12px) saturate(140%);
+      -webkit-backdrop-filter: blur(12px) saturate(140%);
+      background: rgba(2,6,23,.6);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .nav-inner{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: .85rem 1rem;
+      display: flex; align-items: center; justify-content: space-between; gap:.75rem;
+    }
+    .brand{
+      font-weight: 800; letter-spacing:.3px;
+      color: var(--accent);
+    }
+    .menu{
+      display:flex; gap:.4rem; flex-wrap: wrap;
+    }
+    .menu a{
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 700;
+      padding:.45rem .8rem;
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 999px;
+      background: linear-gradient(to bottom right, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      transition: transform .15s ease, background .2s ease, color .2s ease;
+    }
+    .menu a:hover{ transform: translateY(-2px); color: var(--accent); }
+
+    /* ===== Header ===== */
+    header{
+      max-width: var(--maxw);
+      margin: 1.2rem auto 0;
+      padding: 1rem;
+    }
+    header h1{ margin:.2rem 0 .35rem; font-size: clamp(1.6rem, 3.5vw, 2.2rem); }
+    header p{ margin:0; color: var(--muted); }
+
+    /* ===== Mosaic Grid =====
+       We use auto-fit + minmax to create flexible tiles that
+       break to 1, 2, 3, 4 columns depending on viewport. */
+    .grid{
+      max-width: var(--maxw);
+      margin: 1rem auto 2.2rem;
+      padding: 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: var(--gap);
+    }
+
+    /* Tile (card) container */
+    .tile{
+      position: relative;
+      background: var(--tile-bg);
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      isolation: isolate;       /* new stacking context for overlay */
+    }
+
+    /* Image fills width; aspect is controlled by actual image dimensions.
+       To unify height feel, we can also clamp with aspect-ratio if desired:
+       .tile img { aspect-ratio: 4/3; object-fit: cover; } */
+    .tile img{
+      display:block;
+      width: 100%;
+      height: auto;
+      filter: grayscale(.35) contrast(1.02);
+      transform: scale(1);
+      transition: transform .6s ease, filter .6s ease;
+      z-index: 1;
+      position: relative;
+    }
+
+    /* Caption overlay (hidden by default) */
+    .caption{
+      position: absolute; inset: auto 0 0 0;
+      padding: .9rem 1rem 1rem;
+      color: #ffffff;
+      background:
+        linear-gradient(to top, rgba(2,6,23,.78) 0%, rgba(2,6,23,.45) 45%, rgba(2,6,23,0) 100%);
+      transform: translateY(16px);
+      opacity: 0;
+      transition: opacity .35s ease, transform .35s ease;
+      z-index: 2;
+      pointer-events: none; /* clicks go through to <a> if added */
+    }
+    .caption h3{
+      margin: 0 0 .15rem; font-size: 1rem; letter-spacing:.2px;
+    }
+    .caption p{ margin: 0; font-size: .92rem; opacity: .95; }
+
+    /* Hover/focus reveal */
+    .tile:hover img,
+    .tile:focus-within img{
+      transform: scale(1.04);
+      filter: grayscale(0) saturate(1.08) contrast(1.06);
+    }
+    .tile:hover .caption,
+    .tile:focus-within .caption{
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Invisible link to enable keyboard focus (optional) */
+    .coverlink{
+      position: absolute; inset: 0;
+    }
+    .coverlink:focus-visible{
+      outline: none;
+      box-shadow: var(--ring);
+      border-radius: 10px;
+      margin: 6px; /* keep ring visible inside rounded corners */
+    }
+
+    /* ===== Mosaic Accents (bigger spans on wide screens) =====
+       On large viewports, make a few tiles span to create rhythm.
+       These selectors are deterministic (by order in markup). */
+    @media (min-width: 900px){
+      .tile:nth-of-type(3){ grid-column: span 2; }
+      .tile:nth-of-type(7){ grid-row: span 2; }
+      .tile:nth-of-type(10){ grid-column: span 2; }
+      .tile:nth-of-type(14){ grid-row: span 2; }
+      .tile:nth-of-type(18){ grid-column: span 2; }
+      .tile:nth-of-type(21){ grid-row: span 2; }
+      /* Ensure images still look good when spanned */
+      .tile:nth-of-type(7) img,
+      .tile:nth-of-type(14) img,
+      .tile:nth-of-type(21) img{
+        height: 100%;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+      }
+    }
+
+    /* ===== Print (optional clean output) ===== */
+    @media print{
+      .nav, header{ display:none !important; }
+      body{ background: #fff; color: #000; }
+      .tile{ break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+      .caption{ background: none; color: #000; opacity: 1; transform:none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Glassy Top Nav (different style/menu) ===== -->
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand">Project 29</div>
+      <nav class="menu" aria-label="Primary">
+        <a href="#">Overview</a>
+        <a href="#">Galleries</a>
+        <a href="#">Collections</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ===== Page Header ===== -->
+  <header>
+    <h1>Responsive Mosaic Grid (No JavaScript)</h1>
+    <p>Auto-fit CSS Grid with tasteful hover captions and accent spans for a magazine-grade rhythm.</p>
+  </header>
+
+  <!-- ===== Grid Gallery (ALL 22 images) ===== -->
+  <main class="grid" aria-label="Mosaic gallery">
+    <!-- Pattern per tile:
+         <figure class="tile">
+           <img src="images/A#.jpg" alt="Descriptive alt">
+           <a class="coverlink" href="#" aria-label="Open A#"></a>
+           <figcaption class="caption"><h3>…</h3><p>…</p></figcaption>
+         </figure>
+    -->
+
+    <figure class="tile">
+      <img src="images/A1.jpg" alt="Photo A1">
+      <a class="coverlink" href="#" aria-label="Open A1"></a>
+      <figcaption class="caption"><h3>A1 — Opener</h3><p>Editorial lead</p></figcaption>
+    </figure>
+
+    <figure class="tile">
+      <img src="images/A2.jpg" alt="Photo A2">
+      <a class="coverlink" href="#" aria-label="Open A2"></a>
+      <figcaption class="caption"><h3>A2 — Portrait</h3><p>Studio light</p></figcaption>
+    </figure>
+
+    <figure class="tile">
+      <img src="images/A3.jpg" alt="Photo A3">
+      <a class="coverlink" href="#" aria-label="Open A3"></a>
+      <figcaption class="caption"><h3>A3 — Landscape</h3><p>Wide horizon</p></figcaption>
+    </figure>
+
+    <figure class="tile">
+      <img src="images/A4.jpg" alt="Photo A4">
+      <a class="coverlink" href="#" aria-label="Open A4"></a>
+      <figcaption class="caption"><h3>A4 — Architecture</h3><p>Geometry & lines</p></figcaption>
+    </figure>
+
+    <figure class="tile">
+      <img src="images/A5.jpg" alt="Photo A5">
+      <a class="coverlink" href="#" aria-label="Open A5"></a>
+      <figcaption class="caption"><h3>A5 — Street</h3><p>Candid moment</p></figcaption>
+    </figure>
+
+    <figure class="tile">
+      <img src="images/A6.jpg" alt="Photo A6">
+      <a class="coverlink" href="#" aria-label="Open A6"></a>
+      <figcaption class="caption"><h3>A6 — Travel</h3><p>Color notes</p></figcaption>
+    </figure>
+
+    <figure class="tile">
+      <img src="images/A7.jpg" alt="Photo A7">
+      <a class="coverlink" href="#" aria-label="Open A7"></a>
+      <figcaption class="caption"><h3>A7 — Documentary</h3><p>On assignment</p></figcaption>
+    </figure>
+
+    <figure class="tile">
+      <img src="images/A8.jpg" alt="Photo A8">
+      <a class="coverlink" href="#" aria-label="Open A8"></a>
+      <figcaption class="caption"><h3>A8 — Minimal</h3><p>Negative space</p></figcaption>
+    </figure>
+
+    <figure class="tile">
+      <img src="images/A9.jpg" alt="Photo A9">
+      <a class="coverlink" href="#" aria-label="Open A9"></a>
+      <figcaption class="caption"><h3>A9 — Motion</h3><p>Slow shutter</p></figcaption>
+    </figure>
+
+    <figure class="tile">
+      <img src="images/A10.jpg" alt="Photo A10">
+      <a class="coverlink" href="#" aria-label="Open A10"></a>
+      <figcaption class="caption"><h3>A10 — Abstract</h3><p>Texture study</p></figcaption>
+    </figure>
+
+    <figure class="tile">
+      <img src="images/A11.jpg" alt="Photo A11">
+      <a class="coverlink" href="#" aria-label="Open A11"></a>
+      <figcaption class="caption"><h3>A11 — Portrait</h3><p>Classic tone</p></figcaption>
+    </figure>
+
+    <figure class="tile">
+      <img src="images/A12.jpg" alt="Photo A12">
+      <a class="coverlink" href="#" aria-label="Open A12"></a>
+      <figcaption class="caption"><h3>A12 — Still Life</h3><p>Studio craft</p></figcaption>
+    </figure>
+
+    <figure class="tile">
+      <img src="images/A13.jpg" alt="Photo A13">
+      <a class="coverlink" href="#" aria-label="Open A13"></a>
+      <figcaption class="caption"><h3>A13 — Landscape</h3><p>Golden hour</p></figcaption>
+    </figure>
+
+    <figure class="tile">
+      <img src="images/A14.jpg" alt="Photo A14">
+      <a class="coverlink" href="#" aria-label="Open A14"></a>
+      <figcaption class="caption"><h3>A14 — Architecture</h3><p>Modern lines</p></figcaption>
+    </figure>
+
+    <figure class="tile">
+      <img src="images/A15.jpg" alt="Photo A15">
+      <a class="coverlink" href="#" aria-label="Open A15"></a>
+      <figcaption class="caption"><h3>A15 — Street</h3><p>Monochrome</p></figcaption>
+    </figure>
+
+    <figure class="tile">
+      <img src="images/A16.jpg" alt="Photo A16">
+      <a class="coverlink" href="#" aria-label="Open A16"></a>
+      <figcaption class="caption"><h3>A16 — Travel</h3><p>Ambient light</p></figcaption>
+    </figure>
+
+    <figure class="tile">
+      <img src="images/A17.jpg" alt="Photo A17">
+      <a class="coverlink" href="#" aria-label="Open A17"></a>
+      <figcaption class="caption"><h3>A17 — Documentary</h3><p>Field work</p></figcaption>
+    </figure>
+
+    <figure class="tile">
+      <img src="images/A18.jpg" alt="Photo A18">
+      <a class="coverlink" href="#" aria-label="Open A18"></a>
+      <figcaption class="caption"><h3>A18 — Minimal</h3><p>Form & light</p></figcaption>
+    </figure>
+
+    <figure class="tile">
+      <img src="images/A19.jpg" alt="Photo A19">
+      <a class="coverlink" href="#" aria-label="Open A19"></a>
+      <figcaption class="caption"><h3>A19 — Motion</h3><p>Dynamic frame</p></figcaption>
+    </figure>
+
+    <figure class="tile">
+      <img src="images/A20.jpg" alt="Photo A20">
+      <a class="coverlink" href="#" aria-label="Open A20"></a>
+      <figcaption class="caption"><h3>A20 — Abstract</h3><p>Color fields</p></figcaption>
+    </figure>
+
+    <figure class="tile">
+      <img src="images/A21.jpg" alt="Photo A21">
+      <a class="coverlink" href="#" aria-label="Open A21"></a>
+      <figcaption class="caption"><h3>A21 — Series</h3><p>Set piece</p></figcaption>
+    </figure>
+
+    <figure class="tile">
+      <img src="images/A22.jpg" alt="Photo A22">
+      <a class="coverlink" href="#" aria-label="Open A22"></a>
+      <figcaption class="caption"><h3>A22 — Closer</h3><p>Final frame</p></figcaption>
+    </figure>
+  </main>
+
+</body>
+</html>

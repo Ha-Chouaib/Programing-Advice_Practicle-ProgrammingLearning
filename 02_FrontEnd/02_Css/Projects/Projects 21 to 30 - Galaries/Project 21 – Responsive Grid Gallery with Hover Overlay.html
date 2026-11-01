@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project 21 – Responsive Grid Gallery with Hover Overlay</title>
+
+  <style>
+    /* ==========================================================
+       📸 Project 21 – Responsive Grid Gallery with Hover Overlay
+       - NO JavaScript. Pure HTML + CSS.
+       - Menu: Simple, centered Flexbox navigation
+       - Layout: CSS Grid auto-fitting cards
+       - Effect: Caption overlay on hover
+       - A11y: Meaningful alt text; good contrast; focus styles
+       ========================================================== */
+
+    /* ---------- Base / Reset ---------- */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f9fafb;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    /* ---------- Navigation (Flexbox) ---------- */
+    nav {
+      background: #111827;                /* near black */
+      padding: 1rem 1.25rem;
+      display: flex;
+      justify-content: center;            /* center menu links */
+      gap: 2rem;
+      position: sticky; top: 0;           /* handy if the page gets long */
+      z-index: 10;
+    }
+    nav a {
+      color: #f9fafb;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: .02em;
+      transition: color .25s ease;
+    }
+    nav a:hover,
+    nav a:focus-visible { color: #38bdf8; } /* cyan hover/focus */
+
+    /* ---------- Page Header ---------- */
+    header {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 0.75rem;
+    }
+    header h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: .3rem; }
+    header p  { color: #6b7280; }
+
+    /* ---------- Responsive Grid Gallery ---------- */
+    .gallery {
+      display: grid;
+      /* auto-fit = fills each row; minmax keeps columns flexible */
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      max-width: 1200px;
+      margin: 1rem auto 2rem;
+      padding: 0 1rem 1rem;
+    }
+
+    /* ---------- Image Card ---------- */
+    .card {
+      position: relative;             /* needed for absolute overlay */
+      overflow: hidden;               /* hides zoom overflow */
+      border-radius: 12px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 6px 12px rgba(0,0,0,.08);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0,0,0,.12);
+    }
+
+    /* Use aspect-ratio to keep a consistent tile; object-fit crops nicely */
+    .card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;            /* consistent tile height */
+      object-fit: cover;               /* fill without distortion */
+      display: block;
+      transition: transform .45s ease; /* smooth zoom on hover */
+    }
+    .card:hover img { transform: scale(1.08); }
+
+    /* ---------- Overlay (appears on hover) ---------- */
+    .overlay {
+      position: absolute; inset: 0;    /* full-cover overlay */
+      background: rgba(0,0,0,.55);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700;
+      letter-spacing: .02em;
+      opacity: 0;
+      transition: opacity .35s ease;
+      text-align: center;
+      padding: .75rem;
+    }
+    .card:hover .overlay,
+    .card:focus-within .overlay { opacity: 1; }
+
+    /* ---------- Keyboard Focus Helpers ---------- */
+    .card a {
+      position: absolute; inset: 0;    /* full-tile link target (big tap area) */
+      /* Invisible but focusable: */
+      color: transparent; background: transparent; text-indent: -9999px;
+      outline: none;
+    }
+    .card a:focus-visible + .overlay {
+      /* When the hidden link gets focus, reveal overlay for keyboard users */
+      opacity: 1;
+      outline: 2px solid #38bdf8;
+      outline-offset: -2px;
+    }
+
+    /* ---------- Footer (optional) ---------- */
+    footer {
+      max-width: 1200px;
+      margin: 0 auto 2rem;
+      padding: 0 1rem;
+      color: #6b7280;
+      font-size: .95rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Top Menu (suggested style #1: centered bold links) ===== -->
+  <nav aria-label="Primary">
+    <a href="#">Home</a>
+    <a href="#">Gallery</a>
+    <a href="#">Collections</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <!-- Page intro -->
+  <header>
+    <h1>Project 21 – Responsive Grid Gallery with Hover Overlay</h1>
+    <p> Hover (or focus with keyboard) to reveal captions.</p>
+  </header>
+
+  <!-- ===== Gallery Grid (ALL 22 images) ===== -->
+  <section class="gallery" aria-label="Image gallery">
+    <!-- Each card uses: img + (hidden full-tile link for focus) + overlay text -->
+    <figure class="card">
+      <img src="images/A1.jpg"  alt="Gallery image A1">
+      <a href="#" aria-label="Open A1"></a>
+      <figcaption class="overlay">Caption A1</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img src="images/A2.jpg"  alt="Gallery image A2">
+      <a href="#" aria-label="Open A2"></a>
+      <figcaption class="overlay">Caption A2</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img src="images/A3.jpg"  alt="Gallery image A3">
+      <a href="#" aria-label="Open A3"></a>
+      <figcaption class="overlay">Caption A3</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img src="images/A4.jpg"  alt="Gallery image A4">
+      <a href="#" aria-label="Open A4"></a>
+      <figcaption class="overlay">Caption A4</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img src="images/A5.jpg"  alt="Gallery image A5">
+      <a href="#" aria-label="Open A5"></a>
+      <figcaption class="overlay">Caption A5</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img src="images/A6.jpg"  alt="Gallery image A6">
+      <a href="#" aria-label="Open A6"></a>
+      <figcaption class="overlay">Caption A6</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img src="images/A7.jpg"  alt="Gallery image A7">
+      <a href="#" aria-label="Open A7"></a>
+      <figcaption class="overlay">Caption A7</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img src="images/A8.jpg"  alt="Gallery image A8">
+      <a href="#" aria-label="Open A8"></a>
+      <figcaption class="overlay">Caption A8</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img src="images/A9.jpg"  alt="Gallery image A9">
+      <a href="#" aria-label="Open A9"></a>
+      <figcaption class="overlay">Caption A9</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img src="images/A10.jpg" alt="Gallery image A10">
+      <a href="#" aria-label="Open A10"></a>
+      <figcaption class="overlay">Caption A10</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img src="images/A11.jpg" alt="Gallery image A11">
+      <a href="#" aria-label="Open A11"></a>
+      <figcaption class="overlay">Caption A11</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img src="images/A12.jpg" alt="Gallery image A12">
+      <a href="#" aria-label="Open A12"></a>
+      <figcaption class="overlay">Caption A12</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img src="images/A13.jpg" alt="Gallery image A13">
+      <a href="#" aria-label="Open A13"></a>
+      <figcaption class="overlay">Caption A13</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img src="images/A14.jpg" alt="Gallery image A14">
+      <a href="#" aria-label="Open A14"></a>
+      <figcaption class="overlay">Caption A14</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img src="images/A15.jpg" alt="Gallery image A15">
+      <a href="#" aria-label="Open A15"></a>
+      <figcaption class="overlay">Caption A15</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img src="images/A16.jpg" alt="Gallery image A16">
+      <a href="#" aria-label="Open A16"></a>
+      <figcaption class="overlay">Caption A16</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img src="images/A17.jpg" alt="Gallery image A17">
+      <a href="#" aria-label="Open A17"></a>
+      <figcaption class="overlay">Caption A17</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img src="images/A18.jpg" alt="Gallery image A18">
+      <a href="#" aria-label="Open A18"></a>
+      <figcaption class="overlay">Caption A18</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img src="images/A19.jpg" alt="Gallery image A19">
+      <a href="#" aria-label="Open A19"></a>
+      <figcaption class="overlay">Caption A19</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img src="images/A20.jpg" alt="Gallery image A20">
+      <a href="#" aria-label="Open A20"></a>
+      <figcaption class="overlay">Caption A20</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img src="images/A21.jpg" alt="Gallery image A21">
+      <a href="#" aria-label="Open A21"></a>
+      <figcaption class="overlay">Caption A21</figcaption>
+    </figure>
+
+    <figure class="card">
+      <img src="images/A22.jpg" alt="Gallery image A22">
+      <a href="#" aria-label="Open A22"></a>
+      <figcaption class="overlay">Caption A22</figcaption>
+    </figure>
+  </section>
+
+  <footer>
+    Tip for students: Try changing <code>aspect-ratio</code> (e.g., 1/1 for squares) and
+    experiment with different <code>grid-template-columns</code> to see how the layout responds.
+  </footer>
+</body>
+</html>

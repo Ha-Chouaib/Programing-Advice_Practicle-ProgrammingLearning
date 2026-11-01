@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>30 CSS Paginations – Effects Gallery (No JS)</title>
+    <style>
+        /* ──────────────────────────────────────────────────────────────────────────────
+│  ╔═════════════════════════════════════════════════════════════════════════╗
+│  ║                           CODE OVERVIEW                                 ║
+│  ╚═════════════════════════════════════════════════════════════════════════╝
+│  • Purpose → A single HTML/CSS page showcasing **30 distinct pagination**   │
+│    styles. No JavaScript. Each style has its own class: `.pg-1 … .pg-30`.   │
+│  • Structure → Gallery grid. Each cell contains a <nav> with a <ul> list    │
+│    of page items: Prev, 1–5, Next. All are real buttons (keyboard/a11y).    │
+│  • Techniques → pills, outlines, gradients, neon, glass, bevel, dashed,     │
+│    double, shadow lift, brutalist, underlines, chips, icons (SVG data-URI),  │
+│    conic/rainbow borders, stripes, notch corners, etc.                      │
+│  • A11y → Semantic <nav aria-label="Pagination">, <ul role="list">,       │
+│    focus-visible rings, aria-current for the active page, disabled states.   │
+└──────────────────────────────────────────────────────────────────────────────*/
+
+        :root {
+            --bg: #0b1220;
+            --panel: #0f172a;
+            --ink: #e5e7eb;
+            --muted: #9aa4b2;
+            --brand1: #22d3ee;
+            --brand2: #a78bfa;
+            --bd: rgba(255, 255, 255, .16);
+            --ring: 0 0 0 3px rgba(34, 211, 238, .45);
+            --radius: 12px;
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg: #f5f7fb;
+                --panel: #ffffff;
+                --ink: #0f172a;
+                --muted: #4b5563;
+                --bd: rgba(0, 0, 0, .16);
+                --ring: 0 0 0 3px rgba(14, 165, 233, .35)
+            }
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, Segoe UI, Inter, Roboto, Arial, sans-serif;
+            color: var(--ink);
+            background: radial-gradient(1200px 700px at 10% -10%, rgba(34, 211, 238, .10), transparent 60%),
+                radial-gradient(1200px 700px at 100% 0%, rgba(167, 139, 250, .08), transparent 60%),
+                var(--bg);
+        }
+
+        .header {
+            max-width: 1150px;
+            margin: 36px auto 8px;
+            padding: 0 16px
+        }
+
+        .header h1 {
+            margin: 0 0 6px;
+            font-weight: 800
+        }
+
+        .header p {
+            margin: 0;
+            color: var(--muted)
+        }
+
+        .wrapper {
+            max-width: 1150px;
+            margin: 16px auto 64px;
+            padding: 16px;
+            background: color-mix(in oklab, var(--panel) 92%, transparent);
+            border: 1px solid var(--bd);
+            border-radius: 18px;
+            box-shadow: 0 24px 70px rgba(0, 0, 0, .28)
+        }
+
+        /* ───────── Gallery grid ───────── */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            /* exactly 2 equal-width columns */
+            gap: 16px;
+        }
+
+        .cell {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 16px;
+            border: 1px dashed var(--bd);
+            border-radius: 14px;
+            background: color-mix(in oklab, var(--panel) 94%, transparent)
+        }
+
+        .cell .title {
+            font-weight: 700;
+            color: var(--muted)
+        }
+
+        /* ───────── Base pagination (structure) ───────── */
+        .pagination {
+            /* baseline look shared by all variants */
+            display: inline-block;
+            /* shrink to content */
+        }
+
+        .pagination ul {
+            /* list wrapper */
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pagination button {
+            /* page item */
+            --bg: #0f1a30;
+            --ink: #e8efff;
+            --bdc: var(--bd);
+            min-width: 38px;
+            height: 38px;
+            padding: 0 12px;
+            border-radius: 10px;
+            border: 1px solid var(--bdc);
+            background: var(--bg);
+            color: var(--ink);
+            font-weight: 700;
+            cursor: pointer;
+            transition: .18s ease;
+            transition-property: color, background, border-color, box-shadow, transform, filter;
+        }
+
+        .pagination button:focus-visible {
+            outline: none;
+            box-shadow: var(--ring)
+        }
+
+        .pagination button[disabled] {
+            opacity: .5;
+            cursor: not-allowed
+        }
+
+        .pagination .is-active {
+            /* active page default */
+            background: linear-gradient(135deg, var(--brand1), var(--brand2));
+            color: #0b1220;
+            border-color: transparent
+        }
+
+        /* Small helper: arrow icons via data-URI SVG; used in some variants */
+        :root {
+            --chev-left: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>');
+            --chev-right: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>');
+        }
+
+        /* ───────────────────────────────── 30 Variants (pg-1 … pg-30) ───────────────────────────────── */
+
+        /* 1) Solid pill gradient */
+        .pg-1 button {
+            border: none;
+            border-radius: 999px;
+            background: #0f1a30
+        }
+
+        .pg-1 .is-active {
+            background: linear-gradient(135deg, var(--brand1), var(--brand2));
+            color: #0b1220
+        }
+
+        /* 2) Outline pills */
+        .pg-2 button {
+            background: transparent;
+            color: var(--ink);
+            border: 2px solid color-mix(in oklab, var(--ink) 35%, transparent)
+        }
+
+        .pg-2 button:hover {
+            border-color: color-mix(in oklab, var(--ink) 65%, transparent)
+        }
+
+        .pg-2 .is-active {
+            background: var(--ink);
+            color: #0b1220
+        }
+
+        /* 3) Ghost underline tabs */
+        .pg-3 ul {
+            gap: 2px
+        }
+
+        .pg-3 button {
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            position: relative
+        }
+
+        .pg-3 button::after {
+            content: "";
+            position: absolute;
+            left: 8px;
+            right: 8px;
+            bottom: -6px;
+            height: 2px;
+            background: transparent;
+            transition: background .18s ease
+        }
+
+        .pg-3 button:hover::after,
+        .pg-3 .is-active::after {
+            background: linear-gradient(90deg, var(--brand1), var(--brand2))
+        }
+
+        /* 4) Neon glow */
+        .pg-4 button {
+            border-color: #22d3ee;
+            box-shadow: inset 0 0 12px rgba(34, 211, 238, .25)
+        }
+
+        .pg-4 .is-active {
+            background: #22d3ee;
+            color: #0b1220;
+            text-shadow: 0 0 6px rgba(0, 0, 0, .25)
+        }
+
+        /* 5) Glassmorphism */
+        .pg-5 button {
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .25);
+            backdrop-filter: blur(8px) saturate(120%)
+        }
+
+        .pg-5 button:hover {
+            background: rgba(255, 255, 255, .12)
+        }
+
+        /* 6) Soft shadow lift */
+        .pg-6 button {
+            box-shadow: 0 10px 22px rgba(0, 0, 0, .28)
+        }
+
+        .pg-6 button:hover {
+            transform: translateY(-1px)
+        }
+
+        /* 7) Square brutalist */
+        .pg-7 button {
+            border-radius: 0;
+            border: 3px solid #e5e7eb;
+            background: #0b1220;
+            color: #e5e7eb
+        }
+
+        .pg-7 .is-active {
+            background: #e5e7eb;
+            color: #0b1220
+        }
+
+        /* 8) Gradient border (double bg) */
+        .pg-8 button {
+            border: 2px solid transparent;
+            background:
+                linear-gradient(#0f1a30, #0f1a30) padding-box,
+                linear-gradient(135deg, var(--brand1), var(--brand2)) border-box
+        }
+
+        /* 9) Dashed outline */
+        .pg-9 button {
+            background: transparent;
+            border-style: dashed;
+            border-color: #64748b
+        }
+
+        .pg-9 .is-active {
+            background: #64748b;
+            color: #0b1220;
+            border-color: transparent
+        }
+
+        /* 10) Double border */
+        .pg-10 button {
+            border: 3px double #3b4b67;
+            background: transparent
+        }
+
+        .pg-10 .is-active {
+            background: linear-gradient(135deg, #13203b, #0a172b)
+        }
+
+        /* 11) Metallic sheen */
+        .pg-11 button {
+            background: linear-gradient(160deg, #d1d5db 0%, #ffffff 30%, #bfc5cc 50%, #ffffff 70%, #a8b0b9 100%);
+            color: #1f2937;
+            border-color: #94a3b8
+        }
+
+        .pg-11 .is-active {
+            background: linear-gradient(135deg, var(--brand1), var(--brand2));
+            color: #0b1220
+        }
+
+        /* 12) Rainbow ring */
+        .pg-12 button {
+            border: 2px solid transparent;
+            background:
+                linear-gradient(#0f1a30, #0f1a30) padding-box,
+                linear-gradient(90deg, #ef4444, #f59e0b, #22c55e, #3b82f6, #a855f7) border-box
+        }
+
+        .pg-12 .is-active {
+            background: linear-gradient(90deg, #ef4444, #f59e0b, #22c55e, #3b82f6, #a855f7);
+            color: #0b1220
+        }
+
+        /* 13) Striped fill */
+        .pg-13 button {
+            background: repeating-linear-gradient(45deg, #0f1a30 0 12px, #0b1324 12px 24px)
+        }
+
+        /* 14) Chip style (compact) */
+        .pg-14 button {
+            min-width: 34px;
+            height: 32px;
+            border-radius: 999px;
+            font-weight: 800
+        }
+
+        /* 15) Notched corners */
+        .pg-15 button {
+            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px)
+        }
+
+        /* 16) Underline slide on hover */
+        .pg-16 button {
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            position: relative
+        }
+
+        .pg-16 button::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -6px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, transparent);
+            transition: all .18s ease
+        }
+
+        .pg-16 button:hover::after,
+        .pg-16 .is-active::after {
+            background: linear-gradient(90deg, var(--brand1), var(--brand2))
+        }
+
+        /* 17) Big pill (CTA-like) */
+        .pg-17 button {
+            min-width: 46px;
+            height: 44px;
+            border-radius: 999px;
+            box-shadow: 0 14px 26px rgba(0, 0, 0, .35)
+        }
+
+        /* 18) Inset bevel */
+        .pg-18 button {
+            box-shadow: inset 1px 1px 0 rgba(255, 255, 255, .08), inset -1px -1px 0 rgba(0, 0, 0, .5)
+        }
+
+        /* 19) Edge glow */
+        .pg-19 button {
+            box-shadow: 0 0 0 0 rgba(34, 211, 238, 0)
+        }
+
+        .pg-19 .is-active {
+            box-shadow: 0 0 18px rgba(34, 211, 238, .45)
+        }
+
+        /* 20) Minimal text links */
+        .pg-20 button {
+            background: transparent;
+            border: none;
+            color: #a5b4fc;
+            text-decoration: underline;
+            text-underline-offset: 4px
+        }
+
+        .pg-20 button:hover {
+            filter: brightness(1.2)
+        }
+
+        .pg-20 .is-active {
+            color: #fca5a5
+        }
+
+        /* 21) Card tabs */
+        .pg-21 ul {
+            gap: 0
+        }
+
+        .pg-21 button {
+            border-radius: 0;
+            border-left-width: 0;
+            border-right-width: 0
+        }
+
+        .pg-21 li:first-child button {
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+            border-left-width: 1px
+        }
+
+        .pg-21 li:last-child button {
+            border-top-right-radius: 12px;
+            border-bottom-right-radius: 12px;
+            border-right-width: 1px
+        }
+
+        /* 22) Compact square */
+        .pg-22 button {
+            min-width: 34px;
+            height: 34px;
+            border-radius: 6px
+        }
+
+        /* 23) Outline → fill on hover */
+        .pg-23 button {
+            background: transparent;
+            border: 2px solid #22d3ee
+        }
+
+        .pg-23 button:hover {
+            background: rgba(34, 211, 238, .15)
+        }
+
+        .pg-23 .is-active {
+            background: #22d3ee;
+            color: #0b1220
+        }
+
+        /* 24) Frosted strong */
+        .pg-24 button {
+            background: rgba(255, 255, 255, .14);
+            border-color: rgba(255, 255, 255, .35);
+            backdrop-filter: blur(12px) saturate(130%)
+        }
+
+        .pg-24 .is-active {
+            background: rgba(255, 255, 255, .35);
+            color: #0b1220
+        }
+
+        /* 25) Chevron buttons (icon background) */
+        .pg-25 .prev,
+        .pg-25 .next {
+            width: 42px;
+            padding: 0;
+            background: #0f1a30;
+            border: 1px solid var(--bd)
+        }
+
+        .pg-25 .prev {
+            background-image: var(--chev-left);
+            background-repeat: no-repeat;
+            background-position: center
+        }
+
+        .pg-25 .next {
+            background-image: var(--chev-right);
+            background-repeat: no-repeat;
+            background-position: center
+        }
+
+        /* 26) Conic border halo */
+        .pg-26 button {
+            position: relative;
+            z-index: 0;
+            border: 2px solid transparent;
+            background:
+                linear-gradient(#0f1a30, #0f1a30) padding-box,
+                conic-gradient(from 180deg at 50% 50%, #ef4444, #f59e0b, #22c55e, #3b82f6, #a855f7, #ef4444) border-box
+        }
+
+        .pg-26 .is-active {
+            background: conic-gradient(from 180deg at 50% 50%, #ef4444, #f59e0b, #22c55e, #3b82f6, #a855f7, #ef4444)
+        }
+
+        /* 27) Monochrome outline */
+        .pg-27 button {
+            background: #0b1220;
+            border: 2px solid #e5e7eb;
+            color: #e5e7eb
+        }
+
+        .pg-27 .is-active {
+            background: #e5e7eb;
+            color: #0b1220
+        }
+
+        /* 28) Soft gradient fill */
+        .pg-28 button {
+            background: linear-gradient(135deg, #0f1a30, #0b2038)
+        }
+
+        .pg-28 .is-active {
+            filter: brightness(1.15)
+        }
+
+        /* 29) Hover lift + drop */
+        .pg-29 button {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .25)
+        }
+
+        .pg-29 button:hover {
+            transform: translateY(-2px)
+        }
+
+        .pg-29 button:active {
+            transform: translateY(0)
+        }
+
+        /* 30) Tiny dots (indicator row) */
+        .pg-30 ul {
+            gap: 15px
+        }
+
+        .pg-30 button {
+            width: 10px;
+            height: 10px;
+            min-width: 10px;
+            padding: 0;
+            border-radius: 50%;
+            border: 1px solid #93a4c4;
+            background: transparent
+        }
+
+        .pg-30 .is-active {
+            background: linear-gradient(135deg, var(--brand1), var(--brand2));
+            border-color: transparent;
+            width: 14px;
+            height: 14px
+        }
+
+       
+       
+
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h1>30 CSS Pagination Styles – No JavaScript</h1>
+        <p>Each example below uses a unique class <span class="badge"
+                style="background:linear-gradient(135deg,var(--brand1),var(--brand2));color:#0b1220;padding:2px 8px;border-radius:999px;font-weight:700">.pg‑N</span>
+            (N = 1…30). Use Tab/Arrow keys to navigate buttons and see focus rings.</p>
+    </header>
+
+    <main class="wrapper">
+        <section class="grid" aria-label="Pagination gallery">
+
+            <!-- Helper: A reusable markup snippet (Prev 1 2 3 4 5 Next) per style. -->
+            <!-- Copy this cell 30 times with different .pg-N class and title. -->
+
+            <!-- 1 -->
+            <div class="cell">
+                <div class="title">1) Solid Pill Gradient</div>
+                <nav class="pagination pg-1" aria-label="Pagination 1">
+                    <ul role="list">
+                        <li><button class="prev" type="button">Prev</button></li>
+                        <li><button type="button">1</button></li>
+                        <li><button type="button" class="is-active" aria-current="page">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button class="next" type="button">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 2 -->
+            <div class="cell">
+                <div class="title">2) Outline Pills</div>
+                <nav class="pagination pg-2" aria-label="Pagination 2">
+                    <ul role="list">
+                        <li><button class="prev" type="button">Prev</button></li>
+                        <li><button type="button">1</button></li>
+                        <li><button class="is-active" aria-current="page" type="button">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button class="next" type="button">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 3 -->
+            <div class="cell">
+                <div class="title">3) Ghost Underline Tabs</div>
+                <nav class="pagination pg-3" aria-label="Pagination 3">
+                    <ul role="list">
+                        <li><button class="prev" type="button">Prev</button></li>
+                        <li><button type="button">1</button></li>
+                        <li><button class="is-active" aria-current="page" type="button">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button class="next" type="button">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 4 -->
+            <div class="cell">
+                <div class="title">4) Neon Glow</div>
+                <nav class="pagination pg-4" aria-label="Pagination 4">
+                    <ul role="list">
+                        <li><button class="prev" type="button">Prev</button></li>
+                        <li><button type="button">1</button></li>
+                        <li><button class="is-active" aria-current="page" type="button">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button class="next" type="button">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 5 -->
+            <div class="cell">
+                <div class="title">5) Glassmorphism</div>
+                <nav class="pagination pg-5" aria-label="Pagination 5">
+                    <ul role="list">
+                        <li><button class="prev" type="button">Prev</button></li>
+                        <li><button type="button">1</button></li>
+                        <li><button class="is-active" aria-current="page" type="button">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button class="next" type="button">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 6 -->
+            <div class="cell">
+                <div class="title">6) Soft Shadow Lift</div>
+                <nav class="pagination pg-6" aria-label="Pagination 6">
+                    <ul role="list">
+                        <li><button class="prev" type="button">Prev</button></li>
+                        <li><button type="button">1</button></li>
+                        <li><button class="is-active" aria-current="page" type="button">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button class="next" type="button">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 7 -->
+            <div class="cell">
+                <div class="title">7) Square Brutalist</div>
+                <nav class="pagination pg-7" aria-label="Pagination 7">
+                    <ul role="list">
+                        <li><button class="prev" type="button">Prev</button></li>
+                        <li><button type="button">1</button></li>
+                        <li><button class="is-active" aria-current="page" type="button">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button class="next" type="button">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 8 -->
+            <div class="cell">
+                <div class="title">8) Gradient Border</div>
+                <nav class="pagination pg-8" aria-label="Pagination 8">
+                    <ul role="list">
+                        <li><button class="prev" type="button">Prev</button></li>
+                        <li><button type="button">1</button></li>
+                        <li><button class="is-active" aria-current="page" type="button">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button class="next" type="button">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 9 -->
+            <div class="cell">
+                <div class="title">9) Dashed Outline</div>
+                <nav class="pagination pg-9" aria-label="Pagination 9">
+                    <ul role="list">
+                        <li><button class="prev" type="button">Prev</button></li>
+                        <li><button type="button">1</button></li>
+                        <li><button class="is-active" aria-current="page" type="button">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button class="next" type="button">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 10 -->
+            <div class="cell">
+                <div class="title">10) Double Border</div>
+                <nav class="pagination pg-10" aria-label="Pagination 10">
+                    <ul role="list">
+                        <li><button class="prev" type="button">Prev</button></li>
+                        <li><button type="button">1</button></li>
+                        <li><button class="is-active" aria-current="page" type="button">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button class="next" type="button">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 11 -->
+            <div class="cell">
+                <div class="title">11) Metallic Sheen</div>
+                <nav class="pagination pg-11" aria-label="Pagination 11">
+                    <ul role="list">
+                        <li><button class="prev" type="button">Prev</button></li>
+                        <li><button type="button">1</button></li>
+                        <li><button class="is-active" aria-current="page" type="button">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button class="next" type="button">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 12 -->
+            <div class="cell">
+                <div class="title">12) Rainbow Ring</div>
+                <nav class="pagination pg-12" aria-label="Pagination 12">
+                    <ul role="list">
+                        <li><button class="prev" type="button">Prev</button></li>
+                        <li><button type="button">1</button></li>
+                        <li><button class="is-active" aria-current="page" type="button">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button class="next" type="button">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 13 -->
+            <div class="cell">
+                <div class="title">13) Striped Fill</div>
+                <nav class="pagination pg-13" aria-label="Pagination 13">
+                    <ul role="list">
+                        <li><button class="prev" type="button">Prev</button></li>
+                        <li><button type="button">1</button></li>
+                        <li><button class="is-active" aria-current="page" type="button">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button class="next" type="button">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 14 -->
+            <div class="cell">
+                <div class="title">14) Chip Style</div>
+                <nav class="pagination pg-14" aria-label="Pagination 14">
+                    <ul role="list">
+                        <li><button class="prev" type="button">Prev</button></li>
+                        <li><button type="button">1</button></li>
+                        <li><button class="is-active" aria-current="page" type="button">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button class="next" type="button">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 15 -->
+            <div class="cell">
+                <div class="title">15) Notched Corners</div>
+                <nav class="pagination pg-15" aria-label="Pagination 15">
+                    <ul role="list">
+                        <li><button class="prev" type="button">Prev</button></li>
+                        <li><button type="button">1</button></li>
+                        <li><button class="is-active" aria-current="page" type="button">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button class="next" type="button">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 16 -->
+            <div class="cell">
+                <div class="title">16) Underline Slide</div>
+                <nav class="pagination pg-16" aria-label="Pagination 16">
+                    <ul role="list">
+                        <li><button class="prev" type="button">Prev</button></li>
+                        <li><button type="button">1</button></li>
+                        <li><button class="is-active" aria-current="page" type="button">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button class="next" type="button">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 17 -->
+            <div class="cell">
+                <div class="title">17) Big Pill</div>
+                <nav class="pagination pg-17" aria-label="Pagination 17">
+                    <ul role="list">
+                        <li><button class="prev" type="button">Prev</button></li>
+                        <li><button type="button">1</button></li>
+                        <li><button class="is-active" aria-current="page" type="button">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button class="next" type="button">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 18 -->
+            <div class="cell">
+                <div class="title">18) Inset Bevel</div>
+                <nav class="pagination pg-18" aria-label="Pagination 18">
+                    <ul role="list">
+                        <li><button class="prev" type="button">Prev</button></li>
+                        <li><button type="button">1</button></li>
+                        <li><button class="is-active" aria-current="page" type="button">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button class="next" type="button">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 19 -->
+            <div class="cell">
+                <div class="title">19) Edge Glow</div>
+                <nav class="pagination pg-19" aria-label="Pagination 19">
+                    <ul role="list">
+                        <li><button class="prev" type="button">Prev</button></li>
+                        <li><button type="button">1</button></li>
+                        <li><button class="is-active" aria-current="page" type="button">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button class="next" type="button">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 20 -->
+            <div class="cell">
+                <div class="title">20) Minimal Text Links</div>
+                <nav class="pagination pg-20" aria-label="Pagination 20">
+                    <ul role="list">
+                        <li><button class="prev" type="button">Prev</button></li>
+                        <li><button type="button">1</button></li>
+                        <li><button class="is-active" aria-current="page" type="button">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button class="next" type="button">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 21 -->
+            <div class="cell">
+                <div class="title">21) Card Tabs</div>
+                <nav class="pagination pg-21" aria-label="Pagination 21">
+                    <ul role="list">
+                        <li><button class="prev" type="button">Prev</button></li>
+                        <li><button type="button">1</button></li>
+                        <li><button class="is-active" aria-current="page" type="button">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button class="next" type="button">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 22 -->
+            <div class="cell">
+                <div class="title">22) Compact Square</div>
+                <nav class="pagination pg-22" aria-label="Pagination 22">
+                    <ul role="list">
+                        <li><button class="prev" type="button">Prev</button></li>
+                        <li><button type="button">1</button></li>
+                        <li><button class="is-active" aria-current="page" type="button">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button class="next" type="button">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 23 -->
+            <div class="cell">
+                <div class="title">23) Outline → Fill</div>
+                <nav class="pagination pg-23" aria-label="Pagination 23">
+                    <ul role="list">
+                        <li><button class="prev" type="button">Prev</button></li>
+                        <li><button type="button">1</button></li>
+                        <li><button class="is-active" aria-current="page" type="button">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button class="next" type="button">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 24 -->
+            <div class="cell">
+                <div class="title">24) Frosted Strong</div>
+                <nav class="pagination pg-24" aria-label="Pagination 24">
+                    <ul role="list">
+                        <li><button class="prev" type="button">Prev</button></li>
+                        <li><button type="button">1</button></li>
+                        <li><button class="is-active" aria-current="page" type="button">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button class="next" type="button">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 25 -->
+            <div class="cell">
+                <div class="title">25) Chevron Buttons</div>
+                <nav class="pagination pg-25" aria-label="Pagination 25">
+                    <ul role="list">
+                        <li><button class="prev" type="button" aria-label="Previous"></button></li>
+                        <li><button type="button">1</button></li>
+                        <li><button class="is-active" aria-current="page" type="button">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button class="next" type="button" aria-label="Next"></button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 26 -->
+            <div class="cell">
+                <div class="title">26) Conic Border Halo</div>
+                <nav class="pagination pg-26" aria-label="Pagination 26">
+                    <ul role="list">
+                        <li><button class="prev" type="button">Prev</button></li>
+                        <li><button type="button">1</button></li>
+                        <li><button class="is-active" aria-current="page" type="button">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button class="next" type="button">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 27 -->
+            <div class="cell">
+                <div class="title">27) Monochrome Outline</div>
+                <nav class="pagination pg-27" aria-label="Pagination 27">
+                    <ul role="list">
+                        <li><button class="prev" type="button">Prev</button></li>
+                        <li><button type="button">1</button></li>
+                        <li><button class="is-active" aria-current="page" type="button">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button class="next" type="button">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 28 -->
+            <div class="cell">
+                <div class="title">28) Soft Gradient Fill</div>
+                <nav class="pagination pg-28" aria-label="Pagination 28">
+                    <ul role="list">
+                        <li><button class="prev" type="button">Prev</button></li>
+                        <li><button type="button">1</button></li>
+                        <li><button class="is-active" aria-current="page" type="button">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button class="next" type="button">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 29 -->
+            <div class="cell">
+                <div class="title">29) Hover Lift + Drop</div>
+                <nav class="pagination pg-29" aria-label="Pagination 29">
+                    <ul role="list">
+                        <li><button class="prev" type="button">Prev</button></li>
+                        <li><button type="button">1</button></li>
+                        <li><button class="is-active" aria-current="page" type="button">2</button></li>
+                        <li><button type="button">3</button></li>
+                        <li><button type="button">4</button></li>
+                        <li><button type="button">5</button></li>
+                        <li><button class="next" type="button">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- 30 -->
+            <div class="cell">
+                <div class="title">30) Tiny Dot Indicators</div>
+                <nav class="pagination pg-30" aria-label="Pagination 30">
+                    <ul role="list">
+                       
+                       
+                        <li><button type="button" class="is-active" aria-current="page" aria-label="Page 1"></button>
+                        </li>
+                        <li><button type="button" aria-label="Page 2"></button></li>
+                        <li><button type="button" aria-label="Page 3"></button></li>
+                        <li><button type="button" aria-label="Page 4"></button></li>
+                        <li><button type="button" aria-label="Page 5"></button></li>
+                      
+                    </ul>
+                </nav>
+            </div>
+
+        </section>
+    </main>
+</body>
+
+</html>

@@ -75,5 +75,4 @@ window.onclose = function()
     btnClearAll.removeEventListener("click",ClearAll);
     btnSave.removeEventListener("click",SaveData);
     btnLoadData.removeEventListener("click",LoadData);
-    btnClbtnDaearAll.removeEventListener("click",ClearAll);
 }

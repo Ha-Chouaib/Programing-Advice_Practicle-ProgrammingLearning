@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project 24 – Polaroid Tilt Grid (22 photos)</title>
+
+  <style>
+    /* ─────────────────────────────────────────────────────────
+       PROJECT 24: Polaroid Tilt Grid (No JavaScript)
+       ---------------------------------------------------------
+       ✦ Goal
+         Create a playful “polaroid wall” gallery:
+         - Each photo sits inside a white paper frame (like instant film).
+         - Cards are slightly rotated (varied using :nth-child).
+         - On hover, the card straightens and lifts.
+         - A bottom overlay caption slides in ONLY on hover.
+
+       ✦ Learning Focus
+         1) CSS variables for theme & spacing
+         2) Responsive grid with minmax()
+         3) Layering: position, z-index, box-shadow
+         4) :nth-child() for controlled randomness (tilt)
+         5) Transition/transform for subtle motion
+         6) Accessible markup (figure/figcaption, alt text)
+         7) Print-friendly tweaks (optional)
+
+       
+
+       ---------------------------------------------------------
+    ───────────────────────────────────────────────────────── */
+
+    /* ========== Theme tokens (easy to tweak) ========== */
+    :root{
+      --bg: #fbfbfb;
+      --ink: #1f2937;
+      --muted: #6b7280;
+
+      --accent: #2563eb;       /* blue-600 for small accents */
+      --paper: #ffffff;        /* “polaroid” paper color */
+      --border: #e5e7eb;
+
+      --radius: 14px;          /* small rounding on the paper corners */
+      --shadow-up: 0 16px 40px rgba(0,0,0,.18);
+      --shadow-rest: 0 12px 28px rgba(0,0,0,.12);
+      --gap: 1rem;             /* grid gap */
+      --maxw: 1200px;          /* page width cap */
+    }
+
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg: #0e1116;
+        --ink: #e5e7eb;
+        --muted: #9aa2b2;
+
+        --accent: #60a5fa;     /* blue-400 in dark */
+        --paper: #12161d;      /* tinted “paper” for dark */
+        --border: #232a34;
+
+        --shadow-up: 0 24px 48px rgba(0,0,0,.55);
+        --shadow-rest: 0 18px 36px rgba(0,0,0,.55);
+      }
+    }
+
+    /* ========== Base page styling ========== */
+    html, body { margin: 0; padding: 0; }
+    body{
+      font-family: ui-serif, Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.7;
+    }
+
+    /* ========== Header & Menu ========== */
+    header{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 2rem 1rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .masthead{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:1rem;
+      flex-wrap: wrap;
+    }
+    .masthead h1{
+      margin:0;
+      font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+      letter-spacing:.2px;
+    }
+    .dek{
+      margin:.35rem 0 0; color: var(--muted);
+      max-width: 65ch;
+    }
+
+    /* “Tabs-like” pill menu (purely decorative here) */
+    nav.menu{
+      margin-top: 1rem;
+      display:flex; flex-wrap: wrap; gap:.5rem;
+    }
+    .menu a{
+      display:inline-block;
+      text-decoration:none;
+      color: var(--ink);
+      border: 1px solid var(--border);
+      background: #fff;
+      padding: .45rem .75rem;
+      border-radius: 999px;
+      font-size: .95rem;
+      transition: background .2s ease, transform .2s ease, box-shadow .2s ease, color .2s ease;
+      box-shadow: var(--shadow-rest);
+    }
+    .menu a:hover{
+      background: rgba(37,99,235,.06); /* faint blue wash */
+      transform: translateY(-2px);
+    }
+    @media (prefers-color-scheme: dark){
+      .menu a{ background: #0f131a; color: var(--ink); }
+      .menu a:hover{ background: rgba(96,165,250,.08); }
+    }
+
+    /* ========== Gallery Grid ========== */
+    .wrap{
+      max-width: var(--maxw);
+      margin: 1.25rem auto 2.25rem;
+      padding: 0 1rem;
+    }
+    /* Responsive, “card-sized” slots using minmax.
+       The white “polaroid” is inside each slot. */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: var(--gap);
+      align-items: start;
+    }
+
+    /* ========== Polaroid Card ========== */
+    .card{
+      /* “Paper” slab */
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-rest);
+      position: relative;
+      overflow: hidden;           /* clip the caption overlay */
+      transform-origin: center;
+      transition: transform .3s ease, box-shadow .3s ease, filter .3s ease;
+      /* Subtle rotation will be applied per :nth-child below */
+    }
+
+    /* “Photo” area: add thicker bottom padding to mimic polaroid label space */
+    .photo{
+      display:block;
+      width: 100%;
+      height: 220px;              /* unified height for a tidy grid */
+      object-fit: cover;
+      border-bottom: 1px solid var(--border);
+      /* slight saturation for punch */
+      filter: saturate(1.05) contrast(1.02);
+      transition: filter .3s ease, transform .3s ease;
+    }
+
+    /* Caption label line (static text under the photo) */
+    .label{
+      padding: .65rem .85rem 1rem;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    /* ---------- Hover behavior ----------
+       • Straighten & lift card
+       • Brighten the image a touch
+       • Slide in caption OVERLAY from bottom
+    ------------------------------------- */
+    .card:hover{
+      transform: rotate(0deg) translateY(-6px);
+      box-shadow: var(--shadow-up);
+      z-index: 2;
+    }
+    .card:hover .photo{
+      filter: saturate(1.12) contrast(1.06);
+    }
+
+    /* ---------- Overlay caption (hidden until hover) ---------- */
+    .cap{
+      position: absolute;
+      inset: auto 0 0 0;                 /* stick to bottom */
+      background: linear-gradient(0deg, rgba(0,0,0,.56), rgba(0,0,0,0));
+      color: #ffffff;
+      padding: .9rem 1rem 1.05rem;
+      transform: translateY(100%);       /* fully hidden below the frame */
+      transition: transform .35s ease;
+    }
+    /* ✅ Show ONLY on hover */
+    .card:hover .cap{
+      transform: translateY(-60%);
+    }
+
+    /* ---------- Tilt variation using :nth-child ----------
+       These create that casual “pinned on a board” feel.
+       You can tweak degrees but keep small to avoid jittery layout.
+
+       What nth-child(6n+X) means?
+
+        nth-child() is a CSS selector that targets elements based on their order (1st, 2nd, 3rd, etc.).
+
+        6n+1 means:
+        → Select every element that is 1st in a group of 6 (1, 7, 13, …).
+
+        6n+2 means:
+        → Select every element that is 2nd in a group of 6 (2, 8, 14, …).
+
+        …and so on until 6n+6, which hits the 6th, 12th, 18th, etc.
+
+        So basically: this repeats a cycle of 6 styles.
+
+        2. What the transform: rotate(...) does
+
+        rotate() tilts an element slightly clockwise (positive angle) or counter-clockwise (negative angle).
+
+        Example:
+
+         -rotate(-2deg) → tilt left.
+
+          -rotate(2deg) → tilt right.
+    ------------------------------------------------------ */
+    .card:nth-child(6n+1){ transform: rotate(-2.0deg); }
+    .card:nth-child(6n+2){ transform: rotate( 1.6deg); }
+    .card:nth-child(6n+3){ transform: rotate(-1.2deg); }
+    .card:nth-child(6n+4){ transform: rotate( 2.4deg); }
+    .card:nth-child(6n+5){ transform: rotate(-2.6deg); }
+    .card:nth-child(6n+6){ transform: rotate( .8deg); }
+
+   
+
+    /* ========== Footer note ========== */
+    .note{
+      max-width: var(--maxw);
+      margin: 0 auto 2.5rem;
+      padding: 0 1rem;
+      color: var(--muted);
+      font-size: .98rem;
+    }
+
+    /* ========== Optional print niceties ========== */
+    @media print{
+      @page{ margin: 14mm; }
+      *{ -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .menu{ display:none !important; }
+      .card{ transform: none !important; box-shadow: none !important; }
+      .cap{ display:none !important; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ========== Header & Menu ========== -->
+  <header>
+    <div class="masthead">
+      <div>
+        <h1>Project 24 – Polaroid Tilt Grid</h1>
+        <p class="dek">
+          A playful, “instant-film” gallery layout. Each card has a subtle tilt; when you hover, the photo lifts, straightens,
+          and reveals a caption overlay from the bottom. No JavaScript used.
+        </p>
+      </div>
+    </div>
+
+    <!-- Suggested “tabs-like” pill menu (style variety prompt for students) -->
+    <nav class="menu" aria-label="Sample menu (decorative)">
+      <a href="#">All</a>
+      <a href="#">People</a>
+      <a href="#">Places</a>
+      <a href="#">Objects</a>
+      <a href="#">Monochrome</a>
+      <a href="#">Favorites</a>
+    </nav>
+  </header>
+
+  <!-- ========== Gallery Grid (22 images) ========== -->
+  <main class="wrap" aria-label="Polaroid gallery">
+    <section class="grid">
+      <!-- TIP FOR STUDENTS:
+           • alt text should describe the subject; use generic text if unknown.
+           • You can rename the labels below to match your real content. -->
+
+      <!-- 1 -->
+      <figure class="card">
+        <img class="photo" src="images/A1.jpg"  alt="Photo A1 – subject view">
+        <figcaption class="cap">A1 — Evening Light</figcaption>
+        <div class="label">A1 · instant shot</div>
+      </figure>
+
+      <!-- 2 -->
+      <figure class="card">
+        <img class="photo" src="images/A2.jpg"  alt="Photo A2 – subject view">
+        <figcaption class="cap">A2 — Quiet Street</figcaption>
+        <div class="label">A2 · instant shot</div>
+      </figure>
+
+      <!-- 3 -->
+      <figure class="card">
+        <img class="photo" src="images/A3.jpg"  alt="Photo A3 – subject view">
+        <figcaption class="cap">A3 — Blue Hour</figcaption>
+        <div class="label">A3 · instant shot</div>
+      </figure>
+
+      <!-- 4 -->
+      <figure class="card">
+        <img class="photo" src="images/A4.jpg"  alt="Photo A4 – subject view">
+        <figcaption class="cap">A4 — Riverside</figcaption>
+        <div class="label">A4 · instant shot</div>
+      </figure>
+
+      <!-- 5 -->
+      <figure class="card">
+        <img class="photo" src="images/A5.jpg"  alt="Photo A5 – subject view">
+        <figcaption class="cap">A5 — Old Brick</figcaption>
+        <div class="label">A5 · instant shot</div>
+      </figure>
+
+      <!-- 6 -->
+      <figure class="card">
+        <img class="photo" src="images/A6.jpg"  alt="Photo A6 – subject view">
+        <figcaption class="cap">A6 — Market Day</figcaption>
+        <div class="label">A6 · instant shot</div>
+      </figure>
+
+      <!-- 7 -->
+      <figure class="card">
+        <img class="photo" src="images/A7.jpg"  alt="Photo A7 – subject view">
+        <figcaption class="cap">A7 — Morning Path</figcaption>
+        <div class="label">A7 · instant shot</div>
+      </figure>
+
+      <!-- 8 -->
+      <figure class="card">
+        <img class="photo" src="images/A8.jpg"  alt="Photo A8 – subject view">
+        <figcaption class="cap">A8 — Sea Breeze</figcaption>
+        <div class="label">A8 · instant shot</div>
+      </figure>
+
+      <!-- 9 -->
+      <figure class="card">
+        <img class="photo" src="images/A9.jpg"  alt="Photo A9 – subject view">
+        <figcaption class="cap">A9 — City Lines</figcaption>
+        <div class="label">A9 · instant shot</div>
+      </figure>
+
+      <!-- 10 -->
+      <figure class="card">
+        <img class="photo" src="images/A10.jpg" alt="Photo A10 – subject view">
+        <figcaption class="cap">A10 — Rust & Light</figcaption>
+        <div class="label">A10 · instant shot</div>
+      </figure>
+
+      <!-- 11 -->
+      <figure class="card">
+        <img class="photo" src="images/A11.jpg" alt="Photo A11 – subject view">
+        <figcaption class="cap">A11 — Calm Window</figcaption>
+        <div class="label">A11 · instant shot</div>
+      </figure>
+
+      <!-- 12 -->
+      <figure class="card">
+        <img class="photo" src="images/A12.jpg" alt="Photo A12 – subject view">
+        <figcaption class="cap">A12 — Soft Green</figcaption>
+        <div class="label">A12 · instant shot</div>
+      </figure>
+
+      <!-- 13 -->
+      <figure class="card">
+        <img class="photo" src="images/A13.jpg" alt="Photo A13 – subject view">
+        <figcaption class="cap">A13 — Bridge Curve</figcaption>
+        <div class="label">A13 · instant shot</div>
+      </figure>
+
+      <!-- 14 -->
+      <figure class="card">
+        <img class="photo" src="images/A14.jpg" alt="Photo A14 – subject view">
+        <figcaption class="cap">A14 — Wildflowers</figcaption>
+        <div class="label">A14 · instant shot</div>
+      </figure>
+
+      <!-- 15 -->
+      <figure class="card">
+        <img class="photo" src="images/A15.jpg" alt="Photo A15 – subject view">
+        <figcaption class="cap">A15 — Alley Café</figcaption>
+        <div class="label">A15 · instant shot</div>
+      </figure>
+
+      <!-- 16 -->
+      <figure class="card">
+        <img class="photo" src="images/A16.jpg" alt="Photo A16 – subject view">
+        <figcaption class="cap">A16 — Sand & Foam</figcaption>
+        <div class="label">A16 · instant shot</div>
+      </figure>
+
+      <!-- 17 -->
+      <figure class="card">
+        <img class="photo" src="images/A17.jpg" alt="Photo A17 – subject view">
+        <figcaption class="cap">A17 — Night Walk</figcaption>
+        <div class="label">A17 · instant shot</div>
+      </figure>
+
+      <!-- 18 -->
+      <figure class="card">
+        <img class="photo" src="images/A18.jpg" alt="Photo A18 – subject view">
+        <figcaption class="cap">A18 — Quiet Steps</figcaption>
+        <div class="label">A18 · instant shot</div>
+      </figure>
+
+      <!-- 19 -->
+      <figure class="card">
+        <img class="photo" src="images/A19.jpg" alt="Photo A19 – subject view">
+        <figcaption class="cap">A19 — Red Door</figcaption>
+        <div class="label">A19 · instant shot</div>
+      </figure>
+
+      <!-- 20 -->
+      <figure class="card">
+        <img class="photo" src="images/A20.jpg" alt="Photo A20 – subject view">
+        <figcaption class="cap">A20 — Soft Shadows</figcaption>
+        <div class="label">A20 · instant shot</div>
+      </figure>
+
+      <!-- 21 -->
+      <figure class="card">
+        <img class="photo" src="images/A21.jpg" alt="Photo A21 – subject view">
+        <figcaption class="cap">A21 — Field Lines</figcaption>
+        <div class="label">A21 · instant shot</div>
+      </figure>
+
+      <!-- 22 -->
+      <figure class="card">
+        <img class="photo" src="images/A22.jpg" alt="Photo A22 – subject view">
+        <figcaption class="cap">A22 — Last Light</figcaption>
+        <div class="label">A22 · instant shot</div>
+      </figure>
+    </section>
+  </main>
+
+  
+</body>
+</html>

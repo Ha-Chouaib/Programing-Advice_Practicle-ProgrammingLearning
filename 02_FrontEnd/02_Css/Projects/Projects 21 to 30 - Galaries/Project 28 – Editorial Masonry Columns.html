@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project 28 – Editorial Masonry Columns (Hover Overlay Working)</title>
+
+  <style>
+    /* ============================================================
+       Project 28 – Editorial Masonry Columns (Overlay on Hover)
+       ------------------------------------------------------------
+       ✅ No JavaScript
+       ✅ Clear dark sidebar & readable links
+       ✅ CSS columns for masonry
+       ✅ Overlay is HIDDEN by default, shows on HOVER/FOCUS
+       ✅ Z-index layering guarantees overlay visibility
+       ✅ Smooth zoom/contrast on image when hovered
+       ✅ Keyboard accessible with :focus-visible / :focus-within
+       ============================================================ */
+
+    :root{
+      --bg: #f9fafb;
+      --ink: #2c2c2c;
+      --muted: #555;
+      --accent: #8b5cf6;
+      --sidebar-bg: #111827;
+      --sidebar-ink: #f9fafb;
+      --sidebar-hover: #1f2937;
+      --radius: 10px;
+      --gap: 1rem;
+      --maxw: 1200px;
+      --shadow: 0 8px 22px rgba(0,0,0,.10);
+      --shadow-strong: 0 16px 38px rgba(0,0,0,.18);
+    }
+
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg: #1e1e22;
+        --ink: #f3f4f6;
+        --muted: #aaa;
+        --accent: #a78bfa;
+        --sidebar-bg: #0f0f14;
+        --sidebar-ink: #f3f4f6;
+        --sidebar-hover: #2c2c34;
+      }
+    }
+
+    /* ============ Base ============ */
+    html,body{margin:0}
+    body{
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    /* ============ Left Sidebar (clear & legible) ============ */
+    aside{
+      position: fixed; inset: 0 auto 0 0;
+      width: 240px;
+      background: var(--sidebar-bg);
+      color: var(--sidebar-ink);
+      padding: 2rem 1.2rem;
+      display: flex; flex-direction: column; gap: 2rem;
+      box-shadow: var(--shadow);
+    }
+    aside h2{
+      margin: 0;
+      font-size: 1.35rem;
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: .55rem;
+      letter-spacing:.2px;
+    }
+    aside nav ul{
+      margin: 0; padding: 0; list-style: none;
+      display: grid; gap: .5rem;
+    }
+    aside nav a{
+      display: block;
+      text-decoration: none;
+      color: var(--sidebar-ink);
+      font-weight: 700;
+      padding: .6rem .8rem;
+      border-radius: 8px;
+      transition: background .2s ease, color .2s ease;
+    }
+    aside nav a:hover{ background: var(--sidebar-hover); color: var(--accent); }
+
+    /* ============ Main Area ============ */
+    main{
+      margin-left: 260px;
+      max-width: var(--maxw);
+      padding: 2rem;
+    }
+    header h1{
+      margin: 0 0 .35rem;
+      font-size: 2rem;
+      letter-spacing:.2px;
+    }
+    header p{ margin: 0 0 1.6rem; color: var(--muted); }
+
+    /* ============ Masonry via CSS Columns ============ */
+    .gallery{
+      column-count: 3;
+      column-gap: var(--gap);
+    }
+    @media (max-width: 1100px){ .gallery{ column-count: 2; } }
+    @media (max-width: 720px){
+      aside{
+        position: static; width: auto; padding: 1.2rem;
+        box-shadow: none;
+      }
+      aside nav ul{ grid-template-columns: repeat(auto-fit, minmax(130px,1fr)); }
+      main{ margin: 0; padding-top: 0; }
+      .gallery{ column-count: 1; }
+    }
+
+    /* ============ Card (tile) ============ */
+    .tile{
+      display: inline-block;      /* important for CSS columns */
+      width: 100%;
+      margin: 0 0 var(--gap);
+      background: #fff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      break-inside: avoid;        /* keep card intact */
+      -webkit-column-break-inside: avoid;
+      position: relative;         /* anchor for absolute children */
+      transform: translateZ(0);
+      transition: box-shadow .25s ease, transform .25s ease;
+    }
+    @media (prefers-color-scheme: dark){
+      .tile{ background: #2b2d35; }
+    }
+
+    /* Image layer — positioned for z-index control */
+    .tile img{
+      display:block;
+      width: 100%; height: auto;
+      position: relative;         /* creates its own stacking level */
+      z-index: 1;                 /* sits below the overlay */
+      transition: transform .55s ease, filter .55s ease;
+      will-change: transform, filter;
+    }
+
+    /* Clickable layer (for focus & a11y) — on top of overlay but transparent */
+    .coverlink{
+      position: absolute; inset: 0;
+      z-index: 3;                 /* topmost so focus ring is visible */
+      /* transparent: no background so overlay remains visible below */
+    }
+
+    /* Overlay layer — hidden by default */
+    .overlay{
+      position: absolute; inset: 0;
+      z-index: 2;                 /* ABOVE the image, BELOW the link */
+      display: grid; align-content: end;
+      padding: .9rem .95rem 1rem;
+
+      /* HIDDEN by default — becomes visible on hover/focus */
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .35s ease, transform .35s ease;
+
+      /* Subtle gradient for text readability */
+      background: linear-gradient(
+        to top,
+        rgba(17,24,39,.78) 0%,
+        rgba(17,24,39,.55) 35%,
+        rgba(17,24,39,0) 70%
+      );
+      color: #fff;
+      pointer-events: none;       /* clicks go to the link */
+    }
+    .overlay .title{
+      font-size: 1rem; font-weight: 700;
+      margin: 0 0 .25rem; letter-spacing:.2px;
+    }
+    .overlay .meta{ margin: 0; font-size: .9rem; opacity: .9; }
+
+    /* Hover / focus interactions */
+    .tile:hover,
+    .tile:focus-within{
+      box-shadow: var(--shadow-strong);
+      transform: translateY(-2px);
+    }
+    .tile:hover img,
+    .tile:focus-within img{
+      transform: scale(1.04);
+      filter: saturate(1.06) contrast(1.06);
+    }
+    .tile:hover .overlay,
+    .tile:focus-within .overlay{
+      opacity: 1;                 /* SHOW overlay */
+      transform: translateY(0%);
+    }
+
+    /* Focus ring on the invisible link for keyboard users */
+    .coverlink:focus-visible{
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(139,92,246,.55), 0 0 0 6px rgba(139,92,246,.25);
+      border-radius: 6px;
+      margin: .5rem;              /* give space so ring isn't clipped */
+    }
+
+    /* Optional static caption below the image (non-overlay) */
+    .caption{
+      padding: .65rem .8rem .8rem;
+      color: var(--muted);
+      border-top: 1px solid rgba(0,0,0,.06);
+      background: rgba(0,0,0,.02);
+      font-size: .95rem;
+    }
+    @media (prefers-color-scheme: dark){
+      .caption{
+        border-top: 1px solid rgba(255,255,255,.08);
+        background: rgba(255,255,255,.03);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== Fixed Sidebar ===== -->
+  <aside>
+    <h2>Magazine</h2>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#">Front Page</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Photo Essays</a></li>
+        <li><a href="#">Opinions</a></li>
+        <li><a href="#">Culture</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- ===== Main Content ===== -->
+  <main>
+    <header>
+      <h1>Project 28 – Editorial Masonry Columns</h1>
+      <p>Overlay now shows on hover/focus only (z-index layered). No JavaScript.</p>
+    </header>
+
+    <!-- ===== Masonry Gallery (ALL 22 images) ===== -->
+    <section class="gallery" aria-label="Masonry image gallery">
+      <!-- Repeatable pattern: <figure.tile> + <img> + <a.coverlink> + <div.overlay> + <figcaption> -->
+
+      <figure class="tile">
+        <img src="images/A1.jpg" alt="Photo A1">
+        <a class="coverlink" href="#" aria-label="Open A1"></a>
+        <div class="overlay">
+          <h3 class="title">A1 — Feature</h3>
+          <p class="meta">Hover to reveal · Editorial</p>
+        </div>
+        <figcaption class="caption">Caption A1</figcaption>
+      </figure>
+
+      <figure class="tile">
+        <img src="images/A2.jpg" alt="Photo A2">
+        <a class="coverlink" href="#" aria-label="Open A2"></a>
+        <div class="overlay">
+          <h3 class="title">A2 — Portrait</h3>
+          <p class="meta">Studio</p>
+        </div>
+        <figcaption class="caption">Caption A2</figcaption>
+      </figure>
+
+      <figure class="tile">
+        <img src="images/A3.jpg" alt="Photo A3">
+        <a class="coverlink" href="#" aria-label="Open A3"></a>
+        <div class="overlay">
+          <h3 class="title">A3 — Landscape</h3>
+          <p class="meta">Natural light</p>
+        </div>
+        <figcaption class="caption">Caption A3</figcaption>
+      </figure>
+
+      <figure class="tile">
+        <img src="images/A4.jpg" alt="Photo A4">
+        <a class="coverlink" href="#" aria-label="Open A4"></a>
+        <div class="overlay">
+          <h3 class="title">A4 — Architecture</h3>
+          <p class="meta">Lines & forms</p>
+        </div>
+        <figcaption class="caption">Caption A4</figcaption>
+      </figure>
+
+      <figure class="tile">
+        <img src="images/A5.jpg" alt="Photo A5">
+        <a class="coverlink" href="#" aria-label="Open A5"></a>
+        <div class="overlay">
+          <h3 class="title">A5 — Street</h3>
+          <p class="meta">Candid frame</p>
+        </div>
+        <figcaption class="caption">Caption A5</figcaption>
+      </figure>
+
+      <figure class="tile">
+        <img src="images/A6.jpg" alt="Photo A6">
+        <a class="coverlink" href="#" aria-label="Open A6"></a>
+        <div class="overlay">
+          <h3 class="title">A6 — Travel</h3>
+          <p class="meta">Vivid palette</p>
+        </div>
+        <figcaption class="caption">Caption A6</figcaption>
+      </figure>
+
+      <figure class="tile">
+        <img src="images/A7.jpg" alt="Photo A7">
+        <a class="coverlink" href="#" aria-label="Open A7"></a>
+        <div class="overlay">
+          <h3 class="title">A7 — Documentary</h3>
+          <p class="meta">On location</p>
+        </div>
+        <figcaption class="caption">Caption A7</figcaption>
+      </figure>
+
+      <figure class="tile">
+        <img src="images/A8.jpg" alt="Photo A8">
+        <a class="coverlink" href="#" aria-label="Open A8"></a>
+        <div class="overlay">
+          <h3 class="title">A8 — Minimal</h3>
+          <p class="meta">Negative space</p>
+        </div>
+        <figcaption class="caption">Caption A8</figcaption>
+      </figure>
+
+      <figure class="tile">
+        <img src="images/A9.jpg" alt="Photo A9">
+        <a class="coverlink" href="#" aria-label="Open A9"></a>
+        <div class="overlay">
+          <h3 class="title">A9 — Motion</h3>
+          <p class="meta">Long exposure</p>
+        </div>
+        <figcaption class="caption">Caption A9</figcaption>
+      </figure>
+
+      <figure class="tile">
+        <img src="images/A10.jpg" alt="Photo A10">
+        <a class="coverlink" href="#" aria-label="Open A10"></a>
+        <div class="overlay">
+          <h3 class="title">A10 — Abstract</h3>
+          <p class="meta">Texture study</p>
+        </div>
+        <figcaption class="caption">Caption A10</figcaption>
+      </figure>
+
+      <figure class="tile">
+        <img src="images/A11.jpg" alt="Photo A11">
+        <a class="coverlink" href="#" aria-label="Open A11"></a>
+        <div class="overlay">
+          <h3 class="title">A11 — Feature</h3>
+          <p class="meta">Editorial</p>
+        </div>
+        <figcaption class="caption">Caption A11</figcaption>
+      </figure>
+
+      <figure class="tile">
+        <img src="images/A12.jpg" alt="Photo A12">
+        <a class="coverlink" href="#" aria-label="Open A12"></a>
+        <div class="overlay">
+          <h3 class="title">A12 — Portrait</h3>
+          <p class="meta">Studio</p>
+        </div>
+        <figcaption class="caption">Caption A12</figcaption>
+      </figure>
+
+      <figure class="tile">
+        <img src="images/A13.jpg" alt="Photo A13">
+        <a class="coverlink" href="#" aria-label="Open A13"></a>
+        <div class="overlay">
+          <h3 class="title">A13 — Landscape</h3>
+          <p class="meta">Dusk tones</p>
+        </div>
+        <figcaption class="caption">Caption A13</figcaption>
+      </figure>
+
+      <figure class="tile">
+        <img src="images/A14.jpg" alt="Photo A14">
+        <a class="coverlink" href="#" aria-label="Open A14"></a>
+        <div class="overlay">
+          <h3 class="title">A14 — Architecture</h3>
+          <p class="meta">Geometry</p>
+        </div>
+        <figcaption class="caption">Caption A14</figcaption>
+      </figure>
+
+      <figure class="tile">
+        <img src="images/A15.jpg" alt="Photo A15">
+        <a class="coverlink" href="#" aria-label="Open A15"></a>
+        <div class="overlay">
+          <h3 class="title">A15 — Street</h3>
+          <p class="meta">Monochrome</p>
+        </div>
+        <figcaption class="caption">Caption A15</figcaption>
+      </figure>
+
+      <figure class="tile">
+        <img src="images/A16.jpg" alt="Photo A16">
+        <a class="coverlink" href="#" aria-label="Open A16"></a>
+        <div class="overlay">
+          <h3 class="title">A16 — Travel</h3>
+          <p class="meta">Color rush</p>
+        </div>
+        <figcaption class="caption">Caption A16</figcaption>
+      </figure>
+
+      <figure class="tile">
+        <img src="images/A17.jpg" alt="Photo A17">
+        <a class="coverlink" href="#" aria-label="Open A17"></a>
+        <div class="overlay">
+          <h3 class="title">A17 — Documentary</h3>
+          <p class="meta">Field notes</p>
+        </div>
+        <figcaption class="caption">Caption A17</figcaption>
+      </figure>
+
+      <figure class="tile">
+        <img src="images/A18.jpg" alt="Photo A18">
+        <a class="coverlink" href="#" aria-label="Open A18"></a>
+        <div class="overlay">
+          <h3 class="title">A18 — Minimal</h3>
+          <p class="meta">Form & light</p>
+        </div>
+        <figcaption class="caption">Caption A18</figcaption>
+      </figure>
+
+      <figure class="tile">
+        <img src="images/A19.jpg" alt="Photo A19">
+        <a class="coverlink" href="#" aria-label="Open A19"></a>
+        <div class="overlay">
+          <h3 class="title">A19 — Motion</h3>
+          <p class="meta">Dynamic frame</p>
+        </div>
+        <figcaption class="caption">Caption A19</figcaption>
+      </figure>
+
+      <figure class="tile">
+        <img src="images/A20.jpg" alt="Photo A20">
+        <a class="coverlink" href="#" aria-label="Open A20"></a>
+        <div class="overlay">
+          <h3 class="title">A20 — Abstract</h3>
+          <p class="meta">Color fields</p>
+        </div>
+        <figcaption class="caption">Caption A20</figcaption>
+      </figure>
+
+      <figure class="tile">
+        <img src="images/A21.jpg" alt="Photo A21">
+        <a class="coverlink" href="#" aria-label="Open A21"></a>
+        <div class="overlay">
+          <h3 class="title">A21 — Series</h3>
+          <p class="meta">Set piece</p>
+        </div>
+        <figcaption class="caption">Caption A21</figcaption>
+      </figure>
+
+      <figure class="tile">
+        <img src="images/A22.jpg" alt="Photo A22">
+        <a class="coverlink" href="#" aria-label="Open A22"></a>
+        <div class="overlay">
+          <h3 class="title">A22 — Closing</h3>
+          <p class="meta">Final frame</p>
+        </div>
+        <figcaption class="caption">Caption A22</figcaption>
+      </figure>
+
+    </section>
+  </main>
+</body>
+</html>

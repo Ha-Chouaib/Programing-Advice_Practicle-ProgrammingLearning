@@ -20,8 +20,7 @@ namespace BankSystem
         {
             get
             {
-                if (_loggedInUser == null)
-                    _loggedInUser = clsUser.FindUserByID(1);
+                
                 return _loggedInUser;
             }
             set { _loggedInUser = value; }

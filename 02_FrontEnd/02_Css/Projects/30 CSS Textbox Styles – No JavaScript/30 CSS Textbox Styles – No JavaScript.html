@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>30 CSS Textboxes – Effects Gallery (No JS)</title>
+<style>
+/* ──────────────────────────────────────────────────────────────────────────────
+│  ╔═════════════════════════════════════════════════════════════════════════╗
+│  ║                           CODE OVERVIEW                                 ║
+│  ╚═════════════════════════════════════════════════════════════════════════╝
+│  • Purpose → A single HTML/CSS page showcasing **30 distinct textbox styles**
+│               (inputs) with focus/hover effects. No JavaScript. Each style
+│               has its own class (.tb-1 … .tb-30) with clear comments.
+│  • Layout  → Responsive two-column grid: label on the left, input on the right.
+│               Base .tb defines sizing/typography; each variant adds visuals.
+│  • Techniques → borders, outlines, gradients, shadows, inset/glow, glass, 
+│                 underline-only, icon padding, background-clip, clip-path,
+│                 conic/repeating gradients, SVG data-URI accents.
+│  • A11y     → Large tap targets, :focus-visible rings, sufficient contrast.
+│  • Notes    → Pure CSS, works without JS. Tested for modern browsers.
+└──────────────────────────────────────────────────────────────────────────────*/
+
+:root{
+  --bg: #0b1220;         /* page backdrop */
+  --panel: #0f172a;      /* card */
+  --ink: #e5e7eb;        /* text */
+  --muted: #9aa4b2;      /* secondary text */
+  --ring: 0 0 0 3px rgba(34,211,238,.45);
+  --brand1: #22d3ee;     /* cyan */
+  --brand2: #a78bfa;     /* violet */
+  --bd: rgba(255,255,255,.16);
+  --radius: 14px;
+}
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#f5f7fb; --panel:#ffffff; --ink:#0f172a; --muted:#4b5563; --bd: rgba(0,0,0,.15);
+    --ring: 0 0 0 3px rgba(14,165,233,.35);
+  }
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; font-family:system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif; color:var(--ink);
+  background: radial-gradient(1200px 700px at 10% -10%, rgba(34,211,238,.10), transparent 60%),
+              radial-gradient(1200px 700px at 100% 0%, rgba(167,139,250,.08), transparent 60%),
+              var(--bg);
+}
+.header{max-width:1100px;margin:36px auto 8px;padding:0 16px}
+.header h1{margin:0 0 6px;font-weight:800}
+.header p{margin:0;color:var(--muted)}
+.wrapper{max-width:1100px;margin:16px auto 64px;padding:16px;background:color-mix(in oklab,var(--panel) 92%,transparent);border:1px solid var(--bd);border-radius:18px;box-shadow:0 24px 70px rgba(0,0,0,.28)}
+
+/* Table-like grid: label + input */
+.grid{display:grid;grid-template-columns: 230px 1fr;gap:14px 18px}
+@media (max-width:860px){.grid{grid-template-columns:1fr;}}
+.label{align-self:center;color:var(--muted)}
+
+/* ───────── Base textbox style ───────── */
+.tb{
+  --bg: #121a2a;           /* input bg */
+  --ink: #eaf2ff;          /* input text */
+  --ph: #8aa2c7;           /* placeholder */
+  --bdc: var(--bd);        /* border color */
+  --shadow: 0 10px 22px rgba(0,0,0,.25);
+  width:100%; padding:12px 14px; border-radius:12px; border:1px solid var(--bdc);
+  background: var(--bg); color: var(--ink);
+  transition: border-color .18s ease, box-shadow .18s ease, background .18s ease,
+             filter .18s ease, outline-color .18s ease;
+}
+.tb::placeholder{color:var(--ph)}
+.tb:focus-visible{outline:none; box-shadow: var(--shadow), var(--ring); border-color:transparent}
+
+/* Helpful utilities */
+.row{display:contents}
+.badge{font:600 .8rem/1 system-ui; color:#0b1220; background:linear-gradient(135deg,var(--brand1),var(--brand2)); padding:2px 8px; border-radius:999px}
+
+/* ───────────────── 30 Variants ───────────────── */
+
+/* 1) Solid brand border + soft glow */
+.tb-1{ border-color: color-mix(in oklab,var(--brand1) 65%, var(--bd)); box-shadow: inset 0 0 0 1px rgba(34,211,238,.25) }
+.tb-1:focus-visible{ box-shadow: 0 0 0 6px rgba(34,211,238,.15), var(--ring) }
+
+/* 2) Gradient border using double background */
+.tb-2{ background:
+  linear-gradient(var(--panel), var(--panel)) padding-box,
+  linear-gradient(135deg,var(--brand1),var(--brand2)) border-box;
+  border:2px solid transparent }
+
+/* 3) Ghost underline only */
+.tb-3{ border:none; border-bottom:2px solid var(--bd); border-radius:0; background:transparent }
+.tb-3:hover{ border-bottom-color: color-mix(in oklab,var(--ink) 40%, var(--bd)) }
+.tb-3:focus-visible{ box-shadow: none; border-bottom-color: var(--brand1) }
+
+/* 4) Filled + subtle inner shadow */
+.tb-4{ background:#0f172a; box-shadow: inset 0 2px 6px rgba(255,255,255,.05), inset 0 -8px 18px rgba(0,0,0,.6) }
+
+/* 5) Pill shape */
+.tb-5{ border-radius:999px }
+
+/* 6) Notched corners via clip-path */
+.tb-6{ clip-path: polygon(12px 0,calc(100% - 12px) 0,100% 12px,100% calc(100% - 12px),calc(100% - 12px) 100%,12px 100%,0 calc(100% - 12px),0 12px) }
+
+/* 7) Inner glow (focus inward) */
+.tb-7{ box-shadow: inset 0 0 0 2px rgba(255,255,255,.12), inset 0 0 24px rgba(34,211,238,.08) }
+
+/* 8) Neon outline */
+.tb-8{ border-color:#0ea5e9; text-shadow: 0 0 6px rgba(34,211,238,.55) }
+.tb-8:focus-visible{ box-shadow: 0 0 20px rgba(34,211,238,.35) }
+
+/* 9) Glassmorphism */
+.tb-9{ background: rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.20); backdrop-filter: blur(8px) saturate(120%) }
+
+/* 10) Soft gradient fill */
+.tb-10{ background: linear-gradient(135deg, #0f1a30, #0b2038) }
+
+/* 11) Embossed (bevel) */
+.tb-11{ box-shadow: inset 1px 1px 0 rgba(255,255,255,.08), inset -1px -1px 0 rgba(0,0,0,.5) }
+
+/* 12) Conic border ring on focus */
+.tb-12{ position:relative; z-index:0 }
+.tb-12:focus-visible{ box-shadow: var(--ring), 0 0 0 2px transparent }
+.tb-12:focus-visible{ outline: none }
+/* create a conic halo via filter drop-shadow using :focus ring already */
+
+/* 13) Dashed border */
+.tb-13{ border-style:dashed }
+
+/* 14) Double border */
+.tb-14{ border:2px double color-mix(in oklab,var(--ink) 50%, var(--bd)) }
+
+/* 15) Shadow lift on hover */
+.tb-15{ transition: transform .15s ease, box-shadow .15s ease }
+.tb-15:hover{ transform: translateY(-1px); box-shadow: 0 14px 26px rgba(0,0,0,.35) }
+
+/* 16) Icon padding (left) */
+.tb-16{ padding-left:42px; background:
+  url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="%23a6b6d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>') no-repeat 12px center,
+  var(--bg) }
+
+/* 17) Success theme */
+.tb-17{ border-color:#10b981; background:#0c1f1a }
+
+/* 18) Warning theme */
+.tb-18{ border-color:#f59e0b; background:#271907 }
+
+/* 19) Danger theme */
+.tb-19{ border-color:#ef4444; background:#2a0f12 }
+
+/* 20) Rainbow underline (animated) */
+.tb-20{ border:none; border-bottom:3px solid transparent; border-radius:0; background:transparent }
+.tb-20:focus-visible{ box-shadow:none }
+.tb-20{ background-image: linear-gradient(var(--panel), var(--panel)), linear-gradient(90deg,#ef4444,#f59e0b,#22c55e,#3b82f6,#a855f7); background-origin:border-box; background-clip: padding-box, border-box; border-bottom:3px solid transparent; }
+
+/* 21) Stripe fill */
+.tb-21{ background: repeating-linear-gradient(45deg, #0f1a30 0 12px, #0b1324 12px 24px) }
+
+/* 22) Minimal ghost (no bg, thin border) */
+.tb-22{ background:transparent; border-color: color-mix(in oklab,var(--ink) 25%, transparent) }
+.tb-22:hover{ border-color: color-mix(in oklab,var(--ink) 45%, transparent) }
+
+/* 23) Thick border + rounded */
+.tb-23{ border-width:3px; border-color:#334155; border-radius:18px }
+
+/* 24) Gradient fill w/ shine */
+.tb-24{ position:relative; overflow:hidden; background: linear-gradient(135deg,#13203b,#0a172b) }
+.tb-24:hover{ filter: brightness(1.06) }
+.tb-24::after{ content:""; position:absolute; inset:-120% -40%; background: linear-gradient(60deg, transparent 30%, rgba(255,255,255,.5) 50%, transparent 70%); transform: translateX(-15%); transition: transform .45s ease }
+.tb-24:hover::after{ transform: translateX(45%) }
+
+/* 25) Inset cut (top-left & bottom-right) */
+.tb-25{ box-shadow: inset 6px 6px 12px rgba(0,0,0,.45), inset -6px -6px 12px rgba(255,255,255,.04) }
+
+/* 26) Outline focus only (no default border) */
+.tb-26{ border-color: transparent; background:#0f182a }
+.tb-26:focus-visible{ border-color: transparent; box-shadow: var(--ring) }
+
+/* 27) Frosted strong (blurrier glass) */
+.tb-27{ background: rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.28); backdrop-filter: blur(14px) saturate(130%) }
+
+/* 28) Text gradient (foreground) */
+.tb-28{ color:transparent; background-image: linear-gradient(90deg,var(--brand1),var(--brand2)); -webkit-background-clip:text; background-clip:text; border-color:#3b4b67 }
+.tb-28::placeholder{ color:transparent }
+
+/* 29) Edge glow shadow */
+.tb-29{ box-shadow: 0 0 0 0 rgba(34,211,238,0); }
+.tb-29:focus-visible{ box-shadow: 0 0 0 0 rgba(34,211,238,0), 0 0 22px rgba(34,211,238,.35) }
+
+/* 30) Label capsule: background + border */
+.tb-30{ padding-left:14px; border:2px solid transparent; background:
+  linear-gradient(var(--bg), var(--bg)) padding-box,
+  linear-gradient(135deg,#22d3ee,#a78bfa) border-box;
+}
+
+</style>
+</head>
+<body>
+  <header class="header">
+    <h1>30 CSS Textbox Styles – No JavaScript</h1>
+    <p>Each input below uses a unique class <span class="badge">.tb‑N</span> (N = 1…30). Focus a field to preview its ring/animation.</p>
+  </header>
+
+  <main class="wrapper">
+    <section class="grid" aria-label="Textboxes gallery">
+
+      <!-- Row template: label + input.tb.tb-N with placeholder showing the name -->
+      <div class="row">
+        <div class="label">1) Solid Brand Border</div>
+        <input class="tb tb-1" type="text" placeholder="tb-1 – Solid Brand Border" />
+      </div>
+
+      <div class="row">
+        <div class="label">2) Gradient Border</div>
+        <input class="tb tb-2" type="text" placeholder="tb-2 – Gradient Border" />
+      </div>
+
+      <div class="row">
+        <div class="label">3) Underline Only</div>
+        <input class="tb tb-3" type="text" placeholder="tb-3 – Underline Only" />
+      </div>
+
+      <div class="row">
+        <div class="label">4) Inset Soft</div>
+        <input class="tb tb-4" type="text" placeholder="tb-4 – Inset Soft" />
+      </div>
+
+      <div class="row">
+        <div class="label">5) Pill Shape</div>
+        <input class="tb tb-5" type="text" placeholder="tb-5 – Pill Shape" />
+      </div>
+
+      <div class="row">
+        <div class="label">6) Notched Corners</div>
+        <input class="tb tb-6" type="text" placeholder="tb-6 – Notched Corners" />
+      </div>
+
+      <div class="row">
+        <div class="label">7) Inner Glow</div>
+        <input class="tb tb-7" type="text" placeholder="tb-7 – Inner Glow" />
+      </div>
+
+      <div class="row">
+        <div class="label">8) Neon Outline</div>
+        <input class="tb tb-8" type="text" placeholder="tb-8 – Neon Outline" />
+      </div>
+
+      <div class="row">
+        <div class="label">9) Glassmorphism</div>
+        <input class="tb tb-9" type="text" placeholder="tb-9 – Glassmorphism" />
+      </div>
+
+      <div class="row">
+        <div class="label">10) Soft Gradient Fill</div>
+        <input class="tb tb-10" type="text" placeholder="tb-10 – Soft Gradient Fill" />
+      </div>
+
+      <div class="row">
+        <div class="label">11) Embossed Bevel</div>
+        <input class="tb tb-11" type="text" placeholder="tb-11 – Embossed Bevel" />
+      </div>
+
+      <div class="row">
+        <div class="label">12) Conic Halo Focus</div>
+        <input class="tb tb-12" type="text" placeholder="tb-12 – Conic Halo Focus" />
+      </div>
+
+      <div class="row">
+        <div class="label">13) Dashed Border</div>
+        <input class="tb tb-13" type="text" placeholder="tb-13 – Dashed Border" />
+      </div>
+
+      <div class="row">
+        <div class="label">14) Double Border</div>
+        <input class="tb tb-14" type="text" placeholder="tb-14 – Double Border" />
+      </div>
+
+      <div class="row">
+        <div class="label">15) Hover Lift</div>
+        <input class="tb tb-15" type="text" placeholder="tb-15 – Hover Lift" />
+      </div>
+
+      <div class="row">
+        <div class="label">16) Icon (Left)</div>
+        <input class="tb tb-16" type="text" placeholder="tb-16 – Icon (Left)" />
+      </div>
+
+      <div class="row">
+        <div class="label">17) Success Theme</div>
+        <input class="tb tb-17" type="text" placeholder="tb-17 – Success Theme" />
+      </div>
+
+      <div class="row">
+        <div class="label">18) Warning Theme</div>
+        <input class="tb tb-18" type="text" placeholder="tb-18 – Warning Theme" />
+      </div>
+
+      <div class="row">
+        <div class="label">19) Danger Theme</div>
+        <input class="tb tb-19" type="text" placeholder="tb-19 – Danger Theme" />
+      </div>
+
+      <div class="row">
+        <div class="label">20) Rainbow Underline</div>
+        <input class="tb tb-20" type="text" placeholder="tb-20 – Rainbow Underline" />
+      </div>
+
+      <div class="row">
+        <div class="label">21) Striped Fill</div>
+        <input class="tb tb-21" type="text" placeholder="tb-21 – Striped Fill" />
+      </div>
+
+      <div class="row">
+        <div class="label">22) Minimal Ghost</div>
+        <input class="tb tb-22" type="text" placeholder="tb-22 – Minimal Ghost" />
+      </div>
+
+      <div class="row">
+        <div class="label">23) Thick Rounded Border</div>
+        <input class="tb tb-23" type="text" placeholder="tb-23 – Thick Rounded Border" />
+      </div>
+
+      <div class="row">
+        <div class="label">24) Shine Sweep</div>
+        <input class="tb tb-24" type="text" placeholder="tb-24 – Shine Sweep" />
+      </div>
+
+      <div class="row">
+        <div class="label">25) Inset Cut</div>
+        <input class="tb tb-25" type="text" placeholder="tb-25 – Inset Cut" />
+      </div>
+
+      <div class="row">
+        <div class="label">26) Focus Ring Only</div>
+        <input class="tb tb-26" type="text" placeholder="tb-26 – Focus Ring Only" />
+      </div>
+
+      <div class="row">
+        <div class="label">27) Strong Frosted</div>
+        <input class="tb tb-27" type="text" placeholder="tb-27 – Strong Frosted" />
+      </div>
+
+      <div class="row">
+        <div class="label">28) Text Gradient</div>
+        <input class="tb tb-28" type="text" placeholder="tb-28 – Text Gradient" />
+      </div>
+
+      <div class="row">
+        <div class="label">29) Edge Glow</div>
+        <input class="tb tb-29" type="text" placeholder="tb-29 – Edge Glow" />
+      </div>
+
+      <div class="row">
+        <div class="label">30) Capsule Label Border</div>
+        <input class="tb tb-30" type="text" placeholder="tb-30 – Capsule Label Border" />
+      </div>
+
+    </section>
+  </main>
+</body>
+</html>

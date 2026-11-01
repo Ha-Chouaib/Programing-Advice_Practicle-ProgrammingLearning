@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project 26 – Polaroid Staggered Wall (22 photos, No JS)</title>
+
+  <style>
+    /* ─────────────────────────────────────────────────────────
+       PROJECT 26: Polaroid Staggered Wall — No JavaScript
+       ---------------------------------------------------------
+       ✦ What students build
+         A Pinterest-like wall using CSS columns. Each item is styled
+         as a Polaroid (thick white frame + caption strip) with small,
+         alternating rotations. On hover/focus, the print straightens
+         and lifts subtly; an info strip appears ONLY on hover/focus.
+
+       ✦ Key CSS topics inside
+         • Masonry with CSS multi-column layout
+         • Polaroid framing with borders + background
+         • nth-child() patterns to randomize subtle rotations
+         • Hover-only overlays and motion (transform/transition)
+         • Accessible structure with <figure>/<figcaption>
+         • Dark-mode via CSS custom properties
+         • Print tuning
+
+       ---------------------------------------------------------
+       House variables
+    ───────────────────────────────────────────────────────── */
+    :root{
+      --bg: #fbfbfb;
+      --ink: #111827;
+      --muted: #6b7280;
+
+      --accent: #2563eb;       /* blue-600 */
+      --card: #ffffff;
+      --border: #e5e7eb;
+
+      --shadow-rest: 0 10px 24px rgba(0,0,0,.12);
+      --shadow-up:   0 18px 36px rgba(0,0,0,.18);
+
+      --maxw: 1200px;
+      --radius: 14px;
+
+      --col-gap: 1.25rem;      /* masonry column gap */
+      --frame-pad: .65rem;     /* polaroid white frame thickness */
+      --frame-pad-bottom: 1.05rem; /* extra for the “caption area” */
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg: #0f1319;
+        --ink: #e6e8ec;
+        --muted: #9aa2b2;
+
+        --accent: #60a5fa;     /* blue-400 */
+        --card: #161b22;
+        --border: #232a34;
+
+        --shadow-rest: 0 16px 36px rgba(0,0,0,.55);
+        --shadow-up:   0 22px 48px rgba(0,0,0,.55);
+      }
+    }
+
+    /* ── Base resets ─────────────────────────────────────── */
+    html,body{ margin:0; padding:0; }
+    body{
+      font-family: ui-serif, Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.72;
+    }
+
+    /* ── Header + Pill Menu ──────────────────────────────── */
+    header{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 2rem 1rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .masthead{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:1rem;
+      flex-wrap: wrap;
+    }
+    .masthead h1{
+      margin:0;
+      font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+      letter-spacing:.2px;
+    }
+    .dek{ margin:.35rem 0 0; color: var(--muted); max-width: 65ch; }
+
+    /* “Pill” menu suggestion for this project */
+    nav.pills{
+      margin-top: 1rem;
+      display:flex; flex-wrap: wrap; gap:.6rem;
+    }
+    .pills a{
+      display:inline-block;
+      text-decoration: none;
+      color: var(--ink);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: .45rem .8rem;
+      transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+    }
+    .pills a:hover{
+      background: rgba(37,99,235,.08);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(37,99,235,.15);
+    }
+
+    /* ── Masonry wall via CSS columns ──────────────────────
+       We rely on multi-column layout. Each Polaroid is display:inline-block
+       so it flows inside the columns. */
+    .wall{
+      max-width: var(--maxw);
+      margin: 1.25rem auto 2.5rem;
+      padding: 0 1rem;
+      column-count: 3;              /* desktop: three columns */
+      column-gap: var(--col-gap);
+    }
+    @media (max-width: 1100px){ .wall{ column-count: 2; } }
+    @media (max-width: 720px){  .wall{ column-count: 1; } }
+
+    /* ── Polaroid card ─────────────────────────────────────
+       Inline-block + break-inside avoid keeps each card intact.
+       We create a “white frame” using padding + card background. */
+    .polaroid{
+      display: inline-block;
+      width: 100%;                     /* span full column width */
+      break-inside: avoid;
+      -webkit-column-break-inside: avoid;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-rest);
+      margin: 0 0 var(--col-gap);
+      padding: var(--frame-pad) var(--frame-pad) var(--frame-pad-bottom);
+      transform: rotate(var(--tilt, 0deg));
+      transition: transform .28s ease, box-shadow .28s ease;
+    }
+
+    /* Subtle randomized tilts using nth-child patterns */
+    .polaroid:nth-child(6n+1){ --tilt: -1.5deg; }
+    .polaroid:nth-child(6n+2){ --tilt:  1.2deg; }
+    .polaroid:nth-child(6n+3){ --tilt: -0.9deg; }
+    .polaroid:nth-child(6n+4){ --tilt:  1.6deg; }
+    .polaroid:nth-child(6n+5){ --tilt: -1.8deg; }
+    .polaroid:nth-child(6n+6){ --tilt:  0.8deg; }
+
+    /* On hover/focus, the print “snaps straight” and lifts */
+    .polaroid:hover,
+    .polaroid:focus-within{
+      transform: rotate(0deg) translateY(-6px);
+      box-shadow: var(--shadow-up);
+      z-index: 1;
+    }
+
+    /* The actual image (kept responsive and cropped nicely) */
+    .photo{
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 3;             /* friendly ratio for uniform feel */
+      object-fit: cover;
+      border-radius: calc(var(--radius) - 6px);
+      display:block;
+      filter: saturate(.96) contrast(1.02);
+      transition: filter .28s ease, transform .28s ease;
+    }
+    .polaroid:hover .photo,
+    .polaroid:focus-within .photo{
+      filter: saturate(1.05) contrast(1.06);
+      transform: scale(1.01);
+    }
+
+    /* Caption strip: HIDDEN by default; appears ONLY on hover/focus */
+    .strip{
+      position: relative;
+      margin-top: .6rem;
+      padding: .45rem .55rem;
+      border-radius: 8px;
+      border: 1px dashed transparent;
+      color: var(--muted);
+      font-size: .95rem;
+      background: transparent;
+
+      /* Hidden state */
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity .28s ease, transform .28s ease, border-color .28s ease, background .28s ease;
+    }
+    .polaroid:hover .strip,
+    .polaroid:focus-within .strip{
+      opacity: 1;
+      transform: translateY(0);
+      border-color: rgba(37,99,235,.35);
+      background: rgba(37,99,235,.06);
+    }
+
+    /* Optional small label above the strip (category tag) */
+    .kicker{
+      display:inline-block;
+      font-size: .78rem;
+      letter-spacing:.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: .25rem;
+    }
+
+    /* A11y focus ring (overlay remains hover-only by spec) */
+    a, button{ outline: none; }
+    .polaroid:focus-within{
+      box-shadow:
+        0 0 0 3px rgba(37,99,235,.32),
+        0 0 0 6px rgba(37,99,235,.18),
+        var(--shadow-up);
+    }
+
+    /* Print cleanup */
+    @media print{
+      @page{ margin: 14mm; }
+      *{ -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      nav.pills{ display:none !important; }
+      .polaroid{ transform:none !important; box-shadow:none !important; }
+      .strip{ opacity:1 !important; transform:none !important; } /* show captions in print */
+    }
+  </style>
+</head>
+<body>
+  <!-- ── Header + Menu (decorative) ─────────────────────── -->
+  <header>
+    <div class="masthead">
+      <div>
+        <h1>Project 26 – Polaroid Staggered Wall</h1>
+        <p class="dek">
+          Masonry wall with Polaroid-styled prints and gentle, randomized tilts.
+          Hover a print to straighten it and reveal the info strip (overlay is hidden unless hovered).
+        </p>
+      </div>
+    </div>
+
+    <!-- “Pill” menu suggestion for this project (no JS) -->
+    <nav class="pills" aria-label="Sample filters (decorative)">
+      <a href="#">All</a>
+      <a href="#">People</a>
+      <a href="#">Places</a>
+      <a href="#">Objects</a>
+      <a href="#">Black & White</a>
+      <a href="#">Color</a>
+    </nav>
+  </header>
+
+  <!-- ── Masonry Wall: ALL 22 images ─────────────────────── -->
+  <main class="wall" aria-label="Polaroid gallery">
+    <!-- Each figure uses alt text; the overlay strip stays hidden until hover/focus -->
+    <figure class="polaroid">
+      <img class="photo" src="images/A1.jpg" alt="A1 — coastal path at dawn">
+      <figcaption class="strip"><span class="kicker">Feature</span><br>A1 — Coastal Path at Dawn</figcaption>
+    </figure>
+
+    <figure class="polaroid">
+      <img class="photo" src="images/A2.jpg" alt="A2 — broad city avenue">
+      <figcaption class="strip"><span class="kicker">City</span><br>A2 — Broad City Avenue</figcaption>
+    </figure>
+
+    <figure class="polaroid">
+      <img class="photo" src="images/A3.jpg" alt="A3 — tower lines and sky">
+      <figcaption class="strip"><span class="kicker">Architecture</span><br>A3 — Tower Lines</figcaption>
+    </figure>
+
+    <figure class="polaroid">
+      <img class="photo" src="images/A4.jpg" alt="A4 — riverside bend">
+      <figcaption class="strip"><span class="kicker">Nature</span><br>A4 — Riverside Bend</figcaption>
+    </figure>
+
+    <figure class="polaroid">
+      <img class="photo" src="images/A5.jpg" alt="A5 — brick wall with ivy">
+      <figcaption class="strip"><span class="kicker">Details</span><br>A5 — Brick & Ivy</figcaption>
+    </figure>
+
+    <figure class="polaroid">
+      <img class="photo" src="images/A6.jpg" alt="A6 — morning market scene">
+      <figcaption class="strip"><span class="kicker">Street</span><br>A6 — Market Pulse</figcaption>
+    </figure>
+
+    <figure class="polaroid">
+      <img class="photo" src="images/A7.jpg" alt="A7 — footpath with sunrise">
+      <figcaption class="strip"><span class="kicker">Landscape</span><br>A7 — Path with First Light</figcaption>
+    </figure>
+
+    <figure class="polaroid">
+      <img class="photo" src="images/A8.jpg" alt="A8 — sea edge and rocks">
+      <figcaption class="strip"><span class="kicker">Coast</span><br>A8 — Sea’s Edge</figcaption>
+    </figure>
+
+    <figure class="polaroid">
+      <img class="photo" src="images/A9.jpg" alt="A9 — geometric city grid">
+      <figcaption class="strip"><span class="kicker">Urban</span><br>A9 — City Grid</figcaption>
+    </figure>
+
+    <figure class="polaroid">
+      <img class="photo" src="images/A10.jpg" alt="A10 — rusted metal with light">
+      <figcaption class="strip"><span class="kicker">Texture</span><br>A10 — Rust & Light</figcaption>
+    </figure>
+
+    <figure class="polaroid">
+      <img class="photo" src="images/A11.jpg" alt="A11 — quiet window">
+      <figcaption class="strip"><span class="kicker">Still</span><br>A11 — Quiet Window</figcaption>
+    </figure>
+
+    <figure class="polaroid">
+      <img class="photo" src="images/A12.jpg" alt="A12 — green pause in a park">
+      <figcaption class="strip"><span class="kicker">Park</span><br>A12 — Green Pause</figcaption>
+    </figure>
+
+    <figure class="polaroid">
+      <img class="photo" src="images/A13.jpg" alt="A13 — overpass arc">
+      <figcaption class="strip"><span class="kicker">Lines</span><br>A13 — Overpass Arc</figcaption>
+    </figure>
+
+    <figure class="polaroid">
+      <img class="photo" src="images/A14.jpg" alt="A14 — wildflowers in field">
+      <figcaption class="strip"><span class="kicker">Flora</span><br>A14 — Wildflowers</figcaption>
+    </figure>
+
+    <figure class="polaroid">
+      <img class="photo" src="images/A15.jpg" alt="A15 — café corner with chairs">
+      <figcaption class="strip"><span class="kicker">Café</span><br>A15 — Corner Table</figcaption>
+    </figure>
+
+    <figure class="polaroid">
+      <img class="photo" src="images/A16.jpg" alt="A16 — beach sand and foam">
+      <figcaption class="strip"><span class="kicker">Shore</span><br>A16 — Sand & Foam</figcaption>
+    </figure>
+
+    <figure class="polaroid">
+      <img class="photo" src="images/A17.jpg" alt="A17 — night walk lights">
+      <figcaption class="strip"><span class="kicker">Night</span><br>A17 — Night Walk</figcaption>
+    </figure>
+
+    <figure class="polaroid">
+      <img class="photo" src="images/A18.jpg" alt="A18 — quiet stone steps">
+      <figcaption class="strip"><span class="kicker">Quiet</span><br>A18 — Stone Steps</figcaption>
+    </figure>
+
+    <figure class="polaroid">
+      <img class="photo" src="images/A19.jpg" alt="A19 — red door">
+      <figcaption class="strip"><span class="kicker">Color</span><br>A19 — Red Door</figcaption>
+    </figure>
+
+    <figure class="polaroid">
+      <img class="photo" src="images/A20.jpg" alt="A20 — soft building shadows">
+      <figcaption class="strip"><span class="kicker">Light</span><br>A20 — Soft Shadows</figcaption>
+    </figure>
+
+    <figure class="polaroid">
+      <img class="photo" src="images/A21.jpg" alt="A21 — field lines and sky">
+      <figcaption class="strip"><span class="kicker">Rural</span><br>A21 — Field Lines</figcaption>
+    </figure>
+
+    <figure class="polaroid">
+      <img class="photo" src="images/A22.jpg" alt="A22 — last light over horizon">
+      <figcaption class="strip"><span class="kicker">Sunset</span><br>A22 — Last Light</figcaption>
+    </figure>
+  </main>
+</body>
+</html>
