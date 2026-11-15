@@ -339,3 +339,33 @@ BACKUP DATABASE is terminating abnormally.
 [01/11/2026 18:21:06] SQL Error during backup: The server principal "AUTORITE NT\Système" is not able to access the database "BankSystem" under the current security context.
 BACKUP DATABASE is terminating abnormally.
 [01/11/2026 18:21:06] Backup failed.
+[02/11/2026 07:09:48] Database Backup Service started.
+[02/11/2026 07:09:48] Backup timer scheduled every 1440 minutes.
+[02/11/2026 08:26:27] Database Backup Service stopping...
+[02/11/2026 08:26:27] Database Backup Service stopped.
+[02/11/2026 08:28:16] Database Backup Service started.
+[02/11/2026 08:28:16] Backup timer scheduled every 1440 minutes.
+[02/11/2026 09:05:46] Database Backup Service started.
+[02/11/2026 09:05:46] Backup timer scheduled every 1440 minutes.
+[02/11/2026 09:08:37] Database Backup Service started.
+[02/11/2026 09:08:37] Backup timer scheduled every 1440 minutes.
+[03/11/2026 04:22:47] Database Backup Service started.
+[03/11/2026 04:22:48] Backup timer scheduled every 1440 minutes.
+[03/11/2026 23:52:08] Database Backup Service started.
+[03/11/2026 23:52:08] Backup timer scheduled every 1440 minutes.
+[07/11/2026 21:39:29] Backup started.
+[07/11/2026 21:39:30] SQL Error during backup: The server principal "AUTORITE NT\Système" is not able to access the database "BankSystem" under the current security context.
+BACKUP DATABASE is terminating abnormally.
+[07/11/2026 21:39:30] Backup failed.
+[11/11/2026 10:52:48] Backup started.
+[11/11/2026 10:52:48] SQL Error during backup: The server principal "AUTORITE NT\Système" is not able to access the database "BankSystem" under the current security context.
+BACKUP DATABASE is terminating abnormally.
+[11/11/2026 10:52:48] Backup failed.
+[11/11/2026 13:09:08] Database Backup Service stopping...
+[11/11/2026 13:09:08] Database Backup Service stopped.
+[11/11/2026 13:10:56] Database Backup Service started.
+[11/11/2026 13:10:56] Backup timer scheduled every 1440 minutes.
+[14/11/2026 07:36:12] Database Backup Service started.
+[14/11/2026 07:36:12] Backup timer scheduled every 1440 minutes.
+[14/11/2026 07:38:30] Database Backup Service started.
+[14/11/2026 07:38:30] Backup timer scheduled every 1440 minutes.

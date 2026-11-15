@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    <script>
+        const root = "/students";
+        let pages = 3;
+        let limit = 20;
+
+        const url =  new URL(root , "https://example.com");
+
+        url.searchParams.set("search", "web dev");
+        url.searchParams.set("pages" ,pages);
+        url.searchParams.set("limit",limit);
+
+        // console.log(url.toString());
+
+//ME6BJICPY4OWGJDH
+
+
+        let obj = {name:"aya"};
+        const ayaObjKey="ayaw";
+        localStorage.setItem(ayaObjKey , JSON.stringify(obj));
+
+
+
+
+        const result= localStorage.getItem(ayaObjKey);
+        let ob = JSON.parse(result)
+        console.log(ob)
+               
+    </script>
+    
+</body>
+</html>
